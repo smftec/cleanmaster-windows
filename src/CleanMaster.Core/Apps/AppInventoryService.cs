@@ -237,7 +237,6 @@ public sealed class AppInventoryService
         var tokens = NameTokens(app);
         if (tokens.Count == 0) return result;
 
-        string[][] dirRootsPerToken;
         var userLocal = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         var userRoaming = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         var programData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
