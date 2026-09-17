@@ -46,6 +46,10 @@ jobs:
           -p:Version=${{ steps.ver.outputs.version }} -p:SourceRevisionId=${{ steps.ver.outputs.shash }}
           -o dist/CleanMaster-${{ steps.ver.outputs.version }}-win-x64-selfcontained -v minimal
 
+      - name: Strip PDBs (avoid leaking build machine paths)
+        shell: pwsh
+        run: Get-ChildItem dist -Recurse -Include *.pdb | Remove-Item -Force
+
       - name: Safety self-test (release gate)
         run: ./dist/CleanMaster-${{ steps.ver.outputs.version }}-net8-x64/CleanMaster.exe --selftest
 

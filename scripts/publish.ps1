@@ -26,6 +26,10 @@ dotnet publish $project -c $Configuration -r win-x64 --self-contained true `
     -v minimal -nologo
 if ($LASTEXITCODE -ne 0) { throw "发布失败(自包含版)" }
 
+Write-Host "==> 移除调试符号 (*.pdb 含构建机路径，不随产物分发)"
+Get-ChildItem (Join-Path $outDir "CleanMaster-$Version-net8-x64") -Recurse -Include *.pdb | Remove-Item -Force
+Get-ChildItem (Join-Path $outDir "CleanMaster-$Version-win-x64-selfcontained") -Recurse -Include *.pdb | Remove-Item -Force
+
 Write-Host "==> 运行安全自测 (--selftest)"
 $exe = Join-Path $outDir "CleanMaster-$Version-net8-x64\CleanMaster.exe"
 & $exe --selftest
