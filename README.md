@@ -1,123 +1,111 @@
-# 清理优化大师 (CleanMaster) for Windows
+<div align="center">
 
-> 一款面向普通用户与进阶用户的 **安全清理、空间分析、启动项管理和系统维护工具**。
-> 清得明白，优化得安心 —— 可解释、可预览、可恢复，不搞虚假加速。
+# 🧹 清理优化大师
 
-![技术栈](https://img.shields.io/badge/.NET-8.0--windows-blue) ![UI](https://img.shields.io/badge/WPF-Fluent风格-green) ![平台](https://img.shields.io/badge/Windows-10%2022H2%20/%2011-lightgrey)
+**安全、透明、可恢复的 Windows 清理与系统优化工具**
+
+[![Release](https://img.shields.io/github/v/release/smftec/cleanmaster-windows?label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)](../../releases/latest)
+[![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Windows-10%2022H2%20%2F%2011-0078D4.svg)](#-快速开始)
+[![.NET](https://img.shields.io/badge/.NET-8.0-512BD4.svg)](#-快速开始)
+
+[简体中文](README.md) | [English](README.en.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md)
+
+**清得明白，优化得安心** —— 可解释、可预览、可恢复，拒绝一切虚假加速。
+
+[⬇️ 下载最新版](../../releases/latest) · [🛠 从源码构建](#-快速开始) · [💬 联系我们](#-联系我们)
+
+</div>
 
 ---
 
-## ✨ 功能总览
+## ✨ 界面预览
+
+| 浅色主题 | 深色主题 |
+|---|---|
+| ![浅色主题](docs/images/home-light.png) | ![深色主题](docs/images/home-dark.png) |
+
+## ⬇️ 下载
+
+到 [Releases](../../releases/latest) 页面获取（SHA256 校验值见附件 `SHA256SUMS.txt`）：
+
+| 文件 | 适合谁 |
+|---|---|
+| `CleanMasterSetup-x.x.x.exe` | 大多数用户：中文安装向导，支持卸载 |
+| `CleanMaster-x.x.x-win-x64.zip` | 免安装绿色版：解压即用，无需 .NET 运行时（自包含） |
+
+## 🧰 功能总览
 
 | 模块 | 能力 |
 |---|---|
-| **首页** | 设备状态模型（良好/建议清理/空间紧张）、四项状态卡片、磁盘概览、空间分析色块、最近活动、智能建议一键清理 |
-| **智能扫描** | 一次扫描：系统垃圾 / 浏览器缓存 / 应用缓存 / 回收站；结果按"安全清理 / 浏览器与应用缓存 / 建议检查"分组；逐条预览文件明细；不使用"一键修复全部"式伪交互 |
-| **清理空间** | 五个分组：系统垃圾（临时文件/WER 崩溃报告/缩略图/DirectX 着色器缓存/系统日志/更新下载缓存/传递优化）、应用缓存（微信/QQ/Discord/Teams/Office/Steam/Epic/VS Code/NVIDIA/JetBrains/开发工具缓存等 13 类）、浏览器清理（Edge/Chrome/Brave/Opera/Firefox）、隐私痕迹（默认全不勾选）、回收站（SHQueryRecycleBin 统计 + 一键清空） |
-| **空间分析** | 多线程磁盘扫描、分类统计（系统/应用/图片/视频/音频/文档/压缩包/其他）、目录占用排行树、大文件查找（>500MB/1GB/5GB 筛选、打开位置/移入回收站/白名单） |
-| **启动项** | 注册表 Run（HKCU/HKLM）/ 启动文件夹 / 登录触发计划任务三大来源；与任务管理器一致的 StartupApproved 启停机制；影响评估 + 建议；所有变更可恢复 |
-| **应用管理** | 注册表卸载表 + WOW6432Node；按名称/大小/安装日期排序；调用应用自带卸载程序；卸载后确定性残留检测（目录进隔离区、注册表键先导出备份再删） |
-| **工具箱** | 清理隔离区（恢复/永久删除/到期自动清理）、文件粉碎（3 次覆写 + 诚实的 SSD 说明）、重复文件（大小分组→首 64KB 哈希→全量 MD5）、清理历史、Windows 官方快捷工具 ×8 |
-| **设置** | 通用（开机启动/托盘/主题 浅色·深色·跟随系统）、清理（隔离区开关与天数/自动清理计划）、排除目录与白名单、通知、高级（扫描线程数等）、隐私 |
-| **系统集成** | 系统托盘（打开/快速扫描/自动清理开关/退出）、首启三步引导、按需 UAC 提权（仅清传递优化缓存/HKLM 启动项/计划任务时） |
+| **首页** | 设备状态模型（良好 / 建议清理 / 空间紧张）、垃圾与启动项速览、磁盘概览、最近活动、智能建议一键清理 |
+| **智能扫描** | 一次覆盖系统垃圾 / 浏览器缓存 / 应用缓存 / 回收站；结果按风险分组、逐条可预览文件明细 |
+| **清理空间** | 系统垃圾（临时文件、崩溃报告、缩略图、着色器缓存、更新缓存等）、应用缓存（微信 / QQ / Discord / Teams / Steam / Epic / VS Code / JetBrains 等 13 类）、浏览器清理（Edge / Chrome / Brave / Opera / Firefox）、隐私痕迹（默认不勾选）、回收站 |
+| **空间分析** | 多线程全盘扫描、分类统计、文件夹占用排行树、大文件查找（打开位置 / 移入回收站 / 白名单） |
+| **启动项** | 注册表 Run / 启动文件夹 / 登录计划任务三大来源；启停机制与任务管理器一致；所有变更可恢复 |
+| **应用管理** | 卸载表完整枚举、调用应用自带卸载程序、卸载后确定性残留检测（进隔离区可恢复） |
+| **工具箱** | 隔离区管理、文件粉碎、重复文件检测（内容哈希，非文件名匹配）、清理历史、Windows 官方快捷工具 |
+| **系统集成** | 深色 / 浅色 / 跟随系统主题、系统托盘、首次使用引导、自动清理计划 |
 
-## 🔒 安全设计（本产品的核心）
+## 🔒 安全设计（产品核心）
 
-- **SafetyGuard 统一删除保护**：所有删除必须经 `SafetyGuard.ValidateForClean`；硬编码拒绝表保护 桌面/文档/图片/视频/下载/用户主目录/System32/WinSxS/Installer/Program Files/磁盘根目录/应用自身目录；目标必须位于规则声明的允许根内；白名单最高优先级。
-- **风险四级**（PRD 4.1）：L0 安全 / L1 低风险默认勾选；L2 需确认（回收站、更新缓存、隐私项）默认不勾选；L3 永远不自动选中。
-- **隔离区可恢复**：非缓存类文件先进隔离区（默认保留 30 天），支持恢复、永久删除、到期自动清理；恢复时自动处理重名冲突。
-- **不跨 Junction 递归**：目录遍历与删除均不跟随 Reparse Point（selftest 有专门用例）。
-- **可解释**：每条规则都展示"为什么可清理 / 清理后的影响 / 是否可恢复 / 占用进程"。
-- **安全自测**：`CleanMaster.exe --selftest` 覆盖 PRD 第 53 章必测安全场景（25 项断言，任何一项失败返回非零退出码，阻止发布）。
+- **统一删除保护**：所有删除必须经 `SafetyGuard` 校验；桌面、文档、图片、下载、System32、WinSxS、Program Files 等在硬编码拒绝表中，任何规则都碰不到
+- **风险四级**：安全 / 低风险默认勾选；需确认项（回收站、更新缓存、隐私项）永远不自动选中
+- **隔离区可恢复**：非缓存文件先进隔离区（默认保留 30 天），可随时恢复，重名自动处理
+- **不跨目录链接**：目录遍历与删除均不跟随 Junction / 符号链接
+- **可解释**：每一项都说明"为什么可清理、清理后有什么影响、能否恢复、哪个进程正在占用"
+- **自动化安全自测**：`CleanMaster.exe --selftest` 覆盖 25 项安全断言，作为发布门禁集成进 CI
 
-## 🚀 构建与运行
+## 🚀 快速开始
 
 环境要求：Windows 10 22H2+ / Windows 11，[.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)（零第三方 NuGet 依赖）。
 
 ```bash
-# 构建（也可用根目录 CleanMaster.slnx，需 .NET 10 SDK）
+git clone https://github.com/smftec/cleanmaster-windows.git
+cd cleanmaster-windows
 dotnet build src/CleanMaster.App/CleanMaster.App.csproj -c Release
-
 # 运行
 src/CleanMaster.App/bin/Release/net8.0-windows/CleanMaster.exe
-
-# 安全自测（CI 可用，退出码 0 = 全部通过）
-CleanMaster.exe --selftest
+# 安全自测
+src/CleanMaster.App/bin/Release/net8.0-windows/CleanMaster.exe --selftest
 ```
 
-## 📦 发布打包
+推送 `v*` 标签后，GitHub Actions 会自动：构建 → 安全自测 → 发布 → 编译安装包 → 生成校验和 → 创建 Release 草稿。
+
+## 📦 打包发布
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\publish.ps1
 ```
 
-产出 `dist/` 下两种形态：
+产出：绿色版目录、zip 包、中文安装包（自动检测 [Inno Setup](https://jrsoftware.org/isinfo.php)，安装包脚本见 [scripts/setup.iss](scripts/setup.iss)）、`SHA256SUMS.txt`。
 
-- `CleanMaster-1.0.0-net8-x64/` —— 框架依赖版（需要 .NET 8 桌面运行时，体积小）
-- `CleanMaster-1.0.0-win-x64-selfcontained/` + `zip` —— 自包含版（开箱即用）
+拿到代码签名证书后，加两个环境变量即可输出签名版全套产物：
 
-脚本内含发布门禁：打包前自动运行 `--selftest`，任一安全断言失败即中止发布。
-
-安装包：已提供 [scripts/setup.iss](scripts/setup.iss)（Inno Setup 6 脚本，支持桌面快捷方式/开机自启选项、卸载保留用户隔离区数据）。安装 [Inno Setup](https://jrsoftware.org/isinfo.php) 后执行：
-
-```bash
-ISCC.exe scripts\setup.iss   # 产物 dist\Output\CleanMasterSetup-1.0.0.exe
+```powershell
+$env:CM_SIGN = "1"; $env:CM_SIGN_SUBJECT = "CN=你的名称"
+powershell -File scripts\publish.ps1
 ```
 
-正式对外发布前：对 EXE/DLL 与安装包做代码签名（signtool）。
+## 🗺️ Roadmap
 
-## 🔍 运行期可观测性
+- [ ] SignPath Foundation 开源签名（已提交申请路线）
+- [ ] 在线清理规则库（签名校验的热更新）
+- [ ] 启动耗时实测分析（ETW）
+- [ ] Microsoft Store 分发
 
-- 异常与关键失败写入 `%LOCALAPPDATA%\CleanMaster\app.log`
-- 清理/卸载/启停历史：`history.json`；上次扫描摘要：`lastscan.json`；磁盘分析摘要：`disk_*.json`
-- 全部数据仅存本地，卸载不清除（安全设计，隔离区可恢复）
+## 💬 联系我们
 
-## 🗂️ 工程结构
+- 🌐 官网：<https://52xn.com>
+- 📮 邮箱：<dev@52xn.com>
+- 💚 微信公众号：微信搜一搜「**AI虚拟助理**」
 
-```
-CleanMaster/
-├── CleanMaster.sln
-├── scripts/                 # 图标生成、发布打包脚本
-└── src/
-    ├── CleanMaster.Core/           # 核心引擎（纯逻辑，无 UI）
-    │   ├── Models.cs               #   领域模型（RuleResult/CleanItem/CleanSummary...）
-    │   ├── Security/               #   SafetyGuard 统一删除保护
-    │   ├── Rules/                  #   规则引擎：IScanRule + 27 条内置规则
-    │   │   ├── ScannerService      #   扫描编排
-    │   │   ├── CleanService        #   清理事务（逐项状态汇报）
-    │   │   ├── QuarantineService   #   隔离区
-    │   │   └── ElevatedService     #   按需 UAC 提权 Helper
-    │   ├── Analysis/               #   磁盘分析 / 大文件 / 重复文件
-    │   ├── Startup/                #   启动项枚举与启停（含备份恢复）
-    │   ├── Apps/                   #   应用清单 / 卸载 / 残留检测
-    │   ├── Store/                  #   设置 / 历史（JSON 持久化于 %LOCALAPPDATA%\CleanMaster）
-    │   └── SelfTest/               #   安全自测套件
-    └── CleanMaster.App/            # WPF 外壳
-        ├── Themes/                 #   浅色/深色画刷 + Fluent 风格控件模板（零第三方库）
-        ├── Pages/                  #   首页/智能扫描/清理空间/空间分析/启动项/应用管理/工具箱/设置
-        ├── Windows/                #   首启向导/主题化对话框/残留清理对话框
-        └── Services/               #   主题/托盘/对话框/自动清理调度/缓存
-```
-
-## 🧭 与 PRD 的对应关系
-
-- 技术选型：PRD 建议 WinUI 3；本实现采用 **WPF (.NET 8) + 自绘 Fluent 设计系统** —— 零 NuGet 依赖、单目录绿色发布、Win10/11 通吃，视觉按设计稿完整复刻（Mica 式浅色渐变、圆角卡片、NavigationView 式侧栏、自绘标题栏）。若后续需要 MSIX/Store 分发，可在 Core 不变的情况下替换 UI 层。
-- PRD 第 47 章 MVP 清单中 P0 全部实现；P1 的应用缓存、隐私清理、重复文件、卸载残留、自动清理、托盘已实现；在线规则更新（rules.json + 签名校验）与 P2（启动耗时分析、企业版等）为后续迭代项。
-- 明确不做（PRD 2.2）：内存加速球、服务阉割、注册表魔改、Defender 排除等伪优化均未实现。
+<div align="center">
+  <img src="docs/images/wechat-search.png" alt="微信搜一搜：AI虚拟助理" width="640"/>
+</div>
 
 ## 📄 开源许可
 
-本项目以 **GPL-3.0** 许可证开源（见 [LICENSE](LICENSE)）：
+本项目以 **GPL-3.0** 许可证开源（见 [LICENSE](LICENSE)）：可自由使用、修改、分发，衍生作品需同样开源；商业授权 / 闭源定制请联系 <dev@52xn.com>。
 
-- 你可以自由使用、修改、再分发本软件，但衍生作品必须同样以 GPL-3.0 开源
-- 商业授权/闭源定制请联系作者另行协商（GPL 双许可模式）
-- 发布产物中的签名由 [SignPath Foundation](https://signpath.org) 面向开源项目免费提供
-
-### 从源码构建发布
-
-```bash
-git clone <本仓库>
-cd CleanMaster
-dotnet build src/CleanMaster.App/CleanMaster.App.csproj -c Release
-# 或直接打 tag 推送，GitHub Actions 会自动：构建 → 安全自测 → 发布 → 出 Release
-```
+发布产物中的代码签名由 [SignPath Foundation](https://signpath.org) 面向开源项目免费提供（接入中）。
