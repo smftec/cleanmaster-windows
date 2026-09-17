@@ -1,0 +1,60 @@
+name: Release
+
+# 推送 v* 标签时：构建 → 安全自测 → 发布 → 打包 → 创建 GitHub Release 草稿
+# SignPath 审批通过后，在 sign-job 处接入云签名（见文件末尾注释）
+
+on:
+  push:
+    tags: [ "v*" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Build (Release)
+        run: dotnet build src/CleanMaster.App/CleanMaster.App.csproj -c Release --nologo
+
+      - name: Publish (framework-dependent)
+        run: dotnet publish src/CleanMaster.App/CleanMaster.App.csproj -c Release -r win-x64 --self-contained false -o dist/CleanMaster-net8-x64 -v minimal
+
+      - name: Publish (self-contained)
+        run: dotnet publish src/CleanMaster.App/CleanMaster.App.csproj -c Release -r win-x64 --self-contained true -o dist/CleanMaster-win-x64-selfcontained -v minimal
+
+      - name: Safety self-test (release gate)
+        run: ./dist/CleanMaster-net8-x64/CleanMaster.exe --selftest
+
+      - name: Pack zip
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}" -replace "^v", ""
+          Compress-Archive -Path "dist/CleanMaster-win-x64-selfcontained/*" -DestinationPath "dist/CleanMaster-$version-win-x64.zip"
+
+      # ============================================================
+      # SignPath 云签名（申请通过后启用，二选一）：
+      #
+      # 方式 1 —— SignPath GitHub App（推荐）：
+      #   1. 在 SignPath 中把该 GitHub 仓库/组织连接到签名策略
+      #   2. 用官方 Actions/Artifact 提交签名请求，产物回传后附加到 Release
+      #   3. 仓库 Secrets 配置: SIGNPATH_API_TOKEN / SIGNPATH_ORG_ID / SIGNPATH_PROJECT_ID / SIGNPATH_SIGNING_POLICY
+      #
+      # 方式 2 —— 临时过渡：本地用 Certum 等证书运行 scripts\sign.ps1 后手动上传 Release
+      # ============================================================
+
+      - name: Create draft GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          generate_release_notes: true
+          files: |
+            dist/*.zip

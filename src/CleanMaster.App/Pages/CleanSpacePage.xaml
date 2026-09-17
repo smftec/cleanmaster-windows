@@ -1,0 +1,121 @@
+<Page x:Class="CleanMaster.App.Pages.CleanSpacePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      FontFamily="Microsoft YaHei UI">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题 + 标签页 -->
+        <StackPanel Grid.Row="0" Margin="4,2,4,0">
+            <TextBlock Text="清理空间" FontSize="21" FontWeight="Bold"
+                       Foreground="{DynamicResource TextPrimaryBrush}"/>
+            <StackPanel x:Name="TabBar" Orientation="Horizontal" Margin="0,16,0,0">
+                <RadioButton Content="系统垃圾" Style="{StaticResource PillTab}" GroupName="cstabs"
+                             IsChecked="True" Tag="0" Checked="Tab_Checked"/>
+                <RadioButton Content="应用缓存" Style="{StaticResource PillTab}" GroupName="cstabs"
+                             Tag="1" Checked="Tab_Checked"/>
+                <RadioButton Content="浏览器清理" Style="{StaticResource PillTab}" GroupName="cstabs"
+                             Tag="2" Checked="Tab_Checked"/>
+                <RadioButton Content="隐私痕迹" Style="{StaticResource PillTab}" GroupName="cstabs"
+                             Tag="3" Checked="Tab_Checked"/>
+                <RadioButton Content="回收站" Style="{StaticResource PillTab}" GroupName="cstabs"
+                             Tag="4" Checked="Tab_Checked"/>
+            </StackPanel>
+            <TextBlock x:Name="TabNoteText" Text="" FontSize="12"
+                       Foreground="{DynamicResource TextTertiaryBrush}" Margin="2,12,0,0"/>
+        </StackPanel>
+
+        <!-- 内容 -->
+        <Grid Grid.Row="2" Margin="2,12,2,0">
+            <!-- 隐私警告 -->
+            <Border x:Name="PrivacyBanner" Style="{StaticResource CardBorder}" Padding="16,12"
+                    Visibility="Collapsed" VerticalAlignment="Top" Margin="0,0,0,12"
+                    Background="{DynamicResource WarningSoftBrush}" BorderBrush="{DynamicResource WarningBrush}">
+                <StackPanel Orientation="Horizontal">
+                    <Path Data="{StaticResource WarningIcon}" Stroke="{DynamicResource WarningBrush}" StrokeThickness="1.8"
+                          StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="20" Height="20" Stretch="Uniform"/>
+                    <TextBlock Text="隐私项默认全部不勾选。勾选前请阅读每项的影响说明：清理 Cookie 会使网站退出登录，清理历史记录后不可恢复。"
+                               FontSize="12" Foreground="{DynamicResource TextPrimaryBrush}"
+                               Margin="12,0,0,0" VerticalAlignment="Center" TextWrapping="Wrap" MaxWidth="880"/>
+                </StackPanel>
+            </Border>
+
+            <!-- 回收站卡片 -->
+            <Border x:Name="RecycleCard" Style="{StaticResource CardBorder}" Padding="24,20"
+                    Visibility="Collapsed" VerticalAlignment="Top">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="44" Height="44" CornerRadius="12" Background="{DynamicResource PrimarySoftBrush}">
+                            <Path Data="{StaticResource TrashSmallIcon}" Stroke="{DynamicResource PrimaryBrush}" StrokeThickness="1.8"
+                                  StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="22" Height="22" Stretch="Uniform"/>
+                        </Border>
+                        <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
+                            <TextBlock x:Name="RecycleTitleText" Text="回收站" FontSize="16" FontWeight="Bold"
+                                       Foreground="{DynamicResource TextPrimaryBrush}"/>
+                            <TextBlock x:Name="RecycleInfoText" Text="正在读取…" FontSize="12.5"
+                                       Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,4,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="清空后回收站中的文件将被永久删除、无法恢复。也可以先打开回收站检查一遍。"
+                               FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,14,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
+                        <Button x:Name="BtnEmptyBin" Content="清空回收站" Style="{StaticResource DangerButton}"
+                                Click="BtnEmptyBin_Click"/>
+                        <Button x:Name="BtnOpenBin" Content="打开回收站" Style="{StaticResource SecondaryButton}"
+                                Margin="12,0,0,0" Click="BtnOpenBin_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- 规则列表 -->
+            <Grid x:Name="RulesHost">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <StackPanel x:Name="RuleList"/>
+                        <TextBlock x:Name="EmptyGroupText" Text="点击右上角「扫描」开始检查这一类项目" FontSize="12.5"
+                                   Foreground="{DynamicResource TextTertiaryBrush}"
+                                   HorizontalAlignment="Center" Margin="0,40,0,0" Visibility="Collapsed"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <!-- 扫描中 -->
+            <StackPanel x:Name="GroupScanPanel" Visibility="Collapsed" VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <ProgressBar x:Name="GroupScanBar" IsIndeterminate="True" Width="260" Height="6"/>
+                <TextBlock x:Name="GroupScanText" Text="正在扫描…" FontSize="12.5"
+                           Foreground="{DynamicResource TextSecondaryBrush}"
+                           HorizontalAlignment="Center" Margin="0,14,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- 底部操作条 -->
+        <Border Grid.Row="3" Style="{StaticResource CardBorder}" Margin="0,14,0,0" Padding="20,12"
+                x:Name="FooterBar">
+            <Grid>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="已选择" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"/>
+                    <TextBlock x:Name="SelCountText" Text="0 项" FontSize="13.5" FontWeight="Bold"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="6,0,0,0"/>
+                    <TextBlock Text="可释放" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}" Margin="16,0,0,0"/>
+                    <TextBlock x:Name="SelSizeText" Text="0 B" FontSize="15" FontWeight="Bold"
+                               Foreground="{DynamicResource PrimaryBrush}" Margin="6,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="BtnScanGroup" Content="扫描本组" Style="{StaticResource SecondaryButton}"
+                            Margin="0,0,12,0" Click="BtnScanGroup_Click"/>
+                    <Button x:Name="BtnCleanSel" Content="清理所选项" Style="{StaticResource PrimaryButton}"
+                            Click="BtnCleanSel_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

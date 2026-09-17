@@ -1,0 +1,108 @@
+<Page x:Class="CleanMaster.App.Pages.ToolboxPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      FontFamily="Microsoft YaHei UI">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel MaxWidth="1100" HorizontalAlignment="Stretch" Margin="4,2,4,16">
+
+            <TextBlock Text="工具箱" FontSize="21" FontWeight="Bold"
+                       Foreground="{DynamicResource TextPrimaryBrush}" Margin="4,2,0,0"/>
+            <TextBlock Text="文件粉碎不会进入回收站；隔离区文件可随时恢复；重复文件基于内容哈希检测。" FontSize="12"
+                       Foreground="{DynamicResource TextTertiaryBrush}" Margin="6,8,0,0"/>
+
+            <!-- 隔离区 -->
+            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0" x:Name="QuarantineCard">
+                <StackPanel>
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="36" Height="36" CornerRadius="10" Background="{DynamicResource WarningSoftBrush}">
+                                <Path Data="{StaticResource UndoIcon}" Stroke="{DynamicResource WarningBrush}" StrokeThickness="1.8"
+                                      StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="18" Height="18" Stretch="Uniform"/>
+                            </Border>
+                            <TextBlock Text="清理隔离区" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"
+                                       Foreground="{DynamicResource TextPrimaryBrush}" Margin="12,0,0,0"/>
+                        </StackPanel>
+                        <Button x:Name="BtnPurgeQuarantine" Content="清空隔离区" Style="{StaticResource DangerGhostButton}"
+                                HorizontalAlignment="Right" VerticalAlignment="Center" Click="BtnPurgeQuarantine_Click"/>
+                    </Grid>
+                    <TextBlock x:Name="QuarantineSummaryText" Text="隔离区是空的" FontSize="12"
+                               Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,12,0,0"/>
+                    <StackPanel x:Name="QuarantineList" Margin="0,10,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- 文件粉碎 -->
+            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="36" Height="36" CornerRadius="10" Background="{DynamicResource DangerSoftBrush}">
+                            <Path Data="{StaticResource TrashSmallIcon}" Stroke="{DynamicResource DangerBrush}" StrokeThickness="1.8"
+                                  StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="18" Height="18" Stretch="Uniform"/>
+                        </Border>
+                        <TextBlock Text="文件粉碎" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"
+                                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="12,0,0,0"/>
+                    </StackPanel>
+                    <TextBlock Text="从文件系统中永久删除文件，使其不进入回收站。注意：对 SSD 无法保证底层闪存数据立即物理覆写。此操作不可恢复，请谨慎选择文件。"
+                               FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,12,0,0"
+                               TextWrapping="Wrap"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                        <Button Content="选择文件粉碎" Style="{StaticResource DangerButton}" Click="BtnShredFile_Click"/>
+                        <Button Content="选择文件夹粉碎" Style="{StaticResource DangerGhostButton}" Margin="12,0,0,0"
+                                Click="BtnShredDir_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- 重复文件 -->
+            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0" x:Name="DuplicateCard">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="36" Height="36" CornerRadius="10" Background="{DynamicResource PrimarySoftBrush}">
+                            <Path Data="{StaticResource RefreshIcon}" Stroke="{DynamicResource PrimaryBrush}" StrokeThickness="1.8"
+                                  StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="18" Height="18" Stretch="Uniform"/>
+                        </Border>
+                        <TextBlock Text="重复文件" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"
+                                   Foreground="{DynamicResource TextPrimaryBrush}" Margin="12,0,0,0"/>
+                        <TextBlock x:Name="DupSummaryText" Text="" FontSize="12" VerticalAlignment="Center"
+                                   Foreground="{DynamicResource TextSecondaryBrush}" Margin="16,0,0,0"/>
+                    </StackPanel>
+                    <TextBlock Text="通过内容哈希确认重复（不是只看文件名）。扫描范围默认为图片、视频与下载目录。"
+                               FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,12,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                        <Button x:Name="BtnDupScan" Content="开始扫描" Style="{StaticResource PrimaryButton}"
+                                Padding="20,8" Click="BtnDupScan_Click"/>
+                        <Button x:Name="BtnDupKeepNewest" Content="保留最新，选中其余" Style="{StaticResource SecondaryButton}"
+                                Margin="12,0,0,0" Click="BtnDupKeepNewest_Click" Visibility="Collapsed"/>
+                        <Button x:Name="BtnDupClean" Content="把选中的移入回收站" Style="{StaticResource PrimaryButton}"
+                                Margin="12,0,0,0" Click="BtnDupClean_Click" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <StackPanel x:Name="DupList" Margin="0,14,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- 清理历史 -->
+            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0" x:Name="HistoryCard">
+                <StackPanel>
+                    <Grid>
+                        <TextBlock Text="清理历史" FontSize="15" FontWeight="Bold"
+                                   Foreground="{DynamicResource TextPrimaryBrush}" VerticalAlignment="Center"/>
+                        <Button x:Name="BtnClearHistory" Content="清空历史" Style="{StaticResource LinkButton}"
+                                HorizontalAlignment="Right" VerticalAlignment="Center" Click="BtnClearHistory_Click"/>
+                    </Grid>
+                    <StackPanel x:Name="HistoryList" Margin="0,12,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Windows 快捷工具 -->
+            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+                <StackPanel>
+                    <TextBlock Text="Windows 快捷工具" FontSize="15" FontWeight="Bold"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,0,0,4"/>
+                    <TextBlock Text="直达系统自带工具，安全无风险" FontSize="12"
+                               Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,6,0,0"/>
+                    <UniformGrid Columns="4" Margin="0,14,0,0" x:Name="ToolGrid"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,239 @@
+<Window x:Class="CleanMaster.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+        Title="清理优化大师" Height="880" Width="1360" MinHeight="700" MinWidth="1120"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="CanResize"
+        Background="{DynamicResource WindowBgBrush}"
+        Icon="Assets/app.ico"
+        FontFamily="Microsoft YaHei UI"
+        TextOptions.TextFormattingMode="Ideal"
+        UseLayoutRounding="True">
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome CaptionHeight="0" ResizeBorderThickness="6"
+                            GlassFrameThickness="0" CornerRadius="0"
+                            UseAeroCaptionButtons="False"/>
+    </shell:WindowChrome.WindowChrome>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="228"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ============ 侧边栏 ============ -->
+        <Border Grid.Column="0" Background="{DynamicResource SidebarBgBrush}"
+                BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="0,0,1,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Logo -->
+                <StackPanel Grid.Row="0" Margin="0,42,0,26" HorizontalAlignment="Center">
+                    <Border Width="62" Height="62" CornerRadius="17"
+                            Background="{DynamicResource PrimaryGradientBrush}"
+                            HorizontalAlignment="Center">
+                        <Path Data="{StaticResource BroomIcon}" Stroke="White" StrokeThickness="2.4"
+                              StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                              Width="32" Height="32" Stretch="Uniform"/>
+                    </Border>
+                    <TextBlock Text="清理优化大师" FontSize="17" FontWeight="Bold"
+                               Foreground="{DynamicResource TextPrimaryBrush}"
+                               HorizontalAlignment="Center" Margin="0,14,0,0"/>
+                    <TextBlock Text="清理 · 优化 · 更流畅" FontSize="11.5"
+                               Foreground="{DynamicResource TextTertiaryBrush}"
+                               HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <!-- 导航 -->
+                <StackPanel Grid.Row="1" Margin="0,6,0,0">
+                    <RadioButton x:Name="NavHome" Style="{StaticResource NavRadio}" GroupName="nav"
+                                 IsChecked="True" Tag="Home" Click="Nav_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource HomeIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
+                                  StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                                  Width="18" Height="18" Stretch="Uniform"/>
+                            <TextBlock Text="首页" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="NavScan" Style="{StaticResource NavRadio}" GroupName="nav"
+                                 Tag="SmartScan" Click="Nav_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource ScanIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
+                                  StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+                                  Width="18" Height="18" Stretch="Uniform"/>
+                            <TextBlock Text="智能扫描" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="NavClean" Style="{StaticResource NavRadio}" GroupName="nav"
+                                 Tag="CleanSpace" Click="Nav_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource CleanIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
+                                  StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                                  Width="18" Height="18" Stretch="Uniform"/>
+                            <TextBlock Text="清理空间" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="NavSpace" Style="{StaticResource NavRadio}" GroupName="nav"
+                                 Tag="SpaceAnalysis" Click="Nav_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource PieIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
+                                  StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                                  Width="18" Height="18" Stretch="Uniform"/>
+                            <TextBlock Text="空间分析" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="NavStartup" Style="{StaticResource NavRadio}" GroupName="nav"
+                                 Tag="Startup" Click="Nav_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource PowerIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
+                                  StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                                  Width="18" Height="18" Stretch="Uniform"/>
+                            <TextBlock Text="启动项" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="NavApps" Style="{StaticResource NavRadio}" GroupName="nav"
+                                 Tag="Apps" Click="Nav_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource AppsIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
+                                  StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                                  Width="18" Height="18" Stretch="Uniform"/>
+                            <TextBlock Text="应用管理" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="NavToolbox" Style="{StaticResource NavRadio}" GroupName="nav"
+                                 Tag="Toolbox" Click="Nav_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource ToolboxIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
+                                  StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                                  Width="18" Height="18" Stretch="Uniform"/>
+                            <TextBlock Text="工具箱" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton x:Name="NavSettings" Style="{StaticResource NavRadio}" GroupName="nav"
+                                 Tag="Settings" Click="Nav_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{StaticResource GearIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
+                                  StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                                  Width="18" Height="18" Stretch="Uniform"/>
+                            <TextBlock Text="设置" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </RadioButton>
+                </StackPanel>
+
+                <TextBlock Grid.Row="2" Text="v1.0.0" FontSize="11.5"
+                           Foreground="{DynamicResource TextTertiaryBrush}"
+                           Margin="22,0,0,18"/>
+            </Grid>
+        </Border>
+
+        <!-- ============ 右侧 ============ -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- 标题栏 -->
+            <Grid Grid.Row="0">
+                <Border x:Name="DragArea" Background="Transparent"
+                        MouseLeftButtonDown="TitleBar_MouseDown"
+                        MouseLeftButtonUp="TitleBar_MouseUp"
+                        MouseMove="TitleBar_MouseMove"/>
+                <TextBlock x:Name="WindowTitleText" Text="首页" FontSize="13.5"
+                           Foreground="{DynamicResource TextSecondaryBrush}"
+                           VerticalAlignment="Center" Margin="26,0,0,0" IsHitTestVisible="False"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
+                            VerticalAlignment="Stretch" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <Button x:Name="BtnMin" Width="46" Height="52" Click="BtnMin_Click"
+                            ToolTip="最小化">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="bd" Background="Transparent">
+                                    <Path Data="{StaticResource MinGlyph}"
+                                          Stroke="{DynamicResource TextSecondaryBrush}"
+                                          StrokeThickness="1.4" Width="14" Height="14" Stretch="None"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="bd" Property="Background" Value="{DynamicResource ItemHoverBrush}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnMax" Width="46" Height="52" Click="BtnMax_Click"
+                            ToolTip="最大化">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="bd" Background="Transparent">
+                                    <Path x:Name="glyph" Data="{StaticResource MaxGlyph}"
+                                          Stroke="{DynamicResource TextSecondaryBrush}"
+                                          StrokeThickness="1.4" Width="14" Height="14" Stretch="None"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="bd" Property="Background" Value="{DynamicResource ItemHoverBrush}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnClose" Width="46" Height="52" Click="BtnClose_Click"
+                            ToolTip="关闭">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="bd" Background="Transparent">
+                                    <Path Data="{StaticResource CloseGlyph}"
+                                          Stroke="{DynamicResource TextSecondaryBrush}"
+                                          StrokeThickness="1.4" Width="14" Height="14" Stretch="None"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="bd" Property="Background" Value="{DynamicResource DangerBrush}"/>
+                                        <Setter Property="Panel.ZIndex" Value="1"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <!-- 内容 -->
+            <Grid Grid.Row="1">
+                <Border Background="{DynamicResource PageBgBrush}" CornerRadius="18,0,0,0">
+                    <Frame x:Name="PageHost" Margin="24,20,24,20"
+                           NavigationUIVisibility="Hidden"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Stretch"
+                           Focusable="False"/>
+                </Border>
+
+                <!-- Toast -->
+                <Border x:Name="Toast" Visibility="Collapsed" HorizontalAlignment="Center"
+                        VerticalAlignment="Top" Margin="0,18,0,0"
+                        Background="{DynamicResource CardBgBrush}" CornerRadius="12"
+                        BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="1"
+                        Padding="18,11" MaxWidth="520">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="18" ShadowDepth="3" Opacity="0.22"/>
+                    </Border.Effect>
+                    <StackPanel Orientation="Horizontal">
+                        <Path x:Name="ToastIcon" Data="{StaticResource CheckIcon}"
+                              Stroke="{DynamicResource SuccessBrush}" StrokeThickness="2"
+                              StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                              Width="16" Height="16" Stretch="Uniform" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="ToastText" Text="" Margin="10,0,0,0" FontSize="13"
+                                   Foreground="{DynamicResource TextPrimaryBrush}"
+                                   VerticalAlignment="Center" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

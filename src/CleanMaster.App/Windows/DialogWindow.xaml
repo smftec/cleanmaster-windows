@@ -1,0 +1,24 @@
+<Window x:Class="CleanMaster.App.Windows.DialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ShowInTaskbar="False" SizeToContent="Height"
+        MinWidth="420" MaxWidth="560" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" ShowActivated="True">
+    <Border Background="{DynamicResource CardBgBrush}" CornerRadius="16"
+            BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="1"
+            Margin="16" Padding="26,24">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="24" ShadowDepth="4" Opacity="0.28"/>
+        </Border.Effect>
+        <StackPanel>
+            <TextBlock x:Name="TitleText" Text="标题" FontSize="17" FontWeight="Bold"
+                       Foreground="{DynamicResource TextPrimaryBrush}"/>
+            <TextBlock x:Name="MessageText" Text="内容" FontSize="13.5" LineHeight="22"
+                       Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,12,0,0"
+                       TextWrapping="Wrap"/>
+            <StackPanel x:Name="ButtonRow" Orientation="Horizontal" HorizontalAlignment="Right"
+                        Margin="0,24,0,0"/>
+        </StackPanel>
+    </Border>
+</Window>

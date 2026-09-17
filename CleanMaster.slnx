@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CleanMaster.App/CleanMaster.App.csproj" />
+    <Project Path="src/CleanMaster.Core/CleanMaster.Core.csproj" />
+  </Folder>
+</Solution>

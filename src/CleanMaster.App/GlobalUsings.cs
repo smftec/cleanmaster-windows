@@ -1,0 +1,21 @@
+// 全局别名：解决 WPF + WinForms 同时引用导致的类型歧义
+global using System.IO;
+global using Brush = System.Windows.Media.Brush;
+global using Brushes = System.Windows.Media.Brushes;
+global using Color = System.Windows.Media.Color;
+global using Button = System.Windows.Controls.Button;
+global using CheckBox = System.Windows.Controls.CheckBox;
+global using RadioButton = System.Windows.Controls.RadioButton;
+global using ToggleButton = System.Windows.Controls.Primitives.ToggleButton;
+global using ComboBox = System.Windows.Controls.ComboBox;
+global using ComboBoxItem = System.Windows.Controls.ComboBoxItem;
+global using Image = System.Windows.Controls.Image;
+global using Orientation = System.Windows.Controls.Orientation;
+global using MessageBox = System.Windows.MessageBox;
+global using Point = System.Windows.Point;
+global using MouseEventArgs = System.Windows.Input.MouseEventArgs;
+global using HorizontalAlignment = System.Windows.HorizontalAlignment;
+global using VerticalAlignment = System.Windows.VerticalAlignment;
+global using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
+global using Path = System.IO.Path;
+global using Application = System.Windows.Application;

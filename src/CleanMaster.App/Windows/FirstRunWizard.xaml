@@ -1,0 +1,66 @@
+<Window x:Class="CleanMaster.App.Windows.FirstRunWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Width="620" SizeToContent="Height" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" ShowInTaskbar="False">
+    <Border Background="{DynamicResource CardBgBrush}" CornerRadius="18"
+            BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="1"
+            Margin="16" Padding="38,34">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="26" ShadowDepth="5" Opacity="0.3"/>
+        </Border.Effect>
+        <StackPanel>
+            <!-- 步骤指示 -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,18">
+                <Ellipse x:Name="Dot1" Width="9" Height="9" Fill="{DynamicResource PrimaryBrush}" Margin="0,0,8,0"/>
+                <Ellipse x:Name="Dot2" Width="9" Height="9" Fill="{DynamicResource TrackBrush}" Margin="0,0,8,0"/>
+                <Ellipse x:Name="Dot3" Width="9" Height="9" Fill="{DynamicResource TrackBrush}"/>
+            </StackPanel>
+
+            <!-- 第 1 步：欢迎 -->
+            <StackPanel x:Name="Step1">
+                <Border Width="66" Height="66" CornerRadius="18"
+                        Background="{DynamicResource PrimaryGradientBrush}" HorizontalAlignment="Center">
+                    <Path Data="{StaticResource BroomIcon}" Stroke="White" StrokeThickness="2.4"
+                          StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                          Width="34" Height="34" Stretch="Uniform"/>
+                </Border>
+                <TextBlock Text="欢迎使用清理优化大师" FontSize="22" FontWeight="Bold"
+                           Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center" Margin="0,18,0,0"/>
+                <TextBlock FontSize="13.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                           TextAlignment="Center" LineHeight="24" Margin="0,14,0,0"
+                           Text="清得明白，优化得安心。&#x0a;我们只做可解释、可预览、可恢复的清理，不搞虚假加速。"/>
+            </StackPanel>
+
+            <!-- 第 2 步：隐私说明 -->
+            <StackPanel x:Name="Step2" Visibility="Collapsed">
+                <TextBlock Text="隐私承诺" FontSize="22" FontWeight="Bold"
+                           Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center"/>
+                <TextBlock FontSize="13.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                           LineHeight="26" Margin="0,16,0,0" TextWrapping="Wrap">
+                    · 所有扫描结果、文件名、路径都只保存在你的电脑本地。<LineBreak/>
+                    · 默认不开启任何数据上报，也不上传任何文件内容。<LineBreak/>
+                    · 关键清理项进入隔离区，7~30 天内可随时恢复。<LineBreak/>
+                    · 删除前永远先预览，绝不静默删除你的文件。
+                </TextBlock>
+            </StackPanel>
+
+            <!-- 第 3 步：自动清理 -->
+            <StackPanel x:Name="Step3" Visibility="Collapsed">
+                <TextBlock Text="开启自动清理？" FontSize="22" FontWeight="Bold"
+                           Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center"/>
+                <TextBlock FontSize="13.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                           LineHeight="24" TextAlignment="Center" Margin="0,14,0,0"
+                           Text="仅自动清理系统临时文件与应用缓存等安全项目，每周一次。"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,22,0,0">
+                    <Button x:Name="BtnAutoYes" Content="开启自动清理" Style="{StaticResource PrimaryButton}" MinWidth="150" Margin="0,0,12,0" Click="BtnAutoYes_Click"/>
+                    <Button x:Name="BtnAutoNo" Content="暂不开启" Style="{StaticResource SecondaryButton}" MinWidth="110" Click="BtnAutoNo_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Button x:Name="BtnNext" Content="开始体验" Style="{StaticResource PrimaryButton}"
+                    MinWidth="170" HorizontalAlignment="Center" Margin="0,30,0,0" Click="BtnNext_Click"/>
+        </StackPanel>
+    </Border>
+</Window>
