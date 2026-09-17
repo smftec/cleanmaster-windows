@@ -1,19 +1,29 @@
 ; 清理优化大师 Windows 安装包脚本（Inno Setup 6）
-; 使用方法：
-;   1. 先运行 scripts\publish.ps1 生成 dist\CleanMaster-1.0.0-win-x64-selfcontained
-;   2. 用 Inno Setup Compiler (ISCC.exe) 编译本脚本：
-;        ISCC.exe scripts\setup.iss
-;   3. 产物：dist\Output\CleanMasterSetup-1.0.0.exe
-; 正式发布前请用 signtool 对安装包与所有 EXE/DLL 签名（PRD 第 44/54 章）。
+; 本地构建（先运行 scripts\publish.ps1）：
+;     ISCC.exe scripts\setup.iss
+; CI/自定义版本构建：
+;     ISCC.exe /DMyAppVersion=1.2.3 /DSrcDir="C:\path\to\publish" scripts\setup.iss
+; 正式发布前请对 CleanMaster.exe、所有 DLL 与安装包本体做代码签名。
+
+#ifndef MyAppVersion
+#define MyAppVersion "1.0.0"
+#endif
+
+#ifndef SrcDir
+#define SrcDir "..\dist\CleanMaster-" + MyAppVersion + "-win-x64-selfcontained"
+#endif
+
+#ifndef OutBase
+#define OutBase "CleanMasterSetup-" + MyAppVersion
+#endif
 
 #define MyAppName "清理优化大师"
 #define MyAppNameEn "CleanMaster"
-#define MyAppVersion "1.0.0"
 #define MyAppPublisher "CleanMaster"
 #define MyAppExeName "CleanMaster.exe"
 
 [Setup]
-AppId={{8A6C1E42-5B7D-4E93-9A2C-CLEANMASTER01}
+AppId={{47D73EFF-277F-4B0E-B37E-4902F848128A}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppVerName={#MyAppName} v{#MyAppVersion}
@@ -22,18 +32,19 @@ DefaultDirName={autopf}\{#MyAppNameEn}
 DefaultGroupName={#MyAppName}
 UninstallDisplayName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
-OutputDir=..\dist\Output
-OutputBaseFilename=CleanMasterSetup-{#MyAppVersion}
+OutputDir=..\dist
+OutputBaseFilename={#OutBase}
 Compression=lzma2/max
 SolidCompression=yes
 WizardStyle=modern
-; 面向普通用户，默认单用户可装；勾选 PrivilegesRequiredOverridesAllowed 允许安装时选"为所有用户"
+; 默认当前用户安装（免管理员）；需要装给所有用户时可用 /ALLUSERS 命令行参数
 PrivilegesRequired=lowest
-PrivilegesRequiredOverridesAllowed=dialog
+PrivilegesRequiredOverridesAllowed=commandline
 MinVersion=10.0
 ArchitecturesInstallIn64BitMode=x64compatible
 SetupIconFile=..\src\CleanMaster.App\Assets\app.ico
-WizardUninstallWarning=no
+; 安装时展示 GPL-3.0 许可证
+LicenseFile=..\LICENSE
 
 ; ===== 代码签名 =====
 ; 编译前在 Inno Setup 中配置签名工具（菜单 Tools → Configure Sign Tools...）：
@@ -44,11 +55,12 @@ WizardUninstallWarning=no
 ; SignedUninstaller=yes
 
 [Languages]
-Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
+; 简体中文语言文件随仓库提供（scripts\ChineseSimplified.isl，Inno 6.5+）
+Name: "chinese"; MessagesFile: "ChineseSimplified.isl"
+Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
-; 自包含发布目录的全部文件
-Source: "..\dist\CleanMaster-{#MyAppVersion}-win-x64-selfcontained\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#SrcDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -67,5 +79,5 @@ Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: 
 Filename: "{app}\{#MyAppExeName}"; Description: "立即运行 {#MyAppName}"; Flags: nowait postinstall skipifsilent
 
 [UninstallRun]
-; 卸载时不删除用户数据（隔离区/历史保存在 %LOCALAPPDATA%\CleanMaster），
-; 如需彻底清理可手动删除该目录 —— 这是刻意的安全设计。
+; 卸载刻意保留用户数据（隔离区/历史在 %LOCALAPPDATA%\CleanMaster），
+; 隔离区文件卸载后仍可重装恢复 —— 这是安全设计。
