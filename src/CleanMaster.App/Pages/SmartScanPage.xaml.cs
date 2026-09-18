@@ -49,11 +49,11 @@ public partial class SmartScanPage : Page, IParamPage
         _scanning = true;
         _scanCts = new CancellationTokenSource();
         Show(PanelScanning);
-        ScanStageText.Text = "准备扫描…";
+        ScanStageText.Text = Services.Loc.T("scan.preparing");
         ScanDetailText.Text = "";
         ScanProgressBar.Value = 0;
         ScanPercentText.Text = "0%";
-        ScanFoundText.Text = "已发现 —";
+        ScanFoundText.Text = Services.Loc.T("scan.found");
 
         var scanner = new ScannerService();
         var ctx = scanner.BuildContext(_scanCts.Token, detail =>
@@ -64,7 +64,7 @@ public partial class SmartScanPage : Page, IParamPage
         var lastBytes = 0L;
         var progress = new Progress<ScanProgress>(p =>
         {
-            ScanStageText.Text = p.Stage;
+            ScanStageText.Text = Services.Loc.RuleName(ctx != null ? "" : "", p.Stage) == p.Stage ? p.Stage : p.Stage;
             ScanDetailText.Text = p.Stage switch
             {
                 "应用缓存" => "正在分析应用缓存目录",
@@ -92,14 +92,14 @@ public partial class SmartScanPage : Page, IParamPage
         {
             _scanning = false;
             Show(PanelIdle);
-            _main.ShowToast("已停止扫描", ToastType.Info);
+            _main.ShowToast(Services.Loc.T("toast.scanstopped"), ToastType.Info);
             return;
         }
         catch (Exception ex)
         {
             _scanning = false;
             Show(PanelIdle);
-            _main.ShowToast("扫描失败：" + ex.Message, ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("toast.scanfailed") + ex.Message, ToastType.Warning);
             return;
         }
         _scanning = false;
@@ -128,11 +128,11 @@ public partial class SmartScanPage : Page, IParamPage
 
         foreach (var (title, note, predicate) in new (string, string, Func<(IScanRule rule, RuleResult res), bool>)[]
         {
-            ("可以安全清理", "这些是系统与应用产生的临时数据，清理无风险",
+            (Services.Loc.T("scan.group.safe"), Services.Loc.T("scan.group.safe.note"),
                 p => p.res.Group == RuleGroup.SystemJunk),
-            ("浏览器与应用缓存", "缓存类数据，应用会在需要时重新下载",
+            (Services.Loc.T("scan.group.cache"), Services.Loc.T("scan.group.cache.note"),
                 p => p.res.Group is RuleGroup.BrowserCache or RuleGroup.AppCache),
-            ("建议检查", "清理前请确认这些内容不再需要",
+            (Services.Loc.T("scan.group.check"), Services.Loc.T("scan.group.check.note"),
                 p => p.res.Group == RuleGroup.RecycleBin),
         })
         {
@@ -144,9 +144,9 @@ public partial class SmartScanPage : Page, IParamPage
         }
 
         long total = results.Where(r => r.Error == null).Sum(r => r.TotalSize);
-        ResultTitleText.Text = total > 0 ? $"扫描完成，发现可释放 {SizeText.OfBytes(total)}" : "扫描完成，很干净！";
-        ResultSubText.Text = $"{DateTime.Now:yyyy-MM-dd HH:mm} · 共扫描 {results.Count} 类项目";
-        SelCountText.Text = "0 项";
+        ResultTitleText.Text = total > 0 ? string.Format(Services.Loc.T("result.title.found"), SizeText.OfBytes(total)) : Services.Loc.T("result.title.clean");
+        ResultSubText.Text = string.Format(Services.Loc.T("result.sub"), DateTime.Now.ToString("yyyy-MM-dd HH:mm"), results.Count);
+        SelCountText.Text = "0";
         SelSizeText.Text = "0 B";
     }
 
@@ -216,19 +216,19 @@ public partial class SmartScanPage : Page, IParamPage
         line1.Children.Add(BuildChip(vm.RiskText, vm.RiskBrush, new Thickness(10, 0, 0, 0)));
         if (vm.RunningCount > 0)
         {
-            line1.Children.Add(BuildChip($"{vm.RunningCount} 个相关进程运行中", (Brush)FindResource("WarningBrush"),
+            line1.Children.Add(BuildChip(string.Format(Services.Loc.T("row.running"), vm.RunningCount), (Brush)FindResource("WarningBrush"),
                 new Thickness(8, 0, 0, 0), soft: true));
         }
         mid.Children.Add(line1);
         var reason = new TextBlock
         {
-            Text = vm.Reason + (vm.CanRestore ? " · 可进隔离区恢复" : " · 直接删除"),
+            Text = vm.Reason + (vm.CanRestore ? " · " + Services.Loc.T("row.restore") : " · " + Services.Loc.T("row.direct")),
             FontSize = 11.5,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 3, 0, 0),
             TextTrimming = TextTrimming.CharacterEllipsis,
         };
-        ToolTipService.SetToolTip(reason, $"{vm.Reason}\n清理影响：{vm.Impact}");
+        ToolTipService.SetToolTip(reason, vm.Reason + "\n\n" + string.Format(Services.Loc.T("row.impact.tip"), vm.Impact));
         mid.Children.Add(reason);
         Grid.SetColumn(mid, 1);
 
@@ -369,7 +369,7 @@ public partial class SmartScanPage : Page, IParamPage
             count += r.Res.FileCount;
             bytes += r.Res.TotalSize;
         }
-        SelCountText.Text = $"{count} 项";
+        SelCountText.Text = string.Format(Services.Loc.T("common.n.items"), count);
         SelSizeText.Text = SizeText.OfBytes(bytes);
     }
 
@@ -381,28 +381,28 @@ public partial class SmartScanPage : Page, IParamPage
         var selected = _rows.Where(r => r.Selected).ToList();
         if (selected.Count == 0)
         {
-            _main.ShowToast("请先勾选要清理的项目", ToastType.Info);
+            _main.ShowToast(Services.Loc.T("toast.noselect"), ToastType.Info);
             return;
         }
 
         // 高风险确认（L2 默认未勾选，此处兜底提示）
         var confirmRules = selected.Where(r => r.Risk == RiskLevel.Confirm).ToList();
-        string confirmMsg = $"即将清理 {SizeText.OfBytes(selected.Sum(r => r.Res.TotalSize))} 的数据。";
+        string confirmMsg = string.Format(Services.Loc.T("dlg.clean.amount"), SizeText.OfBytes(selected.Sum(r => r.Res.TotalSize)));
         if (confirmRules.Count > 0)
         {
-            confirmMsg += "\n\n包含需要确认的项目：\n" +
-                          string.Join("\n", confirmRules.Select(r => $"· {r.Name}（{r.SizeText}）"));
+            confirmMsg += Services.Loc.T("dlg.clean.confirmitems") + "\n" +
+                          string.Join("\n", confirmRules.Select(r => "· " + Services.Loc.RuleName(r.Res.RuleId, r.Name) + "（" + r.SizeText + "）"));
         }
-        confirmMsg += "\n\n可恢复类文件将进入隔离区。";
-        if (!DialogService.Confirm(_main, "确认清理已选项目？", confirmMsg, "开始清理", "取消"))
+        confirmMsg += "\n\n" + Services.Loc.T("dlg.clean.quarantinehint");
+        if (!DialogService.Confirm(_main, Services.Loc.T("dlg.clean.selected.title"), confirmMsg, Services.Loc.T("btn.clean.start"), Services.Loc.T("btn.cancel")))
             return;
 
         _cleaning = true;
         _cleanCts = new CancellationTokenSource();
         Show(PanelCleaning);
         CleanProgressBar.Value = 0;
-        CleanFreedText.Text = "已释放 —";
-        CleanTitleText.Text = "正在清理…";
+        CleanFreedText.Text = Services.Loc.T("clean.freed");
+        CleanTitleText.Text = Services.Loc.T("clean.title");
 
         var svc = new CleanService();
         var requests = selected.Select(r => new CleanRequestRule
@@ -431,27 +431,27 @@ public partial class SmartScanPage : Page, IParamPage
         {
             _cleaning = false;
             Show(PanelResults);
-            _main.ShowToast("清理已取消", ToastType.Info);
+            _main.ShowToast(Services.Loc.T("toast.cleancancelled"), ToastType.Info);
             return;
         }
         catch (Exception ex)
         {
             _cleaning = false;
             Show(PanelResults);
-            _main.ShowToast("清理失败：" + ex.Message, ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("toast.cleanfailed") + ex.Message, ToastType.Warning);
             return;
         }
         _cleaning = false;
 
-        DoneTitleText.Text = summary.Cancelled ? "清理已中断" : summary.ResultText == "成功" ? "清理完成" : "清理完成（部分跳过）";
-        DoneFreedText.Text = $"共释放 {SizeText.OfBytes(summary.FreedBytes)}";
+        DoneTitleText.Text = summary.Cancelled ? Services.Loc.T("done.cancelled") : summary.FailCount == 0 && summary.SkipCount == 0 ? Services.Loc.T("done.title") : Services.Loc.T("done.partial");
+        DoneFreedText.Text = string.Format(Services.Loc.T("done.freed.total"), SizeText.OfBytes(summary.FreedBytes));
         DoneOkText.Text = summary.SuccessCount.ToString();
         DoneQuarText.Text = summary.QuarantineCount.ToString();
         DoneSkipText.Text = summary.SkipCount.ToString();
         DoneFailText.Text = summary.FailCount.ToString();
         DoneNoteText.Text = summary.QuarantineCount > 0
-            ? $"隔离区文件保留 {SettingsService.Current.QuarantineDays} 天，可随时在工具箱中恢复。"
-            : "跳过的文件正在被其他程序使用，关闭相关程序后下次清理即可移除。";
+            ? string.Format(Services.Loc.T("done.note.quarantine"), SettingsService.Current.QuarantineDays)
+            : Services.Loc.T("done.note.skip");
         Show(PanelDone);
 
         // 后台重扫以刷新缓存
@@ -515,13 +515,15 @@ public sealed class ScanRowVM : INotifyPropertyChanged
     public IScanRule Rule { get; }
     public RuleResult Res { get; }
 
-    public string Name => Res.Name;
+    public string Name => Services.Loc.RuleName(Res.RuleId, Res.Name);
     public string SizeText => CleanMaster.Core.Utils.SizeText.OfBytes(Res.TotalSize);
-    public string CountText => $"{Res.FileCount} 个文件";
-    public string Reason => Res.Reason;
-    public string Impact => Res.Impact;
+    public string CountText => string.Format(Services.Loc.T("row.files"), Res.FileCount);
+    public string Reason => Services.Loc.RuleReason(Res.RuleId, Res.Reason);
+    public string RestoreText => Services.Loc.T("row.restore");
+    public string DirectText => Services.Loc.T("row.direct");
+    public string Impact => Services.Loc.RuleImpact(Res.RuleId, Res.Impact);
     public bool CanRestore => Res.CanRestore;
-    public string RiskText => RiskLevelText.Of(Res.Risk);
+    public string RiskText => Res.Risk switch { RiskLevel.Safe => Services.Loc.T("risk.safe"), RiskLevel.Low => Services.Loc.T("risk.low"), RiskLevel.Confirm => Services.Loc.T("risk.confirm"), _ => Services.Loc.T("risk.high") };
     public System.Windows.Media.Brush RiskBrush => Res.Risk switch
     {
         RiskLevel.Confirm => System.Windows.Media.Brushes.Orange,

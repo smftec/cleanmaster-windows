@@ -16,12 +16,12 @@ public sealed class NotifyIconService : IDisposable
         _icon = new System.Windows.Forms.NotifyIcon
         {
             Icon = System.Drawing.Icon.ExtractAssociatedIcon(Environment.ProcessPath!),
-            Text = "清理优化大师",
+            Text = "CleanMaster",
             Visible = true,
         };
         var menu = new System.Windows.Forms.ContextMenuStrip();
-        menu.Items.Add("打开清理优化大师", null, (s, e) => _main.RestoreFromTray());
-        menu.Items.Add("快速扫描", null, (s, e) =>
+        menu.Items.Add(Services.Loc.T("tray.open"), null, (s, e) => _main.RestoreFromTray());
+        menu.Items.Add(Services.Loc.T("tray.quickscan"), null, (s, e) =>
         {
             _main.RestoreFromTray();
             _main.Navigate(PageKey.SmartScan);
@@ -36,17 +36,21 @@ public sealed class NotifyIconService : IDisposable
         {
             SettingsService.Current.AutoCleanEnabled = !SettingsService.Current.AutoCleanEnabled;
             autoItem.Checked = SettingsService.Current.AutoCleanEnabled;
-            autoItem.Text = SettingsService.Current.AutoCleanEnabled ? "自动清理：开" : "自动清理：关";
+            autoItem.Text = AutoCleanText();
+            autoItem.Text = AutoCleanText();
             SettingsService.Save();
         };
         menu.Items.Add(autoItem);
         menu.Items.Add(new System.Windows.Forms.ToolStripSeparator());
-        menu.Items.Add("退出", null, (s, e) => { _main.ForceClose(); });
+        menu.Items.Add(Services.Loc.T("tray.exit"), null, (s, e) => { _main.ForceClose(); });
         _icon.ContextMenuStrip = menu;
         _icon.DoubleClick += (s, e) => _main.RestoreFromTray();
 
         _main.StateChanged += (s, e) => { };
     }
+
+    internal static string AutoCleanText() =>
+        Services.Loc.T("tray.autoclean") + (SettingsService.Current.AutoCleanEnabled ? Services.Loc.T("tray.on") : Services.Loc.T("tray.off"));
 
     public void Dispose()
     {

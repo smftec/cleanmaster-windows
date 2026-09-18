@@ -22,7 +22,7 @@ public partial class FirstRunWizard : Window
             Step1.Visibility = Visibility.Collapsed;
             Step2.Visibility = Visibility.Visible;
             Dot2.Fill = (System.Windows.Media.Brush)FindResource("PrimaryBrush");
-            BtnNext.Content = "下一步";
+            BtnNext.Content = Services.Loc.T("wizard.next2");
         }
         else if (_step == 3)
         {

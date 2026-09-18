@@ -19,14 +19,14 @@ public partial class CleanSpacePage : Page, IParamPage
     private readonly Dictionary<int, List<ScanRowVM>> _tabRows = new();
     private readonly Dictionary<int, List<(IScanRule rule, RuleResult res)>> _tabResults = new();
 
-    private static readonly string[] TabNotes =
-    [
-        "系统与应用产生的临时文件、日志与崩溃报告，默认只勾选安全项目",
-        "聊天与办公软件的缓存和日志，不会触碰聊天记录与文档",
-        "浏览器为加速上网产生的缓存，不影响登录状态、密码与历史",
-        "涉及个人记录，默认全部不勾选，请仔细确认影响后再清理",
-        "清空回收站前请确认里面的文件不再需要",
-    ];
+    private static string[] TabNotes() => new[]
+    {
+        Services.Loc.T("clean.tabnote.0"),
+        Services.Loc.T("clean.tabnote.1"),
+        Services.Loc.T("clean.tabnote.2"),
+        Services.Loc.T("clean.tabnote.3"),
+        Services.Loc.T("clean.tabnote.4"),
+    };
 
     public CleanSpacePage(MainWindow main)
     {
@@ -53,7 +53,7 @@ public partial class CleanSpacePage : Page, IParamPage
         RecycleCard.Visibility = tab == 4 ? Visibility.Visible : Visibility.Collapsed;
         RulesHost.Visibility = tab == 4 ? Visibility.Collapsed : Visibility.Visible;
         FooterBar.Visibility = tab == 4 ? Visibility.Collapsed : Visibility.Visible;
-        TabNoteText.Text = TabNotes[tab];
+        TabNoteText.Text = TabNotes()[tab];
 
         if (tab == 4)
         {
@@ -102,7 +102,7 @@ public partial class CleanSpacePage : Page, IParamPage
         catch (OperationCanceledException) { return; }
         catch (Exception ex)
         {
-            _main.ShowToast("扫描失败：" + ex.Message, ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("toast.scanfailed") + ex.Message, ToastType.Warning);
         }
         GroupScanPanel.Visibility = Visibility.Collapsed;
         RulesHost.Visibility = Visibility.Visible;
@@ -121,8 +121,8 @@ public partial class CleanSpacePage : Page, IParamPage
         }
         EmptyGroupText.Visibility = found ? Visibility.Collapsed : Visibility.Visible;
         EmptyGroupText.Text = _tabResults.ContainsKey(tab)
-            ? "这一类很干净，没有发现可清理的项目"
-            : "点击下方「扫描本组」开始检查这一类项目";
+            ? Services.Loc.T("clean.empty.clean")
+            : Services.Loc.T("clean.empty.group");
         UpdateSelectionSummary();
     }
 
@@ -148,10 +148,10 @@ public partial class CleanSpacePage : Page, IParamPage
             _main.ShowToast("请先勾选要清理的项目", ToastType.Info);
             return;
         }
-        string confirmMsg = $"即将清理 {rows.Count} 类项目，共 {SizeText.OfBytes(rows.Sum(r => r.Res.TotalSize))}。";
-        if (_tab == 3) confirmMsg += "\n\n隐私项清理后无法恢复，请确认已了解各项影响。";
-        confirmMsg += "\n可恢复类文件将进入隔离区。";
-        if (!Services.DialogService.Confirm(_main, "确认清理所选项？", confirmMsg, "开始清理"))
+        string confirmMsg = string.Format(Services.Loc.T("dlg.clean.nrules"), rows.Count, SizeText.OfBytes(rows.Sum(r => r.Res.TotalSize)));
+        if (_tab == 3) confirmMsg += "\n\n" + Services.Loc.T("clean.privacy.warn");
+        confirmMsg += "\n" + Services.Loc.T("dlg.clean.quarantinehint");
+        if (!Services.DialogService.Confirm(_main, Services.Loc.T("dlg.clean.selected.title"), confirmMsg, Services.Loc.T("btn.clean.start")))
             return;
 
         BtnCleanSel.IsEnabled = false;
@@ -165,8 +165,8 @@ public partial class CleanSpacePage : Page, IParamPage
                 Selected = r.Res.Items.ToList(),
             }).ToList();
             var summary = await svc.CleanAsync(requests, CancellationToken.None, null);
-            _main.ShowToast($"清理完成，释放 {SizeText.OfBytes(summary.FreedBytes)}" +
-                            (summary.SkipCount > 0 ? $"（跳过 {summary.SkipCount} 项）" : ""),
+            _main.ShowToast(string.Format(Services.Loc.T("toast.cleandone"), SizeText.OfBytes(summary.FreedBytes)) +
+                            (summary.SkipCount > 0 ? string.Format(Services.Loc.T("toast.skipped"), summary.SkipCount) : ""),
                             summary.FailCount > 0 ? ToastType.Warning : ToastType.Success);
             _tabRows.Remove(_tab);
             _tabResults.Remove(_tab);
@@ -174,7 +174,7 @@ public partial class CleanSpacePage : Page, IParamPage
         }
         catch (Exception ex)
         {
-            _main.ShowToast("清理失败：" + ex.Message, ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("toast.cleanfailed") + ex.Message, ToastType.Warning);
         }
         finally
         {
@@ -184,11 +184,11 @@ public partial class CleanSpacePage : Page, IParamPage
 
     private async Task RefreshRecycleAsync()
     {
-        RecycleInfoText.Text = "正在读取…";
+        RecycleInfoText.Text = Services.Loc.T("common.loading");
         var (size, count) = await Task.Run(() => Core.Utils.ShellUtil.QueryRecycleBin());
         RecycleInfoText.Text = count > 0
-            ? $"{count} 个项目，共占用 {SizeText.OfBytes(size)}"
-            : "回收站是空的";
+            ? string.Format(Services.Loc.T("recycle.info"), count, SizeText.OfBytes(size))
+            : Services.Loc.T("recycle.empty");
         BtnEmptyBin.IsEnabled = count > 0;
     }
 
@@ -196,13 +196,13 @@ public partial class CleanSpacePage : Page, IParamPage
     {
         var (size, count) = Core.Utils.ShellUtil.QueryRecycleBin();
         if (count == 0) return;
-        if (!Services.DialogService.Confirm(_main, "清空回收站？",
-            $"回收站中的 {count} 个文件（共 {SizeText.OfBytes(size)}）将被永久删除，无法恢复。", "永久删除", "取消", danger: true))
+        if (!Services.DialogService.Confirm(_main, Services.Loc.T("recycle.confirm.title"),
+            string.Format(Services.Loc.T("recycle.confirm.msg"), count, SizeText.OfBytes(size)), Services.Loc.T("btn.deleteperm"), Services.Loc.T("btn.cancel"), danger: true))
             return;
         BtnEmptyBin.IsEnabled = false;
         var ok = await Task.Run(() => Core.Utils.ShellUtil.EmptyRecycleBin());
         Core.Store.HistoryService.Add("Clean", $"清空了回收站（{count} 个项目）", "", size);
-        _main.ShowToast(ok ? "回收站已清空" : "清空失败", ok ? ToastType.Success : ToastType.Warning);
+        _main.ShowToast(ok ? Services.Loc.T("toast.binemptied") : Services.Loc.T("toast.failed"), ok ? ToastType.Success : ToastType.Warning);
         await RefreshRecycleAsync();
     }
 

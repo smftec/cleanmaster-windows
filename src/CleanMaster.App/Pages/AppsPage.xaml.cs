@@ -42,7 +42,7 @@ public partial class AppsPage : Page, IParamPage
         }
         catch (Exception ex)
         {
-            _main.ShowToast("读取应用列表失败：" + ex.Message, ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("toast.readfailed") + ex.Message, ToastType.Warning);
         }
         LoadingPanel.Visibility = Visibility.Collapsed;
         Render();
@@ -127,7 +127,7 @@ public partial class AppsPage : Page, IParamPage
         texts.Children.Add(nameLine);
         texts.Children.Add(new TextBlock
         {
-            Text = app.IsStoreApp ? "Microsoft Store 应用" : (app.InstallLocation is { Length: > 0 } ? app.InstallLocation : ""),
+            Text = app.IsStoreApp ? Services.Loc.T("apps.store") : (app.InstallLocation is { Length: > 0 } ? app.InstallLocation : ""),
             FontSize = 10.5,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             TextTrimming = TextTrimming.CharacterEllipsis,
@@ -151,7 +151,7 @@ public partial class AppsPage : Page, IParamPage
         // 大小
         var size = new TextBlock
         {
-            Text = app.SizeDisplay,
+            Text = app.EstimatedSize > 0 ? SizeText.OfBytes(app.EstimatedSize) : Services.Loc.T("apps.unknown"),
             FontSize = 12,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
@@ -172,7 +172,7 @@ public partial class AppsPage : Page, IParamPage
         // 卸载按钮
         var btn = new Button
         {
-            Content = "卸载",
+            Content = Services.Loc.T("btn.uninstall"),
             Style = (Style)FindResource("SmallSecondaryButton"),
             Margin = new Thickness(10, 0, 0, 0),
             VerticalAlignment = VerticalAlignment.Center,
@@ -206,20 +206,20 @@ public partial class AppsPage : Page, IParamPage
 
     private async Task UninstallAsync(InstalledApp app)
     {
-        if (!Services.DialogService.Confirm(_main, $"卸载 {app.DisplayName}？",
-            $"应用大小：{app.SizeDisplay}\n\n将启动应用自带的卸载程序，请在卸载向导中完成操作。", "开始卸载"))
+        if (!Services.DialogService.Confirm(_main, string.Format(Services.Loc.T("apps.uninstall.title"), app.DisplayName),
+            string.Format(Services.Loc.T("apps.uninstall.msg"), app.EstimatedSize > 0 ? SizeText.OfBytes(app.EstimatedSize) : Services.Loc.T("apps.unknown")), Services.Loc.T("apps.uninstall.start")))
             return;
 
         var err = _inventory.LaunchUninstall(app);
         if (err != null)
         {
-            _main.ShowToast("无法启动卸载程序：" + err, ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("apps.uninstall.failed") + err, ToastType.Warning);
             return;
         }
 
         // 等待卸载完成（轮询注册表条目是否消失，最多 5 分钟）
         LoadingPanel.Visibility = Visibility.Visible;
-        LoadingText.Text = $"等待「{app.DisplayName}」卸载完成…\n完成卸载向导后会自动继续";
+        LoadingText.Text = string.Format(Services.Loc.T("apps.waiting"), app.DisplayName);
         bool gone = false;
         await Task.Run(async () =>
         {
@@ -234,12 +234,12 @@ public partial class AppsPage : Page, IParamPage
 
         if (!gone)
         {
-            _main.ShowToast("未检测到卸载完成，可能已取消", ToastType.Info);
+            _main.ShowToast(Services.Loc.T("apps.notdetected"), ToastType.Info);
             return;
         }
 
-        HistoryService.Add("Uninstall", $"卸载了应用「{app.DisplayName}」", app.Publisher, app.EstimatedSize);
-        _main.ShowToast($"「{app.DisplayName}」已卸载");
+        HistoryService.Add("Uninstall", string.Format(Services.Loc.T("apps.uninstalled.log"), app.DisplayName), app.Publisher, app.EstimatedSize);
+        _main.ShowToast(string.Format(Services.Loc.T("apps.uninstalled.toast"), app.DisplayName));
         await LoadAsync();
 
         // 残留扫描

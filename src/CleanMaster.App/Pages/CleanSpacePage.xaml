@@ -12,18 +12,18 @@
 
         <!-- 标题 + 标签页 -->
         <StackPanel Grid.Row="0" Margin="4,2,4,0">
-            <TextBlock Text="清理空间" FontSize="21" FontWeight="Bold"
+            <TextBlock Text="{DynamicResource nav.clean}" FontSize="21" FontWeight="Bold"
                        Foreground="{DynamicResource TextPrimaryBrush}"/>
             <StackPanel x:Name="TabBar" Orientation="Horizontal" Margin="0,16,0,0">
-                <RadioButton Content="系统垃圾" Style="{StaticResource PillTab}" GroupName="cstabs"
+                <RadioButton Content="{DynamicResource clean.tab.system}" Style="{StaticResource PillTab}" GroupName="cstabs"
                              IsChecked="True" Tag="0" Checked="Tab_Checked"/>
-                <RadioButton Content="应用缓存" Style="{StaticResource PillTab}" GroupName="cstabs"
+                <RadioButton Content="{DynamicResource clean.tab.app}" Style="{StaticResource PillTab}" GroupName="cstabs"
                              Tag="1" Checked="Tab_Checked"/>
-                <RadioButton Content="浏览器清理" Style="{StaticResource PillTab}" GroupName="cstabs"
+                <RadioButton Content="{DynamicResource clean.tab.browser}" Style="{StaticResource PillTab}" GroupName="cstabs"
                              Tag="2" Checked="Tab_Checked"/>
-                <RadioButton Content="隐私痕迹" Style="{StaticResource PillTab}" GroupName="cstabs"
+                <RadioButton Content="{DynamicResource clean.tab.privacy}" Style="{StaticResource PillTab}" GroupName="cstabs"
                              Tag="3" Checked="Tab_Checked"/>
-                <RadioButton Content="回收站" Style="{StaticResource PillTab}" GroupName="cstabs"
+                <RadioButton Content="{DynamicResource clean.tab.recycle}" Style="{StaticResource PillTab}" GroupName="cstabs"
                              Tag="4" Checked="Tab_Checked"/>
             </StackPanel>
             <TextBlock x:Name="TabNoteText" Text="" FontSize="12"
@@ -39,7 +39,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Path Data="{StaticResource WarningIcon}" Stroke="{DynamicResource WarningBrush}" StrokeThickness="1.8"
                           StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="20" Height="20" Stretch="Uniform"/>
-                    <TextBlock Text="隐私项默认全部不勾选。勾选前请阅读每项的影响说明：清理 Cookie 会使网站退出登录，清理历史记录后不可恢复。"
+                    <TextBlock Text="{DynamicResource clean.privacy.banner}"
                                FontSize="12" Foreground="{DynamicResource TextPrimaryBrush}"
                                Margin="12,0,0,0" VerticalAlignment="Center" TextWrapping="Wrap" MaxWidth="880"/>
                 </StackPanel>
@@ -55,18 +55,18 @@
                                   StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="22" Height="22" Stretch="Uniform"/>
                         </Border>
                         <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
-                            <TextBlock x:Name="RecycleTitleText" Text="回收站" FontSize="16" FontWeight="Bold"
+                            <TextBlock x:Name="RecycleTitleText" Text="{DynamicResource clean.tab.recycle}" FontSize="16" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}"/>
                             <TextBlock x:Name="RecycleInfoText" Text="正在读取…" FontSize="12.5"
                                        Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,4,0,0"/>
                         </StackPanel>
                     </StackPanel>
-                    <TextBlock Text="清空后回收站中的文件将被永久删除、无法恢复。也可以先打开回收站检查一遍。"
+                    <TextBlock Text="{DynamicResource clean.recycle.desc}"
                                FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,14,0,0"/>
                     <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
-                        <Button x:Name="BtnEmptyBin" Content="清空回收站" Style="{StaticResource DangerButton}"
+                        <Button x:Name="BtnEmptyBin" Content="{DynamicResource btn.emptybin}" Style="{StaticResource DangerButton}"
                                 Click="BtnEmptyBin_Click"/>
-                        <Button x:Name="BtnOpenBin" Content="打开回收站" Style="{StaticResource SecondaryButton}"
+                        <Button x:Name="BtnOpenBin" Content="{DynamicResource btn.openbin}" Style="{StaticResource SecondaryButton}"
                                 Margin="12,0,0,0" Click="BtnOpenBin_Click"/>
                     </StackPanel>
                 </StackPanel>
@@ -80,7 +80,7 @@
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel>
                         <StackPanel x:Name="RuleList"/>
-                        <TextBlock x:Name="EmptyGroupText" Text="点击右上角「扫描」开始检查这一类项目" FontSize="12.5"
+                        <TextBlock x:Name="EmptyGroupText" Text="{DynamicResource clean.empty.before}" FontSize="12.5"
                                    Foreground="{DynamicResource TextTertiaryBrush}"
                                    HorizontalAlignment="Center" Margin="0,40,0,0" Visibility="Collapsed"/>
                     </StackPanel>
@@ -91,7 +91,7 @@
             <StackPanel x:Name="GroupScanPanel" Visibility="Collapsed" VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                 <ProgressBar x:Name="GroupScanBar" IsIndeterminate="True" Width="260" Height="6"/>
-                <TextBlock x:Name="GroupScanText" Text="正在扫描…" FontSize="12.5"
+                <TextBlock x:Name="GroupScanText" Text="{DynamicResource common.scanning}" FontSize="12.5"
                            Foreground="{DynamicResource TextSecondaryBrush}"
                            HorizontalAlignment="Center" Margin="0,14,0,0"/>
             </StackPanel>
@@ -110,9 +110,9 @@
                                Foreground="{DynamicResource PrimaryBrush}" Margin="6,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button x:Name="BtnScanGroup" Content="扫描本组" Style="{StaticResource SecondaryButton}"
+                    <Button x:Name="BtnScanGroup" Content="{DynamicResource btn.scangroup}" Style="{StaticResource SecondaryButton}"
                             Margin="0,0,12,0" Click="BtnScanGroup_Click"/>
-                    <Button x:Name="BtnCleanSel" Content="清理所选项" Style="{StaticResource PrimaryButton}"
+                    <Button x:Name="BtnCleanSel" Content="{DynamicResource btn.cleansel}" Style="{StaticResource PrimaryButton}"
                             Click="BtnCleanSel_Click"/>
                 </StackPanel>
             </Grid>

@@ -47,8 +47,8 @@ public partial class ToolboxPage : Page, IParamPage
         QuarantineList.Children.Clear();
         long total = entries.Sum(e => e.Size);
         QuarantineSummaryText.Text = entries.Count == 0
-            ? "隔离区是空的"
-            : $"{entries.Count} 个项目，共 {SizeText.OfBytes(total)}；超过 {SettingsService.Current.QuarantineDays} 天将自动永久删除";
+            ? Services.Loc.T("tool.quar.empty")
+            : string.Format(Services.Loc.T("tool.quar.summary"), entries.Count, SizeText.OfBytes(total), SettingsService.Current.QuarantineDays);
         BtnPurgeQuarantine.IsEnabled = entries.Count > 0;
 
         foreach (var e in entries.OrderByDescending(x => x.CreatedAt))
@@ -105,7 +105,7 @@ public partial class ToolboxPage : Page, IParamPage
 
         var remain = new TextBlock
         {
-            Text = $"剩 {Math.Max(0, (e.ExpireAt - DateTime.Now).Days)} 天",
+            Text = string.Format(Services.Loc.T("tool.quar.daysleft"), Math.Max(0, (e.ExpireAt - DateTime.Now).Days)),
             FontSize = 11,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             VerticalAlignment = VerticalAlignment.Center,
@@ -115,7 +115,7 @@ public partial class ToolboxPage : Page, IParamPage
 
         var restoreBtn = new Button
         {
-            Content = "恢复",
+            Content = Services.Loc.T("btn.restore"),
             Style = (Style)FindResource("SmallPrimaryButton"),
             Margin = new Thickness(14, 0, 0, 0),
             VerticalAlignment = VerticalAlignment.Center,
@@ -123,15 +123,15 @@ public partial class ToolboxPage : Page, IParamPage
         restoreBtn.Click += (s, a) =>
         {
             var err = QuarantineService.Instance.Restore(e.Id);
-            if (err == null) _main.ShowToast($"已恢复「{name}」");
-            else _main.ShowToast("恢复失败：" + err, ToastType.Warning);
+            if (err == null) _main.ShowToast(string.Format(Services.Loc.T("toast.restored"), name));
+            else _main.ShowToast(Services.Loc.T("toast.restorefailed") + err, ToastType.Warning);
             RefreshQuarantine();
         };
         Grid.SetColumn(restoreBtn, 3);
 
         var delBtn = new Button
         {
-            Content = "永久删除",
+            Content = Services.Loc.T("btn.deleteperm"),
             Style = (Style)FindResource("SmallSecondaryButton"),
             Foreground = (Brush)FindResource("DangerBrush"),
             Margin = new Thickness(8, 0, 0, 0),
@@ -139,7 +139,7 @@ public partial class ToolboxPage : Page, IParamPage
         };
         delBtn.Click += (s, a) =>
         {
-            if (!Services.DialogService.Confirm(_main, "永久删除？", $"「{name}」将被永久删除，无法恢复。", "永久删除", "取消", danger: true))
+            if (!Services.DialogService.Confirm(_main, Services.Loc.T("dlg.deleteperm.title"), string.Format(Services.Loc.T("dlg.deleteperm.msg"), name), Services.Loc.T("btn.deleteperm"), Services.Loc.T("btn.cancel"), danger: true))
                 return;
             QuarantineService.Instance.DeletePermanent(e.Id, out _);
             RefreshQuarantine();
@@ -159,12 +159,12 @@ public partial class ToolboxPage : Page, IParamPage
     {
         var n = QuarantineService.Instance.Entries.Count;
         if (n == 0) return;
-        if (!Services.DialogService.Confirm(_main, "清空隔离区？",
-            $"隔离区中的 {n} 个项目将被永久删除，无法恢复。", "永久删除", "取消", danger: true))
+        if (!Services.DialogService.Confirm(_main, Services.Loc.T("tool.purge.title"),
+            string.Format(Services.Loc.T("tool.purge.msg"), n), Services.Loc.T("btn.deleteperm"), Services.Loc.T("btn.cancel"), danger: true))
             return;
         QuarantineService.Instance.PurgeAll();
         RefreshQuarantine();
-        _main.ShowToast("隔离区已清空");
+        _main.ShowToast(Services.Loc.T("toast.purgedone"));
     }
 
     // ————— 文件粉碎 —————
@@ -186,15 +186,15 @@ public partial class ToolboxPage : Page, IParamPage
     private async void Shred(string path, bool isDir)
     {
         var size = isDir ? FileUtil.DirSize(path) : new FileInfo(path).Length;
-        if (!Services.DialogService.Confirm(_main, "确认粉碎？",
-            $"{path}\n\n{SizeText.OfBytes(size)} 将被覆写后永久删除，不进入回收站，无法通过恢复软件轻易还原。\n\n此操作不可恢复！",
-            "永久粉碎", "取消", danger: true))
+        if (!Services.DialogService.Confirm(_main, Services.Loc.T("tool.shred.confirm.title"),
+            string.Format(Services.Loc.T("tool.shred.confirm.msg"), path, SizeText.OfBytes(size)),
+            Services.Loc.T("btn.shred"), Services.Loc.T("btn.cancel"), danger: true))
             return;
 
         BtnShredOK();
         var ok = await Task.Run(() => Shredder.Shred(path));
-        HistoryService.Add("Shred", $"粉碎了{(isDir ? "文件夹" : "文件")}「{System.IO.Path.GetFileName(path)}」", path, size);
-        _main.ShowToast(ok ? "粉碎完成" : "粉碎失败，部分文件被占用", ok ? ToastType.Success : ToastType.Warning);
+        HistoryService.Add("Shred", string.Format(Services.Loc.T("tool.shred.log"), isDir ? Services.Loc.T("tool.folder") : Services.Loc.T("tool.file"), System.IO.Path.GetFileName(path)), path, size);
+        _main.ShowToast(ok ? Services.Loc.T("toast.shredok") : Services.Loc.T("toast.shrefail"), ok ? ToastType.Success : ToastType.Warning);
     }
 
     private void BtnShredOK() { }
@@ -220,20 +220,20 @@ public partial class ToolboxPage : Page, IParamPage
         BtnDupScan.IsEnabled = false;
         BtnDupScan.Content = "扫描中…";
         DupList.Children.Clear();
-        DupSummaryText.Text = "正在扫描…";
+        DupSummaryText.Text = Services.Loc.T("common.scanning");
         try
         {
             var svc = new DuplicateFileService();
             _dupResult = await svc.ScanAsync(roots, 1024 * 1024, CancellationToken.None,
-                new Progress<(string dir, int files)>(p => DupSummaryText.Text = $"已扫描 {p.files:N0} 个文件…"));
+                new Progress<(string dir, int files)>(p => DupSummaryText.Text = string.Format(Services.Loc.T("tool.dup.progress"), p.files)));
         }
         catch (Exception ex)
         {
-            _main.ShowToast("扫描失败：" + ex.Message, ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("toast.scanfailed") + ex.Message, ToastType.Warning);
             _dupResult = null;
         }
         BtnDupScan.IsEnabled = true;
-        BtnDupScan.Content = "重新扫描";
+        BtnDupScan.Content = Services.Loc.T("btn.dup.rescan");
         RenderDup();
     }
 
@@ -254,8 +254,8 @@ public partial class ToolboxPage : Page, IParamPage
         if (_dupResult == null) return;
         var groups = _dupResult.Groups.Where(g => g.Files.Count > 1).ToList();
         DupSummaryText.Text = groups.Count == 0
-            ? "没有发现重复文件"
-            : $"{groups.Count} 组重复文件，可释放 {SizeText.OfBytes(_dupResult.TotalWastedBytes)}";
+            ? Services.Loc.T("tool.dup.none")
+            : string.Format(Services.Loc.T("tool.dup.summary"), groups.Count, SizeText.OfBytes(_dupResult.TotalWastedBytes));
         if (groups.Count == 0) return;
         BtnDupKeepNewest.Visibility = Visibility.Visible;
         BtnDupClean.Visibility = Visibility.Visible;
@@ -268,7 +268,7 @@ public partial class ToolboxPage : Page, IParamPage
         {
             DupList.Children.Add(new TextBlock
             {
-                Text = $"… 还有 {groups.Count - 50} 组未显示",
+                Text = string.Format(Services.Loc.T("tool.dup.more"), groups.Count - 50),
                 FontSize = 12,
                 Foreground = (Brush)FindResource("TextTertiaryBrush"),
                 Margin = new Thickness(0, 8, 0, 0),
@@ -288,7 +288,7 @@ public partial class ToolboxPage : Page, IParamPage
         var sp = new StackPanel();
         sp.Children.Add(new TextBlock
         {
-            Text = $"{g.Files.Count} 个相同文件 · 每个 {SizeText.OfBytes(g.Size)} · 可释放 {SizeText.OfBytes(g.WastedBytes)}",
+            Text = string.Format(Services.Loc.T("tool.dup.group"), g.Files.Count, SizeText.OfBytes(g.Size), SizeText.OfBytes(g.WastedBytes)),
             FontSize = 12,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
@@ -301,7 +301,7 @@ public partial class ToolboxPage : Page, IParamPage
                 Style = (Style)FindResource("RoundCheckOnly"),
                 IsChecked = f.Selected,
                 VerticalAlignment = VerticalAlignment.Center,
-                ToolTip = "勾选 = 删除这份副本",
+                ToolTip = Services.Loc.T("tool.dup.tip"),
             };
             cb.Checked += (s, e) => f.Selected = true;
             cb.Unchecked += (s, e) => f.Selected = false;
@@ -347,8 +347,8 @@ public partial class ToolboxPage : Page, IParamPage
             return;
         }
         long bytes = selected.Sum(f => f.Size);
-        if (!Services.DialogService.Confirm(_main, "删除选中的副本？",
-            $"共 {selected.Count} 个文件，{SizeText.OfBytes(bytes)}，将移入回收站（可还原）。", "移入回收站"))
+        if (!Services.DialogService.Confirm(_main, Services.Loc.T("tool.dup.clean.title"),
+            string.Format(Services.Loc.T("tool.dup.clean.msg"), selected.Count, SizeText.OfBytes(bytes)), Services.Loc.T("btn.recycle")))
             return;
         int ok = 0;
         await Task.Run(() =>
@@ -359,7 +359,7 @@ public partial class ToolboxPage : Page, IParamPage
             }
         });
         HistoryService.Add("Clean", $"删除了 {ok} 个重复文件", "", bytes);
-        _main.ShowToast($"已移入回收站 {ok} 个文件，释放 {SizeText.OfBytes(bytes)}");
+        _main.ShowToast(string.Format(Services.Loc.T("toast.dupcleaned"), ok, SizeText.OfBytes(bytes)));
         // 重新扫描更新
         BtnDupScan_Click(sender, e);
     }
@@ -374,7 +374,7 @@ public partial class ToolboxPage : Page, IParamPage
         {
             HistoryList.Children.Add(new TextBlock
             {
-                Text = "还没有活动记录",
+                Text = Services.Loc.T("history.empty"),
                 FontSize = 12,
                 Foreground = (Brush)FindResource("TextTertiaryBrush"),
             });
@@ -397,17 +397,7 @@ public partial class ToolboxPage : Page, IParamPage
             };
             typeChip.Child = new TextBlock
             {
-                Text = a.Type switch
-                {
-                    "Clean" => "清理",
-                    "AutoClean" => "自动清理",
-                    "Restore" => "恢复",
-                    "Uninstall" => "卸载",
-                    "StartupToggle" => "启动项",
-                    "QuarantinePurge" => "隔离区",
-                    "Shred" => "粉碎",
-                    _ => "其他",
-                },
+                Text = HistoryTypeText.Of(a.Type),
                 FontSize = 10.5,
                 FontWeight = FontWeights.Bold,
                 Foreground = (Brush)FindResource("PrimaryBrush"),
@@ -455,7 +445,7 @@ public partial class ToolboxPage : Page, IParamPage
 
     private void BtnClearHistory_Click(object sender, RoutedEventArgs e)
     {
-        if (!Services.DialogService.Confirm(_main, "清空历史？", "所有清理与操作记录将被删除。", "清空"))
+        if (!Services.DialogService.Confirm(_main, Services.Loc.T("history.clear.title"), Services.Loc.T("history.clear.msg"), Services.Loc.T("btn.clearhistory")))
             return;
         HistoryService.Clear();
         RefreshHistory();
@@ -499,14 +489,14 @@ public partial class ToolboxPage : Page, IParamPage
             ToolGrid.Children.Add(btn);
         }
 
-        AddTool("任务管理器", "查看进程与性能", () => Process.Start("taskmgr.exe"));
-        AddTool("Windows 设置 · 存储", "管理存储空间", () => Process.Start(new ProcessStartInfo("ms-settings:storagesense") { UseShellExecute = true }));
-        AddTool("磁盘管理", "管理分区与磁盘", () => Process.Start("diskmgmt.msc"));
-        AddTool("设备管理器", "管理硬件驱动", () => Process.Start("devmgmt.msc"));
-        AddTool("控制面板", "系统经典设置", () => Process.Start("control.exe"));
-        AddTool("系统信息", "查看系统配置", () => Process.Start("msinfo32.exe"));
-        AddTool("Windows 更新", "检查系统更新", () => Process.Start(new ProcessStartInfo("ms-settings:windowsupdate") { UseShellExecute = true }));
-        AddTool("系统还原", "创建或使用还原点", () => Process.Start("rstrui.exe"));
+        AddTool(Services.Loc.T("tool.win.taskmgr"), Services.Loc.T("tool.win.taskmgr.d"), () => Process.Start("taskmgr.exe"));
+        AddTool(Services.Loc.T("tool.win.storage"), Services.Loc.T("tool.win.storage.d"), () => Process.Start(new ProcessStartInfo("ms-settings:storagesense") { UseShellExecute = true }));
+        AddTool(Services.Loc.T("tool.win.diskmgmt"), Services.Loc.T("tool.win.diskmgmt.d"), () => Process.Start("diskmgmt.msc"));
+        AddTool(Services.Loc.T("tool.win.devmgmt"), Services.Loc.T("tool.win.devmgmt.d"), () => Process.Start("devmgmt.msc"));
+        AddTool(Services.Loc.T("tool.win.control"), Services.Loc.T("tool.win.control.d"), () => Process.Start("control.exe"));
+        AddTool(Services.Loc.T("tool.win.msinfo"), Services.Loc.T("tool.win.msinfo.d"), () => Process.Start("msinfo32.exe"));
+        AddTool(Services.Loc.T("tool.win.update"), Services.Loc.T("tool.win.update.d"), () => Process.Start(new ProcessStartInfo("ms-settings:windowsupdate") { UseShellExecute = true }));
+        AddTool(Services.Loc.T("tool.win.restore"), Services.Loc.T("tool.win.restore.d"), () => Process.Start("rstrui.exe"));
     }
 }
 

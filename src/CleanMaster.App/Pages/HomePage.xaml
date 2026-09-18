@@ -21,20 +21,20 @@
                                   Width="20" Height="20" Stretch="Uniform"/>
                         </Grid>
                         <StackPanel Margin="16,0,0,0" VerticalAlignment="Center">
-                            <TextBlock x:Name="StatusTitle" Text="设备状态良好" FontSize="27" FontWeight="Bold"
+                            <TextBlock x:Name="StatusTitle" Text="{DynamicResource home.status.good}" FontSize="27" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}"/>
                             <StackPanel Orientation="Horizontal" Margin="0,7,0,0">
-                                <TextBlock x:Name="LastScanText" Text="还没有扫描过" FontSize="13"
+                                <TextBlock x:Name="LastScanText" Text="{DynamicResource home.noscan}" FontSize="13"
                                            Foreground="{DynamicResource TextSecondaryBrush}"/>
                             </StackPanel>
-                            <TextBlock Text="保持定期扫描，让电脑始终保持最佳状态" FontSize="12.5"
+                            <TextBlock Text="{DynamicResource home.slogan}" FontSize="12.5"
                                        Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,7,0,0"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="62,22,0,6">
                         <Button x:Name="BtnScan" Style="{StaticResource PrimaryButton}" Click="BtnScan_Click">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="立即扫描" VerticalAlignment="Center"/>
+                                <TextBlock Text="{DynamicResource btn.scan.now}" VerticalAlignment="Center"/>
                                 <Path Data="{StaticResource ChevronRightIcon}" Stroke="White" StrokeThickness="2.2"
                                       StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                       Width="9" Height="9" Stretch="None" Margin="10,1,0,0" VerticalAlignment="Center"/>
@@ -46,7 +46,7 @@
                                 <Path Data="{StaticResource DotsIcon}" Stroke="{DynamicResource TextSecondaryBrush}"
                                       StrokeThickness="2.4" StrokeStartLineCap="Round" Width="14" Height="14" Stretch="None"
                                       VerticalAlignment="Center"/>
-                                <TextBlock Text="更多功能" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{DynamicResource btn.more}" Margin="8,0,0,0" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
@@ -87,7 +87,7 @@
                                   Width="11" Height="11" Stretch="Uniform" StrokeStartLineCap="Round" StrokeLineJoin="Round"/>
                         </Border>
                     </Grid>
-                    <TextBlock Text="让电脑更干净&#x0a;运行更流畅！" FontFamily="KaiTi" FontSize="15.5"
+                    <TextBlock Text="{DynamicResource home.hero.note}" FontSize="14"
                                Foreground="{DynamicResource TextSecondaryBrush}" Margin="6,10,0,0">
                         <TextBlock.LayoutTransform>
                             <RotateTransform Angle="-6"/>
@@ -106,7 +106,7 @@
                                     <Path Data="{StaticResource CleanIcon}" Stroke="{DynamicResource PrimaryBrush}" StrokeThickness="1.8"
                                           StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="19" Height="19" Stretch="Uniform"/>
                                 </Border>
-                                <TextBlock Text="可清理垃圾" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                                <TextBlock Text="{DynamicResource home.card.junk}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
                                            VerticalAlignment="Center" Margin="10,0,0,0"/>
                                 <Path Data="{StaticResource ChevronRightIcon}" Stroke="{DynamicResource TextTertiaryBrush}"
                                       StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
@@ -114,7 +114,7 @@
                             </StackPanel>
                             <TextBlock x:Name="JunkSizeText" Text="—" FontSize="26" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,10,0,0"/>
-                            <TextBlock x:Name="JunkNoteText" Text="点击扫描查看可释放空间" FontSize="11.5"
+                            <TextBlock x:Name="JunkNoteText" Text="{DynamicResource home.card.junk.note}" FontSize="11.5"
                                        Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
                         </StackPanel>
                     </Grid>
@@ -126,7 +126,7 @@
                                 <Path Data="{StaticResource PowerIcon}" Stroke="{DynamicResource OrangeBrush}" StrokeThickness="1.8"
                                       StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="19" Height="19" Stretch="Uniform"/>
                             </Border>
-                            <TextBlock Text="启动项" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                            <TextBlock Text="{DynamicResource home.card.startup}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
                                        VerticalAlignment="Center" Margin="10,0,0,0"/>
                             <Path Data="{StaticResource ChevronRightIcon}" Stroke="{DynamicResource TextTertiaryBrush}"
                                   StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
@@ -134,7 +134,7 @@
                         </StackPanel>
                         <TextBlock x:Name="StartupCountText" Text="—" FontSize="26" FontWeight="Bold"
                                    Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,10,0,0"/>
-                        <TextBlock x:Name="StartupNoteText" Text="可能拖慢开机速度" FontSize="11.5"
+                        <TextBlock x:Name="StartupNoteText" Text="{DynamicResource home.card.startup.note}" FontSize="11.5"
                                    Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
                     </StackPanel>
                 </Button>
@@ -145,7 +145,7 @@
                                 <Path Data="{StaticResource FileIcon}" Stroke="{DynamicResource SuccessBrush}" StrokeThickness="1.8"
                                       StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="19" Height="19" Stretch="Uniform"/>
                             </Border>
-                            <TextBlock Text="大文件" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                            <TextBlock Text="{DynamicResource home.card.large}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
                                        VerticalAlignment="Center" Margin="10,0,0,0"/>
                             <Path Data="{StaticResource ChevronRightIcon}" Stroke="{DynamicResource TextTertiaryBrush}"
                                   StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
@@ -153,7 +153,7 @@
                         </StackPanel>
                         <TextBlock x:Name="LargeCountText" Text="—" FontSize="26" FontWeight="Bold"
                                    Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,10,0,0"/>
-                        <TextBlock x:Name="LargeNoteText" Text="点击分析查找" FontSize="11.5"
+                        <TextBlock x:Name="LargeNoteText" Text="{DynamicResource home.card.large.note}" FontSize="11.5"
                                    Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
                     </StackPanel>
                 </Button>
@@ -164,7 +164,7 @@
                                 <Path Data="{StaticResource BoxIcon}" Stroke="{DynamicResource PurpleBrush}" StrokeThickness="1.8"
                                       StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="19" Height="19" Stretch="Uniform"/>
                             </Border>
-                            <TextBlock Text="已装应用" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                            <TextBlock Text="{DynamicResource home.card.apps}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
                                        VerticalAlignment="Center" Margin="10,0,0,0"/>
                             <Path Data="{StaticResource ChevronRightIcon}" Stroke="{DynamicResource TextTertiaryBrush}"
                                   StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
@@ -172,7 +172,7 @@
                         </StackPanel>
                         <TextBlock x:Name="AppsCountText" Text="—" FontSize="26" FontWeight="Bold"
                                    Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,10,0,0"/>
-                        <TextBlock x:Name="AppsNoteText" Text="点击管理已装应用" FontSize="11.5"
+                        <TextBlock x:Name="AppsNoteText" Text="{DynamicResource home.card.apps.note}" FontSize="11.5"
                                    Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
                     </StackPanel>
                 </Button>
@@ -195,23 +195,23 @@
                                     <Path Data="{StaticResource BoxIcon}" Stroke="{DynamicResource PrimaryBrush}" StrokeThickness="1.7"
                                           StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="18" Height="18" Stretch="Uniform"/>
                                 </Border>
-                                <TextBlock x:Name="DiskTitle" Text="磁盘空间 (C:)" FontSize="15" FontWeight="Bold"
+                                <TextBlock x:Name="DiskTitle" Text="{DynamicResource home.disk.title}" FontSize="15" FontWeight="Bold"
                                            Foreground="{DynamicResource TextPrimaryBrush}" VerticalAlignment="Center" Margin="12,0,0,0"/>
                             </StackPanel>
-                            <TextBlock x:Name="DiskTotalText" Text="总容量 —" FontSize="12.5"
+                            <TextBlock x:Name="DiskTotalText" Text="{DynamicResource home.disk.total}" FontSize="12.5"
                                        Foreground="{DynamicResource TextSecondaryBrush}"
                                        HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </Grid>
                         <ProgressBar x:Name="DiskBar" Maximum="100" Value="0" Height="10" Margin="2,20,2,4"/>
                         <StackPanel Orientation="Horizontal" Margin="2,12,0,0">
                             <Ellipse Width="9" Height="9" Fill="{DynamicResource PrimaryBrush}" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="DiskUsedText" Text="已使用 —" FontSize="12.5"
+                            <TextBlock x:Name="DiskUsedText" Text="{DynamicResource home.disk.used}" FontSize="12.5"
                                        Foreground="{DynamicResource TextSecondaryBrush}" Margin="8,0,0,0"/>
                             <Ellipse Width="9" Height="9" Fill="{DynamicResource TrackBrush}" VerticalAlignment="Center" Margin="22,0,0,0"/>
-                            <TextBlock x:Name="DiskFreeText" Text="可用 —" FontSize="12.5"
+                            <TextBlock x:Name="DiskFreeText" Text="{DynamicResource home.disk.free}" FontSize="12.5"
                                        Foreground="{DynamicResource TextSecondaryBrush}" Margin="8,0,0,0"/>
                         </StackPanel>
-                        <Button x:Name="BtnAnalyze" Content="查看空间去哪了 →" Style="{StaticResource LinkButton}"
+                        <Button x:Name="BtnAnalyze" Content="{DynamicResource home.disk.more}" Style="{StaticResource LinkButton}"
                                 HorizontalAlignment="Left" Margin="2,16,0,0" Click="BtnAnalyze_Click"/>
                     </StackPanel>
                 </Border>
@@ -220,7 +220,7 @@
                     <Grid>
                         <StackPanel>
                             <Grid>
-                                <TextBlock Text="空间分析" FontSize="15" FontWeight="Bold"
+                                <TextBlock Text="{DynamicResource home.space.title}" FontSize="15" FontWeight="Bold"
                                            Foreground="{DynamicResource TextPrimaryBrush}" VerticalAlignment="Center"/>
                                 <Button Style="{StaticResource LinkButton}" HorizontalAlignment="Right"
                                         Click="BtnAnalyze2_Click" VerticalAlignment="Center">
@@ -253,7 +253,7 @@
                         <Border x:Name="AnalysisEmpty" Background="{DynamicResource CardBgBrush}" CornerRadius="10"
                                 Visibility="Collapsed">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <TextBlock Text="还没有分析过这块磁盘" FontSize="12.5"
+                                <TextBlock Text="{DynamicResource home.space.empty}" FontSize="12.5"
                                            Foreground="{DynamicResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
                                 <Button x:Name="BtnQuickAnalyze" Content="开始分析" Style="{StaticResource SmallPrimaryButton}"
                                         Margin="0,10,0,0" HorizontalAlignment="Center" Click="BtnAnalyze_Click"/>
@@ -274,12 +274,12 @@
                 <Border Grid.Column="0" Style="{StaticResource CardBorder}">
                     <StackPanel>
                         <Grid>
-                            <TextBlock Text="最近活动" FontSize="15" FontWeight="Bold"
+                            <TextBlock Text="{DynamicResource home.activity.title}" FontSize="15" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}" VerticalAlignment="Center"/>
                             <Button Style="{StaticResource LinkButton}" HorizontalAlignment="Right"
                                     VerticalAlignment="Center" Click="BtnHistory_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="查看全部"/>
+                                    <TextBlock Text="{DynamicResource common.viewall}"/>
                                     <Path Data="{StaticResource ChevronRightIcon}" Stroke="{DynamicResource TextTertiaryBrush}"
                                           StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
                                           Width="8" Height="8" Stretch="None" Margin="4,1,0,0"/>
@@ -311,7 +311,7 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <TextBlock x:Name="NoActivityText" Text="还没有活动记录，扫描清理一下试试" FontSize="12.5"
+                        <TextBlock x:Name="NoActivityText" Text="{DynamicResource home.activity.empty}" FontSize="12.5"
                                    Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,14,0,6"
                                    Visibility="Collapsed"/>
                     </StackPanel>
@@ -320,7 +320,7 @@
                 <Border Grid.Column="2" Style="{StaticResource CardBorder}">
                     <StackPanel>
                         <Grid>
-                            <TextBlock Text="智能建议" FontSize="15" FontWeight="Bold"
+                            <TextBlock Text="{DynamicResource home.suggest.title}" FontSize="15" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}" VerticalAlignment="Center"/>
                         </Grid>
                         <ItemsControl x:Name="SuggestList" Margin="0,10,0,0">
@@ -357,7 +357,7 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <TextBlock x:Name="NoSuggestText" Text="一切正常，没有需要处理的建议" FontSize="12.5"
+                        <TextBlock x:Name="NoSuggestText" Text="{DynamicResource home.suggest.empty}" FontSize="12.5"
                                    Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,14,0,6"
                                    Visibility="Collapsed"/>
                     </StackPanel>

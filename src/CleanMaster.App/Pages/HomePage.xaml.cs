@@ -44,11 +44,11 @@ public partial class HomePage : Page, IParamPage
             {
                 var used = drive.TotalSize - drive.AvailableFreeSpace;
                 var pct = drive.TotalSize > 0 ? used * 100.0 / drive.TotalSize : 0;
-                DiskTitle.Text = $"磁盘空间 ({drive.Name.TrimEnd('\\')})";
-                DiskTotalText.Text = $"总容量 {SizeText.OfBytes(drive.TotalSize, 0)}";
+                DiskTitle.Text = string.Format(Services.Loc.T("home.disk.title.disk"), drive.Name.TrimEnd('\\'));
+                DiskTotalText.Text = string.Format(Services.Loc.T("home.disk.total.f"), SizeText.OfBytes(drive.TotalSize, 0));
                 DiskBar.Value = pct;
-                DiskUsedText.Text = $"已使用 {SizeText.OfBytes(used, 0)} ({pct:F1}%)";
-                DiskFreeText.Text = $"可用 {SizeText.OfBytes(drive.AvailableFreeSpace, 0)} ({100 - pct:F1}%)";
+                DiskUsedText.Text = string.Format(Services.Loc.T("home.disk.used.f"), SizeText.OfBytes(used, 0), pct);
+                DiskFreeText.Text = string.Format(Services.Loc.T("home.disk.free.f"), SizeText.OfBytes(drive.AvailableFreeSpace, 0), 100 - pct);
             }
         }
         catch { }
@@ -88,46 +88,46 @@ public partial class HomePage : Page, IParamPage
 
         if (freePct < 10)
         {
-            StatusTitle.Text = "磁盘空间紧张";
+            StatusTitle.Text = Services.Loc.T("home.status.tight");
             StatusEllipse.Fill = (Brush)FindResource("DangerSoftBrush");
             StatusIcon.Stroke = (Brush)FindResource("DangerBrush");
-            LastScanText.Text = "系统盘剩余空间不足 10%，建议立即清理";
+            LastScanText.Text = Services.Loc.T("home.status.tight.detail");
         }
         else if (junkBytes > 3L * 1024 * 1024 * 1024 || highImpact > 0)
         {
-            StatusTitle.Text = "建议清理一下";
+            StatusTitle.Text = Services.Loc.T("home.status.suggest");
             StatusEllipse.Fill = (Brush)FindResource("WarningSoftBrush");
             StatusIcon.Data = (Geometry)FindResource("WarningIcon");
             StatusIcon.Stroke = (Brush)FindResource("WarningBrush");
-            LastScanText.Text = $"发现 {SizeText.OfBytes(junkBytes)} 可清理垃圾与 {highImpact} 个高影响启动项";
+            LastScanText.Text = string.Format(Services.Loc.T("home.status.suggest.detail"), SizeText.OfBytes(junkBytes), highImpact);
         }
         else
         {
-            StatusTitle.Text = "设备状态良好";
+            StatusTitle.Text = Services.Loc.T("home.status.good");
             StatusEllipse.Fill = (Brush)FindResource("SuccessSoftBrush");
             StatusIcon.Data = (Geometry)FindResource("CheckIcon");
             StatusIcon.Stroke = (Brush)FindResource("SuccessBrush");
             LastScanText.Text = last != null
-                ? $"上次扫描：{FormatTime(last.Time)}"
-                : "还没有扫描过，点击「立即扫描」开始";
+                ? string.Format(Services.Loc.T("home.status.lastscan"), FormatTime(last.Time))
+                : Services.Loc.T("home.noscan.detail");
         }
 
         // —— 卡片数字 ——
         if (last != null && junkBytes > 0)
         {
             JunkSizeText.Text = SizeText.OfBytes(junkBytes);
-            JunkNoteText.Text = $"上次扫描 {FormatTime(last.Time)}";
+            JunkNoteText.Text = string.Format(Services.Loc.T("home.card.junk.lastscan"), FormatTime(last.Time));
         }
-        StartupCountText.Text = highImpact > 0 ? $"{highImpact} 项" : startupCount.ToString();
-        StartupNoteText.Text = highImpact > 0 ? "高影响启动项，可能拖慢开机" : "个启动项随开机运行";
+        StartupCountText.Text = highImpact > 0 ? string.Format(Services.Loc.T("common.n.items"), highImpact) : startupCount.ToString();
+        StartupNoteText.Text = highImpact > 0 ? Services.Loc.T("home.card.startup.note.high") : Services.Loc.T("home.card.startup.note");
         if (disk != null && disk.Categories.Count > 0)
         {
-            LargeCountText.Text = "已分析";
-            LargeNoteText.Text = "点击查看大文件详情";
+            LargeCountText.Text = Services.Loc.T("home.card.large.analyzed");
+            LargeNoteText.Text = Services.Loc.T("home.card.large.analyzed.note");
         }
         else
         {
-            LargeCountText.Text = "待分析";
+            LargeCountText.Text = Services.Loc.T("home.card.large.pending");
         }
         AppsCountText.Text = appCount > 0 ? appCount.ToString() : "—";
 
@@ -151,10 +151,10 @@ public partial class HomePage : Page, IParamPage
             {
                 suggests.Add(new SuggestItem
                 {
-                    Name = r.Name,
-                    Note = "可安全清理，不影响系统使用",
-                    SizeText = "约 " + SizeText.OfBytes(r.Size),
-                    ActionText = "立即清理",
+                    Name = Services.Loc.RuleName(r.Id, r.Name),
+                    Note = Services.Loc.T("home.suggest.note.safe"),
+                    SizeText = Services.Loc.T("common.approx") + SizeText.OfBytes(r.Size),
+                    ActionText = Services.Loc.T("home.suggest.clean"),
                     RuleId = r.Id,
                 });
             }
@@ -163,10 +163,10 @@ public partial class HomePage : Page, IParamPage
         {
             suggests.Add(new SuggestItem
             {
-                Name = "开机启动建议",
-                Note = $"发现 {highImpact} 个高影响启动项，建议优化",
-                SizeText = $"{highImpact} 项",
-                ActionText = "去优化",
+                Name = Services.Loc.T("home.suggest.startup.title"),
+                Note = string.Format(Services.Loc.T("home.suggest.startup.note"), highImpact),
+                SizeText = string.Format(Services.Loc.T("common.n.items"), highImpact),
+                ActionText = Services.Loc.T("home.suggest.optimize"),
                 IsStartup = true,
             });
         }
@@ -202,7 +202,7 @@ public partial class HomePage : Page, IParamPage
                 var sp = new StackPanel { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 8, 8, 8) };
                 sp.Children.Add(new TextBlock
                 {
-                    Text = c.Name,
+                    Text = Services.Loc.CategoryDisplay(c.Name),
                     FontSize = 12.5,
                     FontWeight = FontWeights.Bold,
                     Foreground = new SolidColorBrush(Colors.White),
@@ -235,10 +235,10 @@ public partial class HomePage : Page, IParamPage
     internal static string FormatTime(DateTime t)
     {
         var d = DateTime.Now - t;
-        if (d.TotalMinutes < 1) return "刚刚";
-        if (d.TotalHours < 1) return $"{(int)d.TotalMinutes} 分钟前";
-        if (d.TotalDays < 1) return $"今天 {t:HH:mm}";
-        if (d.TotalDays < 2) return $"昨天 {t:HH:mm}";
+        if (d.TotalMinutes < 1) return Services.Loc.T("time.now");
+        if (d.TotalHours < 1) return string.Format(Services.Loc.T("time.minago"), (int)d.TotalMinutes);
+        if (d.TotalDays < 1) return string.Format(Services.Loc.T("time.today"), t.ToString("HH:mm"));
+        if (d.TotalDays < 2) return string.Format(Services.Loc.T("time.yesterday"), t.ToString("HH:mm"));
         return t.ToString("MM-dd HH:mm");
     }
 
@@ -258,11 +258,11 @@ public partial class HomePage : Page, IParamPage
             mi.Click += (s, a) => _main.Navigate(key);
             menu.Items.Add(mi);
         }
-        AddItem("清理空间", PageKey.CleanSpace);
-        AddItem("空间分析", PageKey.SpaceAnalysis);
-        AddItem("启动项管理", PageKey.Startup);
-        AddItem("应用管理", PageKey.Apps);
-        AddItem("工具箱", PageKey.Toolbox);
+        AddItem(Services.Loc.T("nav.clean"), PageKey.CleanSpace);
+        AddItem(Services.Loc.T("nav.space"), PageKey.SpaceAnalysis);
+        AddItem(Services.Loc.T("nav.startup"), PageKey.Startup);
+        AddItem(Services.Loc.T("nav.apps"), PageKey.Apps);
+        AddItem(Services.Loc.T("nav.toolbox"), PageKey.Toolbox);
         menu.PlacementTarget = BtnMore;
         menu.Placement = PlacementMode.Bottom;
         menu.IsOpen = true;
@@ -290,8 +290,8 @@ public partial class HomePage : Page, IParamPage
         var scanner = new ScannerService();
         var rule = scanner.Rules.FirstOrDefault(r => r.Id == item.RuleId);
         if (rule == null) return;
-        var ok = DialogService.Confirm(_main, $"清理{rule.Name}？",
-            $"预计可释放 {item.SizeText}。\n可恢复类文件会进入隔离区。", "立即清理");
+        var ok = DialogService.Confirm(_main, string.Format(Services.Loc.T("dlg.quickclean.title"), Services.Loc.RuleName(rule.Id, rule.Name)),
+            string.Format(Services.Loc.T("dlg.quickclean.msg"), item.SizeText), Services.Loc.T("home.suggest.clean"));
         if (!ok) return;
         BtnScan.IsEnabled = false;
         try
@@ -300,7 +300,7 @@ public partial class HomePage : Page, IParamPage
             var freed = await svc.CleanSingleRuleAsync(rule);
             if (freed >= 0)
             {
-                _main.ShowToast($"已清理，释放了 {SizeText.OfBytes(freed)}");
+                _main.ShowToast(string.Format(Services.Loc.T("toast.cleaned"), SizeText.OfBytes(freed)));
                 await RefreshAsync();
             }
         }
@@ -336,7 +336,7 @@ public sealed class QuickCleanHelper
         var res = results[0];
         if (res.Items.Count == 0)
         {
-            _main.ShowToast("没有发现可清理的内容", ToastType.Info);
+            _main.ShowToast(Services.Loc.T("toast.nothing"), ToastType.Info);
             return -1;
         }
         var svc = new CleanService();

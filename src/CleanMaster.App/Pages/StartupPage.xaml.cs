@@ -43,7 +43,7 @@ public partial class StartupPage : Page, IParamPage
         }
         catch (Exception ex)
         {
-            _main.ShowToast("读取启动项失败：" + ex.Message, ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("toast.readfailed") + ex.Message, ToastType.Warning);
         }
         LoadingPanel.Visibility = Visibility.Collapsed;
         Render();
@@ -58,8 +58,8 @@ public partial class StartupPage : Page, IParamPage
                                      i.Publisher.Contains(_filter, StringComparison.OrdinalIgnoreCase));
         var list = items.OrderBy(i => !i.Enabled).ThenBy(i => i.Impact switch
         {
-            "高" => 0,
-            "中" => 1,
+            "高" or "High" => 0,
+            "中" or "Medium" => 1,
             "未测量" => 2,
             _ => 3,
         }).ToList();
@@ -104,8 +104,8 @@ public partial class StartupPage : Page, IParamPage
             else
             {
                 HistoryService.Add("StartupToggle",
-                    $"{(enable ? "启用了" : "禁用了")}启动项「{item.Name}」");
-                _main.ShowToast($"{(enable ? "已启用" : "已禁用")}「{item.Name}」");
+                    string.Format(Services.Loc.T("startup.toggled"), (enable ? Services.Loc.T("startup.enabled") : Services.Loc.T("startup.disabled")), item.Name));
+                _main.ShowToast(string.Format("{0} \"{1}\"", enable ? Services.Loc.T("startup.enabled") : Services.Loc.T("startup.disabled"), item.Name));
             }
         };
 
@@ -121,7 +121,7 @@ public partial class StartupPage : Page, IParamPage
         });
         if (item.IsSystemComponent)
         {
-            nameLine.Children.Add(RuleRowFactory.Chip("系统组件", (Brush)FindResource("PrimaryBrush"), new Thickness(8, 0, 0, 0)));
+            nameLine.Children.Add(RuleRowFactory.Chip(Services.Loc.T("startup.systemchip"), (Brush)FindResource("PrimaryBrush"), new Thickness(8, 0, 0, 0)));
         }
         namePanel.Children.Add(nameLine);
         var pub = item.Publisher;
@@ -156,20 +156,20 @@ public partial class StartupPage : Page, IParamPage
             VerticalAlignment = VerticalAlignment.Center,
             Background = item.Impact switch
             {
-                "高" => (Brush)FindResource("DangerSoftBrush"),
-                "中" => (Brush)FindResource("WarningSoftBrush"),
+                "高" or "High" => (Brush)FindResource("DangerSoftBrush"),
+                "中" or "Medium" => (Brush)FindResource("WarningSoftBrush"),
                 _ => (Brush)FindResource("PrimarySoftBrush"),
             },
         };
         impactBorder.Child = new TextBlock
         {
-            Text = item.Impact,
+            Text = StartupImpactText.Of(item.Impact),
             FontSize = 11,
             FontWeight = FontWeights.Bold,
             Foreground = item.Impact switch
             {
-                "高" => (Brush)FindResource("DangerBrush"),
-                "中" => (Brush)FindResource("OrangeBrush"),
+                "高" or "High" => (Brush)FindResource("DangerBrush"),
+                "中" or "Medium" => (Brush)FindResource("OrangeBrush"),
                 _ => (Brush)FindResource("TextSecondaryBrush"),
             },
         };
@@ -179,7 +179,7 @@ public partial class StartupPage : Page, IParamPage
         // 来源
         var source = new TextBlock
         {
-            Text = item.SourceText,
+            Text = StartupTexts.Of(item.Source),
             FontSize = 12,
             Foreground = (Brush)FindResource("TextSecondaryBrush"),
             VerticalAlignment = VerticalAlignment.Center,
@@ -189,7 +189,7 @@ public partial class StartupPage : Page, IParamPage
         // 建议
         var suggest = new TextBlock
         {
-            Text = item.Suggestion,
+            Text = StartupSuggestText.Of(item.Suggestion),
             FontSize = 12,
             VerticalAlignment = VerticalAlignment.Center,
             Foreground = item.Suggestion switch

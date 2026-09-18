@@ -50,6 +50,7 @@ public partial class App : Application
         SettingsService.Load();
         QuarantineService.Instance.PurgeExpired();
         ThemeManager.ApplyFromSettings();
+        Loc.ApplyFromSettings();
 
         // 全局异常兜底：记录并提示，不闪退
         DispatcherUnhandledException += (s, args) =>

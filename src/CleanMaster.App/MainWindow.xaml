@@ -44,7 +44,7 @@
                     <TextBlock Text="清理优化大师" FontSize="17" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"
                                HorizontalAlignment="Center" Margin="0,14,0,0"/>
-                    <TextBlock Text="清理 · 优化 · 更流畅" FontSize="11.5"
+                    <TextBlock Text="{DynamicResource home.tagline}" FontSize="11.5"
                                Foreground="{DynamicResource TextTertiaryBrush}"
                                HorizontalAlignment="Center" Margin="0,5,0,0"/>
                 </StackPanel>
@@ -57,7 +57,7 @@
                             <Path Data="{StaticResource HomeIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
                                   StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                   Width="18" Height="18" Stretch="Uniform"/>
-                            <TextBlock Text="首页" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource nav.home}" Margin="12,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton x:Name="NavScan" Style="{StaticResource NavRadio}" GroupName="nav"
@@ -66,7 +66,7 @@
                             <Path Data="{StaticResource ScanIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
                                   StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
                                   Width="18" Height="18" Stretch="Uniform"/>
-                            <TextBlock Text="智能扫描" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource nav.scan}" Margin="12,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton x:Name="NavClean" Style="{StaticResource NavRadio}" GroupName="nav"
@@ -75,7 +75,7 @@
                             <Path Data="{StaticResource CleanIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
                                   StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                   Width="18" Height="18" Stretch="Uniform"/>
-                            <TextBlock Text="清理空间" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource nav.clean}" Margin="12,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton x:Name="NavSpace" Style="{StaticResource NavRadio}" GroupName="nav"
@@ -84,7 +84,7 @@
                             <Path Data="{StaticResource PieIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
                                   StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                   Width="18" Height="18" Stretch="Uniform"/>
-                            <TextBlock Text="空间分析" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource nav.space}" Margin="12,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton x:Name="NavStartup" Style="{StaticResource NavRadio}" GroupName="nav"
@@ -93,7 +93,7 @@
                             <Path Data="{StaticResource PowerIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
                                   StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                   Width="18" Height="18" Stretch="Uniform"/>
-                            <TextBlock Text="启动项" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource nav.startup}" Margin="12,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton x:Name="NavApps" Style="{StaticResource NavRadio}" GroupName="nav"
@@ -102,7 +102,7 @@
                             <Path Data="{StaticResource AppsIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
                                   StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                   Width="18" Height="18" Stretch="Uniform"/>
-                            <TextBlock Text="应用管理" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource nav.apps}" Margin="12,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton x:Name="NavToolbox" Style="{StaticResource NavRadio}" GroupName="nav"
@@ -111,7 +111,7 @@
                             <Path Data="{StaticResource ToolboxIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
                                   StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                   Width="18" Height="18" Stretch="Uniform"/>
-                            <TextBlock Text="工具箱" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource nav.toolbox}" Margin="12,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton x:Name="NavSettings" Style="{StaticResource NavRadio}" GroupName="nav"
@@ -120,7 +120,7 @@
                             <Path Data="{StaticResource GearIcon}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}"
                                   StrokeThickness="1.8" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                   Width="18" Height="18" Stretch="Uniform"/>
-                            <TextBlock Text="设置" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource nav.settings}" Margin="12,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </RadioButton>
                 </StackPanel>
@@ -150,7 +150,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
                             VerticalAlignment="Stretch" WindowChrome.IsHitTestVisibleInChrome="True">
                     <Button x:Name="BtnMin" Width="46" Height="52" Click="BtnMin_Click"
-                            ToolTip="最小化">
+                            ToolTip="{DynamicResource tip.min}">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="bd" Background="Transparent">
@@ -167,7 +167,7 @@
                         </Button.Template>
                     </Button>
                     <Button x:Name="BtnMax" Width="46" Height="52" Click="BtnMax_Click"
-                            ToolTip="最大化">
+                            ToolTip="{DynamicResource tip.max}">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="bd" Background="Transparent">
@@ -184,7 +184,7 @@
                         </Button.Template>
                     </Button>
                     <Button x:Name="BtnClose" Width="46" Height="52" Click="BtnClose_Click"
-                            ToolTip="关闭">
+                            ToolTip="{DynamicResource tip.close}">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="bd" Background="Transparent">

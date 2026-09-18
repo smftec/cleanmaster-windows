@@ -5,13 +5,13 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel MaxWidth="900" HorizontalAlignment="Stretch" Margin="4,2,4,20">
 
-            <TextBlock Text="设置" FontSize="21" FontWeight="Bold"
+            <TextBlock Text="{DynamicResource settings.title}" FontSize="21" FontWeight="Bold"
                        Foreground="{DynamicResource TextPrimaryBrush}" Margin="4,2,0,0"/>
 
             <!-- 通用 -->
             <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
-                    <TextBlock Text="通用" FontSize="15" FontWeight="Bold"
+                    <TextBlock Text="{DynamicResource settings.sec.general}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
                     <StackPanel x:Name="GeneralSection" Margin="0,10,0,0"/>
                 </StackPanel>
@@ -20,7 +20,7 @@
             <!-- 清理 -->
             <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
-                    <TextBlock Text="清理" FontSize="15" FontWeight="Bold"
+                    <TextBlock Text="{DynamicResource nav.clean}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
                     <StackPanel x:Name="CleanSection" Margin="0,10,0,0"/>
                 </StackPanel>
@@ -29,15 +29,15 @@
             <!-- 排除与白名单 -->
             <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
-                    <TextBlock Text="排除目录与白名单" FontSize="15" FontWeight="Bold"
+                    <TextBlock Text="{DynamicResource settings.sec.exclude}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
-                    <TextBlock Text="这些目录与文件在所有扫描和清理中都会被跳过。" FontSize="12"
+                    <TextBlock Text="{DynamicResource settings.exc.desc}" FontSize="12"
                                Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,8,0,0"/>
                     <StackPanel x:Name="ExclusionList" Margin="0,10,0,0"/>
                     <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                        <Button Content="添加排除目录" Style="{StaticResource SmallSecondaryButton}"
+                        <Button Content="{DynamicResource settings.btn.addexclude}" Style="{StaticResource SmallSecondaryButton}"
                                 Click="BtnAddExclude_Click"/>
-                        <Button Content="添加白名单文件/目录" Style="{StaticResource SmallSecondaryButton}"
+                        <Button Content="{DynamicResource settings.btn.addwhitelist}" Style="{StaticResource SmallSecondaryButton}"
                                 Margin="10,0,0,0" Click="BtnAddWhitelist_Click"/>
                     </StackPanel>
                 </StackPanel>
@@ -46,7 +46,7 @@
             <!-- 通知 -->
             <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
-                    <TextBlock Text="通知" FontSize="15" FontWeight="Bold"
+                    <TextBlock Text="{DynamicResource settings.sec.notify}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
                     <StackPanel x:Name="NotifySection" Margin="0,10,0,0"/>
                 </StackPanel>
@@ -55,7 +55,7 @@
             <!-- 高级 -->
             <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
-                    <TextBlock Text="高级" FontSize="15" FontWeight="Bold"
+                    <TextBlock Text="{DynamicResource settings.sec.advanced}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
                     <StackPanel x:Name="AdvancedSection" Margin="0,10,0,0"/>
                 </StackPanel>
@@ -64,13 +64,13 @@
             <!-- 隐私 -->
             <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
-                    <TextBlock Text="隐私" FontSize="15" FontWeight="Bold"
+                    <TextBlock Text="{DynamicResource settings.sec.privacy}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
-                    <TextBlock Text="扫描数据全部保存在本地。本应用不收集、不上传任何文件名、路径与内容。"
+                    <TextBlock Text="{DynamicResource settings.privacy.desc}"
                                FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,8,0,0"/>
                     <StackPanel x:Name="PrivacySection" Margin="0,10,0,0"/>
                     <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                        <Button Content="清除本地历史记录" Style="{StaticResource SmallSecondaryButton}"
+                        <Button Content="{DynamicResource btn.clearlocal}" Style="{StaticResource SmallSecondaryButton}"
                                 Click="BtnClearLocal_Click"/>
                     </StackPanel>
                 </StackPanel>
@@ -79,15 +79,51 @@
             <!-- 关于 -->
             <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
-                    <TextBlock Text="关于" FontSize="15" FontWeight="Bold"
+                    <TextBlock Text="{DynamicResource settings.sec.about}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
-                    <TextBlock Text="清理优化大师 v1.0.0" FontSize="13" Margin="0,10,0,0"
-                               Foreground="{DynamicResource TextPrimaryBrush}"/>
-                    <TextBlock Text="清得明白，优化得安心。可解释、可预览、可恢复的 Windows 清理与优化工具。"
-                               FontSize="12" Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,6,0,0"/>
-                    <TextBlock Text="安全承诺：默认只勾选 L0/L1 安全项目；关键删除进隔离区；不提供伪优化（内存加速球/注册表魔改等）。"
-                               FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,6,0,0"
-                               TextWrapping="Wrap"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                        <Border Width="44" Height="44" CornerRadius="12" Background="{DynamicResource PrimaryGradientBrush}">
+                            <Path Data="{StaticResource BroomIcon}" Stroke="White" StrokeThickness="2"
+                                  StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                                  Width="24" Height="24" Stretch="Uniform"/>
+                        </Border>
+                        <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
+                            <TextBlock x:Name="AboutAppName" Text="CleanMaster" FontSize="14.5" FontWeight="Bold"
+                                       Foreground="{DynamicResource TextPrimaryBrush}"/>
+                            <TextBlock x:Name="AboutVersion" Text="v1.0.0" FontSize="11.5"
+                                       Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
+                            <TextBlock Text="{DynamicResource settings.about.slogan}" FontSize="11.5"
+                                       Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="{DynamicResource settings.about.support}" FontSize="12.5" FontWeight="Bold"
+                               Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,18,0,8"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                        <TextBlock Text="{DynamicResource settings.about.site}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
+                        <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">
+                            <Hyperlink NavigateUri="https://52xn.com" RequestNavigate="OpenLink" Foreground="{DynamicResource PrimaryBrush}">52xn.com</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                        <TextBlock Text="{DynamicResource settings.about.email}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
+                        <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">
+                            <Hyperlink NavigateUri="mailto:dev@52xn.com" RequestNavigate="OpenLink" Foreground="{DynamicResource PrimaryBrush}">dev@52xn.com</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                        <TextBlock Text="{DynamicResource settings.about.repo}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
+                        <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">
+                            <Hyperlink NavigateUri="https://github.com/smftec/cleanmaster-windows" RequestNavigate="OpenLink" Foreground="{DynamicResource PrimaryBrush}">github.com/smftec/cleanmaster-windows</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
+                        <Border Background="#1FBF57" CornerRadius="10" Padding="10">
+                            <Image Source="Assets/wechat-search.png" Width="300" Stretch="Uniform"/>
+                        </Border>
+                        <TextBlock Text="{DynamicResource settings.about.wechat}" FontSize="12"
+                                   Foreground="{DynamicResource TextSecondaryBrush}" Margin="14,4,0,0"
+                                   VerticalAlignment="Center" TextWrapping="Wrap" MaxWidth="200"/>
+                    </StackPanel>
                 </StackPanel>
             </Border>
         </StackPanel>

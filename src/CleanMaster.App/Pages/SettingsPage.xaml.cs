@@ -1,4 +1,5 @@
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -17,7 +18,16 @@ public partial class SettingsPage : Page
     {
         InitializeComponent();
         _main = main;
+        AboutVersion.Text = "v" + (System.Reflection.Assembly.GetEntryAssembly()?
+            .GetCustomAttribute<System.Reflection.AssemblyInformationalVersionAttribute>()?
+            .InformationalVersion ?? "1.0.0");
         BuildUi();
+    }
+
+    private void OpenLink(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+    {
+        try { System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true }); }
+        catch { }
     }
 
     private void Save()
@@ -65,15 +75,15 @@ public partial class SettingsPage : Page
     private void BuildUi()
     {
         // —— 通用 ——
-        GeneralSection.Children.Add(Row("开机自动运行清理优化大师", "开机后只在后台托盘待命，不执行任何操作",
+        GeneralSection.Children.Add(Row(Services.Loc.T("settings.row.autostart"), Services.Loc.T("settings.row.autostart.d"),
             Toggle(_s.LaunchAtStartup, v => _s.LaunchAtStartup = v)));
-        GeneralSection.Children.Add(Row("最小化到系统托盘", "点击最小化按钮时隐藏到托盘",
+        GeneralSection.Children.Add(Row(Services.Loc.T("settings.row.mintotray"), Services.Loc.T("settings.row.mintotray.d"),
             Toggle(_s.MinimizeToTray, v => _s.MinimizeToTray = v)));
-        GeneralSection.Children.Add(Row("关闭按钮最小化到托盘", "点击关闭按钮时询问并最小化，而非退出",
+        GeneralSection.Children.Add(Row(Services.Loc.T("settings.row.closetotray"), Services.Loc.T("settings.row.closetotray.d"),
             Toggle(_s.CloseToTray, v => _s.CloseToTray = v)));
 
         var themeBox = new ComboBox { MinWidth = 130 };
-        foreach (var (label, val) in new[] { ("浅色", "light"), ("深色", "dark"), ("跟随系统", "system") })
+        foreach (var (label, val) in new[] { (Services.Loc.T("settings.theme.light"), "light"), (Services.Loc.T("settings.theme.dark"), "dark"), (Services.Loc.T("settings.theme.system"), "system") })
         {
             var item = new ComboBoxItem { Content = label, Tag = val };
             themeBox.Items.Add(item);
@@ -88,16 +98,41 @@ public partial class SettingsPage : Page
                 Services.ThemeManager.ApplyFromSettings();
             }
         };
-        GeneralSection.Children.Add(Row("主题", "", themeBox));
+        // —— 语言选择 ——
+        var langBox = new ComboBox { MinWidth = 150 };
+        var langCodes = new List<string> { "auto" };
+        langBox.Items.Add(Services.Loc.T("settings.lang.auto"));
+        foreach (var (native, _code) in Services.Loc.Supported)
+        {
+            langCodes.Add(_code);
+            langBox.Items.Add(native);
+        }
+        var current = string.IsNullOrWhiteSpace(_s.Language) ? "auto" : _s.Language;
+        var curIdx = langCodes.IndexOf(current);
+        if (curIdx < 0) curIdx = 0;
+        langBox.SelectedIndex = curIdx;
+        langBox.SelectionChanged += (s2, e2) =>
+        {
+            if (langBox.SelectedIndex >= 0)
+            {
+                _s.Language = langCodes[langBox.SelectedIndex];
+                SettingsService.Save();
+                Services.Loc.SetLanguage(_s.Language);
+                _main.ShowToast(Services.Loc.T("toast.langapplied"), ToastType.Info);
+            }
+        };
+        GeneralSection.Children.Add(Row(Services.Loc.T("settings.row.language"), Services.Loc.T("settings.row.language.d"), langBox));
+
+        GeneralSection.Children.Add(Row(Services.Loc.T("settings.row.theme"), "", themeBox));
 
         // —— 清理 ——
-        CleanSection.Children.Add(Row("清理后进入隔离区", "非缓存类文件先进入隔离区，可随时恢复（推荐开启）",
+        CleanSection.Children.Add(Row(Services.Loc.T("settings.row.quarantine"), Services.Loc.T("settings.row.quarantine.d"),
             Toggle(_s.QuarantineEnabled, v => _s.QuarantineEnabled = v)));
 
         var daysBox = new ComboBox { MinWidth = 130 };
         foreach (var d in new[] { 7, 15, 30 })
         {
-            var item = new ComboBoxItem { Content = $"{d} 天", Tag = d };
+            var item = new ComboBoxItem { Content = d + " " + Services.Loc.T("settings.days"), Tag = d };
             daysBox.Items.Add(item);
             if (_s.QuarantineDays == d) item.IsSelected = true;
         }
@@ -105,13 +140,13 @@ public partial class SettingsPage : Page
         {
             if (daysBox.SelectedItem is ComboBoxItem it) { _s.QuarantineDays = (int)it.Tag!; Save(); }
         };
-        CleanSection.Children.Add(Row("隔离区保留时间", "到期后自动永久删除", daysBox));
+        CleanSection.Children.Add(Row(Services.Loc.T("settings.row.quarantine.days"), Services.Loc.T("settings.row.quarantine.days.d"), daysBox));
 
-        CleanSection.Children.Add(Row("自动清理", "按计划自动清理临时文件与缓存等安全项目",
+        CleanSection.Children.Add(Row(Services.Loc.T("settings.row.autoclean"), Services.Loc.T("settings.row.autoclean.d"),
             Toggle(_s.AutoCleanEnabled, v => _s.AutoCleanEnabled = v)));
 
         var freqBox = new ComboBox { MinWidth = 130 };
-        foreach (var (label, val) in new[] { ("每天", "daily"), ("每周", "weekly"), ("每月", "monthly") })
+        foreach (var (label, val) in new[] { (Services.Loc.T("settings.freq.daily"), "daily"), (Services.Loc.T("settings.freq.weekly"), "weekly"), (Services.Loc.T("settings.freq.monthly"), "monthly") })
         {
             var item = new ComboBoxItem { Content = label, Tag = val };
             freqBox.Items.Add(item);
@@ -121,26 +156,26 @@ public partial class SettingsPage : Page
         {
             if (freqBox.SelectedItem is ComboBoxItem it) { _s.AutoCleanFrequency = (string)it.Tag!; Save(); }
         };
-        CleanSection.Children.Add(Row("自动清理频率", "应用运行期间在后台执行", freqBox));
+        CleanSection.Children.Add(Row(Services.Loc.T("settings.row.autoclean.freq"), Services.Loc.T("settings.row.autoclean.freq.d"), freqBox));
 
         // —— 排除目录与白名单 ——
         RenderExclusions();
 
         // —— 通知 ——
-        NotifySection.Children.Add(Row("磁盘空间不足提醒", "系统盘剩余不足 10% 时提醒（低频，不打扰）",
+        NotifySection.Children.Add(Row(Services.Loc.T("settings.row.notifydisk"), Services.Loc.T("settings.row.notifydisk.d"),
             Toggle(_s.NotifyDiskLow, v => _s.NotifyDiskLow = v)));
-        NotifySection.Children.Add(Row("自动清理结果通知", "",
+        NotifySection.Children.Add(Row(Services.Loc.T("settings.row.notifyauto"), "",
             Toggle(_s.NotifyAutoCleanResult, v => _s.NotifyAutoCleanResult = v)));
-        NotifySection.Children.Add(Row("每周空间报告", "",
+        NotifySection.Children.Add(Row(Services.Loc.T("settings.row.notifyweekly"), "",
             Toggle(_s.NotifyWeeklyReport, v => _s.NotifyWeeklyReport = v)));
-        NotifySection.Children.Add(Row("产品消息", "新功能与活动通知，默认关闭",
+        NotifySection.Children.Add(Row(Services.Loc.T("settings.row.notifynews"), Services.Loc.T("settings.row.notifynews.d"),
             Toggle(_s.NotifyProductNews, v => _s.NotifyProductNews = v)));
 
         // —— 高级 ——
         var threadsBox = new ComboBox { MinWidth = 130 };
         for (int i = 2; i <= Math.Max(8, Environment.ProcessorCount); i += 2)
         {
-            var item = new ComboBoxItem { Content = $"{i} 线程", Tag = i };
+            var item = new ComboBoxItem { Content = i + " " + Services.Loc.T("settings.threads"), Tag = i };
             threadsBox.Items.Add(item);
             if (_s.ScanThreads == i) item.IsSelected = true;
         }
@@ -148,16 +183,16 @@ public partial class SettingsPage : Page
         {
             if (threadsBox.SelectedItem is ComboBoxItem it) { _s.ScanThreads = (int)it.Tag!; Save(); }
         };
-        AdvancedSection.Children.Add(Row("扫描线程数", "线程越多扫描越快，但机械硬盘建议调低", threadsBox));
-        AdvancedSection.Children.Add(Row("扫描隐藏文件", "",
+        AdvancedSection.Children.Add(Row(Services.Loc.T("settings.row.threads"), Services.Loc.T("settings.row.threads.d"), threadsBox));
+        AdvancedSection.Children.Add(Row(Services.Loc.T("settings.row.hidden"), "",
             Toggle(_s.ScanHiddenFiles, v => _s.ScanHiddenFiles = v)));
-        AdvancedSection.Children.Add(Row("跟随目录链接 (Junction)", "跟随符号链接扫描可能造成重复统计，默认关闭",
+        AdvancedSection.Children.Add(Row(Services.Loc.T("settings.row.junction"), Services.Loc.T("settings.row.junction.d"),
             Toggle(_s.FollowJunctions, v => _s.FollowJunctions = v)));
 
         // —— 隐私 ——
-        PrivacySection.Children.Add(Row("匿名使用统计", "仅上报功能使用次数与错误码，不含任何文件信息；当前版本完全不上传数据",
+        PrivacySection.Children.Add(Row(Services.Loc.T("settings.row.stats"), Services.Loc.T("settings.row.stats.d"),
             Toggle(_s.AnonymousStats, v => _s.AnonymousStats = v)));
-        PrivacySection.Children.Add(Row("崩溃报告", "",
+        PrivacySection.Children.Add(Row(Services.Loc.T("settings.row.crash"), "",
             Toggle(_s.CrashReports, v => _s.CrashReports = v)));
     }
 
@@ -189,7 +224,7 @@ public partial class SettingsPage : Page
             };
             chip.Child = new TextBlock
             {
-                Text = isWhitelist ? "白名单" : "排除",
+                Text = isWhitelist ? Services.Loc.T("settings.whitelist") : Services.Loc.T("settings.excluded"),
                 FontSize = 10.5,
                 FontWeight = FontWeights.Bold,
                 Foreground = isWhitelist
@@ -211,7 +246,7 @@ public partial class SettingsPage : Page
 
             var del = new Button
             {
-                Content = "移除",
+                Content = Services.Loc.T("btn.remove"),
                 Style = (Style)FindResource("LinkButton"),
                 Foreground = (Brush)FindResource("DangerBrush"),
             };
@@ -237,7 +272,7 @@ public partial class SettingsPage : Page
         {
             ExclusionList.Children.Add(new TextBlock
             {
-                Text = "暂无排除目录与白名单",
+                Text = Services.Loc.T("settings.exc.empty"),
                 FontSize = 12,
                 Foreground = (Brush)FindResource("TextTertiaryBrush"),
             });
@@ -246,7 +281,7 @@ public partial class SettingsPage : Page
 
     private void BtnAddExclude_Click(object sender, RoutedEventArgs e)
     {
-        var dlg = new System.Windows.Forms.FolderBrowserDialog { Description = "选择要在扫描清理中排除的目录" };
+        var dlg = new System.Windows.Forms.FolderBrowserDialog { Description = Services.Loc.T("settings.pick.exclude") };
         if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
         if (!_s.ExcludedPaths.Contains(dlg.SelectedPath))
         {
@@ -258,7 +293,7 @@ public partial class SettingsPage : Page
 
     private void BtnAddWhitelist_Click(object sender, RoutedEventArgs e)
     {
-        var dlg = new OpenFileDialog { Title = "选择要加入白名单的文件" };
+        var dlg = new OpenFileDialog { Title = Services.Loc.T("settings.pick.whitelist") };
         if (dlg.ShowDialog() != true) return;
         if (!_s.Whitelist.Contains(dlg.FileName))
         {
@@ -270,9 +305,9 @@ public partial class SettingsPage : Page
 
     private void BtnClearLocal_Click(object sender, RoutedEventArgs e)
     {
-        if (!Services.DialogService.Confirm(_main, "清除本地历史？", "清理历史与活动记录将被删除（隔离区文件不受影响）。", "清除"))
+        if (!Services.DialogService.Confirm(_main, Services.Loc.T("history.clear.title"), Services.Loc.T("history.clear.msg"), Services.Loc.T("btn.clearhistory")))
             return;
         HistoryService.Clear();
-        _main.ShowToast("本地历史已清除");
+        _main.ShowToast(Services.Loc.T("toast.historycleared"));
     }
 }

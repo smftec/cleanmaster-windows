@@ -16,7 +16,7 @@ public partial class LeftoverDialog : Window
     {
         InitializeComponent();
         _items = items;
-        TitleText.Text = $"「{appName}」的卸载残留";
+        TitleText.Text = string.Format(Services.Loc.T("leftover.title.f"), appName);
         MouseLeftButtonDown += (s, e) => { if (e.ButtonState == MouseButtonState.Pressed) DragMove(); };
         foreach (var item in items)
         {
@@ -59,7 +59,7 @@ public partial class LeftoverDialog : Window
         ToolTipService.SetToolTip(sp, item.Path);
         sp.Children.Add(new TextBlock
         {
-            Text = item.IsRegistry ? "注册表设置键（导出备份后删除）" : item.Description,
+            Text = item.IsRegistry ? Services.Loc.T("leftover.reg") : LeftoverDesc.Of(item.Description),
             FontSize = 11,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 2, 0, 0),

@@ -65,14 +65,14 @@ public partial class MainWindow : Window
         _currentKey = key;
         WindowTitleText.Text = key switch
         {
-            PageKey.Home => "首页",
-            PageKey.SmartScan => "智能扫描",
-            PageKey.CleanSpace => "清理空间",
-            PageKey.SpaceAnalysis => "空间分析",
-            PageKey.Startup => "启动项",
-            PageKey.Apps => "应用管理",
-            PageKey.Toolbox => "工具箱",
-            PageKey.Settings => "设置",
+            PageKey.Home => Services.Loc.T("nav.home"),
+            PageKey.SmartScan => Services.Loc.T("nav.scan"),
+            PageKey.CleanSpace => Services.Loc.T("nav.clean"),
+            PageKey.SpaceAnalysis => Services.Loc.T("nav.space"),
+            PageKey.Startup => Services.Loc.T("nav.startup"),
+            PageKey.Apps => Services.Loc.T("nav.apps"),
+            PageKey.Toolbox => Services.Loc.T("nav.toolbox"),
+            PageKey.Settings => Services.Loc.T("nav.settings"),
             _ => "",
         };
         SyncNavChecked(key);
@@ -199,12 +199,12 @@ public partial class MainWindow : Window
         if (s.CloseToTray)
         {
             HideToTray();
-            ShowToast("已最小化到托盘，右键托盘图标可退出", ToastType.Info);
+            ShowToast(Services.Loc.T("toast.traymin"), ToastType.Info);
             return;
         }
         if (!_allowClose)
         {
-            var exit = Services.DialogService.Confirm(this, "退出清理优化大师？", "退出后将不再提供自动清理与磁盘空间监控。", "退出", "取消");
+            var exit = Services.DialogService.Confirm(this, Services.Loc.T("dlg.exit.title"), Services.Loc.T("dlg.exit.msg"), Services.Loc.T("btn.exit"), Services.Loc.T("btn.cancel"));
             if (!exit) return;
             _allowClose = true;
         }

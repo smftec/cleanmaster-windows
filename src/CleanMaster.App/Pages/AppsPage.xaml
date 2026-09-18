@@ -10,19 +10,19 @@
 
         <Grid Grid.Row="0" Margin="4,2,4,0">
             <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="应用管理" FontSize="21" FontWeight="Bold"
+                <TextBlock Text="{DynamicResource nav.apps}" FontSize="21" FontWeight="Bold"
                            Foreground="{DynamicResource TextPrimaryBrush}"/>
-                <TextBlock Text="卸载将调用应用自带的卸载程序；卸载完成后可扫描确认的残留文件（进入隔离区，可恢复）。" FontSize="12"
+                <TextBlock Text="{DynamicResource apps.desc}" FontSize="12"
                            Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,8,0,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <TextBox x:Name="SearchBox" Width="200" VerticalAlignment="Center" TextChanged="SearchBox_TextChanged"/>
                 <ComboBox x:Name="SortSelector" Width="120" Margin="12,0,0,0" SelectionChanged="Sort_Changed">
-                    <ComboBoxItem Content="按名称" Tag="name" IsSelected="True"/>
-                    <ComboBoxItem Content="按大小" Tag="size"/>
-                    <ComboBoxItem Content="按安装日期" Tag="date"/>
+                    <ComboBoxItem Content="{DynamicResource apps.sort.name}" Tag="name" IsSelected="True"/>
+                    <ComboBoxItem Content="{DynamicResource apps.sort.size}" Tag="size"/>
+                    <ComboBoxItem Content="{DynamicResource apps.sort.date}" Tag="date"/>
                 </ComboBox>
-                <Button x:Name="BtnRefresh" Content="刷新" Style="{StaticResource SecondaryButton}"
+                <Button x:Name="BtnRefresh" Content="{DynamicResource btn.refresh}" Style="{StaticResource SecondaryButton}"
                         Padding="18,8" Margin="12,0,0,0" Click="BtnRefresh_Click"/>
             </StackPanel>
         </Grid>
@@ -42,10 +42,10 @@
                             <ColumnDefinition Width="1.1*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="应用" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
-                        <TextBlock Grid.Column="1" Text="发布者" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
-                        <TextBlock Grid.Column="2" Text="大小" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
-                        <TextBlock Grid.Column="3" Text="安装日期" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
+                        <TextBlock Text="{DynamicResource apps.col.name}" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
+                        <TextBlock Grid.Column="1" Text="{DynamicResource apps.col.publisher}" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
+                        <TextBlock Grid.Column="2" Text="{DynamicResource apps.col.size}" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
+                        <TextBlock Grid.Column="3" Text="{DynamicResource apps.col.date}" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
                     </Grid>
                     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                         <StackPanel x:Name="AppList"/>
@@ -56,11 +56,11 @@
             <StackPanel x:Name="LoadingPanel" Visibility="Collapsed" VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                 <ProgressBar IsIndeterminate="True" Width="240" Height="6"/>
-                <TextBlock x:Name="LoadingText" Text="正在读取已安装应用…" FontSize="12.5"
+                <TextBlock x:Name="LoadingText" Text="{DynamicResource apps.loading}" FontSize="12.5"
                            Foreground="{DynamicResource TextSecondaryBrush}"
                            HorizontalAlignment="Center" Margin="0,14,0,0"/>
             </StackPanel>
-            <TextBlock x:Name="EmptyText" Text="没有匹配的应用" FontSize="12.5"
+            <TextBlock x:Name="EmptyText" Text="{DynamicResource apps.empty}" FontSize="12.5"
                        Foreground="{DynamicResource TextTertiaryBrush}" HorizontalAlignment="Center"
                        Visibility="Collapsed" VerticalAlignment="Center"/>
         </Grid>

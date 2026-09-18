@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using CleanMaster.Core.Models;
@@ -13,6 +13,8 @@ public sealed class AppSettings
     public bool CloseToTray { get; set; } = true;
     /// <summary>light / dark / system</summary>
     public string Theme { get; set; } = "light";
+    /// <summary>auto / zh-CN / zh-TW / en-US / ja-JP / ko-KR / fr-FR / es-ES / de-DE</summary>
+    public string Language { get; set; } = "auto";
 
     // —— 清理 ——
     public bool QuarantineEnabled { get; set; } = true;

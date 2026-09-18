@@ -114,15 +114,15 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         TreeCard.Visibility = Visibility.Collapsed;
         LargeCard.Visibility = _onLargeTab ? Visibility.Visible : Visibility.Collapsed;
         BtnAnalyze.IsEnabled = false;
-        AnalyzeFilesText.Text = "已扫描 0 个文件";
-        AnalyzeBytesText.Text = "共 0 B";
+        AnalyzeFilesText.Text = string.Format(Services.Loc.T("space.scanned"), 0);
+        AnalyzeBytesText.Text = string.Format(Services.Loc.T("space.total"), "0 B");
 
         var threshold = 500L * 1024 * 1024;
         var progress = new Progress<SpaceAnalysisService.ProgressInfo>(p =>
         {
             AnalyzeDirText.Text = p.CurrentDir;
-            AnalyzeFilesText.Text = $"已扫描 {p.ScannedFiles:N0} 个文件";
-            AnalyzeBytesText.Text = $"共 {SizeText.OfBytes(p.ScannedBytes)}";
+            AnalyzeFilesText.Text = string.Format(Services.Loc.T("space.scanned"), p.ScannedFiles);
+            AnalyzeBytesText.Text = string.Format(Services.Loc.T("space.total"), SizeText.OfBytes(p.ScannedBytes));
         });
 
         DriveAnalysis analysis;
@@ -133,14 +133,14 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         catch (OperationCanceledException)
         {
             FinishAnalyzeUi();
-            _main.ShowToast("已取消分析", ToastType.Info);
+            _main.ShowToast(Services.Loc.T("space.cancelled"), ToastType.Info);
             return;
         }
         catch (Exception ex)
         {
             FinishAnalyzeUi();
             Services.AppLog.Error("AnalyzeAsync", ex);
-            _main.ShowToast("分析失败：" + ex.Message, ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("space.failed") + ex.Message, ToastType.Warning);
             return;
         }
         FinishAnalyzeUi();
@@ -151,12 +151,12 @@ public partial class SpaceAnalysisPage : Page, IParamPage
             RenderOverview(analysis);
             RenderTree(analysis);
             RenderLargeFiles();
-            _main.ShowToast($"分析完成，用时 {analysis.Duration.TotalSeconds:F0} 秒");
+            _main.ShowToast(string.Format(Services.Loc.T("space.done"), analysis.Duration.TotalSeconds));
         }
         catch (Exception ex)
         {
             Services.AppLog.Error("RenderAnalysis", ex);
-            _main.ShowToast("分析结果渲染异常，详情见日志", ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("space.rendererror"), ToastType.Warning);
         }
         try
         {
@@ -195,9 +195,8 @@ public partial class SpaceAnalysisPage : Page, IParamPage
     private void RenderOverview(DriveAnalysis a)
     {
         OverviewDriveText.Text = a.DriveName;
-        OverviewUsedText.Text = $"已使用 {SizeText.OfBytes(a.UsedBytes)} / {SizeText.OfBytes(a.TotalBytes)}（{a.UsedPercent:F1}%），" +
-                                $"可用 {SizeText.OfBytes(a.FreeBytes)}";
-        OverviewTimeText.Text = $"分析于 {DateTime.Now:HH:mm} · {a.ScannedFiles:N0} 个文件 · {a.Duration.TotalSeconds:F0} 秒";
+        OverviewUsedText.Text = string.Format(Services.Loc.T("space.used.f"), SizeText.OfBytes(a.UsedBytes), SizeText.OfBytes(a.TotalBytes), a.UsedPercent, SizeText.OfBytes(a.FreeBytes));
+        OverviewTimeText.Text = string.Format(Services.Loc.T("space.analyzed.f"), DateTime.Now.ToString("HH:mm"), a.ScannedFiles, a.Duration.TotalSeconds);
         DiskUsageBar.Value = Math.Clamp(a.UsedPercent, 0, 100);
         CategoryRow.Children.Clear();
         foreach (var c in a.Categories.Take(6))
@@ -291,9 +290,8 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         var cached = DiskCache.Load(CurrentDrive);
         if (cached != null)
         {
-            OverviewUsedText.Text = $"已使用 {SizeText.OfBytes(cached.UsedBytes)} / {SizeText.OfBytes(cached.TotalBytes)}，" +
-                                    $"可用 {SizeText.OfBytes(cached.FreeBytes)}";
-            OverviewTimeText.Text = $"上次分析：{cached.Time:yyyy-MM-dd HH:mm}";
+            OverviewUsedText.Text = string.Format(Services.Loc.T("space.used.f2"), SizeText.OfBytes(cached.UsedBytes), SizeText.OfBytes(cached.TotalBytes), SizeText.OfBytes(cached.FreeBytes));
+            OverviewTimeText.Text = string.Format(Services.Loc.T("space.lastanalysis"), cached.Time.ToString("yyyy-MM-dd HH:mm"));
             DiskUsageBar.Value = cached.TotalBytes > 0
                 ? Math.Clamp(cached.UsedBytes * 100.0 / cached.TotalBytes, 0, 100)
                 : 0;
@@ -330,7 +328,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         }
         else
         {
-            OverviewUsedText.Text = "这块磁盘还没有分析过";
+            OverviewUsedText.Text = Services.Loc.T("space.notanalyzed");
             OverviewEmptyText.Visibility = Visibility.Visible;
         }
         RenderLargeFiles();
@@ -352,9 +350,9 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         var list = files.Where(f => f.Size >= threshold).OrderByDescending(f => f.Size).Take(300).ToList();
         LargeEmptyText.Visibility = list.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
         if (_lastAnalysis == null && disk == null)
-            LargeEmptyText.Text = "还没有分析过这块磁盘，点击右上角「开始分析」";
+            LargeEmptyText.Text = Services.Loc.T("space.empty");
         else if (list.Count == 0)
-            LargeEmptyText.Text = $"没有找到大于 {mb:F0} MB 的文件";
+            LargeEmptyText.Text = string.Format(Services.Loc.T("space.large.none"), mb);
 
         long shownBytes = list.Sum(f => f.Size);
         LargeSummaryText.Text = list.Count > 0 ? $"{list.Count} 个文件 · 共 {SizeText.OfBytes(shownBytes)}" : "";
@@ -387,7 +385,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         };
         iconTile.Child = new TextBlock
         {
-            Text = System.IO.Path.GetExtension(f.Path).TrimStart('.').ToUpperInvariant() is { Length: > 0 and <= 4 } ext ? ext : "文件",
+            Text = System.IO.Path.GetExtension(f.Path).TrimStart('.').ToUpperInvariant() is { Length: > 0 and <= 4 } ext ? ext : Services.Loc.T("space.file"),
             FontSize = 9.5,
             FontWeight = FontWeights.Bold,
             Foreground = Brushes.White,
@@ -416,7 +414,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         mid.Children.Add(pathTb);
         mid.Children.Add(new TextBlock
         {
-            Text = $"修改于 {f.ModifiedTime:yyyy-MM-dd HH:mm}",
+            Text = Services.Loc.T("space.modified") + " " + f.ModifiedTime.ToString("yyyy-MM-dd HH:mm"),
             FontSize = 10.5,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 2, 0, 0),
@@ -453,7 +451,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
             {
                 s2.Whitelist.Add(f.Path);
                 SettingsService.Save();
-                _main.ShowToast("已加入白名单，扫描与清理将跳过该文件", ToastType.Info);
+                _main.ShowToast(Services.Loc.T("toast.whitelisted"), ToastType.Info);
             }
         });
 
@@ -469,20 +467,20 @@ public partial class SpaceAnalysisPage : Page, IParamPage
 
     private void RecycleLargeFile(LargeFileInfo f)
     {
-        if (!Services.DialogService.Confirm(_main, "移入回收站？",
-            $"{System.IO.Path.GetFileName(f.Path)}（{SizeText.OfBytes(f.Size)}）将移入回收站，可随时还原。", "移入回收站"))
+        if (!Services.DialogService.Confirm(_main, Services.Loc.T("space.recycle.title"),
+            string.Format(Services.Loc.T("space.recycle.msg"), System.IO.Path.GetFileName(f.Path), SizeText.OfBytes(f.Size)), Services.Loc.T("btn.recycle")))
             return;
         var ok = ShellUtil.RecycleToBin(f.Path);
         if (ok)
         {
-            HistoryService.Add("Clean", $"清理了大文件 {System.IO.Path.GetFileName(f.Path)}", f.Path, f.Size);
-            _main.ShowToast($"已移入回收站，释放 {SizeText.OfBytes(f.Size)}");
+            HistoryService.Add("Clean", string.Format(Services.Loc.T("toast.largecleaned"), System.IO.Path.GetFileName(f.Path)), f.Path, f.Size);
+            _main.ShowToast(string.Format(Services.Loc.T("toast.recycled"), SizeText.OfBytes(f.Size)));
             _lastAnalysis?.LargeFiles.Remove(f);
             RenderLargeFiles();
         }
         else
         {
-            _main.ShowToast("移入回收站失败，文件可能被占用", ToastType.Warning);
+            _main.ShowToast(Services.Loc.T("toast.recyclefailed"), ToastType.Warning);
         }
     }
 }

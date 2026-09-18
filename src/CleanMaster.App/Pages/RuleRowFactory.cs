@@ -53,13 +53,13 @@ public static class RuleRowFactory
                 ? (Brush)resources.FindResource("DangerBrush")
                 : (Brush)resources.FindResource("OrangeBrush"), new Thickness(10, 0, 0, 0)));
         if (vm.RunningCount > 0)
-            line1.Children.Add(Chip($"{vm.RunningCount} 个相关进程运行中", (Brush)resources.FindResource("OrangeBrush"),
+            line1.Children.Add(Chip(string.Format(Services.Loc.T("row.running"), vm.RunningCount), (Brush)resources.FindResource("OrangeBrush"),
                 new Thickness(8, 0, 0, 0)));
         mid.Children.Add(line1);
 
         var reason = new TextBlock
         {
-            Text = vm.Reason + (vm.CanRestore ? " · 可进隔离区恢复" : " · 直接删除"),
+            Text = vm.Reason + (vm.CanRestore ? " · " + vm.RestoreText : " · " + vm.DirectText),
             FontSize = 11.5,
             Foreground = (Brush)resources.FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 3, 0, 0),
