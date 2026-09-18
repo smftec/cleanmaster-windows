@@ -1,521 +1,521 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <sys:String x:Key="apps.col.date">安裝日期</sys:String>
-    <sys:String x:Key="apps.col.name">應用程式</sys:String>
-    <sys:String x:Key="apps.col.publisher">發佈者</sys:String>
-    <sys:String x:Key="apps.col.size">大小</sys:String>
-    <sys:String x:Key="apps.desc">解除安裝將呼叫應用程式自帶的解除安裝程式；完成後可掃描確認的殘留檔案（進入隔離區，可還原）。</sys:String>
-    <sys:String x:Key="apps.empty">沒有符合的應用</sys:String>
-    <sys:String x:Key="apps.loading">正在讀取已安裝應用…</sys:String>
-    <sys:String x:Key="apps.notdetected">未偵測到解除安裝完成，可能已取消</sys:String>
-    <sys:String x:Key="apps.sort.date">按安裝日期</sys:String>
-    <sys:String x:Key="apps.sort.name">按名稱</sys:String>
-    <sys:String x:Key="apps.sort.size">按大小</sys:String>
-    <sys:String x:Key="apps.store">Microsoft Store 應用</sys:String>
-    <sys:String x:Key="apps.uninstall.failed">無法啟動解除安裝程式：</sys:String>
-    <sys:String x:Key="apps.uninstall.msg">應用程式大小：{0}
+    <sys:String xml:space="preserve" x:Key="apps.col.date">安裝日期</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.name">應用程式</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.publisher">發佈者</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.size">大小</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.desc">解除安裝將呼叫應用程式自帶的解除安裝程式；完成後可掃描確認的殘留檔案（進入隔離區，可還原）。</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.empty">沒有符合的應用</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.loading">正在讀取已安裝應用…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.notdetected">未偵測到解除安裝完成，可能已取消</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.date">按安裝日期</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.name">按名稱</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.size">按大小</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.store">Microsoft Store 應用</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">無法啟動解除安裝程式：</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">應用程式大小：{0}
 
 將啟動應用程式自帶的解除安裝程式，請在解除安裝精靈中完成操作。</sys:String>
-    <sys:String x:Key="apps.uninstall.start">開始解除安裝</sys:String>
-    <sys:String x:Key="apps.uninstall.title">解除安裝 {0}？</sys:String>
-    <sys:String x:Key="apps.uninstalled.log">解除安裝了應用「{0}」</sys:String>
-    <sys:String x:Key="apps.uninstalled.toast">「{0}」已解除安裝</sys:String>
-    <sys:String x:Key="apps.unknown">未知</sys:String>
-    <sys:String x:Key="apps.waiting">等待「{0}」解除安裝完成…
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.start">開始解除安裝</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.title">解除安裝 {0}？</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstalled.log">解除安裝了應用「{0}」</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstalled.toast">「{0}」已解除安裝</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.unknown">未知</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.waiting">等待「{0}」解除安裝完成…
 完成解除安裝精靈後會自動繼續</sys:String>
-    <sys:String x:Key="btn.analyze.start">開始分析</sys:String>
-    <sys:String x:Key="btn.cancel">取消</sys:String>
-    <sys:String x:Key="btn.clean.selected">清理已選項目</sys:String>
-    <sys:String x:Key="btn.clean.start">開始清理</sys:String>
-    <sys:String x:Key="btn.cleansel">清理所選項目</sys:String>
-    <sys:String x:Key="btn.clearhistory">清空歷史</sys:String>
-    <sys:String x:Key="btn.clearlocal">清除本機歷史記錄</sys:String>
-    <sys:String x:Key="btn.deleteperm">永久刪除</sys:String>
-    <sys:String x:Key="btn.done.home">返回首頁</sys:String>
-    <sys:String x:Key="btn.done.quarantine">開啟隔離區</sys:String>
-    <sys:String x:Key="btn.dup.rescan">重新掃描</sys:String>
-    <sys:String x:Key="btn.dupclean">將所選移至資源回收筒</sys:String>
-    <sys:String x:Key="btn.dupkeepnew">保留最新，選取其餘</sys:String>
-    <sys:String x:Key="btn.dupscan">開始掃描</sys:String>
-    <sys:String x:Key="btn.emptybin">清空資源回收筒</sys:String>
-    <sys:String x:Key="btn.exit">結束</sys:String>
-    <sys:String x:Key="btn.more">更多功能</sys:String>
-    <sys:String x:Key="btn.openbin">開啟資源回收筒</sys:String>
-    <sys:String x:Key="btn.purge">清空隔離區</sys:String>
-    <sys:String x:Key="btn.recycle">移至資源回收筒</sys:String>
-    <sys:String x:Key="btn.refresh">重新整理</sys:String>
-    <sys:String x:Key="btn.remove">移除</sys:String>
-    <sys:String x:Key="btn.rescan">重新掃描</sys:String>
-    <sys:String x:Key="btn.restore">還原</sys:String>
-    <sys:String x:Key="btn.scan.now">立即掃描</sys:String>
-    <sys:String x:Key="btn.scangroup">掃描此分類</sys:String>
-    <sys:String x:Key="btn.shred">永久粉碎</sys:String>
-    <sys:String x:Key="btn.shreddir">選擇資料夾粉碎</sys:String>
-    <sys:String x:Key="btn.shredfile">選擇檔案粉碎</sys:String>
-    <sys:String x:Key="btn.stopscan">停止掃描</sys:String>
-    <sys:String x:Key="btn.uninstall">解除安裝</sys:String>
-    <sys:String x:Key="cat.apps">應用</sys:String>
-    <sys:String x:Key="cat.archives">壓縮檔</sys:String>
-    <sys:String x:Key="cat.audio">音訊</sys:String>
-    <sys:String x:Key="cat.documents">文件</sys:String>
-    <sys:String x:Key="cat.images">圖片</sys:String>
-    <sys:String x:Key="cat.other">其他</sys:String>
-    <sys:String x:Key="cat.system">系統</sys:String>
-    <sys:String x:Key="cat.videos">影片</sys:String>
-    <sys:String x:Key="clean.empty.before">點擊右上角「掃描」開始檢查這一類項目</sys:String>
-    <sys:String x:Key="clean.empty.clean">這一類很乾淨，沒有發現可清理的項目</sys:String>
-    <sys:String x:Key="clean.empty.group">點擊下方「掃描此分類」開始檢查這一類項目</sys:String>
-    <sys:String x:Key="clean.freed">已釋放 —</sys:String>
-    <sys:String x:Key="clean.privacy.banner">隱私項預設全部不勾選。勾選前請閱讀每項的影響說明：清理 Cookie 會使網站登出，清理歷史記錄後不可復原。</sys:String>
-    <sys:String x:Key="clean.privacy.warn">隱私項清理後無法復原，請確認已了解各項影響。</sys:String>
-    <sys:String x:Key="clean.recycle.desc">清空後資源回收筒中的檔案將被永久刪除、無法復原。也可以先開啟資源回收筒檢查一遍。</sys:String>
-    <sys:String x:Key="clean.tab.app">應用快取</sys:String>
-    <sys:String x:Key="clean.tab.browser">瀏覽器清理</sys:String>
-    <sys:String x:Key="clean.tab.privacy">隱私痕跡</sys:String>
-    <sys:String x:Key="clean.tab.recycle">資源回收筒</sys:String>
-    <sys:String x:Key="clean.tab.system">系統垃圾</sys:String>
-    <sys:String x:Key="clean.tabnote.0">系統與應用產生的暫存檔、日誌與當機報告，預設只勾選安全項目</sys:String>
-    <sys:String x:Key="clean.tabnote.1">通訊與辦公軟體的快取和日誌，不會觸碰聊天記錄與文件</sys:String>
-    <sys:String x:Key="clean.tabnote.2">瀏覽器為加速上網產生的快取，不影響登入狀態、密碼與歷史</sys:String>
-    <sys:String x:Key="clean.tabnote.3">涉及個人記錄，預設全部不勾選，請仔細確認影響後再清理</sys:String>
-    <sys:String x:Key="clean.tabnote.4">清空資源回收筒前請確認裡面的檔案不再需要</sys:String>
-    <sys:String x:Key="clean.title">正在清理…</sys:String>
-    <sys:String x:Key="common.approx">約 </sys:String>
-    <sys:String x:Key="common.freeable">可釋放</sys:String>
-    <sys:String x:Key="common.loading">正在讀取…</sys:String>
-    <sys:String x:Key="common.n.items">{0} 項</sys:String>
-    <sys:String x:Key="common.scanning">正在掃描…</sys:String>
-    <sys:String x:Key="common.selected">已選擇</sys:String>
-    <sys:String x:Key="common.viewall">查看全部</sys:String>
-    <sys:String x:Key="dlg.clean.amount">即將清理 {0} 的資料。</sys:String>
-    <sys:String x:Key="dlg.clean.confirmitems">包含需要確認的項目：</sys:String>
-    <sys:String x:Key="dlg.clean.nrules">即將清理 {0} 類項目，共 {1}。</sys:String>
-    <sys:String x:Key="dlg.clean.quarantinehint">可復原類檔案將進入隔離區。</sys:String>
-    <sys:String x:Key="dlg.clean.selected.title">確認清理所選項目？</sys:String>
-    <sys:String x:Key="dlg.exit.msg">結束後將不再提供自動清理與磁碟空間監控。</sys:String>
-    <sys:String x:Key="dlg.exit.title">結束清理優化大師？</sys:String>
-    <sys:String x:Key="dlg.quickclean.msg">預計可釋放 {0}。
+    <sys:String xml:space="preserve" x:Key="btn.analyze.start">開始分析</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.cancel">取消</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clean.selected">清理已選項目</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clean.start">開始清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.cleansel">清理所選項目</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clearhistory">清空歷史</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clearlocal">清除本機歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.deleteperm">永久刪除</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.done.home">返回首頁</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.done.quarantine">開啟隔離區</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dup.rescan">重新掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupclean">將所選移至資源回收筒</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupkeepnew">保留最新，選取其餘</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupscan">開始掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.emptybin">清空資源回收筒</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.exit">結束</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.more">更多功能</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.openbin">開啟資源回收筒</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.purge">清空隔離區</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.recycle">移至資源回收筒</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.refresh">重新整理</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.remove">移除</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.rescan">重新掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.restore">還原</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.scan.now">立即掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.scangroup">掃描此分類</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shred">永久粉碎</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shreddir">選擇資料夾粉碎</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shredfile">選擇檔案粉碎</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.stopscan">停止掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.uninstall">解除安裝</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.apps">應用</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.archives">壓縮檔</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.audio">音訊</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.documents">文件</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.images">圖片</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.other">其他</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.system">系統</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.videos">影片</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.before">點擊右上角「掃描」開始檢查這一類項目</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.clean">這一類很乾淨，沒有發現可清理的項目</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.group">點擊下方「掃描此分類」開始檢查這一類項目</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.freed">已釋放 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.privacy.banner">隱私項預設全部不勾選。勾選前請閱讀每項的影響說明：清理 Cookie 會使網站登出，清理歷史記錄後不可復原。</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.privacy.warn">隱私項清理後無法復原，請確認已了解各項影響。</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recycle.desc">清空後資源回收筒中的檔案將被永久刪除、無法復原。也可以先開啟資源回收筒檢查一遍。</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.app">應用快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.browser">瀏覽器清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.privacy">隱私痕跡</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.recycle">資源回收筒</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.system">系統垃圾</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.0">系統與應用產生的暫存檔、日誌與當機報告，預設只勾選安全項目</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.1">通訊與辦公軟體的快取和日誌，不會觸碰聊天記錄與文件</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.2">瀏覽器為加速上網產生的快取，不影響登入狀態、密碼與歷史</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.3">涉及個人記錄，預設全部不勾選，請仔細確認影響後再清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.4">清空資源回收筒前請確認裡面的檔案不再需要</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.title">正在清理…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.approx">約 </sys:String>
+    <sys:String xml:space="preserve" x:Key="common.freeable">可釋放</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.loading">正在讀取…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.n.items">{0} 項</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.scanning">正在掃描…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.selected">已選擇</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.viewall">查看全部</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.amount">即將清理 {0} 的資料。</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">包含需要確認的項目：</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">即將清理 {0} 類項目，共 {1}。</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.quarantinehint">可復原類檔案將進入隔離區。</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.selected.title">確認清理所選項目？</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.exit.msg">結束後將不再提供自動清理與磁碟空間監控。</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.exit.title">結束清理優化大師？</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.quickclean.msg">預計可釋放 {0}。
 可復原類檔案會進入隔離區。</sys:String>
-    <sys:String x:Key="dlg.quickclean.title">清理{0}？</sys:String>
-    <sys:String x:Key="done.cancelled">清理已中斷</sys:String>
-    <sys:String x:Key="done.freed.total">共釋放 {0}</sys:String>
-    <sys:String x:Key="done.note.quarantine">隔離區檔案保留 {0} 天，可隨時在工具箱中還原。</sys:String>
-    <sys:String x:Key="done.note.skip">跳過的檔案正在被其他程式使用，關閉相關程式後下次清理即可移除。</sys:String>
-    <sys:String x:Key="done.partial">清理完成（部分跳過）</sys:String>
-    <sys:String x:Key="done.stat.fail">失敗</sys:String>
-    <sys:String x:Key="done.stat.ok">清理成功</sys:String>
-    <sys:String x:Key="done.stat.quar">進入隔離區</sys:String>
-    <sys:String x:Key="done.stat.skip">跳過（佔用中）</sys:String>
-    <sys:String x:Key="done.title">清理完成</sys:String>
-    <sys:String x:Key="history.clear.msg">所有清理與操作記錄將被刪除。</sys:String>
-    <sys:String x:Key="history.clear.title">清空歷史？</sys:String>
-    <sys:String x:Key="history.empty">還沒有活動記錄</sys:String>
-    <sys:String x:Key="history.type.autoclean">自動清理</sys:String>
-    <sys:String x:Key="history.type.clean">清理</sys:String>
-    <sys:String x:Key="history.type.other">其他</sys:String>
-    <sys:String x:Key="history.type.quarantine">隔離區</sys:String>
-    <sys:String x:Key="history.type.restore">還原</sys:String>
-    <sys:String x:Key="history.type.shred">粉碎</sys:String>
-    <sys:String x:Key="history.type.startup">啟動項</sys:String>
-    <sys:String x:Key="history.type.uninstall">解除安裝</sys:String>
-    <sys:String x:Key="home.activity.empty">還沒有活動記錄，掃描清理一下試試</sys:String>
-    <sys:String x:Key="home.activity.title">最近活動</sys:String>
-    <sys:String x:Key="home.card.apps">已裝應用</sys:String>
-    <sys:String x:Key="home.card.apps.note">點擊管理已裝應用</sys:String>
-    <sys:String x:Key="home.card.junk">可清理垃圾</sys:String>
-    <sys:String x:Key="home.card.junk.lastscan">上次掃描 {0}</sys:String>
-    <sys:String x:Key="home.card.junk.note">點擊掃描查看可釋放空間</sys:String>
-    <sys:String x:Key="home.card.large">大檔案</sys:String>
-    <sys:String x:Key="home.card.large.analyzed">已分析</sys:String>
-    <sys:String x:Key="home.card.large.analyzed.note">點擊查看大檔案詳情</sys:String>
-    <sys:String x:Key="home.card.large.note">點擊分析查找</sys:String>
-    <sys:String x:Key="home.card.large.pending">待分析</sys:String>
-    <sys:String x:Key="home.card.startup">啟動項</sys:String>
-    <sys:String x:Key="home.card.startup.note">個啟動項隨開機執行</sys:String>
-    <sys:String x:Key="home.card.startup.note.high">高影響啟動項，可能拖慢開機</sys:String>
-    <sys:String x:Key="home.disk.free">可用 —</sys:String>
-    <sys:String x:Key="home.disk.free.f">可用 {0} ({1:F1}%)</sys:String>
-    <sys:String x:Key="home.disk.more">查看空間去哪了 →</sys:String>
-    <sys:String x:Key="home.disk.title">磁碟空間 (C:)</sys:String>
-    <sys:String x:Key="home.disk.title.disk">磁碟空間 ({0})</sys:String>
-    <sys:String x:Key="home.disk.total">總容量 —</sys:String>
-    <sys:String x:Key="home.disk.total.f">總容量 {0}</sys:String>
-    <sys:String x:Key="home.disk.used">已使用 —</sys:String>
-    <sys:String x:Key="home.disk.used.f">已使用 {0} ({1:F1}%)</sys:String>
-    <sys:String x:Key="home.hero.note">讓電腦更乾淨&amp;#x0a;執行更流暢！</sys:String>
-    <sys:String x:Key="home.noscan">還沒有掃描過</sys:String>
-    <sys:String x:Key="home.noscan.detail">還沒有掃描過，點擊「立即掃描」開始</sys:String>
-    <sys:String x:Key="home.slogan">保持定期掃描，讓電腦始終保持最佳狀態</sys:String>
-    <sys:String x:Key="home.space.empty">還沒有分析過這塊磁碟</sys:String>
-    <sys:String x:Key="home.space.title">空間分析</sys:String>
-    <sys:String x:Key="home.status.good">裝置狀態良好</sys:String>
-    <sys:String x:Key="home.status.lastscan">上次掃描：{0}</sys:String>
-    <sys:String x:Key="home.status.suggest">建議清理一下</sys:String>
-    <sys:String x:Key="home.status.suggest.detail">發現 {0} 可清理垃圾與 {1} 個高影響啟動項</sys:String>
-    <sys:String x:Key="home.status.tight">磁碟空間不足</sys:String>
-    <sys:String x:Key="home.status.tight.detail">系統碟剩餘空間不足 10%，建議立即清理</sys:String>
-    <sys:String x:Key="home.suggest.clean">立即清理</sys:String>
-    <sys:String x:Key="home.suggest.empty">一切正常，沒有需要處理的建議</sys:String>
-    <sys:String x:Key="home.suggest.note.safe">可安全清理，不影響系統使用</sys:String>
-    <sys:String x:Key="home.suggest.optimize">去最佳化</sys:String>
-    <sys:String x:Key="home.suggest.startup.note">發現 {0} 個高影響啟動項，建議最佳化</sys:String>
-    <sys:String x:Key="home.suggest.startup.title">開機啟動建議</sys:String>
-    <sys:String x:Key="home.suggest.title">智慧建議</sys:String>
-    <sys:String x:Key="leftover.clean">清理勾選項</sys:String>
-    <sys:String x:Key="leftover.datadir">資料目錄</sys:String>
-    <sys:String x:Key="leftover.desc">以下是可確認屬於該應用的資料目錄與設定鍵。勾選後進入隔離區（可隨時還原）。</sys:String>
-    <sys:String x:Key="leftover.installdir">安裝目錄</sys:String>
-    <sys:String x:Key="leftover.reg">登錄檔設定鍵（匯出備份後刪除）</sys:String>
-    <sys:String x:Key="leftover.skip">不清理，完成</sys:String>
-    <sys:String x:Key="leftover.title">發現可能的殘留</sys:String>
-    <sys:String x:Key="leftover.title.f">「{0}」的解除安裝殘留</sys:String>
-    <sys:String x:Key="nav.apps">應用程式管理</sys:String>
-    <sys:String x:Key="nav.clean">清理空間</sys:String>
-    <sys:String x:Key="nav.home">首頁</sys:String>
-    <sys:String x:Key="nav.scan">智慧掃描</sys:String>
-    <sys:String x:Key="nav.settings">設定</sys:String>
-    <sys:String x:Key="nav.space">空間分析</sys:String>
-    <sys:String x:Key="nav.startup">啟動項</sys:String>
-    <sys:String x:Key="nav.toolbox">工具箱</sys:String>
-    <sys:String x:Key="recycle.confirm.msg">資源回收筒中的 {0} 個檔案（共 {1}）將被永久刪除，無法復原。</sys:String>
-    <sys:String x:Key="recycle.confirm.title">清空資源回收筒？</sys:String>
-    <sys:String x:Key="recycle.empty">資源回收筒是空的</sys:String>
-    <sys:String x:Key="recycle.info">{0} 個項目，共佔用 {1}</sys:String>
-    <sys:String x:Key="result.sub">{0} · 共掃描 {1} 類項目</sys:String>
-    <sys:String x:Key="result.title.clean">掃描完成，很乾淨！</sys:String>
-    <sys:String x:Key="result.title.found">掃描完成，發現可釋放 {0}</sys:String>
-    <sys:String x:Key="risk.confirm">需確認</sys:String>
-    <sys:String x:Key="risk.high">高風險</sys:String>
-    <sys:String x:Key="risk.low">低風險</sys:String>
-    <sys:String x:Key="risk.safe">安全</sys:String>
-    <sys:String x:Key="row.direct">直接刪除</sys:String>
-    <sys:String x:Key="row.files">{0} 個檔案</sys:String>
-    <sys:String x:Key="row.impact.tip">清理影響：{0}</sys:String>
-    <sys:String x:Key="row.restore">可進隔離區還原</sys:String>
-    <sys:String x:Key="row.running">{0} 個相關程序執行中</sys:String>
-    <sys:String x:Key="rule.brave_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
-    <sys:String x:Key="rule.brave_cache.name">Brave 快取</sys:String>
-    <sys:String x:Key="rule.brave_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
-    <sys:String x:Key="rule.chrome_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
-    <sys:String x:Key="rule.chrome_cache.name">Google Chrome 快取</sys:String>
-    <sys:String x:Key="rule.chrome_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.impact">清理后这些网站的登錄状態将失效，需要重新登錄</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.name">Google Chrome Cookie（会退出登錄）</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.reason">瀏覽器保存的网站登錄凭证</sys:String>
-    <sys:String x:Key="rule.chrome_history.impact">浏覽歷史将被清空；收藏夹与保存的密码不受影响</sys:String>
-    <sys:String x:Key="rule.chrome_history.name">Google Chrome 浏覽歷史</sys:String>
-    <sys:String x:Key="rule.chrome_history.reason">瀏覽器保存的网页访问歷史数据庫</sys:String>
-    <sys:String x:Key="rule.delivery_opt.impact">通过系统官方命令清理，不影响 Windows 更新功能；需管理员權限</sys:String>
-    <sys:String x:Key="rule.delivery_opt.name">传递優化快取</sys:String>
-    <sys:String x:Key="rule.delivery_opt.reason">Windows 用于 P2P 分发更新的快取（通过官方机制清理）</sys:String>
-    <sys:String x:Key="rule.dev_caches.impact">下次构建/安装需重新下載依赖或重建索引，消耗额外網路流量</sys:String>
-    <sys:String x:Key="rule.dev_caches.name">开发工具快取 (npm/pip/NuGet/Gradle)</sys:String>
-    <sys:String x:Key="rule.dev_caches.reason">包管理器下載的依赖快取与构建产物</sys:String>
-    <sys:String x:Key="rule.discord_cache.impact">应用内圖片/影片需要重新加載；不影响账号与消息</sys:String>
-    <sys:String x:Key="rule.discord_cache.name">Discord 快取</sys:String>
-    <sys:String x:Key="rule.discord_cache.reason">Discord 桌面客戶端的网页快取</sys:String>
-    <sys:String x:Key="rule.edge_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
-    <sys:String x:Key="rule.edge_cache.name">Microsoft Edge 快取</sys:String>
-    <sys:String x:Key="rule.edge_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
-    <sys:String x:Key="rule.edge_cookies.impact">清理后这些网站的登錄状態将失效，需要重新登錄</sys:String>
-    <sys:String x:Key="rule.edge_cookies.name">Microsoft Edge Cookie（会退出登錄）</sys:String>
-    <sys:String x:Key="rule.edge_cookies.reason">瀏覽器保存的网站登錄凭证</sys:String>
-    <sys:String x:Key="rule.edge_history.impact">浏覽歷史将被清空；收藏夹与保存的密码不受影响</sys:String>
-    <sys:String x:Key="rule.edge_history.name">Microsoft Edge 浏覽歷史</sys:String>
-    <sys:String x:Key="rule.edge_history.reason">瀏覽器保存的网页访问歷史数据庫</sys:String>
-    <sys:String x:Key="rule.epic_cache.impact">不影响已安装游戏与账号</sys:String>
-    <sys:String x:Key="rule.epic_cache.name">Epic Games 启动器快取</sys:String>
-    <sys:String x:Key="rule.epic_cache.reason">Epic 启动器网页视圖的快取与日誌</sys:String>
-    <sys:String x:Key="rule.error_reports.impact">无影响，仅影响向微软反馈歷史错误的能力</sys:String>
-    <sys:String x:Key="rule.error_reports.name">错误报告与崩溃轉储</sys:String>
-    <sys:String x:Key="rule.error_reports.reason">应用崩溃时生成的诊断报告，已失去分析价值</sys:String>
-    <sys:String x:Key="rule.firefox_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
-    <sys:String x:Key="rule.firefox_cache.name">Firefox 快取</sys:String>
-    <sys:String x:Key="rule.firefox_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.impact">下次打开项目需重新建立索引，本地歷史記錄会被清空</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.name">JetBrains IDE 快取</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.reason">JetBrains 系列 IDE 的索引与本地歷史快取</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.impact">游戏首次启动需重新编译，可能略微变慢</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.name">NVIDIA / AMD 圖形快取</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.reason">显卡驅动生成的着色器与材质编译快取</sys:String>
-    <sys:String x:Key="rule.office_cache.impact">已保存到云端的文档不受影响；本地未保存的编辑不受影响</sys:String>
-    <sys:String x:Key="rule.office_cache.name">Office 檔案快取</sys:String>
-    <sys:String x:Key="rule.office_cache.reason">Office 文档上传/协作时产生的本地快取</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.impact">不影响同步与檔案</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.name">OneDrive 日誌</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.reason">OneDrive 同步产生的诊断日誌</sys:String>
-    <sys:String x:Key="rule.opera_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
-    <sys:String x:Key="rule.opera_cache.name">Opera 快取</sys:String>
-    <sys:String x:Key="rule.opera_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.impact">当前剪贴板内容将被清空</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.name">剪贴板内容</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.reason">剪贴板中可能还保留着你最近复制的内容</sys:String>
-    <sys:String x:Key="rule.privacy_dns.impact">清空后首次访问网站需重新解析，可能慢零点几秒；需管理员權限</sys:String>
-    <sys:String x:Key="rule.privacy_dns.name">DNS 解析快取</sys:String>
-    <sys:String x:Key="rule.privacy_dns.reason">系统保存的域名解析記錄</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.impact">各应用任务栏右键的歷史列表将被清空，不影响应用功能</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.name">跳轉列表 (Jump List) 記錄</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.reason">任务栏右键菜单展示的歷史記錄数据</sys:String>
-    <sys:String x:Key="rule.privacy_recent.impact">「最近使用」列表将被清空，不影响檔案本身</sys:String>
-    <sys:String x:Key="rule.privacy_recent.name">最近使用檔案記錄</sys:String>
-    <sys:String x:Key="rule.privacy_recent.reason">资源管理器「最近使用」与跳轉列表的来源記錄</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.impact">運行窗口的歷史下拉被清空，不影响系统功能</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.name">運行窗口歷史</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.reason">Win+R 对话框保留的命令输入記錄</sys:String>
-    <sys:String x:Key="rule.privacy_search.impact">搜索歷史下拉被清空，不影响搜索功能</sys:String>
-    <sys:String x:Key="rule.privacy_search.name">檔案搜索歷史</sys:String>
-    <sys:String x:Key="rule.privacy_search.reason">资源管理器搜索框保留的搜索关键词</sys:String>
-    <sys:String x:Key="rule.qq_cache.impact">不影响聊天記錄；聊天檔案保存在用戶目錄中，本规则不会触碰</sys:String>
-    <sys:String x:Key="rule.qq_cache.name">QQ (快取/日誌)</sys:String>
-    <sys:String x:Key="rule.qq_cache.reason">QQ 客戶端的運行日誌与组件快取</sys:String>
-    <sys:String x:Key="rule.recycle_bin.impact">清空后回收站中的檔案将被永久刪除，无法恢复</sys:String>
-    <sys:String x:Key="rule.recycle_bin.name">回收站</sys:String>
-    <sys:String x:Key="rule.recycle_bin.reason">你刪除过的檔案仍在回收站占着磁碟空间</sys:String>
-    <sys:String x:Key="rule.shader_cache.impact">游戏或圖形应用下次首次启动时需要重新生成，可能略微变慢</sys:String>
-    <sys:String x:Key="rule.shader_cache.name">DirectX / 显卡着色器快取</sys:String>
-    <sys:String x:Key="rule.shader_cache.reason">游戏与圖形应用编译后的着色器快取</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.impact">商店页面首次打开略慢；不影响游戏本体、存档与庫存</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.name">Steam 网页快取</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.reason">Steam 内置瀏覽器（商店/社区页面）的快取</sys:String>
-    <sys:String x:Key="rule.teams_cache.impact">下次启动 Teams 需要重新加載；不影响账号与聊天</sys:String>
-    <sys:String x:Key="rule.teams_cache.name">Microsoft Teams 快取</sys:String>
-    <sys:String x:Key="rule.teams_cache.reason">Teams 桌面客戶端的网页与组件快取</sys:String>
-    <sys:String x:Key="rule.telegram_cache.impact">聊天記錄在云端不受影响，但离线可看的圖片/影片需要重新下載</sys:String>
-    <sys:String x:Key="rule.telegram_cache.name">Telegram 媒体快取</sys:String>
-    <sys:String x:Key="rule.telegram_cache.reason">Telegram 已下載媒体的本地快取</sys:String>
-    <sys:String x:Key="rule.thumb_cache.impact">清理后 Windows 会在需要时重新生成缩略圖</sys:String>
-    <sys:String x:Key="rule.thumb_cache.name">缩略圖快取</sys:String>
-    <sys:String x:Key="rule.thumb_cache.reason">资源管理器为圖片/影片生成的预覽快取</sys:String>
-    <sys:String x:Key="rule.update_cache.impact">更新已安装后无影响；若正在下載更新会被自动跳过，需管理员權限</sys:String>
-    <sys:String x:Key="rule.update_cache.name">Windows 更新下載快取</sys:String>
-    <sys:String x:Key="rule.update_cache.reason">Windows 更新已安装后遗留的安装包下載快取</sys:String>
-    <sys:String x:Key="rule.user_temp.impact">无影响，极少数正在運行的安装程序可能需要重新开始</sys:String>
-    <sys:String x:Key="rule.user_temp.name">用戶临时檔案</sys:String>
-    <sys:String x:Key="rule.user_temp.reason">应用運行时产生的临时檔案，正常关闭后即无用</sys:String>
-    <sys:String x:Key="rule.vscode_cache.impact">下次启动需重建索引，窗口布局与扩展不受影响</sys:String>
-    <sys:String x:Key="rule.vscode_cache.name">VS Code 快取</sys:String>
-    <sys:String x:Key="rule.vscode_cache.reason">VS Code 的界面快取与崩溃日誌</sys:String>
-    <sys:String x:Key="rule.wechat_cache.impact">不影响聊天記錄；聊天檔案保存在用戶目錄中，本规则不会触碰</sys:String>
-    <sys:String x:Key="rule.wechat_cache.name">微信 (快取/日誌)</sys:String>
-    <sys:String x:Key="rule.wechat_cache.reason">微信客戶端的運行日誌与网页快取</sys:String>
-    <sys:String x:Key="rule.windows_logs.impact">不影响系统運行，仅影响排障时查看歷史日誌</sys:String>
-    <sys:String x:Key="rule.windows_logs.name">系统日誌快取</sys:String>
-    <sys:String x:Key="rule.windows_logs.reason">Windows 组件产生的旧日誌檔案（7 天以上）</sys:String>
-    <sys:String x:Key="rule.windows_temp.impact">无影响；非管理员權限下部分檔案会被跳过</sys:String>
-    <sys:String x:Key="rule.windows_temp.name">系统临时檔案 (Windows\Temp)</sys:String>
-    <sys:String x:Key="rule.windows_temp.reason">系统组件与安装程序留下的临时檔案</sys:String>
-    <sys:String x:Key="scan.cover">一次掃描涵蓋：系統垃圾 · 瀏覽器快取 · 應用快取 · 資源回收筒</sys:String>
-    <sys:String x:Key="scan.done">掃描完成</sys:String>
-    <sys:String x:Key="scan.found">已發現 —</sys:String>
-    <sys:String x:Key="scan.group.cache">瀏覽器與應用快取</sys:String>
-    <sys:String x:Key="scan.group.cache.note">快取類資料，應用會在需要時重新下載</sys:String>
-    <sys:String x:Key="scan.group.check">建議檢查</sys:String>
-    <sys:String x:Key="scan.group.check.note">清理前請確認這些內容不再需要</sys:String>
-    <sys:String x:Key="scan.group.safe">可以安全清理</sys:String>
-    <sys:String x:Key="scan.group.safe.note">這些是系統與應用產生的暫存資料，清理無風險</sys:String>
-    <sys:String x:Key="scan.preparing">準備掃描…</sys:String>
-    <sys:String x:Key="scan.privacy">掃描全程在本機進行；預設只勾選安全項目，高風險項目永遠不會被自動選中。</sys:String>
-    <sys:String x:Key="scan.reselectall">全選安全項</sys:String>
-    <sys:String x:Key="scan.start">開始掃描</sys:String>
-    <sys:String x:Key="settings.about.email">聯絡郵箱</sys:String>
-    <sys:String x:Key="settings.about.repo">開源倉庫</sys:String>
-    <sys:String x:Key="settings.about.site">支援網站</sys:String>
-    <sys:String x:Key="settings.about.slogan">清得明白，優化得安心。</sys:String>
-    <sys:String x:Key="settings.about.support">支援與意見回饋</sys:String>
-    <sys:String x:Key="settings.about.wechat">微信掃碼或搜尋「AI虚拟助理」，取得使用技巧與更新動態。</sys:String>
-    <sys:String x:Key="settings.btn.addexclude">新增排除目錄</sys:String>
-    <sys:String x:Key="settings.btn.addwhitelist">新增白名單檔案/目錄</sys:String>
-    <sys:String x:Key="settings.days">天</sys:String>
-    <sys:String x:Key="settings.exc.desc">這些目錄與檔案在所有掃描和清理中都會被跳過。</sys:String>
-    <sys:String x:Key="settings.exc.empty">暫無排除目錄與白名單</sys:String>
-    <sys:String x:Key="settings.excluded">排除</sys:String>
-    <sys:String x:Key="settings.freq.daily">每天</sys:String>
-    <sys:String x:Key="settings.freq.monthly">每月</sys:String>
-    <sys:String x:Key="settings.freq.weekly">每週</sys:String>
-    <sys:String x:Key="settings.lang.auto">跟隨系統語言</sys:String>
-    <sys:String x:Key="settings.pick.exclude">選擇要在掃描清理中排除的目錄</sys:String>
-    <sys:String x:Key="settings.pick.whitelist">選擇要加入白名單的檔案</sys:String>
-    <sys:String x:Key="settings.privacy.desc">掃描資料全部保存在本機。本應用不收集、不上傳任何檔名、路徑與內容。</sys:String>
-    <sys:String x:Key="settings.row.autoclean">自動清理</sys:String>
-    <sys:String x:Key="settings.row.autoclean.d">按排程自動清理暫存檔與快取等安全項目</sys:String>
-    <sys:String x:Key="settings.row.autoclean.freq">自動清理頻率</sys:String>
-    <sys:String x:Key="settings.row.autoclean.freq.d">應用程式執行期間在背景執行</sys:String>
-    <sys:String x:Key="settings.row.autostart">開機自動執行清理優化大師</sys:String>
-    <sys:String x:Key="settings.row.autostart.d">開機後只在背景常駐，不執行任何操作</sys:String>
-    <sys:String x:Key="settings.row.closetotray">關閉按鈕最小化到系統列</sys:String>
-    <sys:String x:Key="settings.row.closetotray.d">點擊關閉按鈕時詢問並最小化，而非結束</sys:String>
-    <sys:String x:Key="settings.row.crash">當機報告</sys:String>
-    <sys:String x:Key="settings.row.hidden">掃描隱藏檔案</sys:String>
-    <sys:String x:Key="settings.row.junction">跟隨目錄連結 (Junction)</sys:String>
-    <sys:String x:Key="settings.row.junction.d">跟隨符號連結掃描可能造成重複統計，預設關閉</sys:String>
-    <sys:String x:Key="settings.row.language">介面語言</sys:String>
-    <sys:String x:Key="settings.row.language.d">切換後立即生效</sys:String>
-    <sys:String x:Key="settings.row.mintotray">最小化到系統列</sys:String>
-    <sys:String x:Key="settings.row.mintotray.d">點擊最小化按鈕時隱藏到系統列</sys:String>
-    <sys:String x:Key="settings.row.notifyauto">自動清理結果通知</sys:String>
-    <sys:String x:Key="settings.row.notifydisk">磁碟空間不足提醒</sys:String>
-    <sys:String x:Key="settings.row.notifydisk.d">系統碟剩餘不足 10% 時提醒（低頻，不打擾）</sys:String>
-    <sys:String x:Key="settings.row.notifynews">產品訊息</sys:String>
-    <sys:String x:Key="settings.row.notifynews.d">新功能與活動通知，預設關閉</sys:String>
-    <sys:String x:Key="settings.row.notifyweekly">每週空間報告</sys:String>
-    <sys:String x:Key="settings.row.quarantine">清理後進入隔離區</sys:String>
-    <sys:String x:Key="settings.row.quarantine.d">非快取類檔案先進入隔離區，可隨時還原（建議開啟）</sys:String>
-    <sys:String x:Key="settings.row.quarantine.days">隔離區保留時間</sys:String>
-    <sys:String x:Key="settings.row.quarantine.days.d">到期後自動永久刪除</sys:String>
-    <sys:String x:Key="settings.row.stats">匿名使用統計</sys:String>
-    <sys:String x:Key="settings.row.stats.d">僅上報功能使用次數與錯誤碼，不含任何檔案資訊；目前版本完全不上傳資料</sys:String>
-    <sys:String x:Key="settings.row.theme">主題</sys:String>
-    <sys:String x:Key="settings.row.threads">掃描執行緒數</sys:String>
-    <sys:String x:Key="settings.row.threads.d">執行緒越多掃描越快，但機械硬碟建議調低</sys:String>
-    <sys:String x:Key="settings.sec.about">關於</sys:String>
-    <sys:String x:Key="settings.sec.advanced">進階</sys:String>
-    <sys:String x:Key="settings.sec.exclude">排除目錄與白名單</sys:String>
-    <sys:String x:Key="settings.sec.general">一般</sys:String>
-    <sys:String x:Key="settings.sec.notify">通知</sys:String>
-    <sys:String x:Key="settings.sec.privacy">隱私</sys:String>
-    <sys:String x:Key="settings.theme.dark">深色</sys:String>
-    <sys:String x:Key="settings.theme.light">淺色</sys:String>
-    <sys:String x:Key="settings.theme.system">跟隨系統</sys:String>
-    <sys:String x:Key="settings.threads">執行緒</sys:String>
-    <sys:String x:Key="settings.title">設定</sys:String>
-    <sys:String x:Key="settings.whitelist">白名單</sys:String>
-    <sys:String x:Key="space.analyzed.f">分析於 {0} · {1:N0} 個檔案 · {2:F0} 秒</sys:String>
-    <sys:String x:Key="space.cancelled">已取消分析</sys:String>
-    <sys:String x:Key="space.done">分析完成，用時 {0:F0} 秒</sys:String>
-    <sys:String x:Key="space.empty">還沒有分析過這塊磁碟，點擊右上角「開始分析」（掃描期間可隨時取消）</sys:String>
-    <sys:String x:Key="space.failed">分析失敗：</sys:String>
-    <sys:String x:Key="space.file">檔案</sys:String>
-    <sys:String x:Key="space.large.filter">大小篩選</sys:String>
-    <sys:String x:Key="space.large.none">沒有找到大於 {0:F0} MB 的檔案</sys:String>
-    <sys:String x:Key="space.lastanalysis">上次分析：{0}</sys:String>
-    <sys:String x:Key="space.modified">修改於</sys:String>
-    <sys:String x:Key="space.notanalyzed">這塊磁碟還沒有分析過</sys:String>
-    <sys:String x:Key="space.recycle.msg">{0}（{1}）將移至資源回收筒，可隨時還原。</sys:String>
-    <sys:String x:Key="space.recycle.title">移至資源回收筒？</sys:String>
-    <sys:String x:Key="space.rendererror">分析結果渲染異常，詳情見日誌</sys:String>
-    <sys:String x:Key="space.scanned">已掃描 {0:N0} 個檔案</sys:String>
-    <sys:String x:Key="space.scanning">正在分析磁碟…</sys:String>
-    <sys:String x:Key="space.tab.large">大檔案</sys:String>
-    <sys:String x:Key="space.tab.overview">概覽</sys:String>
-    <sys:String x:Key="space.total">共 {0}</sys:String>
-    <sys:String x:Key="space.tree.hint">點擊展開子資料夾；已跳過系統連結與無權限目錄</sys:String>
-    <sys:String x:Key="space.tree.title">資料夾佔用排行</sys:String>
-    <sys:String x:Key="space.used.f">已使用 {0} / {1}（{2:F1}%），可用 {3}</sys:String>
-    <sys:String x:Key="space.used.f2">已使用 {0} / {1}，可用 {2}</sys:String>
-    <sys:String x:Key="startup.col.impact">啟動影響</sys:String>
-    <sys:String x:Key="startup.col.source">來源</sys:String>
-    <sys:String x:Key="startup.col.suggest">建議</sys:String>
-    <sys:String x:Key="startup.col.toggle">狀態</sys:String>
-    <sys:String x:Key="startup.desc">關閉啟動項後應用仍可手動開啟；所有修改都會記錄原狀態，可隨時還原。</sys:String>
-    <sys:String x:Key="startup.disabled">已停用</sys:String>
-    <sys:String x:Key="startup.empty">沒有符合的啟動項</sys:String>
-    <sys:String x:Key="startup.enabled">已啟用</sys:String>
-    <sys:String x:Key="startup.impact.high">高</sys:String>
-    <sys:String x:Key="startup.impact.low">低</sys:String>
-    <sys:String x:Key="startup.impact.med">中</sys:String>
-    <sys:String x:Key="startup.impact.unknown">未測量</sys:String>
-    <sys:String x:Key="startup.loading">正在讀取啟動項…</sys:String>
-    <sys:String x:Key="startup.src.foldercommon">啟動資料夾 (公用)</sys:String>
-    <sys:String x:Key="startup.src.folderuser">啟動資料夾 (使用者)</sys:String>
-    <sys:String x:Key="startup.src.reghkcu">登錄檔 (目前使用者)</sys:String>
-    <sys:String x:Key="startup.src.reghklm">登錄檔 (本機)</sys:String>
-    <sys:String x:Key="startup.src.task">排程工作</sys:String>
-    <sys:String x:Key="startup.suggest.keep">保留</sys:String>
-    <sys:String x:Key="startup.suggest.off">可考慮關閉</sys:String>
-    <sys:String x:Key="startup.suggest.system">系統元件</sys:String>
-    <sys:String x:Key="startup.systemchip">系統元件</sys:String>
-    <sys:String x:Key="startup.toggled">{0}啟動項「{1}」</sys:String>
-    <sys:String x:Key="time.minago">{0} 分鐘前</sys:String>
-    <sys:String x:Key="time.now">剛剛</sys:String>
-    <sys:String x:Key="time.today">今天 {0}</sys:String>
-    <sys:String x:Key="time.yesterday">昨天 {0}</sys:String>
-    <sys:String x:Key="tip.close">關閉</sys:String>
-    <sys:String x:Key="tip.max">最大化</sys:String>
-    <sys:String x:Key="tip.min">最小化</sys:String>
-    <sys:String x:Key="toast.binemptied">資源回收筒已清空</sys:String>
-    <sys:String x:Key="toast.cleancancelled">清理已取消</sys:String>
-    <sys:String x:Key="toast.cleandone">清理完成，釋放 {0}</sys:String>
-    <sys:String x:Key="toast.cleaned">已清理，釋放了 {0}</sys:String>
-    <sys:String x:Key="toast.cleanfailed">清理失敗：</sys:String>
-    <sys:String x:Key="toast.failed">操作失敗</sys:String>
-    <sys:String x:Key="toast.langapplied">介面語言已切換</sys:String>
-    <sys:String x:Key="toast.largecleaned">清理了大檔案 {0}</sys:String>
-    <sys:String x:Key="toast.noselect">請先勾選要清理的項目</sys:String>
-    <sys:String x:Key="toast.nothing">沒有發現可清理的內容</sys:String>
-    <sys:String x:Key="toast.readfailed">讀取失敗：</sys:String>
-    <sys:String x:Key="toast.recycled">已移至資源回收筒，釋放 {0}</sys:String>
-    <sys:String x:Key="toast.recyclefailed">移至資源回收筒失敗，檔案可能被佔用</sys:String>
-    <sys:String x:Key="toast.scanfailed">掃描失敗：</sys:String>
-    <sys:String x:Key="toast.scanstopped">已停止掃描</sys:String>
-    <sys:String x:Key="toast.skipped">（跳過 {0} 項）</sys:String>
-    <sys:String x:Key="toast.traymin">已最小化到系統列，右鍵系統列圖示可結束</sys:String>
-    <sys:String x:Key="toast.whitelisted">已加入白名單，掃描與清理將跳過該檔案</sys:String>
-    <sys:String x:Key="tool.desc">檔案粉碎不會進入資源回收筒；隔離區檔案可隨時還原；重複檔案基於內容雜湊檢測。</sys:String>
-    <sys:String x:Key="tool.dup.clean.msg">共 {0} 個檔案，{1}，將移至資源回收筒（可還原）。</sys:String>
-    <sys:String x:Key="tool.dup.clean.title">刪除選中的副本？</sys:String>
-    <sys:String x:Key="tool.dup.desc">透過內容雜湊確認重複（不是只看檔名）。掃描範圍預設為圖片、影片與下載目錄。</sys:String>
-    <sys:String x:Key="tool.dup.group">{0} 個相同檔案 · 每個 {1} · 可釋放 {2}</sys:String>
-    <sys:String x:Key="tool.dup.more">… 還有 {0} 組未顯示</sys:String>
-    <sys:String x:Key="tool.dup.none">沒有發現重複檔案</sys:String>
-    <sys:String x:Key="tool.dup.progress">已掃描 {0:N0} 個檔案…</sys:String>
-    <sys:String x:Key="tool.dup.summary">{0} 組重複檔案，可釋放 {1}</sys:String>
-    <sys:String x:Key="tool.dup.tip">勾選 = 刪除這份副本</sys:String>
-    <sys:String x:Key="tool.dup.title">重複檔案</sys:String>
-    <sys:String x:Key="tool.file">檔案</sys:String>
-    <sys:String x:Key="tool.folder">資料夾</sys:String>
-    <sys:String x:Key="tool.history.title">清理歷史</sys:String>
-    <sys:String x:Key="tool.purge.msg">隔離區中的 {0} 個項目將被永久刪除，無法復原。</sys:String>
-    <sys:String x:Key="tool.purge.title">清空隔離區？</sys:String>
-    <sys:String x:Key="tool.quar.daysleft">剩 {0} 天</sys:String>
-    <sys:String x:Key="tool.quar.empty">隔離區是空的</sys:String>
-    <sys:String x:Key="tool.quar.summary">{0} 個項目，共 {1}；超過 {2} 天將自動永久刪除</sys:String>
-    <sys:String x:Key="tool.quarantine.title">清理隔離區</sys:String>
-    <sys:String x:Key="tool.shred.confirm.msg">{0}
+    <sys:String xml:space="preserve" x:Key="dlg.quickclean.title">清理{0}？</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.cancelled">清理已中斷</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.freed.total">共釋放 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.note.quarantine">隔離區檔案保留 {0} 天，可隨時在工具箱中還原。</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.note.skip">跳過的檔案正在被其他程式使用，關閉相關程式後下次清理即可移除。</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.partial">清理完成（部分跳過）</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.fail">失敗</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.ok">清理成功</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.quar">進入隔離區</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.skip">跳過（佔用中）</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.title">清理完成</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clear.msg">所有清理與操作記錄將被刪除。</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clear.title">清空歷史？</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.empty">還沒有活動記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.autoclean">自動清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.clean">清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.other">其他</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.quarantine">隔離區</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.restore">還原</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.shred">粉碎</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.startup">啟動項</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.uninstall">解除安裝</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.activity.empty">還沒有活動記錄，掃描清理一下試試</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.activity.title">最近活動</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.apps">已裝應用</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.apps.note">點擊管理已裝應用</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk">可清理垃圾</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk.lastscan">上次掃描 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk.note">點擊掃描查看可釋放空間</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large">大檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.analyzed">已分析</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.analyzed.note">點擊查看大檔案詳情</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.note">點擊分析查找</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.pending">待分析</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup">啟動項</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup.note">個啟動項隨開機執行</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup.note.high">高影響啟動項，可能拖慢開機</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.free">可用 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.free.f">可用 {0} ({1:F1}%)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.more">查看空間去哪了 →</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.title">磁碟空間 (C:)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.title.disk">磁碟空間 ({0})</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.total">總容量 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.total.f">總容量 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.used">已使用 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.used.f">已使用 {0} ({1:F1}%)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.hero.note">讓電腦更乾淨&amp;#x0a;執行更流暢！</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.noscan">還沒有掃描過</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.noscan.detail">還沒有掃描過，點擊「立即掃描」開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.slogan">保持定期掃描，讓電腦始終保持最佳狀態</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.space.empty">還沒有分析過這塊磁碟</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.space.title">空間分析</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.good">裝置狀態良好</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.lastscan">上次掃描：{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.suggest">建議清理一下</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.suggest.detail">發現 {0} 可清理垃圾與 {1} 個高影響啟動項</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.tight">磁碟空間不足</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.tight.detail">系統碟剩餘空間不足 10%，建議立即清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.clean">立即清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.empty">一切正常，沒有需要處理的建議</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.note.safe">可安全清理，不影響系統使用</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.optimize">去最佳化</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.startup.note">發現 {0} 個高影響啟動項，建議最佳化</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">開機啟動建議</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.title">智慧建議</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.clean">清理勾選項</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.datadir">資料目錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.desc">以下是可確認屬於該應用的資料目錄與設定鍵。勾選後進入隔離區（可隨時還原）。</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.installdir">安裝目錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.reg">登錄檔設定鍵（匯出備份後刪除）</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.skip">不清理，完成</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.title">發現可能的殘留</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.title.f">「{0}」的解除安裝殘留</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.apps">應用程式管理</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.clean">清理空間</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.home">首頁</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.scan">智慧掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.settings">設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.space">空間分析</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.startup">啟動項</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.toolbox">工具箱</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">資源回收筒中的 {0} 個檔案（共 {1}）將被永久刪除，無法復原。</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.confirm.title">清空資源回收筒？</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.empty">資源回收筒是空的</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.info">{0} 個項目，共佔用 {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.sub">{0} · 共掃描 {1} 類項目</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.title.clean">掃描完成，很乾淨！</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.title.found">掃描完成，發現可釋放 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.confirm">需確認</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.high">高風險</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.low">低風險</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.safe">安全</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.direct">直接刪除</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.files">{0} 個檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.impact.tip">清理影響：{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.restore">可進隔離區還原</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.running">{0} 個相關程序執行中</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.name">Brave 快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.name">Google Chrome 快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.impact">清理后这些网站的登錄状態将失效，需要重新登錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.name">Google Chrome Cookie（会退出登錄）</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.reason">瀏覽器保存的网站登錄凭证</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">浏覽歷史将被清空；收藏夹与保存的密码不受影响</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome 浏覽歷史</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">瀏覽器保存的网页访问歷史数据庫</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">通过系统官方命令清理，不影响 Windows 更新功能；需管理员權限</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">传递優化快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">Windows 用于 P2P 分发更新的快取（通过官方机制清理）</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.impact">下次构建/安装需重新下載依赖或重建索引，消耗额外網路流量</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.name">开发工具快取 (npm/pip/NuGet/Gradle)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.reason">包管理器下載的依赖快取与构建产物</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.impact">应用内圖片/影片需要重新加載；不影响账号与消息</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.name">Discord 快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.reason">Discord 桌面客戶端的网页快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.name">Microsoft Edge 快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.impact">清理后这些网站的登錄状態将失效，需要重新登錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.name">Microsoft Edge Cookie（会退出登錄）</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.reason">瀏覽器保存的网站登錄凭证</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.impact">浏覽歷史将被清空；收藏夹与保存的密码不受影响</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.name">Microsoft Edge 浏覽歷史</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.reason">瀏覽器保存的网页访问歷史数据庫</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.impact">不影响已安装游戏与账号</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.name">Epic Games 启动器快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.reason">Epic 启动器网页视圖的快取与日誌</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.impact">无影响，仅影响向微软反馈歷史错误的能力</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.name">错误报告与崩溃轉储</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.reason">应用崩溃时生成的诊断报告，已失去分析价值</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.name">Firefox 快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.impact">下次打开项目需重新建立索引，本地歷史記錄会被清空</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.name">JetBrains IDE 快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.reason">JetBrains 系列 IDE 的索引与本地歷史快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.impact">游戏首次启动需重新编译，可能略微变慢</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.name">NVIDIA / AMD 圖形快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.reason">显卡驅动生成的着色器与材质编译快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.impact">已保存到云端的文档不受影响；本地未保存的编辑不受影响</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.name">Office 檔案快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.reason">Office 文档上传/协作时产生的本地快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.impact">不影响同步与檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.name">OneDrive 日誌</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.reason">OneDrive 同步产生的诊断日誌</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.name">Opera 快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.impact">当前剪贴板内容将被清空</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.name">剪贴板内容</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.reason">剪贴板中可能还保留着你最近复制的内容</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.impact">清空后首次访问网站需重新解析，可能慢零点几秒；需管理员權限</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.name">DNS 解析快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.reason">系统保存的域名解析記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.impact">各应用任务栏右键的歷史列表将被清空，不影响应用功能</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.name">跳轉列表 (Jump List) 記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.reason">任务栏右键菜单展示的歷史記錄数据</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.impact">「最近使用」列表将被清空，不影响檔案本身</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.name">最近使用檔案記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.reason">资源管理器「最近使用」与跳轉列表的来源記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.impact">運行窗口的歷史下拉被清空，不影响系统功能</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.name">運行窗口歷史</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.reason">Win+R 对话框保留的命令输入記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.impact">搜索歷史下拉被清空，不影响搜索功能</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.name">檔案搜索歷史</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.reason">资源管理器搜索框保留的搜索关键词</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.impact">不影响聊天記錄；聊天檔案保存在用戶目錄中，本规则不会触碰</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.name">QQ (快取/日誌)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.reason">QQ 客戶端的運行日誌与组件快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.impact">清空后回收站中的檔案将被永久刪除，无法恢复</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.name">回收站</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.reason">你刪除过的檔案仍在回收站占着磁碟空间</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.impact">游戏或圖形应用下次首次启动时需要重新生成，可能略微变慢</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.name">DirectX / 显卡着色器快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.reason">游戏与圖形应用编译后的着色器快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.impact">商店页面首次打开略慢；不影响游戏本体、存档与庫存</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.name">Steam 网页快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.reason">Steam 内置瀏覽器（商店/社区页面）的快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.impact">下次启动 Teams 需要重新加載；不影响账号与聊天</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.name">Microsoft Teams 快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.reason">Teams 桌面客戶端的网页与组件快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.impact">聊天記錄在云端不受影响，但离线可看的圖片/影片需要重新下載</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.name">Telegram 媒体快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.reason">Telegram 已下載媒体的本地快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.impact">清理后 Windows 会在需要时重新生成缩略圖</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.name">缩略圖快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.reason">资源管理器为圖片/影片生成的预覽快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.impact">更新已安装后无影响；若正在下載更新会被自动跳过，需管理员權限</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.name">Windows 更新下載快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.reason">Windows 更新已安装后遗留的安装包下載快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.impact">无影响，极少数正在運行的安装程序可能需要重新开始</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.name">用戶临时檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.reason">应用運行时产生的临时檔案，正常关闭后即无用</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.impact">下次启动需重建索引，窗口布局与扩展不受影响</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.name">VS Code 快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.reason">VS Code 的界面快取与崩溃日誌</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.impact">不影响聊天記錄；聊天檔案保存在用戶目錄中，本规则不会触碰</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.name">微信 (快取/日誌)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.reason">微信客戶端的運行日誌与网页快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.impact">不影响系统運行，仅影响排障时查看歷史日誌</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.name">系统日誌快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.reason">Windows 组件产生的旧日誌檔案（7 天以上）</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.impact">无影响；非管理员權限下部分檔案会被跳过</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.name">系统临时檔案 (Windows\Temp)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.reason">系统组件与安装程序留下的临时檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.cover">一次掃描涵蓋：系統垃圾 · 瀏覽器快取 · 應用快取 · 資源回收筒</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.done">掃描完成</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.found">已發現 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.cache">瀏覽器與應用快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.cache.note">快取類資料，應用會在需要時重新下載</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.check">建議檢查</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.check.note">清理前請確認這些內容不再需要</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.safe">可以安全清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.safe.note">這些是系統與應用產生的暫存資料，清理無風險</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.preparing">準備掃描…</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.privacy">掃描全程在本機進行；預設只勾選安全項目，高風險項目永遠不會被自動選中。</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.reselectall">全選安全項</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.start">開始掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.email">聯絡郵箱</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.repo">開源倉庫</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.site">支援網站</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.slogan">清得明白，優化得安心。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.support">支援與意見回饋</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.wechat">微信掃碼或搜尋「AI虚拟助理」，取得使用技巧與更新動態。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">新增排除目錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">新增白名單檔案/目錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.days">天</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.exc.desc">這些目錄與檔案在所有掃描和清理中都會被跳過。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.exc.empty">暫無排除目錄與白名單</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.excluded">排除</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.daily">每天</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.monthly">每月</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.weekly">每週</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.lang.auto">跟隨系統語言</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.pick.exclude">選擇要在掃描清理中排除的目錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.pick.whitelist">選擇要加入白名單的檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.privacy.desc">掃描資料全部保存在本機。本應用不收集、不上傳任何檔名、路徑與內容。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean">自動清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.d">按排程自動清理暫存檔與快取等安全項目</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.freq">自動清理頻率</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.freq.d">應用程式執行期間在背景執行</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autostart">開機自動執行清理優化大師</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autostart.d">開機後只在背景常駐，不執行任何操作</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.closetotray">關閉按鈕最小化到系統列</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.closetotray.d">點擊關閉按鈕時詢問並最小化，而非結束</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.crash">當機報告</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.hidden">掃描隱藏檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.junction">跟隨目錄連結 (Junction)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.junction.d">跟隨符號連結掃描可能造成重複統計，預設關閉</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.language">介面語言</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.language.d">切換後立即生效</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.mintotray">最小化到系統列</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.mintotray.d">點擊最小化按鈕時隱藏到系統列</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifyauto">自動清理結果通知</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifydisk">磁碟空間不足提醒</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifydisk.d">系統碟剩餘不足 10% 時提醒（低頻，不打擾）</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifynews">產品訊息</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">新功能與活動通知，預設關閉</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">每週空間報告</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine">清理後進入隔離區</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">非快取類檔案先進入隔離區，可隨時還原（建議開啟）</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">隔離區保留時間</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days.d">到期後自動永久刪除</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.stats">匿名使用統計</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.stats.d">僅上報功能使用次數與錯誤碼，不含任何檔案資訊；目前版本完全不上傳資料</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.theme">主題</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.threads">掃描執行緒數</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.threads.d">執行緒越多掃描越快，但機械硬碟建議調低</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.about">關於</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.advanced">進階</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.exclude">排除目錄與白名單</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.general">一般</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.notify">通知</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.privacy">隱私</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.dark">深色</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.light">淺色</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.system">跟隨系統</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.threads">執行緒</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.title">設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.whitelist">白名單</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.analyzed.f">分析於 {0} · {1:N0} 個檔案 · {2:F0} 秒</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.cancelled">已取消分析</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.done">分析完成，用時 {0:F0} 秒</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.empty">還沒有分析過這塊磁碟，點擊右上角「開始分析」（掃描期間可隨時取消）</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.failed">分析失敗：</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.file">檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.filter">大小篩選</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.none">沒有找到大於 {0:F0} MB 的檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.lastanalysis">上次分析：{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.modified">修改於</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.notanalyzed">這塊磁碟還沒有分析過</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.recycle.msg">{0}（{1}）將移至資源回收筒，可隨時還原。</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.recycle.title">移至資源回收筒？</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.rendererror">分析結果渲染異常，詳情見日誌</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.scanned">已掃描 {0:N0} 個檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.scanning">正在分析磁碟…</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tab.large">大檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tab.overview">概覽</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.total">共 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tree.hint">點擊展開子資料夾；已跳過系統連結與無權限目錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tree.title">資料夾佔用排行</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.used.f">已使用 {0} / {1}（{2:F1}%），可用 {3}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.used.f2">已使用 {0} / {1}，可用 {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.impact">啟動影響</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.source">來源</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.suggest">建議</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.toggle">狀態</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.desc">關閉啟動項後應用仍可手動開啟；所有修改都會記錄原狀態，可隨時還原。</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.disabled">已停用</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.empty">沒有符合的啟動項</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.enabled">已啟用</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.high">高</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.low">低</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.med">中</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.unknown">未測量</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.loading">正在讀取啟動項…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">啟動資料夾 (公用)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.folderuser">啟動資料夾 (使用者)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">登錄檔 (目前使用者)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.reghklm">登錄檔 (本機)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.task">排程工作</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.keep">保留</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.off">可考慮關閉</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.system">系統元件</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.systemchip">系統元件</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.toggled">{0}啟動項「{1}」</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.minago">{0} 分鐘前</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.now">剛剛</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.today">今天 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.yesterday">昨天 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.close">關閉</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.max">最大化</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.min">最小化</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.binemptied">資源回收筒已清空</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleancancelled">清理已取消</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleandone">清理完成，釋放 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleaned">已清理，釋放了 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleanfailed">清理失敗：</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.failed">操作失敗</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.langapplied">介面語言已切換</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.largecleaned">清理了大檔案 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.noselect">請先勾選要清理的項目</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.nothing">沒有發現可清理的內容</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.readfailed">讀取失敗：</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.recycled">已移至資源回收筒，釋放 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.recyclefailed">移至資源回收筒失敗，檔案可能被佔用</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.scanfailed">掃描失敗：</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.scanstopped">已停止掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.skipped">（跳過 {0} 項）</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.traymin">已最小化到系統列，右鍵系統列圖示可結束</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.whitelisted">已加入白名單，掃描與清理將跳過該檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.desc">檔案粉碎不會進入資源回收筒；隔離區檔案可隨時還原；重複檔案基於內容雜湊檢測。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.clean.msg">共 {0} 個檔案，{1}，將移至資源回收筒（可還原）。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">刪除選中的副本？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.desc">透過內容雜湊確認重複（不是只看檔名）。掃描範圍預設為圖片、影片與下載目錄。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.group">{0} 個相同檔案 · 每個 {1} · 可釋放 {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.more">… 還有 {0} 組未顯示</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.none">沒有發現重複檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.progress">已掃描 {0:N0} 個檔案…</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.summary">{0} 組重複檔案，可釋放 {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.tip">勾選 = 刪除這份副本</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.title">重複檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.file">檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.folder">資料夾</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.history.title">清理歷史</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.purge.msg">隔離區中的 {0} 個項目將被永久刪除，無法復原。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.purge.title">清空隔離區？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.daysleft">剩 {0} 天</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.empty">隔離區是空的</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.summary">{0} 個項目，共 {1}；超過 {2} 天將自動永久刪除</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quarantine.title">清理隔離區</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.confirm.msg">{0}
 
 {1} 將被覆寫後永久刪除，不進入資源回收筒，無法透過復原軟體輕易還原。
 
 此操作不可復原！</sys:String>
-    <sys:String x:Key="tool.shred.confirm.title">確認粉碎？</sys:String>
-    <sys:String x:Key="tool.shred.desc">從檔案系統中永久刪除檔案，使其不進入資源回收筒。注意：對 SSD 無法保證底層快閃記憶體資料立即實體覆寫。此操作不可復原，請謹慎選擇檔案。</sys:String>
-    <sys:String x:Key="tool.shred.log">粉碎了{0}「{1}」</sys:String>
-    <sys:String x:Key="tool.shred.title">檔案粉碎</sys:String>
-    <sys:String x:Key="tool.win.control">控制台</sys:String>
-    <sys:String x:Key="tool.win.control.d">系統經典設定</sys:String>
-    <sys:String x:Key="tool.win.desc">直達系統自帶工具，安全無風險</sys:String>
-    <sys:String x:Key="tool.win.devmgmt">裝置管理員</sys:String>
-    <sys:String x:Key="tool.win.devmgmt.d">管理硬體驅動</sys:String>
-    <sys:String x:Key="tool.win.diskmgmt">磁碟管理</sys:String>
-    <sys:String x:Key="tool.win.diskmgmt.d">管理分割區與磁碟</sys:String>
-    <sys:String x:Key="tool.win.msinfo">系統資訊</sys:String>
-    <sys:String x:Key="tool.win.msinfo.d">查看系統設定</sys:String>
-    <sys:String x:Key="tool.win.restore">系統還原</sys:String>
-    <sys:String x:Key="tool.win.restore.d">建立或使用還原點</sys:String>
-    <sys:String x:Key="tool.win.storage">儲存設定</sys:String>
-    <sys:String x:Key="tool.win.storage.d">管理儲存空間</sys:String>
-    <sys:String x:Key="tool.win.taskmgr">工作管理員</sys:String>
-    <sys:String x:Key="tool.win.taskmgr.d">查看處理程序與效能</sys:String>
-    <sys:String x:Key="tool.win.title">Windows 快捷工具</sys:String>
-    <sys:String x:Key="tool.win.update">Windows Update</sys:String>
-    <sys:String x:Key="tool.win.update.d">檢查系統更新</sys:String>
-    <sys:String x:Key="tray.autoclean">自動清理：</sys:String>
-    <sys:String x:Key="tray.exit">結束</sys:String>
-    <sys:String x:Key="tray.off">關</sys:String>
-    <sys:String x:Key="tray.on">開</sys:String>
-    <sys:String x:Key="tray.open">開啟清理優化大師</sys:String>
-    <sys:String x:Key="tray.quickscan">快速掃描</sys:String>
-    <sys:String x:Key="wizard.auto.desc">僅自動清理系統暫存檔與應用快取等安全項目，每週一次。</sys:String>
-    <sys:String x:Key="wizard.auto.no">暫不開啟</sys:String>
-    <sys:String x:Key="wizard.auto.title">開啟自動清理？</sys:String>
-    <sys:String x:Key="wizard.auto.yes">開啟自動清理</sys:String>
-    <sys:String x:Key="wizard.next">開始體驗</sys:String>
-    <sys:String x:Key="wizard.next2">下一步</sys:String>
-    <sys:String x:Key="wizard.privacy.items">· 所有掃描結果、檔名、路徑都只保存在你的電腦本機。
+    <sys:String xml:space="preserve" x:Key="tool.shred.confirm.title">確認粉碎？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.desc">從檔案系統中永久刪除檔案，使其不進入資源回收筒。注意：對 SSD 無法保證底層快閃記憶體資料立即實體覆寫。此操作不可復原，請謹慎選擇檔案。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.log">粉碎了{0}「{1}」</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.title">檔案粉碎</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.control">控制台</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.control.d">系統經典設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.desc">直達系統自帶工具，安全無風險</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.devmgmt">裝置管理員</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.devmgmt.d">管理硬體驅動</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt">磁碟管理</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt.d">管理分割區與磁碟</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.msinfo">系統資訊</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">查看系統設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.restore">系統還原</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.restore.d">建立或使用還原點</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.storage">儲存設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.storage.d">管理儲存空間</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.taskmgr">工作管理員</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.taskmgr.d">查看處理程序與效能</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.title">Windows 快捷工具</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.update">Windows Update</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.update.d">檢查系統更新</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.autoclean">自動清理：</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.exit">結束</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.off">關</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.on">開</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.open">開啟清理優化大師</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quickscan">快速掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.desc">僅自動清理系統暫存檔與應用快取等安全項目，每週一次。</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.no">暫不開啟</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.title">開啟自動清理？</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.yes">開啟自動清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.next">開始體驗</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.next2">下一步</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.privacy.items">· 所有掃描結果、檔名、路徑都只保存在你的電腦本機。
 · 預設不開啟任何資料上報，也不上傳任何檔案內容。
 · 關鍵清理項進入隔離區，7~30 天內可隨時還原。
 · 刪除前永遠先預覽，絕不靜默刪除你的檔案。</sys:String>
-    <sys:String x:Key="wizard.privacy.title">隱私承諾</sys:String>
-    <sys:String x:Key="wizard.slogan">清得明白，優化得安心。
+    <sys:String xml:space="preserve" x:Key="wizard.privacy.title">隱私承諾</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.slogan">清得明白，優化得安心。
 我們只做可解釋、可預覽、可還原的清理，不搞虛假加速。</sys:String>
-    <sys:String x:Key="wizard.welcome">歡迎使用清理優化大師</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.welcome">歡迎使用清理優化大師</sys:String>
 </ResourceDictionary>

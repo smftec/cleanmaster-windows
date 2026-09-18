@@ -50,7 +50,8 @@ ZH = {
     "home.suggest.title": "智能建议", "home.suggest.empty": "一切正常，没有需要处理的建议",
     "home.suggest.note.safe": "可安全清理，不影响系统使用", "home.suggest.clean": "立即清理", "home.suggest.optimize": "去优化",
     "home.suggest.startup.title": "开机启动建议", "home.suggest.startup.note": "发现 {0} 个高影响启动项，建议优化",
-    "home.hero.note": "让电脑更干净\n运行更流畅！",
+    "home.hero.note": "让电脑更干净
+运行更流畅！",
     # 智能扫描
     "scan.start": "开始扫描", "scan.cover": "一次扫描覆盖：系统垃圾 · 浏览器缓存 · 应用缓存 · 回收站",
     "scan.privacy": "扫描全程在本地进行；默认只勾选安全项目，高风险项目永远不会被自动选中。",

@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -23,6 +24,10 @@ public partial class MainWindow : Window
         InitializeComponent();
         Loaded += (s, e) =>
         {
+            var v = System.Reflection.Assembly.GetEntryAssembly()?
+                .GetCustomAttribute<System.Reflection.AssemblyInformationalVersionAttribute>()?
+                .InformationalVersion ?? "1.0.0";
+            VersionText.Text = "v" + v.Split('+')[0];
             ApplyWindowChromePadding();
             Navigate(PageKey.Home);
         };

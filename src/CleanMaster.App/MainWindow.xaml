@@ -125,7 +125,7 @@
                     </RadioButton>
                 </StackPanel>
 
-                <TextBlock Grid.Row="2" Text="v1.0.0" FontSize="11.5"
+                <TextBlock Grid.Row="2" x:Name="VersionText" Text="v1.0.0" FontSize="11.5"
                            Foreground="{DynamicResource TextTertiaryBrush}"
                            Margin="22,0,0,18"/>
             </Grid>

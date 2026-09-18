@@ -1,522 +1,522 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <sys:String x:Key="apps.col.date">설치 날짜</sys:String>
-    <sys:String x:Key="apps.col.name">앱</sys:String>
-    <sys:String x:Key="apps.col.publisher">게시자</sys:String>
-    <sys:String x:Key="apps.col.size">크기</sys:String>
-    <sys:String x:Key="apps.desc">제거 시 앱 자체 제거 프로그램을 실행합니다. 완료 후 확인된 잔여 파일을 정리할 수 있습니다(격리소, 복원 가능).</sys:String>
-    <sys:String x:Key="apps.empty">일치하는 앱이 없습니다</sys:String>
-    <sys:String x:Key="apps.loading">설치된 앱을 읽는 중…</sys:String>
-    <sys:String x:Key="apps.notdetected">제거 완료를 감지하지 못했습니다. 취소되었을 수 있습니다</sys:String>
-    <sys:String x:Key="apps.sort.date">설치일순</sys:String>
-    <sys:String x:Key="apps.sort.name">이름순</sys:String>
-    <sys:String x:Key="apps.sort.size">크기순</sys:String>
-    <sys:String x:Key="apps.store">Microsoft Store 앱</sys:String>
-    <sys:String x:Key="apps.uninstall.failed">제거 프로그램 실행 실패: </sys:String>
-    <sys:String x:Key="apps.uninstall.msg">앱 크기: {0}
+    <sys:String xml:space="preserve" x:Key="apps.col.date">설치 날짜</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.name">앱</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.publisher">게시자</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.size">크기</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.desc">제거 시 앱 자체 제거 프로그램을 실행합니다. 완료 후 확인된 잔여 파일을 정리할 수 있습니다(격리소, 복원 가능).</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.empty">일치하는 앱이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.loading">설치된 앱을 읽는 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.notdetected">제거 완료를 감지하지 못했습니다. 취소되었을 수 있습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.date">설치일순</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.name">이름순</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.size">크기순</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.store">Microsoft Store 앱</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">제거 프로그램 실행 실패: </sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">앱 크기: {0}
 
 앱 자체 제거 프로그램이 실행됩니다. 마법사를 따라 완료해 주세요.</sys:String>
-    <sys:String x:Key="apps.uninstall.start">제거 시작</sys:String>
-    <sys:String x:Key="apps.uninstall.title">{0}을(를) 제거할까요?</sys:String>
-    <sys:String x:Key="apps.uninstalled.log">앱 「{0}」 제거</sys:String>
-    <sys:String x:Key="apps.uninstalled.toast">「{0}」 제거됨</sys:String>
-    <sys:String x:Key="apps.unknown">알 수 없음</sys:String>
-    <sys:String x:Key="apps.waiting">「{0}」 제거 완료 대기 중…
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.start">제거 시작</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.title">{0}을(를) 제거할까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstalled.log">앱 「{0}」 제거</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstalled.toast">「{0}」 제거됨</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.unknown">알 수 없음</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.waiting">「{0}」 제거 완료 대기 중…
 완료되면 자동으로 계속됩니다</sys:String>
-    <sys:String x:Key="btn.analyze.start">분석 시작</sys:String>
-    <sys:String x:Key="btn.cancel">취소</sys:String>
-    <sys:String x:Key="btn.clean.selected">선택 항목 정리</sys:String>
-    <sys:String x:Key="btn.clean.start">정리 시작</sys:String>
-    <sys:String x:Key="btn.cleansel">선택 항목 정리</sys:String>
-    <sys:String x:Key="btn.clearhistory">기록 비우기</sys:String>
-    <sys:String x:Key="btn.clearlocal">로컬 기록 지우기</sys:String>
-    <sys:String x:Key="btn.deleteperm">영구 삭제</sys:String>
-    <sys:String x:Key="btn.done.home">홈으로</sys:String>
-    <sys:String x:Key="btn.done.quarantine">격리소 열기</sys:String>
-    <sys:String x:Key="btn.dup.rescan">다시 스캔</sys:String>
-    <sys:String x:Key="btn.dupclean">선택 항목을 휴지통으로</sys:String>
-    <sys:String x:Key="btn.dupkeepnew">최신 항목 유지, 나머지 선택</sys:String>
-    <sys:String x:Key="btn.dupscan">스캔 시작</sys:String>
-    <sys:String x:Key="btn.emptybin">휴지통 비우기</sys:String>
-    <sys:String x:Key="btn.exit">종료</sys:String>
-    <sys:String x:Key="btn.more">더보기</sys:String>
-    <sys:String x:Key="btn.openbin">휴지통 열기</sys:String>
-    <sys:String x:Key="btn.purge">격리소 비우기</sys:String>
-    <sys:String x:Key="btn.recycle">휴지통으로 이동</sys:String>
-    <sys:String x:Key="btn.refresh">새로 고침</sys:String>
-    <sys:String x:Key="btn.remove">제거</sys:String>
-    <sys:String x:Key="btn.rescan">다시 스캔</sys:String>
-    <sys:String x:Key="btn.restore">복원</sys:String>
-    <sys:String x:Key="btn.scan.now">지금 스캔</sys:String>
-    <sys:String x:Key="btn.scangroup">이 그룹 스캔</sys:String>
-    <sys:String x:Key="btn.shred">완전 삭제 실행</sys:String>
-    <sys:String x:Key="btn.shreddir">폴더 완전 삭제</sys:String>
-    <sys:String x:Key="btn.shredfile">파일 완전 삭제</sys:String>
-    <sys:String x:Key="btn.stopscan">스캔 중지</sys:String>
-    <sys:String x:Key="btn.uninstall">제거</sys:String>
-    <sys:String x:Key="cat.apps">앱</sys:String>
-    <sys:String x:Key="cat.archives">압축 파일</sys:String>
-    <sys:String x:Key="cat.audio">음악</sys:String>
-    <sys:String x:Key="cat.documents">문서</sys:String>
-    <sys:String x:Key="cat.images">이미지</sys:String>
-    <sys:String x:Key="cat.other">기타</sys:String>
-    <sys:String x:Key="cat.system">시스템</sys:String>
-    <sys:String x:Key="cat.videos">동영상</sys:String>
-    <sys:String x:Key="clean.empty.before">아래의 「이 그룹 스캔」을 눌러 확인을 시작하세요</sys:String>
-    <sys:String x:Key="clean.empty.clean">이 카테고리는 깨끗합니다. 정리할 항목이 없습니다</sys:String>
-    <sys:String x:Key="clean.empty.group">아래의 「이 그룹 스캔」을 눌러 확인을 시작하세요</sys:String>
-    <sys:String x:Key="clean.freed">확보 —</sys:String>
-    <sys:String x:Key="clean.privacy.banner">개인정보 항목은 기본 선택 해제 상태입니다. 선택 전 각 항목의 영향을 읽어주세요: 쿠키 삭제 시 로그아웃되고 기록 삭제는 되돌릴 수 없습니다.</sys:String>
-    <sys:String x:Key="clean.privacy.warn">개인정보 항목은 정리 후 복원할 수 없습니다. 영향을 이해했는지 확인하세요.</sys:String>
-    <sys:String x:Key="clean.recycle.desc">비우면 휴지통의 파일이 영구 삭제되어 복원할 수 없습니다. 먼저 휴지통을 열어 확인할 수 있습니다.</sys:String>
-    <sys:String x:Key="clean.tab.app">앱 캐시</sys:String>
-    <sys:String x:Key="clean.tab.browser">브라우저</sys:String>
-    <sys:String x:Key="clean.tab.privacy">개인정보 흔적</sys:String>
-    <sys:String x:Key="clean.tab.recycle">휴지통</sys:String>
-    <sys:String x:Key="clean.tab.system">시스템 데이터</sys:String>
-    <sys:String x:Key="clean.tabnote.0">시스템·앱의 임시 파일, 로그, 크래시 리포트. 안전한 항목만 기본 선택</sys:String>
-    <sys:String x:Key="clean.tabnote.1">메신저·오피스 앱의 캐시와 로그. 대화 내용과 문서는 건드리지 않습니다</sys:String>
-    <sys:String x:Key="clean.tabnote.2">브라우징 속도를 위한 캐시. 로그인·비밀번호·기록에 영향 없음</sys:String>
-    <sys:String x:Key="clean.tabnote.3">개인 기록 포함. 기본 모두 선택 해제. 영향을 확인 후 진행하세요</sys:String>
-    <sys:String x:Key="clean.tabnote.4">비우기 전에 필요한 파일이 없는지 확인하세요</sys:String>
-    <sys:String x:Key="clean.title">정리 중…</sys:String>
-    <sys:String x:Key="common.approx">약 </sys:String>
-    <sys:String x:Key="common.freeable">확보 가능</sys:String>
-    <sys:String x:Key="common.loading">불러오는 중…</sys:String>
-    <sys:String x:Key="common.n.items">{0}개 항목</sys:String>
-    <sys:String x:Key="common.scanning">스캔 중…</sys:String>
-    <sys:String x:Key="common.selected">선택됨</sys:String>
-    <sys:String x:Key="common.viewall">모두 보기</sys:String>
-    <sys:String x:Key="dlg.clean.amount">{0}의 데이터를 정리합니다.</sys:String>
-    <sys:String x:Key="dlg.clean.confirmitems">확인이 필요한 항목:</sys:String>
-    <sys:String x:Key="dlg.clean.nrules">{0}개 카테고리, 총 {1}을 정리합니다.</sys:String>
-    <sys:String x:Key="dlg.clean.quarantinehint">복원 가능한 파일은 격리소로 이동됩니다.</sys:String>
-    <sys:String x:Key="dlg.clean.selected.title">선택한 항목을 정리할까요?</sys:String>
-    <sys:String x:Key="dlg.exit.msg">종료하면 자동 정리와 디스크 모니터링이 중지됩니다.</sys:String>
-    <sys:String x:Key="dlg.exit.title">CleanMaster를 종료할까요?</sys:String>
-    <sys:String x:Key="dlg.quickclean.msg">약 {0}이 확보됩니다.
+    <sys:String xml:space="preserve" x:Key="btn.analyze.start">분석 시작</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.cancel">취소</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clean.selected">선택 항목 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clean.start">정리 시작</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.cleansel">선택 항목 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clearhistory">기록 비우기</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clearlocal">로컬 기록 지우기</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.deleteperm">영구 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.done.home">홈으로</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.done.quarantine">격리소 열기</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dup.rescan">다시 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupclean">선택 항목을 휴지통으로</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupkeepnew">최신 항목 유지, 나머지 선택</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupscan">스캔 시작</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.emptybin">휴지통 비우기</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.exit">종료</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.more">더보기</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.openbin">휴지통 열기</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.purge">격리소 비우기</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.recycle">휴지통으로 이동</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.refresh">새로 고침</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.remove">제거</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.rescan">다시 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.restore">복원</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.scan.now">지금 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.scangroup">이 그룹 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shred">완전 삭제 실행</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shreddir">폴더 완전 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shredfile">파일 완전 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.stopscan">스캔 중지</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.uninstall">제거</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.apps">앱</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.archives">압축 파일</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.audio">음악</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.documents">문서</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.images">이미지</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.other">기타</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.system">시스템</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.videos">동영상</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.before">아래의 「이 그룹 스캔」을 눌러 확인을 시작하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.clean">이 카테고리는 깨끗합니다. 정리할 항목이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.group">아래의 「이 그룹 스캔」을 눌러 확인을 시작하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.freed">확보 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.privacy.banner">개인정보 항목은 기본 선택 해제 상태입니다. 선택 전 각 항목의 영향을 읽어주세요: 쿠키 삭제 시 로그아웃되고 기록 삭제는 되돌릴 수 없습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.privacy.warn">개인정보 항목은 정리 후 복원할 수 없습니다. 영향을 이해했는지 확인하세요.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recycle.desc">비우면 휴지통의 파일이 영구 삭제되어 복원할 수 없습니다. 먼저 휴지통을 열어 확인할 수 있습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.app">앱 캐시</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.browser">브라우저</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.privacy">개인정보 흔적</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.recycle">휴지통</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.system">시스템 데이터</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.0">시스템·앱의 임시 파일, 로그, 크래시 리포트. 안전한 항목만 기본 선택</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.1">메신저·오피스 앱의 캐시와 로그. 대화 내용과 문서는 건드리지 않습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.2">브라우징 속도를 위한 캐시. 로그인·비밀번호·기록에 영향 없음</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.3">개인 기록 포함. 기본 모두 선택 해제. 영향을 확인 후 진행하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.4">비우기 전에 필요한 파일이 없는지 확인하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.title">정리 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.approx">약 </sys:String>
+    <sys:String xml:space="preserve" x:Key="common.freeable">확보 가능</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.loading">불러오는 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.n.items">{0}개 항목</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.scanning">스캔 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.selected">선택됨</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.viewall">모두 보기</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.amount">{0}의 데이터를 정리합니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">확인이 필요한 항목:</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">{0}개 카테고리, 총 {1}을 정리합니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.quarantinehint">복원 가능한 파일은 격리소로 이동됩니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.selected.title">선택한 항목을 정리할까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.exit.msg">종료하면 자동 정리와 디스크 모니터링이 중지됩니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.exit.title">CleanMaster를 종료할까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.quickclean.msg">약 {0}이 확보됩니다.
 복원 가능한 파일은 격리소로 이동됩니다.</sys:String>
-    <sys:String x:Key="dlg.quickclean.title">{0}을(를) 정리할까요?</sys:String>
-    <sys:String x:Key="done.cancelled">정리가 중단되었습니다</sys:String>
-    <sys:String x:Key="done.freed.total">총 {0} 확보</sys:String>
-    <sys:String x:Key="done.note.quarantine">격리 파일은 {0}일간 보관되며 도구에서 복원할 수 있습니다.</sys:String>
-    <sys:String x:Key="done.note.skip">건너뛴 파일은 다른 프로그램이 사용 중입니다. 종료 후 다시 시도하세요.</sys:String>
-    <sys:String x:Key="done.partial">정리 완료(일부 건너뜀)</sys:String>
-    <sys:String x:Key="done.stat.fail">실패</sys:String>
-    <sys:String x:Key="done.stat.ok">성공</sys:String>
-    <sys:String x:Key="done.stat.quar">격리됨</sys:String>
-    <sys:String x:Key="done.stat.skip">건너뜀(사용 중)</sys:String>
-    <sys:String x:Key="done.title">정리 완료</sys:String>
-    <sys:String x:Key="history.clear.msg">모든 정리·작업 기록이 삭제됩니다.</sys:String>
-    <sys:String x:Key="history.clear.title">기록을 비울까요?</sys:String>
-    <sys:String x:Key="history.empty">기록이 없습니다</sys:String>
-    <sys:String x:Key="history.type.autoclean">자동 정리</sys:String>
-    <sys:String x:Key="history.type.clean">정리</sys:String>
-    <sys:String x:Key="history.type.other">기타</sys:String>
-    <sys:String x:Key="history.type.quarantine">격리소</sys:String>
-    <sys:String x:Key="history.type.restore">복원</sys:String>
-    <sys:String x:Key="history.type.shred">완전 삭제</sys:String>
-    <sys:String x:Key="history.type.startup">시작 프로그램</sys:String>
-    <sys:String x:Key="history.type.uninstall">제거</sys:String>
-    <sys:String x:Key="home.activity.empty">기록이 없습니다. 스캔을 시작해 보세요</sys:String>
-    <sys:String x:Key="home.activity.title">최근 활동</sys:String>
-    <sys:String x:Key="home.card.apps">설치된 앱</sys:String>
-    <sys:String x:Key="home.card.apps.note">클릭하여 관리</sys:String>
-    <sys:String x:Key="home.card.junk">정리 가능한 데이터</sys:String>
-    <sys:String x:Key="home.card.junk.lastscan">마지막 스캔 {0}</sys:String>
-    <sys:String x:Key="home.card.junk.note">스캔하여 확보 가능 공간 확인</sys:String>
-    <sys:String x:Key="home.card.large">대용량 파일</sys:String>
-    <sys:String x:Key="home.card.large.analyzed">분석됨</sys:String>
-    <sys:String x:Key="home.card.large.analyzed.note">클릭하여 대용량 파일 보기</sys:String>
-    <sys:String x:Key="home.card.large.note">분석하여 찾기</sys:String>
-    <sys:String x:Key="home.card.large.pending">대기 중</sys:String>
-    <sys:String x:Key="home.card.startup">시작 프로그램</sys:String>
-    <sys:String x:Key="home.card.startup.note">개 프로그램이 부팅 시 실행</sys:String>
-    <sys:String x:Key="home.card.startup.note.high">고영향 항목이 부팅을 늦출 수 있음</sys:String>
-    <sys:String x:Key="home.disk.free">여유 —</sys:String>
-    <sys:String x:Key="home.disk.free.f">여유 {0} ({1:F1}%)</sys:String>
-    <sys:String x:Key="home.disk.more">공간이 어디로 갔을까 →</sys:String>
-    <sys:String x:Key="home.disk.title">디스크 공간 (C:)</sys:String>
-    <sys:String x:Key="home.disk.title.disk">디스크 공간 ({0})</sys:String>
-    <sys:String x:Key="home.disk.total">전체 —</sys:String>
-    <sys:String x:Key="home.disk.total.f">전체 {0}</sys:String>
-    <sys:String x:Key="home.disk.used">사용 중 —</sys:String>
-    <sys:String x:Key="home.disk.used.f">사용 {0} ({1:F1}%)</sys:String>
-    <sys:String x:Key="home.hero.note">더 깨끗한 PC,
+    <sys:String xml:space="preserve" x:Key="dlg.quickclean.title">{0}을(를) 정리할까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.cancelled">정리가 중단되었습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.freed.total">총 {0} 확보</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.note.quarantine">격리 파일은 {0}일간 보관되며 도구에서 복원할 수 있습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.note.skip">건너뛴 파일은 다른 프로그램이 사용 중입니다. 종료 후 다시 시도하세요.</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.partial">정리 완료(일부 건너뜀)</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.fail">실패</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.ok">성공</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.quar">격리됨</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.skip">건너뜀(사용 중)</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.title">정리 완료</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clear.msg">모든 정리·작업 기록이 삭제됩니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clear.title">기록을 비울까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.empty">기록이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.autoclean">자동 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.clean">정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.other">기타</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.quarantine">격리소</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.restore">복원</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.shred">완전 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.startup">시작 프로그램</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.uninstall">제거</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.activity.empty">기록이 없습니다. 스캔을 시작해 보세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.activity.title">최근 활동</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.apps">설치된 앱</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.apps.note">클릭하여 관리</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk">정리 가능한 데이터</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk.lastscan">마지막 스캔 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk.note">스캔하여 확보 가능 공간 확인</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large">대용량 파일</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.analyzed">분석됨</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.analyzed.note">클릭하여 대용량 파일 보기</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.note">분석하여 찾기</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.pending">대기 중</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup">시작 프로그램</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup.note">개 프로그램이 부팅 시 실행</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup.note.high">고영향 항목이 부팅을 늦출 수 있음</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.free">여유 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.free.f">여유 {0} ({1:F1}%)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.more">공간이 어디로 갔을까 →</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.title">디스크 공간 (C:)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.title.disk">디스크 공간 ({0})</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.total">전체 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.total.f">전체 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.used">사용 중 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.used.f">사용 {0} ({1:F1}%)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.hero.note">더 깨끗한 PC,
 더 부드러운 실행!</sys:String>
-    <sys:String x:Key="home.noscan">아직 스캔하지 않음</sys:String>
-    <sys:String x:Key="home.noscan.detail">「지금 스캔」을 눌러 시작하세요</sys:String>
-    <sys:String x:Key="home.slogan">정기적인 스캔으로 PC를 최상의 상태로 유지하세요</sys:String>
-    <sys:String x:Key="home.space.empty">이 드라이브는 아직 분석되지 않았습니다</sys:String>
-    <sys:String x:Key="home.space.title">공간 분석</sys:String>
-    <sys:String x:Key="home.status.good">장치 상태 양호</sys:String>
-    <sys:String x:Key="home.status.lastscan">마지막 스캔: {0}</sys:String>
-    <sys:String x:Key="home.status.suggest">정리를 권장합니다</sys:String>
-    <sys:String x:Key="home.status.suggest.detail">정리 가능한 데이터 {0} 및 고영향 시작 프로그램 {1}개 발견</sys:String>
-    <sys:String x:Key="home.status.tight">디스크 공간 부족</sys:String>
-    <sys:String x:Key="home.status.tight.detail">시스템 드라이브 여유 공간이 10% 미만입니다. 지금 정리하세요</sys:String>
-    <sys:String x:Key="home.suggest.clean">지금 정리</sys:String>
-    <sys:String x:Key="home.suggest.empty">문제없습니다. 처리할 항목이 없습니다</sys:String>
-    <sys:String x:Key="home.suggest.note.safe">안전하게 정리 가능하며 시스템에 영향이 없습니다</sys:String>
-    <sys:String x:Key="home.suggest.optimize">최적화</sys:String>
-    <sys:String x:Key="home.suggest.startup.note">고영향 시작 프로그램 {0}개 발견. 최적화를 권장합니다</sys:String>
-    <sys:String x:Key="home.suggest.startup.title">시작 프로그램 제안</sys:String>
-    <sys:String x:Key="home.suggest.title">스마트 제안</sys:String>
-    <sys:String x:Key="leftover.clean">선택 항목 정리</sys:String>
-    <sys:String x:Key="leftover.datadir">데이터 폴더</sys:String>
-    <sys:String x:Key="leftover.desc">이 앱에 속한 것으로 확인된 데이터 폴더와 설정 키입니다. 선택 항목은 격리소로 이동되어 복원 가능합니다.</sys:String>
-    <sys:String x:Key="leftover.installdir">설치 폴더</sys:String>
-    <sys:String x:Key="leftover.reg">설정 레지스트리 키(백업 후 삭제)</sys:String>
-    <sys:String x:Key="leftover.skip">정리하지 않고 완료</sys:String>
-    <sys:String x:Key="leftover.title">잔여 파일 발견</sys:String>
-    <sys:String x:Key="leftover.title.f">「{0}」의 잔여 파일</sys:String>
-    <sys:String x:Key="nav.apps">앱 관리</sys:String>
-    <sys:String x:Key="nav.clean">정리 공간</sys:String>
-    <sys:String x:Key="nav.home">홈</sys:String>
-    <sys:String x:Key="nav.scan">스마트 스캔</sys:String>
-    <sys:String x:Key="nav.settings">설정</sys:String>
-    <sys:String x:Key="nav.space">공간 분석</sys:String>
-    <sys:String x:Key="nav.startup">시작 프로그램</sys:String>
-    <sys:String x:Key="nav.toolbox">도구</sys:String>
-    <sys:String x:Key="recycle.confirm.msg">휴지통의 {0}개 파일({1})이 영구 삭제되며 복원할 수 없습니다.</sys:String>
-    <sys:String x:Key="recycle.confirm.title">휴지통을 비울까요?</sys:String>
-    <sys:String x:Key="recycle.empty">휴지통이 비어 있습니다</sys:String>
-    <sys:String x:Key="recycle.info">{0}개 항목, {1} 사용</sys:String>
-    <sys:String x:Key="result.sub">{0} · {1}개 카테고리 스캔</sys:String>
-    <sys:String x:Key="result.title.clean">스캔 완료 — 매우 깨끗합니다!</sys:String>
-    <sys:String x:Key="result.title.found">스캔 완료 — {0} 확보 가능</sys:String>
-    <sys:String x:Key="risk.confirm">확인 필요</sys:String>
-    <sys:String x:Key="risk.high">높은 위험</sys:String>
-    <sys:String x:Key="risk.low">낮은 위험</sys:String>
-    <sys:String x:Key="risk.safe">안전</sys:String>
-    <sys:String x:Key="row.direct">직접 삭제</sys:String>
-    <sys:String x:Key="row.files">파일 {0}개</sys:String>
-    <sys:String x:Key="row.impact.tip">정리 영향: {0}</sys:String>
-    <sys:String x:Key="row.restore">격리를 통해 복원 가능</sys:String>
-    <sys:String x:Key="row.running">관련 프로세스 {0}개 실행 중</sys:String>
-    <sys:String x:Key="rule.brave_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.brave_cache.name">Brave cache</sys:String>
-    <sys:String x:Key="rule.brave_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.chrome_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.chrome_cache.name">Google Chrome cache</sys:String>
-    <sys:String x:Key="rule.chrome_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.impact">You will be logged out of those sites</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.name">Google Chrome cookies (logs you out)</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.reason">Site login credentials saved by the browser</sys:String>
-    <sys:String x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
-    <sys:String x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
-    <sys:String x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
-    <sys:String x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
-    <sys:String x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
-    <sys:String x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
-    <sys:String x:Key="rule.dev_caches.impact">Dependencies re-download on next build; extra network usage</sys:String>
-    <sys:String x:Key="rule.dev_caches.name">Dev tool caches (npm/pip/NuGet/Gradle)</sys:String>
-    <sys:String x:Key="rule.dev_caches.reason">Dependency caches and build outputs of package managers</sys:String>
-    <sys:String x:Key="rule.discord_cache.impact">Images/videos reload; account and messages unaffected</sys:String>
-    <sys:String x:Key="rule.discord_cache.name">Discord cache</sys:String>
-    <sys:String x:Key="rule.discord_cache.reason">Web cache of the Discord desktop client</sys:String>
-    <sys:String x:Key="rule.edge_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.edge_cache.name">Microsoft Edge cache</sys:String>
-    <sys:String x:Key="rule.edge_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.edge_cookies.impact">You will be logged out of those sites</sys:String>
-    <sys:String x:Key="rule.edge_cookies.name">Microsoft Edge cookies (logs you out)</sys:String>
-    <sys:String x:Key="rule.edge_cookies.reason">Site login credentials saved by the browser</sys:String>
-    <sys:String x:Key="rule.edge_history.impact">History cleared; favorites and passwords untouched</sys:String>
-    <sys:String x:Key="rule.edge_history.name">Microsoft Edge browsing history</sys:String>
-    <sys:String x:Key="rule.edge_history.reason">Web history database saved by the browser</sys:String>
-    <sys:String x:Key="rule.epic_cache.impact">Installed games and account unaffected</sys:String>
-    <sys:String x:Key="rule.epic_cache.name">Epic Games Launcher cache</sys:String>
-    <sys:String x:Key="rule.epic_cache.reason">Web view cache and logs of the launcher</sys:String>
-    <sys:String x:Key="rule.error_reports.impact">No impact; only affects reporting past errors to Microsoft</sys:String>
-    <sys:String x:Key="rule.error_reports.name">Error reports &amp; crash dumps</sys:String>
-    <sys:String x:Key="rule.error_reports.reason">Diagnostics from app crashes, no longer useful</sys:String>
-    <sys:String x:Key="rule.firefox_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.firefox_cache.name">Firefox cache</sys:String>
-    <sys:String x:Key="rule.firefox_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.impact">Indexes rebuilt on open; local history cleared</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.name">JetBrains IDE caches</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.reason">Indexes and local history caches of JetBrains IDEs</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.impact">Games recompile on first launch; slightly slower once</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.name">NVIDIA / AMD graphics caches</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.reason">Shader and material compilation caches</sys:String>
-    <sys:String x:Key="rule.office_cache.impact">Cloud-saved documents unaffected; local edits untouched</sys:String>
-    <sys:String x:Key="rule.office_cache.name">Office file cache</sys:String>
-    <sys:String x:Key="rule.office_cache.reason">Local cache from document upload/collaboration</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.impact">Sync and files unaffected</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.name">OneDrive logs</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.reason">Diagnostic logs from OneDrive sync</sys:String>
-    <sys:String x:Key="rule.opera_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.opera_cache.name">Opera cache</sys:String>
-    <sys:String x:Key="rule.opera_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.impact">Current clipboard is cleared</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.name">Clipboard contents</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.reason">Recently copied data still in the clipboard</sys:String>
-    <sys:String x:Key="rule.privacy_dns.impact">First visits re-resolve; slightly slower once; needs admin</sys:String>
-    <sys:String x:Key="rule.privacy_dns.name">DNS resolver cache</sys:String>
-    <sys:String x:Key="rule.privacy_dns.reason">Domain resolution records kept by the system</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.impact">Jump lists cleared; app features unaffected</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.name">Jump list records</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.reason">History data shown in taskbar jump lists</sys:String>
-    <sys:String x:Key="rule.privacy_recent.impact">The recent list is cleared; files themselves untouched</sys:String>
-    <sys:String x:Key="rule.privacy_recent.name">Recent files list</sys:String>
-    <sys:String x:Key="rule.privacy_recent.reason">Explorer recent items and jump list sources</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.impact">Run history cleared; system unaffected</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.name">Run dialog history</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.reason">Commands kept by the Win+R dialog</sys:String>
-    <sys:String x:Key="rule.privacy_search.impact">Search history cleared; search still works</sys:String>
-    <sys:String x:Key="rule.privacy_search.name">Explorer search history</sys:String>
-    <sys:String x:Key="rule.privacy_search.reason">Keywords kept by Explorer search</sys:String>
-    <sys:String x:Key="rule.qq_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
-    <sys:String x:Key="rule.qq_cache.name">QQ (cache/logs)</sys:String>
-    <sys:String x:Key="rule.qq_cache.reason">QQ runtime logs and component cache</sys:String>
-    <sys:String x:Key="rule.recycle_bin.impact">Files will be permanently deleted and unrecoverable</sys:String>
-    <sys:String x:Key="rule.recycle_bin.name">Recycle Bin</sys:String>
-    <sys:String x:Key="rule.recycle_bin.reason">Deleted files still occupying disk space</sys:String>
-    <sys:String x:Key="rule.shader_cache.impact">Games recompile shaders on next launch; slightly slower once</sys:String>
-    <sys:String x:Key="rule.shader_cache.name">DirectX / GPU shader caches</sys:String>
-    <sys:String x:Key="rule.shader_cache.reason">Compiled shader caches from games and graphics apps</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.impact">Store pages load slower once; games, saves and inventory untouched</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.name">Steam web cache</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.reason">Cache of Steam's built-in browser</sys:String>
-    <sys:String x:Key="rule.teams_cache.impact">Teams reloads on next launch; account and chats unaffected</sys:String>
-    <sys:String x:Key="rule.teams_cache.name">Microsoft Teams cache</sys:String>
-    <sys:String x:Key="rule.teams_cache.reason">Web and component cache of Teams client</sys:String>
-    <sys:String x:Key="rule.telegram_cache.impact">Cloud chats unaffected; offline media re-downloads</sys:String>
-    <sys:String x:Key="rule.telegram_cache.name">Telegram media cache</sys:String>
-    <sys:String x:Key="rule.telegram_cache.reason">Local cache of downloaded media</sys:String>
-    <sys:String x:Key="rule.thumb_cache.impact">Windows regenerates thumbnails when needed</sys:String>
-    <sys:String x:Key="rule.thumb_cache.name">Thumbnail cache</sys:String>
-    <sys:String x:Key="rule.thumb_cache.reason">Preview cache generated by File Explorer</sys:String>
-    <sys:String x:Key="rule.update_cache.impact">No impact once installed; skipped during downloads; needs admin</sys:String>
-    <sys:String x:Key="rule.update_cache.name">Windows Update download cache</sys:String>
-    <sys:String x:Key="rule.update_cache.reason">Leftover update packages already installed</sys:String>
-    <sys:String x:Key="rule.user_temp.impact">No impact; a rare running installer may need to restart</sys:String>
-    <sys:String x:Key="rule.user_temp.name">User temp files</sys:String>
-    <sys:String x:Key="rule.user_temp.reason">Temporary files created by apps; useless once the app closes</sys:String>
-    <sys:String x:Key="rule.vscode_cache.impact">Index rebuilt on next launch; layout and extensions kept</sys:String>
-    <sys:String x:Key="rule.vscode_cache.name">VS Code cache</sys:String>
-    <sys:String x:Key="rule.vscode_cache.reason">UI caches and crash logs</sys:String>
-    <sys:String x:Key="rule.wechat_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
-    <sys:String x:Key="rule.wechat_cache.name">WeChat (cache/logs)</sys:String>
-    <sys:String x:Key="rule.wechat_cache.reason">WeChat runtime logs and web cache</sys:String>
-    <sys:String x:Key="rule.windows_logs.impact">No impact on operation; old logs no longer reviewable</sys:String>
-    <sys:String x:Key="rule.windows_logs.name">Windows log files</sys:String>
-    <sys:String x:Key="rule.windows_logs.reason">Old log files (7+ days) from Windows components</sys:String>
-    <sys:String x:Key="rule.windows_temp.impact">No impact; some files are skipped without admin rights</sys:String>
-    <sys:String x:Key="rule.windows_temp.name">System temp files (Windows\Temp)</sys:String>
-    <sys:String x:Key="rule.windows_temp.reason">Temp files left by system components and installers</sys:String>
-    <sys:String x:Key="scan.cover">한 번에 스캔: 시스템 데이터 · 브라우저 캐시 · 앱 캐시 · 휴지통</sys:String>
-    <sys:String x:Key="scan.done">스캔 완료</sys:String>
-    <sys:String x:Key="scan.found">발견 —</sys:String>
-    <sys:String x:Key="scan.group.cache">브라우저·앱 캐시</sys:String>
-    <sys:String x:Key="scan.group.cache.note">캐시 데이터. 앱이 필요 시 다시 받습니다</sys:String>
-    <sys:String x:Key="scan.group.check">확인 필요</sys:String>
-    <sys:String x:Key="scan.group.check.note">정리 전에 더 이상 필요 없는지 확인하세요</sys:String>
-    <sys:String x:Key="scan.group.safe">안전하게 정리 가능</sys:String>
-    <sys:String x:Key="scan.group.safe.note">시스템과 앱이 만든 임시 데이터. 삭제해도 안전합니다</sys:String>
-    <sys:String x:Key="scan.preparing">준비 중…</sys:String>
-    <sys:String x:Key="scan.privacy">모두 로컬에서 실행됩니다. 안전한 항목만 기본 선택되며 위험 항목은 자동 선택되지 않습니다.</sys:String>
-    <sys:String x:Key="scan.reselectall">안전 항목 선택</sys:String>
-    <sys:String x:Key="scan.start">스캔 시작</sys:String>
-    <sys:String x:Key="settings.about.email">이메일</sys:String>
-    <sys:String x:Key="settings.about.repo">소스 코드</sys:String>
-    <sys:String x:Key="settings.about.site">지원 사이트</sys:String>
-    <sys:String x:Key="settings.about.slogan">명확하게 정리, 안심하고 최적화.</sys:String>
-    <sys:String x:Key="settings.about.support">지원 및 피드백</sys:String>
-    <sys:String x:Key="settings.about.wechat">WeChat에서 「AI虚拟助理」을 검색하면 팁과 소식을 받을 수 있습니다.</sys:String>
-    <sys:String x:Key="settings.btn.addexclude">제외 폴더 추가</sys:String>
-    <sys:String x:Key="settings.btn.addwhitelist">화이트리스트 파일/폴더 추가</sys:String>
-    <sys:String x:Key="settings.days">일</sys:String>
-    <sys:String x:Key="settings.exc.desc">이 폴더와 파일은 모든 스캔·정리에서 건너뛰어집니다.</sys:String>
-    <sys:String x:Key="settings.exc.empty">제외·화이트리스트 항목 없음</sys:String>
-    <sys:String x:Key="settings.excluded">제외</sys:String>
-    <sys:String x:Key="settings.freq.daily">매일</sys:String>
-    <sys:String x:Key="settings.freq.monthly">매월</sys:String>
-    <sys:String x:Key="settings.freq.weekly">매주</sys:String>
-    <sys:String x:Key="settings.lang.auto">시스템 언어 따르기</sys:String>
-    <sys:String x:Key="settings.pick.exclude">스캔에서 제외할 폴더 선택</sys:String>
-    <sys:String x:Key="settings.pick.whitelist">화이트리스트에 추가할 파일 선택</sys:String>
-    <sys:String x:Key="settings.privacy.desc">모든 스캔 데이터는 이 PC에만 저장됩니다. 파일명·경로·내용을 수집하거나 전송하지 않습니다.</sys:String>
-    <sys:String x:Key="settings.row.autoclean">자동 정리</sys:String>
-    <sys:String x:Key="settings.row.autoclean.d">임시 파일·캐시 등 안전한 항목을 주기적으로 정리</sys:String>
-    <sys:String x:Key="settings.row.autoclean.freq">자동 정리 주기</sys:String>
-    <sys:String x:Key="settings.row.autoclean.freq.d">앱 실행 중 백그라운드에서 수행</sys:String>
-    <sys:String x:Key="settings.row.autostart">Windows 시작 시 실행</sys:String>
-    <sys:String x:Key="settings.row.autostart.d">부팅 후 트레이에서 대기만 하며 자동으로 아무 작업도 하지 않습니다</sys:String>
-    <sys:String x:Key="settings.row.closetotray">닫기 버튼으로 트레이 최소화</sys:String>
-    <sys:String x:Key="settings.row.closetotray.d">닫기 버튼 시 확인 후 최소화합니다(종료 아님)</sys:String>
-    <sys:String x:Key="settings.row.crash">크래시 리포트</sys:String>
-    <sys:String x:Key="settings.row.hidden">숨김 파일 스캔</sys:String>
-    <sys:String x:Key="settings.row.junction">디렉터리 링크 따라가기 (Junction)</sys:String>
-    <sys:String x:Key="settings.row.junction.d">링크 추적은 중복 집계를 유발할 수 있습니다. 기본 꺼짐</sys:String>
-    <sys:String x:Key="settings.row.language">인터페이스 언어</sys:String>
-    <sys:String x:Key="settings.row.language.d">즉시 적용됩니다</sys:String>
-    <sys:String x:Key="settings.row.mintotray">트레이로 최소화</sys:String>
-    <sys:String x:Key="settings.row.mintotray.d">최소화 버튼으로 트레이에 숨겨집니다</sys:String>
-    <sys:String x:Key="settings.row.notifyauto">자동 정리 결과 알림</sys:String>
-    <sys:String x:Key="settings.row.notifydisk">디스크 부족 알림</sys:String>
-    <sys:String x:Key="settings.row.notifydisk.d">시스템 드라이브 여유가 10% 미만이면 알림(드묾)</sys:String>
-    <sys:String x:Key="settings.row.notifynews">제품 소식</sys:String>
-    <sys:String x:Key="settings.row.notifynews.d">새 기능·이벤트 알림(기본 꺼짐)</sys:String>
-    <sys:String x:Key="settings.row.notifyweekly">주간 보고서</sys:String>
-    <sys:String x:Key="settings.row.quarantine">정리 후 격리</sys:String>
-    <sys:String x:Key="settings.row.quarantine.d">캐시가 아닌 파일은 먼저 격리되어 복원 가능(권장)</sys:String>
-    <sys:String x:Key="settings.row.quarantine.days">격리 보관 기간</sys:String>
-    <sys:String x:Key="settings.row.quarantine.days.d">만료 후 자동 영구 삭제</sys:String>
-    <sys:String x:Key="settings.row.stats">익명 통계</sys:String>
-    <sys:String x:Key="settings.row.stats.d">기능 사용 수와 오류 코드만 전송 대상. 이 빌드는 아무것도 전송하지 않습니다</sys:String>
-    <sys:String x:Key="settings.row.theme">테마</sys:String>
-    <sys:String x:Key="settings.row.threads">스캔 스레드 수</sys:String>
-    <sys:String x:Key="settings.row.threads.d">많을수록 빠릅니다. HDD에서는 줄이세요</sys:String>
-    <sys:String x:Key="settings.sec.about">정보</sys:String>
-    <sys:String x:Key="settings.sec.advanced">고급</sys:String>
-    <sys:String x:Key="settings.sec.exclude">제외·화이트리스트</sys:String>
-    <sys:String x:Key="settings.sec.general">일반</sys:String>
-    <sys:String x:Key="settings.sec.notify">알림</sys:String>
-    <sys:String x:Key="settings.sec.privacy">개인정보</sys:String>
-    <sys:String x:Key="settings.theme.dark">다크</sys:String>
-    <sys:String x:Key="settings.theme.light">라이트</sys:String>
-    <sys:String x:Key="settings.theme.system">시스템 따르기</sys:String>
-    <sys:String x:Key="settings.threads">스레드</sys:String>
-    <sys:String x:Key="settings.title">설정</sys:String>
-    <sys:String x:Key="settings.whitelist">화이트리스트</sys:String>
-    <sys:String x:Key="space.analyzed.f">분석 {0} · {1:N0}개 파일 · {2:F0}초</sys:String>
-    <sys:String x:Key="space.cancelled">분석이 취소되었습니다</sys:String>
-    <sys:String x:Key="space.done">분석 완료({0:F0}초)</sys:String>
-    <sys:String x:Key="space.empty">이 드라이브는 아직 분석되지 않았습니다. 오른쪽 위 「분석 시작」을 누르세요(언제든 취소 가능)</sys:String>
-    <sys:String x:Key="space.failed">분석 실패: </sys:String>
-    <sys:String x:Key="space.file">파일</sys:String>
-    <sys:String x:Key="space.large.filter">크기 필터</sys:String>
-    <sys:String x:Key="space.large.none">{0:F0} MB 초과 파일이 없습니다</sys:String>
-    <sys:String x:Key="space.lastanalysis">마지막 분석: {0}</sys:String>
-    <sys:String x:Key="space.modified">수정</sys:String>
-    <sys:String x:Key="space.notanalyzed">이 드라이브는 아직 분석되지 않았습니다</sys:String>
-    <sys:String x:Key="space.recycle.msg">{0}({1})을(를) 휴지통으로 이동합니다. 언제든 복원할 수 있습니다.</sys:String>
-    <sys:String x:Key="space.recycle.title">휴지통으로 이동할까요?</sys:String>
-    <sys:String x:Key="space.rendererror">분석 결과 표시에 문제가 있습니다. 로그를 확인하세요</sys:String>
-    <sys:String x:Key="space.scanned">{0:N0}개 파일 스캔</sys:String>
-    <sys:String x:Key="space.scanning">디스크 분석 중…</sys:String>
-    <sys:String x:Key="space.tab.large">대용량 파일</sys:String>
-    <sys:String x:Key="space.tab.overview">개요</sys:String>
-    <sys:String x:Key="space.total">총 {0}</sys:String>
-    <sys:String x:Key="space.tree.hint">클릭하여 펼치기. 시스템 링크와 접근 불가 폴더는 건너뜁니다</sys:String>
-    <sys:String x:Key="space.tree.title">폴더 사용량 순위</sys:String>
-    <sys:String x:Key="space.used.f">사용 {0} / {1}({2:F1}%), 여유 {3}</sys:String>
-    <sys:String x:Key="space.used.f2">사용 {0} / {1}, 여유 {2}</sys:String>
-    <sys:String x:Key="startup.col.impact">영향</sys:String>
-    <sys:String x:Key="startup.col.source">원본</sys:String>
-    <sys:String x:Key="startup.col.suggest">제안</sys:String>
-    <sys:String x:Key="startup.col.toggle">상태</sys:String>
-    <sys:String x:Key="startup.desc">비활성화해도 앱은 수동으로 열 수 있습니다. 모든 변경은 기록되어 언제든 되돌릴 수 있습니다.</sys:String>
-    <sys:String x:Key="startup.disabled">사용 안 함</sys:String>
-    <sys:String x:Key="startup.empty">일치하는 항목이 없습니다</sys:String>
-    <sys:String x:Key="startup.enabled">사용</sys:String>
-    <sys:String x:Key="startup.impact.high">높음</sys:String>
-    <sys:String x:Key="startup.impact.low">낮음</sys:String>
-    <sys:String x:Key="startup.impact.med">중간</sys:String>
-    <sys:String x:Key="startup.impact.unknown">미측정</sys:String>
-    <sys:String x:Key="startup.loading">시작 프로그램을 읽는 중…</sys:String>
-    <sys:String x:Key="startup.src.foldercommon">시작 폴더 (모든 사용자)</sys:String>
-    <sys:String x:Key="startup.src.folderuser">시작 폴더 (사용자)</sys:String>
-    <sys:String x:Key="startup.src.reghkcu">레지스트리 (현재 사용자)</sys:String>
-    <sys:String x:Key="startup.src.reghklm">레지스트리 (컴퓨터)</sys:String>
-    <sys:String x:Key="startup.src.task">예약 작업</sys:String>
-    <sys:String x:Key="startup.suggest.keep">유지</sys:String>
-    <sys:String x:Key="startup.suggest.off">끄기 고려</sys:String>
-    <sys:String x:Key="startup.suggest.system">시스템 구성 요소</sys:String>
-    <sys:String x:Key="startup.systemchip">시스템 구성 요소</sys:String>
-    <sys:String x:Key="startup.toggled">시작 프로그램 「{1}」 {0}</sys:String>
-    <sys:String x:Key="time.minago">{0}분 전</sys:String>
-    <sys:String x:Key="time.now">방금</sys:String>
-    <sys:String x:Key="time.today">오늘 {0}</sys:String>
-    <sys:String x:Key="time.yesterday">어제 {0}</sys:String>
-    <sys:String x:Key="tip.close">닫기</sys:String>
-    <sys:String x:Key="tip.max">최대화</sys:String>
-    <sys:String x:Key="tip.min">최소화</sys:String>
-    <sys:String x:Key="toast.binemptied">휴지통을 비웠습니다</sys:String>
-    <sys:String x:Key="toast.cleancancelled">정리가 취소되었습니다</sys:String>
-    <sys:String x:Key="toast.cleandone">정리 완료 — {0} 확보</sys:String>
-    <sys:String x:Key="toast.cleaned">정리 완료 — {0} 확보</sys:String>
-    <sys:String x:Key="toast.cleanfailed">정리 실패: </sys:String>
-    <sys:String x:Key="toast.failed">작업 실패</sys:String>
-    <sys:String x:Key="toast.langapplied">인터페이스 언어가 변경되었습니다</sys:String>
-    <sys:String x:Key="toast.largecleaned">대용량 파일 {0} 정리</sys:String>
-    <sys:String x:Key="toast.noselect">먼저 정리할 항목을 선택하세요</sys:String>
-    <sys:String x:Key="toast.nothing">정리할 항목이 없습니다</sys:String>
-    <sys:String x:Key="toast.readfailed">불러오기 실패: </sys:String>
-    <sys:String x:Key="toast.recycled">휴지통으로 이동 — {0} 확보</sys:String>
-    <sys:String x:Key="toast.recyclefailed">휴지통 이동 실패. 파일이 사용 중일 수 있습니다</sys:String>
-    <sys:String x:Key="toast.scanfailed">스캔 실패: </sys:String>
-    <sys:String x:Key="toast.scanstopped">스캔이 중지되었습니다</sys:String>
-    <sys:String x:Key="toast.skipped"> ({0}개 건너뜀)</sys:String>
-    <sys:String x:Key="toast.traymin">트레이로 최소화했습니다. 트레이 아이콘 우클릭으로 종료할 수 있습니다</sys:String>
-    <sys:String x:Key="toast.whitelisted">화이트리스트에 추가했습니다. 스캔과 정리에서 이 파일은 건너뜁니다</sys:String>
-    <sys:String x:Key="tool.desc">완전 삭제된 파일은 휴지통을 거치지 않습니다. 격리 파일은 언제든 복원 가능. 중복 검출은 내용 해시 기반입니다.</sys:String>
-    <sys:String x:Key="tool.dup.clean.msg">{0}개 파일({1})을 휴지통으로 이동합니다(복원 가능).</sys:String>
-    <sys:String x:Key="tool.dup.clean.title">선택한 복사본을 삭제할까요?</sys:String>
-    <sys:String x:Key="tool.dup.desc">내용 해시로 중복을 확인합니다(파일명 비교 아님). 기본 범위는 사진·비디오·다운로드입니다.</sys:String>
-    <sys:String x:Key="tool.dup.group">동일 파일 {0}개 · 각 {1} · {2} 확보 가능</sys:String>
-    <sys:String x:Key="tool.dup.more">… {0}개 그룹 더 있음</sys:String>
-    <sys:String x:Key="tool.dup.none">중복 파일이 없습니다</sys:String>
-    <sys:String x:Key="tool.dup.progress">{0:N0}개 파일 스캔…</sys:String>
-    <sys:String x:Key="tool.dup.summary">중복 그룹 {0}개, {1} 확보 가능</sys:String>
-    <sys:String x:Key="tool.dup.tip">체크 = 이 복사본 삭제</sys:String>
-    <sys:String x:Key="tool.dup.title">중복 파일</sys:String>
-    <sys:String x:Key="tool.file">파일</sys:String>
-    <sys:String x:Key="tool.folder">폴더</sys:String>
-    <sys:String x:Key="tool.history.title">정리 기록</sys:String>
-    <sys:String x:Key="tool.purge.msg">격리소의 {0}개 항목이 영구 삭제됩니다. 되돌릴 수 없습니다.</sys:String>
-    <sys:String x:Key="tool.purge.title">격리소를 비울까요?</sys:String>
-    <sys:String x:Key="tool.quar.daysleft">{0}일 남음</sys:String>
-    <sys:String x:Key="tool.quar.empty">격리소가 비어 있습니다</sys:String>
-    <sys:String x:Key="tool.quar.summary">{0}개 항목, {1}. {2}일 후 자동 삭제</sys:String>
-    <sys:String x:Key="tool.quarantine.title">격리소</sys:String>
-    <sys:String x:Key="tool.shred.confirm.msg">{0}
+    <sys:String xml:space="preserve" x:Key="home.noscan">아직 스캔하지 않음</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.noscan.detail">「지금 스캔」을 눌러 시작하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.slogan">정기적인 스캔으로 PC를 최상의 상태로 유지하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.space.empty">이 드라이브는 아직 분석되지 않았습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.space.title">공간 분석</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.good">장치 상태 양호</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.lastscan">마지막 스캔: {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.suggest">정리를 권장합니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.suggest.detail">정리 가능한 데이터 {0} 및 고영향 시작 프로그램 {1}개 발견</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.tight">디스크 공간 부족</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.tight.detail">시스템 드라이브 여유 공간이 10% 미만입니다. 지금 정리하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.clean">지금 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.empty">문제없습니다. 처리할 항목이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.note.safe">안전하게 정리 가능하며 시스템에 영향이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.optimize">최적화</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.startup.note">고영향 시작 프로그램 {0}개 발견. 최적화를 권장합니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">시작 프로그램 제안</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.title">스마트 제안</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.clean">선택 항목 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.datadir">데이터 폴더</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.desc">이 앱에 속한 것으로 확인된 데이터 폴더와 설정 키입니다. 선택 항목은 격리소로 이동되어 복원 가능합니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.installdir">설치 폴더</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.reg">설정 레지스트리 키(백업 후 삭제)</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.skip">정리하지 않고 완료</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.title">잔여 파일 발견</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.title.f">「{0}」의 잔여 파일</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.apps">앱 관리</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.clean">정리 공간</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.home">홈</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.scan">스마트 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.settings">설정</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.space">공간 분석</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.startup">시작 프로그램</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.toolbox">도구</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">휴지통의 {0}개 파일({1})이 영구 삭제되며 복원할 수 없습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.confirm.title">휴지통을 비울까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.empty">휴지통이 비어 있습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.info">{0}개 항목, {1} 사용</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.sub">{0} · {1}개 카테고리 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.title.clean">스캔 완료 — 매우 깨끗합니다!</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.title.found">스캔 완료 — {0} 확보 가능</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.confirm">확인 필요</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.high">높은 위험</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.low">낮은 위험</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.safe">안전</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.direct">직접 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.files">파일 {0}개</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.impact.tip">정리 영향: {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.restore">격리를 통해 복원 가능</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.running">관련 프로세스 {0}개 실행 중</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.name">Brave cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.name">Google Chrome cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.impact">You will be logged out of those sites</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.name">Google Chrome cookies (logs you out)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.reason">Site login credentials saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.impact">Dependencies re-download on next build; extra network usage</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.name">Dev tool caches (npm/pip/NuGet/Gradle)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.reason">Dependency caches and build outputs of package managers</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.impact">Images/videos reload; account and messages unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.name">Discord cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.reason">Web cache of the Discord desktop client</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.name">Microsoft Edge cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.impact">You will be logged out of those sites</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.name">Microsoft Edge cookies (logs you out)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.reason">Site login credentials saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.impact">History cleared; favorites and passwords untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.name">Microsoft Edge browsing history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.impact">Installed games and account unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.name">Epic Games Launcher cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.reason">Web view cache and logs of the launcher</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.impact">No impact; only affects reporting past errors to Microsoft</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.name">Error reports &amp; crash dumps</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.reason">Diagnostics from app crashes, no longer useful</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.name">Firefox cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.impact">Indexes rebuilt on open; local history cleared</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.name">JetBrains IDE caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.reason">Indexes and local history caches of JetBrains IDEs</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.impact">Games recompile on first launch; slightly slower once</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.name">NVIDIA / AMD graphics caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.reason">Shader and material compilation caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.impact">Cloud-saved documents unaffected; local edits untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.name">Office file cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.reason">Local cache from document upload/collaboration</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.impact">Sync and files unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.name">OneDrive logs</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.reason">Diagnostic logs from OneDrive sync</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.name">Opera cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.impact">Current clipboard is cleared</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.name">Clipboard contents</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.reason">Recently copied data still in the clipboard</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.impact">First visits re-resolve; slightly slower once; needs admin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.name">DNS resolver cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.reason">Domain resolution records kept by the system</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.impact">Jump lists cleared; app features unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.name">Jump list records</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.reason">History data shown in taskbar jump lists</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.impact">The recent list is cleared; files themselves untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.name">Recent files list</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.reason">Explorer recent items and jump list sources</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.impact">Run history cleared; system unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.name">Run dialog history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.reason">Commands kept by the Win+R dialog</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.impact">Search history cleared; search still works</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.name">Explorer search history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.reason">Keywords kept by Explorer search</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.name">QQ (cache/logs)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.reason">QQ runtime logs and component cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.impact">Files will be permanently deleted and unrecoverable</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.name">Recycle Bin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.reason">Deleted files still occupying disk space</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.impact">Games recompile shaders on next launch; slightly slower once</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.name">DirectX / GPU shader caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.reason">Compiled shader caches from games and graphics apps</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.impact">Store pages load slower once; games, saves and inventory untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.name">Steam web cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.reason">Cache of Steam's built-in browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.impact">Teams reloads on next launch; account and chats unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.name">Microsoft Teams cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.reason">Web and component cache of Teams client</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.impact">Cloud chats unaffected; offline media re-downloads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.name">Telegram media cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.reason">Local cache of downloaded media</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.impact">Windows regenerates thumbnails when needed</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.name">Thumbnail cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.reason">Preview cache generated by File Explorer</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.impact">No impact once installed; skipped during downloads; needs admin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.name">Windows Update download cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.reason">Leftover update packages already installed</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.impact">No impact; a rare running installer may need to restart</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.name">User temp files</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.reason">Temporary files created by apps; useless once the app closes</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.impact">Index rebuilt on next launch; layout and extensions kept</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.name">VS Code cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.reason">UI caches and crash logs</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.name">WeChat (cache/logs)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.reason">WeChat runtime logs and web cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.impact">No impact on operation; old logs no longer reviewable</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.name">Windows log files</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.reason">Old log files (7+ days) from Windows components</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.impact">No impact; some files are skipped without admin rights</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.name">System temp files (Windows\Temp)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.reason">Temp files left by system components and installers</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.cover">한 번에 스캔: 시스템 데이터 · 브라우저 캐시 · 앱 캐시 · 휴지통</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.done">스캔 완료</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.found">발견 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.cache">브라우저·앱 캐시</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.cache.note">캐시 데이터. 앱이 필요 시 다시 받습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.check">확인 필요</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.check.note">정리 전에 더 이상 필요 없는지 확인하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.safe">안전하게 정리 가능</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.safe.note">시스템과 앱이 만든 임시 데이터. 삭제해도 안전합니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.preparing">준비 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.privacy">모두 로컬에서 실행됩니다. 안전한 항목만 기본 선택되며 위험 항목은 자동 선택되지 않습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.reselectall">안전 항목 선택</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.start">스캔 시작</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.email">이메일</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.repo">소스 코드</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.site">지원 사이트</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.slogan">명확하게 정리, 안심하고 최적화.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.support">지원 및 피드백</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.wechat">WeChat에서 「AI虚拟助理」을 검색하면 팁과 소식을 받을 수 있습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">제외 폴더 추가</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">화이트리스트 파일/폴더 추가</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.days">일</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.exc.desc">이 폴더와 파일은 모든 스캔·정리에서 건너뛰어집니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.exc.empty">제외·화이트리스트 항목 없음</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.excluded">제외</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.daily">매일</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.monthly">매월</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.weekly">매주</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.lang.auto">시스템 언어 따르기</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.pick.exclude">스캔에서 제외할 폴더 선택</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.pick.whitelist">화이트리스트에 추가할 파일 선택</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.privacy.desc">모든 스캔 데이터는 이 PC에만 저장됩니다. 파일명·경로·내용을 수집하거나 전송하지 않습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean">자동 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.d">임시 파일·캐시 등 안전한 항목을 주기적으로 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.freq">자동 정리 주기</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.freq.d">앱 실행 중 백그라운드에서 수행</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autostart">Windows 시작 시 실행</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autostart.d">부팅 후 트레이에서 대기만 하며 자동으로 아무 작업도 하지 않습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.closetotray">닫기 버튼으로 트레이 최소화</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.closetotray.d">닫기 버튼 시 확인 후 최소화합니다(종료 아님)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.crash">크래시 리포트</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.hidden">숨김 파일 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.junction">디렉터리 링크 따라가기 (Junction)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.junction.d">링크 추적은 중복 집계를 유발할 수 있습니다. 기본 꺼짐</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.language">인터페이스 언어</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.language.d">즉시 적용됩니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.mintotray">트레이로 최소화</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.mintotray.d">최소화 버튼으로 트레이에 숨겨집니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifyauto">자동 정리 결과 알림</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifydisk">디스크 부족 알림</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifydisk.d">시스템 드라이브 여유가 10% 미만이면 알림(드묾)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifynews">제품 소식</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">새 기능·이벤트 알림(기본 꺼짐)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">주간 보고서</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine">정리 후 격리</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">캐시가 아닌 파일은 먼저 격리되어 복원 가능(권장)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">격리 보관 기간</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days.d">만료 후 자동 영구 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.stats">익명 통계</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.stats.d">기능 사용 수와 오류 코드만 전송 대상. 이 빌드는 아무것도 전송하지 않습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.theme">테마</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.threads">스캔 스레드 수</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.threads.d">많을수록 빠릅니다. HDD에서는 줄이세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.about">정보</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.advanced">고급</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.exclude">제외·화이트리스트</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.general">일반</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.notify">알림</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.privacy">개인정보</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.dark">다크</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.light">라이트</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.system">시스템 따르기</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.threads">스레드</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.title">설정</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.whitelist">화이트리스트</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.analyzed.f">분석 {0} · {1:N0}개 파일 · {2:F0}초</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.cancelled">분석이 취소되었습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.done">분석 완료({0:F0}초)</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.empty">이 드라이브는 아직 분석되지 않았습니다. 오른쪽 위 「분석 시작」을 누르세요(언제든 취소 가능)</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.failed">분석 실패: </sys:String>
+    <sys:String xml:space="preserve" x:Key="space.file">파일</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.filter">크기 필터</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.none">{0:F0} MB 초과 파일이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.lastanalysis">마지막 분석: {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.modified">수정</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.notanalyzed">이 드라이브는 아직 분석되지 않았습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.recycle.msg">{0}({1})을(를) 휴지통으로 이동합니다. 언제든 복원할 수 있습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.recycle.title">휴지통으로 이동할까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.rendererror">분석 결과 표시에 문제가 있습니다. 로그를 확인하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.scanned">{0:N0}개 파일 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.scanning">디스크 분석 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tab.large">대용량 파일</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tab.overview">개요</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.total">총 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tree.hint">클릭하여 펼치기. 시스템 링크와 접근 불가 폴더는 건너뜁니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tree.title">폴더 사용량 순위</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.used.f">사용 {0} / {1}({2:F1}%), 여유 {3}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.used.f2">사용 {0} / {1}, 여유 {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.impact">영향</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.source">원본</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.suggest">제안</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.toggle">상태</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.desc">비활성화해도 앱은 수동으로 열 수 있습니다. 모든 변경은 기록되어 언제든 되돌릴 수 있습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.disabled">사용 안 함</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.empty">일치하는 항목이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.enabled">사용</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.high">높음</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.low">낮음</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.med">중간</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.unknown">미측정</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.loading">시작 프로그램을 읽는 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">시작 폴더 (모든 사용자)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.folderuser">시작 폴더 (사용자)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">레지스트리 (현재 사용자)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.reghklm">레지스트리 (컴퓨터)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.task">예약 작업</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.keep">유지</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.off">끄기 고려</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.system">시스템 구성 요소</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.systemchip">시스템 구성 요소</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.toggled">시작 프로그램 「{1}」 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.minago">{0}분 전</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.now">방금</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.today">오늘 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.yesterday">어제 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.close">닫기</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.max">최대화</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.min">최소화</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.binemptied">휴지통을 비웠습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleancancelled">정리가 취소되었습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleandone">정리 완료 — {0} 확보</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleaned">정리 완료 — {0} 확보</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleanfailed">정리 실패: </sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.failed">작업 실패</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.langapplied">인터페이스 언어가 변경되었습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.largecleaned">대용량 파일 {0} 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.noselect">먼저 정리할 항목을 선택하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.nothing">정리할 항목이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.readfailed">불러오기 실패: </sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.recycled">휴지통으로 이동 — {0} 확보</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.recyclefailed">휴지통 이동 실패. 파일이 사용 중일 수 있습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.scanfailed">스캔 실패: </sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.scanstopped">스캔이 중지되었습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.skipped"> ({0}개 건너뜀)</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.traymin">트레이로 최소화했습니다. 트레이 아이콘 우클릭으로 종료할 수 있습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.whitelisted">화이트리스트에 추가했습니다. 스캔과 정리에서 이 파일은 건너뜁니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.desc">완전 삭제된 파일은 휴지통을 거치지 않습니다. 격리 파일은 언제든 복원 가능. 중복 검출은 내용 해시 기반입니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.clean.msg">{0}개 파일({1})을 휴지통으로 이동합니다(복원 가능).</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">선택한 복사본을 삭제할까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.desc">내용 해시로 중복을 확인합니다(파일명 비교 아님). 기본 범위는 사진·비디오·다운로드입니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.group">동일 파일 {0}개 · 각 {1} · {2} 확보 가능</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.more">… {0}개 그룹 더 있음</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.none">중복 파일이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.progress">{0:N0}개 파일 스캔…</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.summary">중복 그룹 {0}개, {1} 확보 가능</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.tip">체크 = 이 복사본 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.title">중복 파일</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.file">파일</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.folder">폴더</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.history.title">정리 기록</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.purge.msg">격리소의 {0}개 항목이 영구 삭제됩니다. 되돌릴 수 없습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.purge.title">격리소를 비울까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.daysleft">{0}일 남음</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.empty">격리소가 비어 있습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.summary">{0}개 항목, {1}. {2}일 후 자동 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quarantine.title">격리소</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.confirm.msg">{0}
 
 {1}을(를) 덮어쓴 후 영구 삭제합니다. 휴지통을 거치지 않으며 복구 소프트웨어로도 쉽게 복원되지 않습니다.
 
 이 작업은 되돌릴 수 없습니다!</sys:String>
-    <sys:String x:Key="tool.shred.confirm.title">완전 삭제할까요?</sys:String>
-    <sys:String x:Key="tool.shred.desc">휴지통을 거치지 않고 파일을 영구 삭제합니다. SSD에서는 물리적 즉시 덮어쓰기가 보장되지 않습니다. 되돌릴 수 없으니 신중히 선택하세요.</sys:String>
-    <sys:String x:Key="tool.shred.log">{0} 「{1}」 완전 삭제</sys:String>
-    <sys:String x:Key="tool.shred.title">파일 완전 삭제</sys:String>
-    <sys:String x:Key="tool.win.control">제어판</sys:String>
-    <sys:String x:Key="tool.win.control.d">클래식 시스템 설정</sys:String>
-    <sys:String x:Key="tool.win.desc">기본 제공 시스템 도구로 바로 가기. 안전합니다</sys:String>
-    <sys:String x:Key="tool.win.devmgmt">장치 관리자</sys:String>
-    <sys:String x:Key="tool.win.devmgmt.d">하드웨어와 드라이버 관리</sys:String>
-    <sys:String x:Key="tool.win.diskmgmt">디스크 관리</sys:String>
-    <sys:String x:Key="tool.win.diskmgmt.d">파티션과 디스크 관리</sys:String>
-    <sys:String x:Key="tool.win.msinfo">시스템 정보</sys:String>
-    <sys:String x:Key="tool.win.msinfo.d">시스템 구성 보기</sys:String>
-    <sys:String x:Key="tool.win.restore">시스템 복원</sys:String>
-    <sys:String x:Key="tool.win.restore.d">복원 지점 만들기/사용</sys:String>
-    <sys:String x:Key="tool.win.storage">저장소 설정</sys:String>
-    <sys:String x:Key="tool.win.storage.d">저장소 관리</sys:String>
-    <sys:String x:Key="tool.win.taskmgr">작업 관리자</sys:String>
-    <sys:String x:Key="tool.win.taskmgr.d">프로세스와 성능 보기</sys:String>
-    <sys:String x:Key="tool.win.title">Windows 도구</sys:String>
-    <sys:String x:Key="tool.win.update">Windows 업데이트</sys:String>
-    <sys:String x:Key="tool.win.update.d">시스템 업데이트 확인</sys:String>
-    <sys:String x:Key="tray.autoclean">자동 정리: </sys:String>
-    <sys:String x:Key="tray.exit">종료</sys:String>
-    <sys:String x:Key="tray.off">끔</sys:String>
-    <sys:String x:Key="tray.on">켬</sys:String>
-    <sys:String x:Key="tray.open">CleanMaster 열기</sys:String>
-    <sys:String x:Key="tray.quickscan">빠른 스캔</sys:String>
-    <sys:String x:Key="wizard.auto.desc">임시 파일·앱 캐시 등 안전한 항목만 매주 정리합니다.</sys:String>
-    <sys:String x:Key="wizard.auto.no">나중에</sys:String>
-    <sys:String x:Key="wizard.auto.title">자동 정리를 켤까요?</sys:String>
-    <sys:String x:Key="wizard.auto.yes">자동 정리 켜기</sys:String>
-    <sys:String x:Key="wizard.next">시작하기</sys:String>
-    <sys:String x:Key="wizard.next2">다음</sys:String>
-    <sys:String x:Key="wizard.privacy.items">· 스캔 결과, 파일명, 경로는 이 PC 밖으로 나가지 않습니다.
+    <sys:String xml:space="preserve" x:Key="tool.shred.confirm.title">완전 삭제할까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.desc">휴지통을 거치지 않고 파일을 영구 삭제합니다. SSD에서는 물리적 즉시 덮어쓰기가 보장되지 않습니다. 되돌릴 수 없으니 신중히 선택하세요.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.log">{0} 「{1}」 완전 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.title">파일 완전 삭제</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.control">제어판</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.control.d">클래식 시스템 설정</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.desc">기본 제공 시스템 도구로 바로 가기. 안전합니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.devmgmt">장치 관리자</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.devmgmt.d">하드웨어와 드라이버 관리</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt">디스크 관리</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt.d">파티션과 디스크 관리</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.msinfo">시스템 정보</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">시스템 구성 보기</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.restore">시스템 복원</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.restore.d">복원 지점 만들기/사용</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.storage">저장소 설정</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.storage.d">저장소 관리</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.taskmgr">작업 관리자</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.taskmgr.d">프로세스와 성능 보기</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.title">Windows 도구</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.update">Windows 업데이트</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.update.d">시스템 업데이트 확인</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.autoclean">자동 정리: </sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.exit">종료</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.off">끔</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.on">켬</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.open">CleanMaster 열기</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quickscan">빠른 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.desc">임시 파일·앱 캐시 등 안전한 항목만 매주 정리합니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.no">나중에</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.title">자동 정리를 켤까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.yes">자동 정리 켜기</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.next">시작하기</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.next2">다음</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.privacy.items">· 스캔 결과, 파일명, 경로는 이 PC 밖으로 나가지 않습니다.
 · 텔레메트리는 기본 꺼짐. 파일 내용을 업로드하지 않습니다.
 · 주요 정리는 격리소로 이동. 7~30일간 복원 가능합니다.
 · 삭제 전 반드시 미리보기. 몰래 삭제하지 않습니다.</sys:String>
-    <sys:String x:Key="wizard.privacy.title">개인정보 약속</sys:String>
-    <sys:String x:Key="wizard.slogan">명확하게 정리, 안심하고 최적화.
+    <sys:String xml:space="preserve" x:Key="wizard.privacy.title">개인정보 약속</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.slogan">명확하게 정리, 안심하고 최적화.
 설명 가능·미리보기 가능·복원 가능한 정리만 제공합니다.</sys:String>
-    <sys:String x:Key="wizard.welcome">CleanMaster에 오신 것을 환영합니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.welcome">CleanMaster에 오신 것을 환영합니다</sys:String>
 </ResourceDictionary>

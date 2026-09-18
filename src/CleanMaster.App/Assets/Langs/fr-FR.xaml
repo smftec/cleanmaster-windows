@@ -1,522 +1,522 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <sys:String x:Key="apps.col.date">Installé le</sys:String>
-    <sys:String x:Key="apps.col.name">Application</sys:String>
-    <sys:String x:Key="apps.col.publisher">Éditeur</sys:String>
-    <sys:String x:Key="apps.col.size">Taille</sys:String>
-    <sys:String x:Key="apps.desc">La désinstallation lance le programme de l'application ; ensuite, les résidus confirmés peuvent être nettoyés (en quarantaine, restaurables).</sys:String>
-    <sys:String x:Key="apps.empty">Aucune application correspondante</sys:String>
-    <sys:String x:Key="apps.loading">Chargement des applications…</sys:String>
-    <sys:String x:Key="apps.notdetected">Désinstallation non détectée — elle a peut-être été annulée</sys:String>
-    <sys:String x:Key="apps.sort.date">Par date d'installation</sys:String>
-    <sys:String x:Key="apps.sort.name">Par nom</sys:String>
-    <sys:String x:Key="apps.sort.size">Par taille</sys:String>
-    <sys:String x:Key="apps.store">Application Microsoft Store</sys:String>
-    <sys:String x:Key="apps.uninstall.failed">Impossible de lancer le désinstalleur : </sys:String>
-    <sys:String x:Key="apps.uninstall.msg">Taille : {0}
+    <sys:String xml:space="preserve" x:Key="apps.col.date">Installé le</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.name">Application</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.publisher">Éditeur</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.size">Taille</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.desc">La désinstallation lance le programme de l'application ; ensuite, les résidus confirmés peuvent être nettoyés (en quarantaine, restaurables).</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.empty">Aucune application correspondante</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.loading">Chargement des applications…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.notdetected">Désinstallation non détectée — elle a peut-être été annulée</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.date">Par date d'installation</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.name">Par nom</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.size">Par taille</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.store">Application Microsoft Store</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">Impossible de lancer le désinstalleur : </sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">Taille : {0}
 
 Le désinstalleur de l'application va se lancer — suivez son assistant.</sys:String>
-    <sys:String x:Key="apps.uninstall.start">Désinstaller</sys:String>
-    <sys:String x:Key="apps.uninstall.title">Désinstaller {0} ?</sys:String>
-    <sys:String x:Key="apps.uninstalled.log">Application désinstallée « {0} »</sys:String>
-    <sys:String x:Key="apps.uninstalled.toast">« {0} » a été désinstallé</sys:String>
-    <sys:String x:Key="apps.unknown">Inconnue</sys:String>
-    <sys:String x:Key="apps.waiting">En attente de la désinstallation de « {0} »…
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.start">Désinstaller</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.title">Désinstaller {0} ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstalled.log">Application désinstallée « {0} »</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstalled.toast">« {0} » a été désinstallé</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.unknown">Inconnue</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.waiting">En attente de la désinstallation de « {0} »…
 Reprise automatique une fois terminée</sys:String>
-    <sys:String x:Key="btn.analyze.start">Analyser</sys:String>
-    <sys:String x:Key="btn.cancel">Annuler</sys:String>
-    <sys:String x:Key="btn.clean.selected">Nettoyer la sélection</sys:String>
-    <sys:String x:Key="btn.clean.start">Commencer le nettoyage</sys:String>
-    <sys:String x:Key="btn.cleansel">Nettoyer la sélection</sys:String>
-    <sys:String x:Key="btn.clearhistory">Effacer l'historique</sys:String>
-    <sys:String x:Key="btn.clearlocal">Effacer l'historique local</sys:String>
-    <sys:String x:Key="btn.deleteperm">Supprimer définitivement</sys:String>
-    <sys:String x:Key="btn.done.home">Retour à l'accueil</sys:String>
-    <sys:String x:Key="btn.done.quarantine">Ouvrir la quarantaine</sys:String>
-    <sys:String x:Key="btn.dup.rescan">Réanalyser</sys:String>
-    <sys:String x:Key="btn.dupclean">Mettre la sélection à la corbeille</sys:String>
-    <sys:String x:Key="btn.dupkeepnew">Garder les plus récents</sys:String>
-    <sys:String x:Key="btn.dupscan">Lancer l'analyse</sys:String>
-    <sys:String x:Key="btn.emptybin">Vider la corbeille</sys:String>
-    <sys:String x:Key="btn.exit">Quitter</sys:String>
-    <sys:String x:Key="btn.more">Plus d'outils</sys:String>
-    <sys:String x:Key="btn.openbin">Ouvrir la corbeille</sys:String>
-    <sys:String x:Key="btn.purge">Vider la quarantaine</sys:String>
-    <sys:String x:Key="btn.recycle">Mettre à la corbeille</sys:String>
-    <sys:String x:Key="btn.refresh">Actualiser</sys:String>
-    <sys:String x:Key="btn.remove">Retirer</sys:String>
-    <sys:String x:Key="btn.rescan">Réanalyser</sys:String>
-    <sys:String x:Key="btn.restore">Restaurer</sys:String>
-    <sys:String x:Key="btn.scan.now">Analyser maintenant</sys:String>
-    <sys:String x:Key="btn.scangroup">Analyser ce groupe</sys:String>
-    <sys:String x:Key="btn.shred">Broyer définitivement</sys:String>
-    <sys:String x:Key="btn.shreddir">Broyer un dossier…</sys:String>
-    <sys:String x:Key="btn.shredfile">Broyer des fichiers…</sys:String>
-    <sys:String x:Key="btn.stopscan">Arrêter l'analyse</sys:String>
-    <sys:String x:Key="btn.uninstall">Désinstaller</sys:String>
-    <sys:String x:Key="cat.apps">Applications</sys:String>
-    <sys:String x:Key="cat.archives">Archives</sys:String>
-    <sys:String x:Key="cat.audio">Audio</sys:String>
-    <sys:String x:Key="cat.documents">Documents</sys:String>
-    <sys:String x:Key="cat.images">Images</sys:String>
-    <sys:String x:Key="cat.other">Autres</sys:String>
-    <sys:String x:Key="cat.system">Système</sys:String>
-    <sys:String x:Key="cat.videos">Vidéos</sys:String>
-    <sys:String x:Key="clean.empty.before">Cliquez sur « Analyser ce groupe » ci-dessous</sys:String>
-    <sys:String x:Key="clean.empty.clean">Cette catégorie est déjà propre</sys:String>
-    <sys:String x:Key="clean.empty.group">Cliquez sur « Analyser ce groupe » ci-dessous</sys:String>
-    <sys:String x:Key="clean.freed">Libéré —</sys:String>
-    <sys:String x:Key="clean.privacy.banner">Les éléments de confidentialité sont décochés par défaut. Lisez chaque impact : effacer les cookies déconnecte les sites ; l'historique effacé est irrécupérable.</sys:String>
-    <sys:String x:Key="clean.privacy.warn">Les éléments de confidentialité ne peuvent pas être restaurés après nettoyage.</sys:String>
-    <sys:String x:Key="clean.recycle.desc">Vider la corbeille supprime définitivement son contenu. Vous pouvez d'abord l'ouvrir pour vérifier.</sys:String>
-    <sys:String x:Key="clean.tab.app">Caches d'apps</sys:String>
-    <sys:String x:Key="clean.tab.browser">Navigateurs</sys:String>
-    <sys:String x:Key="clean.tab.privacy">Traces de confidentialité</sys:String>
-    <sys:String x:Key="clean.tab.recycle">Corbeille</sys:String>
-    <sys:String x:Key="clean.tab.system">Fichiers système</sys:String>
-    <sys:String x:Key="clean.tabnote.0">Fichiers temporaires, journaux et rapports de plantage — seuls les éléments sûrs sont pré-cochés</sys:String>
-    <sys:String x:Key="clean.tabnote.1">Caches et journaux des applications de messagerie et bureautiques — vos conversations et documents ne sont jamais touchés</sys:String>
-    <sys:String x:Key="clean.tabnote.2">Caches d'accélération des navigateurs — connexions, mots de passe et historique inchangés</sys:String>
-    <sys:String x:Key="clean.tabnote.3">Données personnelles — toutes décochées par défaut ; lisez attentivement chaque impact</sys:String>
-    <sys:String x:Key="clean.tabnote.4">Vérifiez que la corbeille ne contient rien d'utile avant de la vider</sys:String>
-    <sys:String x:Key="clean.title">Nettoyage…</sys:String>
-    <sys:String x:Key="common.approx">~</sys:String>
-    <sys:String x:Key="common.freeable">récupérable</sys:String>
-    <sys:String x:Key="common.loading">Chargement…</sys:String>
-    <sys:String x:Key="common.n.items">{0} éléments</sys:String>
-    <sys:String x:Key="common.scanning">Analyse…</sys:String>
-    <sys:String x:Key="common.selected">Sélectionné</sys:String>
-    <sys:String x:Key="common.viewall">Tout voir</sys:String>
-    <sys:String x:Key="dlg.clean.amount">Sur le point de nettoyer {0}.</sys:String>
-    <sys:String x:Key="dlg.clean.confirmitems">Éléments à vérifier :</sys:String>
-    <sys:String x:Key="dlg.clean.nrules">Nettoyage de {0} catégories, {1} au total.</sys:String>
-    <sys:String x:Key="dlg.clean.quarantinehint">Les fichiers restaurables seront mis en quarantaine.</sys:String>
-    <sys:String x:Key="dlg.clean.selected.title">Nettoyer les éléments sélectionnés ?</sys:String>
-    <sys:String x:Key="dlg.exit.msg">Le nettoyage automatique et la surveillance du disque s'arrêtent en quittant.</sys:String>
-    <sys:String x:Key="dlg.exit.title">Quitter CleanMaster ?</sys:String>
-    <sys:String x:Key="dlg.quickclean.msg">Environ {0} seront libérés.
+    <sys:String xml:space="preserve" x:Key="btn.analyze.start">Analyser</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.cancel">Annuler</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clean.selected">Nettoyer la sélection</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clean.start">Commencer le nettoyage</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.cleansel">Nettoyer la sélection</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clearhistory">Effacer l'historique</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clearlocal">Effacer l'historique local</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.deleteperm">Supprimer définitivement</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.done.home">Retour à l'accueil</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.done.quarantine">Ouvrir la quarantaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dup.rescan">Réanalyser</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupclean">Mettre la sélection à la corbeille</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupkeepnew">Garder les plus récents</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupscan">Lancer l'analyse</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.emptybin">Vider la corbeille</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.exit">Quitter</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.more">Plus d'outils</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.openbin">Ouvrir la corbeille</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.purge">Vider la quarantaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.recycle">Mettre à la corbeille</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.refresh">Actualiser</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.remove">Retirer</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.rescan">Réanalyser</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.restore">Restaurer</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.scan.now">Analyser maintenant</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.scangroup">Analyser ce groupe</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shred">Broyer définitivement</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shreddir">Broyer un dossier…</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shredfile">Broyer des fichiers…</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.stopscan">Arrêter l'analyse</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.uninstall">Désinstaller</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.apps">Applications</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.archives">Archives</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.audio">Audio</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.documents">Documents</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.images">Images</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.other">Autres</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.system">Système</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.videos">Vidéos</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.before">Cliquez sur « Analyser ce groupe » ci-dessous</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.clean">Cette catégorie est déjà propre</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.group">Cliquez sur « Analyser ce groupe » ci-dessous</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.freed">Libéré —</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.privacy.banner">Les éléments de confidentialité sont décochés par défaut. Lisez chaque impact : effacer les cookies déconnecte les sites ; l'historique effacé est irrécupérable.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.privacy.warn">Les éléments de confidentialité ne peuvent pas être restaurés après nettoyage.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recycle.desc">Vider la corbeille supprime définitivement son contenu. Vous pouvez d'abord l'ouvrir pour vérifier.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.app">Caches d'apps</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.browser">Navigateurs</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.privacy">Traces de confidentialité</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.recycle">Corbeille</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.system">Fichiers système</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.0">Fichiers temporaires, journaux et rapports de plantage — seuls les éléments sûrs sont pré-cochés</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.1">Caches et journaux des applications de messagerie et bureautiques — vos conversations et documents ne sont jamais touchés</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.2">Caches d'accélération des navigateurs — connexions, mots de passe et historique inchangés</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.3">Données personnelles — toutes décochées par défaut ; lisez attentivement chaque impact</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.4">Vérifiez que la corbeille ne contient rien d'utile avant de la vider</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.title">Nettoyage…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.approx">~</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.freeable">récupérable</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.loading">Chargement…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.n.items">{0} éléments</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.scanning">Analyse…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.selected">Sélectionné</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.viewall">Tout voir</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.amount">Sur le point de nettoyer {0}.</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">Éléments à vérifier :</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">Nettoyage de {0} catégories, {1} au total.</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.quarantinehint">Les fichiers restaurables seront mis en quarantaine.</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.selected.title">Nettoyer les éléments sélectionnés ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.exit.msg">Le nettoyage automatique et la surveillance du disque s'arrêtent en quittant.</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.exit.title">Quitter CleanMaster ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.quickclean.msg">Environ {0} seront libérés.
 Les fichiers restaurables vont en quarantaine.</sys:String>
-    <sys:String x:Key="dlg.quickclean.title">Nettoyer {0} ?</sys:String>
-    <sys:String x:Key="done.cancelled">Nettoyage interrompu</sys:String>
-    <sys:String x:Key="done.freed.total">{0} libérés au total</sys:String>
-    <sys:String x:Key="done.note.quarantine">Les fichiers en quarantaine sont conservés {0} jours, restaurables depuis la boîte à outils.</sys:String>
-    <sys:String x:Key="done.note.skip">Les fichiers ignorés sont utilisés par d'autres programmes ; fermez-les et réessayez plus tard.</sys:String>
-    <sys:String x:Key="done.partial">Nettoyage terminé (certains ignorés)</sys:String>
-    <sys:String x:Key="done.stat.fail">Échecs</sys:String>
-    <sys:String x:Key="done.stat.ok">Nettoyés</sys:String>
-    <sys:String x:Key="done.stat.quar">En quarantaine</sys:String>
-    <sys:String x:Key="done.stat.skip">Ignorés (utilisés)</sys:String>
-    <sys:String x:Key="done.title">Nettoyage terminé</sys:String>
-    <sys:String x:Key="history.clear.msg">Tous les enregistrements seront supprimés.</sys:String>
-    <sys:String x:Key="history.clear.title">Effacer l'historique ?</sys:String>
-    <sys:String x:Key="history.empty">Aucune activité</sys:String>
-    <sys:String x:Key="history.type.autoclean">Auto</sys:String>
-    <sys:String x:Key="history.type.clean">Nettoyage</sys:String>
-    <sys:String x:Key="history.type.other">Autre</sys:String>
-    <sys:String x:Key="history.type.quarantine">Quarantaine</sys:String>
-    <sys:String x:Key="history.type.restore">Restauration</sys:String>
-    <sys:String x:Key="history.type.shred">Broyage</sys:String>
-    <sys:String x:Key="history.type.startup">Démarrage</sys:String>
-    <sys:String x:Key="history.type.uninstall">Désinstallation</sys:String>
-    <sys:String x:Key="home.activity.empty">Aucune activité — lancez une analyse</sys:String>
-    <sys:String x:Key="home.activity.title">Activité récente</sys:String>
-    <sys:String x:Key="home.card.apps">Applications</sys:String>
-    <sys:String x:Key="home.card.apps.note">Cliquer pour gérer</sys:String>
-    <sys:String x:Key="home.card.junk">Fichiers inutiles</sys:String>
-    <sys:String x:Key="home.card.junk.lastscan">Dernière analyse {0}</sys:String>
-    <sys:String x:Key="home.card.junk.note">Analyser pour voir l'espace récupérable</sys:String>
-    <sys:String x:Key="home.card.large">Gros fichiers</sys:String>
-    <sys:String x:Key="home.card.large.analyzed">Analysé</sys:String>
-    <sys:String x:Key="home.card.large.analyzed.note">Cliquer pour voir les détails</sys:String>
-    <sys:String x:Key="home.card.large.note">Analyser pour trouver</sys:String>
-    <sys:String x:Key="home.card.large.pending">En attente</sys:String>
-    <sys:String x:Key="home.card.startup">Démarrage</sys:String>
-    <sys:String x:Key="home.card.startup.note">éléments lancés au démarrage</sys:String>
-    <sys:String x:Key="home.card.startup.note.high">éléments à fort impact susceptibles de ralentir le démarrage</sys:String>
-    <sys:String x:Key="home.disk.free">Libre —</sys:String>
-    <sys:String x:Key="home.disk.free.f">Libre {0} ({1:F1} %)</sys:String>
-    <sys:String x:Key="home.disk.more">Où passe mon espace →</sys:String>
-    <sys:String x:Key="home.disk.title">Disque (C:)</sys:String>
-    <sys:String x:Key="home.disk.title.disk">Disque ({0})</sys:String>
-    <sys:String x:Key="home.disk.total">Total —</sys:String>
-    <sys:String x:Key="home.disk.total.f">Total {0}</sys:String>
-    <sys:String x:Key="home.disk.used">Utilisé —</sys:String>
-    <sys:String x:Key="home.disk.used.f">Utilisé {0} ({1:F1} %)</sys:String>
-    <sys:String x:Key="home.hero.note">Un PC plus propre,
+    <sys:String xml:space="preserve" x:Key="dlg.quickclean.title">Nettoyer {0} ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.cancelled">Nettoyage interrompu</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.freed.total">{0} libérés au total</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.note.quarantine">Les fichiers en quarantaine sont conservés {0} jours, restaurables depuis la boîte à outils.</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.note.skip">Les fichiers ignorés sont utilisés par d'autres programmes ; fermez-les et réessayez plus tard.</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.partial">Nettoyage terminé (certains ignorés)</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.fail">Échecs</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.ok">Nettoyés</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.quar">En quarantaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.skip">Ignorés (utilisés)</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.title">Nettoyage terminé</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clear.msg">Tous les enregistrements seront supprimés.</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clear.title">Effacer l'historique ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.empty">Aucune activité</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.autoclean">Auto</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.clean">Nettoyage</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.other">Autre</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.quarantine">Quarantaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.restore">Restauration</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.shred">Broyage</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.startup">Démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.uninstall">Désinstallation</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.activity.empty">Aucune activité — lancez une analyse</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.activity.title">Activité récente</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.apps">Applications</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.apps.note">Cliquer pour gérer</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk">Fichiers inutiles</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk.lastscan">Dernière analyse {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk.note">Analyser pour voir l'espace récupérable</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large">Gros fichiers</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.analyzed">Analysé</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.analyzed.note">Cliquer pour voir les détails</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.note">Analyser pour trouver</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.pending">En attente</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup">Démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup.note">éléments lancés au démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup.note.high">éléments à fort impact susceptibles de ralentir le démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.free">Libre —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.free.f">Libre {0} ({1:F1} %)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.more">Où passe mon espace →</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.title">Disque (C:)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.title.disk">Disque ({0})</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.total">Total —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.total.f">Total {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.used">Utilisé —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.used.f">Utilisé {0} ({1:F1} %)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.hero.note">Un PC plus propre,
 plus fluide !</sys:String>
-    <sys:String x:Key="home.noscan">Pas encore analysé</sys:String>
-    <sys:String x:Key="home.noscan.detail">Cliquez sur « Analyser maintenant » pour commencer</sys:String>
-    <sys:String x:Key="home.slogan">Des analyses régulières gardent votre PC au top</sys:String>
-    <sys:String x:Key="home.space.empty">Ce disque n'a pas encore été analysé</sys:String>
-    <sys:String x:Key="home.space.title">Analyse du disque</sys:String>
-    <sys:String x:Key="home.status.good">Votre PC est en bon état</sys:String>
-    <sys:String x:Key="home.status.lastscan">Dernière analyse : {0}</sys:String>
-    <sys:String x:Key="home.status.suggest">Un nettoyage est recommandé</sys:String>
-    <sys:String x:Key="home.status.suggest.detail">{0} de fichiers inutiles et {1} éléments de démarrage à fort impact trouvés</sys:String>
-    <sys:String x:Key="home.status.tight">Espace disque faible</sys:String>
-    <sys:String x:Key="home.status.tight.detail">Moins de 10 % d'espace libre sur le disque système — nettoyez maintenant</sys:String>
-    <sys:String x:Key="home.suggest.clean">Nettoyer</sys:String>
-    <sys:String x:Key="home.suggest.empty">Tout est bon — rien à signaler</sys:String>
-    <sys:String x:Key="home.suggest.note.safe">Nettoyage sûr, sans impact sur le système</sys:String>
-    <sys:String x:Key="home.suggest.optimize">Optimiser</sys:String>
-    <sys:String x:Key="home.suggest.startup.note">{0} éléments à fort impact — à optimiser</sys:String>
-    <sys:String x:Key="home.suggest.startup.title">Suggestion de démarrage</sys:String>
-    <sys:String x:Key="home.suggest.title">Suggestions</sys:String>
-    <sys:String x:Key="leftover.clean">Nettoyer la sélection</sys:String>
-    <sys:String x:Key="leftover.datadir">Dossier de données</sys:String>
-    <sys:String x:Key="leftover.desc">Dossiers de données et clés de registre appartenant à cette application. Les éléments cochés partent en quarantaine (restaurables).</sys:String>
-    <sys:String x:Key="leftover.installdir">Dossier d'installation</sys:String>
-    <sys:String x:Key="leftover.reg">Clé de registre (sauvegardée puis supprimée)</sys:String>
-    <sys:String x:Key="leftover.skip">Ignorer, terminer</sys:String>
-    <sys:String x:Key="leftover.title">Résidus possibles trouvés</sys:String>
-    <sys:String x:Key="leftover.title.f">Résidus de « {0} »</sys:String>
-    <sys:String x:Key="nav.apps">Applications</sys:String>
-    <sys:String x:Key="nav.clean">Nettoyage</sys:String>
-    <sys:String x:Key="nav.home">Accueil</sys:String>
-    <sys:String x:Key="nav.scan">Analyse intelligente</sys:String>
-    <sys:String x:Key="nav.settings">Paramètres</sys:String>
-    <sys:String x:Key="nav.space">Analyse du disque</sys:String>
-    <sys:String x:Key="nav.startup">Démarrage</sys:String>
-    <sys:String x:Key="nav.toolbox">Boîte à outils</sys:String>
-    <sys:String x:Key="recycle.confirm.msg">{0} fichiers ({1}) seront définitivement supprimés. Irréversible.</sys:String>
-    <sys:String x:Key="recycle.confirm.title">Vider la corbeille ?</sys:String>
-    <sys:String x:Key="recycle.empty">La corbeille est vide</sys:String>
-    <sys:String x:Key="recycle.info">{0} éléments, {1}</sys:String>
-    <sys:String x:Key="result.sub">{0} · {1} catégories analysées</sys:String>
-    <sys:String x:Key="result.title.clean">Analyse terminée — tout est propre !</sys:String>
-    <sys:String x:Key="result.title.found">Analyse terminée — {0} récupérables</sys:String>
-    <sys:String x:Key="risk.confirm">À vérifier</sys:String>
-    <sys:String x:Key="risk.high">Risque élevé</sys:String>
-    <sys:String x:Key="risk.low">Risque faible</sys:String>
-    <sys:String x:Key="risk.safe">Sûr</sys:String>
-    <sys:String x:Key="row.direct">supprimé directement</sys:String>
-    <sys:String x:Key="row.files">{0} fichiers</sys:String>
-    <sys:String x:Key="row.impact.tip">Impact : {0}</sys:String>
-    <sys:String x:Key="row.restore">restaurable via la quarantaine</sys:String>
-    <sys:String x:Key="row.running">{0} processus en cours d'exécution</sys:String>
-    <sys:String x:Key="rule.brave_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.brave_cache.name">Brave cache</sys:String>
-    <sys:String x:Key="rule.brave_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.chrome_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.chrome_cache.name">Google Chrome cache</sys:String>
-    <sys:String x:Key="rule.chrome_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.impact">You will be logged out of those sites</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.name">Google Chrome cookies (logs you out)</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.reason">Site login credentials saved by the browser</sys:String>
-    <sys:String x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
-    <sys:String x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
-    <sys:String x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
-    <sys:String x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
-    <sys:String x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
-    <sys:String x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
-    <sys:String x:Key="rule.dev_caches.impact">Dependencies re-download on next build; extra network usage</sys:String>
-    <sys:String x:Key="rule.dev_caches.name">Dev tool caches (npm/pip/NuGet/Gradle)</sys:String>
-    <sys:String x:Key="rule.dev_caches.reason">Dependency caches and build outputs of package managers</sys:String>
-    <sys:String x:Key="rule.discord_cache.impact">Images/videos reload; account and messages unaffected</sys:String>
-    <sys:String x:Key="rule.discord_cache.name">Discord cache</sys:String>
-    <sys:String x:Key="rule.discord_cache.reason">Web cache of the Discord desktop client</sys:String>
-    <sys:String x:Key="rule.edge_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.edge_cache.name">Microsoft Edge cache</sys:String>
-    <sys:String x:Key="rule.edge_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.edge_cookies.impact">You will be logged out of those sites</sys:String>
-    <sys:String x:Key="rule.edge_cookies.name">Microsoft Edge cookies (logs you out)</sys:String>
-    <sys:String x:Key="rule.edge_cookies.reason">Site login credentials saved by the browser</sys:String>
-    <sys:String x:Key="rule.edge_history.impact">History cleared; favorites and passwords untouched</sys:String>
-    <sys:String x:Key="rule.edge_history.name">Microsoft Edge browsing history</sys:String>
-    <sys:String x:Key="rule.edge_history.reason">Web history database saved by the browser</sys:String>
-    <sys:String x:Key="rule.epic_cache.impact">Installed games and account unaffected</sys:String>
-    <sys:String x:Key="rule.epic_cache.name">Epic Games Launcher cache</sys:String>
-    <sys:String x:Key="rule.epic_cache.reason">Web view cache and logs of the launcher</sys:String>
-    <sys:String x:Key="rule.error_reports.impact">No impact; only affects reporting past errors to Microsoft</sys:String>
-    <sys:String x:Key="rule.error_reports.name">Error reports &amp; crash dumps</sys:String>
-    <sys:String x:Key="rule.error_reports.reason">Diagnostics from app crashes, no longer useful</sys:String>
-    <sys:String x:Key="rule.firefox_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.firefox_cache.name">Firefox cache</sys:String>
-    <sys:String x:Key="rule.firefox_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.impact">Indexes rebuilt on open; local history cleared</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.name">JetBrains IDE caches</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.reason">Indexes and local history caches of JetBrains IDEs</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.impact">Games recompile on first launch; slightly slower once</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.name">NVIDIA / AMD graphics caches</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.reason">Shader and material compilation caches</sys:String>
-    <sys:String x:Key="rule.office_cache.impact">Cloud-saved documents unaffected; local edits untouched</sys:String>
-    <sys:String x:Key="rule.office_cache.name">Office file cache</sys:String>
-    <sys:String x:Key="rule.office_cache.reason">Local cache from document upload/collaboration</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.impact">Sync and files unaffected</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.name">OneDrive logs</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.reason">Diagnostic logs from OneDrive sync</sys:String>
-    <sys:String x:Key="rule.opera_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.opera_cache.name">Opera cache</sys:String>
-    <sys:String x:Key="rule.opera_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.impact">Current clipboard is cleared</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.name">Clipboard contents</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.reason">Recently copied data still in the clipboard</sys:String>
-    <sys:String x:Key="rule.privacy_dns.impact">First visits re-resolve; slightly slower once; needs admin</sys:String>
-    <sys:String x:Key="rule.privacy_dns.name">DNS resolver cache</sys:String>
-    <sys:String x:Key="rule.privacy_dns.reason">Domain resolution records kept by the system</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.impact">Jump lists cleared; app features unaffected</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.name">Jump list records</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.reason">History data shown in taskbar jump lists</sys:String>
-    <sys:String x:Key="rule.privacy_recent.impact">The recent list is cleared; files themselves untouched</sys:String>
-    <sys:String x:Key="rule.privacy_recent.name">Recent files list</sys:String>
-    <sys:String x:Key="rule.privacy_recent.reason">Explorer recent items and jump list sources</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.impact">Run history cleared; system unaffected</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.name">Run dialog history</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.reason">Commands kept by the Win+R dialog</sys:String>
-    <sys:String x:Key="rule.privacy_search.impact">Search history cleared; search still works</sys:String>
-    <sys:String x:Key="rule.privacy_search.name">Explorer search history</sys:String>
-    <sys:String x:Key="rule.privacy_search.reason">Keywords kept by Explorer search</sys:String>
-    <sys:String x:Key="rule.qq_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
-    <sys:String x:Key="rule.qq_cache.name">QQ (cache/logs)</sys:String>
-    <sys:String x:Key="rule.qq_cache.reason">QQ runtime logs and component cache</sys:String>
-    <sys:String x:Key="rule.recycle_bin.impact">Files will be permanently deleted and unrecoverable</sys:String>
-    <sys:String x:Key="rule.recycle_bin.name">Recycle Bin</sys:String>
-    <sys:String x:Key="rule.recycle_bin.reason">Deleted files still occupying disk space</sys:String>
-    <sys:String x:Key="rule.shader_cache.impact">Games recompile shaders on next launch; slightly slower once</sys:String>
-    <sys:String x:Key="rule.shader_cache.name">DirectX / GPU shader caches</sys:String>
-    <sys:String x:Key="rule.shader_cache.reason">Compiled shader caches from games and graphics apps</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.impact">Store pages load slower once; games, saves and inventory untouched</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.name">Steam web cache</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.reason">Cache of Steam's built-in browser</sys:String>
-    <sys:String x:Key="rule.teams_cache.impact">Teams reloads on next launch; account and chats unaffected</sys:String>
-    <sys:String x:Key="rule.teams_cache.name">Microsoft Teams cache</sys:String>
-    <sys:String x:Key="rule.teams_cache.reason">Web and component cache of Teams client</sys:String>
-    <sys:String x:Key="rule.telegram_cache.impact">Cloud chats unaffected; offline media re-downloads</sys:String>
-    <sys:String x:Key="rule.telegram_cache.name">Telegram media cache</sys:String>
-    <sys:String x:Key="rule.telegram_cache.reason">Local cache of downloaded media</sys:String>
-    <sys:String x:Key="rule.thumb_cache.impact">Windows regenerates thumbnails when needed</sys:String>
-    <sys:String x:Key="rule.thumb_cache.name">Thumbnail cache</sys:String>
-    <sys:String x:Key="rule.thumb_cache.reason">Preview cache generated by File Explorer</sys:String>
-    <sys:String x:Key="rule.update_cache.impact">No impact once installed; skipped during downloads; needs admin</sys:String>
-    <sys:String x:Key="rule.update_cache.name">Windows Update download cache</sys:String>
-    <sys:String x:Key="rule.update_cache.reason">Leftover update packages already installed</sys:String>
-    <sys:String x:Key="rule.user_temp.impact">No impact; a rare running installer may need to restart</sys:String>
-    <sys:String x:Key="rule.user_temp.name">User temp files</sys:String>
-    <sys:String x:Key="rule.user_temp.reason">Temporary files created by apps; useless once the app closes</sys:String>
-    <sys:String x:Key="rule.vscode_cache.impact">Index rebuilt on next launch; layout and extensions kept</sys:String>
-    <sys:String x:Key="rule.vscode_cache.name">VS Code cache</sys:String>
-    <sys:String x:Key="rule.vscode_cache.reason">UI caches and crash logs</sys:String>
-    <sys:String x:Key="rule.wechat_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
-    <sys:String x:Key="rule.wechat_cache.name">WeChat (cache/logs)</sys:String>
-    <sys:String x:Key="rule.wechat_cache.reason">WeChat runtime logs and web cache</sys:String>
-    <sys:String x:Key="rule.windows_logs.impact">No impact on operation; old logs no longer reviewable</sys:String>
-    <sys:String x:Key="rule.windows_logs.name">Windows log files</sys:String>
-    <sys:String x:Key="rule.windows_logs.reason">Old log files (7+ days) from Windows components</sys:String>
-    <sys:String x:Key="rule.windows_temp.impact">No impact; some files are skipped without admin rights</sys:String>
-    <sys:String x:Key="rule.windows_temp.name">System temp files (Windows\Temp)</sys:String>
-    <sys:String x:Key="rule.windows_temp.reason">Temp files left by system components and installers</sys:String>
-    <sys:String x:Key="scan.cover">Une seule analyse : fichiers système · caches navigateurs · caches d'applications · corbeille</sys:String>
-    <sys:String x:Key="scan.done">Analyse terminée</sys:String>
-    <sys:String x:Key="scan.found">Trouvé —</sys:String>
-    <sys:String x:Key="scan.group.cache">Caches navigateurs &amp; apps</sys:String>
-    <sys:String x:Key="scan.group.cache.note">Données de cache ; les applications les retéléchargent</sys:String>
-    <sys:String x:Key="scan.group.check">À vérifier</sys:String>
-    <sys:String x:Key="scan.group.check.note">Confirmez que ces contenus ne sont plus nécessaires</sys:String>
-    <sys:String x:Key="scan.group.safe">Nettoyage sûr</sys:String>
-    <sys:String x:Key="scan.group.safe.note">Données temporaires du système et des applications — sans risque</sys:String>
-    <sys:String x:Key="scan.preparing">Préparation…</sys:String>
-    <sys:String x:Key="scan.privacy">Tout s'exécute en local ; seuls les éléments sûrs sont pré-cochés, les éléments risqués ne le sont jamais.</sys:String>
-    <sys:String x:Key="scan.reselectall">Sélectionner les éléments sûrs</sys:String>
-    <sys:String x:Key="scan.start">Lancer l'analyse</sys:String>
-    <sys:String x:Key="settings.about.email">E-mail</sys:String>
-    <sys:String x:Key="settings.about.repo">Code source</sys:String>
-    <sys:String x:Key="settings.about.site">Site web</sys:String>
-    <sys:String x:Key="settings.about.slogan">Nettoyer clairement, optimiser sereinement.</sys:String>
-    <sys:String x:Key="settings.about.support">Support &amp; retours</sys:String>
-    <sys:String x:Key="settings.about.wechat">Scannez ou cherchez « AI虚拟助理 » dans WeChat pour astuces et actualités.</sys:String>
-    <sys:String x:Key="settings.btn.addexclude">Ajouter un dossier exclu</sys:String>
-    <sys:String x:Key="settings.btn.addwhitelist">Ajouter à la liste blanche</sys:String>
-    <sys:String x:Key="settings.days">jours</sys:String>
-    <sys:String x:Key="settings.exc.desc">Ces dossiers et fichiers sont ignorés par toutes les analyses et nettoyages.</sys:String>
-    <sys:String x:Key="settings.exc.empty">Aucune exclusion ni entrée de liste blanche</sys:String>
-    <sys:String x:Key="settings.excluded">Exclu</sys:String>
-    <sys:String x:Key="settings.freq.daily">Chaque jour</sys:String>
-    <sys:String x:Key="settings.freq.monthly">Chaque mois</sys:String>
-    <sys:String x:Key="settings.freq.weekly">Chaque semaine</sys:String>
-    <sys:String x:Key="settings.lang.auto">Langue du système</sys:String>
-    <sys:String x:Key="settings.pick.exclude">Choisir un dossier à exclure</sys:String>
-    <sys:String x:Key="settings.pick.whitelist">Choisir un fichier à mettre en liste blanche</sys:String>
-    <sys:String x:Key="settings.privacy.desc">Toutes les données d'analyse restent sur cet appareil. Aucun nom de fichier, chemin ou contenu n'est collecté ou envoyé.</sys:String>
-    <sys:String x:Key="settings.row.autoclean">Nettoyage automatique</sys:String>
-    <sys:String x:Key="settings.row.autoclean.d">Nettoie les éléments sûrs selon la planification</sys:String>
-    <sys:String x:Key="settings.row.autoclean.freq">Fréquence</sys:String>
-    <sys:String x:Key="settings.row.autoclean.freq.d">En arrière-plan pendant que l'application tourne</sys:String>
-    <sys:String x:Key="settings.row.autostart">Lancer au démarrage de Windows</sys:String>
-    <sys:String x:Key="settings.row.autostart.d">Attend silencieusement dans la zone de notification</sys:String>
-    <sys:String x:Key="settings.row.closetotray">Fermer = réduire</sys:String>
-    <sys:String x:Key="settings.row.closetotray.d">Le bouton fermer demande et réduit au lieu de quitter</sys:String>
-    <sys:String x:Key="settings.row.crash">Rapports de plantage</sys:String>
-    <sys:String x:Key="settings.row.hidden">Analyser les fichiers cachés</sys:String>
-    <sys:String x:Key="settings.row.junction">Suivre les liens de répertoires (Junctions)</sys:String>
-    <sys:String x:Key="settings.row.junction.d">Suivre les liens peut doubler les statistiques ; désactivé par défaut</sys:String>
-    <sys:String x:Key="settings.row.language">Langue de l'interface</sys:String>
-    <sys:String x:Key="settings.row.language.d">Appliqué immédiatement</sys:String>
-    <sys:String x:Key="settings.row.mintotray">Réduire vers la zone de notification</sys:String>
-    <sys:String x:Key="settings.row.mintotray.d">Le bouton réduire masque dans la zone de notification</sys:String>
-    <sys:String x:Key="settings.row.notifyauto">Résultats du nettoyage auto</sys:String>
-    <sys:String x:Key="settings.row.notifydisk">Alerte d'espace disque faible</sys:String>
-    <sys:String x:Key="settings.row.notifydisk.d">Alerte sous 10 % de libre sur le disque système (rare)</sys:String>
-    <sys:String x:Key="settings.row.notifynews">Actualités produit</sys:String>
-    <sys:String x:Key="settings.row.notifynews.d">Nouveautés et événements, désactivé par défaut</sys:String>
-    <sys:String x:Key="settings.row.notifyweekly">Rapport hebdomadaire</sys:String>
-    <sys:String x:Key="settings.row.quarantine">Mettre en quarantaine</sys:String>
-    <sys:String x:Key="settings.row.quarantine.d">Les fichiers non-cache vont d'abord en quarantaine, restaurables (recommandé)</sys:String>
-    <sys:String x:Key="settings.row.quarantine.days">Conservation en quarantaine</sys:String>
-    <sys:String x:Key="settings.row.quarantine.days.d">Suppression automatique après expiration</sys:String>
-    <sys:String x:Key="settings.row.stats">Statistiques anonymes</sys:String>
-    <sys:String x:Key="settings.row.stats.d">Compteurs d'utilisation et codes d'erreur uniquement — cette version n'envoie rien</sys:String>
-    <sys:String x:Key="settings.row.theme">Thème</sys:String>
-    <sys:String x:Key="settings.row.threads">Threads d'analyse</sys:String>
-    <sys:String x:Key="settings.row.threads.d">Plus de threads = plus rapide ; réduisez sur HDD</sys:String>
-    <sys:String x:Key="settings.sec.about">À propos</sys:String>
-    <sys:String x:Key="settings.sec.advanced">Avancé</sys:String>
-    <sys:String x:Key="settings.sec.exclude">Exclusions &amp; liste blanche</sys:String>
-    <sys:String x:Key="settings.sec.general">Général</sys:String>
-    <sys:String x:Key="settings.sec.notify">Notifications</sys:String>
-    <sys:String x:Key="settings.sec.privacy">Confidentialité</sys:String>
-    <sys:String x:Key="settings.theme.dark">Sombre</sys:String>
-    <sys:String x:Key="settings.theme.light">Clair</sys:String>
-    <sys:String x:Key="settings.theme.system">Suivre le système</sys:String>
-    <sys:String x:Key="settings.threads">threads</sys:String>
-    <sys:String x:Key="settings.title">Paramètres</sys:String>
-    <sys:String x:Key="settings.whitelist">Liste blanche</sys:String>
-    <sys:String x:Key="space.analyzed.f">Analysé {0} · {1:N0} fichiers · {2:F0} s</sys:String>
-    <sys:String x:Key="space.cancelled">Analyse annulée</sys:String>
-    <sys:String x:Key="space.done">Analyse terminée en {0:F0} s</sys:String>
-    <sys:String x:Key="space.empty">Ce disque n'a pas encore été analysé. Cliquez sur « Analyser » ci-dessus (annulable à tout moment)</sys:String>
-    <sys:String x:Key="space.failed">Échec de l'analyse : </sys:String>
-    <sys:String x:Key="space.file">FICHIER</sys:String>
-    <sys:String x:Key="space.large.filter">Filtre de taille</sys:String>
-    <sys:String x:Key="space.large.none">Aucun fichier de plus de {0:F0} Mo trouvé</sys:String>
-    <sys:String x:Key="space.lastanalysis">Dernière analyse : {0}</sys:String>
-    <sys:String x:Key="space.modified">Modifié</sys:String>
-    <sys:String x:Key="space.notanalyzed">Ce disque n'a pas encore été analysé</sys:String>
-    <sys:String x:Key="space.recycle.msg">{0} ({1}) sera mis à la corbeille. Restaurable à tout moment.</sys:String>
-    <sys:String x:Key="space.recycle.title">Mettre à la corbeille ?</sys:String>
-    <sys:String x:Key="space.rendererror">Erreur d'affichage des résultats — voir le journal</sys:String>
-    <sys:String x:Key="space.scanned">{0:N0} fichiers analysés</sys:String>
-    <sys:String x:Key="space.scanning">Analyse du disque…</sys:String>
-    <sys:String x:Key="space.tab.large">Gros fichiers</sys:String>
-    <sys:String x:Key="space.tab.overview">Aperçu</sys:String>
-    <sys:String x:Key="space.total">total {0}</sys:String>
-    <sys:String x:Key="space.tree.hint">Cliquez pour déplier ; liens système et dossiers inaccessibles ignorés</sys:String>
-    <sys:String x:Key="space.tree.title">Classement des dossiers</sys:String>
-    <sys:String x:Key="space.used.f">Utilisé {0} / {1} ({2:F1} %), libre {3}</sys:String>
-    <sys:String x:Key="space.used.f2">Utilisé {0} / {1}, libre {2}</sys:String>
-    <sys:String x:Key="startup.col.impact">Impact</sys:String>
-    <sys:String x:Key="startup.col.source">Source</sys:String>
-    <sys:String x:Key="startup.col.suggest">Conseil</sys:String>
-    <sys:String x:Key="startup.col.toggle">État</sys:String>
-    <sys:String x:Key="startup.desc">Les applications désactivées restent ouvrables manuellement ; chaque modification est réversible.</sys:String>
-    <sys:String x:Key="startup.disabled">Désactivé</sys:String>
-    <sys:String x:Key="startup.empty">Aucun élément correspondant</sys:String>
-    <sys:String x:Key="startup.enabled">Activé</sys:String>
-    <sys:String x:Key="startup.impact.high">Élevé</sys:String>
-    <sys:String x:Key="startup.impact.low">Faible</sys:String>
-    <sys:String x:Key="startup.impact.med">Moyen</sys:String>
-    <sys:String x:Key="startup.impact.unknown">Non mesuré</sys:String>
-    <sys:String x:Key="startup.loading">Chargement des éléments de démarrage…</sys:String>
-    <sys:String x:Key="startup.src.foldercommon">Dossier Démarrage (tous)</sys:String>
-    <sys:String x:Key="startup.src.folderuser">Dossier Démarrage (utilisateur)</sys:String>
-    <sys:String x:Key="startup.src.reghkcu">Registre (utilisateur)</sys:String>
-    <sys:String x:Key="startup.src.reghklm">Registre (machine)</sys:String>
-    <sys:String x:Key="startup.src.task">Tâche planifiée</sys:String>
-    <sys:String x:Key="startup.suggest.keep">Garder</sys:String>
-    <sys:String x:Key="startup.suggest.off">À désactiver éventuellement</sys:String>
-    <sys:String x:Key="startup.suggest.system">Composant système</sys:String>
-    <sys:String x:Key="startup.systemchip">Composant système</sys:String>
-    <sys:String x:Key="startup.toggled">{0} l'élément de démarrage « {1} »</sys:String>
-    <sys:String x:Key="time.minago">il y a {0} min</sys:String>
-    <sys:String x:Key="time.now">À l'instant</sys:String>
-    <sys:String x:Key="time.today">Aujourd'hui {0}</sys:String>
-    <sys:String x:Key="time.yesterday">Hier {0}</sys:String>
-    <sys:String x:Key="tip.close">Fermer</sys:String>
-    <sys:String x:Key="tip.max">Agrandir</sys:String>
-    <sys:String x:Key="tip.min">Réduire</sys:String>
-    <sys:String x:Key="toast.binemptied">Corbeille vidée</sys:String>
-    <sys:String x:Key="toast.cleancancelled">Nettoyage annulé</sys:String>
-    <sys:String x:Key="toast.cleandone">Nettoyage terminé — {0} libérés</sys:String>
-    <sys:String x:Key="toast.cleaned">Nettoyé — {0} libérés</sys:String>
-    <sys:String x:Key="toast.cleanfailed">Échec du nettoyage : </sys:String>
-    <sys:String x:Key="toast.failed">Échec de l'opération</sys:String>
-    <sys:String x:Key="toast.langapplied">Langue de l'interface modifiée</sys:String>
-    <sys:String x:Key="toast.largecleaned">Gros fichier nettoyé {0}</sys:String>
-    <sys:String x:Key="toast.noselect">Sélectionnez d'abord des éléments à nettoyer</sys:String>
-    <sys:String x:Key="toast.nothing">Rien à nettoyer</sys:String>
-    <sys:String x:Key="toast.readfailed">Échec du chargement : </sys:String>
-    <sys:String x:Key="toast.recycled">Mis à la corbeille — {0} libérés</sys:String>
-    <sys:String x:Key="toast.recyclefailed">Échec : le fichier est peut-être en cours d'utilisation</sys:String>
-    <sys:String x:Key="toast.scanfailed">Échec de l'analyse : </sys:String>
-    <sys:String x:Key="toast.scanstopped">Analyse arrêtée</sys:String>
-    <sys:String x:Key="toast.skipped"> ({0} ignorés)</sys:String>
-    <sys:String x:Key="toast.traymin">Réduit dans la zone de notification — clic droit sur l'icône pour quitter</sys:String>
-    <sys:String x:Key="toast.whitelisted">Ajouté à la liste blanche — ce fichier sera ignoré</sys:String>
-    <sys:String x:Key="tool.desc">Les fichiers broyés ne passent pas par la corbeille ; les fichiers en quarantaine sont restaurables ; les doublons sont détectés par empreinte de contenu.</sys:String>
-    <sys:String x:Key="tool.dup.clean.msg">{0} fichiers ({1}) seront mis à la corbeille (restaurables).</sys:String>
-    <sys:String x:Key="tool.dup.clean.title">Supprimer les copies sélectionnées ?</sys:String>
-    <sys:String x:Key="tool.dup.desc">Les doublons sont confirmés par empreinte du contenu (jamais par nom). Portée par défaut : Images, Vidéos et Téléchargements.</sys:String>
-    <sys:String x:Key="tool.dup.group">{0} fichiers identiques · {1} chacun · {2} récupérables</sys:String>
-    <sys:String x:Key="tool.dup.more">… {0} groupes supplémentaires non affichés</sys:String>
-    <sys:String x:Key="tool.dup.none">Aucun doublon trouvé</sys:String>
-    <sys:String x:Key="tool.dup.progress">{0:N0} fichiers analysés…</sys:String>
-    <sys:String x:Key="tool.dup.summary">{0} groupes de doublons, {1} récupérables</sys:String>
-    <sys:String x:Key="tool.dup.tip">Coché = supprimer cette copie</sys:String>
-    <sys:String x:Key="tool.dup.title">Fichiers en double</sys:String>
-    <sys:String x:Key="tool.file">fichier</sys:String>
-    <sys:String x:Key="tool.folder">dossier</sys:String>
-    <sys:String x:Key="tool.history.title">Historique</sys:String>
-    <sys:String x:Key="tool.purge.msg">{0} éléments en quarantaine seront définitivement supprimés. Irréversible.</sys:String>
-    <sys:String x:Key="tool.purge.title">Vider la quarantaine ?</sys:String>
-    <sys:String x:Key="tool.quar.daysleft">{0} jours restants</sys:String>
-    <sys:String x:Key="tool.quar.empty">La quarantaine est vide</sys:String>
-    <sys:String x:Key="tool.quar.summary">{0} éléments, {1} ; suppression automatique après {2} jours</sys:String>
-    <sys:String x:Key="tool.quarantine.title">Quarantaine</sys:String>
-    <sys:String x:Key="tool.shred.confirm.msg">{0}
+    <sys:String xml:space="preserve" x:Key="home.noscan">Pas encore analysé</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.noscan.detail">Cliquez sur « Analyser maintenant » pour commencer</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.slogan">Des analyses régulières gardent votre PC au top</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.space.empty">Ce disque n'a pas encore été analysé</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.space.title">Analyse du disque</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.good">Votre PC est en bon état</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.lastscan">Dernière analyse : {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.suggest">Un nettoyage est recommandé</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.suggest.detail">{0} de fichiers inutiles et {1} éléments de démarrage à fort impact trouvés</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.tight">Espace disque faible</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.tight.detail">Moins de 10 % d'espace libre sur le disque système — nettoyez maintenant</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.clean">Nettoyer</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.empty">Tout est bon — rien à signaler</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.note.safe">Nettoyage sûr, sans impact sur le système</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.optimize">Optimiser</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.startup.note">{0} éléments à fort impact — à optimiser</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">Suggestion de démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.title">Suggestions</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.clean">Nettoyer la sélection</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.datadir">Dossier de données</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.desc">Dossiers de données et clés de registre appartenant à cette application. Les éléments cochés partent en quarantaine (restaurables).</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.installdir">Dossier d'installation</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.reg">Clé de registre (sauvegardée puis supprimée)</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.skip">Ignorer, terminer</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.title">Résidus possibles trouvés</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.title.f">Résidus de « {0} »</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.apps">Applications</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.clean">Nettoyage</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.home">Accueil</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.scan">Analyse intelligente</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.settings">Paramètres</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.space">Analyse du disque</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.startup">Démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.toolbox">Boîte à outils</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} fichiers ({1}) seront définitivement supprimés. Irréversible.</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.confirm.title">Vider la corbeille ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.empty">La corbeille est vide</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.info">{0} éléments, {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.sub">{0} · {1} catégories analysées</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.title.clean">Analyse terminée — tout est propre !</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.title.found">Analyse terminée — {0} récupérables</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.confirm">À vérifier</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.high">Risque élevé</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.low">Risque faible</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.safe">Sûr</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.direct">supprimé directement</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.files">{0} fichiers</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.impact.tip">Impact : {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.restore">restaurable via la quarantaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.running">{0} processus en cours d'exécution</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.name">Brave cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.name">Google Chrome cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.impact">You will be logged out of those sites</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.name">Google Chrome cookies (logs you out)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.reason">Site login credentials saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.impact">Dependencies re-download on next build; extra network usage</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.name">Dev tool caches (npm/pip/NuGet/Gradle)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.reason">Dependency caches and build outputs of package managers</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.impact">Images/videos reload; account and messages unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.name">Discord cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.reason">Web cache of the Discord desktop client</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.name">Microsoft Edge cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.impact">You will be logged out of those sites</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.name">Microsoft Edge cookies (logs you out)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.reason">Site login credentials saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.impact">History cleared; favorites and passwords untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.name">Microsoft Edge browsing history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.impact">Installed games and account unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.name">Epic Games Launcher cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.reason">Web view cache and logs of the launcher</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.impact">No impact; only affects reporting past errors to Microsoft</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.name">Error reports &amp; crash dumps</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.reason">Diagnostics from app crashes, no longer useful</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.name">Firefox cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.impact">Indexes rebuilt on open; local history cleared</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.name">JetBrains IDE caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.reason">Indexes and local history caches of JetBrains IDEs</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.impact">Games recompile on first launch; slightly slower once</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.name">NVIDIA / AMD graphics caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.reason">Shader and material compilation caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.impact">Cloud-saved documents unaffected; local edits untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.name">Office file cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.reason">Local cache from document upload/collaboration</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.impact">Sync and files unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.name">OneDrive logs</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.reason">Diagnostic logs from OneDrive sync</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.name">Opera cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.impact">Current clipboard is cleared</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.name">Clipboard contents</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.reason">Recently copied data still in the clipboard</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.impact">First visits re-resolve; slightly slower once; needs admin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.name">DNS resolver cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.reason">Domain resolution records kept by the system</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.impact">Jump lists cleared; app features unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.name">Jump list records</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.reason">History data shown in taskbar jump lists</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.impact">The recent list is cleared; files themselves untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.name">Recent files list</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.reason">Explorer recent items and jump list sources</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.impact">Run history cleared; system unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.name">Run dialog history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.reason">Commands kept by the Win+R dialog</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.impact">Search history cleared; search still works</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.name">Explorer search history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.reason">Keywords kept by Explorer search</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.name">QQ (cache/logs)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.reason">QQ runtime logs and component cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.impact">Files will be permanently deleted and unrecoverable</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.name">Recycle Bin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.reason">Deleted files still occupying disk space</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.impact">Games recompile shaders on next launch; slightly slower once</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.name">DirectX / GPU shader caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.reason">Compiled shader caches from games and graphics apps</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.impact">Store pages load slower once; games, saves and inventory untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.name">Steam web cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.reason">Cache of Steam's built-in browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.impact">Teams reloads on next launch; account and chats unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.name">Microsoft Teams cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.reason">Web and component cache of Teams client</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.impact">Cloud chats unaffected; offline media re-downloads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.name">Telegram media cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.reason">Local cache of downloaded media</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.impact">Windows regenerates thumbnails when needed</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.name">Thumbnail cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.reason">Preview cache generated by File Explorer</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.impact">No impact once installed; skipped during downloads; needs admin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.name">Windows Update download cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.reason">Leftover update packages already installed</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.impact">No impact; a rare running installer may need to restart</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.name">User temp files</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.reason">Temporary files created by apps; useless once the app closes</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.impact">Index rebuilt on next launch; layout and extensions kept</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.name">VS Code cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.reason">UI caches and crash logs</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.name">WeChat (cache/logs)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.reason">WeChat runtime logs and web cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.impact">No impact on operation; old logs no longer reviewable</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.name">Windows log files</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.reason">Old log files (7+ days) from Windows components</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.impact">No impact; some files are skipped without admin rights</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.name">System temp files (Windows\Temp)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.reason">Temp files left by system components and installers</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.cover">Une seule analyse : fichiers système · caches navigateurs · caches d'applications · corbeille</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.done">Analyse terminée</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.found">Trouvé —</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.cache">Caches navigateurs &amp; apps</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.cache.note">Données de cache ; les applications les retéléchargent</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.check">À vérifier</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.check.note">Confirmez que ces contenus ne sont plus nécessaires</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.safe">Nettoyage sûr</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.safe.note">Données temporaires du système et des applications — sans risque</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.preparing">Préparation…</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.privacy">Tout s'exécute en local ; seuls les éléments sûrs sont pré-cochés, les éléments risqués ne le sont jamais.</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.reselectall">Sélectionner les éléments sûrs</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.start">Lancer l'analyse</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.email">E-mail</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.repo">Code source</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.site">Site web</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.slogan">Nettoyer clairement, optimiser sereinement.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.support">Support &amp; retours</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.wechat">Scannez ou cherchez « AI虚拟助理 » dans WeChat pour astuces et actualités.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">Ajouter un dossier exclu</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">Ajouter à la liste blanche</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.days">jours</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.exc.desc">Ces dossiers et fichiers sont ignorés par toutes les analyses et nettoyages.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.exc.empty">Aucune exclusion ni entrée de liste blanche</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.excluded">Exclu</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.daily">Chaque jour</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.monthly">Chaque mois</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.weekly">Chaque semaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.lang.auto">Langue du système</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.pick.exclude">Choisir un dossier à exclure</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.pick.whitelist">Choisir un fichier à mettre en liste blanche</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.privacy.desc">Toutes les données d'analyse restent sur cet appareil. Aucun nom de fichier, chemin ou contenu n'est collecté ou envoyé.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean">Nettoyage automatique</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.d">Nettoie les éléments sûrs selon la planification</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.freq">Fréquence</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.freq.d">En arrière-plan pendant que l'application tourne</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autostart">Lancer au démarrage de Windows</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autostart.d">Attend silencieusement dans la zone de notification</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.closetotray">Fermer = réduire</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.closetotray.d">Le bouton fermer demande et réduit au lieu de quitter</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.crash">Rapports de plantage</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.hidden">Analyser les fichiers cachés</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.junction">Suivre les liens de répertoires (Junctions)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.junction.d">Suivre les liens peut doubler les statistiques ; désactivé par défaut</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.language">Langue de l'interface</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.language.d">Appliqué immédiatement</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.mintotray">Réduire vers la zone de notification</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.mintotray.d">Le bouton réduire masque dans la zone de notification</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifyauto">Résultats du nettoyage auto</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifydisk">Alerte d'espace disque faible</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifydisk.d">Alerte sous 10 % de libre sur le disque système (rare)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifynews">Actualités produit</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">Nouveautés et événements, désactivé par défaut</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">Rapport hebdomadaire</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine">Mettre en quarantaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">Les fichiers non-cache vont d'abord en quarantaine, restaurables (recommandé)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">Conservation en quarantaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days.d">Suppression automatique après expiration</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.stats">Statistiques anonymes</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.stats.d">Compteurs d'utilisation et codes d'erreur uniquement — cette version n'envoie rien</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.theme">Thème</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.threads">Threads d'analyse</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.threads.d">Plus de threads = plus rapide ; réduisez sur HDD</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.about">À propos</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.advanced">Avancé</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.exclude">Exclusions &amp; liste blanche</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.general">Général</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.notify">Notifications</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.privacy">Confidentialité</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.dark">Sombre</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.light">Clair</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.system">Suivre le système</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.threads">threads</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.title">Paramètres</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.whitelist">Liste blanche</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.analyzed.f">Analysé {0} · {1:N0} fichiers · {2:F0} s</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.cancelled">Analyse annulée</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.done">Analyse terminée en {0:F0} s</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.empty">Ce disque n'a pas encore été analysé. Cliquez sur « Analyser » ci-dessus (annulable à tout moment)</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.failed">Échec de l'analyse : </sys:String>
+    <sys:String xml:space="preserve" x:Key="space.file">FICHIER</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.filter">Filtre de taille</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.none">Aucun fichier de plus de {0:F0} Mo trouvé</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.lastanalysis">Dernière analyse : {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.modified">Modifié</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.notanalyzed">Ce disque n'a pas encore été analysé</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.recycle.msg">{0} ({1}) sera mis à la corbeille. Restaurable à tout moment.</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.recycle.title">Mettre à la corbeille ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.rendererror">Erreur d'affichage des résultats — voir le journal</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.scanned">{0:N0} fichiers analysés</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.scanning">Analyse du disque…</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tab.large">Gros fichiers</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tab.overview">Aperçu</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.total">total {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tree.hint">Cliquez pour déplier ; liens système et dossiers inaccessibles ignorés</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tree.title">Classement des dossiers</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.used.f">Utilisé {0} / {1} ({2:F1} %), libre {3}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.used.f2">Utilisé {0} / {1}, libre {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.impact">Impact</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.source">Source</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.suggest">Conseil</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.toggle">État</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.desc">Les applications désactivées restent ouvrables manuellement ; chaque modification est réversible.</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.disabled">Désactivé</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.empty">Aucun élément correspondant</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.enabled">Activé</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.high">Élevé</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.low">Faible</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.med">Moyen</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.unknown">Non mesuré</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.loading">Chargement des éléments de démarrage…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">Dossier Démarrage (tous)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.folderuser">Dossier Démarrage (utilisateur)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">Registre (utilisateur)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.reghklm">Registre (machine)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.task">Tâche planifiée</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.keep">Garder</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.off">À désactiver éventuellement</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.system">Composant système</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.systemchip">Composant système</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.toggled">{0} l'élément de démarrage « {1} »</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.minago">il y a {0} min</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.now">À l'instant</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.today">Aujourd'hui {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.yesterday">Hier {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.close">Fermer</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.max">Agrandir</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.min">Réduire</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.binemptied">Corbeille vidée</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleancancelled">Nettoyage annulé</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleandone">Nettoyage terminé — {0} libérés</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleaned">Nettoyé — {0} libérés</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleanfailed">Échec du nettoyage : </sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.failed">Échec de l'opération</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.langapplied">Langue de l'interface modifiée</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.largecleaned">Gros fichier nettoyé {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.noselect">Sélectionnez d'abord des éléments à nettoyer</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.nothing">Rien à nettoyer</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.readfailed">Échec du chargement : </sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.recycled">Mis à la corbeille — {0} libérés</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.recyclefailed">Échec : le fichier est peut-être en cours d'utilisation</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.scanfailed">Échec de l'analyse : </sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.scanstopped">Analyse arrêtée</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.skipped"> ({0} ignorés)</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.traymin">Réduit dans la zone de notification — clic droit sur l'icône pour quitter</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.whitelisted">Ajouté à la liste blanche — ce fichier sera ignoré</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.desc">Les fichiers broyés ne passent pas par la corbeille ; les fichiers en quarantaine sont restaurables ; les doublons sont détectés par empreinte de contenu.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.clean.msg">{0} fichiers ({1}) seront mis à la corbeille (restaurables).</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">Supprimer les copies sélectionnées ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.desc">Les doublons sont confirmés par empreinte du contenu (jamais par nom). Portée par défaut : Images, Vidéos et Téléchargements.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.group">{0} fichiers identiques · {1} chacun · {2} récupérables</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.more">… {0} groupes supplémentaires non affichés</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.none">Aucun doublon trouvé</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.progress">{0:N0} fichiers analysés…</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.summary">{0} groupes de doublons, {1} récupérables</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.tip">Coché = supprimer cette copie</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.title">Fichiers en double</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.file">fichier</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.folder">dossier</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.history.title">Historique</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.purge.msg">{0} éléments en quarantaine seront définitivement supprimés. Irréversible.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.purge.title">Vider la quarantaine ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.daysleft">{0} jours restants</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.empty">La quarantaine est vide</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.summary">{0} éléments, {1} ; suppression automatique après {2} jours</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quarantine.title">Quarantaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.confirm.msg">{0}
 
 {1} sera écrasé puis définitivement supprimé — sans passage par la corbeille.
 
 Irréversible !</sys:String>
-    <sys:String x:Key="tool.shred.confirm.title">Broyer cet élément ?</sys:String>
-    <sys:String x:Key="tool.shred.desc">Supprime définitivement les fichiers sans passer par la corbeille. NB : sur SSD, un écrasement physique immédiat ne peut être garanti. Irréversible — choisissez avec soin.</sys:String>
-    <sys:String x:Key="tool.shred.log">{0} « {1} » broyé</sys:String>
-    <sys:String x:Key="tool.shred.title">Broyeur de fichiers</sys:String>
-    <sys:String x:Key="tool.win.control">Panneau de configuration</sys:String>
-    <sys:String x:Key="tool.win.control.d">Paramètres classiques</sys:String>
-    <sys:String x:Key="tool.win.desc">Raccourcis vers les outils système intégrés — sans risque</sys:String>
-    <sys:String x:Key="tool.win.devmgmt">Gestionnaire de périphériques</sys:String>
-    <sys:String x:Key="tool.win.devmgmt.d">Matériel et pilotes</sys:String>
-    <sys:String x:Key="tool.win.diskmgmt">Gestion des disques</sys:String>
-    <sys:String x:Key="tool.win.diskmgmt.d">Gérer partitions et disques</sys:String>
-    <sys:String x:Key="tool.win.msinfo">Informations système</sys:String>
-    <sys:String x:Key="tool.win.msinfo.d">Configuration du système</sys:String>
-    <sys:String x:Key="tool.win.restore">Restauration du système</sys:String>
-    <sys:String x:Key="tool.win.restore.d">Créer ou utiliser des points de restauration</sys:String>
-    <sys:String x:Key="tool.win.storage">Stockage</sys:String>
-    <sys:String x:Key="tool.win.storage.d">Gérer l'espace de stockage</sys:String>
-    <sys:String x:Key="tool.win.taskmgr">Gestionnaire des tâches</sys:String>
-    <sys:String x:Key="tool.win.taskmgr.d">Processus et performances</sys:String>
-    <sys:String x:Key="tool.win.title">Outils Windows</sys:String>
-    <sys:String x:Key="tool.win.update">Windows Update</sys:String>
-    <sys:String x:Key="tool.win.update.d">Rechercher les mises à jour</sys:String>
-    <sys:String x:Key="tray.autoclean">Nettoyage auto : </sys:String>
-    <sys:String x:Key="tray.exit">Quitter</sys:String>
-    <sys:String x:Key="tray.off">désactivé</sys:String>
-    <sys:String x:Key="tray.on">activé</sys:String>
-    <sys:String x:Key="tray.open">Ouvrir CleanMaster</sys:String>
-    <sys:String x:Key="tray.quickscan">Analyse rapide</sys:String>
-    <sys:String x:Key="wizard.auto.desc">Nettoie uniquement les éléments sûrs (fichiers temporaires, caches d'apps), une fois par semaine.</sys:String>
-    <sys:String x:Key="wizard.auto.no">Plus tard</sys:String>
-    <sys:String x:Key="wizard.auto.title">Activer le nettoyage automatique ?</sys:String>
-    <sys:String x:Key="wizard.auto.yes">Activer</sys:String>
-    <sys:String x:Key="wizard.next">Commencer</sys:String>
-    <sys:String x:Key="wizard.next2">Suivant</sys:String>
-    <sys:String x:Key="wizard.privacy.items">· Tous les résultats d'analyse, noms de fichiers et chemins restent sur ce PC.
+    <sys:String xml:space="preserve" x:Key="tool.shred.confirm.title">Broyer cet élément ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.desc">Supprime définitivement les fichiers sans passer par la corbeille. NB : sur SSD, un écrasement physique immédiat ne peut être garanti. Irréversible — choisissez avec soin.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.log">{0} « {1} » broyé</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.title">Broyeur de fichiers</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.control">Panneau de configuration</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.control.d">Paramètres classiques</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.desc">Raccourcis vers les outils système intégrés — sans risque</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.devmgmt">Gestionnaire de périphériques</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.devmgmt.d">Matériel et pilotes</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt">Gestion des disques</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt.d">Gérer partitions et disques</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.msinfo">Informations système</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">Configuration du système</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.restore">Restauration du système</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.restore.d">Créer ou utiliser des points de restauration</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.storage">Stockage</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.storage.d">Gérer l'espace de stockage</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.taskmgr">Gestionnaire des tâches</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.taskmgr.d">Processus et performances</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.title">Outils Windows</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.update">Windows Update</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.update.d">Rechercher les mises à jour</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.autoclean">Nettoyage auto : </sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.exit">Quitter</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.off">désactivé</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.on">activé</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.open">Ouvrir CleanMaster</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quickscan">Analyse rapide</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.desc">Nettoie uniquement les éléments sûrs (fichiers temporaires, caches d'apps), une fois par semaine.</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.no">Plus tard</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.title">Activer le nettoyage automatique ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.yes">Activer</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.next">Commencer</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.next2">Suivant</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.privacy.items">· Tous les résultats d'analyse, noms de fichiers et chemins restent sur ce PC.
 · Aucune télémétrie par défaut ; aucun contenu de fichier n'est envoyé.
 · Les nettoyages importants vont en quarantaine — restaurables 7 à 30 jours.
 · Toujours prévisualisés avant suppression — jamais supprimés en silence.</sys:String>
-    <sys:String x:Key="wizard.privacy.title">Notre engagement de confidentialité</sys:String>
-    <sys:String x:Key="wizard.slogan">Nettoyer clairement, optimiser sereinement.
+    <sys:String xml:space="preserve" x:Key="wizard.privacy.title">Notre engagement de confidentialité</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.slogan">Nettoyer clairement, optimiser sereinement.
 Nous ne faisons qu'un nettoyage explicable, prévisualisable et restaurable — sans fausses optimisations.</sys:String>
-    <sys:String x:Key="wizard.welcome">Bienvenue dans CleanMaster</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.welcome">Bienvenue dans CleanMaster</sys:String>
 </ResourceDictionary>

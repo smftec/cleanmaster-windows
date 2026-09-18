@@ -1,522 +1,522 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <sys:String x:Key="apps.col.date">インストール日</sys:String>
-    <sys:String x:Key="apps.col.name">アプリ</sys:String>
-    <sys:String x:Key="apps.col.publisher">発行元</sys:String>
-    <sys:String x:Key="apps.col.size">サイズ</sys:String>
-    <sys:String x:Key="apps.desc">アンインストールにはアプリ自身のアンインストーラーを使用。完了後、確認された残存ファイルを清理できます（隔離区、復元可）。</sys:String>
-    <sys:String x:Key="apps.empty">一致するアプリがありません</sys:String>
-    <sys:String x:Key="apps.loading">インストール済みアプリを読み込み中…</sys:String>
-    <sys:String x:Key="apps.notdetected">アンインストールを検出できませんでした。キャンセルされた可能性があります</sys:String>
-    <sys:String x:Key="apps.sort.date">インストール日順</sys:String>
-    <sys:String x:Key="apps.sort.name">名前順</sys:String>
-    <sys:String x:Key="apps.sort.size">サイズ順</sys:String>
-    <sys:String x:Key="apps.store">Microsoft Store アプリ</sys:String>
-    <sys:String x:Key="apps.uninstall.failed">アンインストーラーを起動できません：</sys:String>
-    <sys:String x:Key="apps.uninstall.msg">アプリサイズ：{0}
+    <sys:String xml:space="preserve" x:Key="apps.col.date">インストール日</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.name">アプリ</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.publisher">発行元</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.col.size">サイズ</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.desc">アンインストールにはアプリ自身のアンインストーラーを使用。完了後、確認された残存ファイルを清理できます（隔離区、復元可）。</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.empty">一致するアプリがありません</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.loading">インストール済みアプリを読み込み中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.notdetected">アンインストールを検出できませんでした。キャンセルされた可能性があります</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.date">インストール日順</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.name">名前順</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.sort.size">サイズ順</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.store">Microsoft Store アプリ</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">アンインストーラーを起動できません：</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">アプリサイズ：{0}
 
 アプリ自身のアンインストーラーを起動します。ウィザードに従って完了してください。</sys:String>
-    <sys:String x:Key="apps.uninstall.start">アンインストール開始</sys:String>
-    <sys:String x:Key="apps.uninstall.title">{0} をアンインストールしますか？</sys:String>
-    <sys:String x:Key="apps.uninstalled.log">アプリ「{0}」をアンインストール</sys:String>
-    <sys:String x:Key="apps.uninstalled.toast">「{0}」をアンインストールしました</sys:String>
-    <sys:String x:Key="apps.unknown">不明</sys:String>
-    <sys:String x:Key="apps.waiting">「{0}」のアンインストールを待機中…
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.start">アンインストール開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstall.title">{0} をアンインストールしますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstalled.log">アプリ「{0}」をアンインストール</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.uninstalled.toast">「{0}」をアンインストールしました</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.unknown">不明</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.waiting">「{0}」のアンインストールを待機中…
 完了すると自動的に続行します</sys:String>
-    <sys:String x:Key="btn.analyze.start">解析開始</sys:String>
-    <sys:String x:Key="btn.cancel">キャンセル</sys:String>
-    <sys:String x:Key="btn.clean.selected">選択項目をクリーンアップ</sys:String>
-    <sys:String x:Key="btn.clean.start">クリーンアップ開始</sys:String>
-    <sys:String x:Key="btn.cleansel">選択項目をクリーンアップ</sys:String>
-    <sys:String x:Key="btn.clearhistory">履歴を消去</sys:String>
-    <sys:String x:Key="btn.clearlocal">ローカル履歴を消去</sys:String>
-    <sys:String x:Key="btn.deleteperm">完全に削除</sys:String>
-    <sys:String x:Key="btn.done.home">ホームへ戻る</sys:String>
-    <sys:String x:Key="btn.done.quarantine">隔離区を開く</sys:String>
-    <sys:String x:Key="btn.dup.rescan">再スキャン</sys:String>
-    <sys:String x:Key="btn.dupclean">選択項目をごみ箱へ</sys:String>
-    <sys:String x:Key="btn.dupkeepnew">最新を残して選択</sys:String>
-    <sys:String x:Key="btn.dupscan">スキャン開始</sys:String>
-    <sys:String x:Key="btn.emptybin">ごみ箱を空にする</sys:String>
-    <sys:String x:Key="btn.exit">終了</sys:String>
-    <sys:String x:Key="btn.more">その他の機能</sys:String>
-    <sys:String x:Key="btn.openbin">ごみ箱を開く</sys:String>
-    <sys:String x:Key="btn.purge">隔離区を空にする</sys:String>
-    <sys:String x:Key="btn.recycle">ごみ箱へ移動</sys:String>
-    <sys:String x:Key="btn.refresh">更新</sys:String>
-    <sys:String x:Key="btn.remove">削除</sys:String>
-    <sys:String x:Key="btn.rescan">再スキャン</sys:String>
-    <sys:String x:Key="btn.restore">復元</sys:String>
-    <sys:String x:Key="btn.scan.now">今すぐスキャン</sys:String>
-    <sys:String x:Key="btn.scangroup">このグループをスキャン</sys:String>
-    <sys:String x:Key="btn.shred">完全にシュレッド</sys:String>
-    <sys:String x:Key="btn.shreddir">フォルダをシュレッド</sys:String>
-    <sys:String x:Key="btn.shredfile">ファイルをシュレッド</sys:String>
-    <sys:String x:Key="btn.stopscan">スキャン停止</sys:String>
-    <sys:String x:Key="btn.uninstall">アンインストール</sys:String>
-    <sys:String x:Key="cat.apps">アプリ</sys:String>
-    <sys:String x:Key="cat.archives">アーカイブ</sys:String>
-    <sys:String x:Key="cat.audio">音楽</sys:String>
-    <sys:String x:Key="cat.documents">ドキュメント</sys:String>
-    <sys:String x:Key="cat.images">画像</sys:String>
-    <sys:String x:Key="cat.other">その他</sys:String>
-    <sys:String x:Key="cat.system">システム</sys:String>
-    <sys:String x:Key="cat.videos">動画</sys:String>
-    <sys:String x:Key="clean.empty.before">下の「このグループをスキャン」でチェックを開始</sys:String>
-    <sys:String x:Key="clean.empty.clean">このカテゴリはきれいです。清理対象はありません</sys:String>
-    <sys:String x:Key="clean.empty.group">下の「このグループをスキャン」でチェックを開始</sys:String>
-    <sys:String x:Key="clean.freed">解放 —</sys:String>
-    <sys:String x:Key="clean.privacy.banner">プライバシー項目は既定で未選択です。選択前に各項目の影響をお読みください：Cookie の削除でログアウトし、履歴の削除は元に戻せません。</sys:String>
-    <sys:String x:Key="clean.privacy.warn">プライバシー項目は削除後に復元できません。影響を理解した上で実行してください。</sys:String>
-    <sys:String x:Key="clean.recycle.desc">空にするとごみ箱のファイルは完全に削除され復元できません。先にごみ箱を開いて確認できます。</sys:String>
-    <sys:String x:Key="clean.tab.app">アプリキャッシュ</sys:String>
-    <sys:String x:Key="clean.tab.browser">ブラウザ</sys:String>
-    <sys:String x:Key="clean.tab.privacy">プライバシー痕跡</sys:String>
-    <sys:String x:Key="clean.tab.recycle">ごみ箱</sys:String>
-    <sys:String x:Key="clean.tab.system">システムゴミ</sys:String>
-    <sys:String x:Key="clean.tabnote.0">システムとアプリの一時ファイル・ログ・クラッシュレポート。安全な項目のみ既定選択</sys:String>
-    <sys:String x:Key="clean.tabnote.1">チャット・オフィスアプリのキャッシュとログ。チャット記録や文書には触れません</sys:String>
-    <sys:String x:Key="clean.tabnote.2">閲覧を高速化するブラウザキャッシュ。ログイン・パスワード・履歴には影響しません</sys:String>
-    <sys:String x:Key="clean.tabnote.3">個人記録を含みます。既定で未選択。影響をよく確認してから実行してください</sys:String>
-    <sys:String x:Key="clean.tabnote.4">空にする前に、必要なファイルがないかごみ箱を確認してください</sys:String>
-    <sys:String x:Key="clean.title">クリーンアップ中…</sys:String>
-    <sys:String x:Key="common.approx">約 </sys:String>
-    <sys:String x:Key="common.freeable">解放可能</sys:String>
-    <sys:String x:Key="common.loading">読み込み中…</sys:String>
-    <sys:String x:Key="common.n.items">{0} 件</sys:String>
-    <sys:String x:Key="common.scanning">スキャン中…</sys:String>
-    <sys:String x:Key="common.selected">選択中</sys:String>
-    <sys:String x:Key="common.viewall">すべて表示</sys:String>
-    <sys:String x:Key="dlg.clean.amount">{0} のデータを清理しようとしています。</sys:String>
-    <sys:String x:Key="dlg.clean.confirmitems">確認が必要な項目：</sys:String>
-    <sys:String x:Key="dlg.clean.nrules">{0} カテゴリ、合計 {1} を清理します。</sys:String>
-    <sys:String x:Key="dlg.clean.quarantinehint">復元可能なファイルは隔離区に移動されます。</sys:String>
-    <sys:String x:Key="dlg.clean.selected.title">選択した項目をクリーンアップしますか？</sys:String>
-    <sys:String x:Key="dlg.exit.msg">終了すると自動清理とディスク監視は停止します。</sys:String>
-    <sys:String x:Key="dlg.exit.title">CleanMaster を終了しますか？</sys:String>
-    <sys:String x:Key="dlg.quickclean.msg">約 {0} が解放されます。
+    <sys:String xml:space="preserve" x:Key="btn.analyze.start">解析開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.cancel">キャンセル</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clean.selected">選択項目をクリーンアップ</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clean.start">クリーンアップ開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.cleansel">選択項目をクリーンアップ</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clearhistory">履歴を消去</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.clearlocal">ローカル履歴を消去</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.deleteperm">完全に削除</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.done.home">ホームへ戻る</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.done.quarantine">隔離区を開く</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dup.rescan">再スキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupclean">選択項目をごみ箱へ</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupkeepnew">最新を残して選択</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.dupscan">スキャン開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.emptybin">ごみ箱を空にする</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.exit">終了</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.more">その他の機能</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.openbin">ごみ箱を開く</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.purge">隔離区を空にする</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.recycle">ごみ箱へ移動</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.refresh">更新</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.remove">削除</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.rescan">再スキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.restore">復元</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.scan.now">今すぐスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.scangroup">このグループをスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shred">完全にシュレッド</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shreddir">フォルダをシュレッド</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.shredfile">ファイルをシュレッド</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.stopscan">スキャン停止</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.uninstall">アンインストール</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.apps">アプリ</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.archives">アーカイブ</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.audio">音楽</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.documents">ドキュメント</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.images">画像</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.other">その他</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.system">システム</sys:String>
+    <sys:String xml:space="preserve" x:Key="cat.videos">動画</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.before">下の「このグループをスキャン」でチェックを開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.clean">このカテゴリはきれいです。清理対象はありません</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.empty.group">下の「このグループをスキャン」でチェックを開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.freed">解放 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.privacy.banner">プライバシー項目は既定で未選択です。選択前に各項目の影響をお読みください：Cookie の削除でログアウトし、履歴の削除は元に戻せません。</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.privacy.warn">プライバシー項目は削除後に復元できません。影響を理解した上で実行してください。</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recycle.desc">空にするとごみ箱のファイルは完全に削除され復元できません。先にごみ箱を開いて確認できます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.app">アプリキャッシュ</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.browser">ブラウザ</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.privacy">プライバシー痕跡</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.recycle">ごみ箱</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tab.system">システムゴミ</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.0">システムとアプリの一時ファイル・ログ・クラッシュレポート。安全な項目のみ既定選択</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.1">チャット・オフィスアプリのキャッシュとログ。チャット記録や文書には触れません</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.2">閲覧を高速化するブラウザキャッシュ。ログイン・パスワード・履歴には影響しません</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.3">個人記録を含みます。既定で未選択。影響をよく確認してから実行してください</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.tabnote.4">空にする前に、必要なファイルがないかごみ箱を確認してください</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.title">クリーンアップ中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.approx">約 </sys:String>
+    <sys:String xml:space="preserve" x:Key="common.freeable">解放可能</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.loading">読み込み中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.n.items">{0} 件</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.scanning">スキャン中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.selected">選択中</sys:String>
+    <sys:String xml:space="preserve" x:Key="common.viewall">すべて表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.amount">{0} のデータを清理しようとしています。</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">確認が必要な項目：</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">{0} カテゴリ、合計 {1} を清理します。</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.quarantinehint">復元可能なファイルは隔離区に移動されます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.clean.selected.title">選択した項目をクリーンアップしますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.exit.msg">終了すると自動清理とディスク監視は停止します。</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.exit.title">CleanMaster を終了しますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="dlg.quickclean.msg">約 {0} が解放されます。
 復元可能なファイルは隔離区に移動されます。</sys:String>
-    <sys:String x:Key="dlg.quickclean.title">{0} を清理しますか？</sys:String>
-    <sys:String x:Key="done.cancelled">中断されました</sys:String>
-    <sys:String x:Key="done.freed.total">合計 {0} を解放</sys:String>
-    <sys:String x:Key="done.note.quarantine">隔離ファイルは {0} 日間保持され、ツールボックスから復元できます。</sys:String>
-    <sys:String x:Key="done.note.skip">スキップされたファイルは他のプログラムが使用中です。終了後に再実行してください。</sys:String>
-    <sys:String x:Key="done.partial">クリーンアップ完了（一部スキップ）</sys:String>
-    <sys:String x:Key="done.stat.fail">失敗</sys:String>
-    <sys:String x:Key="done.stat.ok">成功</sys:String>
-    <sys:String x:Key="done.stat.quar">隔離へ</sys:String>
-    <sys:String x:Key="done.stat.skip">スキップ（使用中）</sys:String>
-    <sys:String x:Key="done.title">クリーンアップ完了</sys:String>
-    <sys:String x:Key="history.clear.msg">すべての記録が削除されます。</sys:String>
-    <sys:String x:Key="history.clear.title">履歴を消去しますか？</sys:String>
-    <sys:String x:Key="history.empty">履歴はまだありません</sys:String>
-    <sys:String x:Key="history.type.autoclean">自動清理</sys:String>
-    <sys:String x:Key="history.type.clean">清理</sys:String>
-    <sys:String x:Key="history.type.other">その他</sys:String>
-    <sys:String x:Key="history.type.quarantine">隔離区</sys:String>
-    <sys:String x:Key="history.type.restore">復元</sys:String>
-    <sys:String x:Key="history.type.shred">シュレッド</sys:String>
-    <sys:String x:Key="history.type.startup">スタートアップ</sys:String>
-    <sys:String x:Key="history.type.uninstall">アンインストール</sys:String>
-    <sys:String x:Key="home.activity.empty">履歴はまだありません。スキャンしてみましょう</sys:String>
-    <sys:String x:Key="home.activity.title">最近のアクティビティ</sys:String>
-    <sys:String x:Key="home.card.apps">インストール済みアプリ</sys:String>
-    <sys:String x:Key="home.card.apps.note">クリックして管理</sys:String>
-    <sys:String x:Key="home.card.junk">クリーンアップ可能なゴミ</sys:String>
-    <sys:String x:Key="home.card.junk.lastscan">前回スキャン {0}</sys:String>
-    <sys:String x:Key="home.card.junk.note">スキャンして解放容量を確認</sys:String>
-    <sys:String x:Key="home.card.large">大容量ファイル</sys:String>
-    <sys:String x:Key="home.card.large.analyzed">解析済み</sys:String>
-    <sys:String x:Key="home.card.large.analyzed.note">クリックして詳細を表示</sys:String>
-    <sys:String x:Key="home.card.large.note">解析して検索</sys:String>
-    <sys:String x:Key="home.card.large.pending">未解析</sys:String>
-    <sys:String x:Key="home.card.startup">スタートアップ</sys:String>
-    <sys:String x:Key="home.card.startup.note">件が起動時に実行中</sys:String>
-    <sys:String x:Key="home.card.startup.note.high">高影響スタートアップが起動を遅くする可能性</sys:String>
-    <sys:String x:Key="home.disk.free">空き —</sys:String>
-    <sys:String x:Key="home.disk.free.f">空き {0} ({1:F1}%)</sys:String>
-    <sys:String x:Key="home.disk.more">空き容量の内訳を見る →</sys:String>
-    <sys:String x:Key="home.disk.title">ディスク空き容量 (C:)</sys:String>
-    <sys:String x:Key="home.disk.title.disk">ディスク容量 ({0})</sys:String>
-    <sys:String x:Key="home.disk.total">合計 —</sys:String>
-    <sys:String x:Key="home.disk.total.f">合計 {0}</sys:String>
-    <sys:String x:Key="home.disk.used">使用中 —</sys:String>
-    <sys:String x:Key="home.disk.used.f">使用中 {0} ({1:F1}%)</sys:String>
-    <sys:String x:Key="home.hero.note">PC をきれいに、
+    <sys:String xml:space="preserve" x:Key="dlg.quickclean.title">{0} を清理しますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.cancelled">中断されました</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.freed.total">合計 {0} を解放</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.note.quarantine">隔離ファイルは {0} 日間保持され、ツールボックスから復元できます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.note.skip">スキップされたファイルは他のプログラムが使用中です。終了後に再実行してください。</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.partial">クリーンアップ完了（一部スキップ）</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.fail">失敗</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.ok">成功</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.quar">隔離へ</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.stat.skip">スキップ（使用中）</sys:String>
+    <sys:String xml:space="preserve" x:Key="done.title">クリーンアップ完了</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clear.msg">すべての記録が削除されます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clear.title">履歴を消去しますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.empty">履歴はまだありません</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.autoclean">自動清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.clean">清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.other">その他</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.quarantine">隔離区</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.restore">復元</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.shred">シュレッド</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.startup">スタートアップ</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.type.uninstall">アンインストール</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.activity.empty">履歴はまだありません。スキャンしてみましょう</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.activity.title">最近のアクティビティ</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.apps">インストール済みアプリ</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.apps.note">クリックして管理</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk">クリーンアップ可能なゴミ</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk.lastscan">前回スキャン {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.junk.note">スキャンして解放容量を確認</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large">大容量ファイル</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.analyzed">解析済み</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.analyzed.note">クリックして詳細を表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.note">解析して検索</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.large.pending">未解析</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup">スタートアップ</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup.note">件が起動時に実行中</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.card.startup.note.high">高影響スタートアップが起動を遅くする可能性</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.free">空き —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.free.f">空き {0} ({1:F1}%)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.more">空き容量の内訳を見る →</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.title">ディスク空き容量 (C:)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.title.disk">ディスク容量 ({0})</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.total">合計 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.total.f">合計 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.used">使用中 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.used.f">使用中 {0} ({1:F1}%)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.hero.note">PC をきれいに、
 動きをスムーズに！</sys:String>
-    <sys:String x:Key="home.noscan">まだスキャンしていません</sys:String>
-    <sys:String x:Key="home.noscan.detail">「今すぐスキャン」をクリックして開始しましょう</sys:String>
-    <sys:String x:Key="home.slogan">定期的なスキャンで PC を最高の状態に保ちましょう</sys:String>
-    <sys:String x:Key="home.space.empty">このドライブはまだ解析されていません</sys:String>
-    <sys:String x:Key="home.space.title">ディスク解析</sys:String>
-    <sys:String x:Key="home.status.good">デバイスは良好です</sys:String>
-    <sys:String x:Key="home.status.lastscan">前回のスキャン：{0}</sys:String>
-    <sys:String x:Key="home.status.suggest">クリーンアップをおすすめします</sys:String>
-    <sys:String x:Key="home.status.suggest.detail">クリーンアップ可能 {0} と高影響スタートアップ {1} 件が見つかりました</sys:String>
-    <sys:String x:Key="home.status.tight">ディスク空き容量が少ないです</sys:String>
-    <sys:String x:Key="home.status.tight.detail">システムドライブの空きが 10% 未満です。今すぐ整理しましょう</sys:String>
-    <sys:String x:Key="home.suggest.clean">今すぐ清理</sys:String>
-    <sys:String x:Key="home.suggest.empty">問題ありません。対処が必要な項目はありません</sys:String>
-    <sys:String x:Key="home.suggest.note.safe">安全にクリーンアップでき、システムに影響しません</sys:String>
-    <sys:String x:Key="home.suggest.optimize">最適化</sys:String>
-    <sys:String x:Key="home.suggest.startup.note">高影響スタートアップ {0} 件。最適化をおすすめします</sys:String>
-    <sys:String x:Key="home.suggest.startup.title">スタートアップの候補</sys:String>
-    <sys:String x:Key="home.suggest.title">スマート候補</sys:String>
-    <sys:String x:Key="leftover.clean">選択項目を清理</sys:String>
-    <sys:String x:Key="leftover.datadir">データフォルダ</sys:String>
-    <sys:String x:Key="leftover.desc">このアプリに属すると確認できるデータフォルダと設定キーです。選択した項目は隔離区へ移動され復元可能です。</sys:String>
-    <sys:String x:Key="leftover.installdir">インストールフォルダ</sys:String>
-    <sys:String x:Key="leftover.reg">設定レジストリキー（バックアップ後に削除）</sys:String>
-    <sys:String x:Key="leftover.skip">清理せず終了</sys:String>
-    <sys:String x:Key="leftover.title">残存ファイルの可能性</sys:String>
-    <sys:String x:Key="leftover.title.f">「{0}」の残存ファイル</sys:String>
-    <sys:String x:Key="nav.apps">アプリ管理</sys:String>
-    <sys:String x:Key="nav.clean">クリーンアップ</sys:String>
-    <sys:String x:Key="nav.home">ホーム</sys:String>
-    <sys:String x:Key="nav.scan">スマートスキャン</sys:String>
-    <sys:String x:Key="nav.settings">設定</sys:String>
-    <sys:String x:Key="nav.space">ディスク解析</sys:String>
-    <sys:String x:Key="nav.startup">スタートアップ</sys:String>
-    <sys:String x:Key="nav.toolbox">ツールボックス</sys:String>
-    <sys:String x:Key="recycle.confirm.msg">ごみ箱の {0} 個のファイル（{1}）は完全に削除され、復元できません。</sys:String>
-    <sys:String x:Key="recycle.confirm.title">ごみ箱を空にしますか？</sys:String>
-    <sys:String x:Key="recycle.empty">ごみ箱は空です</sys:String>
-    <sys:String x:Key="recycle.info">{0} 項目、合計 {1}</sys:String>
-    <sys:String x:Key="result.sub">{0} · {1} カテゴリをスキャン</sys:String>
-    <sys:String x:Key="result.title.clean">スキャン完了。とてもきれいです！</sys:String>
-    <sys:String x:Key="result.title.found">スキャン完了。{0} 解放可能</sys:String>
-    <sys:String x:Key="risk.confirm">要確認</sys:String>
-    <sys:String x:Key="risk.high">高リスク</sys:String>
-    <sys:String x:Key="risk.low">低リスク</sys:String>
-    <sys:String x:Key="risk.safe">安全</sys:String>
-    <sys:String x:Key="row.direct">直接削除</sys:String>
-    <sys:String x:Key="row.files">{0} ファイル</sys:String>
-    <sys:String x:Key="row.impact.tip">クリーンアップの影響：{0}</sys:String>
-    <sys:String x:Key="row.restore">隔離区から復元可</sys:String>
-    <sys:String x:Key="row.running">関連プロセス {0} 個が実行中</sys:String>
-    <sys:String x:Key="rule.brave_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.brave_cache.name">Brave cache</sys:String>
-    <sys:String x:Key="rule.brave_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.chrome_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.chrome_cache.name">Google Chrome cache</sys:String>
-    <sys:String x:Key="rule.chrome_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.impact">You will be logged out of those sites</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.name">Google Chrome cookies (logs you out)</sys:String>
-    <sys:String x:Key="rule.chrome_cookies.reason">Site login credentials saved by the browser</sys:String>
-    <sys:String x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
-    <sys:String x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
-    <sys:String x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
-    <sys:String x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
-    <sys:String x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
-    <sys:String x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
-    <sys:String x:Key="rule.dev_caches.impact">Dependencies re-download on next build; extra network usage</sys:String>
-    <sys:String x:Key="rule.dev_caches.name">Dev tool caches (npm/pip/NuGet/Gradle)</sys:String>
-    <sys:String x:Key="rule.dev_caches.reason">Dependency caches and build outputs of package managers</sys:String>
-    <sys:String x:Key="rule.discord_cache.impact">Images/videos reload; account and messages unaffected</sys:String>
-    <sys:String x:Key="rule.discord_cache.name">Discord cache</sys:String>
-    <sys:String x:Key="rule.discord_cache.reason">Web cache of the Discord desktop client</sys:String>
-    <sys:String x:Key="rule.edge_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.edge_cache.name">Microsoft Edge cache</sys:String>
-    <sys:String x:Key="rule.edge_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.edge_cookies.impact">You will be logged out of those sites</sys:String>
-    <sys:String x:Key="rule.edge_cookies.name">Microsoft Edge cookies (logs you out)</sys:String>
-    <sys:String x:Key="rule.edge_cookies.reason">Site login credentials saved by the browser</sys:String>
-    <sys:String x:Key="rule.edge_history.impact">History cleared; favorites and passwords untouched</sys:String>
-    <sys:String x:Key="rule.edge_history.name">Microsoft Edge browsing history</sys:String>
-    <sys:String x:Key="rule.edge_history.reason">Web history database saved by the browser</sys:String>
-    <sys:String x:Key="rule.epic_cache.impact">Installed games and account unaffected</sys:String>
-    <sys:String x:Key="rule.epic_cache.name">Epic Games Launcher cache</sys:String>
-    <sys:String x:Key="rule.epic_cache.reason">Web view cache and logs of the launcher</sys:String>
-    <sys:String x:Key="rule.error_reports.impact">No impact; only affects reporting past errors to Microsoft</sys:String>
-    <sys:String x:Key="rule.error_reports.name">Error reports &amp; crash dumps</sys:String>
-    <sys:String x:Key="rule.error_reports.reason">Diagnostics from app crashes, no longer useful</sys:String>
-    <sys:String x:Key="rule.firefox_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.firefox_cache.name">Firefox cache</sys:String>
-    <sys:String x:Key="rule.firefox_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.impact">Indexes rebuilt on open; local history cleared</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.name">JetBrains IDE caches</sys:String>
-    <sys:String x:Key="rule.jetbrains_cache.reason">Indexes and local history caches of JetBrains IDEs</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.impact">Games recompile on first launch; slightly slower once</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.name">NVIDIA / AMD graphics caches</sys:String>
-    <sys:String x:Key="rule.nvidia_cache.reason">Shader and material compilation caches</sys:String>
-    <sys:String x:Key="rule.office_cache.impact">Cloud-saved documents unaffected; local edits untouched</sys:String>
-    <sys:String x:Key="rule.office_cache.name">Office file cache</sys:String>
-    <sys:String x:Key="rule.office_cache.reason">Local cache from document upload/collaboration</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.impact">Sync and files unaffected</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.name">OneDrive logs</sys:String>
-    <sys:String x:Key="rule.onedrive_logs.reason">Diagnostic logs from OneDrive sync</sys:String>
-    <sys:String x:Key="rule.opera_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
-    <sys:String x:Key="rule.opera_cache.name">Opera cache</sys:String>
-    <sys:String x:Key="rule.opera_cache.reason">Cache created to speed up page loads</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.impact">Current clipboard is cleared</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.name">Clipboard contents</sys:String>
-    <sys:String x:Key="rule.privacy_clipboard.reason">Recently copied data still in the clipboard</sys:String>
-    <sys:String x:Key="rule.privacy_dns.impact">First visits re-resolve; slightly slower once; needs admin</sys:String>
-    <sys:String x:Key="rule.privacy_dns.name">DNS resolver cache</sys:String>
-    <sys:String x:Key="rule.privacy_dns.reason">Domain resolution records kept by the system</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.impact">Jump lists cleared; app features unaffected</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.name">Jump list records</sys:String>
-    <sys:String x:Key="rule.privacy_jumplist.reason">History data shown in taskbar jump lists</sys:String>
-    <sys:String x:Key="rule.privacy_recent.impact">The recent list is cleared; files themselves untouched</sys:String>
-    <sys:String x:Key="rule.privacy_recent.name">Recent files list</sys:String>
-    <sys:String x:Key="rule.privacy_recent.reason">Explorer recent items and jump list sources</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.impact">Run history cleared; system unaffected</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.name">Run dialog history</sys:String>
-    <sys:String x:Key="rule.privacy_runmru.reason">Commands kept by the Win+R dialog</sys:String>
-    <sys:String x:Key="rule.privacy_search.impact">Search history cleared; search still works</sys:String>
-    <sys:String x:Key="rule.privacy_search.name">Explorer search history</sys:String>
-    <sys:String x:Key="rule.privacy_search.reason">Keywords kept by Explorer search</sys:String>
-    <sys:String x:Key="rule.qq_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
-    <sys:String x:Key="rule.qq_cache.name">QQ (cache/logs)</sys:String>
-    <sys:String x:Key="rule.qq_cache.reason">QQ runtime logs and component cache</sys:String>
-    <sys:String x:Key="rule.recycle_bin.impact">Files will be permanently deleted and unrecoverable</sys:String>
-    <sys:String x:Key="rule.recycle_bin.name">Recycle Bin</sys:String>
-    <sys:String x:Key="rule.recycle_bin.reason">Deleted files still occupying disk space</sys:String>
-    <sys:String x:Key="rule.shader_cache.impact">Games recompile shaders on next launch; slightly slower once</sys:String>
-    <sys:String x:Key="rule.shader_cache.name">DirectX / GPU shader caches</sys:String>
-    <sys:String x:Key="rule.shader_cache.reason">Compiled shader caches from games and graphics apps</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.impact">Store pages load slower once; games, saves and inventory untouched</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.name">Steam web cache</sys:String>
-    <sys:String x:Key="rule.steam_htmlcache.reason">Cache of Steam's built-in browser</sys:String>
-    <sys:String x:Key="rule.teams_cache.impact">Teams reloads on next launch; account and chats unaffected</sys:String>
-    <sys:String x:Key="rule.teams_cache.name">Microsoft Teams cache</sys:String>
-    <sys:String x:Key="rule.teams_cache.reason">Web and component cache of Teams client</sys:String>
-    <sys:String x:Key="rule.telegram_cache.impact">Cloud chats unaffected; offline media re-downloads</sys:String>
-    <sys:String x:Key="rule.telegram_cache.name">Telegram media cache</sys:String>
-    <sys:String x:Key="rule.telegram_cache.reason">Local cache of downloaded media</sys:String>
-    <sys:String x:Key="rule.thumb_cache.impact">Windows regenerates thumbnails when needed</sys:String>
-    <sys:String x:Key="rule.thumb_cache.name">Thumbnail cache</sys:String>
-    <sys:String x:Key="rule.thumb_cache.reason">Preview cache generated by File Explorer</sys:String>
-    <sys:String x:Key="rule.update_cache.impact">No impact once installed; skipped during downloads; needs admin</sys:String>
-    <sys:String x:Key="rule.update_cache.name">Windows Update download cache</sys:String>
-    <sys:String x:Key="rule.update_cache.reason">Leftover update packages already installed</sys:String>
-    <sys:String x:Key="rule.user_temp.impact">No impact; a rare running installer may need to restart</sys:String>
-    <sys:String x:Key="rule.user_temp.name">User temp files</sys:String>
-    <sys:String x:Key="rule.user_temp.reason">Temporary files created by apps; useless once the app closes</sys:String>
-    <sys:String x:Key="rule.vscode_cache.impact">Index rebuilt on next launch; layout and extensions kept</sys:String>
-    <sys:String x:Key="rule.vscode_cache.name">VS Code cache</sys:String>
-    <sys:String x:Key="rule.vscode_cache.reason">UI caches and crash logs</sys:String>
-    <sys:String x:Key="rule.wechat_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
-    <sys:String x:Key="rule.wechat_cache.name">WeChat (cache/logs)</sys:String>
-    <sys:String x:Key="rule.wechat_cache.reason">WeChat runtime logs and web cache</sys:String>
-    <sys:String x:Key="rule.windows_logs.impact">No impact on operation; old logs no longer reviewable</sys:String>
-    <sys:String x:Key="rule.windows_logs.name">Windows log files</sys:String>
-    <sys:String x:Key="rule.windows_logs.reason">Old log files (7+ days) from Windows components</sys:String>
-    <sys:String x:Key="rule.windows_temp.impact">No impact; some files are skipped without admin rights</sys:String>
-    <sys:String x:Key="rule.windows_temp.name">System temp files (Windows\Temp)</sys:String>
-    <sys:String x:Key="rule.windows_temp.reason">Temp files left by system components and installers</sys:String>
-    <sys:String x:Key="scan.cover">ワンステップで：システムゴミ · ブラウザキャッシュ · アプリキャッシュ · ごみ箱</sys:String>
-    <sys:String x:Key="scan.done">スキャン完了</sys:String>
-    <sys:String x:Key="scan.found">検出 —</sys:String>
-    <sys:String x:Key="scan.group.cache">ブラウザ・アプリキャッシュ</sys:String>
-    <sys:String x:Key="scan.group.cache.note">必要時にアプリが再ダウンロードします</sys:String>
-    <sys:String x:Key="scan.group.check">要確認</sys:String>
-    <sys:String x:Key="scan.group.check.note">クリーンアップ前に内容を確認してください</sys:String>
-    <sys:String x:Key="scan.group.safe">安全に清理可能</sys:String>
-    <sys:String x:Key="scan.group.safe.note">システムとアプリが生成した一時データ。削除しても安全です</sys:String>
-    <sys:String x:Key="scan.preparing">準備中…</sys:String>
-    <sys:String x:Key="scan.privacy">すべてローカルで実行。安全な項目のみ既定で選択され、高リスク項目が自動選択されることはありません。</sys:String>
-    <sys:String x:Key="scan.reselectall">安全項目を選択</sys:String>
-    <sys:String x:Key="scan.start">スキャン開始</sys:String>
-    <sys:String x:Key="settings.about.email">メール</sys:String>
-    <sys:String x:Key="settings.about.repo">ソースコード</sys:String>
-    <sys:String x:Key="settings.about.site">公式サイト</sys:String>
-    <sys:String x:Key="settings.about.slogan">明快に清理、安心して最適化。</sys:String>
-    <sys:String x:Key="settings.about.support">サポートとフィードバック</sys:String>
-    <sys:String x:Key="settings.about.wechat">WeChat で「AI虚拟助理」を検索するとヒントや更新情報が届きます。</sys:String>
-    <sys:String x:Key="settings.btn.addexclude">除外フォルダを追加</sys:String>
-    <sys:String x:Key="settings.btn.addwhitelist">ホワイトリストに追加</sys:String>
-    <sys:String x:Key="settings.days">日</sys:String>
-    <sys:String x:Key="settings.exc.desc">これらのフォルダとファイルはすべてのスキャン・清理でスキップされます。</sys:String>
-    <sys:String x:Key="settings.exc.empty">除外・ホワイトリストは未設定</sys:String>
-    <sys:String x:Key="settings.excluded">除外</sys:String>
-    <sys:String x:Key="settings.freq.daily">毎日</sys:String>
-    <sys:String x:Key="settings.freq.monthly">毎月</sys:String>
-    <sys:String x:Key="settings.freq.weekly">毎週</sys:String>
-    <sys:String x:Key="settings.lang.auto">システム言語に従う</sys:String>
-    <sys:String x:Key="settings.pick.exclude">スキャン対象外にするフォルダを選択</sys:String>
-    <sys:String x:Key="settings.pick.whitelist">ホワイトリストに追加するファイルを選択</sys:String>
-    <sys:String x:Key="settings.privacy.desc">スキャンデータはすべてこの端末に保存されます。ファイル名・パス・内容を収集・送信することはありません。</sys:String>
-    <sys:String x:Key="settings.row.autoclean">自動クリーンアップ</sys:String>
-    <sys:String x:Key="settings.row.autoclean.d">一時ファイルやキャッシュなど安全な項目を定期清理</sys:String>
-    <sys:String x:Key="settings.row.autoclean.freq">自動清理の頻度</sys:String>
-    <sys:String x:Key="settings.row.autoclean.freq.d">アプリ起動中にバックグラウンドで実行</sys:String>
-    <sys:String x:Key="settings.row.autostart">Windows 起動時に実行</sys:String>
-    <sys:String x:Key="settings.row.autostart.d">起動後はトレイで待機し、自動では何もしません</sys:String>
-    <sys:String x:Key="settings.row.closetotray">閉じるでトレイへ</sys:String>
-    <sys:String x:Key="settings.row.closetotray.d">閉じるボタンで確認して最小化します（終了ではありません）</sys:String>
-    <sys:String x:Key="settings.row.crash">クラッシュレポート</sys:String>
-    <sys:String x:Key="settings.row.hidden">隠しファイルをスキャン</sys:String>
-    <sys:String x:Key="settings.row.junction">ディレクトリリンクを追跡 (Junction)</sys:String>
-    <sys:String x:Key="settings.row.junction.d">リンク追跡は二重計上の原因になります。既定オフ</sys:String>
-    <sys:String x:Key="settings.row.language">表示言語</sys:String>
-    <sys:String x:Key="settings.row.language.d">すぐに反映されます</sys:String>
-    <sys:String x:Key="settings.row.mintotray">最小化でトレイへ</sys:String>
-    <sys:String x:Key="settings.row.mintotray.d">最小化ボタンでトレイに隠れます</sys:String>
-    <sys:String x:Key="settings.row.notifyauto">自動清理の結果通知</sys:String>
-    <sys:String x:Key="settings.row.notifydisk">空き容量不足の警告</sys:String>
-    <sys:String x:Key="settings.row.notifydisk.d">システムドライブの空きが 10% 未満で通知（控えめ）</sys:String>
-    <sys:String x:Key="settings.row.notifynews">製品情報</sys:String>
-    <sys:String x:Key="settings.row.notifynews.d">新機能やイベントのお知らせ（既定オフ）</sys:String>
-    <sys:String x:Key="settings.row.notifyweekly">週次レポート</sys:String>
-    <sys:String x:Key="settings.row.quarantine">清理後に隔離</sys:String>
-    <sys:String x:Key="settings.row.quarantine.d">キャッシュ以外のファイルは先に隔離され復元可能（推奨）</sys:String>
-    <sys:String x:Key="settings.row.quarantine.days">隔離保持期間</sys:String>
-    <sys:String x:Key="settings.row.quarantine.days.d">期限を過ぎると自動的に完全削除</sys:String>
-    <sys:String x:Key="settings.row.stats">匿名利用統計</sys:String>
-    <sys:String x:Key="settings.row.stats.d">機能利用回数とエラーコードのみ。このビルドでは一切送信しません</sys:String>
-    <sys:String x:Key="settings.row.theme">テーマ</sys:String>
-    <sys:String x:Key="settings.row.threads">スキャンスレッド数</sys:String>
-    <sys:String x:Key="settings.row.threads.d">多いほど高速。HDD では少なめを推奨</sys:String>
-    <sys:String x:Key="settings.sec.about">このアプリについて</sys:String>
-    <sys:String x:Key="settings.sec.advanced">詳細</sys:String>
-    <sys:String x:Key="settings.sec.exclude">除外とホワイトリスト</sys:String>
-    <sys:String x:Key="settings.sec.general">全般</sys:String>
-    <sys:String x:Key="settings.sec.notify">通知</sys:String>
-    <sys:String x:Key="settings.sec.privacy">プライバシー</sys:String>
-    <sys:String x:Key="settings.theme.dark">ダーク</sys:String>
-    <sys:String x:Key="settings.theme.light">ライト</sys:String>
-    <sys:String x:Key="settings.theme.system">システムに従う</sys:String>
-    <sys:String x:Key="settings.threads">スレッド</sys:String>
-    <sys:String x:Key="settings.title">設定</sys:String>
-    <sys:String x:Key="settings.whitelist">ホワイトリスト</sys:String>
-    <sys:String x:Key="space.analyzed.f">解析 {0} · {1:N0} ファイル · {2:F0} 秒</sys:String>
-    <sys:String x:Key="space.cancelled">解析をキャンセルしました</sys:String>
-    <sys:String x:Key="space.done">解析完了（{0:F0} 秒）</sys:String>
-    <sys:String x:Key="space.empty">このドライブは未解析です。右上の「解析開始」をクリック（いつでもキャンセル可）</sys:String>
-    <sys:String x:Key="space.failed">解析失敗：</sys:String>
-    <sys:String x:Key="space.file">FILE</sys:String>
-    <sys:String x:Key="space.large.filter">サイズ絞り込み</sys:String>
-    <sys:String x:Key="space.large.none">{0:F0} MB 超のファイルは見つかりません</sys:String>
-    <sys:String x:Key="space.lastanalysis">前回の解析：{0}</sys:String>
-    <sys:String x:Key="space.modified">更新</sys:String>
-    <sys:String x:Key="space.notanalyzed">このドライブはまだ解析されていません</sys:String>
-    <sys:String x:Key="space.recycle.msg">{0}（{1}）をごみ箱へ移動します。いつでも復元できます。</sys:String>
-    <sys:String x:Key="space.recycle.title">ごみ箱へ移動しますか？</sys:String>
-    <sys:String x:Key="space.rendererror">解析結果の表示に問題。ログを確認してください</sys:String>
-    <sys:String x:Key="space.scanned">{0:N0} ファイルを走査</sys:String>
-    <sys:String x:Key="space.scanning">ディスクを解析中…</sys:String>
-    <sys:String x:Key="space.tab.large">大容量ファイル</sys:String>
-    <sys:String x:Key="space.tab.overview">概要</sys:String>
-    <sys:String x:Key="space.total">合計 {0}</sys:String>
-    <sys:String x:Key="space.tree.hint">クリックで展開。システムリンクとアクセス不可フォルダはスキップ</sys:String>
-    <sys:String x:Key="space.tree.title">フォルダ使用量ランキング</sys:String>
-    <sys:String x:Key="space.used.f">使用中 {0} / {1}（{2:F1}%）、空き {3}</sys:String>
-    <sys:String x:Key="space.used.f2">使用中 {0} / {1}、空き {2}</sys:String>
-    <sys:String x:Key="startup.col.impact">影響</sys:String>
-    <sys:String x:Key="startup.col.source">ソース</sys:String>
-    <sys:String x:Key="startup.col.suggest">提案</sys:String>
-    <sys:String x:Key="startup.col.toggle">状態</sys:String>
-    <sys:String x:Key="startup.desc">無効にしてもアプリは手動で開けます。変更はすべて記録され、いつでも元に戻せます。</sys:String>
-    <sys:String x:Key="startup.disabled">無効化</sys:String>
-    <sys:String x:Key="startup.empty">一致する項目がありません</sys:String>
-    <sys:String x:Key="startup.enabled">有効化</sys:String>
-    <sys:String x:Key="startup.impact.high">高</sys:String>
-    <sys:String x:Key="startup.impact.low">低</sys:String>
-    <sys:String x:Key="startup.impact.med">中</sys:String>
-    <sys:String x:Key="startup.impact.unknown">未評価</sys:String>
-    <sys:String x:Key="startup.loading">スタートアップ項目を読み込み中…</sys:String>
-    <sys:String x:Key="startup.src.foldercommon">スタートアップフォルダ (全ユーザー)</sys:String>
-    <sys:String x:Key="startup.src.folderuser">スタートアップフォルダ (ユーザー)</sys:String>
-    <sys:String x:Key="startup.src.reghkcu">レジストリ (現在のユーザー)</sys:String>
-    <sys:String x:Key="startup.src.reghklm">レジストリ (マシン)</sys:String>
-    <sys:String x:Key="startup.src.task">スケジュールタスク</sys:String>
-    <sys:String x:Key="startup.suggest.keep">維持</sys:String>
-    <sys:String x:Key="startup.suggest.off">無効化を検討</sys:String>
-    <sys:String x:Key="startup.suggest.system">システムコンポーネント</sys:String>
-    <sys:String x:Key="startup.systemchip">システムコンポーネント</sys:String>
-    <sys:String x:Key="startup.toggled">スタートアップ「{1}」を{0}</sys:String>
-    <sys:String x:Key="time.minago">{0} 分前</sys:String>
-    <sys:String x:Key="time.now">たった今</sys:String>
-    <sys:String x:Key="time.today">今日 {0}</sys:String>
-    <sys:String x:Key="time.yesterday">昨日 {0}</sys:String>
-    <sys:String x:Key="tip.close">閉じる</sys:String>
-    <sys:String x:Key="tip.max">最大化</sys:String>
-    <sys:String x:Key="tip.min">最小化</sys:String>
-    <sys:String x:Key="toast.binemptied">ごみ箱を空にしました</sys:String>
-    <sys:String x:Key="toast.cleancancelled">クリーンアップをキャンセルしました</sys:String>
-    <sys:String x:Key="toast.cleandone">クリーンアップ完了。{0} を解放</sys:String>
-    <sys:String x:Key="toast.cleaned">クリーンアップ完了。{0} を解放</sys:String>
-    <sys:String x:Key="toast.cleanfailed">クリーンアップ失敗：</sys:String>
-    <sys:String x:Key="toast.failed">操作に失敗しました</sys:String>
-    <sys:String x:Key="toast.langapplied">表示言語を切り替えました</sys:String>
-    <sys:String x:Key="toast.largecleaned">大容量ファイル {0} を清理</sys:String>
-    <sys:String x:Key="toast.noselect">先に清理する項目を選択してください</sys:String>
-    <sys:String x:Key="toast.nothing">清理できる項目は見つかりません</sys:String>
-    <sys:String x:Key="toast.readfailed">読み込み失敗：</sys:String>
-    <sys:String x:Key="toast.recycled">ごみ箱へ移動。{0} を解放</sys:String>
-    <sys:String x:Key="toast.recyclefailed">ごみ箱への移動に失敗。ファイルが使用中の可能性があります</sys:String>
-    <sys:String x:Key="toast.scanfailed">スキャン失敗：</sys:String>
-    <sys:String x:Key="toast.scanstopped">スキャンを停止しました</sys:String>
-    <sys:String x:Key="toast.skipped">（{0} 件スキップ）</sys:String>
-    <sys:String x:Key="toast.traymin">トレイに最小化しました。トレイアイコンを右クリックで終了できます</sys:String>
-    <sys:String x:Key="toast.whitelisted">ホワイトリストに追加しました。スキャン・清理はこのファイルをスキップします</sys:String>
-    <sys:String x:Key="tool.desc">シュレッドしたファイルはごみ箱を経由しません。隔離ファイルはいつでも復元可能。重複検出は内容ハッシュベースです。</sys:String>
-    <sys:String x:Key="tool.dup.clean.msg">{0} ファイル（{1}）をごみ箱へ移動します（復元可能）。</sys:String>
-    <sys:String x:Key="tool.dup.clean.title">選択したコピーを削除しますか？</sys:String>
-    <sys:String x:Key="tool.dup.desc">内容ハッシュで重複を確認（ファイル名照合ではありません）。既定の範囲はピクチャ・ビデオ・ダウンロードです。</sys:String>
-    <sys:String x:Key="tool.dup.group">{0} 個の同一ファイル · 各 {1} · {2} 解放可能</sys:String>
-    <sys:String x:Key="tool.dup.more">… 他 {0} グループは未表示</sys:String>
-    <sys:String x:Key="tool.dup.none">重複ファイルは見つかりません</sys:String>
-    <sys:String x:Key="tool.dup.progress">{0:N0} ファイルを走査…</sys:String>
-    <sys:String x:Key="tool.dup.summary">{0} グループの重複。{1} 解放可能</sys:String>
-    <sys:String x:Key="tool.dup.tip">チェック = このコピーを削除</sys:String>
-    <sys:String x:Key="tool.dup.title">重複ファイル</sys:String>
-    <sys:String x:Key="tool.file">ファイル</sys:String>
-    <sys:String x:Key="tool.folder">フォルダ</sys:String>
-    <sys:String x:Key="tool.history.title">履歴</sys:String>
-    <sys:String x:Key="tool.purge.msg">隔離区の {0} 項目を完全に削除します。元に戻せません。</sys:String>
-    <sys:String x:Key="tool.purge.title">隔離区を空にしますか？</sys:String>
-    <sys:String x:Key="tool.quar.daysleft">残り {0} 日</sys:String>
-    <sys:String x:Key="tool.quar.empty">隔離区は空です</sys:String>
-    <sys:String x:Key="tool.quar.summary">{0} 項目、合計 {1}。{2} 日後に自動削除</sys:String>
-    <sys:String x:Key="tool.quarantine.title">隔離区</sys:String>
-    <sys:String x:Key="tool.shred.confirm.msg">{0}
+    <sys:String xml:space="preserve" x:Key="home.noscan">まだスキャンしていません</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.noscan.detail">「今すぐスキャン」をクリックして開始しましょう</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.slogan">定期的なスキャンで PC を最高の状態に保ちましょう</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.space.empty">このドライブはまだ解析されていません</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.space.title">ディスク解析</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.good">デバイスは良好です</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.lastscan">前回のスキャン：{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.suggest">クリーンアップをおすすめします</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.suggest.detail">クリーンアップ可能 {0} と高影響スタートアップ {1} 件が見つかりました</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.tight">ディスク空き容量が少ないです</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.status.tight.detail">システムドライブの空きが 10% 未満です。今すぐ整理しましょう</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.clean">今すぐ清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.empty">問題ありません。対処が必要な項目はありません</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.note.safe">安全にクリーンアップでき、システムに影響しません</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.optimize">最適化</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.startup.note">高影響スタートアップ {0} 件。最適化をおすすめします</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">スタートアップの候補</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.suggest.title">スマート候補</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.clean">選択項目を清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.datadir">データフォルダ</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.desc">このアプリに属すると確認できるデータフォルダと設定キーです。選択した項目は隔離区へ移動され復元可能です。</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.installdir">インストールフォルダ</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.reg">設定レジストリキー（バックアップ後に削除）</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.skip">清理せず終了</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.title">残存ファイルの可能性</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.title.f">「{0}」の残存ファイル</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.apps">アプリ管理</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.clean">クリーンアップ</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.home">ホーム</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.scan">スマートスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.settings">設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.space">ディスク解析</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.startup">スタートアップ</sys:String>
+    <sys:String xml:space="preserve" x:Key="nav.toolbox">ツールボックス</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">ごみ箱の {0} 個のファイル（{1}）は完全に削除され、復元できません。</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.confirm.title">ごみ箱を空にしますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.empty">ごみ箱は空です</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.info">{0} 項目、合計 {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.sub">{0} · {1} カテゴリをスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.title.clean">スキャン完了。とてもきれいです！</sys:String>
+    <sys:String xml:space="preserve" x:Key="result.title.found">スキャン完了。{0} 解放可能</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.confirm">要確認</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.high">高リスク</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.low">低リスク</sys:String>
+    <sys:String xml:space="preserve" x:Key="risk.safe">安全</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.direct">直接削除</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.files">{0} ファイル</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.impact.tip">クリーンアップの影響：{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.restore">隔離区から復元可</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.running">関連プロセス {0} 個が実行中</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.name">Brave cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.name">Google Chrome cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.impact">You will be logged out of those sites</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.name">Google Chrome cookies (logs you out)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.reason">Site login credentials saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.impact">Dependencies re-download on next build; extra network usage</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.name">Dev tool caches (npm/pip/NuGet/Gradle)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.reason">Dependency caches and build outputs of package managers</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.impact">Images/videos reload; account and messages unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.name">Discord cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.reason">Web cache of the Discord desktop client</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.name">Microsoft Edge cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.impact">You will be logged out of those sites</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.name">Microsoft Edge cookies (logs you out)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.reason">Site login credentials saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.impact">History cleared; favorites and passwords untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.name">Microsoft Edge browsing history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.impact">Installed games and account unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.name">Epic Games Launcher cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.reason">Web view cache and logs of the launcher</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.impact">No impact; only affects reporting past errors to Microsoft</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.name">Error reports &amp; crash dumps</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.reason">Diagnostics from app crashes, no longer useful</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.name">Firefox cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.impact">Indexes rebuilt on open; local history cleared</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.name">JetBrains IDE caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.reason">Indexes and local history caches of JetBrains IDEs</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.impact">Games recompile on first launch; slightly slower once</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.name">NVIDIA / AMD graphics caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.reason">Shader and material compilation caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.impact">Cloud-saved documents unaffected; local edits untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.name">Office file cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.office_cache.reason">Local cache from document upload/collaboration</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.impact">Sync and files unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.name">OneDrive logs</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.reason">Diagnostic logs from OneDrive sync</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.impact">Pages load slower once; logins, passwords and history unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.name">Opera cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.reason">Cache created to speed up page loads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.impact">Current clipboard is cleared</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.name">Clipboard contents</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.reason">Recently copied data still in the clipboard</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.impact">First visits re-resolve; slightly slower once; needs admin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.name">DNS resolver cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.reason">Domain resolution records kept by the system</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.impact">Jump lists cleared; app features unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.name">Jump list records</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.reason">History data shown in taskbar jump lists</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.impact">The recent list is cleared; files themselves untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.name">Recent files list</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_recent.reason">Explorer recent items and jump list sources</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.impact">Run history cleared; system unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.name">Run dialog history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.reason">Commands kept by the Win+R dialog</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.impact">Search history cleared; search still works</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.name">Explorer search history</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.reason">Keywords kept by Explorer search</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.name">QQ (cache/logs)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.qq_cache.reason">QQ runtime logs and component cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.impact">Files will be permanently deleted and unrecoverable</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.name">Recycle Bin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.reason">Deleted files still occupying disk space</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.impact">Games recompile shaders on next launch; slightly slower once</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.name">DirectX / GPU shader caches</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.reason">Compiled shader caches from games and graphics apps</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.impact">Store pages load slower once; games, saves and inventory untouched</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.name">Steam web cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.reason">Cache of Steam's built-in browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.impact">Teams reloads on next launch; account and chats unaffected</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.name">Microsoft Teams cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.reason">Web and component cache of Teams client</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.impact">Cloud chats unaffected; offline media re-downloads</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.name">Telegram media cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.reason">Local cache of downloaded media</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.impact">Windows regenerates thumbnails when needed</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.name">Thumbnail cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.reason">Preview cache generated by File Explorer</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.impact">No impact once installed; skipped during downloads; needs admin</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.name">Windows Update download cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.update_cache.reason">Leftover update packages already installed</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.impact">No impact; a rare running installer may need to restart</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.name">User temp files</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.reason">Temporary files created by apps; useless once the app closes</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.impact">Index rebuilt on next launch; layout and extensions kept</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.name">VS Code cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.vscode_cache.reason">UI caches and crash logs</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.impact">Chat history untouched; chat files live in user folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.name">WeChat (cache/logs)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.reason">WeChat runtime logs and web cache</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.impact">No impact on operation; old logs no longer reviewable</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.name">Windows log files</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.reason">Old log files (7+ days) from Windows components</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.impact">No impact; some files are skipped without admin rights</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.name">System temp files (Windows\Temp)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.reason">Temp files left by system components and installers</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.cover">ワンステップで：システムゴミ · ブラウザキャッシュ · アプリキャッシュ · ごみ箱</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.done">スキャン完了</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.found">検出 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.cache">ブラウザ・アプリキャッシュ</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.cache.note">必要時にアプリが再ダウンロードします</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.check">要確認</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.check.note">クリーンアップ前に内容を確認してください</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.safe">安全に清理可能</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.group.safe.note">システムとアプリが生成した一時データ。削除しても安全です</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.preparing">準備中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.privacy">すべてローカルで実行。安全な項目のみ既定で選択され、高リスク項目が自動選択されることはありません。</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.reselectall">安全項目を選択</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.start">スキャン開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.email">メール</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.repo">ソースコード</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.site">公式サイト</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.slogan">明快に清理、安心して最適化。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.support">サポートとフィードバック</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.about.wechat">WeChat で「AI虚拟助理」を検索するとヒントや更新情報が届きます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">除外フォルダを追加</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">ホワイトリストに追加</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.days">日</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.exc.desc">これらのフォルダとファイルはすべてのスキャン・清理でスキップされます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.exc.empty">除外・ホワイトリストは未設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.excluded">除外</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.daily">毎日</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.monthly">毎月</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.freq.weekly">毎週</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.lang.auto">システム言語に従う</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.pick.exclude">スキャン対象外にするフォルダを選択</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.pick.whitelist">ホワイトリストに追加するファイルを選択</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.privacy.desc">スキャンデータはすべてこの端末に保存されます。ファイル名・パス・内容を収集・送信することはありません。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean">自動クリーンアップ</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.d">一時ファイルやキャッシュなど安全な項目を定期清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.freq">自動清理の頻度</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autoclean.freq.d">アプリ起動中にバックグラウンドで実行</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autostart">Windows 起動時に実行</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.autostart.d">起動後はトレイで待機し、自動では何もしません</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.closetotray">閉じるでトレイへ</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.closetotray.d">閉じるボタンで確認して最小化します（終了ではありません）</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.crash">クラッシュレポート</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.hidden">隠しファイルをスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.junction">ディレクトリリンクを追跡 (Junction)</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.junction.d">リンク追跡は二重計上の原因になります。既定オフ</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.language">表示言語</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.language.d">すぐに反映されます</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.mintotray">最小化でトレイへ</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.mintotray.d">最小化ボタンでトレイに隠れます</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifyauto">自動清理の結果通知</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifydisk">空き容量不足の警告</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifydisk.d">システムドライブの空きが 10% 未満で通知（控えめ）</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifynews">製品情報</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">新機能やイベントのお知らせ（既定オフ）</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">週次レポート</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine">清理後に隔離</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">キャッシュ以外のファイルは先に隔離され復元可能（推奨）</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">隔離保持期間</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days.d">期限を過ぎると自動的に完全削除</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.stats">匿名利用統計</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.stats.d">機能利用回数とエラーコードのみ。このビルドでは一切送信しません</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.theme">テーマ</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.threads">スキャンスレッド数</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.threads.d">多いほど高速。HDD では少なめを推奨</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.about">このアプリについて</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.advanced">詳細</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.exclude">除外とホワイトリスト</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.general">全般</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.notify">通知</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.sec.privacy">プライバシー</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.dark">ダーク</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.light">ライト</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.theme.system">システムに従う</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.threads">スレッド</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.title">設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.whitelist">ホワイトリスト</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.analyzed.f">解析 {0} · {1:N0} ファイル · {2:F0} 秒</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.cancelled">解析をキャンセルしました</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.done">解析完了（{0:F0} 秒）</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.empty">このドライブは未解析です。右上の「解析開始」をクリック（いつでもキャンセル可）</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.failed">解析失敗：</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.file">FILE</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.filter">サイズ絞り込み</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.none">{0:F0} MB 超のファイルは見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.lastanalysis">前回の解析：{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.modified">更新</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.notanalyzed">このドライブはまだ解析されていません</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.recycle.msg">{0}（{1}）をごみ箱へ移動します。いつでも復元できます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.recycle.title">ごみ箱へ移動しますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.rendererror">解析結果の表示に問題。ログを確認してください</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.scanned">{0:N0} ファイルを走査</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.scanning">ディスクを解析中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tab.large">大容量ファイル</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tab.overview">概要</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.total">合計 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tree.hint">クリックで展開。システムリンクとアクセス不可フォルダはスキップ</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.tree.title">フォルダ使用量ランキング</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.used.f">使用中 {0} / {1}（{2:F1}%）、空き {3}</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.used.f2">使用中 {0} / {1}、空き {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.impact">影響</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.source">ソース</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.suggest">提案</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.col.toggle">状態</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.desc">無効にしてもアプリは手動で開けます。変更はすべて記録され、いつでも元に戻せます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.disabled">無効化</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.empty">一致する項目がありません</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.enabled">有効化</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.high">高</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.low">低</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.med">中</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.impact.unknown">未評価</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.loading">スタートアップ項目を読み込み中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">スタートアップフォルダ (全ユーザー)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.folderuser">スタートアップフォルダ (ユーザー)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">レジストリ (現在のユーザー)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.reghklm">レジストリ (マシン)</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.src.task">スケジュールタスク</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.keep">維持</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.off">無効化を検討</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.suggest.system">システムコンポーネント</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.systemchip">システムコンポーネント</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.toggled">スタートアップ「{1}」を{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.minago">{0} 分前</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.now">たった今</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.today">今日 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="time.yesterday">昨日 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.close">閉じる</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.max">最大化</sys:String>
+    <sys:String xml:space="preserve" x:Key="tip.min">最小化</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.binemptied">ごみ箱を空にしました</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleancancelled">クリーンアップをキャンセルしました</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleandone">クリーンアップ完了。{0} を解放</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleaned">クリーンアップ完了。{0} を解放</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.cleanfailed">クリーンアップ失敗：</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.failed">操作に失敗しました</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.langapplied">表示言語を切り替えました</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.largecleaned">大容量ファイル {0} を清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.noselect">先に清理する項目を選択してください</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.nothing">清理できる項目は見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.readfailed">読み込み失敗：</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.recycled">ごみ箱へ移動。{0} を解放</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.recyclefailed">ごみ箱への移動に失敗。ファイルが使用中の可能性があります</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.scanfailed">スキャン失敗：</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.scanstopped">スキャンを停止しました</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.skipped">（{0} 件スキップ）</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.traymin">トレイに最小化しました。トレイアイコンを右クリックで終了できます</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.whitelisted">ホワイトリストに追加しました。スキャン・清理はこのファイルをスキップします</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.desc">シュレッドしたファイルはごみ箱を経由しません。隔離ファイルはいつでも復元可能。重複検出は内容ハッシュベースです。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.clean.msg">{0} ファイル（{1}）をごみ箱へ移動します（復元可能）。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">選択したコピーを削除しますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.desc">内容ハッシュで重複を確認（ファイル名照合ではありません）。既定の範囲はピクチャ・ビデオ・ダウンロードです。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.group">{0} 個の同一ファイル · 各 {1} · {2} 解放可能</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.more">… 他 {0} グループは未表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.none">重複ファイルは見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.progress">{0:N0} ファイルを走査…</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.summary">{0} グループの重複。{1} 解放可能</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.tip">チェック = このコピーを削除</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.title">重複ファイル</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.file">ファイル</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.folder">フォルダ</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.history.title">履歴</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.purge.msg">隔離区の {0} 項目を完全に削除します。元に戻せません。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.purge.title">隔離区を空にしますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.daysleft">残り {0} 日</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.empty">隔離区は空です</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.summary">{0} 項目、合計 {1}。{2} 日後に自動削除</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quarantine.title">隔離区</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.confirm.msg">{0}
 
 {1} を上書き後、完全に削除します。ごみ箱を経由せず、ソフトウェアでの復元は困難です。
 
 この操作は取り消せません！</sys:String>
-    <sys:String x:Key="tool.shred.confirm.title">シュレッドしますか？</sys:String>
-    <sys:String x:Key="tool.shred.desc">ごみ箱を経由せずファイルを完全削除します。SSD では物理的な即時上書きは保証できません。復元不可のため、ファイルの選択は慎重に。</sys:String>
-    <sys:String x:Key="tool.shred.log">{0}「{1}」をシュレッド</sys:String>
-    <sys:String x:Key="tool.shred.title">ファイルシュレッダー</sys:String>
-    <sys:String x:Key="tool.win.control">コントロールパネル</sys:String>
-    <sys:String x:Key="tool.win.control.d">従来のシステム設定</sys:String>
-    <sys:String x:Key="tool.win.desc">標準システムツールへのショートカット。安全です</sys:String>
-    <sys:String x:Key="tool.win.devmgmt">デバイスマネージャー</sys:String>
-    <sys:String x:Key="tool.win.devmgmt.d">ハードウェアとドライバーの管理</sys:String>
-    <sys:String x:Key="tool.win.diskmgmt">ディスクの管理</sys:String>
-    <sys:String x:Key="tool.win.diskmgmt.d">パーティションとディスクの管理</sys:String>
-    <sys:String x:Key="tool.win.msinfo">システム情報</sys:String>
-    <sys:String x:Key="tool.win.msinfo.d">システム構成の確認</sys:String>
-    <sys:String x:Key="tool.win.restore">システムの復元</sys:String>
-    <sys:String x:Key="tool.win.restore.d">復元ポイントの作成と使用</sys:String>
-    <sys:String x:Key="tool.win.storage">ストレージ設定</sys:String>
-    <sys:String x:Key="tool.win.storage.d">ストレージの管理</sys:String>
-    <sys:String x:Key="tool.win.taskmgr">タスクマネージャー</sys:String>
-    <sys:String x:Key="tool.win.taskmgr.d">プロセスとパフォーマンス</sys:String>
-    <sys:String x:Key="tool.win.title">Windows ツール</sys:String>
-    <sys:String x:Key="tool.win.update">Windows Update</sys:String>
-    <sys:String x:Key="tool.win.update.d">システム更新の確認</sys:String>
-    <sys:String x:Key="tray.autoclean">自動清理：</sys:String>
-    <sys:String x:Key="tray.exit">終了</sys:String>
-    <sys:String x:Key="tray.off">オフ</sys:String>
-    <sys:String x:Key="tray.on">オン</sys:String>
-    <sys:String x:Key="tray.open">CleanMaster を開く</sys:String>
-    <sys:String x:Key="tray.quickscan">クイックスキャン</sys:String>
-    <sys:String x:Key="wizard.auto.desc">一時ファイルやアプリキャッシュなど安全な項目のみ、週 1 回清理します。</sys:String>
-    <sys:String x:Key="wizard.auto.no">今はしない</sys:String>
-    <sys:String x:Key="wizard.auto.title">自動クリーンアップを有効にしますか？</sys:String>
-    <sys:String x:Key="wizard.auto.yes">有効にする</sys:String>
-    <sys:String x:Key="wizard.next">始める</sys:String>
-    <sys:String x:Key="wizard.next2">次へ</sys:String>
-    <sys:String x:Key="wizard.privacy.items">· スキャン結果・ファイル名・パスはこの PC の外に出ません。
+    <sys:String xml:space="preserve" x:Key="tool.shred.confirm.title">シュレッドしますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.desc">ごみ箱を経由せずファイルを完全削除します。SSD では物理的な即時上書きは保証できません。復元不可のため、ファイルの選択は慎重に。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.log">{0}「{1}」をシュレッド</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.title">ファイルシュレッダー</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.control">コントロールパネル</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.control.d">従来のシステム設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.desc">標準システムツールへのショートカット。安全です</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.devmgmt">デバイスマネージャー</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.devmgmt.d">ハードウェアとドライバーの管理</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt">ディスクの管理</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt.d">パーティションとディスクの管理</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.msinfo">システム情報</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">システム構成の確認</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.restore">システムの復元</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.restore.d">復元ポイントの作成と使用</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.storage">ストレージ設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.storage.d">ストレージの管理</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.taskmgr">タスクマネージャー</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.taskmgr.d">プロセスとパフォーマンス</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.title">Windows ツール</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.update">Windows Update</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.update.d">システム更新の確認</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.autoclean">自動清理：</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.exit">終了</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.off">オフ</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.on">オン</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.open">CleanMaster を開く</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quickscan">クイックスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.desc">一時ファイルやアプリキャッシュなど安全な項目のみ、週 1 回清理します。</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.no">今はしない</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.title">自動クリーンアップを有効にしますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.auto.yes">有効にする</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.next">始める</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.next2">次へ</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.privacy.items">· スキャン結果・ファイル名・パスはこの PC の外に出ません。
 · テレメトリは既定オフ。ファイル内容をアップロードすることはありません。
 · 重要な清理は隔離区へ。7〜30 日間いつでも復元できます。
 · 削除前には必ずプレビュー。静かに削除されることはありません。</sys:String>
-    <sys:String x:Key="wizard.privacy.title">プライバシーのお約束</sys:String>
-    <sys:String x:Key="wizard.slogan">明快に清理、安心して最適化。
+    <sys:String xml:space="preserve" x:Key="wizard.privacy.title">プライバシーのお約束</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.slogan">明快に清理、安心して最適化。
 説明可能・プレビュー可能・復元可能なクリーンアップだけを行います。</sys:String>
-    <sys:String x:Key="wizard.welcome">CleanMaster へようこそ</sys:String>
+    <sys:String xml:space="preserve" x:Key="wizard.welcome">CleanMaster へようこそ</sys:String>
 </ResourceDictionary>
