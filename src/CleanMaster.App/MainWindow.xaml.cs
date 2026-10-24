@@ -32,6 +32,34 @@ public partial class MainWindow : Window
             Navigate(PageKey.Home);
         };
         StateChanged += (s, e) => ApplyWindowChromePadding();
+        PreviewKeyDown += MainWindow_PreviewKeyDown;
+    }
+
+    // ————— 全局快捷键：Ctrl+1..8 切页 / F5 刷新当前页 / Esc 停止扫描或清理 —————
+
+    private void MainWindow_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+    {
+        if (e.Key >= Key.D1 && e.Key <= Key.D8 &&
+            (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+        {
+            var key = (PageKey)(e.Key - Key.D1);
+            if (Enum.IsDefined(key) && key != _currentKey)
+            {
+                Navigate(key);
+                e.Handled = true;
+            }
+        }
+        else if (e.Key == Key.F5)
+        {
+            if (_pages.TryGetValue(_currentKey, out var p) && p is IParamPage pp)
+                pp.OnNavigated(null);
+            e.Handled = true;
+        }
+        else if (e.Key == Key.Escape)
+        {
+            if (_pages.TryGetValue(PageKey.SmartScan, out var p) && p is SmartScanPage sp)
+                sp.TryCancelCurrent();
+        }
     }
 
     private void ApplyWindowChromePadding()
@@ -65,6 +93,7 @@ public partial class MainWindow : Window
         }
         PageHost.NavigationService.RemoveBackEntry();
         PageHost.Content = page;
+        AnimatePageIn(page);
         // 先挂载内容再通知页面（保证 BringIntoView 等操作生效）
         if (page is IParamPage pp) pp.OnNavigated(param);
         _currentKey = key;
@@ -81,6 +110,18 @@ public partial class MainWindow : Window
             _ => "",
         };
         SyncNavChecked(key);
+    }
+
+    /// <summary>页面入场过渡：淡入 + 上移。</summary>
+    private static void AnimatePageIn(Page page)
+    {
+        var ease = new CubicEase { EasingMode = EasingMode.EaseOut };
+        var tt = new TranslateTransform(0, 16);
+        page.RenderTransform = tt;
+        page.BeginAnimation(OpacityProperty,
+            new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(200)) { EasingFunction = ease });
+        tt.BeginAnimation(TranslateTransform.YProperty,
+            new DoubleAnimation(16, 0, TimeSpan.FromMilliseconds(260)) { EasingFunction = ease });
     }
 
     private void SyncNavChecked(PageKey key)
@@ -116,8 +157,13 @@ public partial class MainWindow : Window
         };
         Toast.Visibility = Visibility.Visible;
         Toast.Opacity = 0;
-        var fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(180));
-        Toast.BeginAnimation(OpacityProperty, fadeIn);
+        var slide = new TranslateTransform(0, -10);
+        Toast.RenderTransform = slide;
+        var ease = new CubicEase { EasingMode = EasingMode.EaseOut };
+        Toast.BeginAnimation(OpacityProperty,
+            new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(200)) { EasingFunction = ease });
+        slide.BeginAnimation(TranslateTransform.YProperty,
+            new DoubleAnimation(-10, 0, TimeSpan.FromMilliseconds(240)) { EasingFunction = ease });
 
         _toastTimer?.Stop();
         _toastTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(3.6) };

@@ -41,6 +41,13 @@ public partial class SmartScanPage : Page, IParamPage
 
     public void StartScanFromUi() => StartScan();
 
+    /// <summary>全局 Esc：取消进行中的扫描或清理。</summary>
+    public void TryCancelCurrent()
+    {
+        if (_scanning) _scanCts?.Cancel();
+        else if (_cleaning) _cleanCts?.Cancel();
+    }
+
     // ————— 扫描 —————
 
     private async void StartScan()
@@ -64,18 +71,14 @@ public partial class SmartScanPage : Page, IParamPage
         var lastBytes = 0L;
         var progress = new Progress<ScanProgress>(p =>
         {
-            ScanStageText.Text = Services.Loc.RuleName(ctx != null ? "" : "", p.Stage) == p.Stage ? p.Stage : p.Stage;
-            ScanDetailText.Text = p.Stage switch
-            {
-                "应用缓存" => "正在分析应用缓存目录",
-                _ => p.Detail,
-            };
+            ScanStageText.Text = Services.Loc.RuleName(p.Stage, p.Stage);
+            ScanDetailText.Text = p.Detail;
             ScanProgressBar.Value = p.RuleTotal > 0 ? p.RuleIndex * 100.0 / p.RuleTotal : 0;
             ScanPercentText.Text = $"{(int)ScanProgressBar.Value}%";
             if (p.FoundBytes != lastBytes)
             {
                 lastBytes = p.FoundBytes;
-                ScanFoundText.Text = $"已发现 {SizeText.OfBytes(p.FoundBytes)}";
+                ScanFoundText.Text = string.Format(Services.Loc.T("scan.found.f"), SizeText.OfBytes(p.FoundBytes));
             }
         });
 
@@ -260,7 +263,7 @@ public partial class SmartScanPage : Page, IParamPage
             IsChecked = vm.Expanded,
             VerticalAlignment = VerticalAlignment.Center,
             Margin = new Thickness(14, 0, 0, 0),
-            ToolTip = "查看文件明细",
+            ToolTip = Services.Loc.T("row.details.tip"),
         };
         toggle.Click += (s, e) =>
         {
@@ -299,12 +302,13 @@ public partial class SmartScanPage : Page, IParamPage
             line.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             var path = new TextBlock
             {
-                Text = it.Path + (it.IsDirectory ? "  (目录)" : ""),
+                Text = it.Path + (it.IsDirectory ? "  " + Services.Loc.T("row.details.dir") : ""),
                 FontSize = 11,
                 Foreground = (Brush)FindResource("TextSecondaryBrush"),
                 TextTrimming = TextTrimming.CharacterEllipsis,
             };
             ToolTipService.SetToolTip(path, it.Path);
+            Controls.UiPathMenu.Attach(path, it.Path);
             Grid.SetColumn(path, 0);
             var sz = new TextBlock
             {
@@ -322,7 +326,7 @@ public partial class SmartScanPage : Page, IParamPage
         {
             host.Children.Add(new TextBlock
             {
-                Text = $"… 还有 {vm.Res.Items.Count - 100} 个项目未显示",
+                Text = string.Format(Services.Loc.T("row.details.more"), vm.Res.Items.Count - 100),
                 FontSize = 11,
                 Foreground = (Brush)FindResource("TextTertiaryBrush"),
                 Margin = new Thickness(0, 3, 0, 0),
@@ -419,7 +423,7 @@ public partial class SmartScanPage : Page, IParamPage
             done++;
             CleanProgressBar.Value = total > 0 ? done * 100.0 / total : 100;
             CleanDetailText.Text = p.CurrentPath;
-            CleanFreedText.Text = $"已释放 {SizeText.OfBytes(p.FreedBytes)}";
+            CleanFreedText.Text = string.Format(Services.Loc.T("clean.freed.f"), SizeText.OfBytes(p.FreedBytes));
         });
 
         CleanSummary summary;

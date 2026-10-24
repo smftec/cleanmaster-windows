@@ -67,6 +67,7 @@
     <sys:String xml:space="preserve" x:Key="clean.empty.clean">這一類很乾淨，沒有發現可清理的項目</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.empty.group">點擊下方「掃描此分類」開始檢查這一類項目</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.freed">已釋放 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.freed.f">已释放 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.banner">隱私項預設全部不勾選。勾選前請閱讀每項的影響說明：清理 Cookie 會使網站登出，清理歷史記錄後不可復原。</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.warn">隱私項清理後無法復原，請確認已了解各項影響。</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recycle.desc">清空後資源回收筒中的檔案將被永久刪除、無法復原。也可以先開啟資源回收筒檢查一遍。</sys:String>
@@ -88,6 +89,9 @@
     <sys:String xml:space="preserve" x:Key="common.scanning">正在掃描…</sys:String>
     <sys:String xml:space="preserve" x:Key="common.selected">已選擇</sys:String>
     <sys:String xml:space="preserve" x:Key="common.viewall">查看全部</sys:String>
+    <sys:String xml:space="preserve" x:Key="ctx.copypath">复制路径</sys:String>
+    <sys:String xml:space="preserve" x:Key="ctx.open">打开</sys:String>
+    <sys:String xml:space="preserve" x:Key="ctx.openloc">打开位置</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">即將清理 {0} 的資料。</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">包含需要確認的項目：</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">即將清理 {0} 類項目，共 {1}。</sys:String>
@@ -134,6 +138,7 @@
     <sys:String xml:space="preserve" x:Key="home.card.startup">啟動項</sys:String>
     <sys:String xml:space="preserve" x:Key="home.card.startup.note">個啟動項隨開機執行</sys:String>
     <sys:String xml:space="preserve" x:Key="home.card.startup.note.high">高影響啟動項，可能拖慢開機</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.center">已用</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.free">可用 —</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.free.f">可用 {0} ({1:F1}%)</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.more">查看空間去哪了 →</sys:String>
@@ -144,6 +149,16 @@
     <sys:String xml:space="preserve" x:Key="home.disk.used">已使用 —</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.used.f">已使用 {0} ({1:F1}%)</sys:String>
     <sys:String xml:space="preserve" x:Key="home.hero.note">讓電腦更乾淨&amp;#x0a;執行更流暢！</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.cores">{0} 核心</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.cpu">处理器</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.live">实时</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.ram">内存</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.ram.f">{0} / {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.title">实时系统状态</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.uptime">运行时间</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.uptime.d">{0} 天 {1} 小时</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.uptime.h">{0} 小时 {1} 分</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.uptime.m">{0} 分钟</sys:String>
     <sys:String xml:space="preserve" x:Key="home.noscan">還沒有掃描過</sys:String>
     <sys:String xml:space="preserve" x:Key="home.noscan.detail">還沒有掃描過，點擊「立即掃描」開始</sys:String>
     <sys:String xml:space="preserve" x:Key="home.slogan">保持定期掃描，讓電腦始終保持最佳狀態</sys:String>
@@ -189,6 +204,9 @@
     <sys:String xml:space="preserve" x:Key="risk.high">高風險</sys:String>
     <sys:String xml:space="preserve" x:Key="risk.low">低風險</sys:String>
     <sys:String xml:space="preserve" x:Key="risk.safe">安全</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.details.dir">(目录)</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.details.more">… 还有 {0} 个未显示</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.details.tip">查看文件明细</sys:String>
     <sys:String xml:space="preserve" x:Key="row.direct">直接刪除</sys:String>
     <sys:String xml:space="preserve" x:Key="row.files">{0} 個檔案</sys:String>
     <sys:String xml:space="preserve" x:Key="row.impact.tip">清理影響：{0}</sys:String>
@@ -308,6 +326,7 @@
     <sys:String xml:space="preserve" x:Key="scan.cover">一次掃描涵蓋：系統垃圾 · 瀏覽器快取 · 應用快取 · 資源回收筒</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.done">掃描完成</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.found">已發現 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.found.f">已发现 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.group.cache">瀏覽器與應用快取</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.group.cache.note">快取類資料，應用會在需要時重新下載</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.group.check">建議檢查</sys:String>
@@ -379,7 +398,9 @@
     <sys:String xml:space="preserve" x:Key="settings.theme.system">跟隨系統</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.threads">執行緒</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.title">設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.update.check">检查更新</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.whitelist">白名單</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.addwhitelist">加入白名单</sys:String>
     <sys:String xml:space="preserve" x:Key="space.analyzed.f">分析於 {0} · {1:N0} 個檔案 · {2:F0} 秒</sys:String>
     <sys:String xml:space="preserve" x:Key="space.cancelled">已取消分析</sys:String>
     <sys:String xml:space="preserve" x:Key="space.done">分析完成，用時 {0:F0} 秒</sys:String>
@@ -388,8 +409,11 @@
     <sys:String xml:space="preserve" x:Key="space.file">檔案</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.filter">大小篩選</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.none">沒有找到大於 {0:F0} MB 的檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.summary">{0} 个文件 · 共 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.lastanalysis">上次分析：{0}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.modified">修改於</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.nfiles">{0} 文件</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.nosubdir">(无子目录)</sys:String>
     <sys:String xml:space="preserve" x:Key="space.notanalyzed">這塊磁碟還沒有分析過</sys:String>
     <sys:String xml:space="preserve" x:Key="space.recycle.msg">{0}（{1}）將移至資源回收筒，可隨時還原。</sys:String>
     <sys:String xml:space="preserve" x:Key="space.recycle.title">移至資源回收筒？</sys:String>
@@ -454,14 +478,34 @@
     <sys:String xml:space="preserve" x:Key="tool.desc">檔案粉碎不會進入資源回收筒；隔離區檔案可隨時還原；重複檔案基於內容雜湊檢測。</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.clean.msg">共 {0} 個檔案，{1}，將移至資源回收筒（可還原）。</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">刪除選中的副本？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.cleaned">删除了 {0} 个重复文件</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.desc">透過內容雜湊確認重複（不是只看檔名）。掃描範圍預設為圖片、影片與下載目錄。</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.group">{0} 個相同檔案 · 每個 {1} · 可釋放 {2}</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.more">… 還有 {0} 組未顯示</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.nodirs">没有可扫描的目录</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.none">沒有發現重複檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.nosel">请先勾选要删除的副本</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.progress">已掃描 {0:N0} 個檔案…</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.summary">{0} 組重複檔案，可釋放 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.tip">勾選 = 刪除這份副本</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.title">重複檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.clean">删除所选空文件夹</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.clean.msg">{0} 个空文件夹将移入回收站（可还原）。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.clean.title">删除选中的空文件夹？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.cleaned">已删除 {0} 个空文件夹</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.desc">查找用户目录下整棵子树为空的文件夹（不含任何文件），删除时移入回收站，可随时还原。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.dirs">更改扫描目录</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.item.f">含 {0} 个空子目录 · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.item.nosub">空目录 · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.nodirs">没有可扫描的目录</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.none">没有发现空文件夹</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.nosel">请先勾选要删除的空文件夹</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.pickdir">选择要扫描的目录</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.rescan">重新扫描</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.rootsset">扫描目录已设为 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.scan">扫描空文件夹</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.summary">{0} 个空文件夹（含 {1} 个空子目录）</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.title">空文件夹清理</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.file">檔案</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.folder">資料夾</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.history.title">清理歷史</sys:String>
@@ -469,6 +513,7 @@
     <sys:String xml:space="preserve" x:Key="tool.purge.title">清空隔離區？</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.quar.daysleft">剩 {0} 天</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.quar.empty">隔離區是空的</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.meta">{0} · {1} 入库</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.quar.summary">{0} 個項目，共 {1}；超過 {2} 天將自動永久刪除</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.quarantine.title">清理隔離區</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.shred.confirm.msg">{0}
@@ -479,6 +524,8 @@
     <sys:String xml:space="preserve" x:Key="tool.shred.confirm.title">確認粉碎？</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.shred.desc">從檔案系統中永久刪除檔案，使其不進入資源回收筒。注意：對 SSD 無法保證底層快閃記憶體資料立即實體覆寫。此操作不可復原，請謹慎選擇檔案。</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.shred.log">粉碎了{0}「{1}」</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.pickdir">选择要粉碎的文件夹</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.pickfile">选择要粉碎的文件</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.shred.title">檔案粉碎</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.control">控制台</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.control.d">系統經典設定</sys:String>
@@ -487,8 +534,13 @@
     <sys:String xml:space="preserve" x:Key="tool.win.devmgmt.d">管理硬體驅動</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt">磁碟管理</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt.d">管理分割區與磁碟</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.dns">刷新 DNS 缓存</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.dns.d">修复网页打不开、解析慢</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.dns.fail">刷新失败：</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.dns.ok">DNS 缓存已刷新</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo">系統資訊</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">查看系統設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.openfail">无法打开：</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore">系統還原</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore.d">建立或使用還原點</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.storage">儲存設定</sys:String>
@@ -504,6 +556,15 @@
     <sys:String xml:space="preserve" x:Key="tray.on">開</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.open">開啟清理優化大師</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.quickscan">快速掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.available">发现新版本 v{0}，可在设置-关于中查看</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.checking">正在检查更新…</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.dlg.msg">当前版本 {0}，最新版本 {1}。
+是否前往下载页？</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.dlg.open">前往下载</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.dlg.title">发现新版本 v{0}？</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.failed">检查更新失败</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.found">发现新版本 v{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.latest">已是最新版本</sys:String>
     <sys:String xml:space="preserve" x:Key="wizard.auto.desc">僅自動清理系統暫存檔與應用快取等安全項目，每週一次。</sys:String>
     <sys:String xml:space="preserve" x:Key="wizard.auto.no">暫不開啟</sys:String>
     <sys:String xml:space="preserve" x:Key="wizard.auto.title">開啟自動清理？</sys:String>

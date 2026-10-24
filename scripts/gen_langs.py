@@ -204,6 +204,47 @@ ZH = {
     "toast.scanstopped": "已停止扫描", "toast.scanfailed": "扫描失败：", "toast.noselect": "请先勾选要清理的项目",
     "toast.cleancancelled": "清理已取消", "toast.cleanfailed": "清理失败：", "toast.nothing": "没有发现可清理的内容",
     "toast.cleaned": "已清理，释放了 {0}", "toast.readfailed": "读取失败：", "toast.langapplied": "界面语言已切换",
+    # ===== v1.2 追加 =====
+    # 首页·环形仪表与实时监控
+    "home.disk.center": "已用", "home.mon.title": "实时系统状态", "home.mon.live": "实时",
+    "home.mon.cpu": "处理器", "home.mon.cores": "{0} 核心", "home.mon.ram": "内存",
+    "home.mon.ram.f": "{0} / {1}", "home.mon.uptime": "运行时间",
+    "home.mon.uptime.d": "{0} 天 {1} 小时", "home.mon.uptime.h": "{0} 小时 {1} 分", "home.mon.uptime.m": "{0} 分钟",
+    # 扫描/清理过程
+    "scan.found.f": "已发现 {0}", "clean.freed.f": "已释放 {0}",
+    "row.details.tip": "查看文件明细", "row.details.more": "… 还有 {0} 个未显示", "row.details.dir": "(目录)",
+    # 右键菜单
+    "ctx.openloc": "打开位置", "ctx.open": "打开", "ctx.copypath": "复制路径",
+    # 工具箱·补充
+    "tool.quar.meta": "{0} · {1} 入库",
+    "tool.shred.pickfile": "选择要粉碎的文件", "tool.shred.pickdir": "选择要粉碎的文件夹",
+    "tool.dup.nodirs": "没有可扫描的目录", "tool.dup.nosel": "请先勾选要删除的副本",
+    "tool.dup.cleaned": "删除了 {0} 个重复文件",
+    "tool.win.openfail": "无法打开：",
+    "tool.win.dns": "刷新 DNS 缓存", "tool.win.dns.d": "修复网页打不开、解析慢",
+    "tool.win.dns.ok": "DNS 缓存已刷新", "tool.win.dns.fail": "刷新失败：",
+    "tool.empty.title": "空文件夹清理",
+    "tool.empty.desc": "查找用户目录下整棵子树为空的文件夹（不含任何文件），删除时移入回收站，可随时还原。",
+    "tool.empty.scan": "扫描空文件夹", "tool.empty.rescan": "重新扫描", "tool.empty.dirs": "更改扫描目录",
+    "tool.empty.clean": "删除所选空文件夹",
+    "tool.empty.nodirs": "没有可扫描的目录", "tool.empty.none": "没有发现空文件夹",
+    "tool.empty.summary": "{0} 个空文件夹（含 {1} 个空子目录）",
+    "tool.empty.item.f": "含 {0} 个空子目录 · {1}", "tool.empty.item.nosub": "空目录 · {1}",
+    "tool.empty.pickdir": "选择要扫描的目录", "tool.empty.rootsset": "扫描目录已设为 {0}",
+    "tool.empty.nosel": "请先勾选要删除的空文件夹",
+    "tool.empty.clean.title": "删除选中的空文件夹？",
+    "tool.empty.clean.msg": "{0} 个空文件夹将移入回收站（可还原）。",
+    "tool.empty.cleaned": "已删除 {0} 个空文件夹",
+    # 空间分析·补充
+    "space.large.summary": "{0} 个文件 · 共 {1}", "space.addwhitelist": "加入白名单",
+    "space.nosubdir": "(无子目录)", "space.nfiles": "{0} 文件",
+    # 更新检查
+    "settings.update.check": "检查更新", "update.checking": "正在检查更新…",
+    "update.found": "发现新版本 v{0}", "update.latest": "已是最新版本", "update.failed": "检查更新失败",
+    "update.available": "发现新版本 v{0}，可在设置-关于中查看",
+    "update.dlg.title": "发现新版本 v{0}？",
+    "update.dlg.msg": "当前版本 {0}，最新版本 {1}。\n是否前往下载页？",
+    "update.dlg.open": "前往下载",
 }
 
 # ============ 组装与生成 ============

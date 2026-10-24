@@ -46,6 +46,7 @@ public sealed class AppSettings
     public List<string> ExcludedPaths { get; set; } = new();
     public List<string> Whitelist { get; set; } = new();
     public List<string> DuplicateScanDirs { get; set; } = new();
+    public List<string> EmptyFolderScanDirs { get; set; } = new();
 
     [JsonIgnore]
     public static AppSettings Default { get; } = new();

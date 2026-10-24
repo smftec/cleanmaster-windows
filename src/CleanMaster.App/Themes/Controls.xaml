@@ -225,9 +225,19 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
-                    <Border x:Name="bd" Background="Transparent" CornerRadius="11" Margin="10,2" Padding="14,10">
-                        <ContentPresenter x:Name="content"/>
-                    </Border>
+                    <Grid>
+                        <Border x:Name="bd" Background="Transparent" CornerRadius="11" Margin="10,2" Padding="16,10,14,10">
+                            <ContentPresenter x:Name="content"/>
+                        </Border>
+                        <!-- 选中指示条 -->
+                        <Border x:Name="indicator" Width="3.5" CornerRadius="2" Margin="2.5,14,0,14"
+                                HorizontalAlignment="Left" Background="{DynamicResource PrimaryBrush}"
+                                Opacity="0" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <ScaleTransform ScaleY="0"/>
+                            </Border.RenderTransform>
+                        </Border>
+                    </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="bd" Property="Background" Value="{DynamicResource NavHoverBgBrush}"/>
@@ -236,6 +246,34 @@
                             <Setter TargetName="bd" Property="Background" Value="{DynamicResource NavActiveBgBrush}"/>
                             <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
                             <Setter Property="FontWeight" Value="Bold"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="indicator"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" Duration="0:0:0.16"/>
+                                        <DoubleAnimation Storyboard.TargetName="indicator"
+                                                         Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                                         To="1" Duration="0:0:0.22">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="indicator"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0" Duration="0:0:0.12"/>
+                                        <DoubleAnimation Storyboard.TargetName="indicator"
+                                                         Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                                         To="0" Duration="0:0:0.14"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

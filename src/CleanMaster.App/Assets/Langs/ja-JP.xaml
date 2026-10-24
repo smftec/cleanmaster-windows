@@ -67,6 +67,7 @@
     <sys:String xml:space="preserve" x:Key="clean.empty.clean">このカテゴリはきれいです。清理対象はありません</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.empty.group">下の「このグループをスキャン」でチェックを開始</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.freed">解放 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.freed.f">{0} 解放</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.banner">プライバシー項目は既定で未選択です。選択前に各項目の影響をお読みください：Cookie の削除でログアウトし、履歴の削除は元に戻せません。</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.warn">プライバシー項目は削除後に復元できません。影響を理解した上で実行してください。</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recycle.desc">空にするとごみ箱のファイルは完全に削除され復元できません。先にごみ箱を開いて確認できます。</sys:String>
@@ -88,6 +89,9 @@
     <sys:String xml:space="preserve" x:Key="common.scanning">スキャン中…</sys:String>
     <sys:String xml:space="preserve" x:Key="common.selected">選択中</sys:String>
     <sys:String xml:space="preserve" x:Key="common.viewall">すべて表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="ctx.copypath">パスをコピー</sys:String>
+    <sys:String xml:space="preserve" x:Key="ctx.open">開く</sys:String>
+    <sys:String xml:space="preserve" x:Key="ctx.openloc">フォルダーで表示</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">{0} のデータを清理しようとしています。</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">確認が必要な項目：</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">{0} カテゴリ、合計 {1} を清理します。</sys:String>
@@ -134,6 +138,7 @@
     <sys:String xml:space="preserve" x:Key="home.card.startup">スタートアップ</sys:String>
     <sys:String xml:space="preserve" x:Key="home.card.startup.note">件が起動時に実行中</sys:String>
     <sys:String xml:space="preserve" x:Key="home.card.startup.note.high">高影響スタートアップが起動を遅くする可能性</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.disk.center">使用中</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.free">空き —</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.free.f">空き {0} ({1:F1}%)</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.more">空き容量の内訳を見る →</sys:String>
@@ -145,6 +150,16 @@
     <sys:String xml:space="preserve" x:Key="home.disk.used.f">使用中 {0} ({1:F1}%)</sys:String>
     <sys:String xml:space="preserve" x:Key="home.hero.note">PC をきれいに、
 動きをスムーズに！</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.cores">{0} コア</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.cpu">CPU</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.live">ライブ</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.ram">メモリ</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.ram.f">{0} / {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.title">リアルタイム状態</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.uptime">稼働時間</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.uptime.d">{0} 日 {1} 時間</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.uptime.h">{0} 時間 {1} 分</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.mon.uptime.m">{0} 分</sys:String>
     <sys:String xml:space="preserve" x:Key="home.noscan">まだスキャンしていません</sys:String>
     <sys:String xml:space="preserve" x:Key="home.noscan.detail">「今すぐスキャン」をクリックして開始しましょう</sys:String>
     <sys:String xml:space="preserve" x:Key="home.slogan">定期的なスキャンで PC を最高の状態に保ちましょう</sys:String>
@@ -190,6 +205,9 @@
     <sys:String xml:space="preserve" x:Key="risk.high">高リスク</sys:String>
     <sys:String xml:space="preserve" x:Key="risk.low">低リスク</sys:String>
     <sys:String xml:space="preserve" x:Key="risk.safe">安全</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.details.dir">(フォルダー)</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.details.more">… 他 {0} 件は非表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="row.details.tip">ファイルの詳細を表示</sys:String>
     <sys:String xml:space="preserve" x:Key="row.direct">直接削除</sys:String>
     <sys:String xml:space="preserve" x:Key="row.files">{0} ファイル</sys:String>
     <sys:String xml:space="preserve" x:Key="row.impact.tip">クリーンアップの影響：{0}</sys:String>
@@ -309,6 +327,7 @@
     <sys:String xml:space="preserve" x:Key="scan.cover">ワンステップで：システムゴミ · ブラウザキャッシュ · アプリキャッシュ · ごみ箱</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.done">スキャン完了</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.found">検出 —</sys:String>
+    <sys:String xml:space="preserve" x:Key="scan.found.f">{0} を発見</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.group.cache">ブラウザ・アプリキャッシュ</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.group.cache.note">必要時にアプリが再ダウンロードします</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.group.check">要確認</sys:String>
@@ -380,7 +399,9 @@
     <sys:String xml:space="preserve" x:Key="settings.theme.system">システムに従う</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.threads">スレッド</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.title">設定</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.update.check">更新を確認</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.whitelist">ホワイトリスト</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.addwhitelist">ホワイトリストに追加</sys:String>
     <sys:String xml:space="preserve" x:Key="space.analyzed.f">解析 {0} · {1:N0} ファイル · {2:F0} 秒</sys:String>
     <sys:String xml:space="preserve" x:Key="space.cancelled">解析をキャンセルしました</sys:String>
     <sys:String xml:space="preserve" x:Key="space.done">解析完了（{0:F0} 秒）</sys:String>
@@ -389,8 +410,11 @@
     <sys:String xml:space="preserve" x:Key="space.file">FILE</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.filter">サイズ絞り込み</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.none">{0:F0} MB 超のファイルは見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.large.summary">{0} 件 · 合計 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.lastanalysis">前回の解析：{0}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.modified">更新</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.nfiles">{0} ファイル</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.nosubdir">(サブフォルダーなし)</sys:String>
     <sys:String xml:space="preserve" x:Key="space.notanalyzed">このドライブはまだ解析されていません</sys:String>
     <sys:String xml:space="preserve" x:Key="space.recycle.msg">{0}（{1}）をごみ箱へ移動します。いつでも復元できます。</sys:String>
     <sys:String xml:space="preserve" x:Key="space.recycle.title">ごみ箱へ移動しますか？</sys:String>
@@ -455,14 +479,34 @@
     <sys:String xml:space="preserve" x:Key="tool.desc">シュレッドしたファイルはごみ箱を経由しません。隔離ファイルはいつでも復元可能。重複検出は内容ハッシュベースです。</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.clean.msg">{0} ファイル（{1}）をごみ箱へ移動します（復元可能）。</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">選択したコピーを削除しますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.cleaned">重複ファイル {0} 件を削除しました</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.desc">内容ハッシュで重複を確認（ファイル名照合ではありません）。既定の範囲はピクチャ・ビデオ・ダウンロードです。</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.group">{0} 個の同一ファイル · 各 {1} · {2} 解放可能</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.more">… 他 {0} グループは未表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.nodirs">スキャンできるフォルダーがありません</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.none">重複ファイルは見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.nosel">削除する複製に先にチェックを入れてください</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.progress">{0:N0} ファイルを走査…</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.summary">{0} グループの重複。{1} 解放可能</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.tip">チェック = このコピーを削除</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.title">重複ファイル</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.clean">選択を削除</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.clean.msg">空フォルダー {0} 件をごみ箱へ移動します（復元できます）。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.clean.title">選択した空フォルダーを削除しますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.cleaned">空フォルダー {0} 件を削除しました</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.desc">ユーザーフォルダー配下の、サブツリー全体にファイルが無いフォルダーを検出します。削除はごみ箱へ移動するため復元できます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.dirs">対象フォルダーを変更</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.item.f">空サブフォルダー {0} 個 · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.item.nosub">空 · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.nodirs">スキャンできるフォルダーがありません</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.none">空フォルダーは見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.nosel">削除する空フォルダーに先にチェックを入れてください</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.pickdir">スキャンするフォルダーを選択</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.rescan">再スキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.rootsset">対象フォルダーを {0} に設定しました</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.scan">空フォルダーをスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.summary">空フォルダー {0} 件（空サブフォルダー {1} 個）</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.empty.title">空フォルダーの清理</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.file">ファイル</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.folder">フォルダ</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.history.title">履歴</sys:String>
@@ -470,6 +514,7 @@
     <sys:String xml:space="preserve" x:Key="tool.purge.title">隔離区を空にしますか？</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.quar.daysleft">残り {0} 日</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.quar.empty">隔離区は空です</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.quar.meta">{0} · {1} に隔離</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.quar.summary">{0} 項目、合計 {1}。{2} 日後に自動削除</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.quarantine.title">隔離区</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.shred.confirm.msg">{0}
@@ -480,6 +525,8 @@
     <sys:String xml:space="preserve" x:Key="tool.shred.confirm.title">シュレッドしますか？</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.shred.desc">ごみ箱を経由せずファイルを完全削除します。SSD では物理的な即時上書きは保証できません。復元不可のため、ファイルの選択は慎重に。</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.shred.log">{0}「{1}」をシュレッド</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.pickdir">シュレッドするフォルダーを選択</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.shred.pickfile">シュレッドするファイルを選択</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.shred.title">ファイルシュレッダー</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.control">コントロールパネル</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.control.d">従来のシステム設定</sys:String>
@@ -488,8 +535,13 @@
     <sys:String xml:space="preserve" x:Key="tool.win.devmgmt.d">ハードウェアとドライバーの管理</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt">ディスクの管理</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.diskmgmt.d">パーティションとディスクの管理</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.dns">DNS キャッシュをフラッシュ</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.dns.d">ページが開かない・遅いときに</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.dns.fail">フラッシュ失敗：</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.dns.ok">DNS キャッシュをフラッシュしました</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo">システム情報</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">システム構成の確認</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.openfail">開けません：</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore">システムの復元</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore.d">復元ポイントの作成と使用</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.storage">ストレージ設定</sys:String>
@@ -505,6 +557,15 @@
     <sys:String xml:space="preserve" x:Key="tray.on">オン</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.open">CleanMaster を開く</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.quickscan">クイックスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.available">新バージョン v{0} があります（設定 › 概要）</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.checking">更新を確認中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.dlg.msg">現在 {0}、最新 {1} です。
+ダウンロードページを開きますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.dlg.open">ダウンロードページを開く</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.dlg.title">v{0} に更新しますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.failed">更新確認に失敗</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.found">新バージョン v{0} があります</sys:String>
+    <sys:String xml:space="preserve" x:Key="update.latest">最新です</sys:String>
     <sys:String xml:space="preserve" x:Key="wizard.auto.desc">一時ファイルやアプリキャッシュなど安全な項目のみ、週 1 回清理します。</sys:String>
     <sys:String xml:space="preserve" x:Key="wizard.auto.no">今はしない</sys:String>
     <sys:String xml:space="preserve" x:Key="wizard.auto.title">自動クリーンアップを有効にしますか？</sys:String>

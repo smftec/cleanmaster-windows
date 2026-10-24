@@ -3,6 +3,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using System.Windows.Threading;
+using CleanMaster.App.Controls;
 using CleanMaster.App.Services;
 using CleanMaster.Core.Analysis;
 using CleanMaster.Core.Apps;
@@ -17,12 +21,26 @@ namespace CleanMaster.App.Pages;
 public partial class HomePage : Page, IParamPage
 {
     private readonly MainWindow _main;
+    private readonly SystemMonitorService _monitor = new();
+    private DispatcherTimer? _monitorTimer;
+    private RingGauge? _diskRing;
+    private RingGauge? _cpuRing;
+    private RingGauge? _ramRing;
+    private TextBlock? _diskCenter;
+    private TextBlock? _cpuCenter;
+    private TextBlock? _ramCenter;
+    private TextBlock? _cpuDetail;
+    private TextBlock? _ramDetail;
+    private TextBlock? _uptimeText;
 
     public HomePage(MainWindow main)
     {
         InitializeComponent();
         _main = main;
-        Loaded += (s, e) => _ = RefreshAsync();
+        BuildDiskRing();
+        BuildMonitor();
+        Loaded += (s, e) => { _ = RefreshAsync(); StartMonitor(); };
+        Unloaded += (s, e) => StopMonitor();
     }
 
     public void OnNavigated(object? param)
@@ -46,7 +64,14 @@ public partial class HomePage : Page, IParamPage
                 var pct = drive.TotalSize > 0 ? used * 100.0 / drive.TotalSize : 0;
                 DiskTitle.Text = string.Format(Services.Loc.T("home.disk.title.disk"), drive.Name.TrimEnd('\\'));
                 DiskTotalText.Text = string.Format(Services.Loc.T("home.disk.total.f"), SizeText.OfBytes(drive.TotalSize, 0));
-                DiskBar.Value = pct;
+                if (_diskRing != null)
+                {
+                    _diskRing.ArcBrush = pct >= 90 ? (Brush)FindResource("DangerBrush")
+                        : pct >= 75 ? (Brush)FindResource("WarningBrush")
+                        : (Brush)FindResource("PrimaryBrush");
+                    _diskRing.AnimateTo(pct);
+                }
+                if (_diskCenter != null) _diskCenter.Text = pct.ToString("F0") + "%";
                 DiskUsedText.Text = string.Format(Services.Loc.T("home.disk.used.f"), SizeText.OfBytes(used, 0), pct);
                 DiskFreeText.Text = string.Format(Services.Loc.T("home.disk.free.f"), SizeText.OfBytes(drive.AvailableFreeSpace, 0), 100 - pct);
             }
@@ -112,14 +137,23 @@ public partial class HomePage : Page, IParamPage
                 : Services.Loc.T("home.noscan.detail");
         }
 
-        // —— 卡片数字 ——
+        // —— 卡片数字（滚动动画） ——
         if (last != null && junkBytes > 0)
         {
-            JunkSizeText.Text = SizeText.OfBytes(junkBytes);
+            CountUp.Animate(JunkSizeText, junkBytes, v => SizeText.OfBytes((long)v));
             JunkNoteText.Text = string.Format(Services.Loc.T("home.card.junk.lastscan"), FormatTime(last.Time));
         }
-        StartupCountText.Text = highImpact > 0 ? string.Format(Services.Loc.T("common.n.items"), highImpact) : startupCount.ToString();
-        StartupNoteText.Text = highImpact > 0 ? Services.Loc.T("home.card.startup.note.high") : Services.Loc.T("home.card.startup.note");
+        if (highImpact > 0)
+        {
+            CountUp.Animate(StartupCountText, highImpact,
+                v => string.Format(Services.Loc.T("common.n.items"), (int)v));
+            StartupNoteText.Text = Services.Loc.T("home.card.startup.note.high");
+        }
+        else
+        {
+            CountUp.Animate(StartupCountText, startupCount, v => ((int)v).ToString());
+            StartupNoteText.Text = Services.Loc.T("home.card.startup.note");
+        }
         if (disk != null && disk.Categories.Count > 0)
         {
             LargeCountText.Text = Services.Loc.T("home.card.large.analyzed");
@@ -129,7 +163,10 @@ public partial class HomePage : Page, IParamPage
         {
             LargeCountText.Text = Services.Loc.T("home.card.large.pending");
         }
-        AppsCountText.Text = appCount > 0 ? appCount.ToString() : "—";
+        if (appCount > 0)
+            CountUp.Animate(AppsCountText, appCount, v => ((int)v).ToString());
+        else
+            AppsCountText.Text = "—";
 
         // —— 空间分析色块 ——
         ApplyDiskCategories(disk);
@@ -172,6 +209,157 @@ public partial class HomePage : Page, IParamPage
         }
         SuggestList.ItemsSource = suggests;
         NoSuggestText.Visibility = suggests.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
+    }
+
+    // ————— 环形仪表 + 实时监控 —————
+
+    private void BuildDiskRing()
+    {
+        _diskRing = new RingGauge(108, 10);
+        _diskCenter = new TextBlock
+        {
+            FontSize = 19,
+            FontWeight = FontWeights.Bold,
+            Foreground = (Brush)FindResource("TextPrimaryBrush"),
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        var center = new StackPanel();
+        center.Children.Add(_diskCenter);
+        center.Children.Add(new TextBlock
+        {
+            Text = Services.Loc.T("home.disk.center"),
+            FontSize = 10.5,
+            Foreground = (Brush)FindResource("TextTertiaryBrush"),
+            HorizontalAlignment = HorizontalAlignment.Center,
+            Margin = new Thickness(0, 1, 0, 0),
+        });
+        _diskRing.Center = center;
+        DiskRingHost.Children.Add(_diskRing);
+    }
+
+    private void BuildMonitor()
+    {
+        Brush Primary(string key) => (Brush)FindResource(key);
+
+        StackPanel MetricBlock(RingGauge ring, TextBlock center, string label, out TextBlock detail)
+        {
+            ring.Center = center;
+            detail = new TextBlock
+            {
+                FontSize = 11.5,
+                Foreground = (Brush)FindResource("TextTertiaryBrush"),
+                Margin = new Thickness(0, 3, 0, 0),
+            };
+            var sp = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
+            sp.Children.Add(new TextBlock
+            {
+                Text = label,
+                FontSize = 12.5,
+                FontWeight = FontWeights.Bold,
+                Foreground = (Brush)FindResource("TextPrimaryBrush"),
+            });
+            sp.Children.Add(detail);
+            var block = new StackPanel { Orientation = Orientation.Horizontal };
+            block.Children.Add(ring);
+            block.Children.Add(new Border { Width = 12 });
+            block.Children.Add(sp);
+            return block;
+        }
+
+        _cpuRing = new RingGauge(58, 7) { ArcBrush = Primary("PrimaryBrush") };
+        _cpuCenter = new TextBlock
+        {
+            FontSize = 12.5,
+            FontWeight = FontWeights.Bold,
+            Foreground = (Brush)FindResource("TextPrimaryBrush"),
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        CpuHost.Children.Add(MetricBlock(_cpuRing, _cpuCenter, Services.Loc.T("home.mon.cpu"), out _cpuDetail));
+
+        _ramRing = new RingGauge(58, 7) { ArcBrush = Primary("TealBrush") };
+        _ramCenter = new TextBlock
+        {
+            FontSize = 12.5,
+            FontWeight = FontWeights.Bold,
+            Foreground = (Brush)FindResource("TextPrimaryBrush"),
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        RamHost.Children.Add(MetricBlock(_ramRing, _ramCenter, Services.Loc.T("home.mon.ram"), out _ramDetail));
+
+        var up = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
+        up.Children.Add(new TextBlock
+        {
+            Text = Services.Loc.T("home.mon.uptime"),
+            FontSize = 12.5,
+            FontWeight = FontWeights.Bold,
+            Foreground = (Brush)FindResource("TextPrimaryBrush"),
+        });
+        _uptimeText = new TextBlock
+        {
+            FontSize = 11.5,
+            Foreground = (Brush)FindResource("TextTertiaryBrush"),
+            Margin = new Thickness(0, 3, 0, 0),
+        };
+        up.Children.Add(_uptimeText);
+        UptimeHost.Children.Add(up);
+
+        // 实时呼吸点
+        var pulse = new DoubleAnimation(0.35, 1, TimeSpan.FromSeconds(1.6))
+        {
+            AutoReverse = true,
+            RepeatBehavior = RepeatBehavior.Forever,
+            EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut },
+        };
+        LiveDot.BeginAnimation(OpacityProperty, pulse);
+    }
+
+    private void StartMonitor()
+    {
+        StopMonitor();
+        _monitorTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1.2) };
+        _monitorTimer.Tick += (s, e) => UpdateMonitor();
+        _monitorTimer.Start();
+        UpdateMonitor();
+    }
+
+    private void StopMonitor() => _monitorTimer?.Stop();
+
+    private void UpdateMonitor()
+    {
+        try
+        {
+            var snap = _monitor.Sample();
+            var cpu = snap.CpuPercent;
+            if (_cpuRing != null && _cpuCenter != null)
+            {
+                _cpuRing.SetPercent(cpu ?? 0);
+                _cpuCenter.Text = cpu.HasValue ? cpu.Value.ToString("F0") + "%" : "—";
+            }
+            if (_cpuDetail != null)
+                _cpuDetail.Text = string.Format(Services.Loc.T("home.mon.cores"), Environment.ProcessorCount);
+
+            var ramPct = snap.RamPercent;
+            if (_ramRing != null && _ramCenter != null && _ramDetail != null)
+            {
+                _ramRing.ArcBrush = ramPct >= 90 ? (Brush)FindResource("DangerBrush")
+                    : ramPct >= 75 ? (Brush)FindResource("WarningBrush")
+                    : (Brush)FindResource("TealBrush");
+                _ramRing.SetPercent(ramPct);
+                _ramCenter.Text = ramPct.ToString("F0") + "%";
+                _ramDetail.Text = string.Format(Services.Loc.T("home.mon.ram.f"),
+                    SizeText.OfBytes(snap.RamUsedBytes, 0), SizeText.OfBytes(snap.RamTotalBytes, 0));
+            }
+            if (_uptimeText != null)
+                _uptimeText.Text = FormatUptime(snap.Uptime);
+        }
+        catch { }
+    }
+
+    private static string FormatUptime(TimeSpan d)
+    {
+        if (d.TotalDays >= 1) return string.Format(Services.Loc.T("home.mon.uptime.d"), (int)d.TotalDays, d.Hours);
+        if (d.TotalHours >= 1) return string.Format(Services.Loc.T("home.mon.uptime.h"), (int)d.TotalHours, d.Minutes);
+        return string.Format(Services.Loc.T("home.mon.uptime.m"), Math.Max(1, (int)d.TotalMinutes));
     }
 
     private static string SystemDrive()

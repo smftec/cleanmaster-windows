@@ -267,7 +267,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
             vm.Children.Add(child);
         }
         if (vm.Children.Count == 0)
-            vm.Children.Add(new FolderNodeVM("(无子目录)", 0, 0, "done"));
+            vm.Children.Add(new FolderNodeVM(Services.Loc.T("space.nosubdir"), 0, 0, "done"));
     }
 
     // ————— 大文件 —————
@@ -355,7 +355,9 @@ public partial class SpaceAnalysisPage : Page, IParamPage
             LargeEmptyText.Text = string.Format(Services.Loc.T("space.large.none"), mb);
 
         long shownBytes = list.Sum(f => f.Size);
-        LargeSummaryText.Text = list.Count > 0 ? $"{list.Count} 个文件 · 共 {SizeText.OfBytes(shownBytes)}" : "";
+        LargeSummaryText.Text = list.Count > 0
+            ? string.Format(Services.Loc.T("space.large.summary"), list.Count, SizeText.OfBytes(shownBytes))
+            : "";
 
         foreach (var f in list)
         {
@@ -439,12 +441,12 @@ public partial class SpaceAnalysisPage : Page, IParamPage
             b.Click += handler;
             actions.Children.Add(b);
         }
-        AddAction("打开位置", (Style)FindResource("SmallSecondaryButton"), (s, e) =>
+        AddAction(Services.Loc.T("ctx.openloc"), (Style)FindResource("SmallSecondaryButton"), (s, e) =>
         {
             try { ShellUtil.ShowInExplorer(f.Path); } catch { }
         });
-        AddAction("移入回收站", (Style)FindResource("SmallPrimaryButton"), (s, e) => RecycleLargeFile(f));
-        AddAction("加入白名单", (Style)FindResource("SmallSecondaryButton"), (s, e) =>
+        AddAction(Services.Loc.T("btn.recycle"), (Style)FindResource("SmallPrimaryButton"), (s, e) => RecycleLargeFile(f));
+        AddAction(Services.Loc.T("space.addwhitelist"), (Style)FindResource("SmallSecondaryButton"), (s, e) =>
         {
             var s2 = SettingsService.Current;
             if (!s2.Whitelist.Contains(f.Path))
@@ -460,6 +462,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         grid.Children.Add(size);
         grid.Children.Add(actions);
         row.Child = grid;
+        CleanMaster.App.Controls.UiPathMenu.Attach(row, f.Path);
         row.MouseEnter += (s, e) => row.Background = (Brush)FindResource("ItemHoverBrush");
         row.MouseLeave += (s, e) => row.Background = Brushes.Transparent;
         return row;
@@ -502,6 +505,6 @@ public sealed class FolderNodeVM
         FullPath = fullPath;
         SizeBytes = size;
         SizeText = size > 0 ? CleanMaster.Core.Utils.SizeText.OfBytes(size) : "";
-        CountText = files > 0 ? $"{files:N0} 文件" : "";
+        CountText = files > 0 ? string.Format(CleanMaster.App.Services.Loc.T("space.nfiles"), files.ToString("N0")) : "";
     }
 }

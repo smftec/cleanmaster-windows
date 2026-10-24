@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using CleanMaster.App.Controls;
 using CleanMaster.Core.Analysis;
 using CleanMaster.Core.Rules;
 using CleanMaster.Core.Store;
@@ -15,6 +16,9 @@ public partial class ToolboxPage : Page, IParamPage
 {
     private readonly MainWindow _main;
     private DuplicateScanResult? _dupResult;
+    private List<EmptyFolderInfo>? _emptyResult;
+    private readonly List<(EmptyFolderInfo Info, CheckBox Cb)> _emptySel = new();
+    private CancellationTokenSource? _emptyCts;
 
     public ToolboxPage(MainWindow main)
     {
@@ -37,6 +41,192 @@ public partial class ToolboxPage : Page, IParamPage
                 System.Windows.Threading.DispatcherPriority.Loaded);
             BtnDupScan_Click(this, new RoutedEventArgs());
         }
+        else if (param as string == "empty")
+        {
+            Dispatcher.BeginInvoke(() => EmptyFolderCard.BringIntoView(),
+                System.Windows.Threading.DispatcherPriority.Loaded);
+            if (_emptyResult == null) BtnEmptyScan_Click(this, new RoutedEventArgs());
+        }
+    }
+
+    // ————— 空文件夹清理 —————
+
+    private static List<string> DefaultEmptyDirs()
+    {
+        var profile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        return new[] { "Pictures", "Videos", "Music", "Downloads", "Documents", "Desktop" }
+            .Select(d => Path.Combine(profile, d))
+            .Where(Directory.Exists)
+            .ToList();
+    }
+
+    private List<string> ResolveEmptyDirs()
+    {
+        var roots = SettingsService.Current.EmptyFolderScanDirs;
+        if (roots.Count == 0)
+        {
+            roots = DefaultEmptyDirs();
+            SettingsService.Current.EmptyFolderScanDirs = roots;
+            SettingsService.Save();
+        }
+        return roots.Where(Directory.Exists).ToList();
+    }
+
+    private async void BtnEmptyScan_Click(object sender, RoutedEventArgs e)
+    {
+        if (_emptyCts != null) return;
+        var roots = ResolveEmptyDirs();
+        if (roots.Count == 0)
+        {
+            _main.ShowToast(Services.Loc.T("tool.empty.nodirs"), ToastType.Info);
+            return;
+        }
+
+        _emptyCts = new CancellationTokenSource();
+        BtnEmptyScan.IsEnabled = false;
+        BtnEmptyScan.Content = Services.Loc.T("common.scanning");
+        EmptyList.Children.Clear();
+        EmptySummaryText.Text = string.Join("  ·  ", roots.Select(r => Path.GetFileName(r.TrimEnd('\\'))));
+        try
+        {
+            var svc = new EmptyFolderService();
+            _emptyResult = await svc.ScanAsync(roots, 8, _emptyCts.Token,
+                new Progress<string>(dir => EmptySummaryText.Text = dir));
+        }
+        catch (OperationCanceledException)
+        {
+            _emptyResult = null;
+        }
+        catch (Exception ex)
+        {
+            _main.ShowToast(Services.Loc.T("toast.scanfailed") + ex.Message, ToastType.Warning);
+            _emptyResult = null;
+        }
+        _emptyCts.Dispose();
+        _emptyCts = null;
+        BtnEmptyScan.IsEnabled = true;
+        BtnEmptyScan.Content = Services.Loc.T("tool.empty.rescan");
+        RenderEmpty();
+    }
+
+    private void RenderEmpty()
+    {
+        EmptyList.Children.Clear();
+        _emptySel.Clear();
+        BtnEmptyClean.Visibility = Visibility.Collapsed;
+        if (_emptyResult == null) return;
+
+        int totalSubs = _emptyResult.Sum(f => f.SubFolderCount);
+        EmptySummaryText.Text = _emptyResult.Count == 0
+            ? Services.Loc.T("tool.empty.none")
+            : string.Format(Services.Loc.T("tool.empty.summary"), _emptyResult.Count, totalSubs);
+        if (_emptyResult.Count == 0) return;
+        BtnEmptyClean.Visibility = Visibility.Visible;
+
+        foreach (var f in _emptyResult.Take(200))
+        {
+            EmptyList.Children.Add(BuildEmptyRow(f));
+        }
+        if (_emptyResult.Count > 200)
+        {
+            EmptyList.Children.Add(new TextBlock
+            {
+                Text = string.Format(Services.Loc.T("row.details.more"), _emptyResult.Count - 200),
+                FontSize = 11,
+                Foreground = (Brush)FindResource("TextTertiaryBrush"),
+                Margin = new Thickness(0, 8, 0, 0),
+            });
+        }
+    }
+
+    private Border BuildEmptyRow(EmptyFolderInfo f)
+    {
+        var row = new Border
+        {
+            Background = (Brush)FindResource("ItemHoverBrush"),
+            CornerRadius = new CornerRadius(9),
+            Padding = new Thickness(12, 8, 12, 8),
+            Margin = new Thickness(0, 4, 0, 0),
+        };
+        var grid = new Grid();
+        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+
+        var cb = new CheckBox
+        {
+            Style = (Style)FindResource("RoundCheckOnly"),
+            IsChecked = true,
+            VerticalAlignment = VerticalAlignment.Center,
+        };
+        _emptySel.Add((f, cb));
+        Grid.SetColumn(cb, 0);
+
+        var mid = new StackPanel { Margin = new Thickness(12, 0, 8, 0), VerticalAlignment = VerticalAlignment.Center };
+        var name = new TextBlock
+        {
+            Text = f.Path,
+            FontSize = 12,
+            Foreground = (Brush)FindResource("TextPrimaryBrush"),
+            TextTrimming = TextTrimming.CharacterEllipsis,
+        };
+        ToolTipService.SetToolTip(name, f.Path);
+        UiPathMenu.Attach(name, f.Path);
+        mid.Children.Add(name);
+        mid.Children.Add(new TextBlock
+        {
+            Text = f.SubFolderCount > 0
+                ? string.Format(Services.Loc.T("tool.empty.item.f"), f.SubFolderCount, f.LastWriteTime.ToString("yyyy-MM-dd"))
+                : string.Format(Services.Loc.T("tool.empty.item.nosub"), f.LastWriteTime.ToString("yyyy-MM-dd")),
+            FontSize = 11,
+            Foreground = (Brush)FindResource("TextTertiaryBrush"),
+            Margin = new Thickness(0, 2, 0, 0),
+        });
+        Grid.SetColumn(mid, 1);
+
+        grid.Children.Add(cb);
+        grid.Children.Add(mid);
+        row.Child = grid;
+        return row;
+    }
+
+    private void BtnEmptyDirs_Click(object sender, RoutedEventArgs e)
+    {
+        var dlg = new System.Windows.Forms.FolderBrowserDialog { Description = Services.Loc.T("tool.empty.pickdir") };
+        if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+        var roots = new List<string> { dlg.SelectedPath };
+        SettingsService.Current.EmptyFolderScanDirs = roots;
+        SettingsService.Save();
+        _main.ShowToast(string.Format(Services.Loc.T("tool.empty.rootsset"), dlg.SelectedPath), ToastType.Info);
+        BtnEmptyScan_Click(this, new RoutedEventArgs());
+    }
+
+    private async void BtnEmptyClean_Click(object sender, RoutedEventArgs e)
+    {
+        if (_emptyResult == null) return;
+        var selected = _emptySel.Where(t => t.Cb.IsChecked == true).Select(t => t.Info).ToList();
+        if (selected.Count == 0)
+        {
+            _main.ShowToast(Services.Loc.T("tool.empty.nosel"), ToastType.Info);
+            return;
+        }
+        if (!Services.DialogService.Confirm(_main, Services.Loc.T("tool.empty.clean.title"),
+            string.Format(Services.Loc.T("tool.empty.clean.msg"), selected.Count), Services.Loc.T("btn.recycle")))
+            return;
+
+        BtnEmptyClean.IsEnabled = false;
+        int ok = 0;
+        await Task.Run(() =>
+        {
+            foreach (var f in selected)
+            {
+                if (ShellUtil.RecycleToBin(f.Path)) ok++;
+            }
+        });
+        BtnEmptyClean.IsEnabled = true;
+        HistoryService.Add("Clean", string.Format(Services.Loc.T("tool.empty.cleaned"), ok), "", 0);
+        _main.ShowToast(string.Format(Services.Loc.T("tool.empty.cleaned"), ok), ToastType.Success);
+        BtnEmptyScan_Click(this, new RoutedEventArgs());
     }
 
     // ————— 隔离区 —————
@@ -84,12 +274,13 @@ public partial class ToolboxPage : Page, IParamPage
         });
         var meta = new TextBlock
         {
-            Text = $"{e.OriginalPath} · {e.CreatedAt:yyyy-MM-dd HH:mm} 入库",
+            Text = string.Format(Services.Loc.T("tool.quar.meta"), e.OriginalPath, e.CreatedAt.ToString("yyyy-MM-dd HH:mm")),
             FontSize = 11,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 2, 0, 0),
         };
         ToolTipService.SetToolTip(meta, e.OriginalPath);
+        UiPathMenu.Attach(sp, e.OriginalPath);
         sp.Children.Add(meta);
         Grid.SetColumn(sp, 0);
 
@@ -171,14 +362,14 @@ public partial class ToolboxPage : Page, IParamPage
 
     private void BtnShredFile_Click(object sender, RoutedEventArgs e)
     {
-        var dlg = new OpenFileDialog { Title = "选择要粉碎的文件", Multiselect = false };
+        var dlg = new OpenFileDialog { Title = Services.Loc.T("tool.shred.pickfile"), Multiselect = false };
         if (dlg.ShowDialog() != true) return;
         Shred(dlg.FileName, isDir: false);
     }
 
     private void BtnShredDir_Click(object sender, RoutedEventArgs e)
     {
-        var dlg = new System.Windows.Forms.FolderBrowserDialog { Description = "选择要粉碎的文件夹" };
+        var dlg = new System.Windows.Forms.FolderBrowserDialog { Description = Services.Loc.T("tool.shred.pickdir") };
         if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
         Shred(dlg.SelectedPath, isDir: true);
     }
@@ -213,7 +404,7 @@ public partial class ToolboxPage : Page, IParamPage
         roots = roots.Where(Directory.Exists).ToList();
         if (roots.Count == 0)
         {
-            _main.ShowToast("没有可扫描的目录", ToastType.Info);
+            _main.ShowToast(Services.Loc.T("tool.dup.nodirs"), ToastType.Info);
             return;
         }
 
@@ -307,12 +498,14 @@ public partial class ToolboxPage : Page, IParamPage
             cb.Unchecked += (s, e) => f.Selected = false;
             line.Children.Add(cb);
             var sp2 = new StackPanel { Margin = new Thickness(10, 0, 0, 0) };
-            sp2.Children.Add(new TextBlock
+            var nameTb = new TextBlock
             {
                 Text = System.IO.Path.GetFileName(f.Path),
                 FontSize = 12,
                 Foreground = (Brush)FindResource("TextPrimaryBrush"),
-            });
+            };
+            UiPathMenu.Attach(nameTb, f.Path);
+            sp2.Children.Add(nameTb);
             var path = new TextBlock
             {
                 Text = f.Path + $" · {f.ModifiedTime:yyyy-MM-dd HH:mm}",
@@ -343,7 +536,7 @@ public partial class ToolboxPage : Page, IParamPage
         var selected = _dupResult.Groups.SelectMany(g => g.Files).Where(f => f.Selected).ToList();
         if (selected.Count == 0)
         {
-            _main.ShowToast("请先勾选要删除的副本", ToastType.Info);
+            _main.ShowToast(Services.Loc.T("tool.dup.nosel"), ToastType.Info);
             return;
         }
         long bytes = selected.Sum(f => f.Size);
@@ -358,7 +551,7 @@ public partial class ToolboxPage : Page, IParamPage
                 if (ShellUtil.RecycleToBin(f.Path)) ok++;
             }
         });
-        HistoryService.Add("Clean", $"删除了 {ok} 个重复文件", "", bytes);
+        HistoryService.Add("Clean", string.Format(Services.Loc.T("tool.dup.cleaned"), ok), "", bytes);
         _main.ShowToast(string.Format(Services.Loc.T("toast.dupcleaned"), ok, SizeText.OfBytes(bytes)));
         // 重新扫描更新
         BtnDupScan_Click(sender, e);
@@ -485,12 +678,31 @@ public partial class ToolboxPage : Page, IParamPage
                 TextTrimming = TextTrimming.CharacterEllipsis,
             });
             btn.Content = sp;
-            btn.Click += (s, e) => { try { launch(); } catch (Exception ex) { _main.ShowToast("无法打开：" + ex.Message, ToastType.Warning); } };
+            btn.Click += (s, e) => { try { launch(); } catch (Exception ex) { _main.ShowToast(Services.Loc.T("tool.win.openfail") + ex.Message, ToastType.Warning); } };
             ToolGrid.Children.Add(btn);
         }
 
         AddTool(Services.Loc.T("tool.win.taskmgr"), Services.Loc.T("tool.win.taskmgr.d"), () => Process.Start("taskmgr.exe"));
         AddTool(Services.Loc.T("tool.win.storage"), Services.Loc.T("tool.win.storage.d"), () => Process.Start(new ProcessStartInfo("ms-settings:storagesense") { UseShellExecute = true }));
+        AddTool(Services.Loc.T("tool.win.dns"), Services.Loc.T("tool.win.dns.d"), async () =>
+        {
+            try
+            {
+                var psi = new ProcessStartInfo("ipconfig", "/flushdns")
+                {
+                    CreateNoWindow = true,
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                };
+                var p = Process.Start(psi);
+                if (p != null) await p.WaitForExitAsync();
+                _main.ShowToast(Services.Loc.T("tool.win.dns.ok"), ToastType.Success);
+            }
+            catch (Exception ex)
+            {
+                _main.ShowToast(Services.Loc.T("tool.win.dns.fail") + ex.Message, ToastType.Warning);
+            }
+        });
         AddTool(Services.Loc.T("tool.win.diskmgmt"), Services.Loc.T("tool.win.diskmgmt.d"), () => Process.Start("diskmgmt.msc"));
         AddTool(Services.Loc.T("tool.win.devmgmt"), Services.Loc.T("tool.win.devmgmt.d"), () => Process.Start("devmgmt.msc"));
         AddTool(Services.Loc.T("tool.win.control"), Services.Loc.T("tool.win.control.d"), () => Process.Start("control.exe"));

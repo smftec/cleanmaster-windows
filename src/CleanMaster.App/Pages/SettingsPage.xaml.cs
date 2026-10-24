@@ -310,4 +310,40 @@ public partial class SettingsPage : Page
         HistoryService.Clear();
         _main.ShowToast(Services.Loc.T("toast.historycleared"));
     }
+
+    // ————— 检查更新 —————
+
+    private async void BtnCheckUpdate_Click(object sender, RoutedEventArgs e)
+    {
+        BtnCheckUpdate.IsEnabled = false;
+        UpdateStateText.Text = Services.Loc.T("update.checking");
+        try
+        {
+            var info = await Services.UpdateService.CheckAsync();
+            if (info.HasUpdate)
+            {
+                UpdateStateText.Text = string.Format(Services.Loc.T("update.found"), info.Latest);
+                var open = Services.DialogService.Confirm(_main,
+                    string.Format(Services.Loc.T("update.dlg.title"), info.Latest),
+                    string.Format(Services.Loc.T("update.dlg.msg"), info.Current, info.Latest),
+                    Services.Loc.T("update.dlg.open"), Services.Loc.T("btn.cancel"));
+                if (open)
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(info.DownloadUrl) { UseShellExecute = true });
+            }
+            else if (info.Error.Length > 0)
+            {
+                UpdateStateText.Text = Services.Loc.T("update.failed");
+                _main.ShowToast(Services.Loc.T("update.failed") + " " + info.Error, ToastType.Warning);
+            }
+            else
+            {
+                UpdateStateText.Text = Services.Loc.T("update.latest");
+                _main.ShowToast(Services.Loc.T("update.latest"), ToastType.Success);
+            }
+        }
+        finally
+        {
+            BtnCheckUpdate.IsEnabled = true;
+        }
+    }
 }

@@ -90,6 +90,21 @@ public partial class App : Application
 
         // 自动清理调度
         AutoCleanScheduler.Instance.Initialize(win);
+
+        // 静默检查更新（每日最多一次，失败不打扰）
+        _ = RunUpdateCheckAsync(win);
+    }
+
+    private static async System.Threading.Tasks.Task RunUpdateCheckAsync(MainWindow win)
+    {
+        try
+        {
+            if (!Services.UpdateService.ShouldAutoCheck()) return;
+            var info = await Services.UpdateService.CheckAsync();
+            if (info.HasUpdate)
+                win.ShowToast(string.Format(Services.Loc.T("update.available"), info.Latest), ToastType.Info);
+        }
+        catch { }
     }
 
     protected void OnExit(object sender, ExitEventArgs e)
