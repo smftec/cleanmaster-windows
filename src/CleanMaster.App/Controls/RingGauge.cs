@@ -18,7 +18,16 @@ public sealed class RingGauge : Grid
 
     private readonly Ellipse _track = new();
     private readonly System.Windows.Shapes.Path _arc = new();
-    private readonly ContentControl _center = new();
+    // 中心宿主用 Border(布局行为确定):默认 ContentControl 模板的 ContentPresenter
+    // 不会把 ContentContentAlignment 应用到内容,中心内容会落到左上角
+    private readonly Border _center = new()
+    {
+        IsHitTestVisible = false,
+        Focusable = false,
+        HorizontalAlignment = HorizontalAlignment.Stretch,
+        VerticalAlignment = VerticalAlignment.Stretch,
+        Background = null,
+    };
 
     public double Percent
     {
@@ -36,11 +45,32 @@ public sealed class RingGauge : Grid
         set { StrokeW = value; _track.StrokeThickness = value; _arc.StrokeThickness = value; Recompute(); }
     }
 
-    /// <summary>中心内容(文本等)。</summary>
+    /// <summary>中心内容(文本等),赋值时强制居中。</summary>
     public object Center
     {
-        get => _center.Content;
-        set => _center.Content = value;
+        get => _center.Child;
+        set
+        {
+            switch (value)
+            {
+                case FrameworkElement fe:
+                    fe.HorizontalAlignment = HorizontalAlignment.Center;
+                    fe.VerticalAlignment = VerticalAlignment.Center;
+                    _center.Child = fe;
+                    break;
+                case null:
+                    _center.Child = null;
+                    break;
+                default:
+                    _center.Child = new TextBlock
+                    {
+                        Text = value.ToString(),
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        VerticalAlignment = VerticalAlignment.Center,
+                    };
+                    break;
+            }
+        }
     }
 
     private double _size = 96;
@@ -57,11 +87,6 @@ public sealed class RingGauge : Grid
         _arc.StrokeThickness = stroke;
         _arc.StrokeStartLineCap = PenLineCap.Round;
         _arc.StrokeEndLineCap = PenLineCap.Round;
-
-        _center.IsHitTestVisible = false;
-        _center.Focusable = false;
-        _center.VerticalContentAlignment = VerticalAlignment.Center;
-        _center.HorizontalContentAlignment = HorizontalAlignment.Center;
 
         Children.Add(_track);
         Children.Add(_arc);
