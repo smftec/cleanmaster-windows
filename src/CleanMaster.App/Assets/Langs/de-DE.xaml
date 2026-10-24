@@ -214,6 +214,19 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">Nicht bereinigen, fertig</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title">Mögliche Reste gefunden</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title.f">Reste von „{0}“</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.desc">Nur Anzeige — es wird nichts geändert.</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.detail.plan">Aktueller Plan: {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.goto">Einstellungen öffnen</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.desc">Desktop: Leistung, Laptop: Ausbalanciert</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.name">Energieplan</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.off">Aus</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.on">Ein</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.unknown">Unbekannt</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.desc">Temporäre Dateien und Papierkorb automatisch bereinigen</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.name">Speicheroptimierung</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.title">Systemwartungsstatus</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.desc">Erhält die SSD-Schreibleistung auf Dauer</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.name">TRIM (SSD)</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.apps">Apps</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.clean">Bereinigung</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.home">Start</sys:String>

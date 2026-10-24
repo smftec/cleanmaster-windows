@@ -214,6 +214,19 @@
     <sys:String xml:space="preserve" x:Key="leftover.skip">清理せず終了</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title">残存ファイルの可能性</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title.f">「{0}」の残存ファイル</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.desc">メンテナンス設定の状態を表示するだけです。変更はしません。</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.detail.plan">現在のプラン：{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.goto">設定を開く</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.desc">デスクトップは高パフォーマンス、ノートはバランスを推奨</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.name">電源プラン</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.off">オフ</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.on">オン</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.unknown">不明</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.desc">一時ファイルとごみ箱を自動清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.name">ストレージセンサー</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.title">システムメンテナンス状態</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.desc">SSD の長期的な書き込み性能を維持</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.name">TRIM（SSD）</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.apps">アプリ管理</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.clean">クリーンアップ</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.home">ホーム</sys:String>

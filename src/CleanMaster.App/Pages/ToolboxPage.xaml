@@ -110,6 +110,27 @@
                 </StackPanel>
             </Border>
 
+            <!-- 系统维护状态 -->
+            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0" x:Name="MaintenanceCard">
+                <StackPanel>
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="36" Height="36" CornerRadius="10" Background="{DynamicResource SuccessSoftBrush}">
+                                <Path Data="{StaticResource ShieldIcon}" Stroke="{DynamicResource SuccessBrush}" StrokeThickness="1.8"
+                                      StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="18" Height="18" Stretch="Uniform"/>
+                            </Border>
+                            <TextBlock Text="{DynamicResource maint.title}" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"
+                                       Foreground="{DynamicResource TextPrimaryBrush}" Margin="12,0,0,0"/>
+                        </StackPanel>
+                        <Button x:Name="BtnMaintRefresh" Content="{DynamicResource btn.refresh}" Style="{StaticResource SmallSecondaryButton}"
+                                HorizontalAlignment="Right" VerticalAlignment="Center" Click="BtnMaintRefresh_Click"/>
+                    </Grid>
+                    <TextBlock Text="{DynamicResource maint.desc}" FontSize="12"
+                               Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,10,0,0" TextWrapping="Wrap"/>
+                    <StackPanel x:Name="MaintList" Margin="0,12,0,0"/>
+                </StackPanel>
+            </Border>
+
             <!-- 清理历史 -->
             <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0" x:Name="HistoryCard">
                 <StackPanel>

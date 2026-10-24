@@ -278,6 +278,13 @@ ZH = {
     "settings.btn.openlog": "打开数据文件夹", "settings.row.openlog": "数据与日志",
     "settings.row.openlog.d": "查看设置、隔离区与运行日志（排障用）",
     "leftover.cleaned": "已清理 {0} 项残留", "leftover.fail": "，{0} 项失败",
+    # ===== v1.6 追加 =====
+    "maint.title": "系统维护状态", "maint.desc": "只读展示系统维护项的开关状态，不做任何修改。",
+    "maint.state.on": "已开启", "maint.state.off": "未开启", "maint.state.unknown": "未知",
+    "maint.goto": "前往设置", "maint.detail.plan": "当前计划：{0}",
+    "maint.storagesense.name": "存储感知", "maint.storagesense.desc": "Windows 自动清理临时文件与回收站",
+    "maint.trim.name": "TRIM（SSD）", "maint.trim.desc": "固态硬盘删除优化，保持长期写入性能",
+    "maint.powerplan.name": "电源计划", "maint.powerplan.desc": "台式机建议高性能，笔记本建议均衡",
 }
 
 # ============ 组装与生成 ============

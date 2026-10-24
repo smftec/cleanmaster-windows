@@ -1,7 +1,7 @@
-using CleanMaster.Core.Store;
-using CleanMaster.Core.Utils;
 
-namespace CleanMaster.App.Services;
+
+
+namespace CleanMaster.Core.Analysis;
 
 /// <summary>
 /// 首页健康评分:磁盘余量 40% + 垃圾体量 35% + 高影响启动项 25%。

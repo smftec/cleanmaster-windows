@@ -188,6 +188,76 @@ public static class SelfTest
             Check("规则扫描冒烟异常", false, ex.Message);
         }
 
+        // 10. 空文件夹检测：只报空树、父目录覆盖子目录、含文件不误判
+        try
+        {
+            var efRoot = Path.Combine(tempRoot, "CleanMasterEmpty_" + Guid.NewGuid().ToString("N"));
+            var emptyA = Path.Combine(efRoot, "emptyA", "deep", "deeper");
+            var hasFile = Path.Combine(efRoot, "hasfile");
+            Directory.CreateDirectory(emptyA);
+            Directory.CreateDirectory(hasFile);
+            Directory.CreateDirectory(Path.Combine(efRoot, "hasfile", "sub"));
+            File.WriteAllText(Path.Combine(hasFile, "keep.txt"), "1");
+
+            var efSvc = new EmptyFolderService();
+            var found = efSvc.ScanAsync(new[] { efRoot }, 8, CancellationToken.None, null).GetAwaiter().GetResult();
+            var foundPaths = found.Select(f => PathUtil.Normalize(f.Path)).ToList();
+            Check("空文件夹: 检出空树顶层", foundPaths.Contains(PathUtil.Normalize(Path.Combine(efRoot, "emptyA"))) && found.Count == 1,
+                string.Join(", ", foundPaths));
+            Check("空文件夹: 含文件目录不误判", !foundPaths.Contains(PathUtil.Normalize(hasFile)));
+
+            // 删除后复扫应为空结果
+            var del = ShellUtil.RecycleToBin(Path.Combine(efRoot, "emptyA"));
+            Check("空文件夹: 回收站删除成功", del);
+            try { Directory.Delete(efRoot, true); } catch { }
+        }
+        catch (Exception ex)
+        {
+            Check("空文件夹检测异常", false, ex.Message);
+        }
+
+        // 11. 系统监控: 内存数值合理,CPU 第二次采样有值
+        try
+        {
+            var mon = new SystemMonitorService();
+            var s1 = mon.Sample();
+            Thread.Sleep(120);
+            var s2 = mon.Sample();
+            Check("系统监控: 内存总量>0", s2.RamTotalBytes > 0 && s2.RamPercent is > 0 and <= 100,
+                $"{SizeText.OfBytes(s2.RamTotalBytes, 0)} / {s2.RamPercent:F0}%");
+            Check("系统监控: CPU 差分采样", s2.CpuPercent is >= 0 and <= 100, s2.CpuPercent?.ToString("F0") + "%");
+        }
+        catch (Exception ex)
+        {
+            Check("系统监控异常", false, ex.Message);
+        }
+
+        // 12. 健康评分分级
+        try
+        {
+            var perfect = HealthScoreService.Compute(0, 0, 60);
+            Check("健康评分: 全优 >= 85", perfect.Score >= 85, perfect.Score + " " + perfect.LevelKey);
+            var awful = HealthScoreService.Compute(20L * 1024 * 1024 * 1024, 5, 4);
+            Check("健康评分: 恶劣 < 50", awful.Score < 50, awful.Score + " " + awful.LevelKey);
+            Check("健康评分: 分级色对应", awful.BrushKey == "DangerBrush" && perfect.BrushKey is "SuccessBrush" or "TealBrush");
+        }
+        catch (Exception ex)
+        {
+            Check("健康评分异常", false, ex.Message);
+        }
+
+        // 13. 系统维护检查: 只读且结构完整
+        try
+        {
+            var maint = SystemMaintenanceService.CheckAll();
+            Check("系统维护: 返回 3 项", maint.Count == 3 && maint.All(m => m.State is "on" or "off" or "unknown"),
+                string.Join(", ", maint.Select(m => $"{m.Id}={m.State}")));
+        }
+        catch (Exception ex)
+        {
+            Check("系统维护检查异常", false, ex.Message);
+        }
+
         Console.WriteLine(failed == 0 ? "== 全部通过 ==" : $"== {failed} 项失败，禁止发布 ==");
         return failed == 0 ? 0 : 1;
     }

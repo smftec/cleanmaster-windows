@@ -35,14 +35,14 @@ jobs:
       - name: Publish (framework-dependent)
         run: >
           dotnet publish src/CleanMaster.App/CleanMaster.App.csproj -c Release -r win-x64
-          --self-contained false
+          --self-contained false -p:PublishReadyToRun=true
           -p:Version=${{ steps.ver.outputs.version }} -p:SourceRevisionId=${{ steps.ver.outputs.shash }}
           -o dist/CleanMaster-${{ steps.ver.outputs.version }}-net8-x64 -v minimal
 
       - name: Publish (self-contained)
         run: >
           dotnet publish src/CleanMaster.App/CleanMaster.App.csproj -c Release -r win-x64
-          --self-contained true
+          --self-contained true -p:PublishReadyToRun=true
           -p:Version=${{ steps.ver.outputs.version }} -p:SourceRevisionId=${{ steps.ver.outputs.shash }}
           -o dist/CleanMaster-${{ steps.ver.outputs.version }}-win-x64-selfcontained -v minimal
 

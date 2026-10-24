@@ -214,6 +214,19 @@
     <sys:String xml:space="preserve" x:Key="leftover.skip">不清理，完成</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title">发现可能的残留</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title.f">「{0}」的卸载残留</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.desc">只读展示系统维护项的开关状态，不做任何修改。</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.detail.plan">当前计划：{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.goto">前往设置</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.desc">台式机建议高性能，笔记本建议均衡</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.name">电源计划</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.off">未开启</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.on">已开启</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.unknown">未知</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.desc">Windows 自动清理临时文件与回收站</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.name">存储感知</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.title">系统维护状态</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.desc">固态硬盘删除优化，保持长期写入性能</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.name">TRIM（SSD）</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.apps">应用管理</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.clean">清理空间</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.home">首页</sys:String>

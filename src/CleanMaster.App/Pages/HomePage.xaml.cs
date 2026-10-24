@@ -356,7 +356,7 @@ public partial class HomePage : Page, IParamPage
     {
         long binBytes = 0;
         try { (binBytes, _) = ShellUtil.QueryRecycleBin(); } catch { }
-        var r = Services.HealthScoreService.Compute(junkBytes, highImpact, freePct, binBytes);
+        var r = Core.Analysis.HealthScoreService.Compute(junkBytes, highImpact, freePct, binBytes);
 
         if (_healthRing != null && _healthScoreText != null)
         {

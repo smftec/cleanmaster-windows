@@ -261,4 +261,11 @@ EN = {
     "settings.btn.openlog": "Open data folder", "settings.row.openlog": "Data & logs",
     "settings.row.openlog.d": "Inspect settings, quarantine and run logs (for troubleshooting)",
     "leftover.cleaned": "Cleaned {0} leftover items", "leftover.fail": ", {0} failed",
+    # v1.6
+    "maint.title": "System maintenance status", "maint.desc": "Read-only view of maintenance switches — nothing is changed.",
+    "maint.state.on": "On", "maint.state.off": "Off", "maint.state.unknown": "Unknown",
+    "maint.goto": "Open settings", "maint.detail.plan": "Active plan: {0}",
+    "maint.storagesense.name": "Storage Sense", "maint.storagesense.desc": "Windows automatic temp & recycle bin cleanup",
+    "maint.trim.name": "TRIM (SSD)", "maint.trim.desc": "Keeps long-term SSD write performance",
+    "maint.powerplan.name": "Power plan", "maint.powerplan.desc": "High performance for desktops, balanced for laptops",
 }

@@ -214,6 +214,19 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">No limpiar, terminar</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title">Posibles restos encontrados</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title.f">Restos de «{0}»</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.desc">Solo lectura: no cambia nada.</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.detail.plan">Plan actual: {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.goto">Abrir ajustes</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.desc">Alto rendimiento en PC de sobremesa, equilibrado en portátiles</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.name">Plan de energía</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.off">Desactivado</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.on">Activado</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.unknown">Desconocido</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.desc">Limpieza automática de temporales y papelera</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.name">Asistente de almacenamiento</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.title">Estado de mantenimiento del sistema</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.desc">Mantiene el rendimiento de escritura del SSD</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.name">TRIM (SSD)</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.apps">Aplicaciones</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.clean">Limpieza</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.home">Inicio</sys:String>

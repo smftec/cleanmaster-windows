@@ -246,6 +246,13 @@ JA = {
     "settings.btn.openlog": "データフォルダーを開く", "settings.row.openlog": "データとログ",
     "settings.row.openlog.d": "設定・隔離区・実行ログを確認します（障害調査用）",
     "leftover.cleaned": "残り {0} 件を清理", "leftover.fail": "、{0} 件失敗",
+    # v1.6
+    "maint.title": "システムメンテナンス状態", "maint.desc": "メンテナンス設定の状態を表示するだけです。変更はしません。",
+    "maint.state.on": "オン", "maint.state.off": "オフ", "maint.state.unknown": "不明",
+    "maint.goto": "設定を開く", "maint.detail.plan": "現在のプラン：{0}",
+    "maint.storagesense.name": "ストレージセンサー", "maint.storagesense.desc": "一時ファイルとごみ箱を自動清理",
+    "maint.trim.name": "TRIM（SSD）", "maint.trim.desc": "SSD の長期的な書き込み性能を維持",
+    "maint.powerplan.name": "電源プラン", "maint.powerplan.desc": "デスクトップは高パフォーマンス、ノートはバランスを推奨",
 }
 
 KO = {
@@ -493,4 +500,18 @@ KO = {
     "settings.btn.openlog": "데이터 폴더 열기", "settings.row.openlog": "데이터 및 로그",
     "settings.row.openlog.d": "설정·격리소·실행 로그를 확인합니다(문제 해결용)",
     "leftover.cleaned": "잔여 {0}개 정리", "leftover.fail": ", {0}개 실패",
+    # v1.6
+    "maint.title": "システムメンテナンス状態", "maint.desc": "メンテナンス設定の状態を表示するだけです。変更はしません。",
+    "maint.state.on": "オン", "maint.state.off": "オフ", "maint.state.unknown": "不明",
+    "maint.goto": "設定を開く", "maint.detail.plan": "現在のプラン：{0}",
+    "maint.storagesense.name": "ストレージセンサー", "maint.storagesense.desc": "一時ファイルとごみ箱を自動清理",
+    "maint.trim.name": "TRIM（SSD）", "maint.trim.desc": "SSD の長期的な書き込み性能を維持",
+    "maint.powerplan.name": "電源プラン", "maint.powerplan.desc": "デスクトップは高パフォーマンス、ノートはバランスを推奨",
+    # v1.6
+    "maint.title": "시스템 관리 상태", "maint.desc": "관리 설정 상태를 표시만 하며 변경하지 않습니다.",
+    "maint.state.on": "켬", "maint.state.off": "끔", "maint.state.unknown": "알 수 없음",
+    "maint.goto": "설정 열기", "maint.detail.plan": "현재 계획: {0}",
+    "maint.storagesense.name": "저장소 센스", "maint.storagesense.desc": "임시 파일과 휴지통을 자동 정리",
+    "maint.trim.name": "TRIM(SSD)", "maint.trim.desc": "SSD 장기 쓰기 성능 유지",
+    "maint.powerplan.name": "전원 계획", "maint.powerplan.desc": "데스크톱은 고성능, 노트북은 균형 권장",
 }

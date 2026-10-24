@@ -24,13 +24,14 @@ public partial class ToolboxPage : Page, IParamPage
     {
         InitializeComponent();
         _main = main;
-        Loaded += (s, e) => { BuildTools(); RefreshQuarantine(); RefreshHistory(); };
+        Loaded += (s, e) => { BuildTools(); RefreshQuarantine(); RefreshHistory(); RefreshMaintenance(); };
     }
 
     public void OnNavigated(object? param)
     {
         RefreshQuarantine();
         RefreshHistory();
+        RefreshMaintenance();
         if (param as string == "quarantine")
             QuarantineCard.BringIntoView();
         else if (param as string == "history")
@@ -46,6 +47,11 @@ public partial class ToolboxPage : Page, IParamPage
             Dispatcher.BeginInvoke(() => EmptyFolderCard.BringIntoView(),
                 System.Windows.Threading.DispatcherPriority.Loaded);
             if (_emptyResult == null) BtnEmptyScan_Click(this, new RoutedEventArgs());
+        }
+        else if (param as string == "maint")
+        {
+            Dispatcher.BeginInvoke(() => MaintenanceCard.BringIntoView(),
+                System.Windows.Threading.DispatcherPriority.Loaded);
         }
     }
 
@@ -357,6 +363,125 @@ public partial class ToolboxPage : Page, IParamPage
         RefreshQuarantine();
         _main.ShowToast(Services.Loc.T("toast.purgedone"));
     }
+
+    // ————— 系统维护状态 —————
+
+    private async void RefreshMaintenance()
+    {
+        BtnMaintRefresh.IsEnabled = false;
+        try
+        {
+            var items = await Task.Run(() => CleanMaster.Core.Analysis.SystemMaintenanceService.CheckAll());
+            MaintList.Children.Clear();
+            foreach (var it in items)
+            {
+                MaintList.Children.Add(BuildMaintRow(it));
+            }
+        }
+        finally
+        {
+            BtnMaintRefresh.IsEnabled = true;
+        }
+    }
+
+    private Border BuildMaintRow(CleanMaster.Core.Analysis.MaintenanceItem it)
+    {
+        var row = new Border
+        {
+            Background = (Brush)FindResource("ItemHoverBrush"),
+            CornerRadius = new CornerRadius(9),
+            Padding = new Thickness(12, 9, 12, 9),
+            Margin = new Thickness(0, 4, 0, 0),
+        };
+        var grid = new Grid();
+        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+
+        var (stateText, stateBrush, stateSoft) = it.State switch
+        {
+            "on" => (Services.Loc.T("maint.state.on"), (Brush)FindResource("SuccessBrush"), (Brush)FindResource("SuccessSoftBrush")),
+            "off" => (Services.Loc.T("maint.state.off"), (Brush)FindResource("WarningBrush"), (Brush)FindResource("WarningSoftBrush")),
+            _ => (Services.Loc.T("maint.state.unknown"), (Brush)FindResource("TextSecondaryBrush"), (Brush)FindResource("ItemHoverBrush")),
+        };
+        var chip = new Border
+        {
+            CornerRadius = new CornerRadius(6),
+            Padding = new Thickness(9, 3, 9, 4),
+            Background = stateSoft,
+            VerticalAlignment = VerticalAlignment.Center,
+            MinWidth = 58,
+        };
+        chip.Child = new TextBlock
+        {
+            Text = stateText,
+            FontSize = 11,
+            FontWeight = FontWeights.Bold,
+            Foreground = stateBrush,
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        Grid.SetColumn(chip, 0);
+
+        var mid = new StackPanel { Margin = new Thickness(14, 0, 8, 0), VerticalAlignment = VerticalAlignment.Center };
+        mid.Children.Add(new TextBlock
+        {
+            Text = Services.Loc.T($"maint.{it.Id}.name"),
+            FontSize = 12.5,
+            FontWeight = FontWeights.Bold,
+            Foreground = (Brush)FindResource("TextPrimaryBrush"),
+        });
+        if (!string.IsNullOrEmpty(it.Detail))
+        {
+            mid.Children.Add(new TextBlock
+            {
+                Text = string.Format(Services.Loc.T("maint.detail.plan"), it.Detail),
+                FontSize = 11,
+                Foreground = (Brush)FindResource("TextTertiaryBrush"),
+                Margin = new Thickness(0, 2, 0, 0),
+            });
+        }
+        Grid.SetColumn(mid, 1);
+
+        var desc = new TextBlock
+        {
+            Text = Services.Loc.T($"maint.{it.Id}.desc"),
+            FontSize = 11.5,
+            Foreground = (Brush)FindResource("TextTertiaryBrush"),
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(0, 0, 14, 0),
+        };
+        Grid.SetColumn(desc, 2);
+
+        if (!string.IsNullOrEmpty(it.TargetUri))
+        {
+            var go = new Button
+            {
+                Content = Services.Loc.T("maint.goto"),
+                Style = (Style)FindResource("SmallSecondaryButton"),
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+            go.Click += (s, e) =>
+            {
+                try
+                {
+                    var psi = new ProcessStartInfo(it.TargetUri) { UseShellExecute = true };
+                    Process.Start(psi);
+                }
+                catch (Exception ex) { _main.ShowToast(Services.Loc.T("tool.win.openfail") + ex.Message, ToastType.Warning); }
+            };
+            Grid.SetColumn(go, 3);
+            grid.Children.Add(go);
+        }
+
+        grid.Children.Add(chip);
+        grid.Children.Add(mid);
+        grid.Children.Add(desc);
+        row.Child = grid;
+        return row;
+    }
+
+    private void BtnMaintRefresh_Click(object sender, RoutedEventArgs e) => RefreshMaintenance();
 
     // ————— 文件粉碎 —————
 

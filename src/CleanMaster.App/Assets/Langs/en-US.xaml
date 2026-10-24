@@ -214,6 +214,19 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">Skip, done</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title">Possible leftovers found</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title.f">Leftovers of “{0}”</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.desc">Read-only view of maintenance switches — nothing is changed.</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.detail.plan">Active plan: {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.goto">Open settings</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.desc">High performance for desktops, balanced for laptops</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.name">Power plan</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.off">Off</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.on">On</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.unknown">Unknown</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.desc">Windows automatic temp &amp; recycle bin cleanup</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.name">Storage Sense</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.title">System maintenance status</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.desc">Keeps long-term SSD write performance</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.name">TRIM (SSD)</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.apps">Apps</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.clean">Clean Space</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.home">Home</sys:String>

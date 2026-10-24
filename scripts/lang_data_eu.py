@@ -245,6 +245,13 @@ FR = {
     "settings.btn.openlog": "Ouvrir le dossier de données", "settings.row.openlog": "Données et journaux",
     "settings.row.openlog.d": "Consulter réglages, quarantaine et journaux (diagnostic)",
     "leftover.cleaned": "{0} éléments résiduels nettoyés", "leftover.fail": ", {0} échecs",
+    # v1.6
+    "maint.title": "État de maintenance du système", "maint.desc": "Affichage en lecture seule — aucune modification.",
+    "maint.state.on": "Activé", "maint.state.off": "Désactivé", "maint.state.unknown": "Inconnu",
+    "maint.goto": "Ouvrir les réglages", "maint.detail.plan": "Plan actif : {0}",
+    "maint.storagesense.name": "Assistant de stockage", "maint.storagesense.desc": "Nettoyage auto des fichiers temporaires et de la corbeille",
+    "maint.trim.name": "TRIM (SSD)", "maint.trim.desc": "Préserve les performances d'écriture du SSD",
+    "maint.powerplan.name": "Mode d'alimentation", "maint.powerplan.desc": "Performances pour PC fixe, équilibré pour portable",
 }
 
 ES = {
@@ -492,6 +499,13 @@ ES = {
     "settings.btn.openlog": "Abrir carpeta de datos", "settings.row.openlog": "Datos y registros",
     "settings.row.openlog.d": "Consulta ajustes, cuarentena y registros (diagnóstico)",
     "leftover.cleaned": "{0} residuos limpiados", "leftover.fail": ", {0} fallidos",
+    # v1.6
+    "maint.title": "Estado de mantenimiento del sistema", "maint.desc": "Solo lectura: no cambia nada.",
+    "maint.state.on": "Activado", "maint.state.off": "Desactivado", "maint.state.unknown": "Desconocido",
+    "maint.goto": "Abrir ajustes", "maint.detail.plan": "Plan actual: {0}",
+    "maint.storagesense.name": "Asistente de almacenamiento", "maint.storagesense.desc": "Limpieza automática de temporales y papelera",
+    "maint.trim.name": "TRIM (SSD)", "maint.trim.desc": "Mantiene el rendimiento de escritura del SSD",
+    "maint.powerplan.name": "Plan de energía", "maint.powerplan.desc": "Alto rendimiento en PC de sobremesa, equilibrado en portátiles",
 }
 
 DE = {
@@ -739,4 +753,18 @@ DE = {
     "settings.btn.openlog": "Datenordner öffnen", "settings.row.openlog": "Daten & Protokolle",
     "settings.row.openlog.d": "Einstellungen, Quarantäne und Laufzeitprotokolle ansehen (Fehlersuche)",
     "leftover.cleaned": "{0} Reste bereinigt", "leftover.fail": ", {0} fehlgeschlagen",
+    # v1.6
+    "maint.title": "État de maintenance du système", "maint.desc": "Affichage en lecture seule — aucune modification.",
+    "maint.state.on": "Activé", "maint.state.off": "Désactivé", "maint.state.unknown": "Inconnu",
+    "maint.goto": "Ouvrir les réglages", "maint.detail.plan": "Plan actif : {0}",
+    "maint.storagesense.name": "L'assistant de stockage", "maint.storagesense.desc": "Nettoyage auto des fichiers temporaires et de la corbeille",
+    "maint.trim.name": "TRIM (SSD)", "maint.trim.desc": "Préserve les performances d'écriture du SSD",
+    "maint.powerplan.name": "Mode d'alimentation", "maint.powerplan.desc": "Performances pour PC fixe, équilibré pour portable",
+    # v1.6
+    "maint.title": "Systemwartungsstatus", "maint.desc": "Nur Anzeige — es wird nichts geändert.",
+    "maint.state.on": "Ein", "maint.state.off": "Aus", "maint.state.unknown": "Unbekannt",
+    "maint.goto": "Einstellungen öffnen", "maint.detail.plan": "Aktueller Plan: {0}",
+    "maint.storagesense.name": "Speicheroptimierung", "maint.storagesense.desc": "Temporäre Dateien und Papierkorb automatisch bereinigen",
+    "maint.trim.name": "TRIM (SSD)", "maint.trim.desc": "Erhält die SSD-Schreibleistung auf Dauer",
+    "maint.powerplan.name": "Energieplan", "maint.powerplan.desc": "Desktop: Leistung, Laptop: Ausbalanciert",
 }

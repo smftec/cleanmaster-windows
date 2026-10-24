@@ -214,6 +214,19 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">Ignorer, terminer</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title">Résidus possibles trouvés</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.title.f">Résidus de « {0} »</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.desc">Affichage en lecture seule — aucune modification.</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.detail.plan">Plan actif : {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.goto">Ouvrir les réglages</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.desc">Performances pour PC fixe, équilibré pour portable</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.powerplan.name">Mode d'alimentation</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.off">Désactivé</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.on">Activé</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.state.unknown">Inconnu</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.desc">Nettoyage auto des fichiers temporaires et de la corbeille</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.storagesense.name">Assistant de stockage</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.title">État de maintenance du système</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.desc">Préserve les performances d'écriture du SSD</sys:String>
+    <sys:String xml:space="preserve" x:Key="maint.trim.name">TRIM (SSD)</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.apps">Applications</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.clean">Nettoyage</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.home">Accueil</sys:String>

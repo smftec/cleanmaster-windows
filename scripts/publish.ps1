@@ -15,13 +15,13 @@ try { $ShortHash = (git rev-parse --short HEAD).Trim() } catch { }
 if (-not $ShortHash) { $ShortHash = "0" }
 
 Write-Host "==> 还原并发布 ($Configuration)"
-dotnet publish $project -c $Configuration -r win-x64 --self-contained false `
+dotnet publish $project -c $Configuration -r win-x64 --self-contained false -p:PublishReadyToRun=true `
     -p:Version=$Version -p:SourceRevisionId=$ShortHash -o (Join-Path $outDir "CleanMaster-$Version-net8-x64") `
     -v minimal -nologo
 if ($LASTEXITCODE -ne 0) { throw "发布失败(框架依赖版)" }
 
 Write-Host "==> 发布自包含版(无需安装 .NET)"
-dotnet publish $project -c $Configuration -r win-x64 --self-contained true `
+dotnet publish $project -c $Configuration -r win-x64 --self-contained true -p:PublishReadyToRun=true `
     -p:PublishSingleFile=false -p:Version=$Version -p:SourceRevisionId=$ShortHash -o (Join-Path $outDir "CleanMaster-$Version-win-x64-selfcontained") `
     -v minimal -nologo
 if ($LASTEXITCODE -ne 0) { throw "发布失败(自包含版)" }
