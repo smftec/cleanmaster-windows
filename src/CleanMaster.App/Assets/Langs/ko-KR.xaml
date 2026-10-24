@@ -82,6 +82,20 @@
     <sys:String xml:space="preserve" x:Key="clean.tabnote.3">개인 기록 포함. 기본 모두 선택 해제. 영향을 확인 후 진행하세요</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tabnote.4">비우기 전에 필요한 파일이 없는지 확인하세요</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.title">정리 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.analyze">디스크 공간 분석</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.cat.action">작업</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.cat.nav">페이지</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.checkupdate">업데이트 확인</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.dnsflush">DNS 캐시 플러시</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.dupscan">중복 파일 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.empty">일치하는 기능이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.emptyscan">빈 폴더 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ 선택 · Enter 실행 · Esc 닫기 · Ctrl+K 호출</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.history">정리 기록 보기</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.placeholder">기능 검색 — 「스캔」「DNS」「테마」 등</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.quarantine">격리소 열기</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.quickscan">지금 스마트 스캔</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.theme.toggle">다크 / 라이트 전환</sys:String>
     <sys:String xml:space="preserve" x:Key="common.approx">약 </sys:String>
     <sys:String xml:space="preserve" x:Key="common.freeable">확보 가능</sys:String>
     <sys:String xml:space="preserve" x:Key="common.loading">불러오는 중…</sys:String>
@@ -148,6 +162,12 @@
     <sys:String xml:space="preserve" x:Key="home.disk.total.f">전체 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.used">사용 중 —</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.used.f">사용 {0} ({1:F1}%)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.free">디스크 여유 {0:F0}%</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.high">고영향 시작 {0}개</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.junk">데이터 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.tip">클릭하여 지금 최적화</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.title">건강 점수</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.unit">점</sys:String>
     <sys:String xml:space="preserve" x:Key="home.hero.note">더 깨끗한 PC,
 더 부드러운 실행!</sys:String>
     <sys:String xml:space="preserve" x:Key="home.mon.cores">{0}코어</sys:String>
@@ -165,6 +185,8 @@
     <sys:String xml:space="preserve" x:Key="home.slogan">정기적인 스캔으로 PC를 최상의 상태로 유지하세요</sys:String>
     <sys:String xml:space="preserve" x:Key="home.space.empty">이 드라이브는 아직 분석되지 않았습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="home.space.title">공간 분석</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.stats.days7">최근 7일 확보</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.stats.total">누적 {0} 확보 · {1}회 정리</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.good">장치 상태 양호</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.lastscan">마지막 스캔: {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.suggest">정리를 권장합니다</sys:String>
@@ -338,6 +360,10 @@
     <sys:String xml:space="preserve" x:Key="scan.privacy">모두 로컬에서 실행됩니다. 안전한 항목만 기본 선택되며 위험 항목은 자동 선택되지 않습니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.reselectall">안전 항목 선택</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.start">스캔 시작</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.excellent">매우 좋음</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.fair">정리 권장</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.good">좋음</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.poor">지금 정리 필요</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.email">이메일</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.repo">소스 코드</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.site">지원 사이트</sys:String>
@@ -474,6 +500,7 @@
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">스캔 실패: </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">스캔이 중지되었습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped"> ({0}개 건너뜀)</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.themeapplied">테마가 전환되었습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.traymin">트레이로 최소화했습니다. 트레이 아이콘 우클릭으로 종료할 수 있습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.whitelisted">화이트리스트에 추가했습니다. 스캔과 정리에서 이 파일은 건너뜁니다</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.desc">완전 삭제된 파일은 휴지통을 거치지 않습니다. 격리 파일은 언제든 복원 가능. 중복 검출은 내용 해시 기반입니다.</sys:String>
@@ -481,12 +508,15 @@
     <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">선택한 복사본을 삭제할까요?</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.cleaned">중복 파일 {0}개 삭제</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.desc">내용 해시로 중복을 확인합니다(파일명 비교 아님). 기본 범위는 사진·비디오·다운로드입니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.dirs">대상 폴더 변경</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.group">동일 파일 {0}개 · 각 {1} · {2} 확보 가능</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.more">… {0}개 그룹 더 있음</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.nodirs">스캔할 폴더가 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.none">중복 파일이 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.nosel">먼저 삭제할 복사본을 선택하세요</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.pickdir">중복 스캔 폴더 선택</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.progress">{0:N0}개 파일 스캔…</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.rootsset">대상 폴더가 {0}(으)로 설정됨</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.summary">중복 그룹 {0}개, {1} 확보 가능</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.tip">체크 = 이 복사본 삭제</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.title">중복 파일</sys:String>

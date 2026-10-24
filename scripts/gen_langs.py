@@ -245,6 +245,25 @@ ZH = {
     "update.dlg.title": "发现新版本 v{0}？",
     "update.dlg.msg": "当前版本 {0}，最新版本 {1}。\n是否前往下载页？",
     "update.dlg.open": "前往下载",
+    # ===== v1.3 追加 =====
+    # 健康评分
+    "score.excellent": "状态优秀", "score.good": "状态良好", "score.fair": "建议清理", "score.poor": "需要立即清理",
+    "home.health.title": "健康评分", "home.health.tip": "点击立即优化", "home.health.unit": "分",
+    "home.health.junk": "{0} 垃圾", "home.health.high": "{0} 个高影响启动", "home.health.free": "磁盘剩余 {0:F0}%",
+    # 清理统计
+    "home.stats.days7": "近 7 日释放", "home.stats.total": "累计释放 {0} · {1} 次清理",
+    # 命令面板
+    "cmd.placeholder": "搜索功能，如「扫描」「DNS」「主题」…",
+    "cmd.hint": "↑ ↓ 选择 · Enter 执行 · Esc 关闭 · Ctrl+K 呼出",
+    "cmd.empty": "没有匹配的功能",
+    "cmd.cat.nav": "页面", "cmd.cat.action": "操作",
+    "cmd.quickscan": "立即智能扫描", "cmd.analyze": "分析磁盘空间",
+    "cmd.dupscan": "扫描重复文件", "cmd.emptyscan": "扫描空文件夹",
+    "cmd.quarantine": "打开隔离区", "cmd.history": "查看清理历史",
+    "cmd.dnsflush": "刷新 DNS 缓存", "cmd.theme.toggle": "切换深色 / 浅色主题", "cmd.checkupdate": "检查更新",
+    # 重复文件目录
+    "tool.dup.dirs": "更改扫描目录", "tool.dup.pickdir": "选择重复文件扫描目录", "tool.dup.rootsset": "扫描目录已设为 {0}",
+    "toast.themeapplied": "主题已切换",
 }
 
 # ============ 组装与生成 ============

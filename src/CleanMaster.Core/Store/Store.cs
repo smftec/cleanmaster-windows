@@ -42,6 +42,13 @@ public sealed class AppSettings
     public bool AnonymousStats { get; set; }
     public bool CrashReports { get; set; } = true;
 
+    // —— 窗口 ——
+    public double? WindowX { get; set; }
+    public double? WindowY { get; set; }
+    public double? WindowW { get; set; }
+    public double? WindowH { get; set; }
+    public bool WindowMaximized { get; set; }
+
     // —— 路径 ——
     public List<string> ExcludedPaths { get; set; } = new();
     public List<string> Whitelist { get; set; } = new();

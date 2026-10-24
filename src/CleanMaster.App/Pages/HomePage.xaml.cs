@@ -32,6 +32,8 @@ public partial class HomePage : Page, IParamPage
     private TextBlock? _cpuDetail;
     private TextBlock? _ramDetail;
     private TextBlock? _uptimeText;
+    private RingGauge? _healthRing;
+    private TextBlock? _healthScoreText;
 
     public HomePage(MainWindow main)
     {
@@ -39,12 +41,16 @@ public partial class HomePage : Page, IParamPage
         _main = main;
         BuildDiskRing();
         BuildMonitor();
+        BuildHealth();
         Loaded += (s, e) => { _ = RefreshAsync(); StartMonitor(); };
         Unloaded += (s, e) => StopMonitor();
     }
 
+    private bool _scrollToStats;
+
     public void OnNavigated(object? param)
     {
+        _scrollToStats = param as string == "stats";
         _ = RefreshAsync();
     }
 
@@ -137,6 +143,9 @@ public partial class HomePage : Page, IParamPage
                 : Services.Loc.T("home.noscan.detail");
         }
 
+        // —— 健康评分 ——
+        ApplyHealth(junkBytes, highImpact, freePct);
+
         // —— 卡片数字（滚动动画） ——
         if (last != null && junkBytes > 0)
         {
@@ -179,6 +188,15 @@ public partial class HomePage : Page, IParamPage
         }).ToList();
         ActivityList.ItemsSource = acts;
         NoActivityText.Visibility = acts.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
+
+        // —— 清理统计（累计 + 近 7 日） ——
+        BuildStats();
+        if (_scrollToStats)
+        {
+            _scrollToStats = false;
+            await Task.Delay(100);
+            StatsBars.BringIntoView();
+        }
 
         // —— 智能建议 ——
         var suggests = new List<SuggestItem>();
@@ -311,6 +329,119 @@ public partial class HomePage : Page, IParamPage
             EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut },
         };
         LiveDot.BeginAnimation(OpacityProperty, pulse);
+    }
+
+    // ————— 健康评分 —————
+
+    private void BuildHealth()
+    {
+        _healthRing = new RingGauge(118, 12);
+        _healthScoreText = new TextBlock
+        {
+            FontSize = 30,
+            FontWeight = FontWeights.Bold,
+            Foreground = (Brush)FindResource("TextPrimaryBrush"),
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        var center = new StackPanel();
+        center.Children.Add(_healthScoreText);
+        center.Children.Add(new TextBlock
+        {
+            Text = Services.Loc.T("home.health.unit"),
+            FontSize = 10.5,
+            Foreground = (Brush)FindResource("TextTertiaryBrush"),
+            HorizontalAlignment = HorizontalAlignment.Center,
+            Margin = new Thickness(0, 1, 0, 0),
+        });
+        _healthRing.Center = center;
+        HealthRingHost.Children.Add(_healthRing);
+    }
+
+    private void ApplyHealth(long junkBytes, int highImpact, double freePct)
+    {
+        long binBytes = 0;
+        try { (binBytes, _) = ShellUtil.QueryRecycleBin(); } catch { }
+        var r = Services.HealthScoreService.Compute(junkBytes, highImpact, freePct, binBytes);
+
+        if (_healthRing != null && _healthScoreText != null)
+        {
+            _healthRing.ArcBrush = (Brush)FindResource(r.BrushKey);
+            _healthRing.AnimateTo(r.Score);
+            CountUp.Animate(_healthScoreText, r.Score, v => ((int)v).ToString());
+        }
+        HealthLevelText.Text = Services.Loc.T(r.LevelKey);
+        HealthLevelText.Foreground = (Brush)FindResource(r.BrushKey);
+
+        HealthChips.Children.Clear();
+        void Chip(string text)
+        {
+            var bd = new Border
+            {
+                Background = (Brush)FindResource("CardBgBrush"),
+                BorderBrush = (Brush)FindResource("CardBorderBrush"),
+                BorderThickness = new Thickness(1),
+                CornerRadius = new CornerRadius(7),
+                Padding = new Thickness(9, 3, 9, 4),
+                Margin = new Thickness(0, 4, 6, 0),
+                HorizontalAlignment = HorizontalAlignment.Left,
+            };
+            bd.Child = new TextBlock
+            {
+                Text = text,
+                FontSize = 10.5,
+                Foreground = (Brush)FindResource("TextSecondaryBrush"),
+            };
+            HealthChips.Children.Add(bd);
+        }
+        Chip(string.Format(Services.Loc.T("home.health.junk"), SizeText.OfBytes(junkBytes)));
+        Chip(string.Format(Services.Loc.T("home.health.high"), highImpact));
+        Chip(string.Format(Services.Loc.T("home.health.free"), freePct));
+    }
+
+    private void Health_Click(object sender, RoutedEventArgs e) => _main.Navigate(PageKey.SmartScan, "start");
+
+    // ————— 清理统计 —————
+
+    private void BuildStats()
+    {
+        var hist = HistoryService.LoadAll();
+        long totalFreed = hist.Where(h => h.Bytes > 0).Sum(h => h.Bytes);
+        int cleanCount = hist.Count(h => h.Type is "Clean" or "AutoClean");
+        StatsTotalText.Text = string.Format(Services.Loc.T("home.stats.total"), SizeText.OfBytes(totalFreed, 0), cleanCount);
+
+        StatsBars.Children.Clear();
+        var days = new (DateTime day, long bytes)[7];
+        for (int i = 0; i < 7; i++)
+        {
+            var d = DateTime.Today.AddDays(i - 6);
+            days[i] = (d, hist.Where(h => h.Time.Date == d && h.Bytes > 0).Sum(h => h.Bytes));
+        }
+        long max = Math.Max(1, days.Max(d => d.bytes));
+        foreach (var (day, bytes) in days)
+        {
+            var cell = new Grid { Margin = new Thickness(0, 0, 7, 0) };
+            cell.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            cell.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            var bar = new Border
+            {
+                Height = Math.Max(3, 46.0 * bytes / max),
+                CornerRadius = new CornerRadius(3),
+                Background = bytes > 0
+                    ? (day == DateTime.Today ? (Brush)FindResource("PrimaryBrush") : BrushWithOpacity("PrimaryBrush", 0.45))
+                    : (Brush)FindResource("TrackBrush"),
+                VerticalAlignment = VerticalAlignment.Bottom,
+                ToolTip = $"{day:MM-dd} · {(bytes > 0 ? SizeText.OfBytes(bytes, 0) : "0 B")}",
+            };
+            cell.Children.Add(bar);
+            StatsBars.Children.Add(cell);
+        }
+    }
+
+    private Brush BrushWithOpacity(string key, double opacity)
+    {
+        var b = ((Brush)FindResource(key)).Clone();
+        b.Opacity = opacity;
+        return b;
     }
 
     private void StartMonitor()

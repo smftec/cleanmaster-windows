@@ -32,14 +32,71 @@ public partial class MainWindow : Window
             Navigate(PageKey.Home);
         };
         StateChanged += (s, e) => ApplyWindowChromePadding();
+        SourceInitialized += (s, e) => RestoreWindowBounds();
+        Closing += (s, e) => SaveWindowBounds();
         PreviewKeyDown += MainWindow_PreviewKeyDown;
     }
 
-    // ————— 全局快捷键：Ctrl+1..8 切页 / F5 刷新当前页 / Esc 停止扫描或清理 —————
+    // ————— 窗口位置记忆 —————
+
+    private void RestoreWindowBounds()
+    {
+        var s = SettingsService.Current;
+        try
+        {
+            if (s.WindowW is >= 1120 && s.WindowH is >= 700 &&
+                s.WindowX is double x && s.WindowY is double y)
+            {
+                // 仅当落点在可见虚拟屏幕内才恢复,避免恢复到已拔掉的显示器
+                var wa = SystemParameters.WorkArea;
+                bool onScreen = x < SystemParameters.VirtualScreenLeft + SystemParameters.VirtualScreenWidth - 100 &&
+                                y < SystemParameters.VirtualScreenTop + SystemParameters.VirtualScreenHeight - 100 &&
+                                x + 100 > SystemParameters.VirtualScreenLeft &&
+                                y + 100 > SystemParameters.VirtualScreenTop;
+                if (onScreen)
+                {
+                    WindowStartupLocation = WindowStartupLocation.Manual;
+                    Left = x; Top = y;
+                    Width = s.WindowW.Value; Height = s.WindowH.Value;
+                }
+            }
+            if (s.WindowMaximized) WindowState = WindowState.Maximized;
+        }
+        catch { }
+    }
+
+    private void SaveWindowBounds()
+    {
+        try
+        {
+            var s = SettingsService.Current;
+            if (WindowState == WindowState.Minimized) return;
+            s.WindowMaximized = WindowState == WindowState.Maximized;
+            if (!s.WindowMaximized)
+            {
+                s.WindowX = Left; s.WindowY = Top;
+                s.WindowW = Width; s.WindowH = Height;
+            }
+            SettingsService.Save();
+        }
+        catch { }
+    }
+
+    // ————— 全局快捷键：Ctrl+1..8 切页 / Ctrl+K 命令面板 / F5 刷新 / Esc 停止扫描或清理 —————
 
     private void MainWindow_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
     {
-        if (e.Key >= Key.D1 && e.Key <= Key.D8 &&
+        if (e.Key == Key.K && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+        {
+            Palette.Toggle();
+            e.Handled = true;
+        }
+        else if (Palette.IsOpen && e.Key == Key.Escape)
+        {
+            Palette.Close();
+            e.Handled = true;
+        }
+        else if (e.Key >= Key.D1 && e.Key <= Key.D8 &&
             (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
         {
             var key = (PageKey)(e.Key - Key.D1);
@@ -59,6 +116,47 @@ public partial class MainWindow : Window
         {
             if (_pages.TryGetValue(PageKey.SmartScan, out var p) && p is SmartScanPage sp)
                 sp.TryCancelCurrent();
+        }
+    }
+
+    // ————— 命令面板动作分发 —————
+
+    private void Palette_ActionInvoked(Controls.CommandItem item)
+    {
+        if (item.Id.StartsWith("page.") && Enum.TryParse<PageKey>(item.Id["page.".Length..], out var key))
+        {
+            Navigate(key);
+            return;
+        }
+        switch (item.Id)
+        {
+            case "act.quickscan":
+                Navigate(PageKey.SmartScan, "start");
+                break;
+            case "act.analyze":
+                Navigate(PageKey.SpaceAnalysis, "analyze");
+                break;
+            case "act.dupscan":
+                Navigate(PageKey.Toolbox, "dup");
+                break;
+            case "act.emptyscan":
+                Navigate(PageKey.Toolbox, "empty");
+                break;
+            case "act.quarantine":
+                Navigate(PageKey.Toolbox, "quarantine");
+                break;
+            case "act.history":
+                Navigate(PageKey.Toolbox, "history");
+                break;
+            case "act.dns":
+                Services.QuickActions.FlushDns(this);
+                break;
+            case "act.theme":
+                Services.QuickActions.ToggleTheme(this);
+                break;
+            case "act.update":
+                Services.QuickActions.CheckUpdate(this);
+                break;
         }
     }
 
@@ -96,6 +194,9 @@ public partial class MainWindow : Window
         AnimatePageIn(page);
         // 先挂载内容再通知页面（保证 BringIntoView 等操作生效）
         if (page is IParamPage pp) pp.OnNavigated(param);
+        // 深链：--param palette 打开命令面板（自动化验收用）
+        if (param as string == "palette")
+            Dispatcher.BeginInvoke(() => Palette.Open(), System.Windows.Threading.DispatcherPriority.Loaded);
         _currentKey = key;
         WindowTitleText.Text = key switch
         {

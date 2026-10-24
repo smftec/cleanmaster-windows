@@ -82,6 +82,20 @@
     <sys:String xml:space="preserve" x:Key="clean.tabnote.3">個人記録を含みます。既定で未選択。影響をよく確認してから実行してください</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tabnote.4">空にする前に、必要なファイルがないかごみ箱を確認してください</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.title">クリーンアップ中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.analyze">ディスク容量を解析</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.cat.action">操作</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.cat.nav">ページ</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.checkupdate">更新を確認</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.dnsflush">DNS キャッシュをフラッシュ</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.dupscan">重複ファイルをスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.empty">一致する機能はありません</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.emptyscan">空フォルダーをスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ 選択 · Enter 実行 · Esc 閉じる · Ctrl+K 表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.history">清理履歴を見る</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.placeholder">機能を検索 —「スキャン」「DNS」「テーマ」など</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.quarantine">隔離区を開く</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.quickscan">今すぐスマートスキャン</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.theme.toggle">ダーク / ライト切替</sys:String>
     <sys:String xml:space="preserve" x:Key="common.approx">約 </sys:String>
     <sys:String xml:space="preserve" x:Key="common.freeable">解放可能</sys:String>
     <sys:String xml:space="preserve" x:Key="common.loading">読み込み中…</sys:String>
@@ -148,6 +162,12 @@
     <sys:String xml:space="preserve" x:Key="home.disk.total.f">合計 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.used">使用中 —</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.used.f">使用中 {0} ({1:F1}%)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.free">ディスク空き {0:F0}%</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.high">高影響スタートアップ {0} 件</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.junk">データ {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.tip">クリックして今すぐ最適化</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.title">ヘルススコア</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.unit">点</sys:String>
     <sys:String xml:space="preserve" x:Key="home.hero.note">PC をきれいに、
 動きをスムーズに！</sys:String>
     <sys:String xml:space="preserve" x:Key="home.mon.cores">{0} コア</sys:String>
@@ -165,6 +185,8 @@
     <sys:String xml:space="preserve" x:Key="home.slogan">定期的なスキャンで PC を最高の状態に保ちましょう</sys:String>
     <sys:String xml:space="preserve" x:Key="home.space.empty">このドライブはまだ解析されていません</sys:String>
     <sys:String xml:space="preserve" x:Key="home.space.title">ディスク解析</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.stats.days7">直近 7 日間の解放</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.stats.total">累計 {0} 解放 · {1} 回実行</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.good">デバイスは良好です</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.lastscan">前回のスキャン：{0}</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.suggest">クリーンアップをおすすめします</sys:String>
@@ -338,6 +360,10 @@
     <sys:String xml:space="preserve" x:Key="scan.privacy">すべてローカルで実行。安全な項目のみ既定で選択され、高リスク項目が自動選択されることはありません。</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.reselectall">安全項目を選択</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.start">スキャン開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.excellent">素晴らしい状態</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.fair">クリーンアップ推奨</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.good">良好な状態</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.poor">今すぐ清理を</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.email">メール</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.repo">ソースコード</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.site">公式サイト</sys:String>
@@ -474,6 +500,7 @@
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">スキャン失敗：</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">スキャンを停止しました</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped">（{0} 件スキップ）</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.themeapplied">テーマを切り替えました</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.traymin">トレイに最小化しました。トレイアイコンを右クリックで終了できます</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.whitelisted">ホワイトリストに追加しました。スキャン・清理はこのファイルをスキップします</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.desc">シュレッドしたファイルはごみ箱を経由しません。隔離ファイルはいつでも復元可能。重複検出は内容ハッシュベースです。</sys:String>
@@ -481,12 +508,15 @@
     <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">選択したコピーを削除しますか？</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.cleaned">重複ファイル {0} 件を削除しました</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.desc">内容ハッシュで重複を確認（ファイル名照合ではありません）。既定の範囲はピクチャ・ビデオ・ダウンロードです。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.dirs">対象フォルダーを変更</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.group">{0} 個の同一ファイル · 各 {1} · {2} 解放可能</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.more">… 他 {0} グループは未表示</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.nodirs">スキャンできるフォルダーがありません</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.none">重複ファイルは見つかりません</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.nosel">削除する複製に先にチェックを入れてください</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.pickdir">重複スキャンのフォルダーを選択</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.progress">{0:N0} ファイルを走査…</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.rootsset">対象フォルダーを {0} に設定</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.summary">{0} グループの重複。{1} 解放可能</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.tip">チェック = このコピーを削除</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.title">重複ファイル</sys:String>

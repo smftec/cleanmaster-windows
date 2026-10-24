@@ -217,6 +217,21 @@ FR = {
     "update.dlg.title": "Mettre à jour vers v{0} ?",
     "update.dlg.msg": "Version actuelle {0}, dernière {1}.\nOuvrir la page de téléchargement ?",
     "update.dlg.open": "Ouvrir le téléchargement",
+    # v1.3
+    "score.excellent": "Excellent état", "score.good": "Bon état", "score.fair": "Nettoyage conseillé", "score.poor": "Nettoyer maintenant",
+    "home.health.title": "Score santé", "home.health.tip": "Cliquez pour optimiser", "home.health.unit": "pts",
+    "home.health.junk": "{0} de déchets", "home.health.high": "{0} démarrages à fort impact", "home.health.free": "{0:F0}% disque libre",
+    "home.stats.days7": "Libéré · 7 derniers jours", "home.stats.total": "{0} libérés au total · {1} nettoyages",
+    "cmd.placeholder": "Rechercher — « analyse », « DNS », « thème »…",
+    "cmd.hint": "↑ ↓ choisir · Enter exécuter · Esc fermer · Ctrl+K ouvrir",
+    "cmd.empty": "Aucune action correspondante",
+    "cmd.cat.nav": "Page", "cmd.cat.action": "Action",
+    "cmd.quickscan": "Analyse intelligente maintenant", "cmd.analyze": "Analyser l'espace disque",
+    "cmd.dupscan": "Rechercher les doublons", "cmd.emptyscan": "Rechercher les dossiers vides",
+    "cmd.quarantine": "Ouvrir la quarantaine", "cmd.history": "Voir l'historique",
+    "cmd.dnsflush": "Vider le cache DNS", "cmd.theme.toggle": "Basculer sombre / clair", "cmd.checkupdate": "Rechercher les mises à jour",
+    "tool.dup.dirs": "Changer les dossiers", "tool.dup.pickdir": "Choisir les dossiers à analyser", "tool.dup.rootsset": "Dossier d'analyse : {0}",
+    "toast.themeapplied": "Thème modifié",
 }
 
 ES = {
@@ -436,6 +451,21 @@ ES = {
     "update.dlg.title": "¿Actualizar a v{0}?",
     "update.dlg.msg": "Versión actual {0}, última {1}.\n¿Abrir la página de descarga?",
     "update.dlg.open": "Abrir descarga",
+    # v1.3
+    "score.excellent": "Estado excelente", "score.good": "Buen estado", "score.fair": "Limpieza recomendada", "score.poor": "Limpia ahora",
+    "home.health.title": "Puntuación de salud", "home.health.tip": "Pulsa para optimizar", "home.health.unit": "pts",
+    "home.health.junk": "{0} de basura", "home.health.high": "{0} inicios de alto impacto", "home.health.free": "{0:F0}% de disco libre",
+    "home.stats.days7": "Liberado · últimos 7 días", "home.stats.total": "{0} liberados en total · {1} limpiezas",
+    "cmd.placeholder": "Buscar funciones — «escanear», «DNS», «tema»…",
+    "cmd.hint": "↑ ↓ elegir · Enter ejecutar · Esc cerrar · Ctrl+K abrir",
+    "cmd.empty": "No hay acciones coincidentes",
+    "cmd.cat.nav": "Página", "cmd.cat.action": "Acción",
+    "cmd.quickscan": "Escaneo inteligente ahora", "cmd.analyze": "Analizar espacio en disco",
+    "cmd.dupscan": "Buscar archivos duplicados", "cmd.emptyscan": "Buscar carpetas vacías",
+    "cmd.quarantine": "Abrir cuarentena", "cmd.history": "Ver historial de limpieza",
+    "cmd.dnsflush": "Vaciar caché DNS", "cmd.theme.toggle": "Cambiar oscuro / claro", "cmd.checkupdate": "Buscar actualizaciones",
+    "tool.dup.dirs": "Cambiar carpetas", "tool.dup.pickdir": "Elige las carpetas a analizar", "tool.dup.rootsset": "Carpeta de análisis: {0}",
+    "toast.themeapplied": "Tema cambiado",
 }
 
 DE = {
@@ -655,4 +685,19 @@ DE = {
     "update.dlg.title": "Auf v{0} aktualisieren?",
     "update.dlg.msg": "Aktuelle Version {0}, neueste {1}.\nDownload-Seite öffnen?",
     "update.dlg.open": "Download öffnen",
+    # v1.3
+    "score.excellent": "Ausgezeichnet", "score.good": "Gut", "score.fair": "Bereinigung empfohlen", "score.poor": "Jetzt bereinigen",
+    "home.health.title": "Gesundheitswert", "home.health.tip": "Klicken zum Optimieren", "home.health.unit": "Pkt",
+    "home.health.junk": "{0} Müll", "home.health.high": "{0} Startup-Programme mit hoher Wirkung", "home.health.free": "{0:F0}% Speicher frei",
+    "home.stats.days7": "Freigegeben · letzte 7 Tage", "home.stats.total": "Insgesamt {0} freigegeben · {1} Bereinigungen",
+    "cmd.placeholder": "Funktionen suchen — „Scan“, „DNS“, „Design“…",
+    "cmd.hint": "↑ ↓ wählen · Enter ausführen · Esc schließen · Ctrl+K öffnen",
+    "cmd.empty": "Keine passenden Funktionen",
+    "cmd.cat.nav": "Seite", "cmd.cat.action": "Aktion",
+    "cmd.quickscan": "Jetzt intelligent scannen", "cmd.analyze": "Speicherplatz analysieren",
+    "cmd.dupscan": "Doppelte Dateien suchen", "cmd.emptyscan": "Leere Ordner suchen",
+    "cmd.quarantine": "Quarantäne öffnen", "cmd.history": "Bereinigungsverlauf ansehen",
+    "cmd.dnsflush": "DNS-Cache leeren", "cmd.theme.toggle": "Dunkel / Hell umschalten", "cmd.checkupdate": "Nach Updates suchen",
+    "tool.dup.dirs": "Ordner ändern", "tool.dup.pickdir": "Ordner für Duplikatsuche wählen", "tool.dup.rootsset": "Scan-Ordner: {0}",
+    "toast.themeapplied": "Design gewechselt",
 }

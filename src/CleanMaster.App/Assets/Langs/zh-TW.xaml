@@ -82,6 +82,20 @@
     <sys:String xml:space="preserve" x:Key="clean.tabnote.3">涉及個人記錄，預設全部不勾選，請仔細確認影響後再清理</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tabnote.4">清空資源回收筒前請確認裡面的檔案不再需要</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.title">正在清理…</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.analyze">分析磁盘空间</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.cat.action">操作</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.cat.nav">页面</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.checkupdate">检查更新</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.dnsflush">刷新 DNS 缓存</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.dupscan">扫描重复文件</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.empty">没有匹配的功能</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.emptyscan">扫描空文件夹</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ 选择 · Enter 执行 · Esc 关闭 · Ctrl+K 呼出</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.history">查看清理历史</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.placeholder">搜索功能，如「扫描」「DNS」「主题」…</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.quarantine">打开隔离区</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.quickscan">立即智能扫描</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.theme.toggle">切换深色 / 浅色主题</sys:String>
     <sys:String xml:space="preserve" x:Key="common.approx">約 </sys:String>
     <sys:String xml:space="preserve" x:Key="common.freeable">可釋放</sys:String>
     <sys:String xml:space="preserve" x:Key="common.loading">正在讀取…</sys:String>
@@ -148,6 +162,12 @@
     <sys:String xml:space="preserve" x:Key="home.disk.total.f">總容量 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.used">已使用 —</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.used.f">已使用 {0} ({1:F1}%)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.free">磁盘剩余 {0:F0}%</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.high">{0} 个高影响启动</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.junk">{0} 垃圾</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.tip">点击立即优化</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.title">健康评分</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.unit">分</sys:String>
     <sys:String xml:space="preserve" x:Key="home.hero.note">讓電腦更乾淨&amp;#x0a;執行更流暢！</sys:String>
     <sys:String xml:space="preserve" x:Key="home.mon.cores">{0} 核心</sys:String>
     <sys:String xml:space="preserve" x:Key="home.mon.cpu">处理器</sys:String>
@@ -164,6 +184,8 @@
     <sys:String xml:space="preserve" x:Key="home.slogan">保持定期掃描，讓電腦始終保持最佳狀態</sys:String>
     <sys:String xml:space="preserve" x:Key="home.space.empty">還沒有分析過這塊磁碟</sys:String>
     <sys:String xml:space="preserve" x:Key="home.space.title">空間分析</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.stats.days7">近 7 日释放</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.stats.total">累计释放 {0} · {1} 次清理</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.good">裝置狀態良好</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.lastscan">上次掃描：{0}</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.suggest">建議清理一下</sys:String>
@@ -337,6 +359,10 @@
     <sys:String xml:space="preserve" x:Key="scan.privacy">掃描全程在本機進行；預設只勾選安全項目，高風險項目永遠不會被自動選中。</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.reselectall">全選安全項</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.start">開始掃描</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.excellent">状态优秀</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.fair">建议清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.good">状态良好</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.poor">需要立即清理</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.email">聯絡郵箱</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.repo">開源倉庫</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.site">支援網站</sys:String>
@@ -473,6 +499,7 @@
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">掃描失敗：</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">已停止掃描</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped">（跳過 {0} 項）</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.themeapplied">主题已切换</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.traymin">已最小化到系統列，右鍵系統列圖示可結束</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.whitelisted">已加入白名單，掃描與清理將跳過該檔案</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.desc">檔案粉碎不會進入資源回收筒；隔離區檔案可隨時還原；重複檔案基於內容雜湊檢測。</sys:String>
@@ -480,12 +507,15 @@
     <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">刪除選中的副本？</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.cleaned">删除了 {0} 个重复文件</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.desc">透過內容雜湊確認重複（不是只看檔名）。掃描範圍預設為圖片、影片與下載目錄。</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.dirs">更改扫描目录</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.group">{0} 個相同檔案 · 每個 {1} · 可釋放 {2}</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.more">… 還有 {0} 組未顯示</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.nodirs">没有可扫描的目录</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.none">沒有發現重複檔案</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.nosel">请先勾选要删除的副本</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.pickdir">选择重复文件扫描目录</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.progress">已掃描 {0:N0} 個檔案…</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.rootsset">扫描目录已设为 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.summary">{0} 組重複檔案，可釋放 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.tip">勾選 = 刪除這份副本</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.title">重複檔案</sys:String>

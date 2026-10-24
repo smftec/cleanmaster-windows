@@ -218,6 +218,21 @@ JA = {
     "update.dlg.title": "v{0} に更新しますか？",
     "update.dlg.msg": "現在 {0}、最新 {1} です。\nダウンロードページを開きますか？",
     "update.dlg.open": "ダウンロードページを開く",
+    # v1.3
+    "score.excellent": "素晴らしい状態", "score.good": "良好な状態", "score.fair": "クリーンアップ推奨", "score.poor": "今すぐ清理を",
+    "home.health.title": "ヘルススコア", "home.health.tip": "クリックして今すぐ最適化", "home.health.unit": "点",
+    "home.health.junk": "データ {0}", "home.health.high": "高影響スタートアップ {0} 件", "home.health.free": "ディスク空き {0:F0}%",
+    "home.stats.days7": "直近 7 日間の解放", "home.stats.total": "累計 {0} 解放 · {1} 回実行",
+    "cmd.placeholder": "機能を検索 —「スキャン」「DNS」「テーマ」など",
+    "cmd.hint": "↑ ↓ 選択 · Enter 実行 · Esc 閉じる · Ctrl+K 表示",
+    "cmd.empty": "一致する機能はありません",
+    "cmd.cat.nav": "ページ", "cmd.cat.action": "操作",
+    "cmd.quickscan": "今すぐスマートスキャン", "cmd.analyze": "ディスク容量を解析",
+    "cmd.dupscan": "重複ファイルをスキャン", "cmd.emptyscan": "空フォルダーをスキャン",
+    "cmd.quarantine": "隔離区を開く", "cmd.history": "清理履歴を見る",
+    "cmd.dnsflush": "DNS キャッシュをフラッシュ", "cmd.theme.toggle": "ダーク / ライト切替", "cmd.checkupdate": "更新を確認",
+    "tool.dup.dirs": "対象フォルダーを変更", "tool.dup.pickdir": "重複スキャンのフォルダーを選択", "tool.dup.rootsset": "対象フォルダーを {0} に設定",
+    "toast.themeapplied": "テーマを切り替えました",
 }
 
 KO = {
@@ -437,4 +452,19 @@ KO = {
     "update.dlg.title": "v{0}(으)로 업데이트할까요?",
     "update.dlg.msg": "현재 {0}, 최신 {1}입니다.\n다운로드 페이지를 열까요?",
     "update.dlg.open": "다운로드 페이지 열기",
+    # v1.3
+    "score.excellent": "매우 좋음", "score.good": "좋음", "score.fair": "정리 권장", "score.poor": "지금 정리 필요",
+    "home.health.title": "건강 점수", "home.health.tip": "클릭하여 지금 최적화", "home.health.unit": "점",
+    "home.health.junk": "데이터 {0}", "home.health.high": "고영향 시작 {0}개", "home.health.free": "디스크 여유 {0:F0}%",
+    "home.stats.days7": "최근 7일 확보", "home.stats.total": "누적 {0} 확보 · {1}회 정리",
+    "cmd.placeholder": "기능 검색 — 「스캔」「DNS」「테마」 등",
+    "cmd.hint": "↑ ↓ 선택 · Enter 실행 · Esc 닫기 · Ctrl+K 호출",
+    "cmd.empty": "일치하는 기능이 없습니다",
+    "cmd.cat.nav": "페이지", "cmd.cat.action": "작업",
+    "cmd.quickscan": "지금 스마트 스캔", "cmd.analyze": "디스크 공간 분석",
+    "cmd.dupscan": "중복 파일 스캔", "cmd.emptyscan": "빈 폴더 스캔",
+    "cmd.quarantine": "격리소 열기", "cmd.history": "정리 기록 보기",
+    "cmd.dnsflush": "DNS 캐시 플러시", "cmd.theme.toggle": "다크 / 라이트 전환", "cmd.checkupdate": "업데이트 확인",
+    "tool.dup.dirs": "대상 폴더 변경", "tool.dup.pickdir": "중복 스캔 폴더 선택", "tool.dup.rootsset": "대상 폴더가 {0}(으)로 설정됨",
+    "toast.themeapplied": "테마가 전환되었습니다",
 }

@@ -523,6 +523,16 @@ public partial class ToolboxPage : Page, IParamPage
         return card;
     }
 
+    private void BtnDupDirs_Click(object sender, RoutedEventArgs e)
+    {
+        var dlg = new System.Windows.Forms.FolderBrowserDialog { Description = Services.Loc.T("tool.dup.pickdir") };
+        if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+        SettingsService.Current.DuplicateScanDirs = new List<string> { dlg.SelectedPath };
+        SettingsService.Save();
+        _main.ShowToast(string.Format(Services.Loc.T("tool.dup.rootsset"), dlg.SelectedPath), ToastType.Info);
+        BtnDupScan_Click(this, new RoutedEventArgs());
+    }
+
     private void BtnDupKeepNewest_Click(object sender, RoutedEventArgs e)
     {
         if (_dupResult == null) return;
@@ -684,25 +694,7 @@ public partial class ToolboxPage : Page, IParamPage
 
         AddTool(Services.Loc.T("tool.win.taskmgr"), Services.Loc.T("tool.win.taskmgr.d"), () => Process.Start("taskmgr.exe"));
         AddTool(Services.Loc.T("tool.win.storage"), Services.Loc.T("tool.win.storage.d"), () => Process.Start(new ProcessStartInfo("ms-settings:storagesense") { UseShellExecute = true }));
-        AddTool(Services.Loc.T("tool.win.dns"), Services.Loc.T("tool.win.dns.d"), async () =>
-        {
-            try
-            {
-                var psi = new ProcessStartInfo("ipconfig", "/flushdns")
-                {
-                    CreateNoWindow = true,
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                };
-                var p = Process.Start(psi);
-                if (p != null) await p.WaitForExitAsync();
-                _main.ShowToast(Services.Loc.T("tool.win.dns.ok"), ToastType.Success);
-            }
-            catch (Exception ex)
-            {
-                _main.ShowToast(Services.Loc.T("tool.win.dns.fail") + ex.Message, ToastType.Warning);
-            }
-        });
+        AddTool(Services.Loc.T("tool.win.dns"), Services.Loc.T("tool.win.dns.d"), () => Services.QuickActions.FlushDns(_main));
         AddTool(Services.Loc.T("tool.win.diskmgmt"), Services.Loc.T("tool.win.diskmgmt.d"), () => Process.Start("diskmgmt.msc"));
         AddTool(Services.Loc.T("tool.win.devmgmt"), Services.Loc.T("tool.win.devmgmt.d"), () => Process.Start("devmgmt.msc"));
         AddTool(Services.Loc.T("tool.win.control"), Services.Loc.T("tool.win.control.d"), () => Process.Start("control.exe"));

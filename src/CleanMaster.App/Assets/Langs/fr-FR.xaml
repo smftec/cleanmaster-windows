@@ -82,6 +82,20 @@ Reprise automatique une fois terminée</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tabnote.3">Données personnelles — toutes décochées par défaut ; lisez attentivement chaque impact</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tabnote.4">Vérifiez que la corbeille ne contient rien d'utile avant de la vider</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.title">Nettoyage…</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.analyze">Analyser l'espace disque</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.cat.action">Action</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.cat.nav">Page</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.checkupdate">Rechercher les mises à jour</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.dnsflush">Vider le cache DNS</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.dupscan">Rechercher les doublons</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.empty">Aucune action correspondante</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.emptyscan">Rechercher les dossiers vides</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ choisir · Enter exécuter · Esc fermer · Ctrl+K ouvrir</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.history">Voir l'historique</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.placeholder">Rechercher — « analyse », « DNS », « thème »…</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.quarantine">Ouvrir la quarantaine</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.quickscan">Analyse intelligente maintenant</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.theme.toggle">Basculer sombre / clair</sys:String>
     <sys:String xml:space="preserve" x:Key="common.approx">~</sys:String>
     <sys:String xml:space="preserve" x:Key="common.freeable">récupérable</sys:String>
     <sys:String xml:space="preserve" x:Key="common.loading">Chargement…</sys:String>
@@ -148,6 +162,12 @@ Les fichiers restaurables vont en quarantaine.</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.total.f">Total {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.used">Utilisé —</sys:String>
     <sys:String xml:space="preserve" x:Key="home.disk.used.f">Utilisé {0} ({1:F1} %)</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.free">{0:F0}% disque libre</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.high">{0} démarrages à fort impact</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.junk">{0} de déchets</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.tip">Cliquez pour optimiser</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.title">Score santé</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.health.unit">pts</sys:String>
     <sys:String xml:space="preserve" x:Key="home.hero.note">Un PC plus propre,
 plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="home.mon.cores">{0} cœurs</sys:String>
@@ -165,6 +185,8 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="home.slogan">Des analyses régulières gardent votre PC au top</sys:String>
     <sys:String xml:space="preserve" x:Key="home.space.empty">Ce disque n'a pas encore été analysé</sys:String>
     <sys:String xml:space="preserve" x:Key="home.space.title">Analyse du disque</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.stats.days7">Libéré · 7 derniers jours</sys:String>
+    <sys:String xml:space="preserve" x:Key="home.stats.total">{0} libérés au total · {1} nettoyages</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.good">Votre PC est en bon état</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.lastscan">Dernière analyse : {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="home.status.suggest">Un nettoyage est recommandé</sys:String>
@@ -338,6 +360,10 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.privacy">Tout s'exécute en local ; seuls les éléments sûrs sont pré-cochés, les éléments risqués ne le sont jamais.</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.reselectall">Sélectionner les éléments sûrs</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.start">Lancer l'analyse</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.excellent">Excellent état</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.fair">Nettoyage conseillé</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.good">Bon état</sys:String>
+    <sys:String xml:space="preserve" x:Key="score.poor">Nettoyer maintenant</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.email">E-mail</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.repo">Code source</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.site">Site web</sys:String>
@@ -474,6 +500,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">Échec de l'analyse : </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">Analyse arrêtée</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped"> ({0} ignorés)</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.themeapplied">Thème modifié</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.traymin">Réduit dans la zone de notification — clic droit sur l'icône pour quitter</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.whitelisted">Ajouté à la liste blanche — ce fichier sera ignoré</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.desc">Les fichiers broyés ne passent pas par la corbeille ; les fichiers en quarantaine sont restaurables ; les doublons sont détectés par empreinte de contenu.</sys:String>
@@ -481,12 +508,15 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.clean.title">Supprimer les copies sélectionnées ?</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.cleaned">{0} fichiers en double supprimés</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.desc">Les doublons sont confirmés par empreinte du contenu (jamais par nom). Portée par défaut : Images, Vidéos et Téléchargements.</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.dirs">Changer les dossiers</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.group">{0} fichiers identiques · {1} chacun · {2} récupérables</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.more">… {0} groupes supplémentaires non affichés</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.nodirs">Aucun dossier à analyser</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.none">Aucun doublon trouvé</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.nosel">Cochez d'abord les copies à supprimer</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.pickdir">Choisir les dossiers à analyser</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.progress">{0:N0} fichiers analysés…</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.dup.rootsset">Dossier d'analyse : {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.summary">{0} groupes de doublons, {1} récupérables</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.tip">Coché = supprimer cette copie</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.dup.title">Fichiers en double</sys:String>

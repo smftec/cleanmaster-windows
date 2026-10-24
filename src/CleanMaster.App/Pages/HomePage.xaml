@@ -52,48 +52,21 @@
                     </StackPanel>
                 </StackPanel>
 
-                <!-- 右侧插画 -->
-                <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10,6,10,0" VerticalAlignment="Center">
-                    <Grid Width="190" Height="150">
-                        <Ellipse Width="120" Height="120" Canvas.ZIndex="0"
-                                 Fill="{DynamicResource PrimarySoftBrush}" Opacity="0.65"
-                                 HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0"/>
-                        <Border Width="92" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"
-                                Margin="0,6,0,0">
-                            <Grid>
-                                <Path Data="{StaticResource ShieldIcon}" Fill="{DynamicResource PrimaryGradientBrush}"
-                                      Stretch="Uniform" Width="66" Height="72" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                <Path Data="{StaticResource CheckIcon}" Stroke="White" StrokeThickness="3"
-                                      StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
-                                      Width="26" Height="26" Stretch="Uniform" Margin="0,10,0,0"/>
-                            </Grid>
-                        </Border>
-                        <Border Width="30" Height="30" CornerRadius="9" Background="{DynamicResource CardBgBrush}"
-                                BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="1"
-                                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,14,0,0">
-                            <Path Data="{StaticResource CleanIcon}" Stroke="{DynamicResource PrimaryBrush}" StrokeThickness="1.6"
-                                  Width="14" Height="14" Stretch="Uniform" StrokeStartLineCap="Round" StrokeLineJoin="Round"/>
-                        </Border>
-                        <Border Width="26" Height="26" CornerRadius="8" Background="{DynamicResource CardBgBrush}"
-                                BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="1"
-                                HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,42,4,0">
-                            <Path Data="{StaticResource RefreshIcon}" Stroke="{DynamicResource TealBrush}" StrokeThickness="1.6"
-                                  Width="12" Height="12" Stretch="Uniform" StrokeStartLineCap="Round" StrokeLineJoin="Round"/>
-                        </Border>
-                        <Border Width="24" Height="24" CornerRadius="7" Background="{DynamicResource CardBgBrush}"
-                                BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="1"
-                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="14,0,0,18">
-                            <Path Data="{StaticResource PowerIcon}" Stroke="{DynamicResource OrangeBrush}" StrokeThickness="1.6"
-                                  Width="11" Height="11" Stretch="Uniform" StrokeStartLineCap="Round" StrokeLineJoin="Round"/>
-                        </Border>
-                    </Grid>
-                    <TextBlock Text="{DynamicResource home.hero.note}" FontSize="14"
-                               Foreground="{DynamicResource TextSecondaryBrush}" Margin="6,10,0,0">
-                        <TextBlock.LayoutTransform>
-                            <RotateTransform Angle="-6"/>
-                        </TextBlock.LayoutTransform>
-                    </TextBlock>
-                </StackPanel>
+                <!-- 右侧健康评分 -->
+                <Button Grid.Column="1" Style="{StaticResource SecondaryButton}" Padding="0" Margin="10,4,10,0"
+                        VerticalAlignment="Center" Click="Health_Click" Cursor="Hand"
+                        ToolTip="{DynamicResource home.health.tip}">
+                    <StackPanel Orientation="Horizontal" Margin="18,14,20,14">
+                        <StackPanel x:Name="HealthRingHost" VerticalAlignment="Center"/>
+                        <StackPanel Margin="18,0,4,0" VerticalAlignment="Center">
+                            <TextBlock Text="{DynamicResource home.health.title}" FontSize="12.5"
+                                       Foreground="{DynamicResource TextSecondaryBrush}"/>
+                            <TextBlock x:Name="HealthLevelText" Text="—" FontSize="18" FontWeight="Bold"
+                                       Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,5,0,0"/>
+                            <StackPanel x:Name="HealthChips" Margin="0,10,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
             </Grid>
 
             <!-- ======== 四张状态卡片 ======== -->
@@ -345,6 +318,19 @@
                         <TextBlock x:Name="NoActivityText" Text="{DynamicResource home.activity.empty}" FontSize="12.5"
                                    Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,14,0,6"
                                    Visibility="Collapsed"/>
+                        <Border Background="{DynamicResource ItemHoverBrush}" CornerRadius="10"
+                                Padding="12,10" Margin="0,12,0,0">
+                            <StackPanel>
+                                <Grid>
+                                    <TextBlock Text="{DynamicResource home.stats.days7}" FontSize="12" FontWeight="Bold"
+                                               Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="StatsTotalText" Text="" FontSize="11.5"
+                                               Foreground="{DynamicResource TextTertiaryBrush}"
+                                               HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </Grid>
+                                <StackPanel x:Name="StatsBars" Orientation="Horizontal" Height="52" Margin="0,10,0,2"/>
+                            </StackPanel>
+                        </Border>
                     </StackPanel>
                 </Border>
 
