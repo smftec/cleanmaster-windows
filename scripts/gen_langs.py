@@ -268,6 +268,16 @@ ZH = {
     "startup.tip.disable": "点击禁用开机启动", "startup.tip.enable": "点击启用开机启动",
     "startup.tip.impact": "基于应用类型的参考评估（类似任务管理器的启动影响），非实测数据",
     "apps.tip.publisher": "发布者：{0}",
+    # ===== v1.5 追加 =====
+    "clean.scan.detail": "正在扫描 {0}/{1}",
+    "clean.scan.detail.f": "{0}已发现 {1}",
+    "clean.recyclebin.cleared": "清空了回收站（{0} 个项目）",
+    "notify.disklow": "系统盘空间不足，仅剩 {0}，建议清理",
+    "notify.disklow.log": "提醒：系统盘剩余空间不足 10%",
+    "tool.win.power": "电源选项", "tool.win.power.d": "切换电源计划，省电或高性能",
+    "settings.btn.openlog": "打开数据文件夹", "settings.row.openlog": "数据与日志",
+    "settings.row.openlog.d": "查看设置、隔离区与运行日志（排障用）",
+    "leftover.cleaned": "已清理 {0} 项残留", "leftover.fail": "，{0} 项失败",
 }
 
 # ============ 组装与生成 ============

@@ -72,6 +72,9 @@ Fährt automatisch fort, wenn fertig</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.banner">Datenschutz-Elemente sind standardmäßig abgewählt. Lies jede Auswirkung: Cookies löschen meldet dich ab; gelöschter Verlauf ist unwiederbringlich.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.warn">Datenschutz-Elemente können nach der Bereinigung nicht wiederhergestellt werden.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recycle.desc">Beim Leeren des Papierkorbs werden die Dateien endgültig gelöscht. Du kannst ihn vorher öffnen und prüfen.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">Papierkorb geleert ({0} Elemente)</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail">Scanne {0}/{1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} gefunden</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">App-Caches</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">Browser</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">Datenspuren</sys:String>
@@ -202,8 +205,10 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">Autostart-Hinweis</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">Smarte Vorschläge</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">Auswahl bereinigen</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned">{0} Reste bereinigt</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">Datenordner</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">Datenordner und Einstellungsschlüssel, die eindeutig zu dieser App gehören. Ausgewählte Elemente kommen in die Quarantäne (wiederherstellbar).</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.fail">, {0} fehlgeschlagen</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.installdir">Installationsordner</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.reg">Registrierungsschlüssel (gesichert, dann entfernt)</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">Nicht bereinigen, fertig</sys:String>
@@ -217,6 +222,8 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.space">Speicheranalyse</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.startup">Autostart</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Werkzeuge</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow">Systemlaufwerk wird knapp — nur noch {0} frei. Bereinigung empfohlen</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow.log">Hinweis: weniger als 10% frei auf dem Systemlaufwerk</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} Dateien ({1}) werden endgültig gelöscht. Nicht wiederherstellbar.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">Papierkorb leeren?</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">Der Papierkorb ist leer</sys:String>
@@ -373,6 +380,7 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.wechat">Scanne oder suche „AI虚拟助理“ in WeChat für Tipps und Neuigkeiten.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">Ausgeschlossenen Ordner hinzufügen</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">Datei/Ordner zur Whitelist</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.openlog">Datenordner öffnen</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">Tage</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">Diese Ordner und Dateien werden bei allen Scans und Bereinigungen übersprungen.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">Keine Ausschlüsse oder Whitelist-Einträge</sys:String>
@@ -406,6 +414,8 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews">Produktneuigkeiten</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">Neue Funktionen und Aktionen, standardmäßig aus</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">Wochenbericht</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog">Daten &amp; Protokolle</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog.d">Einstellungen, Quarantäne und Laufzeitprotokolle ansehen (Fehlersuche)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine">In Quarantäne statt löschen</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">Nicht-Cache-Dateien landen zuerst in Quarantäne, wiederherstellbar (empfohlen)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">Quarantäne-Aufbewahrung</sys:String>
@@ -576,6 +586,8 @@ Nicht reversibel!</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo">Systeminformationen</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">Systemkonfiguration ansehen</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.openfail">Kann nicht geöffnet werden: </sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power">Energieoptionen</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power.d">Energieplan wechseln (Stromsparmodus / Leistung)</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore">Systemwiederherstellung</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore.d">Wiederherstellungspunkte erstellen/nutzen</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.storage">Speichereinstellungen</sys:String>

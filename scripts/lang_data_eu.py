@@ -236,6 +236,15 @@ FR = {
     "startup.tip.disable": "Cliquez pour désactiver au démarrage", "startup.tip.enable": "Cliquez pour activer au démarrage",
     "startup.tip.impact": "Estimation indicative selon le type d'application (comme le Gestionnaire des tâches), non mesurée",
     "apps.tip.publisher": "Éditeur : {0}",
+    # v1.5
+    "clean.scan.detail": "Analyse {0}/{1}", "clean.scan.detail.f": "{0}{1} trouvés",
+    "clean.recyclebin.cleared": "Corbeille vidée ({0} éléments)",
+    "notify.disklow": "Le disque système n'a plus que {0} libres — pensez à nettoyer",
+    "notify.disklow.log": "Rappel : moins de 10% d'espace libre sur le disque système",
+    "tool.win.power": "Options d'alimentation", "tool.win.power.d": "Changer de mode (économie / performances)",
+    "settings.btn.openlog": "Ouvrir le dossier de données", "settings.row.openlog": "Données et journaux",
+    "settings.row.openlog.d": "Consulter réglages, quarantaine et journaux (diagnostic)",
+    "leftover.cleaned": "{0} éléments résiduels nettoyés", "leftover.fail": ", {0} échecs",
 }
 
 ES = {
@@ -474,6 +483,15 @@ ES = {
     "startup.tip.disable": "Pulsa para desactivar en el inicio", "startup.tip.enable": "Pulsa para activar en el inicio",
     "startup.tip.impact": "Estimación orientativa según el tipo de app (similar al Administrador de tareas), no medida",
     "apps.tip.publisher": "Editor: {0}",
+    # v1.5
+    "clean.scan.detail": "Escaneando {0}/{1}", "clean.scan.detail.f": "{0}{1} encontrados",
+    "clean.recyclebin.cleared": "Papelera vaciada ({0} elementos)",
+    "notify.disklow": "El disco del sistema apenas tiene {0} libres — considera limpiar",
+    "notify.disklow.log": "Recordatorio: menos del 10% libre en el disco del sistema",
+    "tool.win.power": "Opciones de energía", "tool.win.power.d": "Cambiar plan de energía (ahorro / rendimiento)",
+    "settings.btn.openlog": "Abrir carpeta de datos", "settings.row.openlog": "Datos y registros",
+    "settings.row.openlog.d": "Consulta ajustes, cuarentena y registros (diagnóstico)",
+    "leftover.cleaned": "{0} residuos limpiados", "leftover.fail": ", {0} fallidos",
 }
 
 DE = {
@@ -712,4 +730,13 @@ DE = {
     "startup.tip.disable": "Klicken, um beim Start zu deaktivieren", "startup.tip.enable": "Klicken, um beim Start zu aktivieren",
     "startup.tip.impact": "Richtwert basierend auf dem App-Typ (wie im Task-Manager), nicht gemessen",
     "apps.tip.publisher": "Herausgeber: {0}",
+    # v1.5
+    "clean.scan.detail": "Scanne {0}/{1}", "clean.scan.detail.f": "{0}{1} gefunden",
+    "clean.recyclebin.cleared": "Papierkorb geleert ({0} Elemente)",
+    "notify.disklow": "Systemlaufwerk wird knapp — nur noch {0} frei. Bereinigung empfohlen",
+    "notify.disklow.log": "Hinweis: weniger als 10% frei auf dem Systemlaufwerk",
+    "tool.win.power": "Energieoptionen", "tool.win.power.d": "Energieplan wechseln (Stromsparmodus / Leistung)",
+    "settings.btn.openlog": "Datenordner öffnen", "settings.row.openlog": "Daten & Protokolle",
+    "settings.row.openlog.d": "Einstellungen, Quarantäne und Laufzeitprotokolle ansehen (Fehlersuche)",
+    "leftover.cleaned": "{0} Reste bereinigt", "leftover.fail": ", {0} fehlgeschlagen",
 }

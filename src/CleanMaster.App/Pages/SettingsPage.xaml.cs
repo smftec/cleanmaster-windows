@@ -189,6 +189,19 @@ public partial class SettingsPage : Page
         AdvancedSection.Children.Add(Row(Services.Loc.T("settings.row.junction"), Services.Loc.T("settings.row.junction.d"),
             Toggle(_s.FollowJunctions, v => _s.FollowJunctions = v)));
 
+        // 排障:打开数据与日志文件夹
+        var logBtn = new Button
+        {
+            Content = Services.Loc.T("settings.btn.openlog"),
+            Style = (Style)FindResource("SmallSecondaryButton"),
+        };
+        logBtn.Click += (s, e) =>
+        {
+            try { CleanMaster.Core.Utils.ShellUtil.OpenPath(CleanMaster.Core.Store.SettingsService.DataDir); }
+            catch (Exception ex) { _main.ShowToast(Services.Loc.T("tool.win.openfail") + ex.Message, ToastType.Warning); }
+        };
+        AdvancedSection.Children.Add(Row(Services.Loc.T("settings.row.openlog"), Services.Loc.T("settings.row.openlog.d"), logBtn));
+
         // —— 隐私 ——
         PrivacySection.Children.Add(Row(Services.Loc.T("settings.row.stats"), Services.Loc.T("settings.row.stats.d"),
             Toggle(_s.AnonymousStats, v => _s.AnonymousStats = v)));

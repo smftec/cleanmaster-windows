@@ -90,10 +90,15 @@
             <!-- 扫描中 -->
             <StackPanel x:Name="GroupScanPanel" Visibility="Collapsed" VerticalAlignment="Center"
                         HorizontalAlignment="Center">
-                <ProgressBar x:Name="GroupScanBar" IsIndeterminate="True" Width="260" Height="6"/>
+                <ProgressBar x:Name="GroupScanBar" Maximum="100" Value="0" Width="260" Height="6"/>
                 <TextBlock x:Name="GroupScanText" Text="{DynamicResource common.scanning}" FontSize="12.5"
                            Foreground="{DynamicResource TextSecondaryBrush}"
                            HorizontalAlignment="Center" Margin="0,14,0,0"/>
+                <TextBlock x:Name="GroupScanDetailText" Text="" FontSize="11" TextTrimming="CharacterEllipsis" MaxWidth="420"
+                           Foreground="{DynamicResource TextTertiaryBrush}"
+                           HorizontalAlignment="Center" Margin="0,8,0,0"/>
+                <Button x:Name="BtnStopGroupScan" Content="{DynamicResource btn.stopscan}" Style="{StaticResource SmallSecondaryButton}"
+                        HorizontalAlignment="Center" Margin="0,18,0,0" Click="BtnStopGroupScan_Click"/>
             </StackPanel>
         </Grid>
 
@@ -102,10 +107,10 @@
                 x:Name="FooterBar">
             <Grid>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <TextBlock Text="已选择" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"/>
-                    <TextBlock x:Name="SelCountText" Text="0 项" FontSize="13.5" FontWeight="Bold"
+                    <TextBlock Text="{DynamicResource common.selected}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"/>
+                    <TextBlock x:Name="SelCountText" Text="0" FontSize="13.5" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}" Margin="6,0,0,0"/>
-                    <TextBlock Text="可释放" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}" Margin="16,0,0,0"/>
+                    <TextBlock Text="{DynamicResource common.freeable}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}" Margin="16,0,0,0"/>
                     <TextBlock x:Name="SelSizeText" Text="0 B" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource PrimaryBrush}" Margin="6,0,0,0"/>
                 </StackPanel>

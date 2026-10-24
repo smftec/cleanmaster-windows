@@ -19,6 +19,10 @@ public partial class MainWindow : Window
     private DispatcherTimer? _toastTimer;
     private bool _dragMoving;
 
+    /// <summary>启动深链指定的初始页(未设置则首页),由 Loaded 统一导航,避免竞态覆盖。</summary>
+    public PageKey? InitialPage { get; set; }
+    public object? InitialParam { get; set; }
+
     public MainWindow()
     {
         InitializeComponent();
@@ -29,7 +33,8 @@ public partial class MainWindow : Window
                 .InformationalVersion ?? "1.0.0";
             VersionText.Text = "v" + v.Split('+')[0];
             ApplyWindowChromePadding();
-            Navigate(PageKey.Home);
+            if (InitialPage is PageKey key) Navigate(key, InitialParam);
+            else Navigate(PageKey.Home);
         };
         StateChanged += (s, e) => ApplyWindowChromePadding();
         SourceInitialized += (s, e) => RestoreWindowBounds();
@@ -116,6 +121,8 @@ public partial class MainWindow : Window
         {
             if (_pages.TryGetValue(PageKey.SmartScan, out var p) && p is SmartScanPage sp)
                 sp.TryCancelCurrent();
+            if (_pages.TryGetValue(PageKey.CleanSpace, out var c) && c is CleanSpacePage cp)
+                cp.TryCancelCurrent();
         }
     }
 

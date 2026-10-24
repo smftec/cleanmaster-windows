@@ -72,6 +72,9 @@ Continues automatically once finished</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.banner">Privacy items are unchecked by default. Read each impact before selecting: clearing cookies signs you out; clearing history cannot be undone.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.warn">Privacy items cannot be restored after cleaning. Make sure you understand the impact.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recycle.desc">Emptying the Recycle Bin permanently deletes its files. You can also open it to check first.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">Emptied the Recycle Bin ({0} items)</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail">Scanning {0}/{1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}Found {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">App caches</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">Browsers</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">Privacy traces</sys:String>
@@ -202,8 +205,10 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">Startup suggestion</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">Smart suggestions</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">Clean selected</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned">Cleaned {0} leftover items</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">Data folder</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">Data folders and setting keys that belong to this app. Selected items go to quarantine (restorable).</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.fail">, {0} failed</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.installdir">Install folder</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.reg">Settings registry key (backed up, then removed)</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">Skip, done</sys:String>
@@ -217,6 +222,8 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.space">Space Analysis</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.startup">Startup</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Toolbox</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow">System drive is low on space — only {0} left. Consider a cleanup</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow.log">Reminder: system drive under 10% free</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} files ({1}) will be permanently deleted. This cannot be undone.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">Empty Recycle Bin?</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">The Recycle Bin is empty</sys:String>
@@ -373,6 +380,7 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.wechat">Scan or search “AI虚拟助理” in WeChat for tips and updates.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">Add excluded folder</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">Add whitelisted file/folder</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.openlog">Open data folder</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">days</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">These folders and files are skipped by every scan and cleanup.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">No exclusions or whitelist entries</sys:String>
@@ -406,6 +414,8 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews">Product news</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">Feature and event announcements, off by default</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">Weekly space report</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog">Data &amp; logs</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog.d">Inspect settings, quarantine and run logs (for troubleshooting)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine">Quarantine after cleaning</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">Non-cache files go to quarantine first, restorable (recommended)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">Quarantine retention</sys:String>
@@ -576,6 +586,8 @@ This cannot be undone!</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo">System Information</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">View system configuration</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.openfail">Cannot open: </sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power">Power options</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power.d">Switch power plan, saver or high performance</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore">System Restore</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore.d">Create or use restore points</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.storage">Storage settings</sys:String>

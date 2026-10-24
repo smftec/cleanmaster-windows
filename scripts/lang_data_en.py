@@ -252,4 +252,13 @@ EN = {
     "startup.tip.disable": "Click to disable at startup", "startup.tip.enable": "Click to enable at startup",
     "startup.tip.impact": "Reference estimate based on app type (similar to Task Manager), not measured",
     "apps.tip.publisher": "Publisher: {0}",
+    # v1.5
+    "clean.scan.detail": "Scanning {0}/{1}", "clean.scan.detail.f": "{0}Found {1}",
+    "clean.recyclebin.cleared": "Emptied the Recycle Bin ({0} items)",
+    "notify.disklow": "System drive is low on space — only {0} left. Consider a cleanup",
+    "notify.disklow.log": "Reminder: system drive under 10% free",
+    "tool.win.power": "Power options", "tool.win.power.d": "Switch power plan, saver or high performance",
+    "settings.btn.openlog": "Open data folder", "settings.row.openlog": "Data & logs",
+    "settings.row.openlog.d": "Inspect settings, quarantine and run logs (for troubleshooting)",
+    "leftover.cleaned": "Cleaned {0} leftover items", "leftover.fail": ", {0} failed",
 }

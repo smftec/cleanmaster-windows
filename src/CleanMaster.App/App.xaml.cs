@@ -61,7 +61,21 @@ public partial class App : Application
             args.Handled = true;
         };
 
-        var win = new MainWindow();
+        // --page <key> [--param <value>] 深链接（用于自动化验收 / 快捷入口）
+        // 必须在窗口创建前解析并交给 MainWindow.Loaded 统一导航:
+        // 向导 ShowDialog 会泵消息使 Loaded 提前触发,晚赋值会被默认首页导航覆盖
+        PageKey? initialPage = null;
+        object? initialParam = null;
+        var pageIdx = Array.IndexOf(e.Args, "--page");
+        if (pageIdx >= 0 && pageIdx + 1 < e.Args.Length &&
+            Enum.TryParse<PageKey>(e.Args[pageIdx + 1], ignoreCase: true, out var pk))
+        {
+            var paramIdx = Array.IndexOf(e.Args, "--param");
+            initialPage = pk;
+            initialParam = paramIdx >= 0 && paramIdx + 1 < e.Args.Length ? e.Args[paramIdx + 1] : null;
+        }
+
+        var win = new MainWindow { InitialPage = initialPage, InitialParam = initialParam };
         MainWindow = win;
         win.Show();
 
@@ -73,16 +87,6 @@ public partial class App : Application
         {
             var wizard = new Windows.FirstRunWizard { Owner = win };
             wizard.ShowDialog();
-        }
-
-        // --page <key> [--param <value>] 深链接（用于自动化验收 / 快捷入口）
-        var pageIdx = Array.IndexOf(e.Args, "--page");
-        if (pageIdx >= 0 && pageIdx + 1 < e.Args.Length &&
-            Enum.TryParse<PageKey>(e.Args[pageIdx + 1], ignoreCase: true, out var pk))
-        {
-            var paramIdx = Array.IndexOf(e.Args, "--param");
-            var navParam = paramIdx >= 0 && paramIdx + 1 < e.Args.Length ? e.Args[paramIdx + 1] : null;
-            win.Navigate(pk, navParam);
         }
 
         // 开机自启注册

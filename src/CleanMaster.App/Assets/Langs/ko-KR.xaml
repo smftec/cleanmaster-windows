@@ -72,6 +72,9 @@
     <sys:String xml:space="preserve" x:Key="clean.privacy.banner">개인정보 항목은 기본 선택 해제 상태입니다. 선택 전 각 항목의 영향을 읽어주세요: 쿠키 삭제 시 로그아웃되고 기록 삭제는 되돌릴 수 없습니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.warn">개인정보 항목은 정리 후 복원할 수 없습니다. 영향을 이해했는지 확인하세요.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recycle.desc">비우면 휴지통의 파일이 영구 삭제되어 복원할 수 없습니다. 먼저 휴지통을 열어 확인할 수 있습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">휴지통을 비웠습니다({0}개 항목)</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail">스캔 중 {0}/{1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} 발견</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">앱 캐시</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">브라우저</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">개인정보 흔적</sys:String>
@@ -202,8 +205,10 @@
     <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">시작 프로그램 제안</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">스마트 제안</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">선택 항목 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned">잔여 {0}개 정리</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">데이터 폴더</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">이 앱에 속한 것으로 확인된 데이터 폴더와 설정 키입니다. 선택 항목은 격리소로 이동되어 복원 가능합니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.fail">, {0}개 실패</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.installdir">설치 폴더</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.reg">설정 레지스트리 키(백업 후 삭제)</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">정리하지 않고 완료</sys:String>
@@ -217,6 +222,8 @@
     <sys:String xml:space="preserve" x:Key="nav.space">공간 분석</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.startup">시작 프로그램</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">도구</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow">시스템 드라이브 여유가 {0}밖에 남지 않았습니다. 정리를 권장합니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow.log">알림: 시스템 드라이브 여유 10% 미만</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">휴지통의 {0}개 파일({1})이 영구 삭제되며 복원할 수 없습니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">휴지통을 비울까요?</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">휴지통이 비어 있습니다</sys:String>
@@ -373,6 +380,7 @@
     <sys:String xml:space="preserve" x:Key="settings.about.wechat">WeChat에서 「AI虚拟助理」을 검색하면 팁과 소식을 받을 수 있습니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">제외 폴더 추가</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">화이트리스트 파일/폴더 추가</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.openlog">데이터 폴더 열기</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">일</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">이 폴더와 파일은 모든 스캔·정리에서 건너뛰어집니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">제외·화이트리스트 항목 없음</sys:String>
@@ -406,6 +414,8 @@
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews">제품 소식</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">새 기능·이벤트 알림(기본 꺼짐)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">주간 보고서</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog">데이터 및 로그</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog.d">설정·격리소·실행 로그를 확인합니다(문제 해결용)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine">정리 후 격리</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">캐시가 아닌 파일은 먼저 격리되어 복원 가능(권장)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">격리 보관 기간</sys:String>
@@ -576,6 +586,8 @@
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo">시스템 정보</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">시스템 구성 보기</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.openfail">열 수 없습니다: </sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power">전원 옵션</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power.d">전원 계획 전환(절전 / 고성능)</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore">시스템 복원</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore.d">복원 지점 만들기/사용</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.storage">저장소 설정</sys:String>

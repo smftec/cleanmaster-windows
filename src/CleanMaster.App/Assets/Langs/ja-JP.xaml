@@ -72,6 +72,9 @@
     <sys:String xml:space="preserve" x:Key="clean.privacy.banner">プライバシー項目は既定で未選択です。選択前に各項目の影響をお読みください：Cookie の削除でログアウトし、履歴の削除は元に戻せません。</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.warn">プライバシー項目は削除後に復元できません。影響を理解した上で実行してください。</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recycle.desc">空にするとごみ箱のファイルは完全に削除され復元できません。先にごみ箱を開いて確認できます。</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">ごみ箱を空にしました（{0} 件）</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail">スキャン中 {0}/{1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} を発見</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">アプリキャッシュ</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">ブラウザ</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">プライバシー痕跡</sys:String>
@@ -202,8 +205,10 @@
     <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">スタートアップの候補</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">スマート候補</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">選択項目を清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned">残り {0} 件を清理</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">データフォルダ</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">このアプリに属すると確認できるデータフォルダと設定キーです。選択した項目は隔離区へ移動され復元可能です。</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.fail">、{0} 件失敗</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.installdir">インストールフォルダ</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.reg">設定レジストリキー（バックアップ後に削除）</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">清理せず終了</sys:String>
@@ -217,6 +222,8 @@
     <sys:String xml:space="preserve" x:Key="nav.space">ディスク解析</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.startup">スタートアップ</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">ツールボックス</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow">システムドライブの空きが {0} になりました。クリーンアップを検討してください</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow.log">リマインダー: システムドライブの空きが 10% 未満</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">ごみ箱の {0} 個のファイル（{1}）は完全に削除され、復元できません。</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">ごみ箱を空にしますか？</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">ごみ箱は空です</sys:String>
@@ -373,6 +380,7 @@
     <sys:String xml:space="preserve" x:Key="settings.about.wechat">WeChat で「AI虚拟助理」を検索するとヒントや更新情報が届きます。</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">除外フォルダを追加</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">ホワイトリストに追加</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.openlog">データフォルダーを開く</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">日</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">これらのフォルダとファイルはすべてのスキャン・清理でスキップされます。</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">除外・ホワイトリストは未設定</sys:String>
@@ -406,6 +414,8 @@
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews">製品情報</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">新機能やイベントのお知らせ（既定オフ）</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">週次レポート</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog">データとログ</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog.d">設定・隔離区・実行ログを確認します（障害調査用）</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine">清理後に隔離</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">キャッシュ以外のファイルは先に隔離され復元可能（推奨）</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">隔離保持期間</sys:String>
@@ -576,6 +586,8 @@
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo">システム情報</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">システム構成の確認</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.openfail">開けません：</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power">電源オプション</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power.d">電源プランの切替（省電力 / 高パフォーマンス）</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore">システムの復元</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore.d">復元ポイントの作成と使用</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.storage">ストレージ設定</sys:String>

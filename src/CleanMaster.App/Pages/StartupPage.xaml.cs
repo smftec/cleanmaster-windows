@@ -39,7 +39,7 @@ public partial class StartupPage : Page, IParamPage
         EmptyText.Visibility = Visibility.Collapsed;
         try
         {
-            _items = await Task.Run(() => _service.Enumerate());
+            _items = await Task.Run(() => Services.EnumerationCache.GetStartup());
         }
         catch (Exception ex)
         {
@@ -105,6 +105,7 @@ public partial class StartupPage : Page, IParamPage
             }
             else
             {
+                Services.EnumerationCache.InvalidateStartup();
                 HistoryService.Add("StartupToggle",
                     string.Format(Services.Loc.T("startup.toggled"), (enable ? Services.Loc.T("startup.enabled") : Services.Loc.T("startup.disabled")), item.Name));
                 _main.ShowToast(string.Format("{0} \"{1}\"", enable ? Services.Loc.T("startup.enabled") : Services.Loc.T("startup.disabled"), item.Name));

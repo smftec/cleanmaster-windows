@@ -192,9 +192,46 @@ public sealed class AutoCleanScheduler
     {
         _owner = owner;
         _timer = new System.Windows.Threading.DispatcherTimer { Interval = TimeSpan.FromMinutes(20) };
-        _timer.Tick += async (s, e) => await CheckAndRunAsync();
+        _timer.Tick += async (s, e) =>
+        {
+            await CheckAndRunAsync();
+            CheckDiskLow();
+        };
         _timer.Start();
         _ = CheckAndRunAsync();
+    }
+
+    // ————— 磁盘空间不足提醒（PRD §22，每天最多一次） —————
+
+    private DateTime _lastDiskNotify;
+
+    private static string SystemDriveRoot()
+    {
+        try { return Path.GetTempPath().Substring(0, 3); }
+        catch { return "C:\\"; }
+    }
+
+    /// <summary>系统盘剩余不足 10% 时提醒;每天最多一次,避免打扰。</summary>
+    private void CheckDiskLow()
+    {
+        var s = SettingsService.Current;
+        if (!s.NotifyDiskLow) return;
+        if (DateTime.Now - _lastDiskNotify < TimeSpan.FromDays(1)) return;
+        try
+        {
+            var drive = DriveInfo.GetDrives().FirstOrDefault(d =>
+                d.IsReady && d.DriveType == DriveType.Fixed &&
+                d.Name.Equals(SystemDriveRoot(), StringComparison.OrdinalIgnoreCase));
+            if (drive == null || drive.TotalSize == 0) return;
+            var freePct = drive.AvailableFreeSpace * 100.0 / drive.TotalSize;
+            if (freePct >= 10) return;
+            _lastDiskNotify = DateTime.Now;
+            var freeText = Core.Utils.SizeText.OfBytes(drive.AvailableFreeSpace, 0);
+            _owner?.Dispatcher.BeginInvoke(() =>
+                (_owner as MainWindow)?.ShowToast(string.Format(Loc.T("notify.disklow"), freeText), ToastType.Warning));
+            HistoryService.Add("Notify", Loc.T("notify.disklow.log"), freeText, 0);
+        }
+        catch { }
     }
 
     public static DateTime? LoadLastRun()

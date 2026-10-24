@@ -88,22 +88,17 @@ public partial class HomePage : Page, IParamPage
         var last = ScanCache.Load();
         var disk = DiskCache.Load(SystemDrive());
 
-        // —— 启动项（轻量枚举） ——
-        int highImpact = 0, startupCount = 0;
+        // —— 启动项 + 已装应用（缓存枚举,并行） ——
+        int highImpact = 0, startupCount = 0, appCount = 0;
         try
         {
-            var items = await Task.Run(() => new StartupService().Enumerate());
+            var startupTask = Task.Run(() => Services.EnumerationCache.GetStartup());
+            var appsTask = Task.Run(() => Services.EnumerationCache.GetApps());
+            await Task.WhenAll(startupTask, appsTask);
+            var items = startupTask.Result;
             startupCount = items.Count(i => i.Enabled && i.CanToggle);
             highImpact = items.Count(i => i.Enabled && i.Impact == "高");
-        }
-        catch { }
-
-        // —— 大文件（上次分析缓存） ——
-        // —— 已装应用 ——
-        int appCount = 0;
-        try
-        {
-            appCount = await Task.Run(() => new AppInventoryService().EnumerateWin32().Count);
+            appCount = appsTask.Result.Count;
         }
         catch { }
 

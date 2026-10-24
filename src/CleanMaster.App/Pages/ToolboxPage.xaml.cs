@@ -694,6 +694,7 @@ public partial class ToolboxPage : Page, IParamPage
 
         AddTool(Services.Loc.T("tool.win.taskmgr"), Services.Loc.T("tool.win.taskmgr.d"), () => Process.Start("taskmgr.exe"));
         AddTool(Services.Loc.T("tool.win.storage"), Services.Loc.T("tool.win.storage.d"), () => Process.Start(new ProcessStartInfo("ms-settings:storagesense") { UseShellExecute = true }));
+        AddTool(Services.Loc.T("tool.win.power"), Services.Loc.T("tool.win.power.d"), () => Process.Start("powercfg.cpl"));
         AddTool(Services.Loc.T("tool.win.dns"), Services.Loc.T("tool.win.dns.d"), () => Services.QuickActions.FlushDns(_main));
         AddTool(Services.Loc.T("tool.win.diskmgmt"), Services.Loc.T("tool.win.diskmgmt.d"), () => Process.Start("diskmgmt.msc"));
         AddTool(Services.Loc.T("tool.win.devmgmt"), Services.Loc.T("tool.win.devmgmt.d"), () => Process.Start("devmgmt.msc"));

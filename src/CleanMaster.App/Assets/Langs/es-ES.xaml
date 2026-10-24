@@ -72,6 +72,9 @@ Continúa automáticamente al terminar</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.banner">Los elementos de privacidad están desmarcados por defecto. Lee cada impacto: limpiar cookies cierra sesiones; el historial borrado no se recupera.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.warn">Los elementos de privacidad no se pueden restaurar tras la limpieza.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recycle.desc">Al vaciarla, los archivos se eliminan definitivamente. Puedes abrir la papelera para revisarla antes.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">Papelera vaciada ({0} elementos)</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail">Escaneando {0}/{1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} encontrados</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">Cachés de apps</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">Navegadores</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">Rastros de privacidad</sys:String>
@@ -202,8 +205,10 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">Sugerencia de inicio</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">Sugerencias</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">Limpiar marcados</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned">{0} residuos limpiados</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">Carpeta de datos</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">Carpetas de datos y claves de registro de esta aplicación. Los marcados van a cuarentena (restaurables).</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.fail">, {0} fallidos</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.installdir">Carpeta de instalación</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.reg">Clave de registro (con copia de seguridad)</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">No limpiar, terminar</sys:String>
@@ -217,6 +222,8 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.space">Análisis de disco</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.startup">Inicio</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Herramientas</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow">El disco del sistema apenas tiene {0} libres — considera limpiar</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow.log">Recordatorio: menos del 10% libre en el disco del sistema</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} archivos ({1}) se eliminarán definitivamente. No se puede deshacer.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">¿Vaciar la papelera?</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">La papelera está vacía</sys:String>
@@ -373,6 +380,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.wechat">Escanea o busca «AI虚拟助理» en WeChat para consejos y novedades.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">Añadir carpeta excluida</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">Añadir a la lista blanca</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.openlog">Abrir carpeta de datos</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">días</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">Estas carpetas y archivos se omiten en todos los análisis y limpiezas.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">Sin exclusiones ni lista blanca</sys:String>
@@ -406,6 +414,8 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews">Novedades</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">Novedades y eventos, desactivado por defecto</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">Informe semanal</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog">Datos y registros</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog.d">Consulta ajustes, cuarentena y registros (diagnóstico)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine">Cuarentena tras limpiar</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">Los archivos que no son caché van primero a cuarentena (recomendado)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">Retención en cuarentena</sys:String>
@@ -576,6 +586,8 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo">Información del sistema</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">Ver la configuración del sistema</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.openfail">No se puede abrir: </sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power">Opciones de energía</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power.d">Cambiar plan de energía (ahorro / rendimiento)</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore">Restaurar sistema</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore.d">Crear o usar puntos de restauración</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.storage">Almacenamiento</sys:String>

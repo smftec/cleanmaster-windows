@@ -86,12 +86,27 @@ public partial class CleanSpacePage : Page, IParamPage
         var ct = _scanCts.Token;
         GroupScanPanel.Visibility = Visibility.Visible;
         RulesHost.Visibility = Visibility.Collapsed;
-        GroupScanText.Text = "正在扫描…";
+        GroupScanBar.Value = 0;
+        GroupScanText.Text = Services.Loc.T("common.scanning");
+        GroupScanDetailText.Text = "";
         try
         {
             var rules = RulesOfTab(tab).ToList();
             var ctx = _scanner.BuildContext(ct);
-            var results = await _scanner.ScanAsync(rules, ctx, null);
+            var lastBytes = -1L;
+            var progress = new Progress<ScanProgress>(p =>
+            {
+                GroupScanBar.Value = p.RuleTotal > 0 ? p.RuleIndex * 100.0 / p.RuleTotal : 0;
+                GroupScanText.Text = string.Format(Services.Loc.T("clean.scan.detail"), p.RuleIndex, p.RuleTotal);
+                GroupScanDetailText.Text = string.IsNullOrEmpty(p.Detail) ? "" : p.Detail;
+                if (p.FoundBytes != lastBytes)
+                {
+                    lastBytes = p.FoundBytes;
+                    GroupScanDetailText.Text = string.Format(Services.Loc.T("clean.scan.detail.f"),
+                        string.IsNullOrEmpty(p.Detail) ? "" : p.Detail + " · ", CleanMaster.Core.Utils.SizeText.OfBytes(p.FoundBytes));
+                }
+            });
+            var results = await _scanner.ScanAsync(rules, ctx, progress);
             ct.ThrowIfCancellationRequested();
             var pairs = rules.Zip(results, (rule, res) => (rule, res))
                              .Where(p => p.res.Error == null && p.res.TotalSize > 0)
@@ -108,6 +123,11 @@ public partial class CleanSpacePage : Page, IParamPage
         RulesHost.Visibility = Visibility.Visible;
         if (_tab == tab) RenderRows(tab);
     }
+
+    /// <summary>全局 Esc:取消进行中的分组扫描。</summary>
+    public void TryCancelCurrent() => _scanCts?.Cancel();
+
+    private void BtnStopGroupScan_Click(object sender, RoutedEventArgs e) => _scanCts?.Cancel();
 
     private void RenderRows(int tab)
     {
@@ -131,7 +151,7 @@ public partial class CleanSpacePage : Page, IParamPage
         var rows = _tabRows.GetValueOrDefault(_tab) ?? new();
         int count = rows.Count(r => r.Selected);
         long bytes = rows.Where(r => r.Selected).Sum(r => r.Res.TotalSize);
-        SelCountText.Text = $"{count} 项";
+        SelCountText.Text = count.ToString();
         SelSizeText.Text = SizeText.OfBytes(bytes);
     }
 
@@ -145,7 +165,7 @@ public partial class CleanSpacePage : Page, IParamPage
         var rows = (_tabRows.GetValueOrDefault(_tab) ?? new()).Where(r => r.Selected).ToList();
         if (rows.Count == 0)
         {
-            _main.ShowToast("请先勾选要清理的项目", ToastType.Info);
+            _main.ShowToast(Services.Loc.T("toast.noselect"), ToastType.Info);
             return;
         }
         string confirmMsg = string.Format(Services.Loc.T("dlg.clean.nrules"), rows.Count, SizeText.OfBytes(rows.Sum(r => r.Res.TotalSize)));
@@ -201,7 +221,7 @@ public partial class CleanSpacePage : Page, IParamPage
             return;
         BtnEmptyBin.IsEnabled = false;
         var ok = await Task.Run(() => Core.Utils.ShellUtil.EmptyRecycleBin());
-        Core.Store.HistoryService.Add("Clean", $"清空了回收站（{count} 个项目）", "", size);
+        Core.Store.HistoryService.Add("Clean", string.Format(Services.Loc.T("clean.recyclebin.cleared"), count), "", size);
         _main.ShowToast(ok ? Services.Loc.T("toast.binemptied") : Services.Loc.T("toast.failed"), ok ? ToastType.Success : ToastType.Warning);
         await RefreshRecycleAsync();
     }

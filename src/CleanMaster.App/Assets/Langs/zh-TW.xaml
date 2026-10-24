@@ -72,6 +72,9 @@
     <sys:String xml:space="preserve" x:Key="clean.privacy.banner">隱私項預設全部不勾選。勾選前請閱讀每項的影響說明：清理 Cookie 會使網站登出，清理歷史記錄後不可復原。</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.warn">隱私項清理後無法復原，請確認已了解各項影響。</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recycle.desc">清空後資源回收筒中的檔案將被永久刪除、無法復原。也可以先開啟資源回收筒檢查一遍。</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">清空了回收站（{0} 个项目）</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail">正在扫描 {0}/{1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}已发现 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">應用快取</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">瀏覽器清理</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">隱私痕跡</sys:String>
@@ -201,8 +204,10 @@
     <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">開機啟動建議</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">智慧建議</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">清理勾選項</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned">已清理 {0} 项残留</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">資料目錄</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">以下是可確認屬於該應用的資料目錄與設定鍵。勾選後進入隔離區（可隨時還原）。</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.fail">，{0} 项失败</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.installdir">安裝目錄</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.reg">登錄檔設定鍵（匯出備份後刪除）</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">不清理，完成</sys:String>
@@ -216,6 +221,8 @@
     <sys:String xml:space="preserve" x:Key="nav.space">空間分析</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.startup">啟動項</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">工具箱</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow">系统盘空间不足，仅剩 {0}，建议清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow.log">提醒：系统盘剩余空间不足 10%</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">資源回收筒中的 {0} 個檔案（共 {1}）將被永久刪除，無法復原。</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">清空資源回收筒？</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">資源回收筒是空的</sys:String>
@@ -372,6 +379,7 @@
     <sys:String xml:space="preserve" x:Key="settings.about.wechat">微信掃碼或搜尋「AI虚拟助理」，取得使用技巧與更新動態。</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">新增排除目錄</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">新增白名單檔案/目錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.openlog">打开数据文件夹</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">天</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">這些目錄與檔案在所有掃描和清理中都會被跳過。</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">暫無排除目錄與白名單</sys:String>
@@ -405,6 +413,8 @@
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews">產品訊息</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">新功能與活動通知，預設關閉</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">每週空間報告</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog">数据与日志</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog.d">查看设置、隔离区与运行日志（排障用）</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine">清理後進入隔離區</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">非快取類檔案先進入隔離區，可隨時還原（建議開啟）</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">隔離區保留時間</sys:String>
@@ -575,6 +585,8 @@
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo">系統資訊</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">查看系統設定</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.openfail">无法打开：</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power">电源选项</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power.d">切换电源计划，省电或高性能</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore">系統還原</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore.d">建立或使用還原點</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.storage">儲存設定</sys:String>

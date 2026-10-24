@@ -72,6 +72,9 @@ Reprise automatique une fois terminée</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.banner">Les éléments de confidentialité sont décochés par défaut. Lisez chaque impact : effacer les cookies déconnecte les sites ; l'historique effacé est irrécupérable.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.privacy.warn">Les éléments de confidentialité ne peuvent pas être restaurés après nettoyage.</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recycle.desc">Vider la corbeille supprime définitivement son contenu. Vous pouvez d'abord l'ouvrir pour vérifier.</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">Corbeille vidée ({0} éléments)</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail">Analyse {0}/{1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} trouvés</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">Caches d'apps</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">Navigateurs</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">Traces de confidentialité</sys:String>
@@ -202,8 +205,10 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.startup.title">Suggestion de démarrage</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">Suggestions</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">Nettoyer la sélection</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned">{0} éléments résiduels nettoyés</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">Dossier de données</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">Dossiers de données et clés de registre appartenant à cette application. Les éléments cochés partent en quarantaine (restaurables).</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.fail">, {0} échecs</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.installdir">Dossier d'installation</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.reg">Clé de registre (sauvegardée puis supprimée)</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.skip">Ignorer, terminer</sys:String>
@@ -217,6 +222,8 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.space">Analyse du disque</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.startup">Démarrage</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Boîte à outils</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow">Le disque système n'a plus que {0} libres — pensez à nettoyer</sys:String>
+    <sys:String xml:space="preserve" x:Key="notify.disklow.log">Rappel : moins de 10% d'espace libre sur le disque système</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} fichiers ({1}) seront définitivement supprimés. Irréversible.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">Vider la corbeille ?</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">La corbeille est vide</sys:String>
@@ -373,6 +380,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.about.wechat">Scannez ou cherchez « AI虚拟助理 » dans WeChat pour astuces et actualités.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">Ajouter un dossier exclu</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">Ajouter à la liste blanche</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.btn.openlog">Ouvrir le dossier de données</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">jours</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">Ces dossiers et fichiers sont ignorés par toutes les analyses et nettoyages.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">Aucune exclusion ni entrée de liste blanche</sys:String>
@@ -406,6 +414,8 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews">Actualités produit</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifynews.d">Nouveautés et événements, désactivé par défaut</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.notifyweekly">Rapport hebdomadaire</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog">Données et journaux</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.row.openlog.d">Consulter réglages, quarantaine et journaux (diagnostic)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine">Mettre en quarantaine</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.d">Les fichiers non-cache vont d'abord en quarantaine, restaurables (recommandé)</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.row.quarantine.days">Conservation en quarantaine</sys:String>
@@ -576,6 +586,8 @@ Irréversible !</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo">Informations système</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.msinfo.d">Configuration du système</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.openfail">Impossible d'ouvrir : </sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power">Options d'alimentation</sys:String>
+    <sys:String xml:space="preserve" x:Key="tool.win.power.d">Changer de mode (économie / performances)</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore">Restauration du système</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.restore.d">Créer ou utiliser des points de restauration</sys:String>
     <sys:String xml:space="preserve" x:Key="tool.win.storage">Stockage</sys:String>

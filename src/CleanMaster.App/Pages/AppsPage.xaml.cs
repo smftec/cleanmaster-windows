@@ -37,7 +37,7 @@ public partial class AppsPage : Page, IParamPage
         AppList.Children.Clear();
         try
         {
-            _apps = await Task.Run(() => _inventory.EnumerateWin32());
+            _apps = await Task.Run(() => Services.EnumerationCache.GetApps());
         }
         catch (Exception ex)
         {
@@ -239,6 +239,7 @@ public partial class AppsPage : Page, IParamPage
 
         HistoryService.Add("Uninstall", string.Format(Services.Loc.T("apps.uninstalled.log"), app.DisplayName), app.Publisher, app.EstimatedSize);
         _main.ShowToast(string.Format(Services.Loc.T("apps.uninstalled.toast"), app.DisplayName));
+        Services.EnumerationCache.InvalidateApps();
         await LoadAsync();
 
         // 残留扫描
@@ -257,7 +258,7 @@ public partial class AppsPage : Page, IParamPage
         if (dlg.Confirmed)
         {
             var (ok, fail) = _inventory.RemoveLeftovers(leftovers.Where(l => l.Selected).ToList());
-            _main.ShowToast($"已清理 {ok} 项残留" + (fail > 0 ? $"，{fail} 项失败" : ""),
+            _main.ShowToast(string.Format(Services.Loc.T("leftover.cleaned"), ok) + (fail > 0 ? string.Format(Services.Loc.T("leftover.fail"), fail) : ""),
                 fail > 0 ? ToastType.Warning : ToastType.Success);
         }
     }

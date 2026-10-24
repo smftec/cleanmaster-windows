@@ -237,6 +237,15 @@ JA = {
     "startup.tip.disable": "クリックで起動を無効化", "startup.tip.enable": "クリックで起動を有効化",
     "startup.tip.impact": "アプリ種別に基づく参考値（タスクマネージャー相当）。実測ではありません",
     "apps.tip.publisher": "公開元：{0}",
+    # v1.5
+    "clean.scan.detail": "スキャン中 {0}/{1}", "clean.scan.detail.f": "{0}{1} を発見",
+    "clean.recyclebin.cleared": "ごみ箱を空にしました（{0} 件）",
+    "notify.disklow": "システムドライブの空きが {0} になりました。クリーンアップを検討してください",
+    "notify.disklow.log": "リマインダー: システムドライブの空きが 10% 未満",
+    "tool.win.power": "電源オプション", "tool.win.power.d": "電源プランの切替（省電力 / 高パフォーマンス）",
+    "settings.btn.openlog": "データフォルダーを開く", "settings.row.openlog": "データとログ",
+    "settings.row.openlog.d": "設定・隔離区・実行ログを確認します（障害調査用）",
+    "leftover.cleaned": "残り {0} 件を清理", "leftover.fail": "、{0} 件失敗",
 }
 
 KO = {
@@ -475,4 +484,13 @@ KO = {
     "startup.tip.disable": "클릭하여 시작 시 사용 안 함", "startup.tip.enable": "클릭하여 시작 시 사용",
     "startup.tip.impact": "앱 유형 기반 참고 평가(작업 관리자와 유사). 실측이 아닙니다",
     "apps.tip.publisher": "게시자: {0}",
+    # v1.5
+    "clean.scan.detail": "스캔 중 {0}/{1}", "clean.scan.detail.f": "{0}{1} 발견",
+    "clean.recyclebin.cleared": "휴지통을 비웠습니다({0}개 항목)",
+    "notify.disklow": "시스템 드라이브 여유가 {0}밖에 남지 않았습니다. 정리를 권장합니다",
+    "notify.disklow.log": "알림: 시스템 드라이브 여유 10% 미만",
+    "tool.win.power": "전원 옵션", "tool.win.power.d": "전원 계획 전환(절전 / 고성능)",
+    "settings.btn.openlog": "데이터 폴더 열기", "settings.row.openlog": "데이터 및 로그",
+    "settings.row.openlog.d": "설정·격리소·실행 로그를 확인합니다(문제 해결용)",
+    "leftover.cleaned": "잔여 {0}개 정리", "leftover.fail": ", {0}개 실패",
 }
