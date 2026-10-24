@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.sort.name">名前順</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">サイズ順</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.store">Microsoft Store アプリ</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.tip.publisher">公開元：{0}</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">アンインストーラーを起動できません：</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">アプリサイズ：{0}
 
@@ -476,6 +477,9 @@
     <sys:String xml:space="preserve" x:Key="startup.suggest.off">無効化を検討</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.system">システムコンポーネント</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.systemchip">システムコンポーネント</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.disable">クリックで起動を無効化</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.enable">クリックで起動を有効化</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.impact">アプリ種別に基づく参考値（タスクマネージャー相当）。実測ではありません</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">スタートアップ「{1}」を{0}</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">{0} 分前</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">たった今</sys:String>

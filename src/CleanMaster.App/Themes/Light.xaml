@@ -26,23 +26,25 @@
     <SolidColorBrush x:Key="NavHoverBgBrush" Color="#F2F6FD"/>
 
     <SolidColorBrush x:Key="TextPrimaryBrush" Color="#17263F"/>
-    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#66738C"/>
-    <SolidColorBrush x:Key="TextTertiaryBrush" Color="#9AA6BC"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#5E6C86"/>
+    <SolidColorBrush x:Key="TextTertiaryBrush" Color="#7E8BA4"/>
     <SolidColorBrush x:Key="TextOnPrimaryBrush" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="FocusRingBrush" Color="#8FB2F4"/>
 
-    <SolidColorBrush x:Key="SuccessBrush" Color="#31A354"/>
+    <SolidColorBrush x:Key="SuccessBrush" Color="#1B8F4B"/>
     <SolidColorBrush x:Key="SuccessSoftBrush" Color="#E6F6EB"/>
-    <SolidColorBrush x:Key="WarningBrush" Color="#E6A23C"/>
+    <SolidColorBrush x:Key="WarningBrush" Color="#C05E00"/>
     <SolidColorBrush x:Key="WarningSoftBrush" Color="#FCF3E5"/>
-    <SolidColorBrush x:Key="DangerBrush" Color="#D84A4A"/>
+    <SolidColorBrush x:Key="DangerBrush" Color="#CC3D3D"/>
     <SolidColorBrush x:Key="DangerSoftBrush" Color="#FBEAEA"/>
-    <SolidColorBrush x:Key="OrangeBrush" Color="#F97316"/>
+    <SolidColorBrush x:Key="OrangeBrush" Color="#C2410C"/>
     <SolidColorBrush x:Key="PurpleBrush" Color="#8B5CF6"/>
-    <SolidColorBrush x:Key="TealBrush" Color="#14B8A6"/>
+    <SolidColorBrush x:Key="TealBrush" Color="#0D9488"/>
     <SolidColorBrush x:Key="PinkBrush" Color="#EC4899"/>
 
     <SolidColorBrush x:Key="DividerBrush" Color="#EDF1F8"/>
     <SolidColorBrush x:Key="TrackBrush" Color="#E4EAF4"/>
+    <Color x:Key="SkeletonColor">#E7EDF7</Color>
     <SolidColorBrush x:Key="OverlayBrush" Color="#8A000000"/>
     <SolidColorBrush x:Key="ItemHoverBrush" Color="#F4F8FF"/>
     <SolidColorBrush x:Key="ItemPressedBrush" Color="#EAF2FF"/>

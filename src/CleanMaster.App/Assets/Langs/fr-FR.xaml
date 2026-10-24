@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.sort.name">Par nom</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">Par taille</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.store">Application Microsoft Store</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.tip.publisher">Éditeur : {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">Impossible de lancer le désinstalleur : </sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">Taille : {0}
 
@@ -476,6 +477,9 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.off">À désactiver éventuellement</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.system">Composant système</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.systemchip">Composant système</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.disable">Cliquez pour désactiver au démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.enable">Cliquez pour activer au démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.impact">Estimation indicative selon le type d'application (comme le Gestionnaire des tâches), non mesurée</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">{0} l'élément de démarrage « {1} »</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">il y a {0} min</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">À l'instant</sys:String>

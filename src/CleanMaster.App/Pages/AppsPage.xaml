@@ -53,12 +53,19 @@
                 </Grid>
             </Border>
 
-            <StackPanel x:Name="LoadingPanel" Visibility="Collapsed" VerticalAlignment="Center"
-                        HorizontalAlignment="Center">
-                <ProgressBar IsIndeterminate="True" Width="240" Height="6"/>
-                <TextBlock x:Name="LoadingText" Text="{DynamicResource apps.loading}" FontSize="12.5"
-                           Foreground="{DynamicResource TextSecondaryBrush}"
-                           HorizontalAlignment="Center" Margin="0,14,0,0"/>
+            <StackPanel x:Name="LoadingPanel" Visibility="Collapsed" Margin="14,8,14,8">
+                <TextBlock x:Name="WaitingText" Text="{DynamicResource apps.loading}" FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}"
+                           Margin="2,2,0,12" TextTrimming="CharacterEllipsis"/>
+                <UniformGrid Columns="2">
+                    <Border Style="{StaticResource SkeletonRow}" Margin="0,0,14,10"/>
+                    <Border Style="{StaticResource SkeletonRow}"/>
+                    <Border Style="{StaticResource SkeletonRow}" Margin="0,0,14,10"/>
+                    <Border Style="{StaticResource SkeletonRow}"/>
+                    <Border Style="{StaticResource SkeletonRow}" Margin="0,0,14,10"/>
+                    <Border Style="{StaticResource SkeletonRow}"/>
+                    <Border Style="{StaticResource SkeletonRow}" Margin="0,0,14,10"/>
+                    <Border Style="{StaticResource SkeletonRow}"/>
+                </UniformGrid>
             </StackPanel>
             <TextBlock x:Name="EmptyText" Text="{DynamicResource apps.empty}" FontSize="12.5"
                        Foreground="{DynamicResource TextTertiaryBrush}" HorizontalAlignment="Center"

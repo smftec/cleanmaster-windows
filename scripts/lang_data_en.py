@@ -248,4 +248,8 @@ EN = {
     "cmd.dnsflush": "Flush DNS cache", "cmd.theme.toggle": "Toggle dark / light theme", "cmd.checkupdate": "Check for updates",
     "tool.dup.dirs": "Change scan folders", "tool.dup.pickdir": "Choose folders to scan for duplicates", "tool.dup.rootsset": "Scan folder set to {0}",
     "toast.themeapplied": "Theme switched",
+    # v1.4
+    "startup.tip.disable": "Click to disable at startup", "startup.tip.enable": "Click to enable at startup",
+    "startup.tip.impact": "Reference estimate based on app type (similar to Task Manager), not measured",
+    "apps.tip.publisher": "Publisher: {0}",
 }

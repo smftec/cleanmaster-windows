@@ -315,9 +315,12 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <TextBlock x:Name="NoActivityText" Text="{DynamicResource home.activity.empty}" FontSize="12.5"
-                                   Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,14,0,6"
-                                   Visibility="Collapsed"/>
+                        <StackPanel x:Name="NoActivityPanel" Margin="0,14,0,6" Visibility="Collapsed">
+                            <TextBlock Text="{DynamicResource home.activity.empty}" FontSize="12.5"
+                                       Foreground="{DynamicResource TextTertiaryBrush}"/>
+                            <Button Content="{DynamicResource btn.scan.now}" Style="{StaticResource SmallSecondaryButton}"
+                                    HorizontalAlignment="Left" Margin="0,10,0,0" Click="BtnScan_Click"/>
+                        </StackPanel>
                         <Border Background="{DynamicResource ItemHoverBrush}" CornerRadius="10"
                                 Padding="12,10" Margin="0,12,0,0">
                             <StackPanel>

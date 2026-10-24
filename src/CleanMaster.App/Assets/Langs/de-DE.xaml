@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.sort.name">Nach Name</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">Nach Größe</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.store">Microsoft Store App</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.tip.publisher">Herausgeber: {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">Deinstallationsprogramm konnte nicht gestartet werden: </sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">App-Größe: {0}
 
@@ -476,6 +477,9 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.off">Deaktivieren erwägen</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.system">Systemkomponente</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.systemchip">Systemkomponente</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.disable">Klicken, um beim Start zu deaktivieren</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.enable">Klicken, um beim Start zu aktivieren</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.impact">Richtwert basierend auf dem App-Typ (wie im Task-Manager), nicht gemessen</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">Autostart „{1}“ {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">vor {0} Min.</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">gerade eben</sys:String>

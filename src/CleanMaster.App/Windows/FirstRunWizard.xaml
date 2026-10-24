@@ -20,11 +20,12 @@
 
             <!-- 第 1 步：欢迎 -->
             <StackPanel x:Name="Step1">
-                <Border Width="66" Height="66" CornerRadius="18"
-                        Background="{DynamicResource PrimaryGradientBrush}" HorizontalAlignment="Center">
-                    <Path Data="{StaticResource BroomIcon}" Stroke="White" StrokeThickness="2.4"
-                          StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
-                          Width="34" Height="34" Stretch="Uniform"/>
+                <Border Width="216" Height="216" CornerRadius="20" HorizontalAlignment="Center"
+                        BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="1">
+                    <Border.Clip>
+                        <RectangleGeometry RadiusX="20" RadiusY="20" Rect="0,0,216,216"/>
+                    </Border.Clip>
+                    <Image Source="pack://application:,,,/Assets/wizard-hero.png" Width="216" Height="216" Stretch="UniformToFill"/>
                 </Border>
                 <TextBlock Text="{DynamicResource wizard.welcome}" FontSize="22" FontWeight="Bold"
                            Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center" Margin="0,18,0,0"/>

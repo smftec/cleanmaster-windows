@@ -346,7 +346,6 @@ public partial class SmartScanPage : Page, IParamPage
                 ? new SolidColorBrush(OpacityBlend(brush))
                 : (Brush)System.Windows.Application.Current.FindResource("PrimarySoftBrush"),
         };
-        if (!soft) bd.Background = new SolidColorBrush(Color.FromArgb(26, 39, 116, 240));
         bd.Child = new TextBlock
         {
             Text = text,
@@ -530,9 +529,9 @@ public sealed class ScanRowVM : INotifyPropertyChanged
     public string RiskText => Res.Risk switch { RiskLevel.Safe => Services.Loc.T("risk.safe"), RiskLevel.Low => Services.Loc.T("risk.low"), RiskLevel.Confirm => Services.Loc.T("risk.confirm"), _ => Services.Loc.T("risk.high") };
     public System.Windows.Media.Brush RiskBrush => Res.Risk switch
     {
-        RiskLevel.Confirm => System.Windows.Media.Brushes.Orange,
-        RiskLevel.High => System.Windows.Media.Brushes.Red,
-        _ => new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x31, 0xA3, 0x54)),
+        RiskLevel.Confirm => (System.Windows.Media.Brush)System.Windows.Application.Current.FindResource("WarningBrush"),
+        RiskLevel.High => (System.Windows.Media.Brush)System.Windows.Application.Current.FindResource("DangerBrush"),
+        _ => (System.Windows.Media.Brush)System.Windows.Application.Current.FindResource("SuccessBrush"),
     };
     public int RunningCount => Res.RunningProcesses.Count;
     public RiskLevel Risk => Res.Risk;

@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.sort.name">按名称</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">按大小</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.store">Microsoft Store 应用</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.tip.publisher">发布者：{0}</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">无法启动卸载程序：</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">应用大小：{0}
 
@@ -476,6 +477,9 @@
     <sys:String xml:space="preserve" x:Key="startup.suggest.off">可考虑关闭</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.system">系统组件</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.systemchip">系统组件</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.disable">点击禁用开机启动</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.enable">点击启用开机启动</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.impact">基于应用类型的参考评估（类似任务管理器的启动影响），非实测数据</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">{0}启动项「{1}」</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">{0} 分钟前</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">刚刚</sys:String>

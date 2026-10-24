@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.sort.name">By name</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">By size</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.store">Microsoft Store app</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.tip.publisher">Publisher: {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">Failed to launch uninstaller: </sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">App size: {0}
 
@@ -476,6 +477,9 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.off">Consider disabling</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.system">System component</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.systemchip">System component</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.disable">Click to disable at startup</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.enable">Click to enable at startup</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.impact">Reference estimate based on app type (similar to Task Manager), not measured</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">{0} startup item “{1}”</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">{0} min ago</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">Just now</sys:String>

@@ -34,7 +34,6 @@ public partial class AppsPage : Page, IParamPage
     private async Task LoadAsync()
     {
         LoadingPanel.Visibility = Visibility.Visible;
-        LoadingText.Text = "正在读取已安装应用…";
         AppList.Children.Clear();
         try
         {
@@ -219,7 +218,7 @@ public partial class AppsPage : Page, IParamPage
 
         // 等待卸载完成（轮询注册表条目是否消失，最多 5 分钟）
         LoadingPanel.Visibility = Visibility.Visible;
-        LoadingText.Text = string.Format(Services.Loc.T("apps.waiting"), app.DisplayName);
+        WaitingText.Text = string.Format(Services.Loc.T("apps.waiting"), app.DisplayName);
         bool gone = false;
         await Task.Run(async () =>
         {

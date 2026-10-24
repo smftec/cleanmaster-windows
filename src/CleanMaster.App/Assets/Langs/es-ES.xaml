@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.sort.name">Por nombre</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">Por tamaño</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.store">Aplicación de Microsoft Store</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.tip.publisher">Editor: {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">No se pudo iniciar el desinstalador: </sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">Tamaño: {0}
 
@@ -476,6 +477,9 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.off">Considera desactivarlo</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.system">Componente del sistema</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.systemchip">Componente del sistema</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.disable">Pulsa para desactivar en el inicio</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.enable">Pulsa para activar en el inicio</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.impact">Estimación orientativa según el tipo de app (similar al Administrador de tareas), no medida</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">{0} el elemento de inicio «{1}»</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">hace {0} min</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">Ahora mismo</sys:String>

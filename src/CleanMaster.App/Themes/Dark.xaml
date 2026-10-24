@@ -26,9 +26,10 @@
     <SolidColorBrush x:Key="NavHoverBgBrush" Color="#1F2940"/>
 
     <SolidColorBrush x:Key="TextPrimaryBrush" Color="#E8EDF8"/>
-    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#9FACCB"/>
-    <SolidColorBrush x:Key="TextTertiaryBrush" Color="#6B799C"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#A8B4D2"/>
+    <SolidColorBrush x:Key="TextTertiaryBrush" Color="#7E8DB0"/>
     <SolidColorBrush x:Key="TextOnPrimaryBrush" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="FocusRingBrush" Color="#639DF8"/>
 
     <SolidColorBrush x:Key="SuccessBrush" Color="#43C468"/>
     <SolidColorBrush x:Key="SuccessSoftBrush" Color="#1C3527"/>
@@ -43,6 +44,7 @@
 
     <SolidColorBrush x:Key="DividerBrush" Color="#2A3750"/>
     <SolidColorBrush x:Key="TrackBrush" Color="#2C3852"/>
+    <Color x:Key="SkeletonColor">#2A3752</Color>
     <SolidColorBrush x:Key="OverlayBrush" Color="#AA000000"/>
     <SolidColorBrush x:Key="ItemHoverBrush" Color="#25324D"/>
     <SolidColorBrush x:Key="ItemPressedBrush" Color="#2A3A5C"/>

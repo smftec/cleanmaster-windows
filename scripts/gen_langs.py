@@ -264,6 +264,10 @@ ZH = {
     # 重复文件目录
     "tool.dup.dirs": "更改扫描目录", "tool.dup.pickdir": "选择重复文件扫描目录", "tool.dup.rootsset": "扫描目录已设为 {0}",
     "toast.themeapplied": "主题已切换",
+    # ===== v1.4 追加 =====
+    "startup.tip.disable": "点击禁用开机启动", "startup.tip.enable": "点击启用开机启动",
+    "startup.tip.impact": "基于应用类型的参考评估（类似任务管理器的启动影响），非实测数据",
+    "apps.tip.publisher": "发布者：{0}",
 }
 
 # ============ 组装与生成 ============

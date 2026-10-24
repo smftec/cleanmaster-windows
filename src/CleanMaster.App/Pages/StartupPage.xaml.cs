@@ -87,7 +87,9 @@ public partial class StartupPage : Page, IParamPage
             IsChecked = item.Enabled,
             IsEnabled = item.CanToggle,
             VerticalAlignment = VerticalAlignment.Center,
-            ToolTip = item.CanToggle ? (item.Enabled ? "点击禁用开机启动" : "点击启用开机启动") : item.Note,
+            ToolTip = item.CanToggle
+                ? (item.Enabled ? Services.Loc.T("startup.tip.disable") : Services.Loc.T("startup.tip.enable"))
+                : item.Note,
         };
         Grid.SetColumn(toggle, 0);
         toggle.Click += async (s, e) =>
@@ -133,7 +135,7 @@ public partial class StartupPage : Page, IParamPage
             TextTrimming = TextTrimming.CharacterEllipsis,
             Margin = new Thickness(0, 3, 0, 0),
         };
-        ToolTipService.SetToolTip(cmd, $"{item.Command}\n发布者：{(string.IsNullOrEmpty(pub) ? "未知" : pub)}");
+        ToolTipService.SetToolTip(cmd, $"{item.Command}\n" + string.Format(Services.Loc.T("apps.tip.publisher"), string.IsNullOrEmpty(pub) ? Services.Loc.T("apps.unknown") : pub));
         namePanel.Children.Add(cmd);
         if (!string.IsNullOrWhiteSpace(item.Publisher))
         {
@@ -173,7 +175,7 @@ public partial class StartupPage : Page, IParamPage
                 _ => (Brush)FindResource("TextSecondaryBrush"),
             },
         };
-        ToolTipService.SetToolTip(impactBorder, "基于应用类型的参考评估（类似任务管理器的启动影响），非实测数据");
+        ToolTipService.SetToolTip(impactBorder, Services.Loc.T("startup.tip.impact"));
         Grid.SetColumn(impactBorder, 2);
 
         // 来源

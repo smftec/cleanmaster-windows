@@ -51,11 +51,15 @@
                 </Grid>
             </Border>
 
-            <StackPanel x:Name="LoadingPanel" Visibility="Collapsed" VerticalAlignment="Center"
-                        HorizontalAlignment="Center">
-                <ProgressBar IsIndeterminate="True" Width="240" Height="6"/>
-                <TextBlock Text="{DynamicResource startup.loading}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
-                           HorizontalAlignment="Center" Margin="0,14,0,0"/>
+            <StackPanel x:Name="LoadingPanel" Visibility="Collapsed" Margin="14,8,14,8">
+                <TextBlock Text="{DynamicResource startup.loading}" FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}"
+                           Margin="2,2,0,12"/>
+                <Border Style="{StaticResource SkeletonRow}" Width="320" HorizontalAlignment="Left"/>
+                <Border Style="{StaticResource SkeletonRow}" Width="560" HorizontalAlignment="Left"/>
+                <Border Style="{StaticResource SkeletonRow}" Width="470" HorizontalAlignment="Left"/>
+                <Border Style="{StaticResource SkeletonRow}" Width="610" HorizontalAlignment="Left"/>
+                <Border Style="{StaticResource SkeletonRow}" Width="520" HorizontalAlignment="Left"/>
+                <Border Style="{StaticResource SkeletonRow}" Width="430" HorizontalAlignment="Left"/>
             </StackPanel>
             <TextBlock x:Name="EmptyText" Text="{DynamicResource startup.empty}" FontSize="12.5"
                        Foreground="{DynamicResource TextTertiaryBrush}" HorizontalAlignment="Center"

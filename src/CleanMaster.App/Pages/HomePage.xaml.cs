@@ -187,7 +187,7 @@ public partial class HomePage : Page, IParamPage
             TimeText = FormatTime(a.Time),
         }).ToList();
         ActivityList.ItemsSource = acts;
-        NoActivityText.Visibility = acts.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
+        NoActivityPanel.Visibility = acts.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
 
         // —— 清理统计（累计 + 近 7 日） ——
         BuildStats();

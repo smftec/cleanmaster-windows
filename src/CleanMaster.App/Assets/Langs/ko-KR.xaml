@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.sort.name">이름순</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">크기순</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.store">Microsoft Store 앱</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.tip.publisher">게시자: {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.failed">제거 프로그램 실행 실패: </sys:String>
     <sys:String xml:space="preserve" x:Key="apps.uninstall.msg">앱 크기: {0}
 
@@ -476,6 +477,9 @@
     <sys:String xml:space="preserve" x:Key="startup.suggest.off">끄기 고려</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.suggest.system">시스템 구성 요소</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.systemchip">시스템 구성 요소</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.disable">클릭하여 시작 시 사용 안 함</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.enable">클릭하여 시작 시 사용</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.tip.impact">앱 유형 기반 참고 평가(작업 관리자와 유사). 실측이 아닙니다</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">시작 프로그램 「{1}」 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">{0}분 전</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">방금</sys:String>

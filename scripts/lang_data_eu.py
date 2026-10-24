@@ -232,6 +232,10 @@ FR = {
     "cmd.dnsflush": "Vider le cache DNS", "cmd.theme.toggle": "Basculer sombre / clair", "cmd.checkupdate": "Rechercher les mises à jour",
     "tool.dup.dirs": "Changer les dossiers", "tool.dup.pickdir": "Choisir les dossiers à analyser", "tool.dup.rootsset": "Dossier d'analyse : {0}",
     "toast.themeapplied": "Thème modifié",
+    # v1.4
+    "startup.tip.disable": "Cliquez pour désactiver au démarrage", "startup.tip.enable": "Cliquez pour activer au démarrage",
+    "startup.tip.impact": "Estimation indicative selon le type d'application (comme le Gestionnaire des tâches), non mesurée",
+    "apps.tip.publisher": "Éditeur : {0}",
 }
 
 ES = {
@@ -466,6 +470,10 @@ ES = {
     "cmd.dnsflush": "Vaciar caché DNS", "cmd.theme.toggle": "Cambiar oscuro / claro", "cmd.checkupdate": "Buscar actualizaciones",
     "tool.dup.dirs": "Cambiar carpetas", "tool.dup.pickdir": "Elige las carpetas a analizar", "tool.dup.rootsset": "Carpeta de análisis: {0}",
     "toast.themeapplied": "Tema cambiado",
+    # v1.4
+    "startup.tip.disable": "Pulsa para desactivar en el inicio", "startup.tip.enable": "Pulsa para activar en el inicio",
+    "startup.tip.impact": "Estimación orientativa según el tipo de app (similar al Administrador de tareas), no medida",
+    "apps.tip.publisher": "Editor: {0}",
 }
 
 DE = {
@@ -700,4 +708,8 @@ DE = {
     "cmd.dnsflush": "DNS-Cache leeren", "cmd.theme.toggle": "Dunkel / Hell umschalten", "cmd.checkupdate": "Nach Updates suchen",
     "tool.dup.dirs": "Ordner ändern", "tool.dup.pickdir": "Ordner für Duplikatsuche wählen", "tool.dup.rootsset": "Scan-Ordner: {0}",
     "toast.themeapplied": "Design gewechselt",
+    # v1.4
+    "startup.tip.disable": "Klicken, um beim Start zu deaktivieren", "startup.tip.enable": "Klicken, um beim Start zu aktivieren",
+    "startup.tip.impact": "Richtwert basierend auf dem App-Typ (wie im Task-Manager), nicht gemessen",
+    "apps.tip.publisher": "Herausgeber: {0}",
 }

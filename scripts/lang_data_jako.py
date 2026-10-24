@@ -233,6 +233,10 @@ JA = {
     "cmd.dnsflush": "DNS キャッシュをフラッシュ", "cmd.theme.toggle": "ダーク / ライト切替", "cmd.checkupdate": "更新を確認",
     "tool.dup.dirs": "対象フォルダーを変更", "tool.dup.pickdir": "重複スキャンのフォルダーを選択", "tool.dup.rootsset": "対象フォルダーを {0} に設定",
     "toast.themeapplied": "テーマを切り替えました",
+    # v1.4
+    "startup.tip.disable": "クリックで起動を無効化", "startup.tip.enable": "クリックで起動を有効化",
+    "startup.tip.impact": "アプリ種別に基づく参考値（タスクマネージャー相当）。実測ではありません",
+    "apps.tip.publisher": "公開元：{0}",
 }
 
 KO = {
@@ -467,4 +471,8 @@ KO = {
     "cmd.dnsflush": "DNS 캐시 플러시", "cmd.theme.toggle": "다크 / 라이트 전환", "cmd.checkupdate": "업데이트 확인",
     "tool.dup.dirs": "대상 폴더 변경", "tool.dup.pickdir": "중복 스캔 폴더 선택", "tool.dup.rootsset": "대상 폴더가 {0}(으)로 설정됨",
     "toast.themeapplied": "테마가 전환되었습니다",
+    # v1.4
+    "startup.tip.disable": "클릭하여 시작 시 사용 안 함", "startup.tip.enable": "클릭하여 시작 시 사용",
+    "startup.tip.impact": "앱 유형 기반 참고 평가(작업 관리자와 유사). 실측이 아닙니다",
+    "apps.tip.publisher": "게시자: {0}",
 }
