@@ -296,6 +296,8 @@ JA = {
     "hc.copy.header": "CleanMaster 体检レポート · {0}",
     "hc.copy.score": "スコア：{0}（{1}）",
     "hc.goto": "対処する",
+    "app.title": "清理优化大师", "app.alreadyrunning": "清理优化大师はすでに実行中です。",
+    "app.error.msg": "内部エラーが発生しました：",
 }
 
 KO = {
@@ -600,4 +602,6 @@ KO = {
     "hc.copy.header": "CleanMaster 검진 보고서 · {0}",
     "hc.copy.score": "점수: {0}({1})",
     "hc.goto": "처리하기",
+    "app.title": "CleanMaster", "app.alreadyrunning": "CleanMasterが既に実行中です。",
+    "app.error.msg": "内部エラーが発生しました：",
 }

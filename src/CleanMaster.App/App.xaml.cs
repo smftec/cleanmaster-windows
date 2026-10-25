@@ -37,17 +37,19 @@ public partial class App : Application
             return;
         }
 
-        // —— 单实例 ——
+        // —— 单实例(语言先行,提示语随界面语言) ——
+        SettingsService.Load();
         _singleInstanceMutex = new Mutex(true, "CleanMaster_SingleInstance_2F1A", out var isNew);
         if (!isNew)
         {
-            MessageBox.Show("清理优化大师已经在运行了。", "清理优化大师",
+            ThemeManager.ApplyFromSettings();
+            Loc.ApplyFromSettings();
+            MessageBox.Show(Loc.T("app.alreadyrunning"), Loc.T("app.title"),
                 MessageBoxButton.OK, MessageBoxImage.Information);
             Shutdown(0);
             return;
         }
 
-        SettingsService.Load();
         QuarantineService.Instance.PurgeExpired();
         ThemeManager.ApplyFromSettings();
         Loc.ApplyFromSettings();
@@ -61,7 +63,7 @@ public partial class App : Application
         // 全局异常兜底：记录并提示，不闪退
         DispatcherUnhandledException += (s, args) =>
         {
-            try { HistoryService.Add("Error", "发生了一个内部错误", args.Exception.Message); } catch { }
+            try { HistoryService.Add("Error", Loc.T("app.error.msg"), args.Exception.Message); } catch { }
             MessageBox.Show($"发生了一个内部错误：\n{args.Exception.Message}", "清理优化大师",
                 MessageBoxButton.OK, MessageBoxImage.Warning);
             args.Handled = true;

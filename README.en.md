@@ -25,6 +25,10 @@
 |---|---|
 | ![Light](docs/images/home-light.png) | ![Dark](docs/images/home-dark.png) |
 
+| Health check | Toolbox |
+|---|---|
+| ![Health check](docs/images/health-check.png) | ![Toolbox](docs/images/toolbox.png) |
+
 ## ⬇️ Download
 
 Grab the latest build from [Releases](../../releases/latest) (SHA256 checksums in `SHA256SUMS.txt`):
@@ -36,16 +40,18 @@ Grab the latest build from [Releases](../../releases/latest) (SHA256 checksums i
 
 ## 🧰 Features
 
-| Module | Highlights |
+| Module | Capabilities |
 |---|---|
-| **Home** | Device status model, junk & startup overview, disk usage, recent activity, one-click smart suggestions |
-| **Smart Scan** | System junk / browser caches / app caches / Recycle Bin in one pass, grouped by risk with per-file preview |
-| **Clean Space** | System junk (temp, crash dumps, thumbnails, shader caches, update cache…), app caches (WeChat / QQ / Discord / Teams / Steam / Epic / VS Code / JetBrains and 13+ more), browsers (Edge / Chrome / Brave / Opera / Firefox), privacy traces (unchecked by default), Recycle Bin |
-| **Space Analysis** | Multi-threaded disk scan, category breakdown, folder usage tree, large-file finder (reveal / recycle / whitelist) |
-| **Startup** | Registry Run / Startup folders / logon scheduled tasks; Task-Manager-compatible enable/disable; every change restorable |
-| **Apps** | Full uninstaller enumeration, launches the app's own uninstaller, deterministic leftover detection (moved to quarantine) |
-| **Toolbox** | Quarantine manager, file shredder, duplicate finder (content hashing, never filename matching), clean history, Windows quick tools |
-| **Integration** | Light / dark / auto theme, system tray, first-run wizard, scheduled auto-clean |
+| **Home** | Health score (disk / junk / startup factors, ring gauge with level colors), live CPU & memory monitors, disk ring gauge, 7-day cleanup stats chart, recent activity, one-click smart suggestions |
+| **Health check** | Check-up home (last score) → scan → summary (score ring + factor bars + action items: high-impact startups / maintenance off) → clean → before/after score; copy report to clipboard |
+| **Smart scan** | System junk / browser caches / app caches / recycle bin in one pass; results grouped by risk, per-item file details, right-click reveal / copy path |
+| **Clean space** | System junk (temp, crash dumps, thumbnails, shader caches, update caches…), app caches (WeChat / QQ / Discord / Teams / Steam / Epic / VS Code / JetBrains, 13 catalogs), browsers (Edge / Chrome / Brave / Opera / Firefox), privacy traces (off by default), recycle bin, **custom clean folders** (user-added, double-guarded) |
+| **Space analysis** | Multi-threaded full-disk scan, category stats, folder-size tree, large files (size + **type filter**, reveal / recycle / whitelist) |
+| **Startup** | Registry Run / startup folders / logon scheduled tasks; toggles match Task Manager; boot duration (official event source); every change reversible |
+| **Apps** | Full uninstall-table enumeration, native uninstallers, deterministic leftover detection after uninstall (quarantined, restorable) |
+| **Toolbox** | Quarantine, file shredder, duplicate finder (content hash, cancellable), empty folder cleanup, history, system maintenance status (Storage Sense / TRIM / power plan, read-only), DNS flush, Windows shortcuts |
+| **Productivity** | `Ctrl+K` command palette (search pages / tools / actions), `Ctrl+1..8` navigation, `Esc` cancels scans, global context menus |
+| **Integration** | Light / dark / system theme, 8 UI languages, tray (follows UI language), window position memory, first-run wizard, auto-clean schedule, low-disk reminder, in-app update check |
 
 ## 🔒 Safety by Design
 
@@ -54,7 +60,7 @@ Grab the latest build from [Releases](../../releases/latest) (SHA256 checksums i
 - **Restorable quarantine**: non-cache files go to quarantine first (30 days by default), restorable anytime with conflict handling
 - **No junction traversal**: scanning and deletion never follow Junctions / symbolic links
 - **Explainable**: every rule states why it is safe to clean, what the impact is, whether it is restorable, and which processes are locking it
-- **Automated safety self-test**: `CleanMaster.exe --selftest` runs 25 safety assertions as a CI release gate
+- **Automated safety self-test**: `CleanMaster.exe --selftest` runs 15 groups of safety assertions (empty-folder detection, health-score grading, custom-folder boundary guard, boot-time service…) as a CI release gate
 
 ## 🚀 Getting Started
 

@@ -306,6 +306,9 @@ public partial class SpaceAnalysisPage : Page, IParamPage
     {
         if (!IsLoaded) return;
         _lastAnalysis = null;
+        _typeFilter = "";
+        foreach (var rb in TypeFilterHost.Children.OfType<RadioButton>().ToList())
+            if ((string?)rb.Tag == "") rb.IsChecked = true;
         FolderTree.Items.Clear();
         TreeCard.Visibility = Visibility.Collapsed;
         LargeList.Children.Clear();

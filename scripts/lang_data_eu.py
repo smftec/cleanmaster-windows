@@ -295,6 +295,8 @@ FR = {
     "hc.copy.header": "Rapport de bilan CleanMaster · {0}",
     "hc.copy.score": "Score : {0} ({1})",
     "hc.goto": "Corriger",
+    "app.title": "CleanMaster", "app.alreadyrunning": "CleanMaster est déjà en cours d'exécution.",
+    "app.error.msg": "Une erreur interne s'est produite :",
 }
 
 ES = {
@@ -592,6 +594,8 @@ ES = {
     "hc.copy.header": "Informe de revisión de CleanMaster · {0}",
     "hc.copy.score": "Puntuación: {0} ({1})",
     "hc.goto": "Corregir",
+    "app.title": "CleanMaster", "app.alreadyrunning": "CleanMaster ya se está ejecutando.",
+    "app.error.msg": "Se ha producido un error interno:",
 }
 
 DE = {
@@ -896,4 +900,6 @@ DE = {
     "hc.copy.header": "CleanMaster Prüfbericht · {0}",
     "hc.copy.score": "Bewertung: {0} ({1})",
     "hc.goto": "Beheben",
+    "app.title": "CleanMaster", "app.alreadyrunning": "CleanMaster wird bereits ausgeführt.",
+    "app.error.msg": "Ein interner Fehler ist aufgetreten:",
 }

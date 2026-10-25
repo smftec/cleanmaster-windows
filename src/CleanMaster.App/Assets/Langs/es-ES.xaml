@@ -1,6 +1,9 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String xml:space="preserve" x:Key="app.alreadyrunning">CleanMaster ya se está ejecutando.</sys:String>
+    <sys:String xml:space="preserve" x:Key="app.error.msg">Se ha producido un error interno:</sys:String>
+    <sys:String xml:space="preserve" x:Key="app.title">CleanMaster</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.col.date">Instalado</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.col.name">Aplicación</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.col.publisher">Editor</sys:String>

@@ -327,6 +327,8 @@ ZH = {
     "hc.copy.header": "清理优化大师 体检报告 · {0}",
     "hc.copy.score": "评分：{0}（{1}）",
     "hc.goto": "去处理",
+    "app.title": "清理优化大师", "app.alreadyrunning": "清理优化大师已经在运行了。",
+    "app.error.msg": "发生了一个内部错误：",
 }
 
 # ============ 组装与生成 ============
