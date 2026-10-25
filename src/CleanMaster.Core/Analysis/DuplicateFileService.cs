@@ -103,9 +103,9 @@ public sealed class DuplicateFileService
                             }
                             catch { }
                         }
-                        foreach (var g in full.Values.Where(l => l.Count > 1))
+                        foreach (var (hash, files) in full.Where(l => l.Value.Count > 1))
                         {
-                            confirmed.Add((g[0], kv.Key, g.OrderBy(f => File.GetLastWriteTime(f)).ToList()));
+                            confirmed.Add((hash, kv.Key, files.OrderBy(f => File.GetLastWriteTime(f)).ToList()));
                         }
                     }
                 });

@@ -94,6 +94,11 @@ public static class ElevatedService
                     var sub = args!["sub"];            // e.g. Software\Microsoft\Windows\CurrentVersion\Run
                     var value = args["value"];
                     var disable = args["disable"] == "1";
+                    // 白名单原则:仅允许系统启动项相关键,拒绝任意 HKLM 写入
+                    const string allowedPrefix = @"Software\Microsoft\Windows\CurrentVersion\";
+                    if (!sub.StartsWith(allowedPrefix, StringComparison.OrdinalIgnoreCase) ||
+                        sub.Contains("..") || value.Contains('\0'))
+                        throw new InvalidOperationException("subkey not allowed");
                     using var k = Registry.LocalMachine.OpenSubKey(sub, writable: true)
                         ?? throw new InvalidOperationException("cannot open key");
                     var data = k.GetValue(value) as byte[];
@@ -110,6 +115,9 @@ public static class ElevatedService
                     var args = JsonSerializer.Deserialize<Dictionary<string, string>>(argsJson);
                     var name = args!["task"];
                     var disable = args["disable"] == "1";
+                    // 计划任务名拼入命令行,拒绝引号与控制字符防止注入
+                    if (name.IndexOfAny(new[] { '"', '\r', '\n', '\0' }) >= 0)
+                        throw new InvalidOperationException("invalid task name");
                     var psi = new ProcessStartInfo("schtasks.exe",
                         $"/Change /TN \"{name}\" /{(disable ? "DISABLE" : "ENABLE")}")
                     { CreateNoWindow = true, UseShellExecute = false, RedirectStandardOutput = true };

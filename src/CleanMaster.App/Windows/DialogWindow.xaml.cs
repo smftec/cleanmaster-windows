@@ -30,6 +30,8 @@ public partial class DialogWindow : Window
                       : isPrimary ? (Style)FindResource("PrimaryButton")
                       : (Style)FindResource("SecondaryButton"),
                 MinWidth = 96,
+                // 回车确认非危险主按钮;危险操作必须显式点击
+                IsDefault = isPrimary && !danger,
             };
             btn.Click += (s, e) => { ResultIndex = captured; Close(); };
             ButtonRow.Children.Add(btn);
