@@ -144,6 +144,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.disk">Espacio en disco</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.junk">Carga de basura</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.startup">Carga de inicio</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.goto">Corregir</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.last">Última puntuación {0} · {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.never">Aún sin revisión — pulsa para empezar</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.start">Iniciar revisión completa</sys:String>

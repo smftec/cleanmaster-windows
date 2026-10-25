@@ -144,6 +144,7 @@
     <sys:String xml:space="preserve" x:Key="hc.factor.disk">디스크 여유</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.junk">데이터 부하</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.startup">시작 부하</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.goto">처리하기</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.last">이전 점수 {0} · {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.never">아직 검진하지 않았습니다. 클릭해서 시작</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.start">전체 검진 시작</sys:String>

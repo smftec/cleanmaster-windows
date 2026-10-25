@@ -310,4 +310,5 @@ EN = {
     "btn.copyreport": "Copy report", "toast.reportcopied": "Report copied to clipboard",
     "hc.copy.header": "CleanMaster check-up report · {0}",
     "hc.copy.score": "Score: {0} ({1})",
+    "hc.goto": "Fix",
 }

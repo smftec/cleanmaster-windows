@@ -93,8 +93,8 @@
                 <Grid>
                     <StackPanel Orientation="Horizontal">
                         <Grid Width="40" Height="40">
-                            <Ellipse Fill="{DynamicResource SuccessSoftBrush}"/>
-                            <Path Data="{StaticResource CheckIcon}" Stroke="{DynamicResource SuccessBrush}" StrokeThickness="2.4"
+                            <Ellipse x:Name="ScoreBadgeBg" Fill="{DynamicResource SuccessSoftBrush}"/>
+                            <Path x:Name="ScoreBadgeIcon" Data="{StaticResource CheckIcon}" Stroke="{DynamicResource SuccessBrush}" StrokeThickness="2.4"
                                   StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                   Width="18" Height="18" Stretch="Uniform"/>
                         </Grid>
@@ -117,16 +117,25 @@
             <!-- 体检摘要 -->
             <Border Grid.Row="1" Style="{StaticResource CardBorder}" Margin="0,0,0,14" Padding="20,14"
                     x:Name="HealthSummaryCard">
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{DynamicResource hc.summary.title}" FontSize="14" FontWeight="Bold"
-                                   Foreground="{DynamicResource TextPrimaryBrush}" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="HealthSummaryScore" Text="" FontSize="12" VerticalAlignment="Center"
-                                   Foreground="{DynamicResource TextSecondaryBrush}" Margin="12,0,0,0"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Width="120">
+                        <StackPanel x:Name="HealthRingHost" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource hc.summary.title}" FontSize="11.5"
+                                   Foreground="{DynamicResource TextTertiaryBrush}"
+                                   HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                        <TextBlock x:Name="HealthSummaryScore" Text="" FontSize="13" FontWeight="Bold"
+                                   HorizontalAlignment="Center" Margin="0,3,0,0"/>
                     </StackPanel>
-                    <StackPanel x:Name="HealthFactorHost" Margin="0,12,0,0"/>
-                    <StackPanel x:Name="HealthTodoHost" Margin="0,10,0,0"/>
-                </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <StackPanel x:Name="HealthFactorHost" Margin="0,2,0,0"/>
+                        <StackPanel x:Name="HealthTodoHost" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Grid>
             </Border>
 
             <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">

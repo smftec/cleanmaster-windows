@@ -295,6 +295,7 @@ JA = {
     "btn.copyreport": "レポートをコピー", "toast.reportcopied": "レポートをクリップボードにコピーしました",
     "hc.copy.header": "CleanMaster 体检レポート · {0}",
     "hc.copy.score": "スコア：{0}（{1}）",
+    "hc.goto": "対処する",
 }
 
 KO = {
@@ -598,4 +599,5 @@ KO = {
     "btn.copyreport": "보고서 복사", "toast.reportcopied": "보고서를 클립보드에 복사했습니다",
     "hc.copy.header": "CleanMaster 검진 보고서 · {0}",
     "hc.copy.score": "점수: {0}({1})",
+    "hc.goto": "처리하기",
 }

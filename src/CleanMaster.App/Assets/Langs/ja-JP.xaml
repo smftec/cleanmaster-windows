@@ -144,6 +144,7 @@
     <sys:String xml:space="preserve" x:Key="hc.factor.disk">ディスク余量</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.junk">データ負荷</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.startup">起動負荷</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.goto">対処する</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.last">前回のスコア {0} · {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.never">まだ体检していません。クリックして開始</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.start">全面体检を開始</sys:String>

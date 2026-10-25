@@ -458,6 +458,10 @@ public partial class HomePage : Page, IParamPage
             var cpu = snap.CpuPercent;
             if (_cpuRing != null && _cpuCenter != null)
             {
+                // CPU 环随负载变色,与内存环状态语义一致
+                if (cpu is >= 90) _cpuRing.ArcBrush = (Brush)FindResource("DangerBrush");
+                else if (cpu is >= 75) _cpuRing.ArcBrush = (Brush)FindResource("WarningBrush");
+                else _cpuRing.ArcBrush = (Brush)FindResource("PrimaryBrush");
                 _cpuRing.SetPercent(cpu ?? 0);
                 _cpuCenter.Text = cpu.HasValue ? cpu.Value.ToString("F0") + "%" : "—";
             }

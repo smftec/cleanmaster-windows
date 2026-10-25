@@ -144,6 +144,7 @@
     <sys:String xml:space="preserve" x:Key="hc.factor.disk">磁盘余量</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.junk">垃圾体量</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.startup">启动负担</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.goto">去处理</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.last">上次评分 {0} · {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.never">还没有体检过，点击开始</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.start">开始全面体检</sys:String>

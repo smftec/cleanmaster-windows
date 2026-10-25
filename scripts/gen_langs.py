@@ -326,6 +326,7 @@ ZH = {
     "btn.copyreport": "复制报告", "toast.reportcopied": "体检报告已复制到剪贴板",
     "hc.copy.header": "清理优化大师 体检报告 · {0}",
     "hc.copy.score": "评分：{0}（{1}）",
+    "hc.goto": "去处理",
 }
 
 # ============ 组装与生成 ============

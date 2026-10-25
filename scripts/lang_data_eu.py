@@ -294,6 +294,7 @@ FR = {
     "btn.copyreport": "Copier le rapport", "toast.reportcopied": "Rapport copié dans le presse-papiers",
     "hc.copy.header": "Rapport de bilan CleanMaster · {0}",
     "hc.copy.score": "Score : {0} ({1})",
+    "hc.goto": "Corriger",
 }
 
 ES = {
@@ -590,6 +591,7 @@ ES = {
     "btn.copyreport": "Copiar informe", "toast.reportcopied": "Informe copiado al portapapeles",
     "hc.copy.header": "Informe de revisión de CleanMaster · {0}",
     "hc.copy.score": "Puntuación: {0} ({1})",
+    "hc.goto": "Corregir",
 }
 
 DE = {
@@ -893,4 +895,5 @@ DE = {
     "btn.copyreport": "Bericht kopieren", "toast.reportcopied": "Bericht in die Zwischenablage kopiert",
     "hc.copy.header": "CleanMaster Prüfbericht · {0}",
     "hc.copy.score": "Bewertung: {0} ({1})",
+    "hc.goto": "Beheben",
 }

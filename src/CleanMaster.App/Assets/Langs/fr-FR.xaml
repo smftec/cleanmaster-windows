@@ -144,6 +144,7 @@ Les fichiers restaurables vont en quarantaine.</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.disk">Espace disque</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.junk">Charge en déchets</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.startup">Charge au démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.goto">Corriger</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.last">Dernier score {0} · {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.never">Aucun bilan — cliquez pour commencer</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.start">Lancer le bilan complet</sys:String>

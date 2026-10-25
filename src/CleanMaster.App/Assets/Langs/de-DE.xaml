@@ -144,6 +144,7 @@ Wiederherstellbare Dateien kommen in die Quarantäne.</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.disk">Freier Speicher</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.junk">Mülllast</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.startup">Startlast</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.goto">Beheben</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.last">Letzte Bewertung {0} · {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.never">Noch keine Prüfung — klicken zum Start</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.start">Vollständige Prüfung starten</sys:String>

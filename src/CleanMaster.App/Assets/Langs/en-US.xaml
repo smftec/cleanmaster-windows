@@ -144,6 +144,7 @@ Restorable files go to quarantine.</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.disk">Disk free</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.junk">Junk load</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.factor.startup">Startup load</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.goto">Fix</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.last">Last score {0} · {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.never">No check-up yet — click to begin</sys:String>
     <sys:String xml:space="preserve" x:Key="hc.start">Start full check-up</sys:String>

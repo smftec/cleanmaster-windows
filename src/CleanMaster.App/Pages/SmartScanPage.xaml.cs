@@ -4,6 +4,8 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using CleanMaster.App.Controls;
 using CleanMaster.App.Services;
 using CleanMaster.Core.Models;
 using CleanMaster.Core.Rules;
@@ -236,15 +238,43 @@ public partial class SmartScanPage : Page, IParamPage
         catch { }
         _lastReport = Core.Analysis.HealthScoreService.Compute(junkBytes, highImpact, freePct);
         var r = _lastReport;
+        var levelBrush = (Brush)FindResource(r.BrushKey);
 
-        HealthSummaryScore.Text = string.Format(Services.Loc.T("hc.summary.score"), r.Score, Services.Loc.T(r.LevelKey));
-        HealthSummaryScore.Foreground = (Brush)FindResource(r.BrushKey);
+        // 顶部徽章与摘要环随评分级别变色(绿=良好 / 橙=建议清理 / 红=需要清理)
+        ScoreBadgeBg.Fill = (Brush)FindResource(r.Score >= 70 ? "SuccessSoftBrush" : "WarningSoftBrush");
+        ScoreBadgeIcon.Stroke = levelBrush;
+        ScoreBadgeIcon.Data = (Geometry)FindResource(r.Score >= 70 ? "CheckIcon" : "WarningIcon");
 
-        // 三因子条形
+        // 左侧评分环
+        HealthRingHost.Children.Clear();
+        var ring = new Controls.RingGauge(96, 10) { ArcBrush = levelBrush };
+        var center = new StackPanel();
+        var scoreTb = new TextBlock
+        {
+            Text = r.Score.ToString(), FontSize = 24, FontWeight = FontWeights.Bold,
+            Foreground = levelBrush, HorizontalAlignment = HorizontalAlignment.Center,
+        };
+        CountUp.Animate(scoreTb, r.Score, v => ((int)v).ToString(), TimeSpan.FromMilliseconds(800));
+        center.Children.Add(scoreTb);
+        center.Children.Add(new TextBlock
+        {
+            Text = Services.Loc.T(r.LevelKey), FontSize = 10.5,
+            Foreground = (Brush)FindResource("TextTertiaryBrush"),
+            HorizontalAlignment = HorizontalAlignment.Center,
+        });
+        ring.Center = center;
+        HealthRingHost.Children.Add(ring);
+        ring.AnimateTo(r.Score, TimeSpan.FromMilliseconds(900));
+        HealthSummaryScore.Text = Services.Loc.T(r.LevelKey);
+        HealthSummaryScore.Foreground = levelBrush;
+
+        // 三因子条形:条与数值同色,宽度动画
         HealthFactorHost.Children.Clear();
+        int delay = 0;
         void FactorBar(string label, double v)
         {
-            var row = new Grid { Margin = new Thickness(0, 4, 0, 4) };
+            var vBrush = Services.StatusColors.BrushFor(this, v);
+            var row = new Grid { Margin = new Thickness(0, 5, 0, 5) };
             row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(110) });
             row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             row.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
@@ -264,10 +294,8 @@ public partial class SmartScanPage : Page, IParamPage
             var fill = new Border
             {
                 Height = 8, CornerRadius = new CornerRadius(4),
-                Width = Math.Max(6, 320 * v / 100),
-                Background = v >= 70 ? (Brush)FindResource("SuccessBrush")
-                    : v >= 45 ? (Brush)FindResource("WarningBrush")
-                    : (Brush)FindResource("DangerBrush"),
+                Width = 0,
+                Background = vBrush,
                 HorizontalAlignment = HorizontalAlignment.Left,
             };
             track.Child = fill;
@@ -275,21 +303,34 @@ public partial class SmartScanPage : Page, IParamPage
             row.Children.Add(track);
             var val = new TextBlock
             {
-                Text = ((int)v).ToString(), FontSize = 12, FontWeight = FontWeights.Bold,
-                Foreground = (Brush)FindResource("TextPrimaryBrush"),
+                Text = ((int)v).ToString(), FontSize = 12.5, FontWeight = FontWeights.Bold,
+                Foreground = vBrush,
                 VerticalAlignment = VerticalAlignment.Center, MinWidth = 26,
             };
             Grid.SetColumn(val, 2);
             row.Children.Add(val);
             HealthFactorHost.Children.Add(row);
+
+            // 宽度入场动画(依次错开)
+            var targetW = Math.Max(6, 320.0 * v / 100);
+            fill.Loaded += (s, e) =>
+            {
+                var anim = new DoubleAnimation(0, targetW, TimeSpan.FromMilliseconds(700))
+                {
+                    EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut },
+                    BeginTime = TimeSpan.FromMilliseconds(delay),
+                };
+                fill.BeginAnimation(WidthProperty, anim);
+            };
+            delay += 120;
         }
         FactorBar(Services.Loc.T("hc.factor.disk"), r.DiskFactor);
         FactorBar(Services.Loc.T("hc.factor.junk"), r.JunkFactor);
         FactorBar(Services.Loc.T("hc.factor.startup"), r.StartupFactor);
 
-        // 待办行:启动项 / 维护项
+        // 待办行:整行可点 + 悬停 + 左侧状态色点
         HealthTodoHost.Children.Clear();
-        void TodoRow(string text, string btnText, PageKey target, object? param)
+        void TodoRow(string text, PageKey target, object? param)
         {
             var row = new Border
             {
@@ -297,33 +338,43 @@ public partial class SmartScanPage : Page, IParamPage
                 CornerRadius = new CornerRadius(9),
                 Padding = new Thickness(12, 8, 12, 8),
                 Margin = new Thickness(0, 5, 0, 0),
+                Cursor = System.Windows.Input.Cursors.Hand,
             };
             var g = new Grid();
+            g.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             g.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             g.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            var dot = new Ellipse
+            {
+                Width = 8, Height = 8, Fill = (Brush)FindResource("WarningBrush"),
+                VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 10, 0),
+            };
+            Grid.SetColumn(dot, 0);
+            g.Children.Add(dot);
             g.Children.Add(new TextBlock
             {
                 Text = text, FontSize = 12.5,
                 Foreground = (Brush)FindResource("TextPrimaryBrush"),
                 VerticalAlignment = VerticalAlignment.Center,
             });
-            var go = new Button
+            var go = new TextBlock
             {
-                Content = btnText,
-                Style = (Style)FindResource("SmallPrimaryButton"),
+                Text = Services.Loc.T("hc.goto") + "  ›", FontSize = 12, FontWeight = FontWeights.Bold,
+                Foreground = (Brush)FindResource("PrimaryBrush"),
+                VerticalAlignment = VerticalAlignment.Center,
             };
-            go.Click += (s, e) => _main.Navigate(target, param);
-            Grid.SetColumn(go, 1);
+            Grid.SetColumn(go, 2);
             g.Children.Add(go);
             row.Child = g;
+            row.MouseLeftButtonUp += (s, e) => _main.Navigate(target, param);
+            row.MouseEnter += (s, e) => row.Background = (Brush)FindResource("ItemPressedBrush");
+            row.MouseLeave += (s, e) => row.Background = (Brush)FindResource("ItemHoverBrush");
             HealthTodoHost.Children.Add(row);
         }
         if (highImpact > 0)
-            TodoRow(string.Format(Services.Loc.T("hc.todo.startup"), highImpact),
-                Services.Loc.T("home.suggest.optimize"), PageKey.Startup, null);
+            TodoRow(string.Format(Services.Loc.T("hc.todo.startup"), highImpact), PageKey.Startup, null);
         if (maintOff > 0)
-            TodoRow(string.Format(Services.Loc.T("hc.todo.maint"), maintOff),
-                Services.Loc.T("maint.goto"), PageKey.Toolbox, "maint");
+            TodoRow(string.Format(Services.Loc.T("hc.todo.maint"), maintOff), PageKey.Toolbox, "maint");
     }
 
     private void BtnCopyReport_Click(object sender, RoutedEventArgs e)
@@ -662,6 +713,7 @@ public partial class SmartScanPage : Page, IParamPage
                 {
                     DoneScoreText.Text = string.Format(Services.Loc.T("hc.done.score"),
                         _lastReport.Score, after.Score);
+                    DoneScoreText.Foreground = (Brush)FindResource(after.BrushKey);
                     DoneScoreText.Visibility = Visibility.Visible;
                 }
             }
