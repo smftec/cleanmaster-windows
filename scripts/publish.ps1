@@ -30,10 +30,21 @@ Write-Host "==> 移除调试符号 (*.pdb 含构建机路径，不随产物分�
 Get-ChildItem (Join-Path $outDir "CleanMaster-$Version-net8-x64") -Recurse -Include *.pdb | Remove-Item -Force
 Get-ChildItem (Join-Path $outDir "CleanMaster-$Version-win-x64-selfcontained") -Recurse -Include *.pdb | Remove-Item -Force
 
-Write-Host "==> 运行安全自测 (--selftest)"
-$exe = Join-Path $outDir "CleanMaster-$Version-net8-x64\CleanMaster.exe"
-& $exe --selftest
-if ($LASTEXITCODE -ne 0) { throw "安全自测未通过，禁止发布！(PRD 第 53 章)" }
+Write-Host "==> 校验自包含产物完整性（安装包与绿色包的全部依赖必须内置）"
+$scDir = Join-Path $outDir "CleanMaster-$Version-win-x64-selfcontained"
+$requiredRuntime = @(
+    "CleanMaster.exe", "hostfxr.dll", "hostpolicy.dll", "coreclr.dll",
+    "System.Private.CoreLib.dll", "WindowsBase.dll", "PresentationFramework.dll"
+)
+$missing = @($requiredRuntime | Where-Object { -not (Test-Path (Join-Path $scDir $_)) })
+if ($missing.Count -gt 0) { throw "自包含产物缺少运行时文件: $($missing -join ', ')" }
+Write-Host ("运行时完整性 ✓  (" + (Get-ChildItem $scDir -File).Count + " 个文件)")
+
+Write-Host "==> 运行安全自测 (--selftest, 直接运行用户拿到的自包含 exe)"
+$exe = Join-Path $scDir "CleanMaster.exe"
+# WinExe 用 & 调用不等待退出（且会锁住同目录 DLL 影响后续打包），必须 Start-Process -Wait
+$p = Start-Process -FilePath $exe -ArgumentList "--selftest" -Wait -PassThru -NoNewWindow
+if ($p.ExitCode -ne 0) { throw "安全自测未通过，禁止发布！(PRD 第 53 章)" }
 Write-Host "安全自测全部通过 ✓"
 
 # —— 可选：代码签名（拿到证书后启用）——
@@ -85,6 +96,17 @@ $zip = Join-Path $outDir "CleanMaster-$Version-win-x64.zip"
 if (Test-Path $zip) { Remove-Item $zip }
 Compress-Archive -Path (Join-Path $outDir "CleanMaster-$Version-win-x64-selfcontained\*") `
     -DestinationPath $zip -CompressionLevel Optimal
+
+Write-Host "==> 校验绿色包(zip)内置运行时"
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+$zipPkg = [System.IO.Compression.ZipFile]::OpenRead($zip)
+try {
+    $names = $zipPkg.Entries | ForEach-Object { $_.FullName }
+    $needInZip = @("CleanMaster.exe", "hostfxr.dll", "coreclr.dll", "System.Private.CoreLib.dll", "WindowsBase.dll")
+    $missZip = @($needInZip | Where-Object { $names -notcontains $_ })
+    if ($missZip.Count -gt 0) { throw "zip 包缺少运行时文件: $($missZip -join ', ')" }
+} finally { $zipPkg.Dispose() }
+Write-Host "zip 运行时完整性 ✓"
 
 # —— SHA256 校验和 ——
 Write-Host "==> 生成 SHA256SUMS.txt"

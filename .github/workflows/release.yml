@@ -50,8 +50,13 @@ jobs:
         shell: pwsh
         run: Get-ChildItem dist -Recurse -Include *.pdb | Remove-Item -Force
 
+      # WinExe 用 ./ 调用不等待退出,必须 Start-Process -Wait 才能可靠拿到退出码
+      # 且自测直接跑用户拿到的自包含 exe,验证其运行时完整可用
       - name: Safety self-test (release gate)
-        run: ./dist/CleanMaster-${{ steps.ver.outputs.version }}-net8-x64/CleanMaster.exe --selftest
+        shell: pwsh
+        run: |
+          $p = Start-Process -FilePath "dist/CleanMaster-${{ steps.ver.outputs.version }}-win-x64-selfcontained/CleanMaster.exe" -ArgumentList "--selftest" -Wait -PassThru -NoNewWindow
+          if ($p.ExitCode -ne 0) { throw "self-test failed - release blocked" }
 
       # ============================================================
       # SignPath 云签名（开源签名审批通过后启用）：
