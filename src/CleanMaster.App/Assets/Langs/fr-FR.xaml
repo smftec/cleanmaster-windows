@@ -547,6 +547,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">Activé</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.missing">Le fichier de démarrage d'origine est introuvable</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.notfound">Fichier de démarrage introuvable</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.unsupported">Type d'élément non pris en charge</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">Élevé</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">Faible</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Moyen</sys:String>

@@ -108,6 +108,23 @@ try {
 } finally { $zipPkg.Dispose() }
 Write-Host "zip 运行时完整性 ✓"
 
+# —— GitLab Release 镜像（可选：CM_GITLAB_RELEASE=1 且 v 标签已推送到 GitLab 时,自动创建带资产的发布）——
+if ($env:CM_GITLAB_RELEASE -eq "1") {
+    $glab = Get-Command glab -ErrorAction SilentlyContinue
+    if ($glab) {
+        Write-Host "==> 创建 GitLab Release 镜像"
+        & glab release create "v$Version" `
+            (Join-Path $outDir "CleanMasterSetup-$Version.exe") `
+            (Join-Path $outDir "CleanMaster-$Version-win-x64.zip") `
+            (Join-Path $outDir "SHA256SUMS.txt") `
+            --name "清理优化大师 v$Version" `
+            --notes "安全、透明、可恢复的 Windows 清理与系统优化工具。安装包与绿色版均自包含 .NET 8 运行时,SHA256 见 SHA256SUMS.txt。"
+        if ($LASTEXITCODE -ne 0) { Write-Host "GitLab Release 创建失败(不阻断发布)" -ForegroundColor Yellow }
+    } else {
+        Write-Host "未检测到 glab,跳过 GitLab Release 镜像" -ForegroundColor DarkGray
+    }
+}
+
 # —— SHA256 校验和 ——
 Write-Host "==> 生成 SHA256SUMS.txt"
 $hashTargets = @($zip)

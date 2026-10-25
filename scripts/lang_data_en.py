@@ -316,4 +316,5 @@ EN = {
     "cmd.hint.short": "Ctrl+K quick search",
     "cmd.hint.short": "Ctrl+K quick search", "btn.ok": "Got it",
     "startup.search.hint": "Search startup items…", "apps.search.hint": "Search apps…",
+    "startup.err.unsupported": "Unsupported item type",
 }

@@ -301,6 +301,7 @@ JA = {
     "cmd.hint.short": "Ctrl+K クイック検索",
     "cmd.hint.short": "Ctrl+K クイック検索", "btn.ok": "了解しました",
     "startup.search.hint": "スタートアップを検索…", "apps.search.hint": "アプリを検索…",
+    "startup.err.unsupported": "サポートされていない種類です",
 }
 
 KO = {
@@ -610,4 +611,5 @@ KO = {
     "cmd.hint.short": "Ctrl+K 빠른 검색",
     "cmd.hint.short": "Ctrl+K 빠른 검색", "btn.ok": "확인",
     "startup.search.hint": "시작 항목 검색…", "apps.search.hint": "앱 검색…",
+    "startup.err.unsupported": "지원하지 않는 유형입니다",
 }

@@ -227,7 +227,7 @@ public sealed class StartupService
             StartupSource.RegHklmRun => await ToggleHklmRunAsync(item, enable),
             StartupSource.StartupFolderUser or StartupSource.StartupFolderCommon => ToggleFolderItem(item, enable),
             StartupSource.ScheduledTask => await ToggleTaskAsync(item, enable),
-            _ => "不支持的类型",
+            _ => Store.CoreLocalizer.T("startup.err.unsupported", "不支持的类型"),
         };
         if (err == null)
         {

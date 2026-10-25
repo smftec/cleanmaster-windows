@@ -126,8 +126,7 @@ public sealed class SpaceAnalysisService
         string driveRoot,
         long largeFileThreshold,
         CancellationToken ct,
-        IProgress<ProgressInfo>? progress,
-        Action? onPausePoint = null)
+        IProgress<ProgressInfo>? progress)
     {
         return await Task.Run(() =>
         {

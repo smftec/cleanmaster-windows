@@ -300,6 +300,7 @@ FR = {
     "cmd.hint.short": "Ctrl+K recherche rapide",
     "cmd.hint.short": "Ctrl+K recherche rapide", "btn.ok": "Compris",
     "startup.search.hint": "Rechercher les éléments de démarrage…", "apps.search.hint": "Rechercher des applications…",
+    "startup.err.unsupported": "Type d'élément non pris en charge",
 }
 
 ES = {
@@ -602,6 +603,7 @@ ES = {
     "cmd.hint.short": "Ctrl+K búsqueda rápida",
     "cmd.hint.short": "Ctrl+K búsqueda rápida", "btn.ok": "Entendido",
     "startup.search.hint": "Buscar elementos de inicio…", "apps.search.hint": "Buscar aplicaciones…",
+    "startup.err.unsupported": "Tipo de elemento no compatible",
 }
 
 DE = {
@@ -911,4 +913,5 @@ DE = {
     "cmd.hint.short": "Ctrl+K Schnellsuche",
     "cmd.hint.short": "Ctrl+K Schnellsuche", "btn.ok": "Verstanden",
     "startup.search.hint": "Starteinträge suchen…", "apps.search.hint": "Apps suchen…",
+    "startup.err.unsupported": "Nicht unterstützter Elementtyp",
 }

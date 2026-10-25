@@ -547,6 +547,7 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">Aktiviert</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.missing">Ursprüngliche Startdatei fehlt</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.notfound">Startdatei nicht gefunden</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.unsupported">Nicht unterstützter Elementtyp</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">Hoch</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">Niedrig</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Mittel</sys:String>

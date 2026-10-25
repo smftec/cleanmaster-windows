@@ -547,6 +547,7 @@
     <sys:String xml:space="preserve" x:Key="startup.enabled">已启用</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.missing">原启动项文件已丢失</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.notfound">启动项文件不存在</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.unsupported">不支持的类型</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">高</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">低</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">中</sys:String>

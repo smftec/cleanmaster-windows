@@ -547,6 +547,7 @@
     <sys:String xml:space="preserve" x:Key="startup.enabled">사용</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.missing">원본 시작 파일을 찾을 수 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.notfound">시작 파일이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.unsupported">지원하지 않는 유형입니다</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">높음</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">낮음</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">중간</sys:String>

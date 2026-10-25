@@ -547,6 +547,7 @@
     <sys:String xml:space="preserve" x:Key="startup.enabled">有効化</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.missing">元のスタートアップファイルが見つかりません</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.notfound">スタートアップファイルが存在しません</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.unsupported">サポートされていない種類です</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">高</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">低</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">中</sys:String>

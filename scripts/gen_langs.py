@@ -331,6 +331,7 @@ ZH = {
     "app.error.msg": "发生了一个内部错误：",
     "cmd.hint.short": "Ctrl+K 快速搜索", "btn.ok": "知道了",
     "startup.search.hint": "搜索启动项…", "apps.search.hint": "搜索应用…",
+    "startup.err.unsupported": "不支持的类型",
 }
 
 # ============ 组装与生成 ============

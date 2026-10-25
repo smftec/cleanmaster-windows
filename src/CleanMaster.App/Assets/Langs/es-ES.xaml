@@ -547,6 +547,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">Activado</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.missing">Falta el archivo de inicio original</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.notfound">Archivo de inicio no encontrado</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.unsupported">Tipo de elemento no compatible</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">Alto</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">Bajo</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Medio</sys:String>

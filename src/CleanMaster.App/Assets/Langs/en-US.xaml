@@ -547,6 +547,7 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">Enabled</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.missing">Original startup file is missing</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.err.notfound">Startup file not found</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.unsupported">Unsupported item type</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">High</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">Low</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Medium</sys:String>
