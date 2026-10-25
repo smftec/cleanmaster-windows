@@ -65,7 +65,7 @@ public static class RuleRowFactory
             Margin = new Thickness(0, 3, 0, 0),
             TextTrimming = TextTrimming.CharacterEllipsis,
         };
-        ToolTipService.SetToolTip(reason, $"{vm.Reason}\n\n清理影响：{vm.Impact}");
+        ToolTipService.SetToolTip(reason, $"{vm.Reason}\n\n{string.Format(Services.Loc.T("row.impact.tip"), vm.Impact)}");
         mid.Children.Add(reason);
         Grid.SetColumn(mid, 1);
 
@@ -94,7 +94,7 @@ public static class RuleRowFactory
             Style = (Style)resources.FindResource("ToggleSwitch"),
             VerticalAlignment = VerticalAlignment.Center,
             Margin = new Thickness(14, 0, 0, 0),
-            ToolTip = "查看文件明细",
+            ToolTip = Services.Loc.T("row.details.tip"),
         };
         toggle.Click += (s, e) =>
         {
@@ -129,12 +129,13 @@ public static class RuleRowFactory
             line.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             var path = new TextBlock
             {
-                Text = it.Path + (it.IsDirectory ? "  (目录)" : ""),
+                Text = it.Path + (it.IsDirectory ? "  " + Services.Loc.T("row.details.dir") : ""),
                 FontSize = 11,
                 Foreground = (Brush)resources.FindResource("TextSecondaryBrush"),
                 TextTrimming = TextTrimming.CharacterEllipsis,
             };
             ToolTipService.SetToolTip(path, it.Path);
+            Controls.UiPathMenu.Attach(path, it.Path);
             Grid.SetColumn(path, 0);
             var sz = new TextBlock
             {
@@ -152,7 +153,7 @@ public static class RuleRowFactory
         {
             host.Children.Add(new TextBlock
             {
-                Text = $"… 还有 {vm.Res.Items.Count - 100} 个项目未显示",
+                Text = string.Format(Services.Loc.T("row.details.more"), vm.Res.Items.Count - 100),
                 FontSize = 11,
                 Foreground = (Brush)resources.FindResource("TextTertiaryBrush"),
                 Margin = new Thickness(0, 3, 0, 0),

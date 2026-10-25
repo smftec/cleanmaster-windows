@@ -130,9 +130,13 @@
     <sys:String xml:space="preserve" x:Key="done.stat.quar">격리됨</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">건너뜀(사용 중)</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">정리 완료</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.autoclean.detail">성공 {0}, 건너뜀 {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.autoclean.title">자동 정리로 {0} 확보</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.msg">모든 정리·작업 기록이 삭제됩니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.title">기록을 비울까요?</sys:String>
     <sys:String xml:space="preserve" x:Key="history.empty">기록이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.quar.purged">격리소를 비웠습니다({0}개 항목)</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.quar.restored">격리 항목 1개를 복원했습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.autoclean">자동 정리</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.clean">정리</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.other">기타</sys:String>
@@ -237,6 +241,7 @@
     <sys:String xml:space="preserve" x:Key="nav.toolbox">도구</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">시스템 드라이브 여유가 {0}밖에 남지 않았습니다. 정리를 권장합니다</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">알림: 시스템 드라이브 여유 10% 미만</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.restore.suffix">복원됨</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">휴지통의 {0}개 파일({1})이 영구 삭제되며 복원할 수 없습니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">휴지통을 비울까요?</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">휴지통이 비어 있습니다</sys:String>

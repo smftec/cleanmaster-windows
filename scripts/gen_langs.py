@@ -285,6 +285,12 @@ ZH = {
     "maint.storagesense.name": "存储感知", "maint.storagesense.desc": "Windows 自动清理临时文件与回收站",
     "maint.trim.name": "TRIM（SSD）", "maint.trim.desc": "固态硬盘删除优化，保持长期写入性能",
     "maint.powerplan.name": "电源计划", "maint.powerplan.desc": "台式机建议高性能，笔记本建议均衡",
+    # ===== v1.7 追加 =====
+    "history.quar.restored": "恢复了 1 个隔离项目",
+    "history.quar.purged": "清空了隔离区（{0} 个项目）",
+    "quar.restore.suffix": "已恢复",
+    "history.autoclean.title": "自动清理了 {0}",
+    "history.autoclean.detail": "成功 {0}，跳过 {1}",
 }
 
 # ============ 组装与生成 ============

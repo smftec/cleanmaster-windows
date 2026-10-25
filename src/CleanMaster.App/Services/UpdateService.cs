@@ -10,7 +10,7 @@ namespace CleanMaster.App.Services;
 public static class UpdateService
 {
     private const string Repo = "smftec/cleanmaster-windows";
-    private static readonly HttpClient Http = new HttpClient();
+    private static readonly HttpClient Http = new HttpClient { Timeout = TimeSpan.FromSeconds(10) };
 
     private static string StateFile => Path.Combine(SettingsService.DataDir, "update.json");
 

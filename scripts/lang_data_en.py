@@ -268,4 +268,10 @@ EN = {
     "maint.storagesense.name": "Storage Sense", "maint.storagesense.desc": "Windows automatic temp & recycle bin cleanup",
     "maint.trim.name": "TRIM (SSD)", "maint.trim.desc": "Keeps long-term SSD write performance",
     "maint.powerplan.name": "Power plan", "maint.powerplan.desc": "High performance for desktops, balanced for laptops",
+    # v1.7
+    "history.quar.restored": "Restored 1 quarantined item",
+    "history.quar.purged": "Emptied quarantine ({0} items)",
+    "quar.restore.suffix": "restored",
+    "history.autoclean.title": "Auto-cleaned {0}",
+    "history.autoclean.detail": "{0} succeeded, {1} skipped",
 }

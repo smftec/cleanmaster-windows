@@ -252,6 +252,12 @@ FR = {
     "maint.storagesense.name": "Assistant de stockage", "maint.storagesense.desc": "Nettoyage auto des fichiers temporaires et de la corbeille",
     "maint.trim.name": "TRIM (SSD)", "maint.trim.desc": "Préserve les performances d'écriture du SSD",
     "maint.powerplan.name": "Mode d'alimentation", "maint.powerplan.desc": "Performances pour PC fixe, équilibré pour portable",
+    # v1.7
+    "history.quar.restored": "1 élément de quarantaine restauré",
+    "history.quar.purged": "Quarantaine vidée ({0} éléments)",
+    "quar.restore.suffix": "restauré",
+    "history.autoclean.title": "Nettoyage auto : {0} libérés",
+    "history.autoclean.detail": "{0} réussis, {1} ignorés",
 }
 
 ES = {
@@ -506,6 +512,12 @@ ES = {
     "maint.storagesense.name": "Asistente de almacenamiento", "maint.storagesense.desc": "Limpieza automática de temporales y papelera",
     "maint.trim.name": "TRIM (SSD)", "maint.trim.desc": "Mantiene el rendimiento de escritura del SSD",
     "maint.powerplan.name": "Plan de energía", "maint.powerplan.desc": "Alto rendimiento en PC de sobremesa, equilibrado en portátiles",
+    # v1.7
+    "history.quar.restored": "Se restauró 1 elemento de cuarentena",
+    "history.quar.purged": "Cuarentena vaciada ({0} elementos)",
+    "quar.restore.suffix": "restaurado",
+    "history.autoclean.title": "Limpieza automática: {0} liberados",
+    "history.autoclean.detail": "{0} correctos, {1} omitidos",
 }
 
 DE = {
@@ -767,4 +779,10 @@ DE = {
     "maint.storagesense.name": "Speicheroptimierung", "maint.storagesense.desc": "Temporäre Dateien und Papierkorb automatisch bereinigen",
     "maint.trim.name": "TRIM (SSD)", "maint.trim.desc": "Erhält die SSD-Schreibleistung auf Dauer",
     "maint.powerplan.name": "Energieplan", "maint.powerplan.desc": "Desktop: Leistung, Laptop: Ausbalanciert",
+    # v1.7
+    "history.quar.restored": "1 Quarantäne-Element wiederhergestellt",
+    "history.quar.purged": "Quarantäne geleert ({0} Elemente)",
+    "quar.restore.suffix": "wiederhergestellt",
+    "history.autoclean.title": "Automatisch bereinigt: {0} freigegeben",
+    "history.autoclean.detail": "{0} erfolgreich, {1} übersprungen",
 }

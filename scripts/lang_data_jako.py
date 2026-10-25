@@ -253,6 +253,12 @@ JA = {
     "maint.storagesense.name": "ストレージセンサー", "maint.storagesense.desc": "一時ファイルとごみ箱を自動清理",
     "maint.trim.name": "TRIM（SSD）", "maint.trim.desc": "SSD の長期的な書き込み性能を維持",
     "maint.powerplan.name": "電源プラン", "maint.powerplan.desc": "デスクトップは高パフォーマンス、ノートはバランスを推奨",
+    # v1.7
+    "history.quar.restored": "隔離項目を 1 件復元しました",
+    "history.quar.purged": "隔離区を空にしました（{0} 件）",
+    "quar.restore.suffix": "復元済み",
+    "history.autoclean.title": "自動クリーンアップで {0} を解放",
+    "history.autoclean.detail": "成功 {0}、スキップ {1}",
 }
 
 KO = {
@@ -514,4 +520,10 @@ KO = {
     "maint.storagesense.name": "저장소 센스", "maint.storagesense.desc": "임시 파일과 휴지통을 자동 정리",
     "maint.trim.name": "TRIM(SSD)", "maint.trim.desc": "SSD 장기 쓰기 성능 유지",
     "maint.powerplan.name": "전원 계획", "maint.powerplan.desc": "데스크톱은 고성능, 노트북은 균형 권장",
+    # v1.7
+    "history.quar.restored": "격리 항목 1개를 복원했습니다",
+    "history.quar.purged": "격리소를 비웠습니다({0}개 항목)",
+    "quar.restore.suffix": "복원됨",
+    "history.autoclean.title": "자동 정리로 {0} 확보",
+    "history.autoclean.detail": "성공 {0}, 건너뜀 {1}",
 }

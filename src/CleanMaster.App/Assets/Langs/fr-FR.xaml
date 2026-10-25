@@ -130,9 +130,13 @@ Les fichiers restaurables vont en quarantaine.</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.quar">En quarantaine</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">Ignorés (utilisés)</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">Nettoyage terminé</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.autoclean.detail">{0} réussis, {1} ignorés</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.autoclean.title">Nettoyage auto : {0} libérés</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.msg">Tous les enregistrements seront supprimés.</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.title">Effacer l'historique ?</sys:String>
     <sys:String xml:space="preserve" x:Key="history.empty">Aucune activité</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.quar.purged">Quarantaine vidée ({0} éléments)</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.quar.restored">1 élément de quarantaine restauré</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.autoclean">Auto</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.clean">Nettoyage</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.other">Autre</sys:String>
@@ -237,6 +241,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Boîte à outils</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">Le disque système n'a plus que {0} libres — pensez à nettoyer</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Rappel : moins de 10% d'espace libre sur le disque système</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.restore.suffix">restauré</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} fichiers ({1}) seront définitivement supprimés. Irréversible.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">Vider la corbeille ?</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">La corbeille est vide</sys:String>

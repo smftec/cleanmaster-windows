@@ -134,11 +134,12 @@ public sealed class QuarantineService
                     var ext = System.IO.Path.GetExtension(target);
                     var stem = System.IO.Path.GetFileNameWithoutExtension(target);
                     var dir = System.IO.Path.GetDirectoryName(target);
-                    target = Path.Combine(dir ?? "", $"{stem} (已恢复){ext}");
+                    var suffix = CoreLocalizer.T("quar.restore.suffix", "已恢复");
+                    target = Path.Combine(dir ?? "", $"{stem} ({suffix}){ext}");
                     int n = 1;
                     while (File.Exists(target) || Directory.Exists(target))
                     {
-                        target = Path.Combine(dir ?? "", $"{stem} (已恢复 {++n}){ext}");
+                        target = Path.Combine(dir ?? "", $"{stem} ({suffix} {++n}){ext}");
                     }
                 }
                 if (e.IsDirectory) Directory.Move(stored, target);
@@ -146,7 +147,7 @@ public sealed class QuarantineService
 
                 _entries!.Remove(e);
                 Persist();
-                HistoryService.Add("Restore", $"恢复了 1 个隔离项目", e.OriginalPath, e.Size);
+                HistoryService.Add("Restore", CoreLocalizer.T("history.quar.restored", "恢复了 1 个隔离项目"), e.OriginalPath, e.Size);
                 return null;
             }
             catch (Exception ex)
@@ -218,7 +219,7 @@ public sealed class QuarantineService
             }
             _entries!.Clear();
             Persist();
-            if (n > 0) HistoryService.Add("QuarantinePurge", $"清空了隔离区（{n} 个项目）");
+            if (n > 0) HistoryService.Add("QuarantinePurge", string.Format(CoreLocalizer.T("history.quar.purged", "清空了隔离区（{0} 个项目）"), n));
             return n;
         }
     }

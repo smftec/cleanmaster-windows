@@ -130,9 +130,13 @@
     <sys:String xml:space="preserve" x:Key="done.stat.quar">進入隔離區</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">跳過（佔用中）</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">清理完成</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.autoclean.detail">成功 {0}，跳过 {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.autoclean.title">自动清理了 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.msg">所有清理與操作記錄將被刪除。</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.title">清空歷史？</sys:String>
     <sys:String xml:space="preserve" x:Key="history.empty">還沒有活動記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.quar.purged">清空了隔离区（{0} 个项目）</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.quar.restored">恢复了 1 个隔离项目</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.autoclean">自動清理</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.clean">清理</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.other">其他</sys:String>
@@ -236,6 +240,7 @@
     <sys:String xml:space="preserve" x:Key="nav.toolbox">工具箱</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">系统盘空间不足，仅剩 {0}，建议清理</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">提醒：系统盘剩余空间不足 10%</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.restore.suffix">已恢复</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">資源回收筒中的 {0} 個檔案（共 {1}）將被永久刪除，無法復原。</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">清空資源回收筒？</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">資源回收筒是空的</sys:String>

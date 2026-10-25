@@ -51,6 +51,12 @@ public partial class App : Application
         QuarantineService.Instance.PurgeExpired();
         ThemeManager.ApplyFromSettings();
         Loc.ApplyFromSettings();
+        // Core 层用户可见文案(历史记录等)走应用内语言
+        Core.Store.CoreLocalizer.Translate = (key, fallback) =>
+        {
+            var v = TryFindResource(key) as string;
+            return string.IsNullOrEmpty(v) ? fallback : v;
+        };
 
         // 全局异常兜底：记录并提示，不闪退
         DispatcherUnhandledException += (s, args) =>

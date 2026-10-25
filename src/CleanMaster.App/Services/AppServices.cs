@@ -303,8 +303,10 @@ public sealed class AutoCleanScheduler
             .ToList();
         if (requests.Count == 0) return (0, 0);
         var summary = await svc.CleanAsync(requests, CancellationToken.None, null);
-        HistoryService.Add("AutoClean", $"自动清理了 {Core.Utils.SizeText.OfBytes(summary.FreedBytes)}",
-            $"成功 {summary.SuccessCount}，跳过 {summary.SkipCount}", summary.FreedBytes);
+        HistoryService.Add("AutoClean",
+            string.Format(Loc.T("history.autoclean.title"), Core.Utils.SizeText.OfBytes(summary.FreedBytes)),
+            string.Format(Loc.T("history.autoclean.detail"), summary.SuccessCount, summary.SkipCount),
+            summary.FreedBytes);
         return (summary.FreedBytes, summary.SuccessCount + summary.QuarantineCount);
     }
 }

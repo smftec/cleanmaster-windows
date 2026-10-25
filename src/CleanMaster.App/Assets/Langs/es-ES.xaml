@@ -130,9 +130,13 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.quar">En cuarentena</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">Omitidos (en uso)</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">Limpieza completada</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.autoclean.detail">{0} correctos, {1} omitidos</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.autoclean.title">Limpieza automática: {0} liberados</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.msg">Se eliminarán todos los registros.</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.title">¿Borrar el historial?</sys:String>
     <sys:String xml:space="preserve" x:Key="history.empty">Sin actividad</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.quar.purged">Cuarentena vaciada ({0} elementos)</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.quar.restored">Se restauró 1 elemento de cuarentena</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.autoclean">Auto</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.clean">Limpieza</sys:String>
     <sys:String xml:space="preserve" x:Key="history.type.other">Otro</sys:String>
@@ -237,6 +241,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Herramientas</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">El disco del sistema apenas tiene {0} libres — considera limpiar</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Recordatorio: menos del 10% libre en el disco del sistema</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.restore.suffix">restaurado</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} archivos ({1}) se eliminarán definitivamente. No se puede deshacer.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">¿Vaciar la papelera?</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">La papelera está vacía</sys:String>
