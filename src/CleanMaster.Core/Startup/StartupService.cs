@@ -285,7 +285,7 @@ public sealed class StartupService
                 }
                 else if (!File.Exists(item.FilePath))
                 {
-                    return "原启动项文件已丢失";
+                    return Store.CoreLocalizer.T("startup.err.missing", "原启动项文件已丢失");
                 }
                 // 移回后同时清掉 StartupFolder 的禁用标记（若存在）
                 try
@@ -303,7 +303,7 @@ public sealed class StartupService
                 }
                 else
                 {
-                    return "启动项文件不存在";
+                    return Store.CoreLocalizer.T("startup.err.notfound", "启动项文件不存在");
                 }
             }
             return null;

@@ -302,6 +302,15 @@ ZH = {
     "deliveryopt.note": "通过系统官方机制清理",
     "deliveryopt.uac": "需要管理员权限，请在 UAC 弹窗中允许",
     "recycle.count": "{0} 个项目", "recycle.err.empty": "清空回收站失败",
+    # ===== v2.1 追加 =====
+    "clean.skip.subitems": "{0} 个子项被跳过", "quar.err.move": "无法移入隔离区",
+    "del.err.denied": "权限不足", "del.err.locked": "文件被占用", "del.err.link": "无法删除链接",
+    "priv.records": "（{0} 条记录）", "priv.norecords": "（无记录）",
+    "priv.clipboard.locked": "剪贴板被其他程序占用",
+    "priv.runmru.note": "Win+R 运行窗口的输入历史", "priv.search.note": "资源管理器搜索框的历史关键词",
+    "apps.no.uninstaller": "该应用未提供卸载程序",
+    "leftover.cleaned.log": "清理了 {0} 项卸载残留",
+    "startup.err.missing": "原启动项文件已丢失", "startup.err.notfound": "启动项文件不存在",
 }
 
 # ============ 组装与生成 ============

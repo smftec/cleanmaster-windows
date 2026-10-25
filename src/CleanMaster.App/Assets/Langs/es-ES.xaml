@@ -8,6 +8,7 @@
     <sys:String xml:space="preserve" x:Key="apps.desc">La desinstalación usa el desinstalador de la propia app; después puedes limpiar los restos confirmados (a cuarentena, restaurables).</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.empty">No hay apps coincidentes</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.loading">Cargando aplicaciones instaladas…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">Esta app no tiene desinstalador</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">No se detectó la desinstalación; puede haberse cancelado</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">Por fecha de instalación</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">Por nombre</sys:String>
@@ -75,6 +76,7 @@ Continúa automáticamente al terminar</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">Papelera vaciada ({0} elementos)</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail">Escaneando {0}/{1}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} encontrados</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.skip.subitems">{0} subelementos omitidos</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">Cachés de apps</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">Navegadores</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">Rastros de privacidad</sys:String>
@@ -110,6 +112,9 @@ Continúa automáticamente al terminar</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.copypath">Copiar ruta</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">Abrir</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">Mostrar en la carpeta</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.denied">Acceso denegado</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.link">No se pudo eliminar el enlace</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.locked">Archivo en uso</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.note">Limpieza mediante el mecanismo oficial de Windows</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.uac">Se requieren permisos de administrador: acepta el UAC</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">A punto de limpiar {0} de datos.</sys:String>
@@ -214,6 +219,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">Sugerencias</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">Limpiar marcados</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.cleaned">{0} residuos limpiados</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned.log">{0} residuos limpiados</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">Carpeta de datos</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">Carpetas de datos y claves de registro de esta aplicación. Los marcados van a cuarentena (restaurables).</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.fail">, {0} fallidos</sys:String>
@@ -245,8 +251,14 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Herramientas</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">El disco del sistema apenas tiene {0} libres — considera limpiar</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Recordatorio: menos del 10% libre en el disco del sistema</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.clipboard.locked">El portapapeles está ocupado por otro programa</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.norecords"> (sin entradas)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.records"> ({0} entradas)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.runmru.note">Historial del cuadro Ejecutar (Win+R)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.search.note">Historial de búsqueda del Explorador</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.locked">Archivo en uso</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.missing">Falta el archivo en cuarentena</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.move">No se pudo mover a cuarentena</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.norecord">Registro no encontrado</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.notfound">Archivo no encontrado</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">restaurado</sys:String>
@@ -501,6 +513,8 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.disabled">Desactivado</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.empty">No hay elementos coincidentes</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">Activado</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.missing">Falta el archivo de inicio original</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.notfound">Archivo de inicio no encontrado</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">Alto</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">Bajo</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Medio</sys:String>

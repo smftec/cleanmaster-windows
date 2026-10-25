@@ -285,4 +285,13 @@ EN = {
     "deliveryopt.note": "Cleaned via the official Windows mechanism",
     "deliveryopt.uac": "Administrator permission required — allow the UAC prompt",
     "recycle.count": "{0} items", "recycle.err.empty": "Failed to empty the Recycle Bin",
+    # v2.1
+    "clean.skip.subitems": "{0} sub-items skipped", "quar.err.move": "Cannot move to quarantine",
+    "del.err.denied": "Access denied", "del.err.locked": "File is in use", "del.err.link": "Cannot delete link",
+    "priv.records": " ({0} entries)", "priv.norecords": " (no entries)",
+    "priv.clipboard.locked": "Clipboard is held by another program",
+    "priv.runmru.note": "Run dialog (Win+R) input history", "priv.search.note": "Explorer search-box history",
+    "apps.no.uninstaller": "This app has no uninstaller",
+    "leftover.cleaned.log": "Cleaned {0} leftover items",
+    "startup.err.missing": "Original startup file is missing", "startup.err.notfound": "Startup file not found",
 }

@@ -8,6 +8,7 @@
     <sys:String xml:space="preserve" x:Key="apps.desc">Uninstalling launches the app's own uninstaller; afterwards confirmed leftovers can be cleaned (into quarantine, restorable).</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.empty">No matching apps</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.loading">Loading installed apps…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">This app has no uninstaller</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">Uninstall not detected — it may have been cancelled</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">By install date</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">By name</sys:String>
@@ -75,6 +76,7 @@ Continues automatically once finished</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">Emptied the Recycle Bin ({0} items)</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail">Scanning {0}/{1}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}Found {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.skip.subitems">{0} sub-items skipped</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">App caches</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">Browsers</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">Privacy traces</sys:String>
@@ -110,6 +112,9 @@ Continues automatically once finished</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.copypath">Copy path</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">Open</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">Show in folder</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.denied">Access denied</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.link">Cannot delete link</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.locked">File is in use</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.note">Cleaned via the official Windows mechanism</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.uac">Administrator permission required — allow the UAC prompt</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">About to clean {0} of data.</sys:String>
@@ -214,6 +219,7 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">Smart suggestions</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">Clean selected</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.cleaned">Cleaned {0} leftover items</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned.log">Cleaned {0} leftover items</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">Data folder</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">Data folders and setting keys that belong to this app. Selected items go to quarantine (restorable).</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.fail">, {0} failed</sys:String>
@@ -245,8 +251,14 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Toolbox</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">System drive is low on space — only {0} left. Consider a cleanup</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Reminder: system drive under 10% free</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.clipboard.locked">Clipboard is held by another program</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.norecords"> (no entries)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.records"> ({0} entries)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.runmru.note">Run dialog (Win+R) input history</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.search.note">Explorer search-box history</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.locked">File is in use</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.missing">Quarantined file is missing</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.move">Cannot move to quarantine</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.norecord">Record not found</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.notfound">File not found</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">restored</sys:String>
@@ -501,6 +513,8 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.disabled">Disabled</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.empty">No matching startup items</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">Enabled</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.missing">Original startup file is missing</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.notfound">Startup file not found</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">High</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">Low</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Medium</sys:String>

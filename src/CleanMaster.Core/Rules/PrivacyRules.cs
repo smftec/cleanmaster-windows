@@ -88,7 +88,8 @@ public abstract class RegistryPrivacyRule : RuleBase
             if (k != null) count = k.ValueCount;
         }
         catch { }
-        res.Items.Add(new CleanItem { Path = Scheme + KeyPath, Size = 0, Note = ItemNote + (count > 0 ? $"（{count} 条记录）" : "（无记录）") });
+        var suffix = count > 0 ? string.Format(Store.CoreLocalizer.T("priv.records", "（{0} 条记录）"), count) : Store.CoreLocalizer.T("priv.norecords", "（无记录）");
+        res.Items.Add(new CleanItem { Path = Scheme + KeyPath, Size = 0, Note = ItemNote + suffix });
         if (count > 0) { res.FileCount = count; }
         return Task.FromResult(res);
     }
@@ -102,7 +103,7 @@ public abstract class RegistryPrivacyRule : RuleBase
                 using var k = Registry.CurrentUser.OpenSubKey(KeyPath, writable: true);
                 if (k == null)
                 {
-                    foreach (var item in ctx.Selected) ctx.Report(item, CleanItemStatus.Success, "无记录");
+                    foreach (var item in ctx.Selected) ctx.Report(item, CleanItemStatus.Success, Store.CoreLocalizer.T("priv.norecords", "（无记录）"));
                     return;
                 }
                 foreach (var name in k.GetValueNames().ToArray())
@@ -122,7 +123,7 @@ public abstract class RegistryPrivacyRule : RuleBase
 public sealed class RunMruRule : RegistryPrivacyRule
 {
     protected override string KeyPath => @"Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU";
-    protected override string ItemNote => "Win+R 运行窗口的输入历史";
+    protected override string ItemNote => Store.CoreLocalizer.T("priv.runmru.note", "Win+R 运行窗口的输入历史");
     public override string Id => "privacy_runmru";
     public override string Name => "运行窗口历史";
     public override RuleGroup Group => RuleGroup.Privacy;
@@ -135,7 +136,7 @@ public sealed class RunMruRule : RegistryPrivacyRule
 public sealed class SearchHistoryRule : RegistryPrivacyRule
 {
     protected override string KeyPath => @"Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery";
-    protected override string ItemNote => "资源管理器搜索框的历史关键词";
+    protected override string ItemNote => Store.CoreLocalizer.T("priv.search.note", "资源管理器搜索框的历史关键词");
     public override string Id => "privacy_search";
     public override string Name => "文件搜索历史";
     public override RuleGroup Group => RuleGroup.Privacy;
@@ -226,7 +227,7 @@ public sealed class ClipboardRule : RuleBase
         {
             var ok = ClipboardNative.TryClear();
             foreach (var item in ctx.Selected)
-                ctx.Report(item, ok ? CleanItemStatus.Success : CleanItemStatus.Failed, ok ? "" : "剪贴板被其他程序占用");
+                ctx.Report(item, ok ? CleanItemStatus.Success : CleanItemStatus.Failed, ok ? "" : Store.CoreLocalizer.T("priv.clipboard.locked", "剪贴板被其他程序占用"));
         }, ctx.Ct);
     }
 }

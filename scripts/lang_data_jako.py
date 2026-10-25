@@ -270,6 +270,15 @@ JA = {
     "deliveryopt.note": "Windows の公式機構でクリーンアップ",
     "deliveryopt.uac": "管理者権限が必要です。UAC を許可してください",
     "recycle.count": "{0} 件", "recycle.err.empty": "ごみ箱を空にできませんでした",
+    # v2.1
+    "clean.skip.subitems": "{0} 件のサブ項目をスキップ", "quar.err.move": "隔離区へ移動できません",
+    "del.err.denied": "アクセスが拒否されました", "del.err.locked": "ファイルは使用中です", "del.err.link": "リンクを削除できません",
+    "priv.records": "（{0} 件）", "priv.norecords": "（記録なし）",
+    "priv.clipboard.locked": "クリップボードが他のプログラムに占有されています",
+    "priv.runmru.note": "Win+R の入力履歴", "priv.search.note": "エクスプローラーの検索履歴",
+    "apps.no.uninstaller": "このアプリにはアンインストーラーがありません",
+    "leftover.cleaned.log": "残り {0} 件をクリーンアップしました",
+    "startup.err.missing": "元のスタートアップファイルが見つかりません", "startup.err.notfound": "スタートアップファイルが存在しません",
 }
 
 KO = {
@@ -548,4 +557,13 @@ KO = {
     "deliveryopt.note": "Windows 공식 메커니즘으로 정리",
     "deliveryopt.uac": "관리자 권한이 필요합니다. UAC를 허용하세요",
     "recycle.count": "{0}개 항목", "recycle.err.empty": "휴지통을 비우지 못했습니다",
+    # v2.1
+    "clean.skip.subitems": "하위 항목 {0}개 건너뜀", "quar.err.move": "격리소로 이동할 수 없습니다",
+    "del.err.denied": "액세스가 거부되었습니다", "del.err.locked": "파일이 사용 중입니다", "del.err.link": "링크를 삭제할 수 없습니다",
+    "priv.records": "({0}개 기록)", "priv.norecords": "(기록 없음)",
+    "priv.clipboard.locked": "클립보드가 다른 프로그램에 점유되어 있습니다",
+    "priv.runmru.note": "Win+R 실행 창 입력 기록", "priv.search.note": "탐색기 검색 기록",
+    "apps.no.uninstaller": "이 앱에는 제거 프로그램이 없습니다",
+    "leftover.cleaned.log": "잔여 {0}개를 정리했습니다",
+    "startup.err.missing": "원본 시작 파일을 찾을 수 없습니다", "startup.err.notfound": "시작 파일이 없습니다",
 }

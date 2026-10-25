@@ -8,6 +8,7 @@
     <sys:String xml:space="preserve" x:Key="apps.desc">제거 시 앱 자체 제거 프로그램을 실행합니다. 완료 후 확인된 잔여 파일을 정리할 수 있습니다(격리소, 복원 가능).</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.empty">일치하는 앱이 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.loading">설치된 앱을 읽는 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">이 앱에는 제거 프로그램이 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">제거 완료를 감지하지 못했습니다. 취소되었을 수 있습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">설치일순</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">이름순</sys:String>
@@ -75,6 +76,7 @@
     <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">휴지통을 비웠습니다({0}개 항목)</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail">스캔 중 {0}/{1}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} 발견</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.skip.subitems">하위 항목 {0}개 건너뜀</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">앱 캐시</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">브라우저</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">개인정보 흔적</sys:String>
@@ -110,6 +112,9 @@
     <sys:String xml:space="preserve" x:Key="ctx.copypath">경로 복사</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">열기</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">폴더에서 보기</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.denied">액세스가 거부되었습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.link">링크를 삭제할 수 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.locked">파일이 사용 중입니다</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.note">Windows 공식 메커니즘으로 정리</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.uac">관리자 권한이 필요합니다. UAC를 허용하세요</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">{0}의 데이터를 정리합니다.</sys:String>
@@ -214,6 +219,7 @@
     <sys:String xml:space="preserve" x:Key="home.suggest.title">스마트 제안</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">선택 항목 정리</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.cleaned">잔여 {0}개 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned.log">잔여 {0}개를 정리했습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">데이터 폴더</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">이 앱에 속한 것으로 확인된 데이터 폴더와 설정 키입니다. 선택 항목은 격리소로 이동되어 복원 가능합니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.fail">, {0}개 실패</sys:String>
@@ -245,8 +251,14 @@
     <sys:String xml:space="preserve" x:Key="nav.toolbox">도구</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">시스템 드라이브 여유가 {0}밖에 남지 않았습니다. 정리를 권장합니다</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">알림: 시스템 드라이브 여유 10% 미만</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.clipboard.locked">클립보드가 다른 프로그램에 점유되어 있습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.norecords">(기록 없음)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.records">({0}개 기록)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.runmru.note">Win+R 실행 창 입력 기록</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.search.note">탐색기 검색 기록</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.locked">파일이 사용 중입니다</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.missing">격리 파일이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.move">격리소로 이동할 수 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.norecord">기록을 찾을 수 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.notfound">파일을 찾을 수 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">복원됨</sys:String>
@@ -501,6 +513,8 @@
     <sys:String xml:space="preserve" x:Key="startup.disabled">사용 안 함</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.empty">일치하는 항목이 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">사용</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.missing">원본 시작 파일을 찾을 수 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.notfound">시작 파일이 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">높음</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">낮음</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">중간</sys:String>

@@ -88,7 +88,7 @@ public abstract class RuleBase : IScanRule
                     {
                         var (ok, fail, _) = FileUtil.DeleteDirectoryTree(item.Path);
                         ctx.Report(item, fail == 0 ? CleanItemStatus.Success : ok > 0 ? CleanItemStatus.Success : CleanItemStatus.SkippedLocked,
-                            fail > 0 ? $"{fail} 个子项被跳过" : "");
+                            fail > 0 ? string.Format(Store.CoreLocalizer.T("clean.skip.subitems", "{0} 个子项被跳过"), fail) : "");
                     }
                 }
                 else
@@ -98,12 +98,14 @@ public abstract class RuleBase : IScanRule
                         if (QuarantineService.Instance.MoveIntoQuarantine(item.Path, Id, out var err))
                             ctx.Report(item, CleanItemStatus.Quarantined, "");
                         else
-                            ctx.Report(item, CleanItemStatus.Failed, err ?? "无法移入隔离区");
+                            ctx.Report(item, CleanItemStatus.Failed, err ?? Store.CoreLocalizer.T("quar.err.move", "无法移入隔离区"));
                     }
                     else
                     {
-                        var (ok, reason) = FileUtil.DeleteFile(item.Path);
-                        ctx.Report(item, ok ? CleanItemStatus.Success : reason.Contains("占用") ? CleanItemStatus.SkippedLocked : CleanItemStatus.Failed, reason);
+                        var (ok, kind, reason) = FileUtil.DeleteFileEx(item.Path);
+                        ctx.Report(item, ok ? CleanItemStatus.Success
+                            : kind == FileUtil.DeleteFailReason.Locked ? CleanItemStatus.SkippedLocked
+                            : CleanItemStatus.Failed, reason);
                     }
                 }
                 done++;

@@ -8,6 +8,7 @@
     <sys:String xml:space="preserve" x:Key="apps.desc">Die Deinstallation startet das eigene Deinstallationsprogramm der App; danach können bestätigte Reste bereinigt werden (in Quarantäne, wiederherstellbar).</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.empty">Keine passenden Apps</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.loading">Installierte Apps werden geladen…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">Diese App hat kein Deinstallationsprogramm</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">Deinstallation nicht erkannt — evtl. abgebrochen</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">Nach Installationsdatum</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">Nach Name</sys:String>
@@ -75,6 +76,7 @@ Fährt automatisch fort, wenn fertig</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">Papierkorb geleert ({0} Elemente)</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail">Scanne {0}/{1}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} gefunden</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.skip.subitems">{0} Unterelemente übersprungen</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">App-Caches</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">Browser</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">Datenspuren</sys:String>
@@ -110,6 +112,9 @@ Fährt automatisch fort, wenn fertig</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.copypath">Pfad kopieren</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">Öffnen</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">Im Ordner anzeigen</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.denied">Zugriff verweigert</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.link">Link kann nicht gelöscht werden</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.locked">Datei wird verwendet</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.note">Über den offiziellen Windows-Mechanismus bereinigt</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.uac">Administratorrechte erforderlich — UAC-Eingabe erlauben</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">{0} an Daten werden bereinigt.</sys:String>
@@ -214,6 +219,7 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">Smarte Vorschläge</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">Auswahl bereinigen</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.cleaned">{0} Reste bereinigt</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned.log">{0} Reste bereinigt</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">Datenordner</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">Datenordner und Einstellungsschlüssel, die eindeutig zu dieser App gehören. Ausgewählte Elemente kommen in die Quarantäne (wiederherstellbar).</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.fail">, {0} fehlgeschlagen</sys:String>
@@ -245,8 +251,14 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Werkzeuge</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">Systemlaufwerk wird knapp — nur noch {0} frei. Bereinigung empfohlen</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Hinweis: weniger als 10% frei auf dem Systemlaufwerk</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.clipboard.locked">Die Zwischenablage wird von einem anderen Programm belegt</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.norecords"> (keine Einträge)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.records"> ({0} Einträge)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.runmru.note">Eingabeverlauf von Ausführen (Win+R)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.search.note">Suchverlauf des Explorers</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.locked">Datei wird verwendet</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.missing">Quarantänedatei fehlt</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.move">Verschieben in Quarantäne nicht möglich</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.norecord">Eintrag nicht gefunden</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.notfound">Datei nicht gefunden</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">wiederhergestellt</sys:String>
@@ -501,6 +513,8 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.disabled">Deaktiviert</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.empty">Keine passenden Einträge</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">Aktiviert</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.missing">Ursprüngliche Startdatei fehlt</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.notfound">Startdatei nicht gefunden</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">Hoch</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">Niedrig</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Mittel</sys:String>

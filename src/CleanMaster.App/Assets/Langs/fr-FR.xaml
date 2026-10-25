@@ -8,6 +8,7 @@
     <sys:String xml:space="preserve" x:Key="apps.desc">La désinstallation lance le programme de l'application ; ensuite, les résidus confirmés peuvent être nettoyés (en quarantaine, restaurables).</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.empty">Aucune application correspondante</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.loading">Chargement des applications…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">Cette application n'a pas de désinstalleur</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">Désinstallation non détectée — elle a peut-être été annulée</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">Par date d'installation</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">Par nom</sys:String>
@@ -75,6 +76,7 @@ Reprise automatique une fois terminée</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">Corbeille vidée ({0} éléments)</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail">Analyse {0}/{1}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} trouvés</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.skip.subitems">{0} sous-éléments ignorés</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">Caches d'apps</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">Navigateurs</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">Traces de confidentialité</sys:String>
@@ -110,6 +112,9 @@ Reprise automatique une fois terminée</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.copypath">Copier le chemin</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">Ouvrir</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">Afficher dans le dossier</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.denied">Accès refusé</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.link">Impossible de supprimer le lien</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.locked">Fichier en cours d'utilisation</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.note">Nettoyé via le mécanisme officiel de Windows</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.uac">Droits administrateur requis — acceptez l'invite UAC</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">Sur le point de nettoyer {0}.</sys:String>
@@ -214,6 +219,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="home.suggest.title">Suggestions</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">Nettoyer la sélection</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.cleaned">{0} éléments résiduels nettoyés</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned.log">{0} résidus nettoyés</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">Dossier de données</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">Dossiers de données et clés de registre appartenant à cette application. Les éléments cochés partent en quarantaine (restaurables).</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.fail">, {0} échecs</sys:String>
@@ -245,8 +251,14 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Boîte à outils</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">Le disque système n'a plus que {0} libres — pensez à nettoyer</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Rappel : moins de 10% d'espace libre sur le disque système</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.clipboard.locked">Le presse-papiers est occupé par un autre programme</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.norecords"> (aucune entrée)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.records"> ({0} entrées)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.runmru.note">Historique de saisie de Exécuter (Win+R)</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.search.note">Historique de recherche de l'Explorateur</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.locked">Fichier en cours d'utilisation</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.missing">Fichier en quarantaine introuvable</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.move">Impossible de déplacer en quarantaine</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.norecord">Entrée introuvable</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.notfound">Fichier introuvable</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">restauré</sys:String>
@@ -501,6 +513,8 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.disabled">Désactivé</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.empty">Aucun élément correspondant</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">Activé</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.missing">Le fichier de démarrage d'origine est introuvable</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.notfound">Fichier de démarrage introuvable</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">Élevé</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">Faible</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Moyen</sys:String>

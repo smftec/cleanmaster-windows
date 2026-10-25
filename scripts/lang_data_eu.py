@@ -269,6 +269,15 @@ FR = {
     "deliveryopt.note": "Nettoyé via le mécanisme officiel de Windows",
     "deliveryopt.uac": "Droits administrateur requis — acceptez l'invite UAC",
     "recycle.count": "{0} éléments", "recycle.err.empty": "Impossible de vider la corbeille",
+    # v2.1
+    "clean.skip.subitems": "{0} sous-éléments ignorés", "quar.err.move": "Impossible de déplacer en quarantaine",
+    "del.err.denied": "Accès refusé", "del.err.locked": "Fichier en cours d'utilisation", "del.err.link": "Impossible de supprimer le lien",
+    "priv.records": " ({0} entrées)", "priv.norecords": " (aucune entrée)",
+    "priv.clipboard.locked": "Le presse-papiers est occupé par un autre programme",
+    "priv.runmru.note": "Historique de saisie de Exécuter (Win+R)", "priv.search.note": "Historique de recherche de l'Explorateur",
+    "apps.no.uninstaller": "Cette application n'a pas de désinstalleur",
+    "leftover.cleaned.log": "{0} résidus nettoyés",
+    "startup.err.missing": "Le fichier de démarrage d'origine est introuvable", "startup.err.notfound": "Fichier de démarrage introuvable",
 }
 
 ES = {
@@ -540,6 +549,15 @@ ES = {
     "deliveryopt.note": "Limpieza mediante el mecanismo oficial de Windows",
     "deliveryopt.uac": "Se requieren permisos de administrador: acepta el UAC",
     "recycle.count": "{0} elementos", "recycle.err.empty": "No se pudo vaciar la papelera",
+    # v2.1
+    "clean.skip.subitems": "{0} subelementos omitidos", "quar.err.move": "No se pudo mover a cuarentena",
+    "del.err.denied": "Acceso denegado", "del.err.locked": "Archivo en uso", "del.err.link": "No se pudo eliminar el enlace",
+    "priv.records": " ({0} entradas)", "priv.norecords": " (sin entradas)",
+    "priv.clipboard.locked": "El portapapeles está ocupado por otro programa",
+    "priv.runmru.note": "Historial del cuadro Ejecutar (Win+R)", "priv.search.note": "Historial de búsqueda del Explorador",
+    "apps.no.uninstaller": "Esta app no tiene desinstalador",
+    "leftover.cleaned.log": "{0} residuos limpiados",
+    "startup.err.missing": "Falta el archivo de inicio original", "startup.err.notfound": "Archivo de inicio no encontrado",
 }
 
 DE = {
@@ -818,4 +836,13 @@ DE = {
     "deliveryopt.note": "Über den offiziellen Windows-Mechanismus bereinigt",
     "deliveryopt.uac": "Administratorrechte erforderlich — UAC-Eingabe erlauben",
     "recycle.count": "{0} Elemente", "recycle.err.empty": "Papierkorb konnte nicht geleert werden",
+    # v2.1
+    "clean.skip.subitems": "{0} Unterelemente übersprungen", "quar.err.move": "Verschieben in Quarantäne nicht möglich",
+    "del.err.denied": "Zugriff verweigert", "del.err.locked": "Datei wird verwendet", "del.err.link": "Link kann nicht gelöscht werden",
+    "priv.records": " ({0} Einträge)", "priv.norecords": " (keine Einträge)",
+    "priv.clipboard.locked": "Die Zwischenablage wird von einem anderen Programm belegt",
+    "priv.runmru.note": "Eingabeverlauf von Ausführen (Win+R)", "priv.search.note": "Suchverlauf des Explorers",
+    "apps.no.uninstaller": "Diese App hat kein Deinstallationsprogramm",
+    "leftover.cleaned.log": "{0} Reste bereinigt",
+    "startup.err.missing": "Ursprüngliche Startdatei fehlt", "startup.err.notfound": "Startdatei nicht gefunden",
 }

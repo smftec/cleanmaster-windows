@@ -183,7 +183,7 @@ public sealed class AppInventoryService
                 Process.Start(psi);
                 return null;
             }
-            if (string.IsNullOrWhiteSpace(app.UninstallString)) return "该应用未提供卸载程序";
+            if (string.IsNullOrWhiteSpace(app.UninstallString)) return Store.CoreLocalizer.T("apps.no.uninstaller", "该应用未提供卸载程序");
             // 用 cmd /c 保留原样参数；MSI 字符串也兼容
             Process.Start(new ProcessStartInfo("cmd.exe", "/c " + app.UninstallString)
             {
@@ -384,7 +384,7 @@ public sealed class AppInventoryService
             }
         }
         if (ok > 0)
-            HistoryService.Add("Clean", $"清理了 {ok} 项卸载残留");
+            HistoryService.Add("Clean", string.Format(Store.CoreLocalizer.T("leftover.cleaned.log", "清理了 {0} 项卸载残留"), ok));
         return (ok, fail);
     }
 

@@ -150,19 +150,28 @@ public static class ShellUtil
 
 public static class FileUtil
 {
-    /// <summary>安全删除文件：不存在视为成功，占用/异常返回 false + 原因。</summary>
-    public static (bool ok, string reason) DeleteFile(string path)
+    public enum DeleteFailReason { None, Denied, Locked, Other }
+
+    /// <summary>安全删除文件：不存在视为成功。kind 用于与语言无关的占用判断。</summary>
+    public static (bool ok, DeleteFailReason kind, string reason) DeleteFileEx(string path)
     {
         try
         {
-            if (!File.Exists(path)) return (true, "");
+            if (!File.Exists(path)) return (true, DeleteFailReason.None, "");
             File.SetAttributes(path, FileAttributes.Normal);
             File.Delete(path);
-            return (true, "");
+            return (true, DeleteFailReason.None, "");
         }
-        catch (UnauthorizedAccessException) { return (false, "权限不足"); }
-        catch (IOException) { return (false, "文件被占用"); }
-        catch (Exception ex) { return (false, ex.Message); }
+        catch (UnauthorizedAccessException) { return (false, DeleteFailReason.Denied, CleanMaster.Core.Store.CoreLocalizer.T("del.err.denied", "权限不足")); }
+        catch (IOException) { return (false, DeleteFailReason.Locked, CleanMaster.Core.Store.CoreLocalizer.T("del.err.locked", "文件被占用")); }
+        catch (Exception ex) { return (false, DeleteFailReason.Other, ex.Message); }
+    }
+
+    /// <summary>兼容入口：只需文本原因的调用方使用。</summary>
+    public static (bool ok, string reason) DeleteFile(string path)
+    {
+        var (ok, _, reason) = DeleteFileEx(path);
+        return (ok, reason);
     }
 
     /// <summary>
@@ -178,7 +187,7 @@ public static class FileUtil
             if (PathUtil.IsReparsePoint(dir))
             {
                 try { Directory.Delete(dir, false); ok++; }
-                catch { fail++; onItemFailed?.Invoke(dir, "无法删除链接"); }
+                catch { fail++; onItemFailed?.Invoke(dir, CleanMaster.Core.Store.CoreLocalizer.T("del.err.link", "无法删除链接")); }
                 return (ok, fail, freed);
             }
 

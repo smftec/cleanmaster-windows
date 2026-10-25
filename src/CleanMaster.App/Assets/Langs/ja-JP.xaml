@@ -8,6 +8,7 @@
     <sys:String xml:space="preserve" x:Key="apps.desc">アンインストールにはアプリ自身のアンインストーラーを使用。完了後、確認された残存ファイルを清理できます（隔離区、復元可）。</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.empty">一致するアプリがありません</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.loading">インストール済みアプリを読み込み中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">このアプリにはアンインストーラーがありません</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">アンインストールを検出できませんでした。キャンセルされた可能性があります</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">インストール日順</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">名前順</sys:String>
@@ -75,6 +76,7 @@
     <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">ごみ箱を空にしました（{0} 件）</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail">スキャン中 {0}/{1}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}{1} を発見</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.skip.subitems">{0} 件のサブ項目をスキップ</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">アプリキャッシュ</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">ブラウザ</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">プライバシー痕跡</sys:String>
@@ -110,6 +112,9 @@
     <sys:String xml:space="preserve" x:Key="ctx.copypath">パスをコピー</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">開く</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">フォルダーで表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.denied">アクセスが拒否されました</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.link">リンクを削除できません</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.locked">ファイルは使用中です</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.note">Windows の公式機構でクリーンアップ</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.uac">管理者権限が必要です。UAC を許可してください</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">{0} のデータを清理しようとしています。</sys:String>
@@ -214,6 +219,7 @@
     <sys:String xml:space="preserve" x:Key="home.suggest.title">スマート候補</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">選択項目を清理</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.cleaned">残り {0} 件を清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned.log">残り {0} 件をクリーンアップしました</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">データフォルダ</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">このアプリに属すると確認できるデータフォルダと設定キーです。選択した項目は隔離区へ移動され復元可能です。</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.fail">、{0} 件失敗</sys:String>
@@ -245,8 +251,14 @@
     <sys:String xml:space="preserve" x:Key="nav.toolbox">ツールボックス</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">システムドライブの空きが {0} になりました。クリーンアップを検討してください</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">リマインダー: システムドライブの空きが 10% 未満</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.clipboard.locked">クリップボードが他のプログラムに占有されています</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.norecords">（記録なし）</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.records">（{0} 件）</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.runmru.note">Win+R の入力履歴</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.search.note">エクスプローラーの検索履歴</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.locked">ファイルは使用中です</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.missing">隔離ファイルが見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.move">隔離区へ移動できません</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.norecord">記録が見つかりません</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.notfound">ファイルが見つかりません</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">復元済み</sys:String>
@@ -501,6 +513,8 @@
     <sys:String xml:space="preserve" x:Key="startup.disabled">無効化</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.empty">一致する項目がありません</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">有効化</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.missing">元のスタートアップファイルが見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.notfound">スタートアップファイルが存在しません</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">高</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">低</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">中</sys:String>

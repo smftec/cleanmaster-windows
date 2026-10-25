@@ -8,6 +8,7 @@
     <sys:String xml:space="preserve" x:Key="apps.desc">解除安裝將呼叫應用程式自帶的解除安裝程式；完成後可掃描確認的殘留檔案（進入隔離區，可還原）。</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.empty">沒有符合的應用</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.loading">正在讀取已安裝應用…</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">该应用未提供卸载程序</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">未偵測到解除安裝完成，可能已取消</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">按安裝日期</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">按名稱</sys:String>
@@ -75,6 +76,7 @@
     <sys:String xml:space="preserve" x:Key="clean.recyclebin.cleared">清空了回收站（{0} 个项目）</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail">正在扫描 {0}/{1}</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.scan.detail.f">{0}已发现 {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="clean.skip.subitems">{0} 个子项被跳过</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.app">應用快取</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.browser">瀏覽器清理</sys:String>
     <sys:String xml:space="preserve" x:Key="clean.tab.privacy">隱私痕跡</sys:String>
@@ -110,6 +112,9 @@
     <sys:String xml:space="preserve" x:Key="ctx.copypath">复制路径</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">打开</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">打开位置</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.denied">权限不足</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.link">无法删除链接</sys:String>
+    <sys:String xml:space="preserve" x:Key="del.err.locked">文件被占用</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.note">通过系统官方机制清理</sys:String>
     <sys:String xml:space="preserve" x:Key="deliveryopt.uac">需要管理员权限，请在 UAC 弹窗中允许</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">即將清理 {0} 的資料。</sys:String>
@@ -213,6 +218,7 @@
     <sys:String xml:space="preserve" x:Key="home.suggest.title">智慧建議</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.clean">清理勾選項</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.cleaned">已清理 {0} 项残留</sys:String>
+    <sys:String xml:space="preserve" x:Key="leftover.cleaned.log">清理了 {0} 项卸载残留</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.datadir">資料目錄</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.desc">以下是可確認屬於該應用的資料目錄與設定鍵。勾選後進入隔離區（可隨時還原）。</sys:String>
     <sys:String xml:space="preserve" x:Key="leftover.fail">，{0} 项失败</sys:String>
@@ -244,8 +250,14 @@
     <sys:String xml:space="preserve" x:Key="nav.toolbox">工具箱</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">系统盘空间不足，仅剩 {0}，建议清理</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">提醒：系统盘剩余空间不足 10%</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.clipboard.locked">剪贴板被其他程序占用</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.norecords">（无记录）</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.records">（{0} 条记录）</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.runmru.note">Win+R 运行窗口的输入历史</sys:String>
+    <sys:String xml:space="preserve" x:Key="priv.search.note">资源管理器搜索框的历史关键词</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.locked">文件被占用</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.missing">隔离文件已丢失</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.move">无法移入隔离区</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.norecord">记录不存在</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.err.notfound">文件不存在</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">已恢复</sys:String>
@@ -500,6 +512,8 @@
     <sys:String xml:space="preserve" x:Key="startup.disabled">已停用</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.empty">沒有符合的啟動項</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.enabled">已啟用</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.missing">原启动项文件已丢失</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.err.notfound">启动项文件不存在</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.high">高</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.low">低</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">中</sys:String>
