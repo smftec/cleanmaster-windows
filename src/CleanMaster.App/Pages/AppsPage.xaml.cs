@@ -265,6 +265,7 @@ public partial class AppsPage : Page, IParamPage
 
     private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
     {
+        SearchHint.Visibility = SearchBox.Text.Length == 0 ? Visibility.Visible : Visibility.Collapsed;
         _filter = SearchBox.Text;
         if (_loaded) Render();
     }

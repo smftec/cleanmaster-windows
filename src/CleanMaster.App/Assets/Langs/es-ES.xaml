@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.loading">Cargando aplicaciones instaladas…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">Esta app no tiene desinstalador</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">No se detectó la desinstalación; puede haberse cancelado</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.search.hint">Buscar aplicaciones…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">Por fecha de instalación</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">Por nombre</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">Por tamaño</sys:String>
@@ -552,6 +553,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">Sin medir</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">Cargando elementos de inicio…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.note.core">Componente esencial de Windows: no desactivar</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.search.hint">Buscar elementos de inicio…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">Carpeta Inicio (todos)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">Carpeta Inicio (usuario)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">Registro (usuario)</sys:String>

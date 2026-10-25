@@ -66,9 +66,9 @@
                                Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,10,0,0"/>
                     <ProgressBar x:Name="AnalyzeBar" IsIndeterminate="True" Height="6" Margin="0,14,0,0"/>
                     <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
-                        <TextBlock x:Name="AnalyzeFilesText" Text="已扫描 0 个文件" FontSize="12.5"
+                        <TextBlock x:Name="AnalyzeFilesText" Text="" FontSize="12.5"
                                    Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="AnalyzeBytesText" Text="共 0 B" FontSize="12.5" FontWeight="Bold"
+                        <TextBlock x:Name="AnalyzeBytesText" Text="" FontSize="12.5" FontWeight="Bold"
                                    Foreground="{DynamicResource PrimaryBrush}" Margin="18,0,0,0" VerticalAlignment="Center"/>
                         <Button x:Name="BtnCancelAnalyze" Content="{DynamicResource btn.cancel}" Style="{StaticResource SmallSecondaryButton}"
                                 Margin="20,0,0,0" Click="BtnCancelAnalyze_Click"/>

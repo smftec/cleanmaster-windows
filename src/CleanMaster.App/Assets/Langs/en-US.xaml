@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.loading">Loading installed apps…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">This app has no uninstaller</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">Uninstall not detected — it may have been cancelled</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.search.hint">Search apps…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">By install date</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">By name</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">By size</sys:String>
@@ -552,6 +553,7 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">Unrated</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">Loading startup items…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.note.core">Core Windows component — do not disable</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.search.hint">Search startup items…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">Startup folder (all users)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">Startup folder (user)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">Registry (current user)</sys:String>

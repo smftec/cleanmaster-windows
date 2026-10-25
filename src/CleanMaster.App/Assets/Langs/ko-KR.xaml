@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.loading">설치된 앱을 읽는 중…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">이 앱에는 제거 프로그램이 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">제거 완료를 감지하지 못했습니다. 취소되었을 수 있습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.search.hint">앱 검색…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">설치일순</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">이름순</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">크기순</sys:String>
@@ -552,6 +553,7 @@
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">미측정</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">시작 프로그램을 읽는 중…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.note.core">Windows 핵심 구성 요소. 비활성화 비권장</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.search.hint">시작 항목 검색…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">시작 폴더 (모든 사용자)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">시작 폴더 (사용자)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">레지스트리 (현재 사용자)</sys:String>

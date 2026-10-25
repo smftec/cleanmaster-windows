@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.loading">Installierte Apps werden geladen…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">Diese App hat kein Deinstallationsprogramm</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">Deinstallation nicht erkannt — evtl. abgebrochen</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.search.hint">Apps suchen…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">Nach Installationsdatum</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">Nach Name</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">Nach Größe</sys:String>
@@ -552,6 +553,7 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">Unbewertet</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">Autostart-Einträge werden geladen…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.note.core">Kernkomponente von Windows — nicht deaktivieren</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.search.hint">Starteinträge suchen…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">Autostart-Ordner (alle)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">Autostart-Ordner (Benutzer)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">Registrierung (Benutzer)</sys:String>

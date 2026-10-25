@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.loading">Chargement des applications…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">Cette application n'a pas de désinstalleur</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">Désinstallation non détectée — elle a peut-être été annulée</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.search.hint">Rechercher des applications…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">Par date d'installation</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">Par nom</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">Par taille</sys:String>
@@ -552,6 +553,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">Non mesuré</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">Chargement des éléments de démarrage…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.note.core">Composant Windows essentiel — ne pas désactiver</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.search.hint">Rechercher les éléments de démarrage…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">Dossier Démarrage (tous)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">Dossier Démarrage (utilisateur)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">Registre (utilisateur)</sys:String>

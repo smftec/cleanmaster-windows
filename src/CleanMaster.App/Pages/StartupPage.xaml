@@ -23,8 +23,12 @@
                            Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,8,0,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <TextBox x:Name="SearchBox" Width="220" VerticalAlignment="Center"
-                         TextChanged="SearchBox_TextChanged"/>
+                <Grid Width="220" VerticalAlignment="Center">
+                    <TextBlock x:Name="SearchHint" Text="{DynamicResource startup.search.hint}" FontSize="13"
+                               Foreground="{DynamicResource TextTertiaryBrush}" VerticalAlignment="Center"
+                               Margin="10,0,0,0" IsHitTestVisible="False"/>
+                    <TextBox x:Name="SearchBox" TextChanged="SearchBox_TextChanged"/>
+                </Grid>
                 <Button x:Name="BtnRefresh" Content="{DynamicResource btn.refresh}" Style="{StaticResource SecondaryButton}"
                         Padding="18,8" Margin="12,0,0,0" Click="BtnRefresh_Click"/>
             </StackPanel>

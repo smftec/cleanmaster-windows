@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.loading">インストール済みアプリを読み込み中…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">このアプリにはアンインストーラーがありません</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">アンインストールを検出できませんでした。キャンセルされた可能性があります</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.search.hint">アプリを検索…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">インストール日順</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">名前順</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">サイズ順</sys:String>
@@ -552,6 +553,7 @@
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">未評価</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">スタートアップ項目を読み込み中…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.note.core">Windows の中核コンポーネント。無効化は非推奨</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.search.hint">スタートアップを検索…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">スタートアップフォルダ (全ユーザー)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">スタートアップフォルダ (ユーザー)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">レジストリ (現在のユーザー)</sys:String>

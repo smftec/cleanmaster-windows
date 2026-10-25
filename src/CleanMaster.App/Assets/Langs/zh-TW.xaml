@@ -13,6 +13,7 @@
     <sys:String xml:space="preserve" x:Key="apps.loading">正在讀取已安裝應用…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.no.uninstaller">该应用未提供卸载程序</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.notdetected">未偵測到解除安裝完成，可能已取消</sys:String>
+    <sys:String xml:space="preserve" x:Key="apps.search.hint">搜索应用…</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.date">按安裝日期</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.name">按名稱</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.sort.size">按大小</sys:String>
@@ -551,6 +552,7 @@
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">未測量</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">正在讀取啟動項…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.note.core">Windows 核心组件，不建议禁用</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.search.hint">搜索启动项…</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">啟動資料夾 (公用)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">啟動資料夾 (使用者)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">登錄檔 (目前使用者)</sys:String>

@@ -300,6 +300,7 @@ JA = {
     "app.error.msg": "内部エラーが発生しました：",
     "cmd.hint.short": "Ctrl+K クイック検索",
     "cmd.hint.short": "Ctrl+K クイック検索", "btn.ok": "了解しました",
+    "startup.search.hint": "スタートアップを検索…", "apps.search.hint": "アプリを検索…",
 }
 
 KO = {
@@ -608,4 +609,5 @@ KO = {
     "app.error.msg": "内部エラーが発生しました：",
     "cmd.hint.short": "Ctrl+K 빠른 검색",
     "cmd.hint.short": "Ctrl+K 빠른 검색", "btn.ok": "확인",
+    "startup.search.hint": "시작 항목 검색…", "apps.search.hint": "앱 검색…",
 }
