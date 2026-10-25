@@ -33,6 +33,7 @@ Continues automatically once finished</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.cleansel">Clean selected</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearhistory">Clear history</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearlocal">Clear local history</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.copyreport">Copy report</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.deleteperm">Delete permanently</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.home">Back to Home</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.quarantine">Open quarantine</sys:String>
@@ -137,6 +138,19 @@ Restorable files go to quarantine.</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.quar">Quarantined</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">Skipped (in use)</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">Cleanup complete</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.header">CleanMaster check-up report · {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.score">Score: {0} ({1})</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.done.score">Estimated score {0} → {1} (effective after rescan)</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.disk">Disk free</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.junk">Junk load</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.startup">Startup load</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.last">Last score {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.never">No check-up yet — click to begin</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.start">Start full check-up</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.score">Score {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.title">Check-up summary</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.maint">{0} maintenance features are off</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.startup">{0} high-impact startup items may slow booting</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">{0} succeeded, {1} skipped</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">Auto-cleaned {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clean.detail">{0} succeeded, {1} quarantined, {2} skipped, {3} failed</sys:String>
@@ -566,6 +580,7 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.readfailed">Failed to load: </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recycled">Moved to Recycle Bin — {0} freed</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recyclefailed">Failed to move to Recycle Bin; the file may be in use</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.reportcopied">Report copied to clipboard</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">Scan failed: </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">Scan stopped</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped"> ({0} skipped)</sys:String>

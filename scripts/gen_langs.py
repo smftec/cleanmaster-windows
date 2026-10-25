@@ -316,6 +316,16 @@ ZH = {
     "settings.custom.add": "添加目录", "settings.custom.pick": "选择要定期清理的目录",
     "settings.custom.empty": "暂无自定义清理目录", "settings.custom.protected": "该目录属于受保护的用户数据目录，不能加入清理",
     "startup.boottime": "上次开机 {0:F1} 秒", "space.filter.all": "全部",
+    # ===== v2.3 追加 =====
+    "hc.start": "开始全面体检", "hc.never": "还没有体检过，点击开始",
+    "hc.last": "上次评分 {0} · {1}",
+    "hc.summary.title": "体检摘要", "hc.summary.score": "当前评分 {0} · {1}",
+    "hc.factor.disk": "磁盘余量", "hc.factor.junk": "垃圾体量", "hc.factor.startup": "启动负担",
+    "hc.todo.startup": "{0} 个高影响启动项，可能拖慢开机", "hc.todo.maint": "{0} 项系统维护未开启",
+    "hc.done.score": "预计评分 {0} → {1}（重启扫描后生效）",
+    "btn.copyreport": "复制报告", "toast.reportcopied": "体检报告已复制到剪贴板",
+    "hc.copy.header": "清理优化大师 体检报告 · {0}",
+    "hc.copy.score": "评分：{0}（{1}）",
 }
 
 # ============ 组装与生成 ============

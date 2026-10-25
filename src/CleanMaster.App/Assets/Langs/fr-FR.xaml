@@ -33,6 +33,7 @@ Reprise automatique une fois terminée</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.cleansel">Nettoyer la sélection</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearhistory">Effacer l'historique</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearlocal">Effacer l'historique local</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.copyreport">Copier le rapport</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.deleteperm">Supprimer définitivement</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.home">Retour à l'accueil</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.quarantine">Ouvrir la quarantaine</sys:String>
@@ -137,6 +138,19 @@ Les fichiers restaurables vont en quarantaine.</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.quar">En quarantaine</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">Ignorés (utilisés)</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">Nettoyage terminé</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.header">Rapport de bilan CleanMaster · {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.score">Score : {0} ({1})</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.done.score">Score estimé {0} → {1} (effectif après réanalyse)</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.disk">Espace disque</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.junk">Charge en déchets</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.startup">Charge au démarrage</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.last">Dernier score {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.never">Aucun bilan — cliquez pour commencer</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.start">Lancer le bilan complet</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.score">Score {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.title">Résumé du bilan</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.maint">{0} fonctions de maintenance désactivées</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.startup">{0} démarrages à fort impact ralentissent peut-être le boot</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">{0} réussis, {1} ignorés</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">Nettoyage auto : {0} libérés</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clean.detail">{0} réussis, {1} en quarantaine, {2} ignorés, {3} échecs</sys:String>
@@ -566,6 +580,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.readfailed">Échec du chargement : </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recycled">Mis à la corbeille — {0} libérés</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recyclefailed">Échec : le fichier est peut-être en cours d'utilisation</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.reportcopied">Rapport copié dans le presse-papiers</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">Échec de l'analyse : </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">Analyse arrêtée</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped"> ({0} ignorés)</sys:String>

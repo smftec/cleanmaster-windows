@@ -31,12 +31,68 @@ public partial class SmartScanPage : Page, IParamPage
         var spin2 = new DoubleAnimation(0, -360, TimeSpan.FromSeconds(1.6));
         spin2.RepeatBehavior = RepeatBehavior.Forever;
         CleanSpinTransform.BeginAnimation(RotateTransform.AngleProperty, spin2);
+        Loaded += (s, e) => _ = BuildHealthPreviewAsync();
     }
 
     public void OnNavigated(object? param)
     {
         if (param as string == "start" && !_scanning && !_cleaning)
             StartScanFromUi();
+        else if (!_scanning && !_cleaning)
+            _ = BuildHealthPreviewAsync();
+    }
+
+    // ————— 体检预告(待机页,缓存数据) —————
+
+    private async Task BuildHealthPreviewAsync()
+    {
+        try
+        {
+            var last = ScanCache.Load();
+            if (last == null)
+            {
+                RenderHealthPreview(null);
+                return;
+            }
+            double freePct = 100;
+            try
+            {
+                var drive = DriveInfo.GetDrives().First(d => d.IsReady &&
+                    d.Name.StartsWith(System.IO.Path.GetTempPath().Substring(0, 3), StringComparison.OrdinalIgnoreCase));
+                freePct = drive.AvailableFreeSpace * 100.0 / drive.TotalSize;
+            }
+            catch { }
+            int highImpact = 0;
+            try
+            {
+                var items = await Task.Run(() => Services.EnumerationCache.GetStartup());
+                highImpact = items.Count(i => i.Enabled && i.Impact == "高");
+            }
+            catch { }
+            RenderHealthPreview(Core.Analysis.HealthScoreService.Compute(last.TotalBytes, highImpact, freePct));
+        }
+        catch { }
+    }
+
+    private void RenderHealthPreview(Core.Analysis.HealthScoreService.Report? r)
+    {
+        HealthPreviewHost.Children.Clear();
+        var chip = new Border
+        {
+            Background = (Brush)FindResource("PrimarySoftBrush"),
+            CornerRadius = new CornerRadius(8),
+            Padding = new Thickness(11, 4, 11, 5),
+        };
+        chip.Child = new TextBlock
+        {
+            Text = r == null
+                ? Services.Loc.T("hc.never")
+                : string.Format(Services.Loc.T("hc.last"), r.Score, Services.Loc.T(r.LevelKey)),
+            FontSize = 12,
+            FontWeight = FontWeights.Bold,
+            Foreground = (Brush)FindResource("PrimaryBrush"),
+        };
+        HealthPreviewHost.Children.Add(chip);
     }
 
     public void StartScanFromUi() => StartScan();
@@ -151,6 +207,140 @@ public partial class SmartScanPage : Page, IParamPage
         ResultSubText.Text = string.Format(Services.Loc.T("result.sub"), DateTime.Now.ToString("yyyy-MM-dd HH:mm"), results.Count);
         SelCountText.Text = "0";
         SelSizeText.Text = "0 B";
+        _ = BuildHealthSummaryAsync(total);
+    }
+
+    // ————— 体检摘要(结果页) —————
+
+    private Core.Analysis.HealthScoreService.Report? _lastReport;
+
+    private async Task BuildHealthSummaryAsync(long junkBytes)
+    {
+        double freePct = 100;
+        try
+        {
+            var drive = DriveInfo.GetDrives().First(d => d.IsReady &&
+                d.Name.StartsWith(System.IO.Path.GetTempPath().Substring(0, 3), StringComparison.OrdinalIgnoreCase));
+            freePct = drive.AvailableFreeSpace * 100.0 / drive.TotalSize;
+        }
+        catch { }
+        int highImpact = 0;
+        var maintOff = 0;
+        try
+        {
+            var items = await Task.Run(() => Services.EnumerationCache.GetStartup());
+            highImpact = items.Count(i => i.Enabled && i.Impact == "高");
+            maintOff = (await Task.Run(() => Core.Analysis.SystemMaintenanceService.CheckAll()))
+                .Count(m => m.State == "off");
+        }
+        catch { }
+        _lastReport = Core.Analysis.HealthScoreService.Compute(junkBytes, highImpact, freePct);
+        var r = _lastReport;
+
+        HealthSummaryScore.Text = string.Format(Services.Loc.T("hc.summary.score"), r.Score, Services.Loc.T(r.LevelKey));
+        HealthSummaryScore.Foreground = (Brush)FindResource(r.BrushKey);
+
+        // 三因子条形
+        HealthFactorHost.Children.Clear();
+        void FactorBar(string label, double v)
+        {
+            var row = new Grid { Margin = new Thickness(0, 4, 0, 4) };
+            row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(110) });
+            row.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            row.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            row.Children.Add(new TextBlock
+            {
+                Text = label, FontSize = 12,
+                Foreground = (Brush)FindResource("TextSecondaryBrush"),
+                VerticalAlignment = VerticalAlignment.Center,
+            });
+            var track = new Border
+            {
+                Height = 8, CornerRadius = new CornerRadius(4),
+                Background = (Brush)FindResource("TrackBrush"),
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = new Thickness(10, 0, 10, 0),
+            };
+            var fill = new Border
+            {
+                Height = 8, CornerRadius = new CornerRadius(4),
+                Width = Math.Max(6, 320 * v / 100),
+                Background = v >= 70 ? (Brush)FindResource("SuccessBrush")
+                    : v >= 45 ? (Brush)FindResource("WarningBrush")
+                    : (Brush)FindResource("DangerBrush"),
+                HorizontalAlignment = HorizontalAlignment.Left,
+            };
+            track.Child = fill;
+            Grid.SetColumn(track, 1);
+            row.Children.Add(track);
+            var val = new TextBlock
+            {
+                Text = ((int)v).ToString(), FontSize = 12, FontWeight = FontWeights.Bold,
+                Foreground = (Brush)FindResource("TextPrimaryBrush"),
+                VerticalAlignment = VerticalAlignment.Center, MinWidth = 26,
+            };
+            Grid.SetColumn(val, 2);
+            row.Children.Add(val);
+            HealthFactorHost.Children.Add(row);
+        }
+        FactorBar(Services.Loc.T("hc.factor.disk"), r.DiskFactor);
+        FactorBar(Services.Loc.T("hc.factor.junk"), r.JunkFactor);
+        FactorBar(Services.Loc.T("hc.factor.startup"), r.StartupFactor);
+
+        // 待办行:启动项 / 维护项
+        HealthTodoHost.Children.Clear();
+        void TodoRow(string text, string btnText, PageKey target, object? param)
+        {
+            var row = new Border
+            {
+                Background = (Brush)FindResource("ItemHoverBrush"),
+                CornerRadius = new CornerRadius(9),
+                Padding = new Thickness(12, 8, 12, 8),
+                Margin = new Thickness(0, 5, 0, 0),
+            };
+            var g = new Grid();
+            g.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            g.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            g.Children.Add(new TextBlock
+            {
+                Text = text, FontSize = 12.5,
+                Foreground = (Brush)FindResource("TextPrimaryBrush"),
+                VerticalAlignment = VerticalAlignment.Center,
+            });
+            var go = new Button
+            {
+                Content = btnText,
+                Style = (Style)FindResource("SmallPrimaryButton"),
+            };
+            go.Click += (s, e) => _main.Navigate(target, param);
+            Grid.SetColumn(go, 1);
+            g.Children.Add(go);
+            row.Child = g;
+            HealthTodoHost.Children.Add(row);
+        }
+        if (highImpact > 0)
+            TodoRow(string.Format(Services.Loc.T("hc.todo.startup"), highImpact),
+                Services.Loc.T("home.suggest.optimize"), PageKey.Startup, null);
+        if (maintOff > 0)
+            TodoRow(string.Format(Services.Loc.T("hc.todo.maint"), maintOff),
+                Services.Loc.T("maint.goto"), PageKey.Toolbox, "maint");
+    }
+
+    private void BtnCopyReport_Click(object sender, RoutedEventArgs e)
+    {
+        if (_rows == null || _lastReport == null) return;
+        var r = _lastReport;
+        var sb = new System.Text.StringBuilder();
+        sb.AppendLine(string.Format(Services.Loc.T("hc.copy.header"), DateTime.Now.ToString("yyyy-MM-dd HH:mm")));
+        sb.AppendLine(string.Format(Services.Loc.T("hc.copy.score"), r.Score, Services.Loc.T(r.LevelKey)));
+        foreach (var row in _rows.Where(x => x.Res.TotalSize > 0).OrderByDescending(x => x.Res.TotalSize))
+            sb.AppendLine($"- {row.Name}: {row.SizeText} ({row.CountText})");
+        try
+        {
+            System.Windows.Clipboard.SetText(sb.ToString());
+            _main.ShowToast(Services.Loc.T("toast.reportcopied"), ToastType.Success);
+        }
+        catch { }
     }
 
     private StackPanel BuildSection(string title, string note, List<(IScanRule rule, RuleResult res)> rules)
@@ -455,6 +645,28 @@ public partial class SmartScanPage : Page, IParamPage
         DoneNoteText.Text = summary.QuarantineCount > 0
             ? string.Format(Services.Loc.T("done.note.quarantine"), SettingsService.Current.QuarantineDays)
             : Services.Loc.T("done.note.skip");
+
+        // 评分对比:按已释放量重算(预计值,诚实标注)
+        if (_lastReport != null && summary.FreedBytes > 0)
+        {
+            try
+            {
+                double freePct = 100;
+                var drive = DriveInfo.GetDrives().First(d => d.IsReady &&
+                    d.Name.StartsWith(System.IO.Path.GetTempPath().Substring(0, 3), StringComparison.OrdinalIgnoreCase));
+                freePct = drive.AvailableFreeSpace * 100.0 / drive.TotalSize;
+                var after = Core.Analysis.HealthScoreService.Compute(
+                    Math.Max(0, _lastReport.JunkBytes - summary.FreedBytes),
+                    _lastReport.HighImpactStartup, freePct);
+                if (after.Score > _lastReport.Score)
+                {
+                    DoneScoreText.Text = string.Format(Services.Loc.T("hc.done.score"),
+                        _lastReport.Score, after.Score);
+                    DoneScoreText.Visibility = Visibility.Visible;
+                }
+            }
+            catch { }
+        }
         Show(PanelDone);
 
         // 后台重扫以刷新缓存

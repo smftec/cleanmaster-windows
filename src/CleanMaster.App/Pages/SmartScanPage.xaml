@@ -3,10 +3,16 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       FontFamily="Microsoft YaHei UI">
     <Grid>
-        <!-- ============ 待机 ============ -->
+        <!-- ============ 待机(体检首页) ============ -->
         <ScrollViewer x:Name="PanelIdle" Visibility="Visible"
                       VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <StackPanel MaxWidth="760" HorizontalAlignment="Center" Margin="0,40,0,20">
+            <StackPanel MaxWidth="760" HorizontalAlignment="Center" Margin="0,24,0,20">
+                <!-- 体检预告条 -->
+                <Border Background="{DynamicResource CardBgBrush}" CornerRadius="14"
+                        BorderBrush="{DynamicResource CardBorderBrush}" BorderThickness="1"
+                        Padding="16,11" Margin="0,0,0,22" HorizontalAlignment="Center">
+                    <StackPanel x:Name="HealthPreviewHost" Orientation="Horizontal"/>
+                </Border>
                 <Button x:Name="BigScanBtn" Click="BtnStartScan_Click" Cursor="Hand" Background="Transparent"
                         BorderThickness="0" Padding="0" HorizontalAlignment="Center">
                     <Button.Template>
@@ -23,7 +29,7 @@
                                     <Path Data="{StaticResource BroomIcon}" Stroke="White" StrokeThickness="2.6"
                                           StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
                                           Width="52" Height="52" Stretch="Uniform" HorizontalAlignment="Center"/>
-                                    <TextBlock Text="{DynamicResource scan.start}" FontSize="17" FontWeight="Bold" Foreground="White"
+                                    <TextBlock Text="{DynamicResource hc.start}" FontSize="16" FontWeight="Bold" Foreground="White"
                                                HorizontalAlignment="Center" Margin="0,10,0,0"/>
                                 </StackPanel>
                             </Grid>
@@ -78,6 +84,7 @@
         <Grid x:Name="PanelResults" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -98,16 +105,35 @@
                                        Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,4,0,0"/>
                         </StackPanel>
                     </StackPanel>
-                    <Button x:Name="BtnRescan" Content="{DynamicResource btn.rescan}" Style="{StaticResource SmallSecondaryButton}"
-                            HorizontalAlignment="Right" VerticalAlignment="Center" Click="BtnStartScan_Click"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Button x:Name="BtnCopyReport" Content="{DynamicResource btn.copyreport}" Style="{StaticResource SmallSecondaryButton}"
+                                Margin="0,0,12,0" Click="BtnCopyReport_Click"/>
+                        <Button x:Name="BtnRescan" Content="{DynamicResource btn.rescan}" Style="{StaticResource SmallSecondaryButton}"
+                                Click="BtnStartScan_Click"/>
+                    </StackPanel>
                 </Grid>
             </Border>
 
-            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <!-- 体检摘要 -->
+            <Border Grid.Row="1" Style="{StaticResource CardBorder}" Margin="0,0,0,14" Padding="20,14"
+                    x:Name="HealthSummaryCard">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{DynamicResource hc.summary.title}" FontSize="14" FontWeight="Bold"
+                                   Foreground="{DynamicResource TextPrimaryBrush}" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="HealthSummaryScore" Text="" FontSize="12" VerticalAlignment="Center"
+                                   Foreground="{DynamicResource TextSecondaryBrush}" Margin="12,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel x:Name="HealthFactorHost" Margin="0,12,0,0"/>
+                    <StackPanel x:Name="HealthTodoHost" Margin="0,10,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
                 <StackPanel x:Name="ResultGroups" Margin="0,0,4,8"/>
             </ScrollViewer>
 
-            <Border Grid.Row="2" Style="{StaticResource CardBorder}" Margin="0,14,0,0" Padding="20,13">
+            <Border Grid.Row="3" Style="{StaticResource CardBorder}" Margin="0,14,0,0" Padding="20,13">
                 <Grid>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <TextBlock Text="{DynamicResource common.selected}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"/>
@@ -167,6 +193,9 @@
                            Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center" Margin="0,20,0,0"/>
                 <TextBlock x:Name="DoneFreedText" Text="" FontSize="15" Foreground="{DynamicResource SuccessBrush}"
                            HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                <TextBlock x:Name="DoneScoreText" Text="" FontSize="13" FontWeight="Bold"
+                           Foreground="{DynamicResource PrimaryBrush}"
+                           HorizontalAlignment="Center" Margin="0,8,0,0" Visibility="Collapsed"/>
 
                 <Border Style="{StaticResource CardBorder}" Margin="0,26,0,0" Padding="24,18">
                     <UniformGrid Columns="4">

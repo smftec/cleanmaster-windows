@@ -33,6 +33,7 @@
     <sys:String xml:space="preserve" x:Key="btn.cleansel">선택 항목 정리</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearhistory">기록 비우기</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearlocal">로컬 기록 지우기</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.copyreport">보고서 복사</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.deleteperm">영구 삭제</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.home">홈으로</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.quarantine">격리소 열기</sys:String>
@@ -137,6 +138,19 @@
     <sys:String xml:space="preserve" x:Key="done.stat.quar">격리됨</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">건너뜀(사용 중)</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">정리 완료</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.header">CleanMaster 검진 보고서 · {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.score">점수: {0}({1})</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.done.score">예상 점수 {0} → {1}(재스캔 후 반영)</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.disk">디스크 여유</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.junk">데이터 부하</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.startup">시작 부하</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.last">이전 점수 {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.never">아직 검진하지 않았습니다. 클릭해서 시작</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.start">전체 검진 시작</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.score">현재 점수 {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.title">검진 요약</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.maint">관리 항목 {0}개 꺼짐</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.startup">고영향 시작 {0}개가 부팅을 늦출 수 있음</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">성공 {0}, 건너뜀 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">자동 정리로 {0} 확보</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clean.detail">성공 {0}, 격리 {1}, 건너뜀 {2}, 실패 {3}</sys:String>
@@ -566,6 +580,7 @@
     <sys:String xml:space="preserve" x:Key="toast.readfailed">불러오기 실패: </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recycled">휴지통으로 이동 — {0} 확보</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recyclefailed">휴지통 이동 실패. 파일이 사용 중일 수 있습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.reportcopied">보고서를 클립보드에 복사했습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">스캔 실패: </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">스캔이 중지되었습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped"> ({0}개 건너뜀)</sys:String>

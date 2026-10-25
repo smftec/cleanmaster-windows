@@ -19,6 +19,10 @@ public static class HealthScoreService
         public long JunkBytes { get; init; }
         public int HighImpactStartup { get; init; }
         public double DiskFreePercent { get; init; }
+        /// <summary>因子分(0-100),体检摘要条形图用。</summary>
+        public double DiskFactor { get; init; }
+        public double JunkFactor { get; init; }
+        public double StartupFactor { get; init; }
     }
 
     public static Report Compute(long junkBytes, int highImpactStartup, double diskFreePercent, long? recycleBinBytes = null)
@@ -61,6 +65,9 @@ public static class HealthScoreService
             JunkBytes = junkBytes,
             HighImpactStartup = highImpactStartup,
             DiskFreePercent = diskFreePercent,
+            DiskFactor = diskScore,
+            JunkFactor = junkScore,
+            StartupFactor = startupScore,
         };
     }
 }

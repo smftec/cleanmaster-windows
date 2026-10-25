@@ -33,6 +33,7 @@
     <sys:String xml:space="preserve" x:Key="btn.cleansel">清理所选项</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearhistory">清空历史</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearlocal">清除本地历史记录</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.copyreport">复制报告</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.deleteperm">永久删除</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.home">返回首页</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.quarantine">打开隔离区</sys:String>
@@ -137,6 +138,19 @@
     <sys:String xml:space="preserve" x:Key="done.stat.quar">进入隔离区</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">跳过（占用中）</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">清理完成</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.header">清理优化大师 体检报告 · {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.score">评分：{0}（{1}）</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.done.score">预计评分 {0} → {1}（重启扫描后生效）</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.disk">磁盘余量</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.junk">垃圾体量</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.startup">启动负担</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.last">上次评分 {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.never">还没有体检过，点击开始</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.start">开始全面体检</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.score">当前评分 {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.title">体检摘要</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.maint">{0} 项系统维护未开启</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.startup">{0} 个高影响启动项，可能拖慢开机</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">成功 {0}，跳过 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">自动清理了 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clean.detail">成功 {0}，进隔离区 {1}，跳过 {2}，失败 {3}</sys:String>
@@ -566,6 +580,7 @@
     <sys:String xml:space="preserve" x:Key="toast.readfailed">读取失败：</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recycled">已移入回收站，释放 {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recyclefailed">移入回收站失败，文件可能被占用</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.reportcopied">体检报告已复制到剪贴板</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">扫描失败：</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">已停止扫描</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped">（跳过 {0} 项）</sys:String>

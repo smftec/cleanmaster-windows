@@ -285,6 +285,16 @@ JA = {
     "settings.custom.add": "ディレクトリを追加", "settings.custom.pick": "定期的に清理するディレクトリを選択",
     "settings.custom.empty": "カスタムディレクトリはまだありません", "settings.custom.protected": "保護対象のユーザーデータのため追加できません",
     "startup.boottime": "前回の起動 {0:F1} 秒", "space.filter.all": "すべて",
+    # v2.3
+    "hc.start": "全面体检を開始", "hc.never": "まだ体检していません。クリックして開始",
+    "hc.last": "前回のスコア {0} · {1}",
+    "hc.summary.title": "体检サマリー", "hc.summary.score": "現在のスコア {0} · {1}",
+    "hc.factor.disk": "ディスク余量", "hc.factor.junk": "データ負荷", "hc.factor.startup": "起動負荷",
+    "hc.todo.startup": "高影響スタートアップ {0} 件が起動を遅くしている可能性", "hc.todo.maint": "メンテナンス {0} 項目がオフ",
+    "hc.done.score": "推定スコア {0} → {1}（再スキャンで確定）",
+    "btn.copyreport": "レポートをコピー", "toast.reportcopied": "レポートをクリップボードにコピーしました",
+    "hc.copy.header": "CleanMaster 体检レポート · {0}",
+    "hc.copy.score": "スコア：{0}（{1}）",
 }
 
 KO = {
@@ -578,4 +588,14 @@ KO = {
     "settings.custom.add": "폴더 추가", "settings.custom.pick": "정기적으로 정리할 폴더 선택",
     "settings.custom.empty": "사용자 지정 폴더가 없습니다", "settings.custom.protected": "보호 대상 사용자 데이터 폴더는 추가할 수 없습니다",
     "startup.boottime": "마지막 부팅 {0:F1}초", "space.filter.all": "전체",
+    # v2.3
+    "hc.start": "전체 검진 시작", "hc.never": "아직 검진하지 않았습니다. 클릭해서 시작",
+    "hc.last": "이전 점수 {0} · {1}",
+    "hc.summary.title": "검진 요약", "hc.summary.score": "현재 점수 {0} · {1}",
+    "hc.factor.disk": "디스크 여유", "hc.factor.junk": "데이터 부하", "hc.factor.startup": "시작 부하",
+    "hc.todo.startup": "고영향 시작 {0}개가 부팅을 늦출 수 있음", "hc.todo.maint": "관리 항목 {0}개 꺼짐",
+    "hc.done.score": "예상 점수 {0} → {1}(재스캔 후 반영)",
+    "btn.copyreport": "보고서 복사", "toast.reportcopied": "보고서를 클립보드에 복사했습니다",
+    "hc.copy.header": "CleanMaster 검진 보고서 · {0}",
+    "hc.copy.score": "점수: {0}({1})",
 }

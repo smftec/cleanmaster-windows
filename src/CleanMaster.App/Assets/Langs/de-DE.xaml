@@ -33,6 +33,7 @@ Fährt automatisch fort, wenn fertig</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.cleansel">Auswahl bereinigen</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearhistory">Verlauf leeren</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearlocal">Lokalen Verlauf löschen</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.copyreport">Bericht kopieren</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.deleteperm">Endgültig löschen</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.home">Zurück zur Startseite</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.quarantine">Quarantäne öffnen</sys:String>
@@ -137,6 +138,19 @@ Wiederherstellbare Dateien kommen in die Quarantäne.</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.quar">In Quarantäne</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">Übersprungen (belegt)</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">Bereinigung abgeschlossen</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.header">CleanMaster Prüfbericht · {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.score">Bewertung: {0} ({1})</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.done.score">Geschätzte Bewertung {0} → {1} (nach neuem Scan wirksam)</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.disk">Freier Speicher</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.junk">Mülllast</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.startup">Startlast</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.last">Letzte Bewertung {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.never">Noch keine Prüfung — klicken zum Start</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.start">Vollständige Prüfung starten</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.score">Bewertung {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.title">Prüfungszusammenfassung</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.maint">{0} Wartungsfunktionen sind aus</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.startup">{0} Startup-Einträge mit hoher Wirkung verlangsamen evtl. den Start</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">{0} erfolgreich, {1} übersprungen</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">Automatisch bereinigt: {0} freigegeben</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clean.detail">{0} erfolgreich, {1} in Quarantäne, {2} übersprungen, {3} fehlgeschlagen</sys:String>
@@ -566,6 +580,7 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.readfailed">Laden fehlgeschlagen: </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recycled">In den Papierkorb verschoben — {0} frei</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recyclefailed">Verschieben fehlgeschlagen; Datei ist evtl. belegt</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.reportcopied">Bericht in die Zwischenablage kopiert</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">Scan fehlgeschlagen: </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">Scan gestoppt</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped"> ({0} übersprungen)</sys:String>

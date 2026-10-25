@@ -33,6 +33,7 @@ Continúa automáticamente al terminar</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.cleansel">Limpiar selección</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearhistory">Borrar historial</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearlocal">Borrar historial local</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.copyreport">Copiar informe</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.deleteperm">Eliminar definitivamente</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.home">Volver al inicio</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.quarantine">Abrir cuarentena</sys:String>
@@ -137,6 +138,19 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.quar">En cuarentena</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">Omitidos (en uso)</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">Limpieza completada</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.header">Informe de revisión de CleanMaster · {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.score">Puntuación: {0} ({1})</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.done.score">Puntuación estimada {0} → {1} (efectiva tras reanalizar)</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.disk">Espacio en disco</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.junk">Carga de basura</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.startup">Carga de inicio</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.last">Última puntuación {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.never">Aún sin revisión — pulsa para empezar</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.start">Iniciar revisión completa</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.score">Puntuación {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.title">Resumen de la revisión</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.maint">{0} funciones de mantenimiento desactivadas</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.startup">{0} inicios de alto impacto pueden ralentizar el arranque</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">{0} correctos, {1} omitidos</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">Limpieza automática: {0} liberados</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clean.detail">{0} correctos, {1} en cuarentena, {2} omitidos, {3} fallidos</sys:String>
@@ -566,6 +580,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.readfailed">Error al cargar: </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recycled">Movido a la papelera: {0} liberados</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recyclefailed">No se pudo mover a la papelera; el archivo puede estar en uso</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.reportcopied">Informe copiado al portapapeles</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">Error de análisis: </sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">Análisis detenido</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped"> ({0} omitidos)</sys:String>

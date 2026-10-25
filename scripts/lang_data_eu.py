@@ -284,6 +284,16 @@ FR = {
     "settings.custom.add": "Ajouter un dossier", "settings.custom.pick": "Choisir un dossier à nettoyer régulièrement",
     "settings.custom.empty": "Aucun dossier personnalisé", "settings.custom.protected": "Ce dossier contient des données protégées : impossible de l'ajouter",
     "startup.boottime": "Dernier démarrage {0:F1}s", "space.filter.all": "Tous",
+    # v2.3
+    "hc.start": "Lancer le bilan complet", "hc.never": "Aucun bilan — cliquez pour commencer",
+    "hc.last": "Dernier score {0} · {1}",
+    "hc.summary.title": "Résumé du bilan", "hc.summary.score": "Score {0} · {1}",
+    "hc.factor.disk": "Espace disque", "hc.factor.junk": "Charge en déchets", "hc.factor.startup": "Charge au démarrage",
+    "hc.todo.startup": "{0} démarrages à fort impact ralentissent peut-être le boot", "hc.todo.maint": "{0} fonctions de maintenance désactivées",
+    "hc.done.score": "Score estimé {0} → {1} (effectif après réanalyse)",
+    "btn.copyreport": "Copier le rapport", "toast.reportcopied": "Rapport copié dans le presse-papiers",
+    "hc.copy.header": "Rapport de bilan CleanMaster · {0}",
+    "hc.copy.score": "Score : {0} ({1})",
 }
 
 ES = {
@@ -570,6 +580,16 @@ ES = {
     "settings.custom.add": "Añadir carpeta", "settings.custom.pick": "Elige una carpeta para limpiar regularmente",
     "settings.custom.empty": "Sin carpetas personalizadas", "settings.custom.protected": "Esa carpeta contiene datos protegidos: no se puede añadir",
     "startup.boottime": "Último arranque {0:F1}s", "space.filter.all": "Todo",
+    # v2.3
+    "hc.start": "Iniciar revisión completa", "hc.never": "Aún sin revisión — pulsa para empezar",
+    "hc.last": "Última puntuación {0} · {1}",
+    "hc.summary.title": "Resumen de la revisión", "hc.summary.score": "Puntuación {0} · {1}",
+    "hc.factor.disk": "Espacio en disco", "hc.factor.junk": "Carga de basura", "hc.factor.startup": "Carga de inicio",
+    "hc.todo.startup": "{0} inicios de alto impacto pueden ralentizar el arranque", "hc.todo.maint": "{0} funciones de mantenimiento desactivadas",
+    "hc.done.score": "Puntuación estimada {0} → {1} (efectiva tras reanalizar)",
+    "btn.copyreport": "Copiar informe", "toast.reportcopied": "Informe copiado al portapapeles",
+    "hc.copy.header": "Informe de revisión de CleanMaster · {0}",
+    "hc.copy.score": "Puntuación: {0} ({1})",
 }
 
 DE = {
@@ -863,4 +883,14 @@ DE = {
     "settings.custom.add": "Ordner hinzufügen", "settings.custom.pick": "Ordner für regelmäßige Bereinigung wählen",
     "settings.custom.empty": "Noch keine eigenen Ordner", "settings.custom.protected": "Dieser Ordner enthält geschützte Daten und kann nicht hinzugefügt werden",
     "startup.boottime": "Letzter Start {0:F1}s", "space.filter.all": "Alle",
+    # v2.3
+    "hc.start": "Vollständige Prüfung starten", "hc.never": "Noch keine Prüfung — klicken zum Start",
+    "hc.last": "Letzte Bewertung {0} · {1}",
+    "hc.summary.title": "Prüfungszusammenfassung", "hc.summary.score": "Bewertung {0} · {1}",
+    "hc.factor.disk": "Freier Speicher", "hc.factor.junk": "Mülllast", "hc.factor.startup": "Startlast",
+    "hc.todo.startup": "{0} Startup-Einträge mit hoher Wirkung verlangsamen evtl. den Start", "hc.todo.maint": "{0} Wartungsfunktionen sind aus",
+    "hc.done.score": "Geschätzte Bewertung {0} → {1} (nach neuem Scan wirksam)",
+    "btn.copyreport": "Bericht kopieren", "toast.reportcopied": "Bericht in die Zwischenablage kopiert",
+    "hc.copy.header": "CleanMaster Prüfbericht · {0}",
+    "hc.copy.score": "Bewertung: {0} ({1})",
 }

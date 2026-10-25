@@ -300,4 +300,14 @@ EN = {
     "settings.custom.add": "Add folder", "settings.custom.pick": "Choose a folder to clean regularly",
     "settings.custom.empty": "No custom clean folders yet", "settings.custom.protected": "That folder is protected user data and cannot be added",
     "startup.boottime": "Last boot {0:F1}s", "space.filter.all": "All",
+    # v2.3
+    "hc.start": "Start full check-up", "hc.never": "No check-up yet — click to begin",
+    "hc.last": "Last score {0} · {1}",
+    "hc.summary.title": "Check-up summary", "hc.summary.score": "Score {0} · {1}",
+    "hc.factor.disk": "Disk free", "hc.factor.junk": "Junk load", "hc.factor.startup": "Startup load",
+    "hc.todo.startup": "{0} high-impact startup items may slow booting", "hc.todo.maint": "{0} maintenance features are off",
+    "hc.done.score": "Estimated score {0} → {1} (effective after rescan)",
+    "btn.copyreport": "Copy report", "toast.reportcopied": "Report copied to clipboard",
+    "hc.copy.header": "CleanMaster check-up report · {0}",
+    "hc.copy.score": "Score: {0} ({1})",
 }

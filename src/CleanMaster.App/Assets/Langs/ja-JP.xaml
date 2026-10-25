@@ -33,6 +33,7 @@
     <sys:String xml:space="preserve" x:Key="btn.cleansel">選択項目をクリーンアップ</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearhistory">履歴を消去</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.clearlocal">ローカル履歴を消去</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.copyreport">レポートをコピー</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.deleteperm">完全に削除</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.home">ホームへ戻る</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.done.quarantine">隔離区を開く</sys:String>
@@ -137,6 +138,19 @@
     <sys:String xml:space="preserve" x:Key="done.stat.quar">隔離へ</sys:String>
     <sys:String xml:space="preserve" x:Key="done.stat.skip">スキップ（使用中）</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">クリーンアップ完了</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.header">CleanMaster 体检レポート · {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.copy.score">スコア：{0}（{1}）</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.done.score">推定スコア {0} → {1}（再スキャンで確定）</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.disk">ディスク余量</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.junk">データ負荷</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.factor.startup">起動負荷</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.last">前回のスコア {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.never">まだ体检していません。クリックして開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.start">全面体检を開始</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.score">現在のスコア {0} · {1}</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.summary.title">体检サマリー</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.maint">メンテナンス {0} 項目がオフ</sys:String>
+    <sys:String xml:space="preserve" x:Key="hc.todo.startup">高影響スタートアップ {0} 件が起動を遅くしている可能性</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">成功 {0}、スキップ {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">自動クリーンアップで {0} を解放</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clean.detail">成功 {0}、隔離 {1}、スキップ {2}、失敗 {3}</sys:String>
@@ -566,6 +580,7 @@
     <sys:String xml:space="preserve" x:Key="toast.readfailed">読み込み失敗：</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recycled">ごみ箱へ移動。{0} を解放</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.recyclefailed">ごみ箱への移動に失敗。ファイルが使用中の可能性があります</sys:String>
+    <sys:String xml:space="preserve" x:Key="toast.reportcopied">レポートをクリップボードにコピーしました</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanfailed">スキャン失敗：</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.scanstopped">スキャンを停止しました</sys:String>
     <sys:String xml:space="preserve" x:Key="toast.skipped">（{0} 件スキップ）</sys:String>
