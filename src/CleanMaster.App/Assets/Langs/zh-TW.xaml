@@ -47,6 +47,7 @@
     <sys:String xml:space="preserve" x:Key="btn.emptybin">清空資源回收筒</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.exit">結束</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.more">更多功能</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.ok">知道了</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.openbin">開啟資源回收筒</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.purge">清空隔離區</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.recycle">移至資源回收筒</sys:String>
@@ -301,49 +302,49 @@
     <sys:String xml:space="preserve" x:Key="row.impact.tip">清理影響：{0}</sys:String>
     <sys:String xml:space="preserve" x:Key="row.restore">可進隔離區還原</sys:String>
     <sys:String xml:space="preserve" x:Key="row.running">{0} 個相關程序執行中</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.brave_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.impact">網頁首次打開可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.brave_cache.name">Brave 快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.brave_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.brave_cache.reason">瀏覽器为加速網頁加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.impact">網頁首次打開可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_cache.name">Google Chrome 快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.impact">清理后这些网站的登錄状態将失效，需要重新登錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cache.reason">瀏覽器为加速網頁加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.impact">清理后这些網站的登錄状態将失效，需要重新登錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.name">Google Chrome Cookie（会退出登錄）</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.reason">瀏覽器保存的网站登錄凭证</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_cookies.reason">瀏覽器保存的網站登錄凭证</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">浏覽歷史将被清空；收藏夹与保存的密码不受影响</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome 浏覽歷史</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">瀏覽器保存的网页访问歷史数据庫</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.custom_folders.impact">目錄内檔案将按扫描约束清理；可恢复类进入隔离区</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">瀏覽器保存的網頁访问歷史数据庫</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.impact">目錄内檔案将按扫描约束清理；可恢複類进入隔离区</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.custom_folders.name">自定义清理目錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.custom_folders.reason">你手动添加、希望定期清理的目錄</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">通过系统官方命令清理，不影响 Windows 更新功能；需管理员權限</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">通过系統官方命令清理，不影响 Windows 更新功能；需管理员權限</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">传递優化快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">Windows 用于 P2P 分发更新的快取（通过官方机制清理）</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.dev_caches.impact">下次构建/安装需重新下載依赖或重建索引，消耗额外網路流量</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.dev_caches.name">开发工具快取 (npm/pip/NuGet/Gradle)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.dev_caches.name">開发工具快取 (npm/pip/NuGet/Gradle)</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.dev_caches.reason">包管理器下載的依赖快取与构建产物</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.discord_cache.impact">应用内圖片/影片需要重新加載；不影响账号与消息</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.impact">應用内圖片/影片需要重新加載；不影响账号与消息</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.discord_cache.name">Discord 快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.discord_cache.reason">Discord 桌面客戶端的网页快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.edge_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.discord_cache.reason">Discord 桌面客戶端的網頁快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.impact">網頁首次打開可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.edge_cache.name">Microsoft Edge 快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.edge_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.impact">清理后这些网站的登錄状態将失效，需要重新登錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cache.reason">瀏覽器为加速網頁加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.impact">清理后这些網站的登錄状態将失效，需要重新登錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.edge_cookies.name">Microsoft Edge Cookie（会退出登錄）</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.reason">瀏覽器保存的网站登錄凭证</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_cookies.reason">瀏覽器保存的網站登錄凭证</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.edge_history.impact">浏覽歷史将被清空；收藏夹与保存的密码不受影响</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.edge_history.name">Microsoft Edge 浏覽歷史</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.edge_history.reason">瀏覽器保存的网页访问歷史数据庫</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.edge_history.reason">瀏覽器保存的網頁访问歷史数据庫</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.epic_cache.impact">不影响已安装游戏与账号</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.epic_cache.name">Epic Games 启动器快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.epic_cache.reason">Epic 启动器网页视圖的快取与日誌</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.epic_cache.reason">Epic 启动器網頁視圖的快取与日誌</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.error_reports.impact">无影响，仅影响向微软反馈歷史错误的能力</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.error_reports.name">错误报告与崩溃轉储</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.error_reports.reason">应用崩溃时生成的诊断报告，已失去分析价值</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.name">错误報告与崩溃轉储</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.error_reports.reason">應用崩溃时生成的诊断報告，已失去分析价值</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.impact">網頁首次打開可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.firefox_cache.name">Firefox 快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.impact">下次打开项目需重新建立索引，本地歷史記錄会被清空</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.firefox_cache.reason">瀏覽器为加速網頁加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.impact">下次打開項目需重新建立索引，本地歷史記錄会被清空</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.name">JetBrains IDE 快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.jetbrains_cache.reason">JetBrains 系列 IDE 的索引与本地歷史快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.nvidia_cache.impact">游戏首次启动需重新编译，可能略微变慢</sys:String>
@@ -355,66 +356,66 @@
     <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.impact">不影响同步与檔案</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.name">OneDrive 日誌</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.onedrive_logs.reason">OneDrive 同步产生的诊断日誌</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.opera_cache.impact">网页首次打开可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.impact">網頁首次打開可能略慢；不影响登錄状態、密码与歷史記錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.opera_cache.name">Opera 快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.opera_cache.reason">瀏覽器为加速网页加載生成的快取檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.opera_cache.reason">瀏覽器为加速網頁加載生成的快取檔案</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.impact">当前剪贴板内容将被清空</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.name">剪贴板内容</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.reason">剪贴板中可能还保留着你最近复制的内容</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.impact">清空后首次访问网站需重新解析，可能慢零点几秒；需管理员權限</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_clipboard.reason">剪贴板中可能还保留着你最近複制的内容</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.impact">清空后首次访问網站需重新解析，可能慢零点几秒；需管理员權限</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_dns.name">DNS 解析快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.reason">系统保存的域名解析記錄</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.impact">各应用任务栏右键的歷史列表将被清空，不影响应用功能</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_dns.reason">系統保存的域名解析記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.impact">各應用任务栏右鍵的歷史列表将被清空，不影响應用功能</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.name">跳轉列表 (Jump List) 記錄</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.reason">任务栏右键菜单展示的歷史記錄数据</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_jumplist.reason">任务栏右鍵菜单展示的歷史記錄数据</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_recent.impact">「最近使用」列表将被清空，不影响檔案本身</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_recent.name">最近使用檔案記錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_recent.reason">资源管理器「最近使用」与跳轉列表的来源記錄</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.impact">運行窗口的歷史下拉被清空，不影响系统功能</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.impact">運行窗口的歷史下拉被清空，不影响系統功能</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.name">運行窗口歷史</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.reason">Win+R 对话框保留的命令输入記錄</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_runmru.reason">Win+R 對话框保留的命令输入記錄</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_search.impact">搜索歷史下拉被清空，不影响搜索功能</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.privacy_search.name">檔案搜索歷史</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.privacy_search.reason">资源管理器搜索框保留的搜索关键词</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.privacy_search.reason">资源管理器搜索框保留的搜索關鍵词</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.qq_cache.impact">不影响聊天記錄；聊天檔案保存在用戶目錄中，本规则不会触碰</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.qq_cache.name">QQ (快取/日誌)</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.qq_cache.reason">QQ 客戶端的運行日誌与组件快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.impact">清空后回收站中的檔案将被永久刪除，无法恢复</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.recycle_bin.impact">清空后回收站中的檔案将被永久刪除，无法恢複</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.recycle_bin.name">回收站</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.recycle_bin.reason">你刪除过的檔案仍在回收站占着磁碟空间</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.shader_cache.impact">游戏或圖形应用下次首次启动时需要重新生成，可能略微变慢</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.impact">游戏或圖形應用下次首次启动时需要重新生成，可能略微变慢</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.shader_cache.name">DirectX / 显卡着色器快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.shader_cache.reason">游戏与圖形应用编译后的着色器快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.impact">商店页面首次打开略慢；不影响游戏本体、存档与庫存</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.name">Steam 网页快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.reason">Steam 内置瀏覽器（商店/社区页面）的快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.shader_cache.reason">游戏与圖形應用编译后的着色器快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.impact">商店頁面首次打開略慢；不影响游戏本體、存档与庫存</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.name">Steam 網頁快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.steam_htmlcache.reason">Steam 内置瀏覽器（商店/社区頁面）的快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.teams_cache.impact">下次启动 Teams 需要重新加載；不影响账号与聊天</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.teams_cache.name">Microsoft Teams 快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.teams_cache.reason">Teams 桌面客戶端的网页与组件快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.teams_cache.reason">Teams 桌面客戶端的網頁与组件快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.telegram_cache.impact">聊天記錄在云端不受影响，但离线可看的圖片/影片需要重新下載</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.name">Telegram 媒体快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.reason">Telegram 已下載媒体的本地快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.name">Telegram 媒體快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.telegram_cache.reason">Telegram 已下載媒體的本地快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.thumb_cache.impact">清理后 Windows 会在需要时重新生成缩略圖</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.thumb_cache.name">缩略圖快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.reason">资源管理器为圖片/影片生成的预覽快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.thumb_cache.reason">资源管理器为圖片/影片生成的預覽快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.update_cache.impact">更新已安装后无影响；若正在下載更新会被自动跳过，需管理员權限</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.update_cache.name">Windows 更新下載快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.update_cache.reason">Windows 更新已安装后遗留的安装包下載快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.user_temp.impact">无影响，极少数正在運行的安装程序可能需要重新开始</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.impact">无影响，极少数正在運行的安装程序可能需要重新開始</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.user_temp.name">用戶临时檔案</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.user_temp.reason">应用運行时产生的临时檔案，正常关闭后即无用</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.user_temp.reason">應用運行时产生的临时檔案，正常關闭后即无用</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.vscode_cache.impact">下次启动需重建索引，窗口布局与扩展不受影响</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.vscode_cache.name">VS Code 快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.vscode_cache.reason">VS Code 的界面快取与崩溃日誌</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.wechat_cache.impact">不影响聊天記錄；聊天檔案保存在用戶目錄中，本规则不会触碰</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.wechat_cache.name">微信 (快取/日誌)</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.reason">微信客戶端的運行日誌与网页快取</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.windows_logs.impact">不影响系统運行，仅影响排障时查看歷史日誌</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.windows_logs.name">系统日誌快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.wechat_cache.reason">微信客戶端的運行日誌与網頁快取</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.impact">不影响系統運行，仅影响排障时查看歷史日誌</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_logs.name">系統日誌快取</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.windows_logs.reason">Windows 组件产生的旧日誌檔案（7 天以上）</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.windows_temp.impact">无影响；非管理员權限下部分檔案会被跳过</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.windows_temp.name">系统临时檔案 (Windows\Temp)</sys:String>
-    <sys:String xml:space="preserve" x:Key="rule.windows_temp.reason">系统组件与安装程序留下的临时檔案</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.name">系統临时檔案 (Windows\Temp)</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.windows_temp.reason">系統组件与安装程序留下的临时檔案</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.cover">一次掃描涵蓋：系統垃圾 · 瀏覽器快取 · 應用快取 · 資源回收筒</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.done">掃描完成</sys:String>
     <sys:String xml:space="preserve" x:Key="scan.found">已發現 —</sys:String>

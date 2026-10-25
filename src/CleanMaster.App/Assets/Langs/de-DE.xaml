@@ -47,6 +47,7 @@ Fährt automatisch fort, wenn fertig</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.emptybin">Papierkorb leeren</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.exit">Beenden</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.more">Mehr Funktionen</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.ok">Verstanden</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.openbin">Papierkorb öffnen</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.purge">Quarantäne leeren</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.recycle">In den Papierkorb</sys:String>

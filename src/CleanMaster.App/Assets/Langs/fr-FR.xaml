@@ -47,6 +47,7 @@ Reprise automatique une fois terminée</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.emptybin">Vider la corbeille</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.exit">Quitter</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.more">Plus d'outils</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.ok">Compris</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.openbin">Ouvrir la corbeille</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.purge">Vider la quarantaine</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.recycle">Mettre à la corbeille</sys:String>

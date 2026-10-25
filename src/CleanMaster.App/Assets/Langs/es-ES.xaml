@@ -47,6 +47,7 @@ Continúa automáticamente al terminar</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.emptybin">Vaciar papelera</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.exit">Salir</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.more">Más herramientas</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.ok">Entendido</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.openbin">Abrir papelera</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.purge">Vaciar cuarentena</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.recycle">Mover a la papelera</sys:String>

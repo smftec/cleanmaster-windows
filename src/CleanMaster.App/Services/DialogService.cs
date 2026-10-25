@@ -1,5 +1,4 @@
 using System.Windows;
-using System.Windows.Media;
 using CleanMaster.App.Windows;
 
 namespace CleanMaster.App.Services;
@@ -8,14 +7,14 @@ namespace CleanMaster.App.Services;
 public static class DialogService
 {
     public static void Info(Window? owner, string title, string message) =>
-        Show(owner, title, message, [("知道了", false, true)]);
+        Show(owner, title, message, [(Loc.T("btn.ok"), false, true)]);
 
     public static bool Confirm(Window? owner, string title, string message,
-        string confirmText = "确定", string cancelText = "取消", bool danger = false) =>
+        string? confirmText = null, string? cancelText = null, bool danger = false) =>
         Show(owner, title, message,
         [
-            (cancelText, false, false),
-            (confirmText, danger, true),
+            (cancelText ?? Loc.T("btn.cancel"), false, false),
+            (confirmText ?? Loc.T("btn.ok"), danger, true),
         ]);
 
     public static bool Show(Window? owner, string title, string message,

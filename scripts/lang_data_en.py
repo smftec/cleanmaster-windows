@@ -314,4 +314,5 @@ EN = {
     "app.title": "CleanMaster", "app.alreadyrunning": "CleanMaster is already running.",
     "app.error.msg": "An internal error occurred:",
     "cmd.hint.short": "Ctrl+K quick search",
+    "cmd.hint.short": "Ctrl+K quick search", "btn.ok": "Got it",
 }

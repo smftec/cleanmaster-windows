@@ -298,6 +298,7 @@ FR = {
     "app.title": "CleanMaster", "app.alreadyrunning": "CleanMaster est déjà en cours d'exécution.",
     "app.error.msg": "Une erreur interne s'est produite :",
     "cmd.hint.short": "Ctrl+K recherche rapide",
+    "cmd.hint.short": "Ctrl+K recherche rapide", "btn.ok": "Compris",
 }
 
 ES = {
@@ -598,6 +599,7 @@ ES = {
     "app.title": "CleanMaster", "app.alreadyrunning": "CleanMaster ya se está ejecutando.",
     "app.error.msg": "Se ha producido un error interno:",
     "cmd.hint.short": "Ctrl+K búsqueda rápida",
+    "cmd.hint.short": "Ctrl+K búsqueda rápida", "btn.ok": "Entendido",
 }
 
 DE = {
@@ -905,4 +907,5 @@ DE = {
     "app.title": "CleanMaster", "app.alreadyrunning": "CleanMaster wird bereits ausgeführt.",
     "app.error.msg": "Ein interner Fehler ist aufgetreten:",
     "cmd.hint.short": "Ctrl+K Schnellsuche",
+    "cmd.hint.short": "Ctrl+K Schnellsuche", "btn.ok": "Verstanden",
 }

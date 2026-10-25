@@ -47,6 +47,7 @@
     <sys:String xml:space="preserve" x:Key="btn.emptybin">ごみ箱を空にする</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.exit">終了</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.more">その他の機能</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.ok">了解しました</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.openbin">ごみ箱を開く</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.purge">隔離区を空にする</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.recycle">ごみ箱へ移動</sys:String>

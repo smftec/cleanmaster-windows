@@ -47,6 +47,7 @@
     <sys:String xml:space="preserve" x:Key="btn.emptybin">휴지통 비우기</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.exit">종료</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.more">더보기</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.ok">확인</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.openbin">휴지통 열기</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.purge">격리소 비우기</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.recycle">휴지통으로 이동</sys:String>

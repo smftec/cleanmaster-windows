@@ -47,6 +47,7 @@
     <sys:String xml:space="preserve" x:Key="btn.emptybin">清空回收站</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.exit">退出</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.more">更多功能</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.ok">知道了</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.openbin">打开回收站</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.purge">清空隔离区</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.recycle">移入回收站</sys:String>

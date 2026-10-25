@@ -47,6 +47,7 @@ Continues automatically once finished</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.emptybin">Empty Recycle Bin</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.exit">Exit</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.more">More tools</sys:String>
+    <sys:String xml:space="preserve" x:Key="btn.ok">Got it</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.openbin">Open Recycle Bin</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.purge">Empty quarantine</sys:String>
     <sys:String xml:space="preserve" x:Key="btn.recycle">Move to Recycle Bin</sys:String>
