@@ -258,6 +258,9 @@ FR = {
     "quar.restore.suffix": "restauré",
     "history.autoclean.title": "Nettoyage auto : {0} libérés",
     "history.autoclean.detail": "{0} réussis, {1} ignorés",
+    # v1.8
+    "history.clean.title": "{0} nettoyés",
+    "history.clean.detail": "{0} réussis, {1} en quarantaine, {2} ignorés, {3} échecs",
 }
 
 ES = {
@@ -518,6 +521,9 @@ ES = {
     "quar.restore.suffix": "restaurado",
     "history.autoclean.title": "Limpieza automática: {0} liberados",
     "history.autoclean.detail": "{0} correctos, {1} omitidos",
+    # v1.8
+    "history.clean.title": "{0} limpiados",
+    "history.clean.detail": "{0} correctos, {1} en cuarentena, {2} omitidos, {3} fallidos",
 }
 
 DE = {
@@ -785,4 +791,7 @@ DE = {
     "quar.restore.suffix": "wiederhergestellt",
     "history.autoclean.title": "Automatisch bereinigt: {0} freigegeben",
     "history.autoclean.detail": "{0} erfolgreich, {1} übersprungen",
+    # v1.8
+    "history.clean.title": "{0} bereinigt",
+    "history.clean.detail": "{0} erfolgreich, {1} in Quarantäne, {2} übersprungen, {3} fehlgeschlagen",
 }

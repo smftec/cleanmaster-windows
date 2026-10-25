@@ -132,6 +132,8 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">Limpieza completada</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">{0} correctos, {1} omitidos</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">Limpieza automática: {0} liberados</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clean.detail">{0} correctos, {1} en cuarentena, {2} omitidos, {3} fallidos</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clean.title">{0} limpiados</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.msg">Se eliminarán todos los registros.</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.title">¿Borrar el historial?</sys:String>
     <sys:String xml:space="preserve" x:Key="history.empty">Sin actividad</sys:String>

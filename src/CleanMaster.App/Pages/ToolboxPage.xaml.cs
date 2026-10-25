@@ -16,6 +16,7 @@ public partial class ToolboxPage : Page, IParamPage
 {
     private readonly MainWindow _main;
     private DuplicateScanResult? _dupResult;
+    private CancellationTokenSource? _dupCts;
     private List<EmptyFolderInfo>? _emptyResult;
     private readonly List<(EmptyFolderInfo Info, CheckBox Cb)> _emptySel = new();
     private CancellationTokenSource? _emptyCts;
@@ -519,6 +520,17 @@ public partial class ToolboxPage : Page, IParamPage
 
     private async void BtnDupScan_Click(object sender, RoutedEventArgs e)
     {
+        // 二态:扫描中再次点击 = 取消
+        if (_dupCts != null)
+        {
+            _dupCts.Cancel();
+            return;
+        }
+        await ScanDuplicatesAsync();
+    }
+
+    private async Task ScanDuplicatesAsync()
+    {
         var roots = SettingsService.Current.DuplicateScanDirs;
         if (roots.Count == 0)
         {
@@ -533,23 +545,32 @@ public partial class ToolboxPage : Page, IParamPage
             return;
         }
 
-        BtnDupScan.IsEnabled = false;
-        BtnDupScan.Content = "扫描中…";
+        _dupCts = new CancellationTokenSource();
+        BtnDupScan.Content = Services.Loc.T("btn.stopscan");
+        BtnDupDirs.IsEnabled = false;
         DupList.Children.Clear();
         DupSummaryText.Text = Services.Loc.T("common.scanning");
+        DuplicateScanResult? result = null;
         try
         {
             var svc = new DuplicateFileService();
-            _dupResult = await svc.ScanAsync(roots, 1024 * 1024, CancellationToken.None,
+            result = await svc.ScanAsync(roots, 1024 * 1024, _dupCts.Token,
                 new Progress<(string dir, int files)>(p => DupSummaryText.Text = string.Format(Services.Loc.T("tool.dup.progress"), p.files)));
+        }
+        catch (OperationCanceledException)
+        {
+            _main.ShowToast(Services.Loc.T("toast.scanstopped"), ToastType.Info);
         }
         catch (Exception ex)
         {
             _main.ShowToast(Services.Loc.T("toast.scanfailed") + ex.Message, ToastType.Warning);
-            _dupResult = null;
         }
-        BtnDupScan.IsEnabled = true;
+        _dupCts.Dispose();
+        _dupCts = null;
         BtnDupScan.Content = Services.Loc.T("btn.dup.rescan");
+        BtnDupDirs.IsEnabled = true;
+        _dupResult = result;
+        if (_dupResult == null) DupSummaryText.Text = "";
         RenderDup();
     }
 

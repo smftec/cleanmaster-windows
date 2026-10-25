@@ -274,4 +274,7 @@ EN = {
     "quar.restore.suffix": "restored",
     "history.autoclean.title": "Auto-cleaned {0}",
     "history.autoclean.detail": "{0} succeeded, {1} skipped",
+    # v1.8
+    "history.clean.title": "Cleaned {0}",
+    "history.clean.detail": "{0} succeeded, {1} quarantined, {2} skipped, {3} failed",
 }

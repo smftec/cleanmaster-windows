@@ -132,6 +132,8 @@
     <sys:String xml:space="preserve" x:Key="done.title">정리 완료</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">성공 {0}, 건너뜀 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">자동 정리로 {0} 확보</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clean.detail">성공 {0}, 격리 {1}, 건너뜀 {2}, 실패 {3}</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clean.title">{0} 정리했습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.msg">모든 정리·작업 기록이 삭제됩니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.title">기록을 비울까요?</sys:String>
     <sys:String xml:space="preserve" x:Key="history.empty">기록이 없습니다</sys:String>

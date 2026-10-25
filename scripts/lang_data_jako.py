@@ -259,6 +259,9 @@ JA = {
     "quar.restore.suffix": "復元済み",
     "history.autoclean.title": "自動クリーンアップで {0} を解放",
     "history.autoclean.detail": "成功 {0}、スキップ {1}",
+    # v1.8
+    "history.clean.title": "{0} をクリーンアップ",
+    "history.clean.detail": "成功 {0}、隔離 {1}、スキップ {2}、失敗 {3}",
 }
 
 KO = {
@@ -526,4 +529,7 @@ KO = {
     "quar.restore.suffix": "복원됨",
     "history.autoclean.title": "자동 정리로 {0} 확보",
     "history.autoclean.detail": "성공 {0}, 건너뜀 {1}",
+    # v1.8
+    "history.clean.title": "{0} 정리했습니다",
+    "history.clean.detail": "성공 {0}, 격리 {1}, 건너뜀 {2}, 실패 {3}",
 }

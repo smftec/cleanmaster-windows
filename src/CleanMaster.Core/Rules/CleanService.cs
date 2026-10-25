@@ -118,8 +118,9 @@ public sealed class CleanService
     private static void Finalize(CleanSummary s)
     {
         s.Duration = DateTime.Now - s.StartedAt;
-        var title = $"清理了 {SizeText.OfBytes(s.FreedBytes)}";
-        var detail = $"成功 {s.SuccessCount}，进隔离区 {s.QuarantineCount}，跳过 {s.SkipCount}，失败 {s.FailCount}";
+        var title = string.Format(CoreLocalizer.T("history.clean.title", "清理了 {0}"), SizeText.OfBytes(s.FreedBytes));
+        var detail = string.Format(CoreLocalizer.T("history.clean.detail", "成功 {0}，进隔离区 {1}，跳过 {2}，失败 {3}"),
+            s.SuccessCount, s.QuarantineCount, s.SkipCount, s.FailCount);
         HistoryService.Add(s.Cancelled ? "CleanCancelled" : "Clean", title, detail, s.FreedBytes);
     }
 }

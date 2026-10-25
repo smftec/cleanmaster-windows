@@ -132,6 +132,8 @@ Restorable files go to quarantine.</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">Cleanup complete</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">{0} succeeded, {1} skipped</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">Auto-cleaned {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clean.detail">{0} succeeded, {1} quarantined, {2} skipped, {3} failed</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clean.title">Cleaned {0}</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.msg">All cleaning and operation records will be deleted.</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.title">Clear history?</sys:String>
     <sys:String xml:space="preserve" x:Key="history.empty">No activity yet</sys:String>

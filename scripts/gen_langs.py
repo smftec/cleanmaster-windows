@@ -291,6 +291,9 @@ ZH = {
     "quar.restore.suffix": "已恢复",
     "history.autoclean.title": "自动清理了 {0}",
     "history.autoclean.detail": "成功 {0}，跳过 {1}",
+    # ===== v1.8 追加 =====
+    "history.clean.title": "清理了 {0}",
+    "history.clean.detail": "成功 {0}，进隔离区 {1}，跳过 {2}，失败 {3}",
 }
 
 # ============ 组装与生成 ============

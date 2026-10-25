@@ -132,6 +132,8 @@ Les fichiers restaurables vont en quarantaine.</sys:String>
     <sys:String xml:space="preserve" x:Key="done.title">Nettoyage terminé</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.detail">{0} réussis, {1} ignorés</sys:String>
     <sys:String xml:space="preserve" x:Key="history.autoclean.title">Nettoyage auto : {0} libérés</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clean.detail">{0} réussis, {1} en quarantaine, {2} ignorés, {3} échecs</sys:String>
+    <sys:String xml:space="preserve" x:Key="history.clean.title">{0} nettoyés</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.msg">Tous les enregistrements seront supprimés.</sys:String>
     <sys:String xml:space="preserve" x:Key="history.clear.title">Effacer l'historique ?</sys:String>
     <sys:String xml:space="preserve" x:Key="history.empty">Aucune activité</sys:String>
