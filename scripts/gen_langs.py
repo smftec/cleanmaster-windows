@@ -294,6 +294,14 @@ ZH = {
     # ===== v1.8 追加 =====
     "history.clean.title": "清理了 {0}",
     "history.clean.detail": "成功 {0}，进隔离区 {1}，跳过 {2}，失败 {3}",
+    # ===== v2.0 追加 =====
+    "startup.note.core": "Windows 核心组件，不建议禁用",
+    "startup.uac.required": "需要管理员权限（在 UAC 弹窗中允许后重试）",
+    "quar.err.notfound": "文件不存在", "quar.err.locked": "文件被占用",
+    "quar.err.norecord": "记录不存在", "quar.err.missing": "隔离文件已丢失",
+    "deliveryopt.note": "通过系统官方机制清理",
+    "deliveryopt.uac": "需要管理员权限，请在 UAC 弹窗中允许",
+    "recycle.count": "{0} 个项目", "recycle.err.empty": "清空回收站失败",
 }
 
 # ============ 组装与生成 ============

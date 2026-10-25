@@ -277,4 +277,12 @@ EN = {
     # v1.8
     "history.clean.title": "Cleaned {0}",
     "history.clean.detail": "{0} succeeded, {1} quarantined, {2} skipped, {3} failed",
+    # v2.0
+    "startup.note.core": "Core Windows component — do not disable",
+    "startup.uac.required": "Administrator permission required (allow the UAC prompt and retry)",
+    "quar.err.notfound": "File not found", "quar.err.locked": "File is in use",
+    "quar.err.norecord": "Record not found", "quar.err.missing": "Quarantined file is missing",
+    "deliveryopt.note": "Cleaned via the official Windows mechanism",
+    "deliveryopt.uac": "Administrator permission required — allow the UAC prompt",
+    "recycle.count": "{0} items", "recycle.err.empty": "Failed to empty the Recycle Bin",
 }

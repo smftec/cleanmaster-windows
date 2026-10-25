@@ -72,7 +72,7 @@ public sealed class QuarantineService
         error = null;
         try
         {
-            if (!File.Exists(path) && !Directory.Exists(path)) { error = "文件不存在"; return false; }
+            if (!File.Exists(path) && !Directory.Exists(path)) { error = CoreLocalizer.T("quar.err.notfound", "文件不存在"); return false; }
             Directory.CreateDirectory(Dir);
 
             long size = 0;
@@ -107,7 +107,7 @@ public sealed class QuarantineService
         catch (Exception ex)
         {
             error = ex.Message.Contains("另一个程序正使用") || ex.Message.Contains("being used")
-                ? "文件被占用"
+                ? CoreLocalizer.T("quar.err.locked", "文件被占用")
                 : ex.Message;
             return false;
         }
@@ -120,9 +120,9 @@ public sealed class QuarantineService
         {
             Load();
             var e = _entries!.FirstOrDefault(x => x.Id == id);
-            if (e == null) return "记录不存在";
+            if (e == null) return CoreLocalizer.T("quar.err.norecord", "记录不存在");
             var stored = Path.Combine(Dir, e.StoredName);
-            if (!File.Exists(stored) && !Directory.Exists(stored)) return "隔离文件已丢失";
+            if (!File.Exists(stored) && !Directory.Exists(stored)) return CoreLocalizer.T("quar.err.missing", "隔离文件已丢失");
 
             try
             {

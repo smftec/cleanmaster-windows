@@ -110,6 +110,8 @@ Reprise automatique une fois terminée</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.copypath">Copier le chemin</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">Ouvrir</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">Afficher dans le dossier</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.note">Nettoyé via le mécanisme officiel de Windows</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.uac">Droits administrateur requis — acceptez l'invite UAC</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">Sur le point de nettoyer {0}.</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">Éléments à vérifier :</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">Nettoyage de {0} catégories, {1} au total.</sys:String>
@@ -243,10 +245,16 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Boîte à outils</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">Le disque système n'a plus que {0} libres — pensez à nettoyer</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Rappel : moins de 10% d'espace libre sur le disque système</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.locked">Fichier en cours d'utilisation</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.missing">Fichier en quarantaine introuvable</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.norecord">Entrée introuvable</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.notfound">Fichier introuvable</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">restauré</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} fichiers ({1}) seront définitivement supprimés. Irréversible.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">Vider la corbeille ?</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.count">{0} éléments</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">La corbeille est vide</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.err.empty">Impossible de vider la corbeille</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.info">{0} éléments, {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="result.sub">{0} · {1} catégories analysées</sys:String>
     <sys:String xml:space="preserve" x:Key="result.title.clean">Analyse terminée — tout est propre !</sys:String>
@@ -498,6 +506,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Moyen</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">Non mesuré</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">Chargement des éléments de démarrage…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.note.core">Composant Windows essentiel — ne pas désactiver</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">Dossier Démarrage (tous)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">Dossier Démarrage (utilisateur)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">Registre (utilisateur)</sys:String>
@@ -511,6 +520,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.enable">Cliquez pour activer au démarrage</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.impact">Estimation indicative selon le type d'application (comme le Gestionnaire des tâches), non mesurée</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">{0} l'élément de démarrage « {1} »</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.uac.required">Droits administrateur requis (acceptez l'invite UAC puis réessayez)</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">il y a {0} min</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">À l'instant</sys:String>
     <sys:String xml:space="preserve" x:Key="time.today">Aujourd'hui {0}</sys:String>

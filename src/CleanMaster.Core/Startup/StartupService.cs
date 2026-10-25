@@ -112,7 +112,7 @@ public sealed class StartupService
                 if (item.IsSystemComponent)
                 {
                     item.Suggestion = "系统组件";
-                    item.Note = "Windows 核心组件，不建议禁用";
+                    item.Note = Store.CoreLocalizer.T("startup.note.core", "Windows 核心组件，不建议禁用");
                 }
                 item.Enabled = approved.TryGetValue(name, out var on) ? on : true;
                 ApplyHeuristics(item);
@@ -267,7 +267,7 @@ public sealed class StartupService
                 ["value"] = item.ValueName,
                 ["disable"] = enable ? "0" : "1",
             }));
-        return ok ? null : "需要管理员权限（在 UAC 弹窗中允许后重试）";
+        return ok ? null : Store.CoreLocalizer.T("startup.uac.required", "需要管理员权限（在 UAC 弹窗中允许后重试）");
     }
 
     private string? ToggleFolderItem(StartupItem item, bool enable)

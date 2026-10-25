@@ -261,6 +261,14 @@ FR = {
     # v1.8
     "history.clean.title": "{0} nettoyés",
     "history.clean.detail": "{0} réussis, {1} en quarantaine, {2} ignorés, {3} échecs",
+    # v2.0
+    "startup.note.core": "Composant Windows essentiel — ne pas désactiver",
+    "startup.uac.required": "Droits administrateur requis (acceptez l'invite UAC puis réessayez)",
+    "quar.err.notfound": "Fichier introuvable", "quar.err.locked": "Fichier en cours d'utilisation",
+    "quar.err.norecord": "Entrée introuvable", "quar.err.missing": "Fichier en quarantaine introuvable",
+    "deliveryopt.note": "Nettoyé via le mécanisme officiel de Windows",
+    "deliveryopt.uac": "Droits administrateur requis — acceptez l'invite UAC",
+    "recycle.count": "{0} éléments", "recycle.err.empty": "Impossible de vider la corbeille",
 }
 
 ES = {
@@ -524,6 +532,14 @@ ES = {
     # v1.8
     "history.clean.title": "{0} limpiados",
     "history.clean.detail": "{0} correctos, {1} en cuarentena, {2} omitidos, {3} fallidos",
+    # v2.0
+    "startup.note.core": "Componente esencial de Windows: no desactivar",
+    "startup.uac.required": "Se requieren permisos de administrador (acepta el UAC y reintenta)",
+    "quar.err.notfound": "Archivo no encontrado", "quar.err.locked": "Archivo en uso",
+    "quar.err.norecord": "Registro no encontrado", "quar.err.missing": "Falta el archivo en cuarentena",
+    "deliveryopt.note": "Limpieza mediante el mecanismo oficial de Windows",
+    "deliveryopt.uac": "Se requieren permisos de administrador: acepta el UAC",
+    "recycle.count": "{0} elementos", "recycle.err.empty": "No se pudo vaciar la papelera",
 }
 
 DE = {
@@ -794,4 +810,12 @@ DE = {
     # v1.8
     "history.clean.title": "{0} bereinigt",
     "history.clean.detail": "{0} erfolgreich, {1} in Quarantäne, {2} übersprungen, {3} fehlgeschlagen",
+    # v2.0
+    "startup.note.core": "Kernkomponente von Windows — nicht deaktivieren",
+    "startup.uac.required": "Administratorrechte erforderlich (UAC-Eingabe erlauben und erneut versuchen)",
+    "quar.err.notfound": "Datei nicht gefunden", "quar.err.locked": "Datei wird verwendet",
+    "quar.err.norecord": "Eintrag nicht gefunden", "quar.err.missing": "Quarantänedatei fehlt",
+    "deliveryopt.note": "Über den offiziellen Windows-Mechanismus bereinigt",
+    "deliveryopt.uac": "Administratorrechte erforderlich — UAC-Eingabe erlauben",
+    "recycle.count": "{0} Elemente", "recycle.err.empty": "Papierkorb konnte nicht geleert werden",
 }

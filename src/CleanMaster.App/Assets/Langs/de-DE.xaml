@@ -110,6 +110,8 @@ Fährt automatisch fort, wenn fertig</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.copypath">Pfad kopieren</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">Öffnen</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">Im Ordner anzeigen</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.note">Über den offiziellen Windows-Mechanismus bereinigt</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.uac">Administratorrechte erforderlich — UAC-Eingabe erlauben</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">{0} an Daten werden bereinigt.</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">Zu prüfende Elemente:</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">{0} Kategorien mit insgesamt {1} werden bereinigt.</sys:String>
@@ -243,10 +245,16 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Werkzeuge</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">Systemlaufwerk wird knapp — nur noch {0} frei. Bereinigung empfohlen</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Hinweis: weniger als 10% frei auf dem Systemlaufwerk</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.locked">Datei wird verwendet</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.missing">Quarantänedatei fehlt</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.norecord">Eintrag nicht gefunden</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.notfound">Datei nicht gefunden</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">wiederhergestellt</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} Dateien ({1}) werden endgültig gelöscht. Nicht wiederherstellbar.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">Papierkorb leeren?</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.count">{0} Elemente</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">Der Papierkorb ist leer</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.err.empty">Papierkorb konnte nicht geleert werden</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.info">{0} Elemente, {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="result.sub">{0} · {1} Kategorien gescannt</sys:String>
     <sys:String xml:space="preserve" x:Key="result.title.clean">Scan abgeschlossen — alles sauber!</sys:String>
@@ -498,6 +506,7 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Mittel</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">Unbewertet</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">Autostart-Einträge werden geladen…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.note.core">Kernkomponente von Windows — nicht deaktivieren</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">Autostart-Ordner (alle)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">Autostart-Ordner (Benutzer)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">Registrierung (Benutzer)</sys:String>
@@ -511,6 +520,7 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.enable">Klicken, um beim Start zu aktivieren</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.impact">Richtwert basierend auf dem App-Typ (wie im Task-Manager), nicht gemessen</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">Autostart „{1}“ {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.uac.required">Administratorrechte erforderlich (UAC-Eingabe erlauben und erneut versuchen)</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">vor {0} Min.</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">gerade eben</sys:String>
     <sys:String xml:space="preserve" x:Key="time.today">Heute {0}</sys:String>

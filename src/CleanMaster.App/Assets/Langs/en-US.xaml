@@ -110,6 +110,8 @@ Continues automatically once finished</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.copypath">Copy path</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">Open</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">Show in folder</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.note">Cleaned via the official Windows mechanism</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.uac">Administrator permission required — allow the UAC prompt</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">About to clean {0} of data.</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">Items that need review:</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">About to clean {0} categories, {1} in total.</sys:String>
@@ -243,10 +245,16 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Toolbox</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">System drive is low on space — only {0} left. Consider a cleanup</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Reminder: system drive under 10% free</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.locked">File is in use</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.missing">Quarantined file is missing</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.norecord">Record not found</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.notfound">File not found</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">restored</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} files ({1}) will be permanently deleted. This cannot be undone.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">Empty Recycle Bin?</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.count">{0} items</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">The Recycle Bin is empty</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.err.empty">Failed to empty the Recycle Bin</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.info">{0} items, occupying {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="result.sub">{0} · {1} categories scanned</sys:String>
     <sys:String xml:space="preserve" x:Key="result.title.clean">Scan complete — all clean!</sys:String>
@@ -498,6 +506,7 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Medium</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">Unrated</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">Loading startup items…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.note.core">Core Windows component — do not disable</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">Startup folder (all users)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">Startup folder (user)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">Registry (current user)</sys:String>
@@ -511,6 +520,7 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.enable">Click to enable at startup</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.impact">Reference estimate based on app type (similar to Task Manager), not measured</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">{0} startup item “{1}”</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.uac.required">Administrator permission required (allow the UAC prompt and retry)</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">{0} min ago</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">Just now</sys:String>
     <sys:String xml:space="preserve" x:Key="time.today">Today {0}</sys:String>

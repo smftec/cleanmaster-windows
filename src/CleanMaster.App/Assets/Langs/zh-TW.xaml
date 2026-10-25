@@ -110,6 +110,8 @@
     <sys:String xml:space="preserve" x:Key="ctx.copypath">复制路径</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">打开</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">打开位置</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.note">通过系统官方机制清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.uac">需要管理员权限，请在 UAC 弹窗中允许</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">即將清理 {0} 的資料。</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">包含需要確認的項目：</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">即將清理 {0} 類項目，共 {1}。</sys:String>
@@ -242,10 +244,16 @@
     <sys:String xml:space="preserve" x:Key="nav.toolbox">工具箱</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">系统盘空间不足，仅剩 {0}，建议清理</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">提醒：系统盘剩余空间不足 10%</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.locked">文件被占用</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.missing">隔离文件已丢失</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.norecord">记录不存在</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.notfound">文件不存在</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">已恢复</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">資源回收筒中的 {0} 個檔案（共 {1}）將被永久刪除，無法復原。</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">清空資源回收筒？</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.count">{0} 个项目</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">資源回收筒是空的</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.err.empty">清空回收站失败</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.info">{0} 個項目，共佔用 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="result.sub">{0} · 共掃描 {1} 類項目</sys:String>
     <sys:String xml:space="preserve" x:Key="result.title.clean">掃描完成，很乾淨！</sys:String>
@@ -497,6 +505,7 @@
     <sys:String xml:space="preserve" x:Key="startup.impact.med">中</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">未測量</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">正在讀取啟動項…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.note.core">Windows 核心组件，不建议禁用</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">啟動資料夾 (公用)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">啟動資料夾 (使用者)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">登錄檔 (目前使用者)</sys:String>
@@ -510,6 +519,7 @@
     <sys:String xml:space="preserve" x:Key="startup.tip.enable">点击启用开机启动</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.impact">基于应用类型的参考评估（类似任务管理器的启动影响），非实测数据</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">{0}啟動項「{1}」</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.uac.required">需要管理员权限（在 UAC 弹窗中允许后重试）</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">{0} 分鐘前</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">剛剛</sys:String>
     <sys:String xml:space="preserve" x:Key="time.today">今天 {0}</sys:String>

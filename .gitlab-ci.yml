@@ -1,0 +1,30 @@
+# GitLab CI:镜像 GitHub Actions 的发布门禁
+# 需要 GitLab 实例注册一台 Windows Runner(标签: windows, 已装 .NET 8 SDK + Inno Setup)。
+# 无 runner 时流水线会挂起,不影响代码管理;可在 CI/CD 设置中暂停该流水线。
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^v\d/
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  tags: [windows]
+  script:
+    - dotnet build src/CleanMaster.App/CleanMaster.App.csproj -c Release --nologo
+  artifacts:
+    paths:
+      - src/CleanMaster.App/bin/Release/
+    expire_in: 1 day
+
+selftest:
+  stage: test
+  tags: [windows]
+  needs: [build]
+  script:
+    - $p = Start-Process -FilePath "src/CleanMaster.App/bin/Release/net8.0-windows/CleanMaster.exe" -ArgumentList "--selftest" -Wait -PassThru -NoNewWindow
+    - if ($p.ExitCode -ne 0) { throw "self-test failed - release blocked" }

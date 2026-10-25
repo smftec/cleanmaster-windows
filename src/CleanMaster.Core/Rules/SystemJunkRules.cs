@@ -269,7 +269,7 @@ public sealed class DeliveryOptimizationRule : RuleBase
         {
             Path = "opt://delivery-optimization",
             Size = 0,
-            Note = "通过系统官方机制清理",
+            Note = Store.CoreLocalizer.T("deliveryopt.note", "通过系统官方机制清理"),
         });
         res.FileCount = 1;
         return Task.FromResult(res);
@@ -279,7 +279,7 @@ public sealed class DeliveryOptimizationRule : RuleBase
     {
         var ok = await ElevatedService.RunTaskAsync("clear-do-cache", "{}");
         foreach (var item in ctx.Selected)
-            ctx.Report(item, ok ? CleanItemStatus.Success : CleanItemStatus.Failed, ok ? "" : "需要管理员权限，请在 UAC 弹窗中允许");
+            ctx.Report(item, ok ? CleanItemStatus.Success : CleanItemStatus.Failed, ok ? "" : Store.CoreLocalizer.T("deliveryopt.uac", "需要管理员权限，请在 UAC 弹窗中允许"));
     }
 }
 
@@ -308,7 +308,7 @@ public sealed class RecycleBinRule : RuleBase
         res.TotalSize = size;
         res.FileCount = (int)Math.Min(count, int.MaxValue);
         if (count > 0)
-            res.Items.Add(new CleanItem { Path = "shell://RecycleBinFolder", Size = size, Note = $"{count} 个项目" });
+            res.Items.Add(new CleanItem { Path = "shell://RecycleBinFolder", Size = size, Note = string.Format(Store.CoreLocalizer.T("recycle.count", "{0} 个项目"), count) });
         return Task.FromResult(res);
     }
 
@@ -318,7 +318,7 @@ public sealed class RecycleBinRule : RuleBase
         {
             var ok = ShellUtil.EmptyRecycleBin();
             foreach (var item in ctx.Selected)
-                ctx.Report(item, ok ? CleanItemStatus.Success : CleanItemStatus.Failed, ok ? "" : "清空回收站失败");
+                ctx.Report(item, ok ? CleanItemStatus.Success : CleanItemStatus.Failed, ok ? "" : Store.CoreLocalizer.T("recycle.err.empty", "清空回收站失败"));
         }, ctx.Ct);
     }
 }

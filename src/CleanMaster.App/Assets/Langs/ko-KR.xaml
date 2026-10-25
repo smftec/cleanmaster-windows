@@ -110,6 +110,8 @@
     <sys:String xml:space="preserve" x:Key="ctx.copypath">경로 복사</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">열기</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">폴더에서 보기</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.note">Windows 공식 메커니즘으로 정리</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.uac">관리자 권한이 필요합니다. UAC를 허용하세요</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">{0}의 데이터를 정리합니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">확인이 필요한 항목:</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">{0}개 카테고리, 총 {1}을 정리합니다.</sys:String>
@@ -243,10 +245,16 @@
     <sys:String xml:space="preserve" x:Key="nav.toolbox">도구</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">시스템 드라이브 여유가 {0}밖에 남지 않았습니다. 정리를 권장합니다</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">알림: 시스템 드라이브 여유 10% 미만</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.locked">파일이 사용 중입니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.missing">격리 파일이 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.norecord">기록을 찾을 수 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.notfound">파일을 찾을 수 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">복원됨</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">휴지통의 {0}개 파일({1})이 영구 삭제되며 복원할 수 없습니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">휴지통을 비울까요?</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.count">{0}개 항목</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">휴지통이 비어 있습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.err.empty">휴지통을 비우지 못했습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.info">{0}개 항목, {1} 사용</sys:String>
     <sys:String xml:space="preserve" x:Key="result.sub">{0} · {1}개 카테고리 스캔</sys:String>
     <sys:String xml:space="preserve" x:Key="result.title.clean">스캔 완료 — 매우 깨끗합니다!</sys:String>
@@ -498,6 +506,7 @@
     <sys:String xml:space="preserve" x:Key="startup.impact.med">중간</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">미측정</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">시작 프로그램을 읽는 중…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.note.core">Windows 핵심 구성 요소. 비활성화 비권장</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">시작 폴더 (모든 사용자)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">시작 폴더 (사용자)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">레지스트리 (현재 사용자)</sys:String>
@@ -511,6 +520,7 @@
     <sys:String xml:space="preserve" x:Key="startup.tip.enable">클릭하여 시작 시 사용</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.impact">앱 유형 기반 참고 평가(작업 관리자와 유사). 실측이 아닙니다</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">시작 프로그램 「{1}」 {0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.uac.required">관리자 권한이 필요합니다(UAC 허용 후 재시도)</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">{0}분 전</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">방금</sys:String>
     <sys:String xml:space="preserve" x:Key="time.today">오늘 {0}</sys:String>

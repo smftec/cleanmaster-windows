@@ -262,6 +262,14 @@ JA = {
     # v1.8
     "history.clean.title": "{0} をクリーンアップ",
     "history.clean.detail": "成功 {0}、隔離 {1}、スキップ {2}、失敗 {3}",
+    # v2.0
+    "startup.note.core": "Windows の中核コンポーネント。無効化は非推奨",
+    "startup.uac.required": "管理者権限が必要です（UAC を許可して再試行）",
+    "quar.err.notfound": "ファイルが見つかりません", "quar.err.locked": "ファイルは使用中です",
+    "quar.err.norecord": "記録が見つかりません", "quar.err.missing": "隔離ファイルが見つかりません",
+    "deliveryopt.note": "Windows の公式機構でクリーンアップ",
+    "deliveryopt.uac": "管理者権限が必要です。UAC を許可してください",
+    "recycle.count": "{0} 件", "recycle.err.empty": "ごみ箱を空にできませんでした",
 }
 
 KO = {
@@ -532,4 +540,12 @@ KO = {
     # v1.8
     "history.clean.title": "{0} 정리했습니다",
     "history.clean.detail": "성공 {0}, 격리 {1}, 건너뜀 {2}, 실패 {3}",
+    # v2.0
+    "startup.note.core": "Windows 핵심 구성 요소. 비활성화 비권장",
+    "startup.uac.required": "관리자 권한이 필요합니다(UAC 허용 후 재시도)",
+    "quar.err.notfound": "파일을 찾을 수 없습니다", "quar.err.locked": "파일이 사용 중입니다",
+    "quar.err.norecord": "기록을 찾을 수 없습니다", "quar.err.missing": "격리 파일이 없습니다",
+    "deliveryopt.note": "Windows 공식 메커니즘으로 정리",
+    "deliveryopt.uac": "관리자 권한이 필요합니다. UAC를 허용하세요",
+    "recycle.count": "{0}개 항목", "recycle.err.empty": "휴지통을 비우지 못했습니다",
 }

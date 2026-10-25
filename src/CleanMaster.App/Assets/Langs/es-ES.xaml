@@ -110,6 +110,8 @@ Continúa automáticamente al terminar</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.copypath">Copiar ruta</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">Abrir</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">Mostrar en la carpeta</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.note">Limpieza mediante el mecanismo oficial de Windows</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.uac">Se requieren permisos de administrador: acepta el UAC</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">A punto de limpiar {0} de datos.</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">Elementos que requieren confirmación:</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">Se limpiarán {0} categorías, {1} en total.</sys:String>
@@ -243,10 +245,16 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="nav.toolbox">Herramientas</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">El disco del sistema apenas tiene {0} libres — considera limpiar</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">Recordatorio: menos del 10% libre en el disco del sistema</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.locked">Archivo en uso</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.missing">Falta el archivo en cuarentena</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.norecord">Registro no encontrado</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.notfound">Archivo no encontrado</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">restaurado</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">{0} archivos ({1}) se eliminarán definitivamente. No se puede deshacer.</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">¿Vaciar la papelera?</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.count">{0} elementos</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">La papelera está vacía</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.err.empty">No se pudo vaciar la papelera</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.info">{0} elementos, {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="result.sub">{0} · {1} categorías analizadas</sys:String>
     <sys:String xml:space="preserve" x:Key="result.title.clean">¡Análisis completado: todo limpio!</sys:String>
@@ -498,6 +506,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.med">Medio</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">Sin medir</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">Cargando elementos de inicio…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.note.core">Componente esencial de Windows: no desactivar</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">Carpeta Inicio (todos)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">Carpeta Inicio (usuario)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">Registro (usuario)</sys:String>
@@ -511,6 +520,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.enable">Pulsa para activar en el inicio</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.impact">Estimación orientativa según el tipo de app (similar al Administrador de tareas), no medida</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">{0} el elemento de inicio «{1}»</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.uac.required">Se requieren permisos de administrador (acepta el UAC y reintenta)</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">hace {0} min</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">Ahora mismo</sys:String>
     <sys:String xml:space="preserve" x:Key="time.today">Hoy {0}</sys:String>

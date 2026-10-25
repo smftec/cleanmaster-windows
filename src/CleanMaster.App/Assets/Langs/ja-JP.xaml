@@ -110,6 +110,8 @@
     <sys:String xml:space="preserve" x:Key="ctx.copypath">パスをコピー</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.open">開く</sys:String>
     <sys:String xml:space="preserve" x:Key="ctx.openloc">フォルダーで表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.note">Windows の公式機構でクリーンアップ</sys:String>
+    <sys:String xml:space="preserve" x:Key="deliveryopt.uac">管理者権限が必要です。UAC を許可してください</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.amount">{0} のデータを清理しようとしています。</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.confirmitems">確認が必要な項目：</sys:String>
     <sys:String xml:space="preserve" x:Key="dlg.clean.nrules">{0} カテゴリ、合計 {1} を清理します。</sys:String>
@@ -243,10 +245,16 @@
     <sys:String xml:space="preserve" x:Key="nav.toolbox">ツールボックス</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow">システムドライブの空きが {0} になりました。クリーンアップを検討してください</sys:String>
     <sys:String xml:space="preserve" x:Key="notify.disklow.log">リマインダー: システムドライブの空きが 10% 未満</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.locked">ファイルは使用中です</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.missing">隔離ファイルが見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.norecord">記録が見つかりません</sys:String>
+    <sys:String xml:space="preserve" x:Key="quar.err.notfound">ファイルが見つかりません</sys:String>
     <sys:String xml:space="preserve" x:Key="quar.restore.suffix">復元済み</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.msg">ごみ箱の {0} 個のファイル（{1}）は完全に削除され、復元できません。</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.confirm.title">ごみ箱を空にしますか？</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.count">{0} 件</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.empty">ごみ箱は空です</sys:String>
+    <sys:String xml:space="preserve" x:Key="recycle.err.empty">ごみ箱を空にできませんでした</sys:String>
     <sys:String xml:space="preserve" x:Key="recycle.info">{0} 項目、合計 {1}</sys:String>
     <sys:String xml:space="preserve" x:Key="result.sub">{0} · {1} カテゴリをスキャン</sys:String>
     <sys:String xml:space="preserve" x:Key="result.title.clean">スキャン完了。とてもきれいです！</sys:String>
@@ -498,6 +506,7 @@
     <sys:String xml:space="preserve" x:Key="startup.impact.med">中</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.impact.unknown">未評価</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.loading">スタートアップ項目を読み込み中…</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.note.core">Windows の中核コンポーネント。無効化は非推奨</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.foldercommon">スタートアップフォルダ (全ユーザー)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.folderuser">スタートアップフォルダ (ユーザー)</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.src.reghkcu">レジストリ (現在のユーザー)</sys:String>
@@ -511,6 +520,7 @@
     <sys:String xml:space="preserve" x:Key="startup.tip.enable">クリックで起動を有効化</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.tip.impact">アプリ種別に基づく参考値（タスクマネージャー相当）。実測ではありません</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.toggled">スタートアップ「{1}」を{0}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.uac.required">管理者権限が必要です（UAC を許可して再試行）</sys:String>
     <sys:String xml:space="preserve" x:Key="time.minago">{0} 分前</sys:String>
     <sys:String xml:space="preserve" x:Key="time.now">たった今</sys:String>
     <sys:String xml:space="preserve" x:Key="time.today">今日 {0}</sys:String>
