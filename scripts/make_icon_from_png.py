@@ -8,7 +8,7 @@ import io, os, struct, sys
 from PIL import Image, ImageDraw, ImageFilter
 
 SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(
-    os.path.dirname(__file__), "..", "output", "imagegen", "icon-raw.png")
+    os.path.dirname(__file__), "..", "output", "imagegen", "icon-user.png")
 SIZES = [16, 24, 32, 48, 64, 128, 256]
 RADIUS = 0.22  # 与应用内卡片圆角一致
 
@@ -26,15 +26,27 @@ def rounded_master(img: Image.Image) -> Image.Image:
 
 def frame(master: Image.Image, size: int) -> Image.Image:
     if size <= 32:
-        # 小尺寸帧:裁扫帚主体(背景为连续蓝渐变,裁切无缝),去掉盾牌与星形细节
-        crop = master.crop((0, 40, 880, 920))
+        # 小尺寸帧:中心 78% 裁切放大主体(背景为连续蓝渐变,裁切无缝)
+        m = master.size[0]
+        pad = int(m * 0.11)
+        crop = master.crop((pad, pad, m - pad, m - pad))
         mask = Image.new("L", crop.size, 0)
         ImageDraw.Draw(mask).rounded_rectangle(
             [0, 0, crop.size[0] - 1, crop.size[1] - 1], radius=int(crop.size[0] * RADIUS), fill=255)
         sq = Image.new("RGBA", crop.size, (0, 0, 0, 0))
         sq.paste(crop, (0, 0), mask)
         im = sq.resize((size, size), Image.LANCZOS)
-        im = im.filter(ImageFilter.UnsharpMask(radius=1.2, percent=70, threshold=2))
+        # 小尺寸对比增强:主体(亮色)提白,背景压暗,避免 16px 糊成一团
+        px = im.load()
+        for y in range(size):
+            for x in range(size):
+                r, g, b, a = px[x, y]
+                if r > 150 and g > 150:
+                    px[x, y] = (255, 255, 255, a)
+                elif r > 110 and g > 110:
+                    t = min(255, r + 55)
+                    px[x, y] = (t, t, t, a)
+        im = im.filter(ImageFilter.UnsharpMask(radius=1.0, percent=60, threshold=2))
         return im
     im = master.resize((size, size), Image.LANCZOS)
     if size <= 48:
