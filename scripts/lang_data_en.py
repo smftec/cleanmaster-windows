@@ -294,4 +294,10 @@ EN = {
     "apps.no.uninstaller": "This app has no uninstaller",
     "leftover.cleaned.log": "Cleaned {0} leftover items",
     "startup.err.missing": "Original startup file is missing", "startup.err.notfound": "Startup file not found",
+    # v2.2
+    "settings.custom.title": "Custom clean folders",
+    "settings.custom.desc": "Add cache-type folders you want cleaned on every scan (e.g. a downloader's cache). User data folders (Desktop/Documents/Pictures/Downloads) are protected and never cleaned.",
+    "settings.custom.add": "Add folder", "settings.custom.pick": "Choose a folder to clean regularly",
+    "settings.custom.empty": "No custom clean folders yet", "settings.custom.protected": "That folder is protected user data and cannot be added",
+    "startup.boottime": "Last boot {0:F1}s", "space.filter.all": "All",
 }

@@ -30,7 +30,25 @@ public partial class StartupPage : Page, IParamPage
         };
     }
 
-    public void OnNavigated(object? param) => _ = LoadAsync();
+    public void OnNavigated(object? param)
+    {
+        _ = LoadAsync();
+        _ = LoadBootTimeAsync();
+    }
+
+    private async Task LoadBootTimeAsync()
+    {
+        try
+        {
+            var sec = await Task.Run(() => CleanMaster.Core.Analysis.BootTimeService.LastBootSeconds());
+            if (sec is > 0)
+            {
+                BootTimeText.Text = string.Format(Services.Loc.T("startup.boottime"), sec.Value);
+                BootTimeChip.Visibility = Visibility.Visible;
+            }
+        }
+        catch { }
+    }
 
     private async Task LoadAsync()
     {

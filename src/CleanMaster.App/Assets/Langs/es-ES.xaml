@@ -295,6 +295,9 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.impact">Files are cleaned under the same scan constraints; restorable items go to quarantine</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.name">Custom clean folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.reason">Folders you added manually for regular cleanup</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
@@ -421,6 +424,12 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">Añadir carpeta excluida</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">Añadir a la lista blanca</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.openlog">Abrir carpeta de datos</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.add">Añadir carpeta</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.desc">Añade carpetas tipo caché para limpiar en cada análisis. Los datos de usuario (Escritorio/Documentos/Imágenes/Descargas) están protegidos y nunca se limpian.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.empty">Sin carpetas personalizadas</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.pick">Elige una carpeta para limpiar regularmente</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.protected">Esa carpeta contiene datos protegidos: no se puede añadir</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.title">Carpetas de limpieza personalizadas</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">días</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">Estas carpetas y archivos se omiten en todos los análisis y limpiezas.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">Sin exclusiones ni lista blanca</sys:String>
@@ -485,6 +494,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="space.empty">Esta unidad aún no se ha analizado. Pulsa «Analizar» arriba (puedes cancelar en cualquier momento)</sys:String>
     <sys:String xml:space="preserve" x:Key="space.failed">Error de análisis: </sys:String>
     <sys:String xml:space="preserve" x:Key="space.file">ARCHIVO</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.filter.all">Todo</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.filter">Filtro de tamaño</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.none">No hay archivos mayores de {0:F0} MB</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.summary">{0} archivos · {1} en total</sys:String>
@@ -505,6 +515,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="space.tree.title">Ranking de carpetas</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f">Usado {0} / {1} ({2:F1} %), libre {3}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f2">Usado {0} / {1}, libre {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.boottime">Último arranque {0:F1}s</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.impact">Impacto</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.source">Origen</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.suggest">Consejo</sys:String>

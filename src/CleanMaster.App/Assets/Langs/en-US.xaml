@@ -295,6 +295,9 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.impact">Files are cleaned under the same scan constraints; restorable items go to quarantine</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.name">Custom clean folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.reason">Folders you added manually for regular cleanup</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
@@ -421,6 +424,12 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">Add excluded folder</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">Add whitelisted file/folder</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.openlog">Open data folder</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.add">Add folder</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.desc">Add cache-type folders you want cleaned on every scan (e.g. a downloader's cache). User data folders (Desktop/Documents/Pictures/Downloads) are protected and never cleaned.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.empty">No custom clean folders yet</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.pick">Choose a folder to clean regularly</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.protected">That folder is protected user data and cannot be added</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.title">Custom clean folders</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">days</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">These folders and files are skipped by every scan and cleanup.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">No exclusions or whitelist entries</sys:String>
@@ -485,6 +494,7 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="space.empty">This drive hasn't been analyzed yet. Click “Analyze” above (you can cancel anytime)</sys:String>
     <sys:String xml:space="preserve" x:Key="space.failed">Analysis failed: </sys:String>
     <sys:String xml:space="preserve" x:Key="space.file">FILE</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.filter.all">All</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.filter">Size filter</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.none">No files larger than {0:F0} MB found</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.summary">{0} files · {1} total</sys:String>
@@ -505,6 +515,7 @@ a smoother run!</sys:String>
     <sys:String xml:space="preserve" x:Key="space.tree.title">Folder usage ranking</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f">Used {0} / {1} ({2:F1}%), free {3}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f2">Used {0} / {1}, free {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.boottime">Last boot {0:F1}s</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.impact">Impact</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.source">Source</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.suggest">Advice</sys:String>

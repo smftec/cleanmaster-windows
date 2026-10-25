@@ -311,6 +311,11 @@ ZH = {
     "apps.no.uninstaller": "该应用未提供卸载程序",
     "leftover.cleaned.log": "清理了 {0} 项卸载残留",
     "startup.err.missing": "原启动项文件已丢失", "startup.err.notfound": "启动项文件不存在",
+    # ===== v2.2 追加 =====
+    "settings.custom.title": "自定义清理目录", "settings.custom.desc": "添加你希望每次扫描都清理的缓存类目录（如某软件的下载缓存）。桌面/文档/图片/下载等用户数据目录受安全防护，不会被清理。",
+    "settings.custom.add": "添加目录", "settings.custom.pick": "选择要定期清理的目录",
+    "settings.custom.empty": "暂无自定义清理目录", "settings.custom.protected": "该目录属于受保护的用户数据目录，不能加入清理",
+    "startup.boottime": "上次开机 {0:F1} 秒", "space.filter.all": "全部",
 }
 
 # ============ 组装与生成 ============

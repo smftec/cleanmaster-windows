@@ -295,6 +295,9 @@
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.impact">Files are cleaned under the same scan constraints; restorable items go to quarantine</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.name">Custom clean folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.reason">Folders you added manually for regular cleanup</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
@@ -421,6 +424,12 @@
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">除外フォルダを追加</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">ホワイトリストに追加</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.openlog">データフォルダーを開く</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.add">ディレクトリを追加</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.desc">毎回のスキャンで清理したいキャッシュ系ディレクトリを追加します。デスクトップ/ドキュメント/画像/ダウンロードなどのユーザーデータは保護対象のため清理されません。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.empty">カスタムディレクトリはまだありません</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.pick">定期的に清理するディレクトリを選択</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.protected">保護対象のユーザーデータのため追加できません</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.title">カスタム清理ディレクトリ</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">日</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">これらのフォルダとファイルはすべてのスキャン・清理でスキップされます。</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">除外・ホワイトリストは未設定</sys:String>
@@ -485,6 +494,7 @@
     <sys:String xml:space="preserve" x:Key="space.empty">このドライブは未解析です。右上の「解析開始」をクリック（いつでもキャンセル可）</sys:String>
     <sys:String xml:space="preserve" x:Key="space.failed">解析失敗：</sys:String>
     <sys:String xml:space="preserve" x:Key="space.file">FILE</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.filter.all">すべて</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.filter">サイズ絞り込み</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.none">{0:F0} MB 超のファイルは見つかりません</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.summary">{0} 件 · 合計 {1}</sys:String>
@@ -505,6 +515,7 @@
     <sys:String xml:space="preserve" x:Key="space.tree.title">フォルダ使用量ランキング</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f">使用中 {0} / {1}（{2:F1}%）、空き {3}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f2">使用中 {0} / {1}、空き {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.boottime">前回の起動 {0:F1} 秒</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.impact">影響</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.source">ソース</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.suggest">提案</sys:String>

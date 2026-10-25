@@ -279,6 +279,12 @@ JA = {
     "apps.no.uninstaller": "このアプリにはアンインストーラーがありません",
     "leftover.cleaned.log": "残り {0} 件をクリーンアップしました",
     "startup.err.missing": "元のスタートアップファイルが見つかりません", "startup.err.notfound": "スタートアップファイルが存在しません",
+    # v2.2
+    "settings.custom.title": "カスタム清理ディレクトリ",
+    "settings.custom.desc": "毎回のスキャンで清理したいキャッシュ系ディレクトリを追加します。デスクトップ/ドキュメント/画像/ダウンロードなどのユーザーデータは保護対象のため清理されません。",
+    "settings.custom.add": "ディレクトリを追加", "settings.custom.pick": "定期的に清理するディレクトリを選択",
+    "settings.custom.empty": "カスタムディレクトリはまだありません", "settings.custom.protected": "保護対象のユーザーデータのため追加できません",
+    "startup.boottime": "前回の起動 {0:F1} 秒", "space.filter.all": "すべて",
 }
 
 KO = {
@@ -566,4 +572,10 @@ KO = {
     "apps.no.uninstaller": "이 앱에는 제거 프로그램이 없습니다",
     "leftover.cleaned.log": "잔여 {0}개를 정리했습니다",
     "startup.err.missing": "원본 시작 파일을 찾을 수 없습니다", "startup.err.notfound": "시작 파일이 없습니다",
+    # v2.2
+    "settings.custom.title": "사용자 지정 정리 폴더",
+    "settings.custom.desc": "매번 스캔 시 정리할 캐시류 폴더를 추가하세요. 바탕 화면/문서/사진/다운로드 등 사용자 데이터는 보호되어 정리되지 않습니다.",
+    "settings.custom.add": "폴더 추가", "settings.custom.pick": "정기적으로 정리할 폴더 선택",
+    "settings.custom.empty": "사용자 지정 폴더가 없습니다", "settings.custom.protected": "보호 대상 사용자 데이터 폴더는 추가할 수 없습니다",
+    "startup.boottime": "마지막 부팅 {0:F1}초", "space.filter.all": "전체",
 }

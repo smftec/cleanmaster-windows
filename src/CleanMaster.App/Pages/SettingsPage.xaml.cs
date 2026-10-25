@@ -161,6 +161,9 @@ public partial class SettingsPage : Page
         // —— 排除目录与白名单 ——
         RenderExclusions();
 
+        // —— 自定义清理目录 ——
+        RenderCustomClean();
+
         // —— 通知 ——
         NotifySection.Children.Add(Row(Services.Loc.T("settings.row.notifydisk"), Services.Loc.T("settings.row.notifydisk.d"),
             Toggle(_s.NotifyDiskLow, v => _s.NotifyDiskLow = v)));
@@ -313,6 +316,82 @@ public partial class SettingsPage : Page
             _s.Whitelist.Add(dlg.FileName);
             Save();
             RenderExclusions();
+        }
+    }
+
+    // ————— 自定义清理目录 —————
+
+    private void RenderCustomClean()
+    {
+        CustomCleanList.Children.Clear();
+        foreach (var p in _s.CustomCleanDirs)
+        {
+            var row = new Border
+            {
+                Background = (Brush)FindResource("ItemHoverBrush"),
+                CornerRadius = new CornerRadius(8),
+                Padding = new Thickness(10, 7, 10, 7),
+                Margin = new Thickness(0, 4, 0, 0),
+            };
+            var grid = new Grid();
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            var pathText = new TextBlock
+            {
+                Text = p,
+                FontSize = 12,
+                Foreground = (Brush)FindResource("TextPrimaryBrush"),
+                VerticalAlignment = VerticalAlignment.Center,
+                TextTrimming = TextTrimming.CharacterEllipsis,
+                ToolTip = p,
+            };
+            Grid.SetColumn(pathText, 0);
+            var del = new Button
+            {
+                Content = Services.Loc.T("btn.remove"),
+                Style = (Style)FindResource("LinkButton"),
+                Foreground = (Brush)FindResource("DangerBrush"),
+            };
+            var captured = p;
+            del.Click += (s, e) =>
+            {
+                _s.CustomCleanDirs.Remove(captured);
+                Save();
+                RenderCustomClean();
+            };
+            Grid.SetColumn(del, 1);
+            grid.Children.Add(pathText);
+            grid.Children.Add(del);
+            row.Child = grid;
+            CustomCleanList.Children.Add(row);
+        }
+        if (_s.CustomCleanDirs.Count == 0)
+        {
+            CustomCleanList.Children.Add(new TextBlock
+            {
+                Text = Services.Loc.T("settings.custom.empty"),
+                FontSize = 12,
+                Foreground = (Brush)FindResource("TextTertiaryBrush"),
+            });
+        }
+    }
+
+    private void BtnAddCustomClean_Click(object sender, RoutedEventArgs e)
+    {
+        var dlg = new System.Windows.Forms.FolderBrowserDialog { Description = Services.Loc.T("settings.custom.pick") };
+        if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+        // 用户数据目录受 SafetyGuard 保护,清理会被拦截——提前提示避免误导
+        var deny = CleanMaster.Core.Security.SafetyGuard.FindDenyReason(dlg.SelectedPath);
+        if (deny != null)
+        {
+            _main.ShowToast(Services.Loc.T("settings.custom.protected"), ToastType.Warning);
+            return;
+        }
+        if (!_s.CustomCleanDirs.Contains(dlg.SelectedPath))
+        {
+            _s.CustomCleanDirs.Add(dlg.SelectedPath);
+            Save();
+            RenderCustomClean();
         }
     }
 

@@ -258,6 +258,58 @@ public static class SelfTest
             Check("系统维护检查异常", false, ex.Message);
         }
 
+        // 14. 自定义清理目录规则:端到端(添加→扫描→命中),并验证用户数据目录被拦截
+        try
+        {
+            var cfRoot = Path.Combine(tempRoot, "CleanMasterCustom_" + Guid.NewGuid().ToString("N"));
+            var sub = Path.Combine(cfRoot, "cache");
+            Directory.CreateDirectory(sub);
+            foreach (var n in new[] { "a.tmp", "b.tmp", "c.log" })
+            {
+                var f = Path.Combine(sub, n);
+                File.WriteAllText(f, "x");
+                // 绕过"跳过最近文件"约束
+                File.SetLastWriteTime(f, DateTime.Now.AddHours(-2));
+            }
+
+            var savedDirs = Store.SettingsService.Current.CustomCleanDirs.ToList();
+            try
+            {
+                Store.SettingsService.Current.CustomCleanDirs = new List<string> { cfRoot };
+                var cfRule = new CustomFoldersRule();
+                var scanner2 = new ScannerService();
+                var ctx2 = scanner2.BuildContext(CancellationToken.None);
+                var res2 = cfRule.ScanAsync(ctx2).GetAwaiter().GetResult();
+                Check("自定义目录: 扫描命中全部文件", res2.FileCount == 3 && res2.TotalSize == 3,
+                    $"{res2.FileCount} 个 / {res2.TotalSize} 字节");
+
+                var roots = cfRule.AllowedRoots().ToList();
+                var denyDesktop = SafetyGuard.ValidateForClean(
+                    Path.Combine(user, "Desktop", "x.tmp"), roots, new HashSet<string>());
+                Check("自定义目录: 越界桌面路径被拒绝", denyDesktop != null, denyDesktop ?? "");
+            }
+            finally
+            {
+                Store.SettingsService.Current.CustomCleanDirs = savedDirs;
+                try { Directory.Delete(cfRoot, true); } catch { }
+            }
+        }
+        catch (Exception ex)
+        {
+            Check("自定义目录规则异常", false, ex.Message);
+        }
+
+        // 15. 开机耗时服务:不抛异常,返回 null 或正数(日志未启用时为 null)
+        try
+        {
+            var boot = Analysis.BootTimeService.LastBootSeconds();
+            Check("开机耗时服务", boot == null || boot > 0, boot?.ToString("F1") + "s" ?? "null(日志未启用)");
+        }
+        catch (Exception ex)
+        {
+            Check("开机耗时服务异常", false, ex.Message);
+        }
+
         Console.WriteLine(failed == 0 ? "== 全部通过 ==" : $"== {failed} 项失败，禁止发布 ==");
         return failed == 0 ? 0 : 1;
     }

@@ -16,6 +16,8 @@ RULES = [
      "Windows log files", "Old log files (7+ days) from Windows components", "No impact on operation; old logs no longer reviewable"),
     ("update_cache", "Windows 更新下载缓存", "Windows 更新已安装后遗留的安装包下载缓存", "更新已安装后无影响；若正在下载更新会被自动跳过，需管理员权限",
      "Windows Update download cache", "Leftover update packages already installed", "No impact once installed; skipped during downloads; needs admin"),
+    ("custom_folders", "自定义清理目录", "你手动添加、希望定期清理的目录", "目录内文件将按扫描约束清理；可恢复类进入隔离区",
+     "Custom clean folders", "Folders you added manually for regular cleanup", "Files are cleaned under the same scan constraints; restorable items go to quarantine"),
     ("delivery_opt", "传递优化缓存", "Windows 用于 P2P 分发更新的缓存（通过官方机制清理）", "通过系统官方命令清理，不影响 Windows 更新功能；需管理员权限",
      "Delivery Optimization cache", "P2P update distribution cache (cleared via official mechanism)", "Cleared via official command; Windows Update unaffected; needs admin"),
     ("recycle_bin", "回收站", "你删除过的文件仍在回收站占着磁盘空间", "清空后回收站中的文件将被永久删除，无法恢复",

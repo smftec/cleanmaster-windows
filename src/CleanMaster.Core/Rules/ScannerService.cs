@@ -15,6 +15,7 @@ public sealed class RuleCatalog
         var list = new List<IScanRule>
         {
             new UserTempRule(),
+            new CustomFoldersRule(),
             new WindowsTempRule(),
             new ErrorReportsRule(),
             new ThumbnailCacheRule(),

@@ -125,6 +125,7 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Margin="6,2,6,10">
@@ -145,12 +146,13 @@
                                    Foreground="{DynamicResource TextTertiaryBrush}"
                                    HorizontalAlignment="Right" VerticalAlignment="Center"/>
                     </Grid>
-                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Grid.Row="1" x:Name="TypeFilterHost" Orientation="Horizontal" Margin="6,0,6,10"/>
+                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
                         <StackPanel x:Name="LargeList"/>
                     </ScrollViewer>
-                    <TextBlock x:Name="LargeEmptyText" Text="没有找到符合条件的大文件；先点击「开始分析」扫描磁盘" FontSize="12.5"
+                    <TextBlock x:Name="LargeEmptyText" Text="{DynamicResource space.empty}" FontSize="12.5"
                                Foreground="{DynamicResource TextTertiaryBrush}" HorizontalAlignment="Center"
-                               VerticalAlignment="Center" Grid.Row="1"/>
+                               VerticalAlignment="Center" Grid.Row="2"/>
                 </Grid>
             </Border>
         </Grid>

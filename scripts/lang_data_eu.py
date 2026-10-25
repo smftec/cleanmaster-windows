@@ -278,6 +278,12 @@ FR = {
     "apps.no.uninstaller": "Cette application n'a pas de désinstalleur",
     "leftover.cleaned.log": "{0} résidus nettoyés",
     "startup.err.missing": "Le fichier de démarrage d'origine est introuvable", "startup.err.notfound": "Fichier de démarrage introuvable",
+    # v2.2
+    "settings.custom.title": "Dossiers de nettoyage personnalisés",
+    "settings.custom.desc": "Ajoutez des dossiers de type cache à nettoyer à chaque analyse. Les données utilisateur (Bureau/Documents/Images/Téléchargements) sont protégées et jamais nettoyées.",
+    "settings.custom.add": "Ajouter un dossier", "settings.custom.pick": "Choisir un dossier à nettoyer régulièrement",
+    "settings.custom.empty": "Aucun dossier personnalisé", "settings.custom.protected": "Ce dossier contient des données protégées : impossible de l'ajouter",
+    "startup.boottime": "Dernier démarrage {0:F1}s", "space.filter.all": "Tous",
 }
 
 ES = {
@@ -558,6 +564,12 @@ ES = {
     "apps.no.uninstaller": "Esta app no tiene desinstalador",
     "leftover.cleaned.log": "{0} residuos limpiados",
     "startup.err.missing": "Falta el archivo de inicio original", "startup.err.notfound": "Archivo de inicio no encontrado",
+    # v2.2
+    "settings.custom.title": "Carpetas de limpieza personalizadas",
+    "settings.custom.desc": "Añade carpetas tipo caché para limpiar en cada análisis. Los datos de usuario (Escritorio/Documentos/Imágenes/Descargas) están protegidos y nunca se limpian.",
+    "settings.custom.add": "Añadir carpeta", "settings.custom.pick": "Elige una carpeta para limpiar regularmente",
+    "settings.custom.empty": "Sin carpetas personalizadas", "settings.custom.protected": "Esa carpeta contiene datos protegidos: no se puede añadir",
+    "startup.boottime": "Último arranque {0:F1}s", "space.filter.all": "Todo",
 }
 
 DE = {
@@ -845,4 +857,10 @@ DE = {
     "apps.no.uninstaller": "Diese App hat kein Deinstallationsprogramm",
     "leftover.cleaned.log": "{0} Reste bereinigt",
     "startup.err.missing": "Ursprüngliche Startdatei fehlt", "startup.err.notfound": "Startdatei nicht gefunden",
+    # v2.2
+    "settings.custom.title": "Eigene Bereinigungsordner",
+    "settings.custom.desc": "Füge Cache-Ordner hinzu, die bei jedem Scan bereinigt werden. Benutzerdaten (Desktop/Dokumente/Bilder/Downloads) sind geschützt und werden nie bereinigt.",
+    "settings.custom.add": "Ordner hinzufügen", "settings.custom.pick": "Ordner für regelmäßige Bereinigung wählen",
+    "settings.custom.empty": "Noch keine eigenen Ordner", "settings.custom.protected": "Dieser Ordner enthält geschützte Daten und kann nicht hinzugefügt werden",
+    "startup.boottime": "Letzter Start {0:F1}s", "space.filter.all": "Alle",
 }

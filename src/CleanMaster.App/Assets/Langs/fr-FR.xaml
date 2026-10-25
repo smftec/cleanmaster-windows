@@ -295,6 +295,9 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.impact">Files are cleaned under the same scan constraints; restorable items go to quarantine</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.name">Custom clean folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.reason">Folders you added manually for regular cleanup</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
@@ -421,6 +424,12 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">Ajouter un dossier exclu</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">Ajouter à la liste blanche</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.openlog">Ouvrir le dossier de données</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.add">Ajouter un dossier</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.desc">Ajoutez des dossiers de type cache à nettoyer à chaque analyse. Les données utilisateur (Bureau/Documents/Images/Téléchargements) sont protégées et jamais nettoyées.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.empty">Aucun dossier personnalisé</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.pick">Choisir un dossier à nettoyer régulièrement</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.protected">Ce dossier contient des données protégées : impossible de l'ajouter</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.title">Dossiers de nettoyage personnalisés</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">jours</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">Ces dossiers et fichiers sont ignorés par toutes les analyses et nettoyages.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">Aucune exclusion ni entrée de liste blanche</sys:String>
@@ -485,6 +494,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="space.empty">Ce disque n'a pas encore été analysé. Cliquez sur « Analyser » ci-dessus (annulable à tout moment)</sys:String>
     <sys:String xml:space="preserve" x:Key="space.failed">Échec de l'analyse : </sys:String>
     <sys:String xml:space="preserve" x:Key="space.file">FICHIER</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.filter.all">Tous</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.filter">Filtre de taille</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.none">Aucun fichier de plus de {0:F0} Mo trouvé</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.summary">{0} fichiers · {1} au total</sys:String>
@@ -505,6 +515,7 @@ plus fluide !</sys:String>
     <sys:String xml:space="preserve" x:Key="space.tree.title">Classement des dossiers</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f">Utilisé {0} / {1} ({2:F1} %), libre {3}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f2">Utilisé {0} / {1}, libre {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.boottime">Dernier démarrage {0:F1}s</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.impact">Impact</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.source">Source</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.suggest">Conseil</sys:String>

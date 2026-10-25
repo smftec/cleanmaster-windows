@@ -295,6 +295,9 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.impact">Files are cleaned under the same scan constraints; restorable items go to quarantine</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.name">Custom clean folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.reason">Folders you added manually for regular cleanup</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
@@ -421,6 +424,12 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">Ausgeschlossenen Ordner hinzufügen</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">Datei/Ordner zur Whitelist</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.openlog">Datenordner öffnen</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.add">Ordner hinzufügen</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.desc">Füge Cache-Ordner hinzu, die bei jedem Scan bereinigt werden. Benutzerdaten (Desktop/Dokumente/Bilder/Downloads) sind geschützt und werden nie bereinigt.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.empty">Noch keine eigenen Ordner</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.pick">Ordner für regelmäßige Bereinigung wählen</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.protected">Dieser Ordner enthält geschützte Daten und kann nicht hinzugefügt werden</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.title">Eigene Bereinigungsordner</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">Tage</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">Diese Ordner und Dateien werden bei allen Scans und Bereinigungen übersprungen.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">Keine Ausschlüsse oder Whitelist-Einträge</sys:String>
@@ -485,6 +494,7 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="space.empty">Dieses Laufwerk wurde noch nicht analysiert. Oben auf „Analysieren“ klicken (jederzeit abbrechbar)</sys:String>
     <sys:String xml:space="preserve" x:Key="space.failed">Analyse fehlgeschlagen: </sys:String>
     <sys:String xml:space="preserve" x:Key="space.file">DATEI</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.filter.all">Alle</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.filter">Größenfilter</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.none">Keine Dateien über {0:F0} MB gefunden</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.summary">{0} Dateien · {1} gesamt</sys:String>
@@ -505,6 +515,7 @@ flotter Lauf!</sys:String>
     <sys:String xml:space="preserve" x:Key="space.tree.title">Ordner-Rangliste</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f">Belegt {0} / {1} ({2:F1} %), frei {3}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f2">Belegt {0} / {1}, frei {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.boottime">Letzter Start {0:F1}s</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.impact">Auswirkung</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.source">Quelle</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.suggest">Tipp</sys:String>

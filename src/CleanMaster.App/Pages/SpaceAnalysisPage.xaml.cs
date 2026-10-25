@@ -277,6 +277,31 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         if (IsLoaded) RenderLargeFiles();
     }
 
+    // ————— 大文件类型筛选 —————
+
+    private string _typeFilter = "";   // "" = 全部,否则 Core 分类中文名
+
+    private void BuildTypeFilter()
+    {
+        if (TypeFilterHost.Children.Count > 0) return;
+        var cats = new[] { "", "视频", "图片", "音频", "文档", "压缩包", "其他" };
+        foreach (var c in cats)
+        {
+            var rb = new RadioButton
+            {
+                Style = (Style)FindResource("PillTab"),
+                GroupName = "largeType",
+                Tag = c,
+                IsChecked = c == "",
+                Content = c == "" ? Services.Loc.T("space.filter.all") : Services.Loc.CategoryDisplay(c),
+                FontSize = 12,
+                Padding = new Thickness(13, 5, 13, 6),
+            };
+            rb.Checked += (s, e) => { _typeFilter = c; RenderLargeFiles(); };
+            TypeFilterHost.Children.Add(rb);
+        }
+    }
+
     private void DriveSelector_Changed(object sender, SelectionChangedEventArgs e)
     {
         if (!IsLoaded) return;
@@ -337,6 +362,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
     private void RenderLargeFiles()
     {
         LargeList.Children.Clear();
+        BuildTypeFilter();
         double mb = 500;
         if (LargeThreshold.SelectedItem is ComboBoxItem it && it.Tag is string tag)
             mb = double.Parse(tag);
@@ -346,6 +372,10 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         OverviewDriveText.Text = disk?.Drive ?? CurrentDrive;
         var files = _lastAnalysis?.LargeFiles
             ?? Enumerable.Empty<LargeFileInfo>();
+
+        // 类型筛选(按 Core 分类)
+        if (_typeFilter.Length > 0)
+            files = files.Where(f => CategoryText.Of(SpaceAnalysisService.ClassifyFile(f.Path)) == _typeFilter);
 
         var list = files.Where(f => f.Size >= threshold).OrderByDescending(f => f.Size).Take(300).ToList();
         LargeEmptyText.Visibility = list.Count == 0 ? Visibility.Visible : Visibility.Collapsed;

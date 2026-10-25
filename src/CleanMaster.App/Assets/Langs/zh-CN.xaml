@@ -295,6 +295,9 @@
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">浏览历史将被清空；收藏夹与保存的密码不受影响</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome 浏览历史</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">浏览器保存的网页访问历史数据库</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.impact">目录内文件将按扫描约束清理；可恢复类进入隔离区</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.name">自定义清理目录</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.reason">你手动添加、希望定期清理的目录</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">通过系统官方命令清理，不影响 Windows 更新功能；需管理员权限</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">传递优化缓存</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">Windows 用于 P2P 分发更新的缓存（通过官方机制清理）</sys:String>
@@ -421,6 +424,12 @@
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">添加排除目录</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">添加白名单文件/目录</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.openlog">打开数据文件夹</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.add">添加目录</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.desc">添加你希望每次扫描都清理的缓存类目录（如某软件的下载缓存）。桌面/文档/图片/下载等用户数据目录受安全防护，不会被清理。</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.empty">暂无自定义清理目录</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.pick">选择要定期清理的目录</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.protected">该目录属于受保护的用户数据目录，不能加入清理</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.title">自定义清理目录</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">天</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">这些目录与文件在所有扫描和清理中都会被跳过。</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">暂无排除目录与白名单</sys:String>
@@ -485,6 +494,7 @@
     <sys:String xml:space="preserve" x:Key="space.empty">还没有分析过这块磁盘，点击右上角「开始分析」（扫描期间可随时取消）</sys:String>
     <sys:String xml:space="preserve" x:Key="space.failed">分析失败：</sys:String>
     <sys:String xml:space="preserve" x:Key="space.file">文件</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.filter.all">全部</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.filter">大小筛选</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.none">没有找到大于 {0:F0} MB 的文件</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.summary">{0} 个文件 · 共 {1}</sys:String>
@@ -505,6 +515,7 @@
     <sys:String xml:space="preserve" x:Key="space.tree.title">文件夹占用排行</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f">已使用 {0} / {1}（{2:F1}%），可用 {3}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f2">已使用 {0} / {1}，可用 {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.boottime">上次开机 {0:F1} 秒</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.impact">启动影响</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.source">来源</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.suggest">建议</sys:String>

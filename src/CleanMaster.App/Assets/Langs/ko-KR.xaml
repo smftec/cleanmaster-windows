@@ -295,6 +295,9 @@
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.impact">History cleared; favorites and passwords untouched</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.name">Google Chrome browsing history</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.chrome_history.reason">Web history database saved by the browser</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.impact">Files are cleaned under the same scan constraints; restorable items go to quarantine</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.name">Custom clean folders</sys:String>
+    <sys:String xml:space="preserve" x:Key="rule.custom_folders.reason">Folders you added manually for regular cleanup</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.impact">Cleared via official command; Windows Update unaffected; needs admin</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.name">Delivery Optimization cache</sys:String>
     <sys:String xml:space="preserve" x:Key="rule.delivery_opt.reason">P2P update distribution cache (cleared via official mechanism)</sys:String>
@@ -421,6 +424,12 @@
     <sys:String xml:space="preserve" x:Key="settings.btn.addexclude">제외 폴더 추가</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.addwhitelist">화이트리스트 파일/폴더 추가</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.btn.openlog">데이터 폴더 열기</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.add">폴더 추가</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.desc">매번 스캔 시 정리할 캐시류 폴더를 추가하세요. 바탕 화면/문서/사진/다운로드 등 사용자 데이터는 보호되어 정리되지 않습니다.</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.empty">사용자 지정 폴더가 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.pick">정기적으로 정리할 폴더 선택</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.protected">보호 대상 사용자 데이터 폴더는 추가할 수 없습니다</sys:String>
+    <sys:String xml:space="preserve" x:Key="settings.custom.title">사용자 지정 정리 폴더</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.days">일</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.desc">이 폴더와 파일은 모든 스캔·정리에서 건너뛰어집니다.</sys:String>
     <sys:String xml:space="preserve" x:Key="settings.exc.empty">제외·화이트리스트 항목 없음</sys:String>
@@ -485,6 +494,7 @@
     <sys:String xml:space="preserve" x:Key="space.empty">이 드라이브는 아직 분석되지 않았습니다. 오른쪽 위 「분석 시작」을 누르세요(언제든 취소 가능)</sys:String>
     <sys:String xml:space="preserve" x:Key="space.failed">분석 실패: </sys:String>
     <sys:String xml:space="preserve" x:Key="space.file">파일</sys:String>
+    <sys:String xml:space="preserve" x:Key="space.filter.all">전체</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.filter">크기 필터</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.none">{0:F0} MB 초과 파일이 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="space.large.summary">{0}개 파일 · 총 {1}</sys:String>
@@ -505,6 +515,7 @@
     <sys:String xml:space="preserve" x:Key="space.tree.title">폴더 사용량 순위</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f">사용 {0} / {1}({2:F1}%), 여유 {3}</sys:String>
     <sys:String xml:space="preserve" x:Key="space.used.f2">사용 {0} / {1}, 여유 {2}</sys:String>
+    <sys:String xml:space="preserve" x:Key="startup.boottime">마지막 부팅 {0:F1}초</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.impact">영향</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.source">원본</sys:String>
     <sys:String xml:space="preserve" x:Key="startup.col.suggest">제안</sys:String>
