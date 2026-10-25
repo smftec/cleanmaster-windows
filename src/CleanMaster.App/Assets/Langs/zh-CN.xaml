@@ -101,6 +101,7 @@
     <sys:String xml:space="preserve" x:Key="cmd.empty">没有匹配的功能</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.emptyscan">扫描空文件夹</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ 选择 · Enter 执行 · Esc 关闭 · Ctrl+K 呼出</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint.short">Ctrl+K 快速搜索</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.history">查看清理历史</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.placeholder">搜索功能，如「扫描」「DNS」「主题」…</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.quarantine">打开隔离区</sys:String>

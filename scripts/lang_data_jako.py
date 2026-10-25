@@ -298,6 +298,7 @@ JA = {
     "hc.goto": "対処する",
     "app.title": "清理优化大师", "app.alreadyrunning": "清理优化大师はすでに実行中です。",
     "app.error.msg": "内部エラーが発生しました：",
+    "cmd.hint.short": "Ctrl+K クイック検索",
 }
 
 KO = {
@@ -604,4 +605,5 @@ KO = {
     "hc.goto": "처리하기",
     "app.title": "CleanMaster", "app.alreadyrunning": "CleanMasterが既に実行中です。",
     "app.error.msg": "内部エラーが発生しました：",
+    "cmd.hint.short": "Ctrl+K 빠른 검색",
 }

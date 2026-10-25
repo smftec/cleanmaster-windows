@@ -36,16 +36,28 @@
 
             <!-- 第 2 步：隐私说明 -->
             <StackPanel x:Name="Step2" Visibility="Collapsed">
+                <Border Width="56" Height="56" CornerRadius="16" Background="{DynamicResource SuccessSoftBrush}"
+                        HorizontalAlignment="Center">
+                    <Path Data="{StaticResource ShieldIcon}" Stroke="{DynamicResource SuccessBrush}" StrokeThickness="1.9"
+                          StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                          Width="28" Height="28" Stretch="Uniform"/>
+                </Border>
                 <TextBlock Text="{DynamicResource wizard.privacy.title}" FontSize="22" FontWeight="Bold"
-                           Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center"/>
+                           Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center" Margin="0,16,0,0"/>
                 <TextBlock Text="{DynamicResource wizard.privacy.items}" FontSize="13.5" Foreground="{DynamicResource TextSecondaryBrush}"
                            LineHeight="26" Margin="0,16,0,0" TextWrapping="Wrap"/>
             </StackPanel>
 
             <!-- 第 3 步：自动清理 -->
             <StackPanel x:Name="Step3" Visibility="Collapsed">
+                <Border Width="56" Height="56" CornerRadius="16" Background="{DynamicResource PrimarySoftBrush}"
+                        HorizontalAlignment="Center">
+                    <Path Data="{StaticResource RefreshIcon}" Stroke="{DynamicResource PrimaryBrush}" StrokeThickness="1.9"
+                          StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+                          Width="26" Height="26" Stretch="Uniform"/>
+                </Border>
                 <TextBlock Text="{DynamicResource wizard.auto.title}" FontSize="22" FontWeight="Bold"
-                           Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center"/>
+                           Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center" Margin="0,16,0,0"/>
                 <TextBlock FontSize="13.5" Foreground="{DynamicResource TextSecondaryBrush}"
                            LineHeight="24" TextAlignment="Center" Margin="0,14,0,0"
                            Text="{DynamicResource wizard.auto.desc}"/>

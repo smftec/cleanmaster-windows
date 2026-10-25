@@ -101,6 +101,7 @@ Continues automatically once finished</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.empty">No matching actions</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.emptyscan">Scan empty folders</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ select · Enter run · Esc close · Ctrl+K toggle</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint.short">Ctrl+K quick search</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.history">View cleaning history</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.placeholder">Search actions — “scan”, “DNS”, “theme”…</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.quarantine">Open quarantine</sys:String>

@@ -101,6 +101,7 @@ Continúa automáticamente al terminar</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.empty">No hay acciones coincidentes</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.emptyscan">Buscar carpetas vacías</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ elegir · Enter ejecutar · Esc cerrar · Ctrl+K abrir</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint.short">Ctrl+K búsqueda rápida</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.history">Ver historial de limpieza</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.placeholder">Buscar funciones — «escanear», «DNS», «tema»…</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.quarantine">Abrir cuarentena</sys:String>

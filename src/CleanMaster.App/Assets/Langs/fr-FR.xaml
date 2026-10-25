@@ -101,6 +101,7 @@ Reprise automatique une fois terminée</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.empty">Aucune action correspondante</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.emptyscan">Rechercher les dossiers vides</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ choisir · Enter exécuter · Esc fermer · Ctrl+K ouvrir</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint.short">Ctrl+K recherche rapide</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.history">Voir l'historique</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.placeholder">Rechercher — « analyse », « DNS », « thème »…</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.quarantine">Ouvrir la quarantaine</sys:String>

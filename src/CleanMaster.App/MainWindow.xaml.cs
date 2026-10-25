@@ -350,6 +350,8 @@ public partial class MainWindow : Window
 
     private void BtnMax_Click(object sender, RoutedEventArgs e) => ToggleMaximize();
 
+    private void BtnPaletteHint_Click(object sender, RoutedEventArgs e) => Palette.Open();
+
     private bool _allowClose;
 
     private void BtnClose_Click(object sender, RoutedEventArgs e)

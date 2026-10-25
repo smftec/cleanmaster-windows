@@ -101,6 +101,7 @@ Fährt automatisch fort, wenn fertig</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.empty">Keine passenden Funktionen</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.emptyscan">Leere Ordner suchen</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ wählen · Enter ausführen · Esc schließen · Ctrl+K öffnen</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint.short">Ctrl+K Schnellsuche</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.history">Bereinigungsverlauf ansehen</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.placeholder">Funktionen suchen — „Scan“, „DNS“, „Design“…</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.quarantine">Quarantäne öffnen</sys:String>

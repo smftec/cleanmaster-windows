@@ -101,6 +101,7 @@
     <sys:String xml:space="preserve" x:Key="cmd.empty">일치하는 기능이 없습니다</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.emptyscan">빈 폴더 스캔</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ 선택 · Enter 실행 · Esc 닫기 · Ctrl+K 호출</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint.short">Ctrl+K 빠른 검색</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.history">정리 기록 보기</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.placeholder">기능 검색 — 「스캔」「DNS」「테마」 등</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.quarantine">격리소 열기</sys:String>

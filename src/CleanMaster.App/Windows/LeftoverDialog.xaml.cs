@@ -18,6 +18,8 @@ public partial class LeftoverDialog : Window
         _items = items;
         TitleText.Text = string.Format(Services.Loc.T("leftover.title.f"), appName);
         MouseLeftButtonDown += (s, e) => { if (e.ButtonState == MouseButtonState.Pressed) DragMove(); };
+        // Esc = 跳过(与「不清理,完成」一致)
+        PreviewKeyDown += (s, e) => { if (e.Key == Key.Escape) { Confirmed = false; Close(); } };
         foreach (var item in items)
         {
             ItemList.Children.Add(BuildRow(item));
@@ -49,13 +51,17 @@ public partial class LeftoverDialog : Window
         Grid.SetColumn(cb, 0);
 
         var sp = new StackPanel { Margin = new Thickness(12, 0, 8, 0), VerticalAlignment = VerticalAlignment.Center };
-        sp.Children.Add(new TextBlock
+        var pathTb = new TextBlock
         {
             Text = item.Path,
             FontSize = 12,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
             TextTrimming = TextTrimming.CharacterEllipsis,
-        });
+        };
+        // 文件系统行支持右键(打开位置/复制路径);注册表行为虚拟路径不挂菜单
+        if (!item.IsRegistry && File.Exists(item.Path))
+            Controls.UiPathMenu.Attach(pathTb, item.Path);
+        sp.Children.Add(pathTb);
         ToolTipService.SetToolTip(sp, item.Path);
         sp.Children.Add(new TextBlock
         {

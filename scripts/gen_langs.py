@@ -329,6 +329,7 @@ ZH = {
     "hc.goto": "去处理",
     "app.title": "清理优化大师", "app.alreadyrunning": "清理优化大师已经在运行了。",
     "app.error.msg": "发生了一个内部错误：",
+    "cmd.hint.short": "Ctrl+K 快速搜索",
 }
 
 # ============ 组装与生成 ============

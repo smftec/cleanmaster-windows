@@ -101,6 +101,7 @@
     <sys:String xml:space="preserve" x:Key="cmd.empty">一致する機能はありません</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.emptyscan">空フォルダーをスキャン</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.hint">↑ ↓ 選択 · Enter 実行 · Esc 閉じる · Ctrl+K 表示</sys:String>
+    <sys:String xml:space="preserve" x:Key="cmd.hint.short">Ctrl+K クイック検索</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.history">清理履歴を見る</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.placeholder">機能を検索 —「スキャン」「DNS」「テーマ」など</sys:String>
     <sys:String xml:space="preserve" x:Key="cmd.quarantine">隔離区を開く</sys:String>

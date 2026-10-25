@@ -11,10 +11,10 @@
     <AssemblyName>CleanMaster</AssemblyName>
     <RootNamespace>CleanMaster.App</RootNamespace>
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
-    <Version>2.5.0</Version>
-    <AssemblyVersion>2.5.0.0</AssemblyVersion>
-    <FileVersion>2.5.0.0</FileVersion>
-    <InformationalVersion>2.5.0</InformationalVersion>
+    <Version>2.6.0</Version>
+    <AssemblyVersion>2.6.0.0</AssemblyVersion>
+    <FileVersion>2.6.0.0</FileVersion>
+    <InformationalVersion>2.6.0</InformationalVersion>
     <Product>清理优化大师</Product>
     <Company>CleanMaster</Company>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
