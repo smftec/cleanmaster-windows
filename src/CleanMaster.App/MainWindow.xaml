@@ -33,15 +33,11 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!-- Logo -->
+                <!-- Logo(与应用图标一致) -->
                 <StackPanel Grid.Row="0" Margin="0,42,0,26" HorizontalAlignment="Center">
-                    <Border Width="62" Height="62" CornerRadius="17"
-                            Background="{DynamicResource PrimaryGradientBrush}"
-                            HorizontalAlignment="Center">
-                        <Path Data="{StaticResource BroomIcon}" Stroke="White" StrokeThickness="2.4"
-                              StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
-                              Width="32" Height="32" Stretch="Uniform"/>
-                    </Border>
+                    <Image Source="pack://application:,,,/Assets/logo.png"
+                           Width="62" Height="62" Stretch="Uniform"
+                           HorizontalAlignment="Center"/>
                     <TextBlock Text="清理优化大师" FontSize="17" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"
                                HorizontalAlignment="Center" Margin="0,14,0,0"/>

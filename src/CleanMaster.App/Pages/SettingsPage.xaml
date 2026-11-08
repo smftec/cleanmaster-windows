@@ -97,11 +97,8 @@
                     <TextBlock Text="{DynamicResource settings.sec.about}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
                     <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                        <Border Width="44" Height="44" CornerRadius="12" Background="{DynamicResource PrimaryGradientBrush}">
-                            <Path Data="{StaticResource BroomIcon}" Stroke="White" StrokeThickness="2"
-                                  StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
-                                  Width="24" Height="24" Stretch="Uniform"/>
-                        </Border>
+                        <Image Source="pack://application:,,,/Assets/logo.png"
+                               Width="44" Height="44" Stretch="Uniform"/>
                         <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
                             <TextBlock x:Name="AboutAppName" Text="CleanMaster" FontSize="14.5" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}"/>
