@@ -107,10 +107,14 @@ public sealed class SettingsService
         }
     }
 
+    /// <summary>设置修订号:每次落盘自增。扫描结果缓存据此判断是否需要重扫。</summary>
+    public static int Revision { get; private set; }
+
     public static void Save()
     {
         lock (Lock)
         {
+            Revision++;
             try
             {
                 Directory.CreateDirectory(DataDir);

@@ -56,16 +56,20 @@ public partial class HomePage : Page, IParamPage
         _ = RefreshAsync();
     }
 
+    private string _selectedDrive = "";
+
     private async Task RefreshAsync()
     {
-        // —— 磁盘 ——
+        // —— 磁盘(多盘时提供盘符切换,默认系统盘) ——
         try
         {
-            var sysDrive = DriveInfo.GetDrives()
-                .FirstOrDefault(d => d.IsReady && d.DriveType == DriveType.Fixed &&
-                                     d.RootDirectory.FullName.StartsWith(Path.GetTempPath().Substring(0, 3)));
             var all = DriveInfo.GetDrives().Where(d => d.IsReady && d.DriveType == DriveType.Fixed).ToList();
-            var drive = sysDrive ?? all.FirstOrDefault();
+            var sysDrive = all.FirstOrDefault(d =>
+                d.RootDirectory.FullName.StartsWith(Path.GetTempPath().Substring(0, 3), StringComparison.OrdinalIgnoreCase));
+            var drive = all.FirstOrDefault(d => d.Name.Equals(_selectedDrive, StringComparison.OrdinalIgnoreCase))
+                        ?? sysDrive ?? all.FirstOrDefault();
+            _selectedDrive = drive?.Name ?? "";
+            RenderDriveChips(all, drive);
             if (drive != null)
             {
                 var used = drive.TotalSize - drive.AvailableFreeSpace;
@@ -490,6 +494,31 @@ public partial class HomePage : Page, IParamPage
                 _uptimeText.Text = FormatUptime(snap.Uptime);
         }
         catch { }
+    }
+
+    private void RenderDriveChips(List<DriveInfo> all, DriveInfo? selected)
+    {
+        var host = this.FindName("DriveChipHost") as StackPanel;
+        if (host == null) return;
+        host.Children.Clear();
+        if (all.Count < 2) return;
+        foreach (var d in all)
+        {
+            var isSel = d.Name.Equals(selected?.Name, StringComparison.OrdinalIgnoreCase);
+            var rb = new RadioButton
+            {
+                Style = (Style)FindResource("PillTab"),
+                GroupName = "homedrive",
+                Content = d.Name.TrimEnd(System.IO.Path.DirectorySeparatorChar),
+                FontSize = 11.5,
+                Padding = new Thickness(10, 3, 10, 4),
+                Margin = new Thickness(0, 0, 8, 0),
+                IsChecked = isSel,
+            };
+            var name = d.Name;
+            rb.Checked += (s, e) => { if (name != _selectedDrive) { _selectedDrive = name; _ = RefreshAsync(); } };
+            host.Children.Add(rb);
+        }
     }
 
     private static string FormatUptime(TimeSpan d)

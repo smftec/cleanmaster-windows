@@ -206,6 +206,7 @@
                                            Foreground="{DynamicResource TextSecondaryBrush}"
                                            HorizontalAlignment="Right" VerticalAlignment="Center"/>
                             </Grid>
+                            <StackPanel x:Name="DriveChipHost" Orientation="Horizontal" Margin="0,10,0,0"/>
                             <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
                                 <Ellipse Width="9" Height="9" Fill="{DynamicResource PrimaryBrush}" VerticalAlignment="Center"/>
                                 <TextBlock x:Name="DiskUsedText" Text="{DynamicResource home.disk.used}" FontSize="12.5"

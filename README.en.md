@@ -42,7 +42,7 @@ Grab the latest build from [Releases](../../releases/latest) (SHA256 checksums i
 
 | Module | Capabilities |
 |---|---|
-| **Home** | Health score (disk / junk / startup factors, ring gauge with level colors), live CPU & memory monitors, disk ring gauge, 7-day cleanup stats chart, recent activity, one-click smart suggestions |
+| **Home** | Health score (disk / junk / startup factors, ring gauge with level colors), live CPU & memory monitors, disk ring gauge (**multi-drive switch**), 7-day cleanup stats chart, recent activity, one-click smart suggestions |
 | **Health check** | Check-up home (last score) → scan → summary (score ring + factor bars + action items: high-impact startups / maintenance off) → clean → before/after score; copy report to clipboard |
 | **Smart scan** | System junk / browser caches / app caches / recycle bin in one pass; results grouped by risk, per-item file details, right-click reveal / copy path |
 | **Clean space** | System junk (temp, crash dumps, thumbnails, shader caches, update caches…), app caches (WeChat / QQ / Discord / Teams / Steam / Epic / VS Code / JetBrains, 13 catalogs), browsers (Edge / Chrome / Brave / Opera / Firefox), privacy traces (off by default), recycle bin, **custom clean folders** (user-added, double-guarded) |

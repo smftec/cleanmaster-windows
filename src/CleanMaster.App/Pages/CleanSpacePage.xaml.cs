@@ -46,9 +46,18 @@ public partial class CleanSpacePage : Page, IParamPage
             SetTab(t);
     }
 
+    private int _settingsRevision;
+
     private async void SetTab(int tab)
     {
         _tab = tab;
+        // 设置在扫描后发生过变化(如新增自定义目录)→ 已缓存结果作废,重扫当前组
+        if (_settingsRevision != 0 && _settingsRevision != CleanMaster.Core.Store.SettingsService.Revision)
+        {
+            _tabRows.Clear();
+            _tabResults.Clear();
+        }
+        _settingsRevision = CleanMaster.Core.Store.SettingsService.Revision;
         PrivacyBanner.Visibility = tab == 3 ? Visibility.Visible : Visibility.Collapsed;
         RecycleCard.Visibility = tab == 4 ? Visibility.Visible : Visibility.Collapsed;
         RulesHost.Visibility = tab == 4 ? Visibility.Collapsed : Visibility.Visible;

@@ -165,7 +165,7 @@ public sealed class DnsCacheRule : RuleBase
             RuleId = Id, Name = Name, Group = Group, Risk = Risk,
             Reason = Reason, Impact = Impact, CanRestore = false,
         };
-        res.Items.Add(new CleanItem { Path = "cmd://ipconfig /flushdns", Note = "系统 DNS 缓存" });
+        res.Items.Add(new CleanItem { Path = "cmd://ipconfig /flushdns", Note = Store.CoreLocalizer.T("dns.note", "系统 DNS 缓存") });
         res.FileCount = 1;
         return Task.FromResult(res);
     }
@@ -187,7 +187,7 @@ public sealed class DnsCacheRule : RuleBase
                 var ok = p.ExitCode == 0;
                 foreach (var item in ctx.Selected)
                     ctx.Report(item, ok ? CleanItemStatus.Success : CleanItemStatus.Failed,
-                        ok ? "" : "刷新失败，可能需要管理员权限");
+                        ok ? "" : Store.CoreLocalizer.T("dns.err.flush", "刷新失败，可能需要管理员权限"));
             }
             catch (Exception ex)
             {
