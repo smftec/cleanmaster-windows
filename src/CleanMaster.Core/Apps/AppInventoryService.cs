@@ -177,8 +177,9 @@ public sealed class AppInventoryService
                 var psi = new ProcessStartInfo("powershell.exe",
                     $"-NoProfile -NonInteractive -Command \"Remove-AppxPackage -Package '{app.StorePackageFullName}'\"")
                 {
-                    CreateNoWindow = false,
-                    UseShellExecute = true,
+                    CreateNoWindow = true,
+                    UseShellExecute = false,
+                    WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden,
                 };
                 Process.Start(psi);
                 return null;

@@ -151,10 +151,17 @@ public sealed class RingGauge : Grid
         BeginAnimation(PercentProperty, anim);
     }
 
-    /// <summary>直接设置(无动画)。</summary>
+    /// <summary>直接设置(无动画)。变化过小时跳过,避免周期刷新造成的持续重绘。</summary>
     public void SetPercent(double pct)
     {
+        var v = Math.Clamp(pct, 0, 100);
+        if (Math.Abs(v - Percent) < 0.35)
+        {
+            BeginAnimation(PercentProperty, null);
+            Percent = v;
+            return;
+        }
         BeginAnimation(PercentProperty, null);
-        Percent = Math.Clamp(pct, 0, 100);
+        Percent = v;
     }
 }

@@ -17,17 +17,6 @@ public enum RuleGroup
     RecycleBin,
 }
 
-public static class RiskLevelText
-{
-    public static string Of(RiskLevel r) => r switch
-    {
-        RiskLevel.Safe => "安全",
-        RiskLevel.Low => "低风险",
-        RiskLevel.Confirm => "需确认",
-        _ => "高风险",
-    };
-}
-
 /// <summary>扫描出的单个可清理对象（文件 / 目录 / 注册表虚拟路径）。</summary>
 public sealed class CleanItem
 {
@@ -106,8 +95,6 @@ public sealed class CleanSummary
     public bool Cancelled { get; set; }
     public bool ElevatedUsed { get; set; }
     public List<CleanItemOutcome> Details { get; } = new();
-
-    public string ResultText => Cancelled ? "已取消" : FailCount == 0 && SkipCount == 0 ? "成功" : SkipCount + FailCount > 0 && SuccessCount > 0 ? "部分成功" : FailCount > 0 && SuccessCount == 0 ? "失败" : "成功";
 }
 
 public sealed class CleanProgress

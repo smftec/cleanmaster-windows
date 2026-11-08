@@ -7,6 +7,12 @@ using CleanMaster.Core.Store;
 
 namespace CleanMaster.App;
 
+internal static partial class NativeMethods
+{
+    [System.Runtime.InteropServices.DllImport("kernel32.dll")]
+    internal static extern bool SetProcessWorkingSetSize(IntPtr hProcess, IntPtr min, IntPtr max);
+}
+
 public partial class App : Application
 {
     private static Mutex? _singleInstanceMutex;
@@ -105,6 +111,20 @@ public partial class App : Application
 
         // 静默检查更新（每日最多一次，失败不打扰）
         _ = RunUpdateCheckAsync(win);
+
+        // 启动稳定后裁剪工作集(PRD §42:Idle 内存 <150MB;
+        // 冷页面交给系统按需换入,Task Manager 显示的内存显著下降)
+        var trimTimer = new System.Windows.Threading.DispatcherTimer { Interval = TimeSpan.FromSeconds(8) };
+        trimTimer.Tick += (s2, e2) =>
+        {
+            trimTimer.Stop();
+            try
+            {
+                NativeMethods.SetProcessWorkingSetSize(System.Diagnostics.Process.GetCurrentProcess().Handle, (IntPtr)(-1), (IntPtr)(-1));
+            }
+            catch { }
+        };
+        trimTimer.Start();
     }
 
     private static async System.Threading.Tasks.Task RunUpdateCheckAsync(MainWindow win)

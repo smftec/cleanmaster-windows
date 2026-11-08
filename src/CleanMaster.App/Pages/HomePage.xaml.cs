@@ -25,6 +25,8 @@ public partial class HomePage : Page, IParamPage
     private DispatcherTimer? _monitorTimer;
     private RingGauge? _diskRing;
     private RingGauge? _cpuRing;
+    private string? _lastCpuText;
+    private string? _lastRamText;
     private RingGauge? _ramRing;
     private TextBlock? _diskCenter;
     private TextBlock? _cpuCenter;
@@ -317,11 +319,14 @@ public partial class HomePage : Page, IParamPage
         UptimeHost.Children.Add(up);
 
         // 实时呼吸点
+        // 有限次呼吸后静止(PRD §42 空闲 CPU <1%:无限动画会持续作废
+        // 带阴影卡片的渲染,常驻数核 CPU)。实时感由 1.2s 的数值刷新承担。
         var pulse = new DoubleAnimation(0.35, 1, TimeSpan.FromSeconds(1.6))
         {
             AutoReverse = true,
-            RepeatBehavior = RepeatBehavior.Forever,
+            RepeatBehavior = new RepeatBehavior(4),
             EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut },
+            FillBehavior = FillBehavior.Stop,
         };
         LiveDot.BeginAnimation(OpacityProperty, pulse);
     }
@@ -463,7 +468,8 @@ public partial class HomePage : Page, IParamPage
                 else if (cpu is >= 75) _cpuRing.ArcBrush = (Brush)FindResource("WarningBrush");
                 else _cpuRing.ArcBrush = (Brush)FindResource("PrimaryBrush");
                 _cpuRing.SetPercent(cpu ?? 0);
-                _cpuCenter.Text = cpu.HasValue ? cpu.Value.ToString("F0") + "%" : "—";
+                var cpuText = cpu.HasValue ? cpu.Value.ToString("F0") + "%" : "—";
+                if (_lastCpuText != cpuText) { _cpuCenter.Text = cpuText; _lastCpuText = cpuText; }
             }
             if (_cpuDetail != null)
                 _cpuDetail.Text = string.Format(Services.Loc.T("home.mon.cores"), Environment.ProcessorCount);
@@ -475,7 +481,8 @@ public partial class HomePage : Page, IParamPage
                     : ramPct >= 75 ? (Brush)FindResource("WarningBrush")
                     : (Brush)FindResource("TealBrush");
                 _ramRing.SetPercent(ramPct);
-                _ramCenter.Text = ramPct.ToString("F0") + "%";
+                var ramText = ramPct.ToString("F0") + "%";
+                if (_lastRamText != ramText) { _ramCenter.Text = ramText; _lastRamText = ramText; }
                 _ramDetail.Text = string.Format(Services.Loc.T("home.mon.ram.f"),
                     SizeText.OfBytes(snap.RamUsedBytes, 0), SizeText.OfBytes(snap.RamTotalBytes, 0));
             }
