@@ -49,8 +49,6 @@ public sealed class RuleResult
     public List<CleanItem> Items { get; } = new();
     /// <summary>检测到的占用进程（浏览器正在运行等）。</summary>
     public List<string> RunningProcesses { get; } = new();
-    /// <summary>浏览器需要保留用户数据的说明（隐私项用）。</summary>
-    public bool SkippedByDefault { get; set; }
 }
 
 public sealed class ScanProgress

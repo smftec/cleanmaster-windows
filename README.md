@@ -86,6 +86,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\publish.ps1
 
 产出：绿色版目录、zip 包、中文安装包（自动检测 [Inno Setup](https://jrsoftware.org/isinfo.php)，安装包脚本见 [scripts/setup.iss](scripts/setup.iss)）、`SHA256SUMS.txt`。
 
+双平台发布：标签推送到 GitHub 触发 Actions；GitLab 侧在标签已推送后设置 `$env:CM_GITLAB_RELEASE="1"` 再运行打包脚本，会自动创建带产物的 GitLab Release。
+
 拿到代码签名证书后，加两个环境变量即可输出签名版全套产物：
 
 ```powershell

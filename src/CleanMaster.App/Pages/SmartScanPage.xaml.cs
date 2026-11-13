@@ -99,6 +99,9 @@ public partial class SmartScanPage : Page, IParamPage
 
     public void StartScanFromUi() => StartScan();
 
+    /// <summary>扫描或清理进行中(语言切换时不重建本页,避免中断)。</summary>
+    public bool IsBusy => _scanning || _cleaning;
+
     /// <summary>全局 Esc：取消进行中的扫描或清理。</summary>
     public void TryCancelCurrent()
     {

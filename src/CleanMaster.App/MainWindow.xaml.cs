@@ -40,6 +40,19 @@ public partial class MainWindow : Window
         SourceInitialized += (s, e) => RestoreWindowBounds();
         Closing += (s, e) => SaveWindowBounds();
         PreviewKeyDown += MainWindow_PreviewKeyDown;
+        // 语言切换:重建当前页,让代码设置的文本(统计数字/行列标题等)
+        // 与 DynamicResource 一起随语言更新,避免"半新半旧"界面
+        Services.Loc.LanguageChanged += OnLanguageChanged;
+    }
+
+    private void OnLanguageChanged()
+    {
+        if (_pages.TryGetValue(_currentKey, out var p))
+        {
+            if (p is SmartScanPage { IsBusy: true }) return; // 不中断进行中的体检/清理
+            _pages.Remove(_currentKey);
+            Navigate(_currentKey);
+        }
     }
 
     // ————— 窗口位置记忆 —————
