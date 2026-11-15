@@ -32,11 +32,15 @@ public partial class CleanSpacePage : Page, IParamPage
     {
         InitializeComponent();
         _main = main;
+        // 横幅高度随换行变化,同步规则区偏移
+        PrivacyBanner.SizeChanged += (s, e) => UpdateRulesOffset();
     }
 
     public void OnNavigated(object? param)
     {
+        // 深链参数为字符串("3"),UI 内部调用为 int——两种都接受
         if (param is int t) SetTab(t);
+        else if (int.TryParse(param?.ToString(), out var t2)) SetTab(t2);
         else if (!_tabResults.ContainsKey(_tab) || !_tabRows.ContainsKey(_tab)) SetTab(_tab);
     }
 
@@ -63,6 +67,7 @@ public partial class CleanSpacePage : Page, IParamPage
         RulesHost.Visibility = tab == 4 ? Visibility.Collapsed : Visibility.Visible;
         FooterBar.Visibility = tab == 4 ? Visibility.Collapsed : Visibility.Visible;
         TabNoteText.Text = TabNotes()[tab];
+        UpdateRulesOffset();
 
         if (tab == 4)
         {
@@ -77,6 +82,15 @@ public partial class CleanSpacePage : Page, IParamPage
         {
             RenderRows(tab);
         }
+    }
+
+    /// <summary>隐私警告横幅可见时,把规则区下推到横幅下方(两者同单元格叠加)。</summary>
+    private void UpdateRulesOffset()
+    {
+        double top = PrivacyBanner.Visibility == Visibility.Visible
+            ? PrivacyBanner.ActualHeight + 26
+            : 14;
+        RulesHost.Margin = new Thickness(2, top, 2, 0);
     }
 
     private IEnumerable<IScanRule> RulesOfTab(int tab) => tab switch
