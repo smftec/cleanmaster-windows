@@ -33,6 +33,7 @@
     <Resource Include="Assets\wizard-hero.png" />
     <Resource Include="Assets\logo.png" />
     <Resource Include="Assets\spot-clean.png" />
+    <Resource Include="Assets\logo-dark.png" />
   </ItemGroup>
 
 </Project>

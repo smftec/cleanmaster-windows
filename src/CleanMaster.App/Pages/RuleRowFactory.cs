@@ -21,12 +21,30 @@ public static class RuleRowFactory
 
     public static Handle Create(ScanRowVM vm, FrameworkElement resources, Action onSelectionChanged)
     {
-        var row = new Border { Padding = new Thickness(12, 10, 12, 10), CornerRadius = new CornerRadius(9) };
-        var grid = new Grid();
-        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+        var row = new Border { Padding = new Thickness(14, 10, 12, 10), CornerRadius = new CornerRadius(9) };
+        // 左缘风险色条:安全绿 / 低风险蓝灰 / 需确认橙 / 高风险红(颜色与徽章一致)
+        var riskBrush = vm.Risk switch
+        {
+            RiskLevel.Confirm => (Brush)resources.FindResource("WarningBrush"),
+            RiskLevel.High => (Brush)resources.FindResource("DangerBrush"),
+            RiskLevel.Low => (Brush)resources.FindResource("PrimaryBrush"),
+            _ => (Brush)resources.FindResource("SuccessBrush"),
+        };
+        var riskBar = new Border
+        {
+            Width = 3,
+            CornerRadius = new CornerRadius(2),
+            Background = riskBrush,
+            VerticalAlignment = VerticalAlignment.Stretch,
+            Margin = new Thickness(-4, 6, 4, 6),
+            HorizontalAlignment = HorizontalAlignment.Left,
+            Opacity = vm.Res.TotalSize > 0 ? 1 : 0,
+        };
+        var inner = new Grid { Margin = new Thickness(4, 0, 0, 0) };
+        inner.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+        inner.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+        inner.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+        inner.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
 
         var cb = new CheckBox
         {
@@ -103,13 +121,29 @@ public static class RuleRowFactory
         };
         Grid.SetColumn(toggle, 3);
 
-        grid.Children.Add(cb);
-        grid.Children.Add(mid);
-        grid.Children.Add(size);
-        grid.Children.Add(toggle);
+        inner.Children.Add(cb);
+        inner.Children.Add(mid);
+        inner.Children.Add(size);
+        inner.Children.Add(toggle);
 
-        var outer = new StackPanel();
-        outer.Children.Add(grid);
+        Grid.SetColumn(cb, 0);
+        Grid.SetColumn(mid, 1);
+        Grid.SetColumn(size, 2);
+        Grid.SetColumn(toggle, 3);
+
+        // 外层两列×两行:左列风险色条纵跨主体与明细,右列内容
+        var outer = new Grid();
+        outer.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+        outer.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+        outer.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+        outer.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+        Grid.SetColumn(riskBar, 0);
+        Grid.SetRowSpan(riskBar, 2);
+        Grid.SetColumn(inner, 1);
+        Grid.SetRow(details, 1);
+        Grid.SetColumn(details, 1);
+        outer.Children.Add(riskBar);
+        outer.Children.Add(inner);
         outer.Children.Add(details);
 
         row.Child = outer;

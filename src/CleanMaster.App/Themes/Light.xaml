@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage x:Key="LogoImage" UriSource="pack://application:,,,/Assets/logo.png"/>
 
     <!-- ===== 浅色主题画刷（默认） ===== -->
     <Color x:Key="PrimaryColor">#2774F0</Color>

@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage x:Key="LogoImage" UriSource="pack://application:,,,/Assets/logo-dark.png"/>
 
     <!-- ===== 深色主题画刷 ===== -->
     <Color x:Key="PrimaryColor">#4C8DF6</Color>

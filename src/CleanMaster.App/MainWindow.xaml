@@ -35,7 +35,7 @@
 
                 <!-- Logo(与应用图标一致) -->
                 <StackPanel Grid.Row="0" Margin="0,42,0,26" HorizontalAlignment="Center">
-                    <Image Source="pack://application:,,,/Assets/logo.png"
+                    <Image Source="{DynamicResource LogoImage}"
                            Width="62" Height="62" Stretch="Uniform"
                            HorizontalAlignment="Center"/>
                     <TextBlock Text="清理优化大师" FontSize="17" FontWeight="Bold"
