@@ -69,8 +69,9 @@ public partial class App : Application
         // 全局异常兜底：记录并提示，不闪退
         DispatcherUnhandledException += (s, args) =>
         {
-            try { HistoryService.Add("Error", Loc.T("app.error.msg"), args.Exception.Message); } catch { }
-            MessageBox.Show($"发生了一个内部错误：\n{args.Exception.Message}", "清理优化大师",
+            try { HistoryService.Add("Error", Loc.T("app.error.msg"),
+                args.Exception.Message + "\n" + args.Exception.StackTrace[..Math.Min(600, args.Exception.StackTrace.Length)]); } catch { }
+            MessageBox.Show(Loc.T("app.error.msg") + "\n" + args.Exception.Message, Loc.T("app.title"),
                 MessageBoxButton.OK, MessageBoxImage.Warning);
             args.Handled = true;
         };

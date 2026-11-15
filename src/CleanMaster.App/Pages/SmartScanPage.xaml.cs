@@ -27,13 +27,60 @@ public partial class SmartScanPage : Page, IParamPage
     {
         InitializeComponent();
         _main = main;
-        var spin = new DoubleAnimation(0, 360, TimeSpan.FromSeconds(1.1));
-        spin.RepeatBehavior = RepeatBehavior.Forever;
-        SpinTransform.BeginAnimation(RotateTransform.AngleProperty, spin);
-        var spin2 = new DoubleAnimation(0, -360, TimeSpan.FromSeconds(1.6));
-        spin2.RepeatBehavior = RepeatBehavior.Forever;
-        CleanSpinTransform.BeginAnimation(RotateTransform.AngleProperty, spin2);
+        BuildProgressRings();
         Loaded += (s, e) => _ = BuildHealthPreviewAsync();
+    }
+
+    private Controls.RingGauge? _scanRing;
+    private Controls.RingGauge? _cleanRing;
+    private readonly TextBlock ScanPercentText = new()
+    {
+        Text = "0%", FontSize = 25, FontWeight = FontWeights.Bold,
+        HorizontalAlignment = HorizontalAlignment.Center,
+    };
+    private readonly TextBlock ScanFoundText = new()
+    {
+        FontSize = 12, HorizontalAlignment = HorizontalAlignment.Center,
+        Margin = new Thickness(0, 3, 0, 0),
+    };
+    private readonly TextBlock CleanFreedText = new()
+    {
+        FontSize = 12, FontWeight = FontWeights.Bold,
+        HorizontalAlignment = HorizontalAlignment.Center,
+        Margin = new Thickness(0, 4, 0, 0),
+    };
+
+    private void BuildProgressRings()
+    {
+        ScanPercentText.SetResourceReference(TextBlock.ForegroundProperty, "TextPrimaryBrush");
+        ScanFoundText.SetResourceReference(TextBlock.ForegroundProperty, "TextTertiaryBrush");
+        ScanFoundText.Text = Services.Loc.T("scan.found");
+
+        _scanRing = PanelScanning.Children.OfType<Controls.RingGauge>().FirstOrDefault();
+        var c1 = new StackPanel();
+        _scanRing.Center = c1;
+        c1.Children.Add(ScanPercentText);
+        c1.Children.Add(ScanFoundText);
+
+        _cleanRing = PanelCleaning.Children.OfType<Controls.RingGauge>().FirstOrDefault();
+        var icon = new System.Windows.Shapes.Path
+        {
+            Data = (Geometry)FindResource("CleanIcon"),
+            Stroke = (Brush)FindResource("PrimaryBrush"),
+            StrokeThickness = 2,
+            StrokeStartLineCap = PenLineCap.Round,
+            StrokeEndLineCap = PenLineCap.Round,
+            StrokeLineJoin = PenLineJoin.Round,
+            Width = 34,
+            Height = 34,
+            Stretch = Stretch.Uniform,
+        };
+        CleanFreedText.SetResourceReference(TextBlock.ForegroundProperty, "SuccessBrush");
+        CleanFreedText.Text = Services.Loc.T("clean.freed");
+        var c2 = new StackPanel();
+        c2.Children.Add(icon);
+        c2.Children.Add(CleanFreedText);
+        _cleanRing.Center = c2;
     }
 
     public void OnNavigated(object? param)
@@ -119,7 +166,7 @@ public partial class SmartScanPage : Page, IParamPage
         Show(PanelScanning);
         ScanStageText.Text = Services.Loc.T("scan.preparing");
         ScanDetailText.Text = "";
-        ScanProgressBar.Value = 0;
+        _scanRing?.SetPercent(0);
         ScanPercentText.Text = "0%";
         ScanFoundText.Text = Services.Loc.T("scan.found");
 
@@ -134,8 +181,8 @@ public partial class SmartScanPage : Page, IParamPage
         {
             ScanStageText.Text = Services.Loc.RuleName(p.Stage, p.Stage);
             ScanDetailText.Text = p.Detail;
-            ScanProgressBar.Value = p.RuleTotal > 0 ? p.RuleIndex * 100.0 / p.RuleTotal : 0;
-            ScanPercentText.Text = $"{(int)ScanProgressBar.Value}%";
+            _scanRing?.SetPercent(p.RuleTotal > 0 ? p.RuleIndex * 100.0 / p.RuleTotal : 0);
+            ScanPercentText.Text = $"{(int)(_scanRing?.Percent ?? 0)}%";
             if (p.FoundBytes != lastBytes)
             {
                 lastBytes = p.FoundBytes;
@@ -647,7 +694,7 @@ public partial class SmartScanPage : Page, IParamPage
         _cleaning = true;
         _cleanCts = new CancellationTokenSource();
         Show(PanelCleaning);
-        CleanProgressBar.Value = 0;
+        _cleanRing?.SetPercent(0);
         CleanFreedText.Text = Services.Loc.T("clean.freed");
         CleanTitleText.Text = Services.Loc.T("clean.title");
 
@@ -664,7 +711,7 @@ public partial class SmartScanPage : Page, IParamPage
         var progress = new Progress<CleanProgress>(p =>
         {
             done++;
-            CleanProgressBar.Value = total > 0 ? done * 100.0 / total : 100;
+            _cleanRing?.SetPercent(total > 0 ? done * 100.0 / total : 100);
             CleanDetailText.Text = p.CurrentPath;
             CleanFreedText.Text = string.Format(Services.Loc.T("clean.freed.f"), SizeText.OfBytes(p.FreedBytes));
         });

@@ -75,7 +75,10 @@ public sealed class RingGauge : Grid
 
     private double _size = 96;
 
-    public RingGauge(double size = 96, double stroke = 9)
+    /// <summary>XAML 使用:无参构造(默认 96px/9px),属性在标记或代码中设置。</summary>
+    public RingGauge() : this(96, 9) { }
+
+    public RingGauge(double size, double stroke)
     {
         _size = size;
         Width = Height = size;
