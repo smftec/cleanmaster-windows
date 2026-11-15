@@ -66,13 +66,27 @@ public partial class App : Application
             return string.IsNullOrEmpty(v) ? fallback : v;
         };
 
-        // 全局异常兜底：记录并提示，不闪退
+        // 全局异常兜底：记录(含堆栈)并提示,不闪退。
+        // 主窗口就绪后用 Toast 非模态提示(可恢复的 UI 异常不打断用户);
+        // 主窗口未就绪(启动早期)仍用 MessageBox,保证用户知情。
         DispatcherUnhandledException += (s, args) =>
         {
-            try { HistoryService.Add("Error", Loc.T("app.error.msg"),
-                args.Exception.Message + "\n" + args.Exception.StackTrace[..Math.Min(600, args.Exception.StackTrace.Length)]); } catch { }
-            MessageBox.Show(Loc.T("app.error.msg") + "\n" + args.Exception.Message, Loc.T("app.title"),
-                MessageBoxButton.OK, MessageBoxImage.Warning);
+            try
+            {
+                var stack = args.Exception.StackTrace ?? "";
+                HistoryService.Add("Error", Loc.T("app.error.msg"),
+                    args.Exception.Message + "\n" + stack[..Math.Min(600, stack.Length)]);
+            }
+            catch { }
+            if (MainWindow is MainWindow mw)
+            {
+                mw.ShowToast(Loc.T("app.error.toast") + " " + args.Exception.Message, ToastType.Warning);
+            }
+            else
+            {
+                MessageBox.Show(Loc.T("app.error.msg") + "\n" + args.Exception.Message, Loc.T("app.title"),
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             args.Handled = true;
         };
 

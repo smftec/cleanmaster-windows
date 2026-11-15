@@ -3,6 +3,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String xml:space="preserve" x:Key="app.alreadyrunning">清理优化大师はすでに実行中です。</sys:String>
     <sys:String xml:space="preserve" x:Key="app.error.msg">内部エラーが発生しました：</sys:String>
+    <sys:String xml:space="preserve" x:Key="app.error.toast">回復可能なエラーを記録しました：</sys:String>
     <sys:String xml:space="preserve" x:Key="app.title">清理优化大师</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.col.date">インストール日</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.col.name">アプリ</sys:String>

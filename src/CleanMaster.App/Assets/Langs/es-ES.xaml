@@ -3,6 +3,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String xml:space="preserve" x:Key="app.alreadyrunning">CleanMaster ya se está ejecutando.</sys:String>
     <sys:String xml:space="preserve" x:Key="app.error.msg">Se ha producido un error interno:</sys:String>
+    <sys:String xml:space="preserve" x:Key="app.error.toast">Error recuperable registrado: </sys:String>
     <sys:String xml:space="preserve" x:Key="app.title">CleanMaster</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.col.date">Instalado</sys:String>
     <sys:String xml:space="preserve" x:Key="apps.col.name">Aplicación</sys:String>

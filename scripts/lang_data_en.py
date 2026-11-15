@@ -313,6 +313,7 @@ EN = {
     "hc.goto": "Fix",
     "app.title": "CleanMaster", "app.alreadyrunning": "CleanMaster is already running.",
     "app.error.msg": "An internal error occurred:",
+    "app.error.toast": "A recoverable error was logged: ",
     "cmd.hint.short": "Ctrl+K quick search",
     "cmd.hint.short": "Ctrl+K quick search", "btn.ok": "Got it",
     "startup.search.hint": "Search startup items…", "apps.search.hint": "Search apps…",
