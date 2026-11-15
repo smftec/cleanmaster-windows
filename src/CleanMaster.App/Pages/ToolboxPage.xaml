@@ -7,6 +7,17 @@
 
             <TextBlock Text="{DynamicResource nav.toolbox}" FontSize="21" FontWeight="Bold"
                        Foreground="{DynamicResource TextPrimaryBrush}" Margin="4,2,0,0"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"
+                          Margin="4,12,0,0" Padding="0">
+                <StackPanel Orientation="Horizontal" x:Name="ToolboxNav">
+                    <RadioButton Content="{DynamicResource tool.quarantine.title}" Style="{StaticResource PillTab}" GroupName="tnav" IsChecked="True" FontSize="12" Padding="12,5,12,6" Tag="QuarantineCard" Click="ToolboxNav_Click"/>
+                    <RadioButton Content="{DynamicResource tool.shred.title}" Style="{StaticResource PillTab}" GroupName="tnav" FontSize="12" Padding="12,5,12,6" Tag="ShredCard" Click="ToolboxNav_Click"/>
+                    <RadioButton Content="{DynamicResource tool.dup.title}" Style="{StaticResource PillTab}" GroupName="tnav" FontSize="12" Padding="12,5,12,6" Tag="DuplicateCard" Click="ToolboxNav_Click"/>
+                    <RadioButton Content="{DynamicResource tool.empty.title}" Style="{StaticResource PillTab}" GroupName="tnav" FontSize="12" Padding="12,5,12,6" Tag="EmptyFolderCard" Click="ToolboxNav_Click"/>
+                    <RadioButton Content="{DynamicResource maint.title}" Style="{StaticResource PillTab}" GroupName="tnav" FontSize="12" Padding="12,5,12,6" Tag="MaintenanceCard" Click="ToolboxNav_Click"/>
+                    <RadioButton Content="{DynamicResource tool.history.title}" Style="{StaticResource PillTab}" GroupName="tnav" FontSize="12" Padding="12,5,12,6" Tag="HistoryCard" Click="ToolboxNav_Click"/>
+                </StackPanel>
+            </ScrollViewer>
             <TextBlock Text="{DynamicResource tool.desc}" FontSize="12"
                        Foreground="{DynamicResource TextTertiaryBrush}" Margin="6,8,0,0"/>
 
@@ -32,7 +43,7 @@
             </Border>
 
             <!-- 文件粉碎 -->
-            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+            <Border x:Name="ShredCard" Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Border Width="36" Height="36" CornerRadius="10" Background="{DynamicResource DangerSoftBrush}">

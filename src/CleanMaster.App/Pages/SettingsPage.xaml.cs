@@ -319,6 +319,17 @@ public partial class SettingsPage : Page
         }
     }
 
+    // ————— 锚点导航 —————
+
+    private void SettingsNav_Click(object sender, RoutedEventArgs e)
+    {
+        if (sender is System.Windows.Controls.RadioButton { Tag: string name }
+            && this.FindName(name) is System.Windows.FrameworkElement card)
+        {
+            card.BringIntoView();
+        }
+    }
+
     // ————— 自定义清理目录 —————
 
     private void RenderCustomClean()

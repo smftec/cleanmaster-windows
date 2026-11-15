@@ -236,6 +236,17 @@ public partial class ToolboxPage : Page, IParamPage
         BtnEmptyScan_Click(this, new RoutedEventArgs());
     }
 
+    // ————— 锚点导航 —————
+
+    private void ToolboxNav_Click(object sender, RoutedEventArgs e)
+    {
+        if (sender is System.Windows.Controls.RadioButton { Tag: string name }
+            && this.FindName(name) is System.Windows.FrameworkElement card)
+        {
+            card.BringIntoView();
+        }
+    }
+
     // ————— 隔离区 —————
 
     private void RefreshQuarantine()

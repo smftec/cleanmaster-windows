@@ -8,8 +8,23 @@
             <TextBlock Text="{DynamicResource settings.title}" FontSize="21" FontWeight="Bold"
                        Foreground="{DynamicResource TextPrimaryBrush}" Margin="4,2,0,0"/>
 
+            <!-- 锚点导航 -->
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"
+                          Margin="2,14,0,0" Padding="0">
+                <StackPanel Orientation="Horizontal" x:Name="SettingsNav">
+                    <RadioButton Content="{DynamicResource settings.sec.general}" Style="{StaticResource PillTab}" GroupName="snav" IsChecked="True" FontSize="12" Padding="12,5,12,6" Tag="GeneralCard" Click="SettingsNav_Click"/>
+                    <RadioButton Content="{DynamicResource nav.clean}" Style="{StaticResource PillTab}" GroupName="snav" FontSize="12" Padding="12,5,12,6" Tag="CleanCard" Click="SettingsNav_Click"/>
+                    <RadioButton Content="{DynamicResource settings.sec.exclude}" Style="{StaticResource PillTab}" GroupName="snav" FontSize="12" Padding="12,5,12,6" Tag="ExclusionCard" Click="SettingsNav_Click"/>
+                    <RadioButton Content="{DynamicResource settings.custom.title}" Style="{StaticResource PillTab}" GroupName="snav" FontSize="12" Padding="12,5,12,6" Tag="CustomCard" Click="SettingsNav_Click"/>
+                    <RadioButton Content="{DynamicResource settings.sec.notify}" Style="{StaticResource PillTab}" GroupName="snav" FontSize="12" Padding="12,5,12,6" Tag="NotifyCard" Click="SettingsNav_Click"/>
+                    <RadioButton Content="{DynamicResource settings.sec.advanced}" Style="{StaticResource PillTab}" GroupName="snav" FontSize="12" Padding="12,5,12,6" Tag="AdvancedCard" Click="SettingsNav_Click"/>
+                    <RadioButton Content="{DynamicResource settings.sec.privacy}" Style="{StaticResource PillTab}" GroupName="snav" FontSize="12" Padding="12,5,12,6" Tag="PrivacyCard" Click="SettingsNav_Click"/>
+                    <RadioButton Content="{DynamicResource settings.sec.about}" Style="{StaticResource PillTab}" GroupName="snav" FontSize="12" Padding="12,5,12,6" Tag="AboutCard" Click="SettingsNav_Click"/>
+                </StackPanel>
+            </ScrollViewer>
+
             <!-- 通用 -->
-            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+            <Border x:Name="GeneralCard" Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
                     <TextBlock Text="{DynamicResource settings.sec.general}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
@@ -18,7 +33,7 @@
             </Border>
 
             <!-- 清理 -->
-            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+            <Border x:Name="CleanCard" Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
                     <TextBlock Text="{DynamicResource nav.clean}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
@@ -27,7 +42,7 @@
             </Border>
 
             <!-- 排除与白名单 -->
-            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+            <Border x:Name="ExclusionCard" Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
                     <TextBlock Text="{DynamicResource settings.sec.exclude}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
@@ -44,7 +59,7 @@
             </Border>
 
             <!-- 自定义清理目录 -->
-            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+            <Border x:Name="CustomCard" Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
                     <TextBlock Text="{DynamicResource settings.custom.title}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
@@ -59,7 +74,7 @@
             </Border>
 
             <!-- 通知 -->
-            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+            <Border x:Name="NotifyCard" Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
                     <TextBlock Text="{DynamicResource settings.sec.notify}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
@@ -68,7 +83,7 @@
             </Border>
 
             <!-- 高级 -->
-            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+            <Border x:Name="AdvancedCard" Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
                     <TextBlock Text="{DynamicResource settings.sec.advanced}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
@@ -77,7 +92,7 @@
             </Border>
 
             <!-- 隐私 -->
-            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+            <Border x:Name="PrivacyCard" Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
                     <TextBlock Text="{DynamicResource settings.sec.privacy}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
@@ -92,7 +107,7 @@
             </Border>
 
             <!-- 关于 -->
-            <Border Style="{StaticResource CardBorder}" Margin="2,16,2,0">
+            <Border x:Name="AboutCard" Style="{StaticResource CardBorder}" Margin="2,16,2,0">
                 <StackPanel>
                     <TextBlock Text="{DynamicResource settings.sec.about}" FontSize="15" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}"/>
