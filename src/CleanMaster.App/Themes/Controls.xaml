@@ -48,15 +48,15 @@
         <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}"/>
     </Style>
     <Style x:Key="BodyText" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="13.5"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}"/>
     </Style>
     <Style x:Key="CaptionText" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="12.5"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Foreground" Value="{DynamicResource TextSecondaryBrush}"/>
     </Style>
     <Style x:Key="TinyText" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="11.5"/>
+        <Setter Property="FontSize" Value="12"/>
         <Setter Property="Foreground" Value="{DynamicResource TextTertiaryBrush}"/>
     </Style>
 
@@ -100,7 +100,7 @@
     <Style x:Key="PrimaryButton" TargetType="Button">
         <Setter Property="Background" Value="{DynamicResource PrimaryGradientBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource TextOnPrimaryBrush}"/>
-        <Setter Property="FontSize" Value="14.5"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Padding" Value="26,11"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -136,7 +136,7 @@
     <Style x:Key="SecondaryButton" TargetType="Button">
         <Setter Property="Background" Value="{DynamicResource CardBgBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}"/>
-        <Setter Property="FontSize" Value="13.5"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Padding" Value="20,10"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
@@ -168,11 +168,11 @@
     </Style>
 
     <Style x:Key="SmallPrimaryButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
-        <Setter Property="FontSize" Value="12.5"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Padding" Value="14,6"/>
     </Style>
     <Style x:Key="SmallSecondaryButton" TargetType="Button" BasedOn="{StaticResource SecondaryButton}">
-        <Setter Property="FontSize" Value="12.5"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Padding" Value="14,6"/>
     </Style>
 
@@ -211,7 +211,7 @@
 
     <Style x:Key="LinkButton" TargetType="Button">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
-        <Setter Property="FontSize" Value="12.5"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Template">
@@ -466,7 +466,7 @@
     <Style TargetType="ToolTip">
         <Setter Property="Background" Value="{DynamicResource TooltipBgBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource TooltipTextBrush}"/>
-        <Setter Property="FontSize" Value="12.5"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolTip">
@@ -656,7 +656,7 @@
 
     <!-- 风险等级徽章 -->
     <Style x:Key="ChipText" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="11.5"/>
+        <Setter Property="FontSize" Value="12"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="ChipBorder" TargetType="Border">

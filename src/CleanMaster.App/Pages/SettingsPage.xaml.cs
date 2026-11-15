@@ -52,7 +52,7 @@ public partial class SettingsPage : Page
             sp.Children.Add(new TextBlock
             {
                 Text = desc,
-                FontSize = 11.5,
+                FontSize = 12,
                 Foreground = (Brush)FindResource("TextTertiaryBrush"),
                 Margin = new Thickness(0, 3, 0, 0),
                 TextWrapping = TextWrapping.Wrap,
@@ -241,7 +241,7 @@ public partial class SettingsPage : Page
             chip.Child = new TextBlock
             {
                 Text = isWhitelist ? Services.Loc.T("settings.whitelist") : Services.Loc.T("settings.excluded"),
-                FontSize = 10.5,
+                FontSize = 11,
                 FontWeight = FontWeights.Bold,
                 Foreground = isWhitelist
                     ? (Brush)FindResource("SuccessBrush")

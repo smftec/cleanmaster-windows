@@ -275,7 +275,7 @@ public partial class ToolboxPage : Page, IParamPage
         sp.Children.Add(new TextBlock
         {
             Text = name,
-            FontSize = 12.5,
+            FontSize = 13,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
             TextTrimming = TextTrimming.CharacterEllipsis,
         });
@@ -294,7 +294,7 @@ public partial class ToolboxPage : Page, IParamPage
         var size = new TextBlock
         {
             Text = SizeText.OfBytes(e.Size),
-            FontSize = 12.5,
+            FontSize = 13,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
             VerticalAlignment = VerticalAlignment.Center,
@@ -428,7 +428,7 @@ public partial class ToolboxPage : Page, IParamPage
         mid.Children.Add(new TextBlock
         {
             Text = Services.Loc.T($"maint.{it.Id}.name"),
-            FontSize = 12.5,
+            FontSize = 13,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
         });
@@ -447,7 +447,7 @@ public partial class ToolboxPage : Page, IParamPage
         var desc = new TextBlock
         {
             Text = Services.Loc.T($"maint.{it.Id}.desc"),
-            FontSize = 11.5,
+            FontSize = 12,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             VerticalAlignment = VerticalAlignment.Center,
             Margin = new Thickness(0, 0, 14, 0),
@@ -747,7 +747,7 @@ public partial class ToolboxPage : Page, IParamPage
             typeChip.Child = new TextBlock
             {
                 Text = HistoryTypeText.Of(a.Type),
-                FontSize = 10.5,
+                FontSize = 11,
                 FontWeight = FontWeights.Bold,
                 Foreground = (Brush)FindResource("PrimaryBrush"),
             };
@@ -756,7 +756,7 @@ public partial class ToolboxPage : Page, IParamPage
             var title = new TextBlock
             {
                 Text = a.Title + (string.IsNullOrEmpty(a.Detail) ? "" : $"（{a.Detail}）"),
-                FontSize = 12.5,
+                FontSize = 13,
                 Foreground = (Brush)FindResource("TextPrimaryBrush"),
                 VerticalAlignment = VerticalAlignment.Center,
                 Margin = new Thickness(12, 0, 8, 0),

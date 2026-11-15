@@ -29,7 +29,7 @@
                 </Border>
                 <TextBlock Text="{DynamicResource wizard.welcome}" FontSize="22" FontWeight="Bold"
                            Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center" Margin="0,18,0,0"/>
-                <TextBlock FontSize="13.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                <TextBlock FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"
                            TextAlignment="Center" LineHeight="24" Margin="0,14,0,0"
                            Text="{DynamicResource wizard.slogan}"/>
             </StackPanel>
@@ -44,7 +44,7 @@
                 </Border>
                 <TextBlock Text="{DynamicResource wizard.privacy.title}" FontSize="22" FontWeight="Bold"
                            Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center" Margin="0,16,0,0"/>
-                <TextBlock Text="{DynamicResource wizard.privacy.items}" FontSize="13.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                <TextBlock Text="{DynamicResource wizard.privacy.items}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"
                            LineHeight="26" Margin="0,16,0,0" TextWrapping="Wrap"/>
             </StackPanel>
 
@@ -58,7 +58,7 @@
                 </Border>
                 <TextBlock Text="{DynamicResource wizard.auto.title}" FontSize="22" FontWeight="Bold"
                            Foreground="{DynamicResource TextPrimaryBrush}" HorizontalAlignment="Center" Margin="0,16,0,0"/>
-                <TextBlock FontSize="13.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                <TextBlock FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"
                            LineHeight="24" TextAlignment="Center" Margin="0,14,0,0"
                            Text="{DynamicResource wizard.auto.desc}"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,22,0,0">

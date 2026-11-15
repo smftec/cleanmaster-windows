@@ -14,7 +14,7 @@
             <TextBlock x:Name="TitleText" Text="{DynamicResource leftover.title}" FontSize="17" FontWeight="Bold"
                        Foreground="{DynamicResource TextPrimaryBrush}"/>
             <TextBlock Text="{DynamicResource leftover.desc}"
-                       FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                       FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"
                        Margin="0,10,0,0" TextWrapping="Wrap"/>
             <ScrollViewer MaxHeight="330" VerticalScrollBarVisibility="Auto" Margin="0,16,0,0">
                 <StackPanel x:Name="ItemList"/>

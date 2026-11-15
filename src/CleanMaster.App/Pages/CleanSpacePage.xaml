@@ -57,7 +57,7 @@
                         <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
                             <TextBlock x:Name="RecycleTitleText" Text="{DynamicResource clean.tab.recycle}" FontSize="16" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}"/>
-                            <TextBlock x:Name="RecycleInfoText" Text="正在读取…" FontSize="12.5"
+                            <TextBlock x:Name="RecycleInfoText" Text="正在读取…" FontSize="13"
                                        Foreground="{DynamicResource TextSecondaryBrush}" Margin="0,4,0,0"/>
                         </StackPanel>
                     </StackPanel>
@@ -80,7 +80,7 @@
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel>
                         <StackPanel x:Name="RuleList"/>
-                        <TextBlock x:Name="EmptyGroupText" Text="{DynamicResource clean.empty.before}" FontSize="12.5"
+                        <TextBlock x:Name="EmptyGroupText" Text="{DynamicResource clean.empty.before}" FontSize="13"
                                    Foreground="{DynamicResource TextTertiaryBrush}"
                                    HorizontalAlignment="Center" Margin="0,40,0,0" Visibility="Collapsed"/>
                     </StackPanel>
@@ -91,7 +91,7 @@
             <StackPanel x:Name="GroupScanPanel" Visibility="Collapsed" VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                 <ProgressBar x:Name="GroupScanBar" Maximum="100" Value="0" Width="260" Height="6"/>
-                <TextBlock x:Name="GroupScanText" Text="{DynamicResource common.scanning}" FontSize="12.5"
+                <TextBlock x:Name="GroupScanText" Text="{DynamicResource common.scanning}" FontSize="13"
                            Foreground="{DynamicResource TextSecondaryBrush}"
                            HorizontalAlignment="Center" Margin="0,14,0,0"/>
                 <TextBlock x:Name="GroupScanDetailText" Text="" FontSize="11" TextTrimming="CharacterEllipsis" MaxWidth="420"
@@ -108,7 +108,7 @@
             <Grid>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock Text="{DynamicResource common.selected}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"/>
-                    <TextBlock x:Name="SelCountText" Text="0" FontSize="13.5" FontWeight="Bold"
+                    <TextBlock x:Name="SelCountText" Text="0" FontSize="13" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}" Margin="6,0,0,0"/>
                     <TextBlock Text="{DynamicResource common.freeable}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}" Margin="16,0,0,0"/>
                     <TextBlock x:Name="SelSizeText" Text="0 B" FontSize="15" FontWeight="Bold"

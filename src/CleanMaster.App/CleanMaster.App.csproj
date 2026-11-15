@@ -11,10 +11,10 @@
     <AssemblyName>CleanMaster</AssemblyName>
     <RootNamespace>CleanMaster.App</RootNamespace>
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
-    <Version>3.1.0</Version>
-    <AssemblyVersion>3.1.0.0</AssemblyVersion>
-    <FileVersion>3.1.0.0</FileVersion>
-    <InformationalVersion>3.1.0</InformationalVersion>
+    <Version>3.2.0</Version>
+    <AssemblyVersion>3.2.0.0</AssemblyVersion>
+    <FileVersion>3.2.0.0</FileVersion>
+    <InformationalVersion>3.2.0</InformationalVersion>
     <Product>清理优化大师</Product>
     <Company>CleanMaster</Company>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
@@ -32,6 +32,7 @@
     <Resource Include="Assets\wechat-search.png" />
     <Resource Include="Assets\wizard-hero.png" />
     <Resource Include="Assets\logo.png" />
+    <Resource Include="Assets\spot-clean.png" />
   </ItemGroup>
 
 </Project>

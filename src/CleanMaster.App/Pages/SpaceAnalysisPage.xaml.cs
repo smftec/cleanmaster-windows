@@ -213,7 +213,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
             sp.Children.Add(new TextBlock
             {
                 Text = $"{CategoryText.Of(c.Category)}  {c.Percent:F1}%",
-                FontSize = 11.5,
+                FontSize = 12,
                 FontWeight = FontWeights.Bold,
                 Foreground = new SolidColorBrush(Colors.White),
             });
@@ -337,7 +337,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
                 sp.Children.Add(new TextBlock
                 {
                     Text = $"{c.Name}  {c.Percent:F1}%",
-                    FontSize = 11.5,
+                    FontSize = 12,
                     FontWeight = FontWeights.Bold,
                     Foreground = new SolidColorBrush(Colors.White),
                 });
@@ -450,7 +450,7 @@ public partial class SpaceAnalysisPage : Page, IParamPage
         mid.Children.Add(new TextBlock
         {
             Text = Services.Loc.T("space.modified") + " " + f.ModifiedTime.ToString("yyyy-MM-dd HH:mm"),
-            FontSize = 10.5,
+            FontSize = 11,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 2, 0, 0),
         });

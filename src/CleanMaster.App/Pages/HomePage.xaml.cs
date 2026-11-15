@@ -53,7 +53,27 @@ public partial class HomePage : Page, IParamPage
     public void OnNavigated(object? param)
     {
         _scrollToStats = param as string == "stats";
+        PlayEntrance();
         _ = RefreshAsync();
+    }
+
+    /// <summary>卡片错峰入场:淡入 + 上移,40ms 间隔(PRD 设计原则:动效服务层次)。</summary>
+    private void PlayEntrance()
+    {
+        int i = 0;
+        foreach (UIElement child in RootCards.Children)
+        {
+            var d = TimeSpan.FromMilliseconds(45 * i);
+            var ease = new CubicEase { EasingMode = EasingMode.EaseOut };
+            child.Opacity = 0;
+            var tt = new TranslateTransform(0, 14);
+            child.RenderTransform = tt;
+            child.BeginAnimation(OpacityProperty,
+                new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(300)) { BeginTime = d, EasingFunction = ease });
+            tt.BeginAnimation(TranslateTransform.YProperty,
+                new DoubleAnimation(14, 0, TimeSpan.FromMilliseconds(340)) { BeginTime = d, EasingFunction = ease });
+            i++;
+        }
     }
 
     private string _selectedDrive = "";
@@ -227,7 +247,7 @@ public partial class HomePage : Page, IParamPage
             });
         }
         SuggestList.ItemsSource = suggests;
-        NoSuggestText.Visibility = suggests.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
+        NoSuggestPanel.Visibility = suggests.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
     }
 
     // ————— 环形仪表 + 实时监控 —————
@@ -247,7 +267,7 @@ public partial class HomePage : Page, IParamPage
         center.Children.Add(new TextBlock
         {
             Text = Services.Loc.T("home.disk.center"),
-            FontSize = 10.5,
+            FontSize = 11,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             HorizontalAlignment = HorizontalAlignment.Center,
             Margin = new Thickness(0, 1, 0, 0),
@@ -265,7 +285,7 @@ public partial class HomePage : Page, IParamPage
             ring.Center = center;
             detail = new TextBlock
             {
-                FontSize = 11.5,
+                FontSize = 12,
                 Foreground = (Brush)FindResource("TextTertiaryBrush"),
                 Margin = new Thickness(0, 3, 0, 0),
             };
@@ -273,7 +293,7 @@ public partial class HomePage : Page, IParamPage
             sp.Children.Add(new TextBlock
             {
                 Text = label,
-                FontSize = 12.5,
+                FontSize = 13,
                 FontWeight = FontWeights.Bold,
                 Foreground = (Brush)FindResource("TextPrimaryBrush"),
             });
@@ -288,7 +308,7 @@ public partial class HomePage : Page, IParamPage
         _cpuRing = new RingGauge(58, 7) { ArcBrush = Primary("PrimaryBrush") };
         _cpuCenter = new TextBlock
         {
-            FontSize = 12.5,
+            FontSize = 13,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
             HorizontalAlignment = HorizontalAlignment.Center,
@@ -298,7 +318,7 @@ public partial class HomePage : Page, IParamPage
         _ramRing = new RingGauge(58, 7) { ArcBrush = Primary("TealBrush") };
         _ramCenter = new TextBlock
         {
-            FontSize = 12.5,
+            FontSize = 13,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
             HorizontalAlignment = HorizontalAlignment.Center,
@@ -309,13 +329,13 @@ public partial class HomePage : Page, IParamPage
         up.Children.Add(new TextBlock
         {
             Text = Services.Loc.T("home.mon.uptime"),
-            FontSize = 12.5,
+            FontSize = 13,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
         });
         _uptimeText = new TextBlock
         {
-            FontSize = 11.5,
+            FontSize = 12,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 3, 0, 0),
         };
@@ -352,7 +372,7 @@ public partial class HomePage : Page, IParamPage
         center.Children.Add(new TextBlock
         {
             Text = Services.Loc.T("home.health.unit"),
-            FontSize = 10.5,
+            FontSize = 11,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             HorizontalAlignment = HorizontalAlignment.Center,
             Margin = new Thickness(0, 1, 0, 0),
@@ -392,7 +412,7 @@ public partial class HomePage : Page, IParamPage
             bd.Child = new TextBlock
             {
                 Text = text,
-                FontSize = 10.5,
+                FontSize = 11,
                 Foreground = (Brush)FindResource("TextSecondaryBrush"),
             };
             HealthChips.Children.Add(bd);
@@ -510,7 +530,7 @@ public partial class HomePage : Page, IParamPage
                 Style = (Style)FindResource("PillTab"),
                 GroupName = "homedrive",
                 Content = d.Name.TrimEnd(System.IO.Path.DirectorySeparatorChar),
-                FontSize = 11.5,
+                FontSize = 12,
                 Padding = new Thickness(10, 3, 10, 4),
                 Margin = new Thickness(0, 0, 8, 0),
                 IsChecked = isSel,
@@ -557,7 +577,7 @@ public partial class HomePage : Page, IParamPage
                 sp.Children.Add(new TextBlock
                 {
                     Text = Services.Loc.CategoryDisplay(c.Name),
-                    FontSize = 12.5,
+                    FontSize = 13,
                     FontWeight = FontWeights.Bold,
                     Foreground = new SolidColorBrush(Colors.White),
                 });

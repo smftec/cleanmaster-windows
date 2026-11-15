@@ -75,7 +75,7 @@ public partial class LeftoverDialog : Window
         var size = new TextBlock
         {
             Text = item.IsRegistry ? "—" : SizeText.OfBytes(item.Size),
-            FontSize = 12.5,
+            FontSize = 13,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
             VerticalAlignment = VerticalAlignment.Center,

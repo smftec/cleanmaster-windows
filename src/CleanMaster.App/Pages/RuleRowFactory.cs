@@ -44,7 +44,7 @@ public static class RuleRowFactory
         line1.Children.Add(new TextBlock
         {
             Text = vm.Name,
-            FontSize = 13.5,
+            FontSize = 13,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)resources.FindResource("TextPrimaryBrush"),
         });
@@ -60,7 +60,7 @@ public static class RuleRowFactory
         var reason = new TextBlock
         {
             Text = vm.Reason + (vm.CanRestore ? " · " + vm.RestoreText : " · " + vm.DirectText),
-            FontSize = 11.5,
+            FontSize = 12,
             Foreground = (Brush)resources.FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 3, 0, 0),
             TextTrimming = TextTrimming.CharacterEllipsis,
@@ -73,7 +73,7 @@ public static class RuleRowFactory
         size.Children.Add(new TextBlock
         {
             Text = vm.SizeText,
-            FontSize = 14.5,
+            FontSize = 14,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)resources.FindResource("TextPrimaryBrush"),
             HorizontalAlignment = HorizontalAlignment.Right,
@@ -173,7 +173,7 @@ public static class RuleRowFactory
         bd.Child = new TextBlock
         {
             Text = text,
-            FontSize = 10.5,
+            FontSize = 11,
             FontWeight = FontWeights.Bold,
             Foreground = brush,
         };

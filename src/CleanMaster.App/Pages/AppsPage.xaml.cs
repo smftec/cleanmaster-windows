@@ -118,7 +118,7 @@ public partial class AppsPage : Page, IParamPage
             nameLine.Children.Add(new TextBlock
             {
                 Text = " " + app.DisplayVersion,
-                FontSize = 10.5,
+                FontSize = 11,
                 Foreground = (Brush)FindResource("TextTertiaryBrush"),
                 VerticalAlignment = VerticalAlignment.Center,
             });
@@ -127,7 +127,7 @@ public partial class AppsPage : Page, IParamPage
         texts.Children.Add(new TextBlock
         {
             Text = app.IsStoreApp ? Services.Loc.T("apps.store") : (app.InstallLocation is { Length: > 0 } ? app.InstallLocation : ""),
-            FontSize = 10.5,
+            FontSize = 11,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             TextTrimming = TextTrimming.CharacterEllipsis,
             MaxWidth = 320,

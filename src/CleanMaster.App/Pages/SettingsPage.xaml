@@ -100,15 +100,15 @@
                         <Image Source="pack://application:,,,/Assets/logo.png"
                                Width="44" Height="44" Stretch="Uniform"/>
                         <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
-                            <TextBlock x:Name="AboutAppName" Text="CleanMaster" FontSize="14.5" FontWeight="Bold"
+                            <TextBlock x:Name="AboutAppName" Text="CleanMaster" FontSize="14" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}"/>
-                            <TextBlock x:Name="AboutVersion" Text="v1.0.0" FontSize="11.5"
+                            <TextBlock x:Name="AboutVersion" Text="v1.0.0" FontSize="12"
                                        Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
-                            <TextBlock Text="{DynamicResource settings.about.slogan}" FontSize="11.5"
+                            <TextBlock Text="{DynamicResource settings.about.slogan}" FontSize="12"
                                        Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                            <TextBlock x:Name="UpdateStateText" Text="" FontSize="11.5" TextWrapping="Wrap" MaxWidth="240"
+                            <TextBlock x:Name="UpdateStateText" Text="" FontSize="12" TextWrapping="Wrap" MaxWidth="240"
                                        Foreground="{DynamicResource TextTertiaryBrush}" VerticalAlignment="Center"
                                        Margin="0,0,12,0" TextAlignment="Right"/>
                             <Button x:Name="BtnCheckUpdate" Content="{DynamicResource settings.update.check}"
@@ -116,22 +116,22 @@
                                     Click="BtnCheckUpdate_Click"/>
                         </StackPanel>
                     </StackPanel>
-                    <TextBlock Text="{DynamicResource settings.about.support}" FontSize="12.5" FontWeight="Bold"
+                    <TextBlock Text="{DynamicResource settings.about.support}" FontSize="13" FontWeight="Bold"
                                Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,18,0,8"/>
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
-                        <TextBlock Text="{DynamicResource settings.about.site}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource settings.about.site}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
                         <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">
                             <Hyperlink NavigateUri="https://52xn.com" RequestNavigate="OpenLink" Foreground="{DynamicResource PrimaryBrush}">52xn.com</Hyperlink>
                         </TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
-                        <TextBlock Text="{DynamicResource settings.about.email}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource settings.about.email}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
                         <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">
                             <Hyperlink NavigateUri="mailto:dev@52xn.com" RequestNavigate="OpenLink" Foreground="{DynamicResource PrimaryBrush}">dev@52xn.com</Hyperlink>
                         </TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
-                        <TextBlock Text="{DynamicResource settings.about.repo}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource settings.about.repo}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
                         <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">
                             <Hyperlink NavigateUri="https://github.com/smftec/cleanmaster-windows" RequestNavigate="OpenLink" Foreground="{DynamicResource PrimaryBrush}">github.com/smftec/cleanmaster-windows</Hyperlink>
                         </TextBlock>

@@ -47,10 +47,10 @@
                             <ColumnDefinition Width="1.1*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{DynamicResource apps.col.name}" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
-                        <TextBlock Grid.Column="1" Text="{DynamicResource apps.col.publisher}" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
-                        <TextBlock Grid.Column="2" Text="{DynamicResource apps.col.size}" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
-                        <TextBlock Grid.Column="3" Text="{DynamicResource apps.col.date}" FontSize="11.5" Foreground="{DynamicResource TextTertiaryBrush}"/>
+                        <TextBlock Text="{DynamicResource apps.col.name}" FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}"/>
+                        <TextBlock Grid.Column="1" Text="{DynamicResource apps.col.publisher}" FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}"/>
+                        <TextBlock Grid.Column="2" Text="{DynamicResource apps.col.size}" FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}"/>
+                        <TextBlock Grid.Column="3" Text="{DynamicResource apps.col.date}" FontSize="12" Foreground="{DynamicResource TextTertiaryBrush}"/>
                     </Grid>
                     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                         <StackPanel x:Name="AppList"/>
@@ -72,7 +72,7 @@
                     <Border Style="{StaticResource SkeletonRow}"/>
                 </UniformGrid>
             </StackPanel>
-            <TextBlock x:Name="EmptyText" Text="{DynamicResource apps.empty}" FontSize="12.5"
+            <TextBlock x:Name="EmptyText" Text="{DynamicResource apps.empty}" FontSize="13"
                        Foreground="{DynamicResource TextTertiaryBrush}" HorizontalAlignment="Center"
                        Visibility="Collapsed" VerticalAlignment="Center"/>
         </Grid>

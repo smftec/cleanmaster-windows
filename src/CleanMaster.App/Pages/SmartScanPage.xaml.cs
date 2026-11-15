@@ -261,7 +261,7 @@ public partial class SmartScanPage : Page, IParamPage
         center.Children.Add(scoreTb);
         center.Children.Add(new TextBlock
         {
-            Text = Services.Loc.T(r.LevelKey), FontSize = 10.5,
+            Text = Services.Loc.T(r.LevelKey), FontSize = 11,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             HorizontalAlignment = HorizontalAlignment.Center,
         });
@@ -306,7 +306,7 @@ public partial class SmartScanPage : Page, IParamPage
             row.Children.Add(track);
             var val = new TextBlock
             {
-                Text = ((int)v).ToString(), FontSize = 12.5, FontWeight = FontWeights.Bold,
+                Text = ((int)v).ToString(), FontSize = 13, FontWeight = FontWeights.Bold,
                 Foreground = vBrush,
                 VerticalAlignment = VerticalAlignment.Center, MinWidth = 26,
             };
@@ -356,7 +356,7 @@ public partial class SmartScanPage : Page, IParamPage
             g.Children.Add(dot);
             g.Children.Add(new TextBlock
             {
-                Text = text, FontSize = 12.5,
+                Text = text, FontSize = 13,
                 Foreground = (Brush)FindResource("TextPrimaryBrush"),
                 VerticalAlignment = VerticalAlignment.Center,
             });
@@ -403,14 +403,14 @@ public partial class SmartScanPage : Page, IParamPage
         sp.Children.Add(new TextBlock
         {
             Text = title,
-            FontSize = 14.5,
+            FontSize = 14,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
         });
         sp.Children.Add(new TextBlock
         {
             Text = note,
-            FontSize = 11.5,
+            FontSize = 12,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 3, 0, 8),
         });
@@ -456,7 +456,7 @@ public partial class SmartScanPage : Page, IParamPage
         line1.Children.Add(new TextBlock
         {
             Text = vm.Name,
-            FontSize = 13.5,
+            FontSize = 13,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
         });
@@ -470,7 +470,7 @@ public partial class SmartScanPage : Page, IParamPage
         var reason = new TextBlock
         {
             Text = vm.Reason + (vm.CanRestore ? " · " + Services.Loc.T("row.restore") : " · " + Services.Loc.T("row.direct")),
-            FontSize = 11.5,
+            FontSize = 12,
             Foreground = (Brush)FindResource("TextTertiaryBrush"),
             Margin = new Thickness(0, 3, 0, 0),
             TextTrimming = TextTrimming.CharacterEllipsis,
@@ -483,7 +483,7 @@ public partial class SmartScanPage : Page, IParamPage
         size.Children.Add(new TextBlock
         {
             Text = vm.SizeText,
-            FontSize = 14.5,
+            FontSize = 14,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
             HorizontalAlignment = HorizontalAlignment.Right,
@@ -593,7 +593,7 @@ public partial class SmartScanPage : Page, IParamPage
         bd.Child = new TextBlock
         {
             Text = text,
-            FontSize = 10.5,
+            FontSize = 11,
             FontWeight = FontWeights.Bold,
             Foreground = brush,
         };

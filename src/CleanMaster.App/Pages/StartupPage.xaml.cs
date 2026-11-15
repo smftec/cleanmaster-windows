@@ -136,7 +136,7 @@ public partial class StartupPage : Page, IParamPage
         nameLine.Children.Add(new TextBlock
         {
             Text = string.IsNullOrWhiteSpace(item.Publisher) ? item.Name : $"{item.Name}",
-            FontSize = 13.5,
+            FontSize = 13,
             FontWeight = FontWeights.Bold,
             Foreground = (Brush)FindResource("TextPrimaryBrush"),
         });
@@ -161,7 +161,7 @@ public partial class StartupPage : Page, IParamPage
             namePanel.Children.Add(new TextBlock
             {
                 Text = pub,
-                FontSize = 10.5,
+                FontSize = 11,
                 Foreground = (Brush)FindResource("TextTertiaryBrush"),
                 Margin = new Thickness(0, 2, 0, 0),
             });

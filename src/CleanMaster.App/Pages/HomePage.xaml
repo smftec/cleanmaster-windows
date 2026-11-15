@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       FontFamily="Microsoft YaHei UI">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-        <StackPanel MaxWidth="1200" HorizontalAlignment="Stretch">
+        <StackPanel x:Name="RootCards" MaxWidth="1200" HorizontalAlignment="Stretch">
 
             <!-- ======== 顶部状态区 ======== -->
             <Grid Margin="6,4,6,0">
@@ -27,7 +27,7 @@
                                 <TextBlock x:Name="LastScanText" Text="{DynamicResource home.noscan}" FontSize="13"
                                            Foreground="{DynamicResource TextSecondaryBrush}"/>
                             </StackPanel>
-                            <TextBlock Text="{DynamicResource home.slogan}" FontSize="12.5"
+                            <TextBlock Text="{DynamicResource home.slogan}" FontSize="13"
                                        Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,7,0,0"/>
                         </StackPanel>
                     </StackPanel>
@@ -59,7 +59,7 @@
                     <StackPanel Orientation="Horizontal" Margin="18,14,20,14">
                         <StackPanel x:Name="HealthRingHost" VerticalAlignment="Center"/>
                         <StackPanel Margin="18,0,4,0" VerticalAlignment="Center">
-                            <TextBlock Text="{DynamicResource home.health.title}" FontSize="12.5"
+                            <TextBlock Text="{DynamicResource home.health.title}" FontSize="13"
                                        Foreground="{DynamicResource TextSecondaryBrush}"/>
                             <TextBlock x:Name="HealthLevelText" Text="—" FontSize="18" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,5,0,0"/>
@@ -79,7 +79,7 @@
                                     <Path Data="{StaticResource CleanIcon}" Stroke="{DynamicResource PrimaryBrush}" StrokeThickness="1.8"
                                           StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="19" Height="19" Stretch="Uniform"/>
                                 </Border>
-                                <TextBlock Text="{DynamicResource home.card.junk}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                                <TextBlock Text="{DynamicResource home.card.junk}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"
                                            VerticalAlignment="Center" Margin="10,0,0,0"/>
                                 <Path Data="{StaticResource ChevronRightIcon}" Stroke="{DynamicResource TextTertiaryBrush}"
                                       StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
@@ -87,7 +87,7 @@
                             </StackPanel>
                             <TextBlock x:Name="JunkSizeText" Text="—" FontSize="26" FontWeight="Bold"
                                        Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,10,0,0"/>
-                            <TextBlock x:Name="JunkNoteText" Text="{DynamicResource home.card.junk.note}" FontSize="11.5"
+                            <TextBlock x:Name="JunkNoteText" Text="{DynamicResource home.card.junk.note}" FontSize="12"
                                        Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
                         </StackPanel>
                     </Grid>
@@ -99,7 +99,7 @@
                                 <Path Data="{StaticResource PowerIcon}" Stroke="{DynamicResource OrangeBrush}" StrokeThickness="1.8"
                                       StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="19" Height="19" Stretch="Uniform"/>
                             </Border>
-                            <TextBlock Text="{DynamicResource home.card.startup}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                            <TextBlock Text="{DynamicResource home.card.startup}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"
                                        VerticalAlignment="Center" Margin="10,0,0,0"/>
                             <Path Data="{StaticResource ChevronRightIcon}" Stroke="{DynamicResource TextTertiaryBrush}"
                                   StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
@@ -107,7 +107,7 @@
                         </StackPanel>
                         <TextBlock x:Name="StartupCountText" Text="—" FontSize="26" FontWeight="Bold"
                                    Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,10,0,0"/>
-                        <TextBlock x:Name="StartupNoteText" Text="{DynamicResource home.card.startup.note}" FontSize="11.5"
+                        <TextBlock x:Name="StartupNoteText" Text="{DynamicResource home.card.startup.note}" FontSize="12"
                                    Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
                     </StackPanel>
                 </Button>
@@ -118,7 +118,7 @@
                                 <Path Data="{StaticResource FileIcon}" Stroke="{DynamicResource SuccessBrush}" StrokeThickness="1.8"
                                       StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="19" Height="19" Stretch="Uniform"/>
                             </Border>
-                            <TextBlock Text="{DynamicResource home.card.large}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                            <TextBlock Text="{DynamicResource home.card.large}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"
                                        VerticalAlignment="Center" Margin="10,0,0,0"/>
                             <Path Data="{StaticResource ChevronRightIcon}" Stroke="{DynamicResource TextTertiaryBrush}"
                                   StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
@@ -126,7 +126,7 @@
                         </StackPanel>
                         <TextBlock x:Name="LargeCountText" Text="—" FontSize="26" FontWeight="Bold"
                                    Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,10,0,0"/>
-                        <TextBlock x:Name="LargeNoteText" Text="{DynamicResource home.card.large.note}" FontSize="11.5"
+                        <TextBlock x:Name="LargeNoteText" Text="{DynamicResource home.card.large.note}" FontSize="12"
                                    Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
                     </StackPanel>
                 </Button>
@@ -137,7 +137,7 @@
                                 <Path Data="{StaticResource BoxIcon}" Stroke="{DynamicResource PurpleBrush}" StrokeThickness="1.8"
                                       StrokeStartLineCap="Round" StrokeLineJoin="Round" Width="19" Height="19" Stretch="Uniform"/>
                             </Border>
-                            <TextBlock Text="{DynamicResource home.card.apps}" FontSize="12.5" Foreground="{DynamicResource TextSecondaryBrush}"
+                            <TextBlock Text="{DynamicResource home.card.apps}" FontSize="13" Foreground="{DynamicResource TextSecondaryBrush}"
                                        VerticalAlignment="Center" Margin="10,0,0,0"/>
                             <Path Data="{StaticResource ChevronRightIcon}" Stroke="{DynamicResource TextTertiaryBrush}"
                                   StrokeThickness="2" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
@@ -145,7 +145,7 @@
                         </StackPanel>
                         <TextBlock x:Name="AppsCountText" Text="—" FontSize="26" FontWeight="Bold"
                                    Foreground="{DynamicResource TextPrimaryBrush}" Margin="0,10,0,0"/>
-                        <TextBlock x:Name="AppsNoteText" Text="{DynamicResource home.card.apps.note}" FontSize="11.5"
+                        <TextBlock x:Name="AppsNoteText" Text="{DynamicResource home.card.apps.note}" FontSize="12"
                                    Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,3,0,0"/>
                     </StackPanel>
                 </Button>
@@ -159,7 +159,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                        <TextBlock Text="{DynamicResource home.mon.title}" FontSize="14.5" FontWeight="Bold"
+                        <TextBlock Text="{DynamicResource home.mon.title}" FontSize="14" FontWeight="Bold"
                                    Foreground="{DynamicResource TextPrimaryBrush}"/>
                         <StackPanel Orientation="Horizontal" Margin="0,7,0,0">
                             <Ellipse x:Name="LiveDot" Width="7" Height="7" Fill="{DynamicResource SuccessBrush}"
@@ -202,17 +202,17 @@
                                     <TextBlock x:Name="DiskTitle" Text="{DynamicResource home.disk.title}" FontSize="15" FontWeight="Bold"
                                                Foreground="{DynamicResource TextPrimaryBrush}" VerticalAlignment="Center" Margin="12,0,0,0"/>
                                 </StackPanel>
-                                <TextBlock x:Name="DiskTotalText" Text="{DynamicResource home.disk.total}" FontSize="12.5"
+                                <TextBlock x:Name="DiskTotalText" Text="{DynamicResource home.disk.total}" FontSize="13"
                                            Foreground="{DynamicResource TextSecondaryBrush}"
                                            HorizontalAlignment="Right" VerticalAlignment="Center"/>
                             </Grid>
                             <StackPanel x:Name="DriveChipHost" Orientation="Horizontal" Margin="0,10,0,0"/>
                             <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
                                 <Ellipse Width="9" Height="9" Fill="{DynamicResource PrimaryBrush}" VerticalAlignment="Center"/>
-                                <TextBlock x:Name="DiskUsedText" Text="{DynamicResource home.disk.used}" FontSize="12.5"
+                                <TextBlock x:Name="DiskUsedText" Text="{DynamicResource home.disk.used}" FontSize="13"
                                            Foreground="{DynamicResource TextSecondaryBrush}" Margin="8,0,0,0"/>
                                 <Ellipse Width="9" Height="9" Fill="{DynamicResource TrackBrush}" VerticalAlignment="Center" Margin="22,0,0,0"/>
-                                <TextBlock x:Name="DiskFreeText" Text="{DynamicResource home.disk.free}" FontSize="12.5"
+                                <TextBlock x:Name="DiskFreeText" Text="{DynamicResource home.disk.free}" FontSize="13"
                                            Foreground="{DynamicResource TextSecondaryBrush}" Margin="8,0,0,0"/>
                             </StackPanel>
                             <Button x:Name="BtnAnalyze" Content="{DynamicResource home.disk.more}" Style="{StaticResource LinkButton}"
@@ -258,7 +258,7 @@
                         <Border x:Name="AnalysisEmpty" Background="{DynamicResource CardBgBrush}" CornerRadius="10"
                                 Visibility="Collapsed">
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <TextBlock Text="{DynamicResource home.space.empty}" FontSize="12.5"
+                                <TextBlock Text="{DynamicResource home.space.empty}" FontSize="13"
                                            Foreground="{DynamicResource TextSecondaryBrush}" HorizontalAlignment="Center"/>
                                 <Button x:Name="BtnQuickAnalyze" Content="{DynamicResource btn.analyze.start}" Style="{StaticResource SmallPrimaryButton}"
                                         Margin="0,10,0,0" HorizontalAlignment="Center" Click="BtnAnalyze_Click"/>
@@ -305,7 +305,7 @@
                                         <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
                                             <TextBlock Text="{Binding Title}" FontSize="13"
                                                        Foreground="{DynamicResource TextPrimaryBrush}"/>
-                                            <TextBlock Text="{Binding TimeText}" FontSize="11.5"
+                                            <TextBlock Text="{Binding TimeText}" FontSize="12"
                                                        Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,2,0,0"/>
                                         </StackPanel>
                                         <Path Data="{StaticResource CheckIcon}" Stroke="{DynamicResource SuccessBrush}"
@@ -317,10 +317,15 @@
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
                         <StackPanel x:Name="NoActivityPanel" Margin="0,14,0,6" Visibility="Collapsed">
-                            <TextBlock Text="{DynamicResource home.activity.empty}" FontSize="12.5"
-                                       Foreground="{DynamicResource TextTertiaryBrush}"/>
-                            <Button Content="{DynamicResource btn.scan.now}" Style="{StaticResource SmallSecondaryButton}"
-                                    HorizontalAlignment="Left" Margin="0,10,0,0" Click="BtnScan_Click"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="pack://application:,,,/Assets/spot-clean.png"
+                                       Width="72" Height="72" Stretch="Uniform" VerticalAlignment="Center"/>
+                                <TextBlock Text="{DynamicResource home.activity.empty}" FontSize="13"
+                                           Foreground="{DynamicResource TextTertiaryBrush}"
+                                           VerticalAlignment="Center" Margin="14,0,0,0" TextWrapping="Wrap" MaxWidth="300"/>
+                                <Button Content="{DynamicResource btn.scan.now}" Style="{StaticResource SmallSecondaryButton}"
+                                        VerticalAlignment="Center" Margin="16,0,0,0" Click="BtnScan_Click"/>
+                            </StackPanel>
                         </StackPanel>
                         <Border Background="{DynamicResource ItemHoverBrush}" CornerRadius="10"
                                 Padding="12,10" Margin="0,12,0,0">
@@ -328,7 +333,7 @@
                                 <Grid>
                                     <TextBlock Text="{DynamicResource home.stats.days7}" FontSize="12" FontWeight="Bold"
                                                Foreground="{DynamicResource TextSecondaryBrush}" VerticalAlignment="Center"/>
-                                    <TextBlock x:Name="StatsTotalText" Text="" FontSize="11.5"
+                                    <TextBlock x:Name="StatsTotalText" Text="" FontSize="12"
                                                Foreground="{DynamicResource TextTertiaryBrush}"
                                                HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                 </Grid>
@@ -364,11 +369,11 @@
                                             <StackPanel Grid.Column="1" Margin="12,0,8,0" VerticalAlignment="Center">
                                                 <TextBlock Text="{Binding Name}" FontSize="13" FontWeight="Bold"
                                                            Foreground="{DynamicResource TextPrimaryBrush}"/>
-                                                <TextBlock Text="{Binding Note}" FontSize="11.5"
+                                                <TextBlock Text="{Binding Note}" FontSize="12"
                                                            Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,2,0,0"
                                                            TextTrimming="CharacterEllipsis"/>
                                             </StackPanel>
-                                            <TextBlock Grid.Column="2" Text="{Binding SizeText}" FontSize="12.5" FontWeight="Bold"
+                                            <TextBlock Grid.Column="2" Text="{Binding SizeText}" FontSize="13" FontWeight="Bold"
                                                        Foreground="{DynamicResource OrangeBrush}" VerticalAlignment="Center" Margin="0,0,12,0"/>
                                             <Button Grid.Column="3" Content="{Binding ActionText}"
                                                     Style="{StaticResource SmallPrimaryButton}"
@@ -378,9 +383,15 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <TextBlock x:Name="NoSuggestText" Text="{DynamicResource home.suggest.empty}" FontSize="12.5"
-                                   Foreground="{DynamicResource TextTertiaryBrush}" Margin="0,14,0,6"
-                                   Visibility="Collapsed"/>
+                        <StackPanel x:Name="NoSuggestPanel" Margin="0,10,0,6" Visibility="Collapsed">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="pack://application:,,,/Assets/spot-clean.png"
+                                       Width="72" Height="72" Stretch="Uniform" VerticalAlignment="Center"/>
+                                <TextBlock Text="{DynamicResource home.suggest.empty}" FontSize="13"
+                                           Foreground="{DynamicResource TextTertiaryBrush}"
+                                           VerticalAlignment="Center" Margin="14,0,0,0" TextWrapping="Wrap" MaxWidth="300"/>
+                            </StackPanel>
+                        </StackPanel>
                     </StackPanel>
                 </Border>
             </Grid>
