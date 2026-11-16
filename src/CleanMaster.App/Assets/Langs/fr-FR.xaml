@@ -682,6 +682,7 @@ Irréversible !</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.off">désactivé</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.on">activé</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.open">Ouvrir CleanMaster</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quarantine.count">{0} éléments en quarantaine</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.quickscan">Analyse rapide</sys:String>
     <sys:String xml:space="preserve" x:Key="update.available">Nouvelle version v{0} — voir Paramètres · À propos</sys:String>
     <sys:String xml:space="preserve" x:Key="update.checking">Recherche de mises à jour…</sys:String>

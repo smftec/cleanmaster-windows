@@ -682,6 +682,7 @@
     <sys:String xml:space="preserve" x:Key="tray.off">끔</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.on">켬</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.open">CleanMaster 열기</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quarantine.count">격리소：{0}개 항목 대기 중</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.quickscan">빠른 스캔</sys:String>
     <sys:String xml:space="preserve" x:Key="update.available">새 버전 v{0} 사용 가능 — 설정 › 정보에서 확인</sys:String>
     <sys:String xml:space="preserve" x:Key="update.checking">업데이트 확인 중…</sys:String>

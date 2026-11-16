@@ -682,6 +682,7 @@ Los archivos restaurables irán a la cuarentena.</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.off">desactivada</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.on">activada</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.open">Abrir CleanMaster</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quarantine.count">{0} elementos en cuarentena</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.quickscan">Análisis rápido</sys:String>
     <sys:String xml:space="preserve" x:Key="update.available">Nueva versión v{0} — mira Ajustes · Acerca de</sys:String>
     <sys:String xml:space="preserve" x:Key="update.checking">Buscando actualizaciones…</sys:String>

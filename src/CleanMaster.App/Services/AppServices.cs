@@ -101,12 +101,17 @@ public static class ScanCache
         Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
     };
 
+    /// <summary>缓存有效期 14 天:过旧则返回 null,首页评分预告退回"未体检"态。</summary>
     public static LastScanSummary? Load()
     {
         try
         {
             if (System.IO.File.Exists(File))
-                return JsonSerializer.Deserialize<LastScanSummary>(System.IO.File.ReadAllText(File), JsonOpt);
+            {
+                var s = JsonSerializer.Deserialize<LastScanSummary>(System.IO.File.ReadAllText(File), JsonOpt);
+                if (s != null && DateTime.Now - s.Time > TimeSpan.FromDays(14)) return null;
+                return s;
+            }
         }
         catch { }
         return null;

@@ -45,6 +45,16 @@ public sealed class NotifyIconService : IDisposable
             _main.Navigate(PageKey.SmartScan);
             if (_main.PageHost.Content is Pages.SmartScanPage p) p.StartScanFromUi();
         });
+        // 隔离区有待恢复项目时显示数量提示(信息性,引导恢复入口)
+        var quarCount = Core.Rules.QuarantineService.Instance.Entries.Count;
+        if (quarCount > 0)
+        {
+            menu.Items.Add(string.Format(Loc.T("tray.quarantine.count"), quarCount), null, (s, e) =>
+            {
+                _main.RestoreFromTray();
+                _main.Navigate(PageKey.Toolbox, "quarantine");
+            });
+        }
         menu.Items.Add(new System.Windows.Forms.ToolStripSeparator());
         var autoItem = new System.Windows.Forms.ToolStripMenuItem(AutoCleanText())
         {

@@ -682,6 +682,7 @@ This cannot be undone!</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.off">Off</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.on">On</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.open">Open CleanMaster</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quarantine.count">Quarantine: {0} items pending</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.quickscan">Quick scan</sys:String>
     <sys:String xml:space="preserve" x:Key="update.available">New version v{0} available — see Settings · About</sys:String>
     <sys:String xml:space="preserve" x:Key="update.checking">Checking for updates…</sys:String>

@@ -129,6 +129,9 @@ public sealed class HistoryService
 {
     private static readonly object Lock = new();
     private static string File => Path.Combine(SettingsService.DataDir, "history.json");
+    /// <summary>保留上限(条)与保留时长(天),超出即裁剪。</summary>
+    private const int MaxEntries = 500;
+    private const int MaxAgeDays = 90;
 
     private static readonly JsonSerializerOptions JsonOpt = new()
     {
@@ -140,7 +143,9 @@ public sealed class HistoryService
     {
         var list = LoadAll();
         list.Insert(0, new ActivityRecord { Type = type, Title = title, Detail = detail, Bytes = bytes });
-        if (list.Count > 500) list.RemoveRange(500, list.Count - 500);
+        var cutoff = DateTime.Now.AddDays(-MaxAgeDays);
+        list = list.Where(r => r.Time >= cutoff).ToList();
+        if (list.Count > MaxEntries) list.RemoveRange(MaxEntries, list.Count - MaxEntries);
         lock (Lock)
         {
             try { System.IO.File.WriteAllText(File, JsonSerializer.Serialize(list, JsonOpt)); } catch { }

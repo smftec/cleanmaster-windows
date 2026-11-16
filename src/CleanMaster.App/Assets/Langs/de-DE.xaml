@@ -682,6 +682,7 @@ Nicht reversibel!</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.off">aus</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.on">ein</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.open">CleanMaster öffnen</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quarantine.count">{0} Elemente in Quarantäne</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.quickscan">Schnell-Scan</sys:String>
     <sys:String xml:space="preserve" x:Key="update.available">Neue Version v{0} verfügbar — siehe Einstellungen · Über</sys:String>
     <sys:String xml:space="preserve" x:Key="update.checking">Suche nach Updates…</sys:String>

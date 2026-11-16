@@ -682,6 +682,7 @@
     <sys:String xml:space="preserve" x:Key="tray.off">オフ</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.on">オン</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.open">CleanMaster を開く</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quarantine.count">隔離区：{0} 件が保留中</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.quickscan">クイックスキャン</sys:String>
     <sys:String xml:space="preserve" x:Key="update.available">新バージョン v{0} があります（設定 › 概要）</sys:String>
     <sys:String xml:space="preserve" x:Key="update.checking">更新を確認中…</sys:String>

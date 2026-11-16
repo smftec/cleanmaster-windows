@@ -682,6 +682,7 @@
     <sys:String xml:space="preserve" x:Key="tray.off">关</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.on">开</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.open">打开清理优化大师</sys:String>
+    <sys:String xml:space="preserve" x:Key="tray.quarantine.count">隔离区：{0} 个项目待处理</sys:String>
     <sys:String xml:space="preserve" x:Key="tray.quickscan">快速扫描</sys:String>
     <sys:String xml:space="preserve" x:Key="update.available">发现新版本 v{0}，可在设置-关于中查看</sys:String>
     <sys:String xml:space="preserve" x:Key="update.checking">正在检查更新…</sys:String>
